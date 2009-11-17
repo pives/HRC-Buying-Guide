@@ -10,6 +10,8 @@
 #import "CategoriesTableViewController.h"
 #import "CompaniesTableViewController.h"
 #import "UIBarButtonItem+extensions.h"
+#import "Category.h"
+#import "FilteredCompaniesTableViewController.h"
 
 @implementation MainViewController
 
@@ -18,11 +20,18 @@
 @synthesize context;
 @synthesize companyView;
 
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:DidSelectCategoryNotification 
+                                                  object:nil];
+    
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
                       [UIBarButtonItem itemWithView:modeSwitch], 
@@ -36,9 +45,19 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     [self toggleViews:modeSwitch];
             
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(categorySelectedWithNotification:) 
+                                                 name:DidSelectCategoryNotification 
+                                               object:nil];
+    
 }
 
 -(void)toggleViews:(id)sender{
@@ -89,6 +108,20 @@
     [self.view addSubview:companyView.view];
     
     [companyView viewWillAppear:NO];
+    
+}
+
+- (void)categorySelectedWithNotification:(NSNotification*)note{
+    
+    // Navigation logic may go here -- for example, create and push another view controller.
+    Category* selectedCat = (Category*)[note object];
+    FilteredCompaniesTableViewController *detailViewController = [[FilteredCompaniesTableViewController alloc] initWithContext:self.context 
+                                                                                                                           key:@"categories" 
+                                                                                                                         value:selectedCat];
+    detailViewController.view.frame = self.view.bounds;
+    [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Categories" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
     
 }
 

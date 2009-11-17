@@ -15,3 +15,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
+
+
+extern NSString *const DidSelectCategoryNotification;

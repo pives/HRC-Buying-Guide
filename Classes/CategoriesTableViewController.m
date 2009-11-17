@@ -9,6 +9,8 @@
 #import "CategoriesTableViewController.h"
 #import "Category.h"
 
+NSString *const DidSelectCategoryNotification = @"CategorySelected";
+
 @implementation CategoriesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
@@ -75,14 +77,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here -- for example, create and push another view controller.
-	/*
-	 DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"Nib" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    Category* selectedCat = (Category*)[fetchedResultsController objectAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCategoryNotification object:selectedCat];    
 }
 
 

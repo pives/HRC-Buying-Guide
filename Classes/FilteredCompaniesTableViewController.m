@@ -1,16 +1,22 @@
 //
-//  CompaniesTableViewController.m
+//  FilteredCompaniesTableViewController.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/16/09.
+//  Created by Corey Floyd on 11/17/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "CompaniesTableViewController.h"
+#import "FilteredCompaniesTableViewController.h"
 
-@implementation CompaniesTableViewController
+
+@implementation FilteredCompaniesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
+@synthesize filterKey;
+@synthesize filterObject;
+
+
+
 
 #pragma mark -
 #pragma mark Memory management
@@ -22,14 +28,29 @@
 
 
 - (void)dealloc {
+    self.filterKey = nil;
+    self.filterObject = nil;
 	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];
 }
 
+- (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
+    
+    if(self = [super initWithStyle:UITableViewStylePlain]){
+        
+        self.managedObjectContext = context;
+        self.filterKey = key;
+        self.filterObject = object;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -52,8 +73,6 @@
 }
 
 
-
-
 #pragma mark -
 #pragma mark Table view methods
 
@@ -67,7 +86,6 @@
 	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,51 +106,22 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    	 
+    // Navigation logic may go here -- for example, create and push another view controller.
+	/*
+	 DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"Nib" bundle:nil];
+     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+     // ...
+     // Pass the selected object to the new view controller.
+	 [self.navigationController pushViewController:detailViewController animated:YES];
+	 [detailViewController release];
+	 */
 }
-
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // The table view should not be re-orderable.
     return NO;
 }
-
-#pragma mark -
-#pragma mark sectionIndexTitlesForTableView
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
-    if(fetchedResultsController==nil)
-        return nil;
-        
-    NSMutableArray* titles = [[fetchedResultsController sectionIndexTitles] mutableCopy];
-    [titles replaceObjectAtIndex:0 withObject:@"#"];    
-    
-    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    
-    return titles;
-}
-
-- (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if(fetchedResultsController==nil)
-        return 0;
-    
-    if([title isEqualToString:@"#"])
-        title = @"3";
-        
-    // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
-}
-
-
 
 #pragma mark -
 #pragma mark Fetched results controller
@@ -153,13 +142,15 @@
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
-	[fetchRequest setFetchBatchSize:20];
+	//[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-	
+    
 	[fetchRequest setSortDescriptors:sortDescriptors];
+    
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
 	
 	// Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -176,6 +167,7 @@
 	
 	return fetchedResultsController;
 } 
+
 
 
 @end

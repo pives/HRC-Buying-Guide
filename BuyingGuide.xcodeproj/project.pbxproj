@@ -18,6 +18,7 @@
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
 		C4340BD810B25DC50049791D /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340BD710B25DC50049791D /* Company.m */; };
 		C4340C1210B2608B0049791D /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4340C1110B2608B0049791D /* storedata.sqlite */; };
+		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
 		C4AFF73810B1FE8E00801655 /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
@@ -51,6 +52,8 @@
 		C4340BD610B25DC50049791D /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		C4340BD710B25DC50049791D /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		C4340C1110B2608B0049791D /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesTableViewController.h; sourceTree = "<group>"; };
+		C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesTableViewController.m; sourceTree = "<group>"; };
 		C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
 		C4AFF93F10B232F000801655 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C4AFF94010B232F000801655 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 			children = (
 				C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */,
 				C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */,
+				C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */,
+				C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */,
 			);
 			name = "Companies View";
 			path = Classes;
@@ -299,6 +304,7 @@
 				C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */,
 				C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */,
 				C4340BD810B25DC50049791D /* Company.m in Sources */,
+				C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
