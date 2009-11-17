@@ -1,26 +1,25 @@
 //
-//  RootViewController.m
+//  CompaniesTableViewController.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/15/09.
-//  Copyright Flying Jalapeño Software 2009. All rights reserved.
+//  Created by Corey Floyd on 11/16/09.
+//  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "CategoriesTableViewController.h"
-#import "Category.h"
+#import "CompaniesTableViewController.h"
 
-@implementation CategoriesTableViewController
+
+@implementation CompaniesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
 
 
-#pragma mark -
-#pragma mark View lifecycle
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -38,6 +37,8 @@
 		abort();
 	}
 }
+
+
 
 
 #pragma mark -
@@ -116,7 +117,7 @@
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Company" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -159,3 +160,4 @@
 
 
 @end
+
