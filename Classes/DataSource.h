@@ -13,13 +13,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Company.h"
+#import "Category.h"
 
 @interface DataSource : NSObject
 {
-	NSArray *dataPages;
+	NSDictionary *data;
 }
+@property(nonatomic,retain)NSDictionary *data;
+@property(nonatomic, readonly)Company* company;
+@property(nonatomic, readonly)Category* category;
+
+
+- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
 
 - (NSInteger)numDataPages;
-- (NSDictionary *)dataForPage:(NSInteger)pageIndex;
 
 @end

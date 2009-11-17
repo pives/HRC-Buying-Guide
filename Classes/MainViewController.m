@@ -11,7 +11,9 @@
 #import "CompaniesTableViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "Category.h"
+#import "Company.h"
 #import "FilteredCompaniesTableViewController.h"
+#import "CompanyViewController.h"
 
 @implementation MainViewController
 
@@ -26,6 +28,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self 
                                                     name:DidSelectCategoryNotification 
                                                   object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:DidSelectCompanyNotification 
+                                                  object:nil];
+    
     
 }
 
@@ -57,6 +64,12 @@
                                              selector:@selector(categorySelectedWithNotification:) 
                                                  name:DidSelectCategoryNotification 
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(companySelectedWithNotification:) 
+                                                 name:DidSelectCompanyNotification 
+                                               object:nil];
+    
     
 }
 
@@ -122,6 +135,22 @@
     [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Categories" style:UIBarButtonItemStyleBordered target:nil action:nil]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
+    
+}
+
+- (void)companySelectedWithNotification:(NSNotification*)note{
+    
+    // Navigation logic may go here -- for example, create and push another view controller.
+    Company* selectedCompany = (Company*)[note object];
+    
+    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+                                                                                        category:nil]; 
+    
+    detailViewController.view.frame = self.view.bounds;
+    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    
     
 }
 

@@ -10,6 +10,8 @@
 #import "Company.h"
 #import "Company+Extensions.h"
 
+NSString *const DidSelectCompanyNotification = @"CompanySelected";
+
 @implementation CompaniesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
@@ -70,6 +72,14 @@
     return [sectionInfo numberOfObjects];
 }
 
+//TODO: must section data by nameFirstLetter for this to work (currently there are 402 sections)
+/*
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    return [[[fetchedResultsController sections] objectAtIndex:section] name];
+}
+ 
+ */
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,6 +93,9 @@
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
 	
@@ -91,6 +104,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
     	 
 }
 

@@ -14,52 +14,54 @@
 
 #import "DataSource.h"
 
-@implementation DataSource
+NSString* const kCompnayKey = @"CompanyKey";
+NSString* const kCategoryKey = @"CategoryKey";
+NSString* const kNumberOfCategoriesKey = @"NumOfCats";
 
-//
-// init
-//
-// Init method for the object.
-//
-- (id)init
+
+@implementation DataSource
+@synthesize data;
+
+- (void) dealloc
 {
-	self = [super init];
+    self.data = nil;
+    [super dealloc];
+}
+
+- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
+    
+    self = [super init];
 	if (self != nil)
 	{
-		dataPages = [[NSArray alloc] initWithObjects:
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"Page 1", @"pageName",
-				@"Some text for page 1", @"pageText",
-				nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"Page 2", @"pageName",
-				@"Some text for page 2", @"pageText",
-				nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"Page 3", @"pageName",
-				@"Some text for page 3", @"pageText",
-				nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"Page 4", @"pageName",
-				@"Some text for page 4", @"pageText",
-				nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"Page 5", @"pageName",
-				@"Some text for page 5", @"pageText",
-				nil],
-			nil];
-	}
+        
+        NSMutableDictionary* info = [NSMutableDictionary dictionary];
+        [info setObject:aCompany forKey:kCompnayKey];
+        if(aCategory!=nil)
+            [info setObject:aCategory forKey:kCategoryKey];
+
+        [info setObject:[NSNumber numberWithInt:[aCompany.categories count]] forKey:kNumberOfCategoriesKey];
+        
+        self.data = info;
+
+    }
 	return self;
 }
 
 - (NSInteger)numDataPages
 {
-	return [dataPages count];
+	return [(NSNumber*)[data objectForKey:kNumberOfCategoriesKey] intValue]+1;
 }
 
-- (NSDictionary *)dataForPage:(NSInteger)pageIndex
-{
-	return [dataPages objectAtIndex:pageIndex];
+- (Company*)company{
+    
+    return [data objectForKey:kCompnayKey];
 }
+
+- (Category*)category{
+    
+    return [data objectForKey:kCategoryKey];
+    
+}
+
 
 @end

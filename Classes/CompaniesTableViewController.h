@@ -16,3 +16,4 @@
 
 @end
 
+extern NSString *const DidSelectCompanyNotification;

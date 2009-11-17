@@ -128,6 +128,9 @@
 		 * The schema for the persistent store is incompatible with current managed object model
 		 Check the error message to determine what the actual problem was.
 		 */
+        
+        //TODO: replace db with stored db
+        
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
     }    

@@ -14,22 +14,33 @@
 
 #import <UIKit/UIKit.h>
 @class DataSource;
+@class Company;
+@class Category;
 
-@interface PageViewController : UIViewController
+@interface PageViewController : UITableViewController
 {
 	NSInteger pageIndex;
 	BOOL textViewNeedsUpdate;
-	IBOutlet UILabel *label;
-	IBOutlet UITextView *textView;
-    
+	    
     DataSource* data;
+    
+    Company* company;
+    Category* category;
+    
+    NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
+    
 }
 
 @property NSInteger pageIndex;
 @property(nonatomic,retain)DataSource *data;
+@property(nonatomic,retain)Company *company;
+@property(nonatomic,retain)Category *category;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+
 
 - (id)initWithDataSource:(DataSource*)someData;
-- (void)updateTextViews:(BOOL)force;
 
 @end
-

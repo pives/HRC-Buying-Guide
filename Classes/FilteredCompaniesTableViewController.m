@@ -111,7 +111,8 @@
     
     Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
     
-    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany]; 
+    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+                                                                                        category:(Category*)self.filterObject]; 
                                                                                                                       
     detailViewController.view.frame = self.view.bounds;
     //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
@@ -140,6 +141,7 @@
 	
 	// Set the batch size to a suitable number.
 	//[fetchRequest setFetchBatchSize:20];
+    //TODO: reenable batchsize?
 	
 	// Edit the sort key as appropriate.
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];

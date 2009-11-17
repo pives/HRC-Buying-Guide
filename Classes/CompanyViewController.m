@@ -10,6 +10,7 @@
 #import "Company.h"
 #import "Company+Extensions.h"
 #import "DataSource.h"
+#import "PagingScrollViewController.h"
 
 @implementation CompanyViewController
 
@@ -17,15 +18,14 @@
 @synthesize nameLabel;
 @synthesize scoreLabel;
 @synthesize data;
+@synthesize brands;
 
 
-- (id)initWithCompany:(Company*)aCompany{
+- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
     if(self = [super init]){
-            
-        //configure data;
-        
-        self.data = [[[DataSource alloc] init] autorelease];
+                    
+        self.data = [[[DataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
         
         NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
         
@@ -46,6 +46,14 @@
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@",@"load!");
+
+}
+
+- (void)awakeFromNib{
+    
+    
+    NSLog(@"%@",@"awake!");
     
 }
 
@@ -92,6 +100,7 @@
 
 
 - (void)dealloc {
+    self.brands = nil;
     self.data = nil;
     self.nameLabel = nil;
     self.scoreLabel = nil;

@@ -27,4 +27,15 @@
     
 }
 
+- (NSArray*)categoriesSortedAlphabetically{
+    
+    NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    
+    NSArray* cats = [[self.categories allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [sort release];
+    
+    return cats;
+}
+
 @end

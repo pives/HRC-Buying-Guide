@@ -361,7 +361,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
+									<integer>15</integer>
 									<integer>12</integer>
 									<integer>0</integer>
 								</array>
@@ -401,7 +401,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CompanyViewController.m</string>
+										<string>CompanyViewController.h</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -409,11 +409,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CompanyViewController.m</string>
+												<string>CompanyViewController.h</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4FA19B510B3155D0031303E</string>
+												<string>C4FA1BDE10B348CF0031303E</string>
 												<key>history</key>
 												<array>
 													<string>C4C0321710B1EF00000D46AA</string>
@@ -431,31 +431,31 @@
 													<string>C4340B9910B2486C0049791D</string>
 													<string>C4340B9A10B2486C0049791D</string>
 													<string>C4340B9B10B2486C0049791D</string>
-													<string>C4340C1510B2609A0049791D</string>
 													<string>C40A812010B2625000317CDA</string>
-													<string>C4C304D710B2733E00D4D282</string>
 													<string>C4C3051910B2752800D4D282</string>
 													<string>C4FA188310B306050031303E</string>
 													<string>C4FA188510B306050031303E</string>
 													<string>C4FA188710B306050031303E</string>
 													<string>C4FA188810B306050031303E</string>
 													<string>C4FA18D510B30A1F0031303E</string>
-													<string>C4FA18D610B30A1F0031303E</string>
 													<string>C4FA18D710B30A1F0031303E</string>
 													<string>C4FA18D810B30A1F0031303E</string>
 													<string>C4FA18D910B30A1F0031303E</string>
-													<string>C4FA18EA10B30AFD0031303E</string>
 													<string>C4FA18ED10B30AFD0031303E</string>
-													<string>C4FA193910B30C340031303E</string>
-													<string>C4FA194310B30F770031303E</string>
-													<string>C4FA196110B3128D0031303E</string>
-													<string>C4FA196210B3128D0031303E</string>
-													<string>C4FA196310B3128D0031303E</string>
-													<string>C4FA197210B313FF0031303E</string>
-													<string>C4FA197310B313FF0031303E</string>
-													<string>C4FA19A910B315310031303E</string>
 													<string>C4FA19AA10B315310031303E</string>
-													<string>C4FA19AB10B315310031303E</string>
+													<string>C4FA1A5E10B336EE0031303E</string>
+													<string>C4FA1A6210B336EE0031303E</string>
+													<string>C4FA1AAF10B341450031303E</string>
+													<string>C4FA1AB110B341450031303E</string>
+													<string>C4FA1B0510B342E90031303E</string>
+													<string>C4FA1B0610B342E90031303E</string>
+													<string>C4FA1B0810B342E90031303E</string>
+													<string>C4FA1B3F10B3447C0031303E</string>
+													<string>C4FA1B5010B3456E0031303E</string>
+													<string>C4FA1BBD10B347BE0031303E</string>
+													<string>C4FA1BCA10B348170031303E</string>
+													<string>C4FA1BD910B348780031303E</string>
+													<string>C4FA1BD010B348420031303E</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -469,149 +469,85 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {802, 770}}</string>
+										<string>{{0, 0}, {822, 770}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXNavigatorGroup</string>
 									<key>Proportion</key>
-									<string>802pt</string>
+									<string>822pt</string>
 								</dict>
 								<dict>
-									<key>Dock</key>
-									<array>
+									<key>ContentConfiguration</key>
+									<dict>
+										<key>PBXProjectModuleGUID</key>
+										<string>C40442E910B071E900BCCFEC</string>
+										<key>PBXProjectModuleLabel</key>
+										<string>PagingScrollViewController.m</string>
+										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
-											<key>ContentConfiguration</key>
+											<key>Split0</key>
 											<dict>
 												<key>PBXProjectModuleGUID</key>
-												<string>C40442E910B071E900BCCFEC</string>
+												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>Company.h</string>
-												<key>PBXSplitModuleInNavigatorKey</key>
-												<dict>
-													<key>Split0</key>
-													<dict>
-														<key>PBXProjectModuleGUID</key>
-														<string>C40442EA10B071E900BCCFEC</string>
-														<key>PBXProjectModuleLabel</key>
-														<string>Company.h</string>
-														<key>_historyCapacity</key>
-														<integer>0</integer>
-														<key>bookmark</key>
-														<string>C4FA19B610B3155D0031303E</string>
-														<key>history</key>
-														<array>
-															<string>C4C031E810B1EBC8000D46AA</string>
-															<string>C4C031EA10B1EBC8000D46AA</string>
-															<string>C4C0321D10B1EF00000D46AA</string>
-															<string>C4AFF6D710B1F35D00801655</string>
-															<string>C4AFF6F010B1FBFA00801655</string>
-															<string>C4AFF9D210B23A9200801655</string>
-															<string>C4340AEB10B23DB60049791D</string>
-															<string>C4340AEC10B23DB60049791D</string>
-															<string>C4340AEE10B23DB60049791D</string>
-															<string>C4340B4E10B241890049791D</string>
-															<string>C4340C1A10B2609A0049791D</string>
-															<string>C4340C1C10B2609A0049791D</string>
-															<string>C4340C1D10B2609A0049791D</string>
-															<string>C40A810210B2617700317CDA</string>
-															<string>C4AAD3AD10B26CF100D393AE</string>
-															<string>C4C304A210B270B300D4D282</string>
-															<string>C4C304FA10B2740800D4D282</string>
-															<string>C4C3050A10B274BE00D4D282</string>
-															<string>C4C3050B10B274BE00D4D282</string>
-															<string>C4FA187F10B305AF0031303E</string>
-															<string>C4FA188010B305AF0031303E</string>
-															<string>C4FA188C10B306050031303E</string>
-															<string>C4FA188D10B306050031303E</string>
-														</array>
-													</dict>
-													<key>SplitCount</key>
-													<string>1</string>
-												</dict>
-												<key>StatusBarVisibility</key>
-												<true/>
-												<key>XCSharingToken</key>
-												<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
+												<string>PagingScrollViewController.m</string>
+												<key>_historyCapacity</key>
+												<integer>0</integer>
+												<key>bookmark</key>
+												<string>C4FA1BDF10B348CF0031303E</string>
+												<key>history</key>
+												<array>
+													<string>C4C031E810B1EBC8000D46AA</string>
+													<string>C4C031EA10B1EBC8000D46AA</string>
+													<string>C4C0321D10B1EF00000D46AA</string>
+													<string>C4AFF6D710B1F35D00801655</string>
+													<string>C4AFF6F010B1FBFA00801655</string>
+													<string>C4AFF9D210B23A9200801655</string>
+													<string>C4340AEB10B23DB60049791D</string>
+													<string>C4340AEC10B23DB60049791D</string>
+													<string>C4340AEE10B23DB60049791D</string>
+													<string>C4340B4E10B241890049791D</string>
+													<string>C4340C1A10B2609A0049791D</string>
+													<string>C4340C1C10B2609A0049791D</string>
+													<string>C4340C1D10B2609A0049791D</string>
+													<string>C40A810210B2617700317CDA</string>
+													<string>C4C3050A10B274BE00D4D282</string>
+													<string>C4FA187F10B305AF0031303E</string>
+													<string>C4FA1A7410B336EE0031303E</string>
+													<string>C4FA1A7610B336EE0031303E</string>
+													<string>C4FA1A7A10B336EE0031303E</string>
+													<string>C4FA1A7B10B336EE0031303E</string>
+													<string>C4FA1A8D10B339FE0031303E</string>
+													<string>C4FA1A8E10B339FE0031303E</string>
+													<string>C4FA1A9010B339FE0031303E</string>
+													<string>C4FA1AB610B341450031303E</string>
+													<string>C4FA1AB710B341450031303E</string>
+													<string>C4FA1AB810B341450031303E</string>
+													<string>C4FA1AB910B341450031303E</string>
+													<string>C4FA1ABA10B341450031303E</string>
+													<string>C4FA1ABB10B341450031303E</string>
+													<string>C4FA1B5310B3456E0031303E</string>
+													<string>C4FA1B5C10B346210031303E</string>
+													<string>C4FA1B5D10B346210031303E</string>
+												</array>
 											</dict>
-											<key>GeometryConfiguration</key>
-											<dict>
-												<key>Frame</key>
-												<string>{{0, 0}, {906, 383}}</string>
-											</dict>
-											<key>Module</key>
-											<string>PBXNavigatorGroup</string>
-											<key>Proportion</key>
-											<string>383pt</string>
+											<key>SplitCount</key>
+											<string>1</string>
 										</dict>
-										<dict>
-											<key>ContentConfiguration</key>
-											<dict>
-												<key>PBXProjectModuleGUID</key>
-												<string>C40442E910B071E900BCCFEC</string>
-												<key>PBXProjectModuleLabel</key>
-												<string>PageViewController.m</string>
-												<key>PBXSplitModuleInNavigatorKey</key>
-												<dict>
-													<key>Split0</key>
-													<dict>
-														<key>PBXProjectModuleGUID</key>
-														<string>C40442EA10B071E900BCCFEC</string>
-														<key>PBXProjectModuleLabel</key>
-														<string>PageViewController.m</string>
-														<key>_historyCapacity</key>
-														<integer>0</integer>
-														<key>bookmark</key>
-														<string>C4FA19B710B3155D0031303E</string>
-														<key>history</key>
-														<array>
-															<string>C4C031E810B1EBC8000D46AA</string>
-															<string>C4C031EA10B1EBC8000D46AA</string>
-															<string>C4C0321D10B1EF00000D46AA</string>
-															<string>C4AFF6D710B1F35D00801655</string>
-															<string>C4AFF6F010B1FBFA00801655</string>
-															<string>C4AFF9D210B23A9200801655</string>
-															<string>C4340AEB10B23DB60049791D</string>
-															<string>C4340AEC10B23DB60049791D</string>
-															<string>C4340AEE10B23DB60049791D</string>
-															<string>C4340B4E10B241890049791D</string>
-															<string>C4340C1A10B2609A0049791D</string>
-															<string>C4340C1B10B2609A0049791D</string>
-															<string>C4340C1C10B2609A0049791D</string>
-															<string>C4340C1D10B2609A0049791D</string>
-															<string>C40A810210B2617700317CDA</string>
-															<string>C4AAD3AD10B26CF100D393AE</string>
-															<string>C4C3050A10B274BE00D4D282</string>
-															<string>C4C3050B10B274BE00D4D282</string>
-															<string>C4FA187F10B305AF0031303E</string>
-															<string>C4FA188010B305AF0031303E</string>
-															<string>C4FA188F10B306050031303E</string>
-															<string>C4FA18DE10B30A1F0031303E</string>
-															<string>C4FA197710B313FF0031303E</string>
-															<string>C4FA197810B313FF0031303E</string>
-															<string>C4FA197910B313FF0031303E</string>
-														</array>
-													</dict>
-													<key>SplitCount</key>
-													<string>1</string>
-												</dict>
-												<key>StatusBarVisibility</key>
-												<true/>
-												<key>XCSharingToken</key>
-												<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
-											</dict>
-											<key>GeometryConfiguration</key>
-											<dict>
-												<key>Frame</key>
-												<string>{{0, 388}, {906, 383}}</string>
-											</dict>
-											<key>Module</key>
-											<string>PBXNavigatorGroup</string>
-											<key>Proportion</key>
-											<string>383pt</string>
-										</dict>
-									</array>
+										<key>StatusBarVisibility</key>
+										<true/>
+										<key>XCSharingToken</key>
+										<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
+									</dict>
+									<key>GeometryConfiguration</key>
+									<dict>
+										<key>Frame</key>
+										<string>{{827, 0}, {886, 770}}</string>
+									</dict>
+									<key>Module</key>
+									<string>PBXNavigatorGroup</string>
 									<key>Proportion</key>
-									<string>906pt</string>
+									<string>886pt</string>
 								</dict>
 							</array>
 							<key>Proportion</key>
@@ -649,7 +585,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1713, 200}}</string>
+										<string>{{10, 27}, {1713, 205}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -708,8 +644,6 @@
 				<string>XCModuleDock</string>
 				<string>XCModuleDock</string>
 				<string>PBXNavigatorGroup</string>
-				<string>XCModuleDock</string>
-				<string>PBXNavigatorGroup</string>
 				<string>PBXNavigatorGroup</string>
 				<string>XCDockableTabModule</string>
 				<string>XCDetailModule</string>
@@ -723,8 +657,6 @@
 				<string>1CA23ED40692098700951B8B</string>
 				<string>C4FA186710B2F42E0031303E</string>
 				<string>C4FA186810B2F42E0031303E</string>
-				<string>C40442E910B071E900BCCFEC</string>
-				<string>C4FA189210B306050031303E</string>
 				<string>C40442E910B071E900BCCFEC</string>
 				<string>C40442E910B071E900BCCFEC</string>
 				<string>C4FA186910B2F42E0031303E</string>
@@ -908,7 +840,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>280171869.29754001</real>
+	<real>280185039.45527297</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -925,7 +857,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C4FA19B810B3155D0031303E</string>
 		<string>C4FA198C10B314770031303E</string>
 		<string>C4FA198D10B314770031303E</string>
 		<string>/Users/coreyfloyd/Development/ProductionProjects/BuyingGuide/BuyingGuide.xcodeproj</string>

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class Company;
 @class DataSource;
+@class Category;
+@class PagingScrollViewController;
 
 @interface CompanyViewController : UIViewController {
     
@@ -18,14 +20,19 @@
     UILabel* scoreLabel;
     
     DataSource* data;
+    
+    PagingScrollViewController* brands;
 
 }
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,assign)IBOutlet UILabel *nameLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
 @property(nonatomic,retain)IBOutlet DataSource *data;
+@property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
 
 
-- (id)initWithCompany:(Company*)aCompany;
+
+- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
+
 
 @end

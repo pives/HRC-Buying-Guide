@@ -13,6 +13,7 @@
 @interface Company(Extensions)
 
 @property (nonatomic, readonly)NSString* ratingFormatted;
+@property (nonatomic, readonly)NSArray* categoriesSortedAlphabetically;
 
 
 @end

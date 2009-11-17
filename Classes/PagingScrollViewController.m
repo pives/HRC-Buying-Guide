@@ -45,8 +45,10 @@
 
 - (void)viewDidLoad
 {
-	currentPage = [[PageViewController alloc] initWithDataSource:self.data];
-	nextPage = [[PageViewController alloc] initWithDataSource:self.data];
+	currentPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
+	nextPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
+    currentPage.view.frame = self.view.bounds;
+    nextPage.view.frame = self.view.bounds;
 	[scrollView addSubview:currentPage.view];
 	[scrollView addSubview:nextPage.view];
 
@@ -62,7 +64,10 @@
 			scrollView.frame.size.height);
 	scrollView.contentOffset = CGPointMake(0, 0);
 
-	pageControl.numberOfPages = [self.data numDataPages];
+	pageControl.numberOfPages = ([self.data numDataPages]); 
+    
+    //TODO: calculate page number based on category
+    
 	pageControl.currentPage = 0;
 	
 	[self applyNewIndex:0 pageController:currentPage];
@@ -108,8 +113,8 @@
 		}
 	}
 	
-	[currentPage updateTextViews:NO];
-	[nextPage updateTextViews:NO];
+    //TODO: may need to send update message to tableview
+
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)newScrollView
@@ -125,7 +130,7 @@
 		nextPage = swapController;
 	}
 
-	[currentPage updateTextViews:YES];
+    //TODO: may need to send update message to tableview
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)newScrollView
