@@ -7,6 +7,8 @@
 //
 
 #import "CompaniesTableViewController.h"
+#import "Company.h"
+#import "Company+Extensions.h"
 
 @implementation CompaniesTableViewController
 
@@ -76,12 +78,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
+    cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
 	
     return cell;
 }

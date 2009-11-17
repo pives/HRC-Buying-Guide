@@ -29,6 +29,10 @@
 		C4C031DB10B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
+		C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
+		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
+		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
+		C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,13 @@
 		C4C031D710B1EB9B000D46AA /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
+		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
+		C4FA187610B2F4CE0031303E /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
+		C4FA187710B2F4CE0031303E /* CompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
+		C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyScoreCardViewController.h; sourceTree = "<group>"; };
+		C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyScoreCardViewController.m; sourceTree = "<group>"; };
+		C4FA18CA10B308FB0031303E /* Company+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Company+Extensions.h"; sourceTree = "<group>"; };
+		C4FA18CB10B308FB0031303E /* Company+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Company+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				C4AFF95710B2344200801655 /* Main VIew */,
-				C4AFF95510B233F000801655 /* Categories View */,
-				C4340AE510B23D620049791D /* Companies View */,
-				C4C02C4B10B0F413000D46AA /* Core Data */,
+				C4AFF95510B233F000801655 /* Categories List View */,
+				C4340AE510B23D620049791D /* Companies List View */,
+				C4FA187A10B2F4D30031303E /* Company */,
 				C4AFF95610B2342800801655 /* Application Level */,
+				C4C02C4B10B0F413000D46AA /* Core Data */,
 				C4C031DE10B1EBAA000D46AA /* Categories */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -151,7 +163,7 @@
 			name = "Cocoa Touch";
 			sourceTree = "<group>";
 		};
-		C4340AE510B23D620049791D /* Companies View */ = {
+		C4340AE510B23D620049791D /* Companies List View */ = {
 			isa = PBXGroup;
 			children = (
 				C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */,
@@ -159,17 +171,17 @@
 				C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */,
 				C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */,
 			);
-			name = "Companies View";
+			name = "Companies List View";
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		C4AFF95510B233F000801655 /* Categories View */ = {
+		C4AFF95510B233F000801655 /* Categories List View */ = {
 			isa = PBXGroup;
 			children = (
 				28C286DF0D94DF7D0034E888 /* CategoriesTableViewController.h */,
 				28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */,
 			);
-			name = "Categories View";
+			name = "Categories List View";
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -209,6 +221,8 @@
 				C4C02C4710B0F401000D46AA /* Category.m */,
 				C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */,
 				C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */,
+				C4FA18CA10B308FB0031303E /* Company+Extensions.h */,
+				C4FA18CB10B308FB0031303E /* Company+Extensions.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -226,6 +240,19 @@
 				C4C031D710B1EB9B000D46AA /* NSString+extensions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		C4FA187A10B2F4D30031303E /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				C4FA187510B2F4CE0031303E /* CompanyViewController.h */,
+				C4FA187610B2F4CE0031303E /* CompanyViewController.m */,
+				C4FA187710B2F4CE0031303E /* CompanyViewController.xib */,
+				C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */,
+				C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */,
+			);
+			name = Company;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +307,7 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				C4C02DD210B1A83F000D46AA /* bgdata.csv in Resources */,
 				C4340C1210B2608B0049791D /* storedata.sqlite in Resources */,
+				C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +333,9 @@
 				C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */,
 				C4340BD810B25DC50049791D /* Company.m in Sources */,
 				C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */,
+				C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */,
+				C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */,
+				C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

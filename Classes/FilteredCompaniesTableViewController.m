@@ -7,6 +7,9 @@
 //
 
 #import "FilteredCompaniesTableViewController.h"
+#import "CompanyViewController.h"
+#import "Company.h"
+#import "Company+Extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -14,8 +17,6 @@
 @synthesize fetchedResultsController, managedObjectContext;
 @synthesize filterKey;
 @synthesize filterObject;
-
-
 
 
 #pragma mark -
@@ -94,34 +95,30 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
+    cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
 	
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here -- for example, create and push another view controller.
-	/*
-	 DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"Nib" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    
+    Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
+    
+    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany]; 
+                                                                                                                      
+    detailViewController.view.frame = self.view.bounds;
+    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
 }
 
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // The table view should not be re-orderable.
-    return NO;
-}
 
 #pragma mark -
 #pragma mark Fetched results controller
