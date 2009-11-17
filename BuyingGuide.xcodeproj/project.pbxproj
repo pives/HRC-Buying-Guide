@@ -33,6 +33,9 @@
 		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
 		C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
+		C4FA193510B30C180031303E /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* DataSource.m */; };
+		C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
+		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,12 @@
 		C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyScoreCardViewController.m; sourceTree = "<group>"; };
 		C4FA18CA10B308FB0031303E /* Company+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Company+Extensions.h"; sourceTree = "<group>"; };
 		C4FA18CB10B308FB0031303E /* Company+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Company+Extensions.m"; sourceTree = "<group>"; };
+		C4FA192E10B30C180031303E /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		C4FA192F10B30C180031303E /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		C4FA193010B30C180031303E /* PagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingScrollViewController.h; sourceTree = "<group>"; };
+		C4FA193110B30C180031303E /* PagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingScrollViewController.m; sourceTree = "<group>"; };
+		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,9 +259,23 @@
 				C4FA187710B2F4CE0031303E /* CompanyViewController.xib */,
 				C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */,
 				C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */,
+				C4FA193810B30C200031303E /* Brand Scroll View */,
 			);
 			name = Company;
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C4FA193810B30C200031303E /* Brand Scroll View */ = {
+			isa = PBXGroup;
+			children = (
+				C4FA192E10B30C180031303E /* DataSource.h */,
+				C4FA192F10B30C180031303E /* DataSource.m */,
+				C4FA193010B30C180031303E /* PagingScrollViewController.h */,
+				C4FA193110B30C180031303E /* PagingScrollViewController.m */,
+				C4FA193210B30C180031303E /* PageViewController.h */,
+				C4FA193310B30C180031303E /* PageViewController.m */,
+			);
+			name = "Brand Scroll View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +359,9 @@
 				C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */,
 				C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */,
 				C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */,
+				C4FA193510B30C180031303E /* DataSource.m in Sources */,
+				C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */,
+				C4FA193710B30C180031303E /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

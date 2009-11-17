@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class Company;
+@class DataSource;
 
 @interface CompanyViewController : UIViewController {
     
@@ -15,11 +16,14 @@
     
     UILabel* nameLabel;
     UILabel* scoreLabel;
+    
+    DataSource* data;
 
 }
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,assign)IBOutlet UILabel *nameLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
+@property(nonatomic,retain)IBOutlet DataSource *data;
 
 
 - (id)initWithCompany:(Company*)aCompany;

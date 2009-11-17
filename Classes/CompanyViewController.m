@@ -9,17 +9,29 @@
 #import "CompanyViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
+#import "DataSource.h"
 
 @implementation CompanyViewController
 
 @synthesize company;
 @synthesize nameLabel;
 @synthesize scoreLabel;
+@synthesize data;
 
 
 - (id)initWithCompany:(Company*)aCompany{
     
     if(self = [super init]){
+            
+        //configure data;
+        
+        self.data = [[[DataSource alloc] init] autorelease];
+        
+        NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
+        
+        NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
+        
+        [[NSBundle mainBundle] loadNibNamed:@"CompanyViewController" owner:self options:options];
         
         self.company = aCompany;
         
@@ -31,14 +43,20 @@
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+// not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.scoreLabel.text = company.ratingFormatted;
-    self.nameLabel.text = company.name;
-    
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.scoreLabel.text = company.ratingFormatted;
+    self.nameLabel.text = company.name;
+
+    
+}
 
 
 /*
@@ -74,6 +92,7 @@
 
 
 - (void)dealloc {
+    self.data = nil;
     self.nameLabel = nil;
     self.scoreLabel = nil;
     self.company = nil;
