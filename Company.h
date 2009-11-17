@@ -2,7 +2,7 @@
 //  Company.h
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/15/09.
+//  Created by Corey Floyd on 11/16/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
@@ -15,11 +15,12 @@
 {
 }
 
-@property (nonatomic, retain) NSString * officialName;
 @property (nonatomic, retain) NSNumber * rating;
+@property (nonatomic, retain) NSString * officialName;
 @property (nonatomic, retain) NSNumber * partner;
-@property (nonatomic, retain) NSNumber * ID;
+@property (nonatomic, retain) NSString * namefirstLetter;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * ID;
 @property (nonatomic, retain) NSSet* brands;
 @property (nonatomic, retain) NSSet* categories;
 

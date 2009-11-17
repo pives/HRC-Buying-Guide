@@ -7,7 +7,7 @@
 //
 
 
-@interface CompaniesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>{
+@interface CompaniesTableViewController : UITableViewController {
     NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
 }

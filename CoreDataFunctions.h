@@ -20,3 +20,6 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context);
 Company* companyWithName(NSString* name, NSManagedObjectContext* context);
 Company* companyWithID(NSNumber* ID, NSManagedObjectContext* context);
 
+
+
+//TODO: refactor to use core data accessors for adding/deleting/setting properties (also in importer app)

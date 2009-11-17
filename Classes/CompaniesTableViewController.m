@@ -101,6 +101,33 @@
     return NO;
 }
 
+#pragma mark -
+#pragma mark sectionIndexTitlesForTableView
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
+    if(fetchedResultsController==nil)
+        return nil;
+        
+    NSMutableArray* titles = [[fetchedResultsController sectionIndexTitles] mutableCopy];
+    [titles replaceObjectAtIndex:0 withObject:@"#"];    
+    
+    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
+    
+    return titles;
+}
+
+- (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if(fetchedResultsController==nil)
+        return 0;
+    
+    if([title isEqualToString:@"#"])
+        title = @"3";
+        
+    // tell table which section corresponds to section title/index (e.g. "B",1))
+    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+}
+
+
 
 #pragma mark -
 #pragma mark Fetched results controller
@@ -121,23 +148,27 @@
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
-	[fetchRequest setFetchBatchSize:20];
+	//[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortDescriptorIndex = [[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
 	
 	// Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
-    aFetchedResultsController.delegate = self;
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                                managedObjectContext:managedObjectContext 
+                                                                                                  sectionNameKeyPath:@"name" 
+                                                                                                           cacheName:@"CompaniesList"];
 	self.fetchedResultsController = aFetchedResultsController;
 	
 	[aFetchedResultsController release];
 	[fetchRequest release];
 	[sortDescriptor release];
+    [sortDescriptorIndex release];
 	[sortDescriptors release];
 	
 	return fetchedResultsController;
