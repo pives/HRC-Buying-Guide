@@ -7,7 +7,7 @@
 //
 
 #import "BuyingGuideAppDelegate.h"
-#import "RootViewController.h"
+#import "MainViewController.h"
 
 
 @implementation BuyingGuideAppDelegate
@@ -25,8 +25,8 @@
 
     [self loadData];
     
-	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
+	MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+	rootViewController.context = self.managedObjectContext;
 	
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];

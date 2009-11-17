@@ -6,7 +6,7 @@
 //  Copyright Flying Jalapeño Software 2009. All rights reserved.
 //
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface CategoriesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
 }

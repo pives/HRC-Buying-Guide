@@ -6,10 +6,10 @@
 //  Copyright Flying Jalapeño Software 2009. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "CategoriesTableViewController.h"
 #import "Category.h"
 
-@implementation RootViewController
+@implementation CategoriesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
 
@@ -21,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    }
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*
@@ -33,11 +39,6 @@
 	}
 }
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
