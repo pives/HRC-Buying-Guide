@@ -313,8 +313,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -358,15 +356,14 @@
 								<string>C4FA193810B30C200031303E</string>
 								<string>C4FA1C9C10B38F2A0031303E</string>
 								<string>C4AFF95610B2342800801655</string>
-								<string>C4C031DE10B1EBAA000D46AA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
-									<integer>36</integer>
+									<integer>32</integer>
+									<integer>29</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -402,12 +399,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>UIView-Extensions.h</string>
+										<string>FilteredCompaniesTableViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -415,11 +414,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>UIView-Extensions.h</string>
+												<string>FilteredCompaniesTableViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4FA201410B4BA670031303E</string>
+												<string>C4FA206510B4BD710031303E</string>
 												<key>history</key>
 												<array>
 													<string>C4C0321910B1EF00000D46AA</string>
@@ -447,10 +446,7 @@
 													<string>C4FA1C7B10B38BD20031303E</string>
 													<string>C4FA1C8010B38BD20031303E</string>
 													<string>C4FA1CA510B38F650031303E</string>
-													<string>C4FA1CB410B38FAE0031303E</string>
-													<string>C4FA1CB510B38FAE0031303E</string>
 													<string>C4FA1CBC10B390100031303E</string>
-													<string>C4FA1D0310B456830031303E</string>
 													<string>C4FA1D9710B45F440031303E</string>
 													<string>C4FA1D9810B45F440031303E</string>
 													<string>C4FA1D9910B45F440031303E</string>
@@ -467,7 +463,10 @@
 													<string>C4FA201010B4BA670031303E</string>
 													<string>C4FA201110B4BA670031303E</string>
 													<string>C4FA201210B4BA670031303E</string>
-													<string>C4FA201310B4BA670031303E</string>
+													<string>C4FA201C10B4BBBA0031303E</string>
+													<string>C4FA201D10B4BBBA0031303E</string>
+													<string>C4FA206310B4BD710031303E</string>
+													<string>C4FA206410B4BD710031303E</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -491,159 +490,77 @@
 									<string>791pt</string>
 								</dict>
 								<dict>
-									<key>Dock</key>
-									<array>
+									<key>ContentConfiguration</key>
+									<dict>
+										<key>PBXProjectModuleGUID</key>
+										<string>C40442E910B071E900BCCFEC</string>
+										<key>PBXProjectModuleLabel</key>
+										<string>MainViewController.m</string>
+										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
-											<key>ContentConfiguration</key>
+											<key>Split0</key>
 											<dict>
 												<key>PBXProjectModuleGUID</key>
-												<string>C40442E910B071E900BCCFEC</string>
+												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CompanyViewController.m</string>
-												<key>PBXSplitModuleInNavigatorKey</key>
-												<dict>
-													<key>Split0</key>
-													<dict>
-														<key>PBXProjectModuleGUID</key>
-														<string>C40442EA10B071E900BCCFEC</string>
-														<key>PBXProjectModuleLabel</key>
-														<string>CompanyViewController.m</string>
-														<key>_historyCapacity</key>
-														<integer>0</integer>
-														<key>bookmark</key>
-														<string>C4FA201510B4BA670031303E</string>
-														<key>history</key>
-														<array>
-															<string>C4C031E810B1EBC8000D46AA</string>
-															<string>C4C031EA10B1EBC8000D46AA</string>
-															<string>C4C0321D10B1EF00000D46AA</string>
-															<string>C4AFF6D710B1F35D00801655</string>
-															<string>C4AFF6F010B1FBFA00801655</string>
-															<string>C4340AEB10B23DB60049791D</string>
-															<string>C4340AEC10B23DB60049791D</string>
-															<string>C4340B4E10B241890049791D</string>
-															<string>C4340C1A10B2609A0049791D</string>
-															<string>C4340C1C10B2609A0049791D</string>
-															<string>C4340C1D10B2609A0049791D</string>
-															<string>C40A810210B2617700317CDA</string>
-															<string>C4FA1A7410B336EE0031303E</string>
-															<string>C4FA1A7A10B336EE0031303E</string>
-															<string>C4FA1AB910B341450031303E</string>
-															<string>C4FA1ABA10B341450031303E</string>
-															<string>C4FA1ABB10B341450031303E</string>
-															<string>C4FA1B5C10B346210031303E</string>
-															<string>C4FA1BFD10B375A60031303E</string>
-															<string>C4FA1BFF10B375A60031303E</string>
-															<string>C4FA1C2910B3786E0031303E</string>
-															<string>C4FA1C6910B380F70031303E</string>
-															<string>C4FA1CCA10B391C80031303E</string>
-															<string>C4FA1CCB10B391C80031303E</string>
-															<string>C4FA1D0610B456830031303E</string>
-															<string>C4FA1D0710B456830031303E</string>
-															<string>C4FA1D4C10B458DC0031303E</string>
-															<string>C4FA1DCB10B480F00031303E</string>
-															<string>C4FA1DDC10B481600031303E</string>
-															<string>C4FA1DE410B481AD0031303E</string>
-															<string>C4FA1DF410B481E20031303E</string>
-															<string>C4FA1F5B10B48E9D0031303E</string>
-														</array>
-													</dict>
-													<key>SplitCount</key>
-													<string>1</string>
-												</dict>
-												<key>StatusBarVisibility</key>
-												<true/>
-												<key>XCSharingToken</key>
-												<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
+												<string>MainViewController.m</string>
+												<key>_historyCapacity</key>
+												<integer>0</integer>
+												<key>bookmark</key>
+												<string>C4FA206610B4BD710031303E</string>
+												<key>history</key>
+												<array>
+													<string>C4C031E810B1EBC8000D46AA</string>
+													<string>C4C031EA10B1EBC8000D46AA</string>
+													<string>C4C0321D10B1EF00000D46AA</string>
+													<string>C4AFF6D710B1F35D00801655</string>
+													<string>C4AFF6F010B1FBFA00801655</string>
+													<string>C4340AEB10B23DB60049791D</string>
+													<string>C4340AEC10B23DB60049791D</string>
+													<string>C4340B4E10B241890049791D</string>
+													<string>C4340C1A10B2609A0049791D</string>
+													<string>C4340C1C10B2609A0049791D</string>
+													<string>C4340C1D10B2609A0049791D</string>
+													<string>C40A810210B2617700317CDA</string>
+													<string>C4FA1A7410B336EE0031303E</string>
+													<string>C4FA1A7A10B336EE0031303E</string>
+													<string>C4FA1AB910B341450031303E</string>
+													<string>C4FA1ABA10B341450031303E</string>
+													<string>C4FA1ABB10B341450031303E</string>
+													<string>C4FA1B5C10B346210031303E</string>
+													<string>C4FA1BFD10B375A60031303E</string>
+													<string>C4FA1BFF10B375A60031303E</string>
+													<string>C4FA1C2910B3786E0031303E</string>
+													<string>C4FA1C6910B380F70031303E</string>
+													<string>C4FA1CCA10B391C80031303E</string>
+													<string>C4FA1CCB10B391C80031303E</string>
+													<string>C4FA1D0710B456830031303E</string>
+													<string>C4FA1D4C10B458DC0031303E</string>
+													<string>C4FA1DCB10B480F00031303E</string>
+													<string>C4FA1DDC10B481600031303E</string>
+													<string>C4FA1DE410B481AD0031303E</string>
+													<string>C4FA1DF410B481E20031303E</string>
+													<string>C4FA202010B4BBBA0031303E</string>
+													<string>C4FA202110B4BBBA0031303E</string>
+												</array>
 											</dict>
-											<key>GeometryConfiguration</key>
-											<dict>
-												<key>Frame</key>
-												<string>{{0, 0}, {856, 371}}</string>
-												<key>RubberWindowFrame</key>
-												<string>0 130 1920 1048 0 0 1920 1178 </string>
-											</dict>
-											<key>Module</key>
-											<string>PBXNavigatorGroup</string>
-											<key>Proportion</key>
-											<string>371pt</string>
+											<key>SplitCount</key>
+											<string>1</string>
 										</dict>
-										<dict>
-											<key>ContentConfiguration</key>
-											<dict>
-												<key>PBXProjectModuleGUID</key>
-												<string>C40442E910B071E900BCCFEC</string>
-												<key>PBXProjectModuleLabel</key>
-												<string>CompanyViewController.m</string>
-												<key>PBXSplitModuleInNavigatorKey</key>
-												<dict>
-													<key>Split0</key>
-													<dict>
-														<key>PBXProjectModuleGUID</key>
-														<string>C40442EA10B071E900BCCFEC</string>
-														<key>PBXProjectModuleLabel</key>
-														<string>CompanyViewController.m</string>
-														<key>_historyCapacity</key>
-														<integer>0</integer>
-														<key>bookmark</key>
-														<string>C4FA201610B4BA670031303E</string>
-														<key>history</key>
-														<array>
-															<string>C4C031E810B1EBC8000D46AA</string>
-															<string>C4C031EA10B1EBC8000D46AA</string>
-															<string>C4C0321D10B1EF00000D46AA</string>
-															<string>C4AFF6D710B1F35D00801655</string>
-															<string>C4AFF6F010B1FBFA00801655</string>
-															<string>C4340AEB10B23DB60049791D</string>
-															<string>C4340AEC10B23DB60049791D</string>
-															<string>C4340B4E10B241890049791D</string>
-															<string>C4340C1A10B2609A0049791D</string>
-															<string>C4340C1C10B2609A0049791D</string>
-															<string>C4340C1D10B2609A0049791D</string>
-															<string>C40A810210B2617700317CDA</string>
-															<string>C4FA1A7410B336EE0031303E</string>
-															<string>C4FA1A7A10B336EE0031303E</string>
-															<string>C4FA1AB910B341450031303E</string>
-															<string>C4FA1ABA10B341450031303E</string>
-															<string>C4FA1ABB10B341450031303E</string>
-															<string>C4FA1B5C10B346210031303E</string>
-															<string>C4FA1BFD10B375A60031303E</string>
-															<string>C4FA1BFE10B375A60031303E</string>
-															<string>C4FA1BFF10B375A60031303E</string>
-															<string>C4FA1C2910B3786E0031303E</string>
-															<string>C4FA1CCA10B391C80031303E</string>
-															<string>C4FA1CCB10B391C80031303E</string>
-															<string>C4FA1D0610B456830031303E</string>
-															<string>C4FA1D0710B456830031303E</string>
-															<string>C4FA1D0810B456830031303E</string>
-															<string>C4FA1D4C10B458DC0031303E</string>
-															<string>C4FA1DCB10B480F00031303E</string>
-															<string>C4FA1F1C10B48D3B0031303E</string>
-															<string>C4FA1F1D10B48D3B0031303E</string>
-															<string>C4FA1F5C10B48E9D0031303E</string>
-														</array>
-													</dict>
-													<key>SplitCount</key>
-													<string>1</string>
-												</dict>
-												<key>StatusBarVisibility</key>
-												<true/>
-												<key>XCSharingToken</key>
-												<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
-											</dict>
-											<key>GeometryConfiguration</key>
-											<dict>
-												<key>Frame</key>
-												<string>{{0, 376}, {856, 393}}</string>
-												<key>RubberWindowFrame</key>
-												<string>0 130 1920 1048 0 0 1920 1178 </string>
-											</dict>
-											<key>Module</key>
-											<string>PBXNavigatorGroup</string>
-											<key>Proportion</key>
-											<string>393pt</string>
-										</dict>
-									</array>
+										<key>StatusBarVisibility</key>
+										<true/>
+										<key>XCSharingToken</key>
+										<string>com.apple.Xcode.CommonNavigatorGroupSharingToken</string>
+									</dict>
+									<key>GeometryConfiguration</key>
+									<dict>
+										<key>Frame</key>
+										<string>{{796, 0}, {856, 769}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 130 1920 1048 0 0 1920 1178 </string>
+									</dict>
+									<key>Module</key>
+									<string>PBXNavigatorGroup</string>
 									<key>Proportion</key>
 									<string>856pt</string>
 								</dict>
@@ -668,8 +585,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1652, 206}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 130 1920 1048 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -723,7 +638,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1652, 201}}</string>
+										<string>{{10, 27}, {1652, 206}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 130 1920 1048 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -744,8 +661,6 @@
 				<string>XCModuleDock</string>
 				<string>XCModuleDock</string>
 				<string>PBXNavigatorGroup</string>
-				<string>XCModuleDock</string>
-				<string>PBXNavigatorGroup</string>
 				<string>PBXNavigatorGroup</string>
 				<string>XCDockableTabModule</string>
 				<string>XCDetailModule</string>
@@ -759,8 +674,6 @@
 				<string>1CA23ED40692098700951B8B</string>
 				<string>C4FA200310B4B9FC0031303E</string>
 				<string>C4FA200410B4B9FC0031303E</string>
-				<string>C40442E910B071E900BCCFEC</string>
-				<string>C4FA200510B4B9FC0031303E</string>
 				<string>C40442E910B071E900BCCFEC</string>
 				<string>C40442E910B071E900BCCFEC</string>
 				<string>C4FA200610B4B9FC0031303E</string>
@@ -914,13 +827,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C4FA1DB610B47F460031303E</string>
+				<string>C4FA202810B4BBBD0031303E</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>C4FA1DB710B47F460031303E</string>
-				<string>C4FA1DB810B47F460031303E</string>
-				<string>C4FA1DB910B47F460031303E</string>
-				<string>C4FA1DBA10B47F460031303E</string>
+				<string>C4FA202910B4BBBD0031303E</string>
+				<string>C4FA202A10B4BBBD0031303E</string>
+				<string>C4FA202B10B4BBBD0031303E</string>
+				<string>C4FA202C10B4BBBD0031303E</string>
 				<string>C40442E910B071E900BCCFEC</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -938,7 +851,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>280279655.62617201</real>
+	<real>280280433.161461</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>

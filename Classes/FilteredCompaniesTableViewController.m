@@ -10,6 +10,7 @@
 #import "CompanyViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
+#import "UIBarButtonItem+extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -52,6 +53,25 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = NO;
+    
+    UISegmentedControl* control = [[[UISegmentedControl alloc] initWithItems:
+                                   [NSArray arrayWithObjects:
+                                    @"Alphabetically", 
+                                    @"Rating", 
+                                    nil]] autorelease];
+
+    control.segmentedControlStyle = UISegmentedControlStyleBar;
+    [control setWidth:155 forSegmentAtIndex:0];
+    [control setWidth:155 forSegmentAtIndex:1];
+    control.selectedSegmentIndex = 0;
+
+    
+    NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
+                      [UIBarButtonItem itemWithView:control], 
+                      [UIBarButtonItem flexibleSpaceItem],
+                      nil];
+    
+    self.toolbarItems = items;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
