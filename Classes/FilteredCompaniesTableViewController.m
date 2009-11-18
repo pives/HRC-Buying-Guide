@@ -103,6 +103,9 @@
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+    cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
+
 	
     return cell;
 }

@@ -48,6 +48,17 @@
     self.navigationController.toolbarHidden = NO;
     self.toolbarItems = items;
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"Key" 
+                                                                      style:UIBarButtonItemStyleBordered 
+                                                                     target:self 
+                                                                     action:@selector(showKey)];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"Donate" 
+                                                                      style:UIBarButtonItemStyleBordered 
+                                                                     target:self 
+                                                                     action:@selector(ShowDonationMessage)];
+    
+    self.title = @"Buying Guide";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -123,6 +134,14 @@
     [self.view addSubview:companyView.view];
     
     [companyView viewWillAppear:NO];
+    
+}
+
+- (void)showKey{
+    
+}
+
+- (void)ShowDonationMessage{
     
 }
 

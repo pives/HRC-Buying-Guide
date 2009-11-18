@@ -37,6 +37,41 @@
 		C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
 		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1C7610B389EB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
+		C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		C4FA1D5710B45DBB0031303E /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
+		C4FA1D5810B45DBB0031303E /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4340C1110B2608B0049791D /* storedata.sqlite */; };
+		C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
+		C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
+		C4FA1D5C10B45DBB0031303E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		C4FA1D5D10B45DBB0031303E /* BuyingGuideAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */; };
+		C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
+		C4FA1D5F10B45DBB0031303E /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C02C4710B0F401000D46AA /* Category.m */; };
+		C4FA1D6010B45DBB0031303E /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C02DFB10B1B71B000D46AA /* Brand.m */; };
+		C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
+		C4FA1D6210B45DBB0031303E /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
+		C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
+		C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
+		C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
+		C4FA1D6610B45DBB0031303E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
+		C4FA1D6710B45DBB0031303E /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
+		C4FA1D6810B45DBB0031303E /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
+		C4FA1D6910B45DBB0031303E /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340BD710B25DC50049791D /* Company.m */; };
+		C4FA1D6A10B45DBB0031303E /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
+		C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
+		C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
+		C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
+		C4FA1D6E10B45DBB0031303E /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* DataSource.m */; };
+		C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
+		C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
+		C4FA1D7210B45DBB0031303E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		C4FA1D7310B45DBB0031303E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		C4FA1D7410B45DBB0031303E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		C4FA1D7510B45DBB0031303E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
+		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
+		C4FA1E0610B482FF0031303E /* BrandCellBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1E0510B482FF0031303E /* BrandCellBackground.xib */; };
+		C4FA1E0710B482FF0031303E /* BrandCellBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1E0510B482FF0031303E /* BrandCellBackground.xib */; };
+		C4FA1F5310B48E970031303E /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1F5210B48E970031303E /* PagingScrollView.xib */; };
+		C4FA1F5410B48E970031303E /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1F5210B48E970031303E /* PagingScrollView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +129,11 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
+		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		C4FA1E0510B482FF0031303E /* BrandCellBackground.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCellBackground.xib; sourceTree = "<group>"; };
+		C4FA1F5210B48E970031303E /* PagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingScrollView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +148,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4FA1D7110B45DBB0031303E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FA1D7210B45DBB0031303E /* Foundation.framework in Frameworks */,
+				C4FA1D7310B45DBB0031303E /* UIKit.framework in Frameworks */,
+				C4FA1D7410B45DBB0031303E /* CoreGraphics.framework in Frameworks */,
+				C4FA1D7510B45DBB0031303E /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +191,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C4FA1D8A10B45E770031303E /* Entitlements.plist */,
 				28A0AAE50D9B0CCF005BE974 /* BuyingGuide_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -203,6 +256,7 @@
 				1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
+				C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */,
 			);
 			name = "Application Level";
 			path = Classes;
@@ -274,11 +328,21 @@
 				C4FA192F10B30C180031303E /* DataSource.m */,
 				C4FA193010B30C180031303E /* PagingScrollViewController.h */,
 				C4FA193110B30C180031303E /* PagingScrollViewController.m */,
+				C4FA1F5210B48E970031303E /* PagingScrollView.xib */,
+				C4FA1C9C10B38F2A0031303E /* Category Table */,
+			);
+			name = "Brand Scroll View";
+			sourceTree = "<group>";
+		};
+		C4FA1C9C10B38F2A0031303E /* Category Table */ = {
+			isa = PBXGroup;
+			children = (
 				C4FA193210B30C180031303E /* PageViewController.h */,
 				C4FA193310B30C180031303E /* PageViewController.m */,
 				C4FA1C7510B389EB0031303E /* PageView.xib */,
+				C4FA1E0510B482FF0031303E /* BrandCellBackground.xib */,
 			);
-			name = "Brand Scroll View";
+			name = "Category Table";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +365,23 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* BuyingGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide FJS" */;
+			buildPhases = (
+				C4FA1D5510B45DBB0031303E /* Resources */,
+				C4FA1D5B10B45DBB0031303E /* Sources */,
+				C4FA1D7110B45DBB0031303E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BuyingGuide FJS";
+			productName = BuyingGuide;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -321,6 +402,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* BuyingGuide */,
+				C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */,
 			);
 		};
 /* End PBXProject section */
@@ -335,6 +417,23 @@
 				C4340C1210B2608B0049791D /* storedata.sqlite in Resources */,
 				C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */,
 				C4FA1C7610B389EB0031303E /* PageView.xib in Resources */,
+				C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */,
+				C4FA1E0610B482FF0031303E /* BrandCellBackground.xib in Resources */,
+				C4FA1F5310B48E970031303E /* PagingScrollView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FA1D5510B45DBB0031303E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */,
+				C4FA1D5710B45DBB0031303E /* bgdata.csv in Resources */,
+				C4FA1D5810B45DBB0031303E /* storedata.sqlite in Resources */,
+				C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */,
+				C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */,
+				C4FA1E0710B482FF0031303E /* BrandCellBackground.xib in Resources */,
+				C4FA1F5410B48E970031303E /* PagingScrollView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +465,34 @@
 				C4FA193510B30C180031303E /* DataSource.m in Sources */,
 				C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */,
 				C4FA193710B30C180031303E /* PageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4FA1D5B10B45DBB0031303E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FA1D5C10B45DBB0031303E /* main.m in Sources */,
+				C4FA1D5D10B45DBB0031303E /* BuyingGuideAppDelegate.m in Sources */,
+				C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */,
+				C4FA1D5F10B45DBB0031303E /* Category.m in Sources */,
+				C4FA1D6010B45DBB0031303E /* Brand.m in Sources */,
+				C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */,
+				C4FA1D6210B45DBB0031303E /* NSManagedObjectContext+Extensions.m in Sources */,
+				C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */,
+				C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */,
+				C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */,
+				C4FA1D6610B45DBB0031303E /* MainViewController.m in Sources */,
+				C4FA1D6710B45DBB0031303E /* UIBarButtonItem+extensions.m in Sources */,
+				C4FA1D6810B45DBB0031303E /* CompaniesTableViewController.m in Sources */,
+				C4FA1D6910B45DBB0031303E /* Company.m in Sources */,
+				C4FA1D6A10B45DBB0031303E /* FilteredCompaniesTableViewController.m in Sources */,
+				C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */,
+				C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */,
+				C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */,
+				C4FA1D6E10B45DBB0031303E /* DataSource.m in Sources */,
+				C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */,
+				C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +551,32 @@
 			};
 			name = Release;
 		};
+		C4FA1D7710B45DBB0031303E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				INFOPLIST_FILE = "../BuyingGuide-FJS-Info.plist";
+				PRODUCT_NAME = BuyingGuideDev;
+			};
+			name = Debug;
+		};
+		C4FA1D7810B45DBB0031303E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
+				PRODUCT_NAME = BuyingGuide;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -441,6 +594,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide FJS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4FA1D7710B45DBB0031303E /* Debug */,
+				C4FA1D7810B45DBB0031303E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

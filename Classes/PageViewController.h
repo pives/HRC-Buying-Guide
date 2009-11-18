@@ -45,5 +45,6 @@
 
 
 - (id)initWithDataSource:(DataSource*)someData;
+- (void)refreshCells;
 
 @end

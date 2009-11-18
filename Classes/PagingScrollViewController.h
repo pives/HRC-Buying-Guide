@@ -30,5 +30,9 @@
 @property(nonatomic,retain)IBOutlet DataSource *data;
 
 - (IBAction)changePage:(id)sender;
+- (void)changePageUnanianimated:(int)pageIndex;
 
 @end
+
+//TODO: handle case of no brands
+//don't load any pages?

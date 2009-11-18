@@ -66,12 +66,31 @@
 
 	pageControl.numberOfPages = ([self.data numDataPages]); 
     
-    //TODO: calculate page number based on category
+    //pageControl.currentPage = 0     
     
+    [self changePageUnanianimated:[data pageOfStartingSelectedCategory]];
+    [currentPage refreshCells];
+    [nextPage refreshCells];
+    /*
 	pageControl.currentPage = 0;
 	
 	[self applyNewIndex:0 pageController:currentPage];
 	[self applyNewIndex:1 pageController:nextPage];
+     */
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [currentPage refreshCells];
+    [nextPage refreshCells];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [currentPage refreshCells];
+    [nextPage refreshCells];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -113,6 +132,7 @@
 		}
 	}
 	
+    //TODO: cells set need display
     //TODO: may need to send update message to tableview
 
 }
@@ -130,6 +150,7 @@
 		nextPage = swapController;
 	}
 
+    [currentPage refreshCells];
     //TODO: may need to send update message to tableview
 }
 
@@ -148,6 +169,27 @@
     frame.origin.x = frame.size.width * pageIndex;
     frame.origin.y = 0;
     [scrollView scrollRectToVisible:frame animated:YES];
+}
+
+- (void)changePageUnanianimated:(int)pageIndex
+{
+	pageControl.currentPage = pageIndex;
+    [self applyNewIndex:pageIndex pageController:currentPage];
+    
+    if(pageIndex==0){
+        [self applyNewIndex:pageIndex+1 pageController:nextPage];
+
+    }else{
+        
+        [self applyNewIndex:pageIndex-1 pageController:nextPage];
+        
+        // update the scroll view to the appropriate page
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * pageIndex;
+        frame.origin.y = 0;
+        [scrollView scrollRectToVisible:frame animated:NO];
+
+    }
 }
 
 - (void)dealloc

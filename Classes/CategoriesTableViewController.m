@@ -22,6 +22,8 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 
 }
 
@@ -70,7 +72,8 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
-	
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+
     return cell;
 }
 

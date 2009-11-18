@@ -13,6 +13,8 @@
 //
 
 #import "DataSource.h"
+#import "Company.h"
+#import "Company+Extensions.h"
 
 NSString* const kCompnayKey = @"CompanyKey";
 NSString* const kCategoryKey = @"CategoryKey";
@@ -61,6 +63,17 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
     
     return [data objectForKey:kCategoryKey];
     
+}
+
+- (int)pageOfCategory:(Category*)aCategory{
+    
+    return [self.company.categoriesSortedAlphabetically indexOfObject:aCategory]+1;
+    
+}
+
+- (int)pageOfStartingSelectedCategory{
+    
+    return [self pageOfCategory:self.category];
 }
 
 

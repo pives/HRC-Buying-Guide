@@ -63,6 +63,19 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     return self;
 }
 
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    self.table.separatorColor = [UIColor whiteColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    [self.table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+
+}
+
 
 - (void)fetch{
     
@@ -105,10 +118,15 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	// Configure the cell.
+    // Configure the cell.
+    cell.backgroundView.backgroundColor = [UIColor blueColor];
+    cell.contentView.backgroundColor = [UIColor blueColor];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.backgroundColor = [UIColor blueColor];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
-	
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
     return cell;
 }
 
@@ -171,25 +189,36 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 - (void)setPageIndex:(NSInteger)newPageIndex
 {
 	pageIndex = newPageIndex;
+    
+    self.categoryName.font = [UIFont boldSystemFontOfSize:14];
 	
 	if (pageIndex >= 0 && pageIndex < ([data numDataPages]))
 	{
-        //TODO: get data and configure table
         
         if(pageIndex == 0){
                         
             self.category = nil;
+            self.categoryName.text = @"All Brands";
             
         }else{
             
-            self.category = [company.categoriesSortedAlphabetically objectAtIndex:(pageIndex-1)];            
+            self.category = [company.categoriesSortedAlphabetically objectAtIndex:(pageIndex-1)];     
+            self.categoryName.text = self.category.name;
+
         }
-        
-        //TODO: just fetch here?
-        //This better be done BEFORE tableviewdelegate methods are called (reload?)
         
         [self fetch];
     }
+}
+
+- (void)refreshCells{
+    
+    for(UITableViewCell* eachCell in [self.table visibleCells]){
+        eachCell.textLabel.backgroundColor = [UIColor blueColor];
+    
+        [eachCell setNeedsDisplay];
+    }
+
 }
 @end
 

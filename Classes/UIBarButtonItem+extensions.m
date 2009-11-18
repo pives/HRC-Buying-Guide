@@ -26,6 +26,14 @@
     
 }
 
++ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage target:(id)target action:(SEL)action{
+    
+    UIBarButtonItem* item = [[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:target action:action] autorelease];
+    item.image = anImage;
+    return item;
+    
+}
+
 + (UIBarButtonItem*)itemWithTitle:(NSString*)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
     
     return [[[UIBarButtonItem alloc] initWithTitle:title style:style target:target action:action] autorelease];

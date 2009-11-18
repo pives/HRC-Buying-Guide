@@ -98,6 +98,8 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
+    cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
+
 	
     return cell;
 }

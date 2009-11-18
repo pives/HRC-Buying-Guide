@@ -66,6 +66,15 @@
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
     //self.navigationController.toolbarHidden = YES;
+    [brands viewWillAppear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    [brands viewWillAppear:animated];
     
 }
 
