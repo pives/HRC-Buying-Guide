@@ -11,6 +11,7 @@
 #import "Company+Extensions.h"
 #import "DataSource.h"
 #import "PagingScrollViewController.h"
+#import "UIBarButtonItem+extensions.h"
 
 @implementation CompanyViewController
 
@@ -26,20 +27,29 @@
     if(self = [super init]){
                     
         self.data = [[[DataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
-        
         NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
-        
         NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
         
         [[NSBundle mainBundle] loadNibNamed:@"CompanyViewController" owner:self options:options];
         
         self.company = aCompany;
         
+        [self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Score Card" 
+                                                                            style:UIBarButtonItemStyleBordered 
+                                                                           target:self 
+                                                                           action:@selector(showScoreCard)]];
+        
+        self.toolbarItems = [NSArray arrayWithObjects: 
+                             [UIBarButtonItem flexibleSpaceItem],
+                             [UIBarButtonItem systemItem:UIBarButtonSystemItemAction 
+                                                  target:nil 
+                                                  action:@selector(sendEmail)],
+                             nil];
+        
     }
     
     return self;
 }
-
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -50,41 +60,24 @@
 
 }
 
-- (void)awakeFromNib{
-    
-    
-    NSLog(@"%@",@"awake!");
-    
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
-
+    //self.navigationController.toolbarHidden = YES;
     
 }
 
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
+- (void)showScoreCard{
+    
 }
-*/
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)sendEmail{
+    
+    
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

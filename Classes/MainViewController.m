@@ -52,6 +52,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = NO;
     [self toggleViews:modeSwitch];
             
 }
@@ -59,6 +60,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
+    self.navigationController.toolbarHidden = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(categorySelectedWithNotification:) 

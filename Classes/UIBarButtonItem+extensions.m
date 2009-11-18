@@ -20,12 +20,32 @@
     
 }
 
-
 + (UIBarButtonItem*)itemWithView:(UIView*)aView{
-    
     
     return [[[UIBarButtonItem alloc] initWithCustomView:aView] autorelease];
     
+}
+
++ (UIBarButtonItem*)itemWithTitle:(NSString*)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+    
+    return [[[UIBarButtonItem alloc] initWithTitle:title style:style target:target action:action] autorelease];
+
+}
+
++ (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action{
+    
+    return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action] autorelease];
+    
+}
+
++ (NSArray*)centeredToolButtonsItems:(NSArray*)toolBarItems{
+    
+    NSMutableArray* items = [NSMutableArray array];
+    [items addObject:[UIBarButtonItem flexibleSpaceItem]];
+    [items addObjectsFromArray:toolBarItems];
+    [items addObject:[UIBarButtonItem flexibleSpaceItem]];
+    
+    return items;
 }
 
 @end
