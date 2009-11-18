@@ -26,9 +26,10 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 @synthesize data;
 @synthesize company;
 @synthesize category;
+@synthesize table;
+@synthesize categoryName;
 
 @synthesize fetchedResultsController, managedObjectContext;
-
 
 
 #pragma mark -
@@ -36,11 +37,15 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 
 - (void) dealloc
 {
+    
+    self.table = nil;
+    self.categoryName = nil;
     self.company = nil;
     self.category = nil;
     self.data = nil;
     [super dealloc];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -49,7 +54,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 
 - (id)initWithDataSource:(DataSource*)someData{
     
-    if(self = [super initWithStyle:UITableViewStylePlain]){
+    if(self = [super init]){
         
         self.data = someData;
         self.company = data.company;
@@ -57,6 +62,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     }
     return self;
 }
+
 
 - (void)fetch{
     
@@ -73,7 +79,6 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     
 }
-
 
 #pragma mark -
 #pragma mark Table view methods
@@ -161,8 +166,6 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 	
 	return fetchedResultsController;
 } 
-
-
 
 
 - (void)setPageIndex:(NSInteger)newPageIndex

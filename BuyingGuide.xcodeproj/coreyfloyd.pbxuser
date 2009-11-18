@@ -792,6 +792,35 @@
 			C4FA1C6C10B380F80031303E /* PBXTextBookmark */ = C4FA1C6C10B380F80031303E /* PBXTextBookmark */;
 			C4FA1C6F10B381960031303E /* PBXTextBookmark */ = C4FA1C6F10B381960031303E /* PBXTextBookmark */;
 			C4FA1C7010B381960031303E /* PBXTextBookmark */ = C4FA1C7010B381960031303E /* PBXTextBookmark */;
+			C4FA1C7110B384320031303E /* PBXTextBookmark */ = C4FA1C7110B384320031303E /* PBXTextBookmark */;
+			C4FA1C7910B38BD20031303E /* PBXTextBookmark */ = C4FA1C7910B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C7A10B38BD20031303E /* PBXTextBookmark */ = C4FA1C7A10B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C7B10B38BD20031303E /* PBXTextBookmark */ = C4FA1C7B10B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C7C10B38BD20031303E /* PlistBookmark */ = C4FA1C7C10B38BD20031303E /* PlistBookmark */;
+			C4FA1C7D10B38BD20031303E /* PBXTextBookmark */ = C4FA1C7D10B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C7E10B38BD20031303E /* PBXTextBookmark */ = C4FA1C7E10B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C7F10B38BD20031303E /* PBXTextBookmark */ = C4FA1C7F10B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8010B38BD20031303E /* PBXTextBookmark */ = C4FA1C8010B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8110B38BD20031303E /* PBXTextBookmark */ = C4FA1C8110B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8210B38BD20031303E /* PBXTextBookmark */ = C4FA1C8210B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8310B38BD20031303E /* PBXTextBookmark */ = C4FA1C8310B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8410B38BD20031303E /* PBXTextBookmark */ = C4FA1C8410B38BD20031303E /* PBXTextBookmark */;
+			C4FA1C8510B38BE50031303E /* PBXTextBookmark */ = C4FA1C8510B38BE50031303E /* PBXTextBookmark */;
+			C4FA1C8610B38BE50031303E /* PBXTextBookmark */ = C4FA1C8610B38BE50031303E /* PBXTextBookmark */;
+			C4FA1C8710B38BE50031303E /* PBXTextBookmark */ = C4FA1C8710B38BE50031303E /* PBXTextBookmark */;
+			C4FA1C8910B38C870031303E /* PBXTextBookmark */ = C4FA1C8910B38C870031303E /* PBXTextBookmark */;
+			C4FA1C8A10B38C870031303E /* PBXTextBookmark */ = C4FA1C8A10B38C870031303E /* PBXTextBookmark */;
+			C4FA1C8B10B38C870031303E /* PBXTextBookmark */ = C4FA1C8B10B38C870031303E /* PBXTextBookmark */;
+			C4FA1C8C10B38C870031303E /* PBXTextBookmark */ = C4FA1C8C10B38C870031303E /* PBXTextBookmark */;
+			C4FA1C9310B38CA80031303E /* XCBuildMessageTextBookmark */ = C4FA1C9310B38CA80031303E /* XCBuildMessageTextBookmark */;
+			C4FA1C9410B38CA80031303E /* PBXTextBookmark */ = C4FA1C9410B38CA80031303E /* PBXTextBookmark */;
+			C4FA1C9510B38CA80031303E /* PBXTextBookmark */ = C4FA1C9510B38CA80031303E /* PBXTextBookmark */;
+			C4FA1C9610B38CA90031303E /* PBXTextBookmark */ = C4FA1C9610B38CA90031303E /* PBXTextBookmark */;
+			C4FA1C9710B38CA90031303E /* PBXTextBookmark */ = C4FA1C9710B38CA90031303E /* PBXTextBookmark */;
+			C4FA1C9810B38CC60031303E /* PBXTextBookmark */ = C4FA1C9810B38CC60031303E /* PBXTextBookmark */;
+			C4FA1C9910B38CCF0031303E /* PBXTextBookmark */ = C4FA1C9910B38CCF0031303E /* PBXTextBookmark */;
+			C4FA1C9A10B38CCF0031303E /* PBXTextBookmark */ = C4FA1C9A10B38CCF0031303E /* PBXTextBookmark */;
+			C4FA1C9B10B38CCF0031303E /* PBXTextBookmark */ = C4FA1C9B10B38CCF0031303E /* PBXTextBookmark */;
 		};
 		sourceControlManager = C40442EF10B071EA00BCCFEC /* Source Control */;
 		userBuildSettings = {
@@ -1359,7 +1388,7 @@
 	};
 	C4AFF98F10B2388600801655 /* UIBarButtonItem+extensions.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 757}}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 780}}";
 			sepNavSelRange = "{495, 0}";
 			sepNavVisRange = "{0, 612}";
 		};
@@ -1750,23 +1779,23 @@
 	};
 	C4FA187610B2F4CE0031303E /* CompanyViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 1260}}";
-			sepNavSelRange = "{2434, 0}";
-			sepNavVisRange = "{90, 2051}";
+			sepNavIntBoundsRect = "{{0, 0}, {825, 1246}}";
+			sepNavSelRange = "{599, 0}";
+			sepNavVisRange = "{214, 1971}";
 		};
 	};
 	C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {741, 715}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 780}}";
+			sepNavSelRange = "{267, 0}";
 			sepNavVisRange = "{0, 267}";
 		};
 	};
 	C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 826}}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 896}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1479}";
+			sepNavVisRange = "{0, 1555}";
 		};
 	};
 	C4FA187F10B305AF0031303E /* PBXTextBookmark */ = {
@@ -2738,7 +2767,7 @@
 	};
 	C4FA192E10B30C180031303E /* DataSource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 690}}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 843}}";
 			sepNavSelRange = "{536, 0}";
 			sepNavVisRange = "{0, 870}";
 		};
@@ -2752,8 +2781,8 @@
 	};
 	C4FA193010B30C180031303E /* PagingScrollViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 738}}";
-			sepNavSelRange = "{776, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 780}}";
+			sepNavSelRange = "{863, 0}";
 			sepNavVisRange = "{0, 906}";
 		};
 	};
@@ -2766,16 +2795,17 @@
 	};
 	C4FA193210B30C180031303E /* PageViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {761, 780}}";
-			sepNavSelRange = "{871, 0}";
-			sepNavVisRange = "{0, 1265}";
+			sepNavIntBoundsRect = "{{0, 0}, {761, 843}}";
+			sepNavSelRange = "{862, 0}";
+			sepNavVisRange = "{0, 1470}";
+			sepNavWindowFrame = "{{15, 75}, {763, 1101}}";
 		};
 	};
 	C4FA193310B30C180031303E /* PageViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2010, 2912}}";
-			sepNavSelRange = "{1175, 0}";
-			sepNavVisRange = "{864, 1433}";
+			sepNavIntBoundsRect = "{{0, 0}, {2010, 2968}}";
+			sepNavSelRange = "{1197, 0}";
+			sepNavVisRange = "{741, 1392}";
 		};
 	};
 	C4FA193910B30C340031303E /* PBXTextBookmark */ = {
@@ -2882,8 +2912,8 @@
 		isa = PBXTextBookmark;
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 25";
-		rLen = 188;
-		rLoc = 689;
+		rLen = 239;
+		rLoc = 729;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -3193,7 +3223,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 30";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1415;
 		rType = 0;
 		vrLen = 517;
 		vrLoc = 385;
@@ -3203,7 +3233,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 63";
 		rLen = 0;
-		rLoc = 6052;
+		rLoc = 6120;
 		rType = 0;
 		vrLen = 647;
 		vrLoc = 991;
@@ -3213,7 +3243,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -3243,7 +3273,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3273,7 +3303,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3303,7 +3333,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3333,7 +3363,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3343,7 +3373,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 36";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 0;
@@ -3461,7 +3491,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -3491,7 +3521,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3521,7 +3551,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3551,7 +3581,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3581,7 +3611,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3601,7 +3631,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 31";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 997;
 		vrLoc = 0;
@@ -3678,7 +3708,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3708,7 +3738,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -3738,7 +3768,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3768,7 +3798,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 38";
 		rLen = 0;
-		rLoc = 1454;
+		rLoc = 1524;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 590;
@@ -3818,7 +3848,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -3848,7 +3878,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3858,7 +3888,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -3868,7 +3898,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 154;
@@ -3908,7 +3938,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -3938,7 +3968,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -3948,7 +3978,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -3958,7 +3988,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 52;
@@ -3998,7 +4028,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4028,7 +4058,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4038,7 +4068,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -4048,7 +4078,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 95;
@@ -4088,7 +4118,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4118,7 +4148,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4128,7 +4158,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -4138,7 +4168,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 47";
 		rLen = 0;
-		rLoc = 6015;
+		rLoc = 6083;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 555;
@@ -4178,7 +4208,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4208,7 +4238,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4218,7 +4248,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -4228,7 +4258,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 855;
@@ -4268,7 +4298,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4298,7 +4328,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4308,7 +4338,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 35";
 		rLen = 0;
-		rLoc = 1298;
+		rLoc = 1368;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -4318,7 +4348,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 35";
 		rLen = 0;
-		rLoc = 1298;
+		rLoc = 1368;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 52;
@@ -4358,7 +4388,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4388,7 +4418,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4418,7 +4448,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 590;
@@ -4428,7 +4458,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 231;
@@ -4475,7 +4505,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 30";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4545,7 +4575,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 18";
 		rLen = 0;
-		rLoc = 631;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 0;
@@ -4555,7 +4585,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 54";
 		rLen = 0;
-		rLoc = 5695;
+		rLoc = 5763;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 826;
@@ -4565,7 +4595,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 54";
 		rLen = 0;
-		rLoc = 5695;
+		rLoc = 5763;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 826;
@@ -4695,7 +4725,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 32";
 		rLen = 0;
-		rLoc = 1224;
+		rLoc = 1325;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 590;
@@ -4795,7 +4825,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 30";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1415;
 		rType = 0;
 		vrLen = 902;
 		vrLoc = 0;
@@ -4805,7 +4835,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 29";
 		rLen = 41;
-		rLoc = 720;
+		rLoc = 760;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 52;
@@ -4815,7 +4845,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 54";
 		rLen = 0;
-		rLoc = 5695;
+		rLoc = 5763;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 826;
@@ -4835,7 +4865,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 29";
 		rLen = 41;
-		rLoc = 720;
+		rLoc = 760;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 151;
@@ -4845,7 +4875,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 5695;
+		rLoc = 5763;
 		rType = 0;
 		vrLen = 1077;
 		vrLoc = 868;
@@ -4865,7 +4895,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 34";
 		rLen = 0;
-		rLoc = 955;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 517;
 		vrLoc = 500;
@@ -4875,7 +4905,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 29";
 		rLen = 41;
-		rLoc = 720;
+		rLoc = 760;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 95;
@@ -4885,7 +4915,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 25";
 		rLen = 0;
-		rLoc = 684;
+		rLoc = 724;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 95;
@@ -4895,7 +4925,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 37";
 		rLen = 0;
-		rLoc = 1176;
+		rLoc = 1277;
 		rType = 0;
 		vrLen = 954;
 		vrLoc = 666;
@@ -4915,7 +4945,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 26";
 		rLen = 0;
-		rLoc = 688;
+		rLoc = 728;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 95;
@@ -4925,7 +4955,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 20";
 		rLen = 0;
-		rLoc = 631;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 1466;
 		vrLoc = 0;
@@ -4935,7 +4965,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 53";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 813;
@@ -4945,7 +4975,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 53";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 813;
@@ -4955,7 +4985,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 35";
 		rLen = 0;
-		rLoc = 878;
+		rLoc = 969;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 544;
@@ -5045,7 +5075,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 53";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 813;
@@ -5085,7 +5115,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 53";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1501;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 813;
@@ -5175,7 +5205,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 41";
 		rLen = 0;
-		rLoc = 1208;
+		rLoc = 1414;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -5185,7 +5215,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 55";
 		rLen = 0;
-		rLoc = 1365;
+		rLoc = 1435;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 500;
@@ -5195,7 +5225,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1754;
 		vrLoc = 4274;
@@ -5305,7 +5335,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1749;
 		vrLoc = 4279;
@@ -5325,7 +5355,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1748;
 		vrLoc = 4278;
@@ -5345,7 +5375,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1757;
 		vrLoc = 4273;
@@ -5365,7 +5395,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1752;
 		vrLoc = 4278;
@@ -5385,7 +5415,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1752;
 		vrLoc = 4278;
@@ -5435,7 +5465,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 142";
 		rLen = 0;
-		rLoc = 4281;
+		rLoc = 4351;
 		rType = 0;
 		vrLen = 1487;
 		vrLoc = 1025;
@@ -5462,7 +5492,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 167";
 		rLen = 0;
-		rLoc = 5451;
+		rLoc = 5519;
 		rType = 0;
 		vrLen = 1757;
 		vrLoc = 4273;
@@ -5572,7 +5602,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 41";
 		rLen = 0;
-		rLoc = 1208;
+		rLoc = 1414;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -5672,7 +5702,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 43";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1415;
 		rType = 0;
 		vrLen = 1260;
 		vrLoc = 0;
@@ -5682,7 +5712,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 74";
 		rLen = 0;
-		rLoc = 2071;
+		rLoc = 2142;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 4584;
@@ -5868,7 +5898,7 @@
 		isa = PBXTextBookmark;
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		rLen = 0;
-		rLoc = 74;
+		rLoc = 80;
 		rType = 1;
 	};
 	C4FA1B3B10B344560031303E /* PBXTextBookmark */ = {
@@ -5876,7 +5906,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 28";
 		rLen = 0;
-		rLoc = 801;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 0;
@@ -5896,7 +5926,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 41";
 		rLen = 0;
-		rLoc = 1208;
+		rLoc = 1414;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -5916,7 +5946,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 188";
 		rLen = 0;
-		rLoc = 6033;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 4304;
@@ -5936,7 +5966,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 188";
 		rLen = 0;
-		rLoc = 6033;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 1754;
 		vrLoc = 4309;
@@ -5956,7 +5986,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 28";
 		rLen = 0;
-		rLoc = 801;
+		rLoc = 846;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 0;
@@ -6013,7 +6043,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 1002;
@@ -6023,7 +6053,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 981;
@@ -6073,7 +6103,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 2124;
@@ -6113,7 +6143,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1650;
 		vrLoc = 2260;
@@ -6133,7 +6163,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1686;
 		vrLoc = 2260;
@@ -6173,7 +6203,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1694;
 		vrLoc = 2297;
@@ -6320,7 +6350,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 62";
 		rLen = 0;
-		rLoc = 1477;
+		rLoc = 1548;
 		rType = 0;
 		vrLen = 1649;
 		vrLoc = 2297;
@@ -6330,7 +6360,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 59";
 		rLen = 0;
-		rLoc = 1456;
+		rLoc = 1527;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 863;
@@ -6350,7 +6380,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 59";
 		rLen = 0;
-		rLoc = 1456;
+		rLoc = 1527;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 865;
@@ -6407,7 +6437,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 48";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 865;
@@ -6607,7 +6637,7 @@
 		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
 		name = "PageViewController.m: 48";
 		rLen = 0;
-		rLoc = 1175;
+		rLoc = 1276;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 864;
@@ -6617,7 +6647,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 41";
 		rLen = 0;
-		rLoc = 1208;
+		rLoc = 1414;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -6627,7 +6657,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 31";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -6647,7 +6677,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 31";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -6694,7 +6724,7 @@
 		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
 		name = "PageViewController.h: 31";
 		rLen = 0;
-		rLoc = 871;
+		rLoc = 967;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 0;
@@ -7615,5 +7645,295 @@
 		rType = 0;
 		vrLen = 2051;
 		vrLoc = 90;
+	};
+	C4FA1C7110B384320031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 52";
+		rLen = 0;
+		rLoc = 1924;
+		rType = 0;
+		vrLen = 1830;
+		vrLoc = 307;
+	};
+	C4FA1C7910B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4AFF98F10B2388600801655 /* UIBarButtonItem+extensions.h */;
+		name = "UIBarButtonItem+extensions.h: 17";
+		rLen = 0;
+		rLoc = 495;
+		rType = 0;
+		vrLen = 612;
+		vrLoc = 0;
+	};
+	C4FA1C7A10B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* BuyingGuideAppDelegate.h */;
+		name = "BuyingGuideAppDelegate.h: 31";
+		rLen = 0;
+		rLoc = 956;
+		rType = 0;
+		vrLen = 956;
+		vrLoc = 0;
+	};
+	C4FA1C7B10B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */;
+		name = "CompanyScoreCardViewController.h: 17";
+		rLen = 0;
+		rLoc = 267;
+		rType = 0;
+		vrLen = 267;
+		vrLoc = 0;
+	};
+	C4FA1C7C10B38BD20031303E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/coreyfloyd/Development/ProductionProjects/BuyingGuide/BuyingGuide-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C4FA1C7D10B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193010B30C180031303E /* PagingScrollViewController.h */;
+		name = "PagingScrollViewController.h: 30";
+		rLen = 0;
+		rLoc = 863;
+		rType = 0;
+		vrLen = 906;
+		vrLoc = 0;
+	};
+	C4FA1C7E10B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 19";
+		rLen = 0;
+		rLoc = 429;
+		rType = 0;
+		vrLen = 2140;
+		vrLoc = 0;
+	};
+	C4FA1C7F10B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */;
+		name = "CompanyScoreCardViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1555;
+		vrLoc = 0;
+	};
+	C4FA1C8010B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA192E10B30C180031303E /* DataSource.h */;
+		name = "DataSource.h: 16";
+		rLen = 0;
+		rLoc = 536;
+		rType = 0;
+		vrLen = 870;
+		vrLoc = 0;
+	};
+	C4FA1C8110B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
+		name = "PageViewController.h: 26";
+		rLen = 0;
+		rLoc = 755;
+		rType = 0;
+		vrLen = 1361;
+		vrLoc = 0;
+	};
+	C4FA1C8210B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 60";
+		rLen = 0;
+		rLoc = 1527;
+		rType = 0;
+		vrLen = 1821;
+		vrLoc = 881;
+	};
+	C4FA1C8310B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 60";
+		rLen = 0;
+		rLoc = 1527;
+		rType = 0;
+		vrLen = 1700;
+		vrLoc = 802;
+	};
+	C4FA1C8410B38BD20031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 2189;
+		vrLoc = 214;
+	};
+	C4FA1C8510B38BE50031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 60";
+		rLen = 0;
+		rLoc = 1527;
+		rType = 0;
+		vrLen = 1700;
+		vrLoc = 802;
+	};
+	C4FA1C8610B38BE50031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
+		name = "PageViewController.h: 43";
+		rLen = 0;
+		rLoc = 1253;
+		rType = 0;
+		vrLen = 1476;
+		vrLoc = 0;
+	};
+	C4FA1C8710B38BE50031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 2189;
+		vrLoc = 214;
+	};
+	C4FA1C8910B38C870031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193210B30C180031303E /* PageViewController.h */;
+		name = "PageViewController.h: 32";
+		rLen = 0;
+		rLoc = 862;
+		rType = 0;
+		vrLen = 1470;
+		vrLoc = 0;
+	};
+	C4FA1C8A10B38C870031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 41";
+		rLen = 0;
+		rLoc = 980;
+		rType = 0;
+		vrLen = 1560;
+		vrLoc = 609;
+	};
+	C4FA1C8B10B38C870031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 36";
+		rLen = 0;
+		rLoc = 955;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 501;
+	};
+	C4FA1C8C10B38C870031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 2189;
+		vrLoc = 214;
+	};
+	C4FA1C9310B38CA80031303E /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'UIViewController' may not respond to '-initWithStyle:'";
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 56;
+		rType = 1;
+	};
+	C4FA1C9410B38CA80031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 51";
+		rLen = 0;
+		rLoc = 1197;
+		rType = 0;
+		vrLen = 1412;
+		vrLoc = 718;
+	};
+	C4FA1C9510B38CA80031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 214;
+	};
+	C4FA1C9610B38CA90031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 51";
+		rLen = 0;
+		rLoc = 1197;
+		rType = 0;
+		vrLen = 1389;
+		vrLoc = 741;
+	};
+	C4FA1C9710B38CA90031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 1966;
+		vrLoc = 214;
+	};
+	C4FA1C9810B38CC60031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 1830;
+		vrLoc = 307;
+	};
+	C4FA1C9910B38CCF0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA193310B30C180031303E /* PageViewController.m */;
+		name = "PageViewController.m: 51";
+		rLen = 0;
+		rLoc = 1197;
+		rType = 0;
+		vrLen = 1392;
+		vrLoc = 741;
+	};
+	C4FA1C9A10B38CCF0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 16";
+		rLen = 0;
+		rLoc = 384;
+		rType = 0;
+		vrLen = 1927;
+		vrLoc = 214;
+	};
+	C4FA1C9B10B38CCF0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */;
+		name = "CompanyViewController.m: 27";
+		rLen = 0;
+		rLoc = 599;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 214;
 	};
 }

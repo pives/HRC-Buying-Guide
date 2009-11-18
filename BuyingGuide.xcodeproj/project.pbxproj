@@ -36,6 +36,7 @@
 		C4FA193510B30C180031303E /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* DataSource.m */; };
 		C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
 		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
+		C4FA1C7610B389EB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		C4FA193110B30C180031303E /* PagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingScrollViewController.m; sourceTree = "<group>"; };
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				C4FA193110B30C180031303E /* PagingScrollViewController.m */,
 				C4FA193210B30C180031303E /* PageViewController.h */,
 				C4FA193310B30C180031303E /* PageViewController.m */,
+				C4FA1C7510B389EB0031303E /* PageView.xib */,
 			);
 			name = "Brand Scroll View";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				C4C02DD210B1A83F000D46AA /* bgdata.csv in Resources */,
 				C4340C1210B2608B0049791D /* storedata.sqlite in Resources */,
 				C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */,
+				C4FA1C7610B389EB0031303E /* PageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

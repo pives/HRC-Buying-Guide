@@ -17,7 +17,7 @@
 @class Company;
 @class Category;
 
-@interface PageViewController : UITableViewController
+@interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
 	NSInteger pageIndex;
 	BOOL textViewNeedsUpdate;
@@ -27,18 +27,21 @@
     Company* company;
     Category* category;
     
+    UITableView* table;
+    UILabel* categoryName;
+    
     NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
-    
 }
 
 @property NSInteger pageIndex;
 @property(nonatomic,retain)DataSource *data;
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,retain)Category *category;
+@property(nonatomic,assign)IBOutlet UITableView *table;
+@property(nonatomic,assign)IBOutlet UILabel *categoryName;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-
 
 
 - (id)initWithDataSource:(DataSource*)someData;
