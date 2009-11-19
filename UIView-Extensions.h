@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIView (utility)
+
+- (void)setBackgroundColor:(UIColor*)aColor recursive:(BOOL)flag;
+
+@end
+
+
+
 @interface UIView (frame)
 
 -(void)setOrigin:(CGPoint)aPoint;

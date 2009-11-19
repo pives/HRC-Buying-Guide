@@ -10,6 +10,24 @@
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
+@implementation UIView (utility)
+
+- (void)setBackgroundColor:(UIColor*)aColor recursive:(BOOL)flag{
+    
+    self.backgroundColor = aColor;
+    
+    if(flag){
+        for(UIView* eachSubview in self.subviews){
+            [eachSubview setBackgroundColor:aColor recursive:YES];
+            
+        }
+    }
+}
+
+@end
+
+
+
 
 @implementation UIView (frame)
 

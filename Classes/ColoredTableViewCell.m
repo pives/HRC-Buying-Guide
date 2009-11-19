@@ -7,6 +7,7 @@
 //
 
 #import "ColoredTableViewCell.h"
+#import "UIView-Extensions.h"
 
 
 @implementation ColoredTableViewCell
@@ -26,11 +27,14 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
+    [self setBackgroundColor:cellColor recursive:YES];
+    
+    /*
     self.textLabel.backgroundColor = cellColor;
     self.detailTextLabel.backgroundColor = cellColor;
     self.contentView.backgroundColor = cellColor;
     self.accessoryView.backgroundColor = cellColor;
-
+     */
 }
 
 

@@ -349,20 +349,19 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>C4AFF95710B2344200801655</string>
-								<string>C4AFF95510B233F000801655</string>
 								<string>C4340AE510B23D620049791D</string>
 								<string>C4FA187A10B2F4D30031303E</string>
 								<string>C4FA193810B30C200031303E</string>
 								<string>C4FA1C9C10B38F2A0031303E</string>
+								<string>C4C031DE10B1EBAA000D46AA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>7</integer>
+									<integer>5</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -401,7 +400,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FilteredCompaniesTableViewController.m</string>
+										<string>CompaniesTableViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -409,11 +408,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>FilteredCompaniesTableViewController.m</string>
+												<string>CompaniesTableViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4FA241610B5EEE20031303E</string>
+												<string>C4FA24FB10B5F97C0031303E</string>
 												<key>history</key>
 												<array>
 													<string>C4C0321910B1EF00000D46AA</string>
@@ -439,13 +438,8 @@
 													<string>C4FA228610B5CA150031303E</string>
 													<string>C4FA22BE10B5CDBD0031303E</string>
 													<string>C4FA22CB10B5CE5F0031303E</string>
-													<string>C4FA22DE10B5D0E80031303E</string>
 													<string>C4FA22DF10B5D0E80031303E</string>
 													<string>C4FA22E210B5D0E80031303E</string>
-													<string>C4FA22E310B5D0E80031303E</string>
-													<string>C4FA22E410B5D0E80031303E</string>
-													<string>C4FA22FF10B5D2400031303E</string>
-													<string>C4FA230810B5D26D0031303E</string>
 													<string>C4FA233A10B5D3540031303E</string>
 													<string>C4FA234D10B5D86A0031303E</string>
 													<string>C4FA235610B5DC970031303E</string>
@@ -454,17 +448,23 @@
 													<string>C4FA235F10B5DD380031303E</string>
 													<string>C4FA236010B5DD380031303E</string>
 													<string>C4FA238810B5DE140031303E</string>
-													<string>C4FA23A610B5E3770031303E</string>
 													<string>C4FA23A710B5E3770031303E</string>
 													<string>C4FA23AA10B5E3770031303E</string>
-													<string>C4FA23BE10B5E5710031303E</string>
 													<string>C4FA23BF10B5E5710031303E</string>
-													<string>C4FA23C010B5E5710031303E</string>
 													<string>C4FA23C110B5E5710031303E</string>
-													<string>C4FA23DB10B5E6F70031303E</string>
-													<string>C4FA240210B5ECDB0031303E</string>
-													<string>C4FA240C10B5EE960031303E</string>
-													<string>C4FA240D10B5EE960031303E</string>
+													<string>C4FA242110B5EFF60031303E</string>
+													<string>C4FA245610B5F32D0031303E</string>
+													<string>C4FA245710B5F32D0031303E</string>
+													<string>C4FA248110B5F6330031303E</string>
+													<string>C4FA248F10B5F67B0031303E</string>
+													<string>C4FA249910B5F6DB0031303E</string>
+													<string>C4FA249A10B5F6DB0031303E</string>
+													<string>C4FA249B10B5F6DB0031303E</string>
+													<string>C4FA249C10B5F6DB0031303E</string>
+													<string>C4FA249D10B5F6DB0031303E</string>
+													<string>C4FA24A510B5F70C0031303E</string>
+													<string>C4FA24F710B5F97C0031303E</string>
+													<string>C4FA24F810B5F97C0031303E</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -491,7 +491,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FilteredCompaniesTableViewController.m</string>
+										<string>UIView-Extensions.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -499,11 +499,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>FilteredCompaniesTableViewController.m</string>
+												<string>UIView-Extensions.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4FA241710B5EEE20031303E</string>
+												<string>C4FA24FC10B5F97C0031303E</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -537,11 +537,12 @@
 													<string>C4FA227510B5C9EE0031303E</string>
 													<string>C4FA228F10B5CAD20031303E</string>
 													<string>C4FA236310B5DD380031303E</string>
-													<string>C4FA23AD10B5E3770031303E</string>
 													<string>C4FA23AE10B5E3770031303E</string>
 													<string>C4FA23AF10B5E3770031303E</string>
 													<string>C4FA23C410B5E5710031303E</string>
-													<string>C4FA23C510B5E5710031303E</string>
+													<string>C4FA248410B5F6330031303E</string>
+													<string>C4FA248510B5F6330031303E</string>
+													<string>C4FA248610B5F6330031303E</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -853,7 +854,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>280358626.712744</real>
+	<real>280361340.716474</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
