@@ -9,6 +9,8 @@
 #import "CompaniesTableViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
+#import "ColoredTableViewCell.h"
+#import "UIColor+extensions.h"
 
 NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
@@ -86,19 +88,27 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
-
+    
+    if([[(Company*)managedObject ratingLevel] intValue] == 0)
+        cell.cellColor = [UIColor gpGreen];
+    else if([[(Company*)managedObject ratingLevel] intValue] == 1)
+        cell.cellColor = [UIColor gpYellow];
+    else
+        cell.cellColor = [UIColor gpRed];
+    
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
     cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
 
 	
     return cell;

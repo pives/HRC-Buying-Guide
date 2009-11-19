@@ -11,6 +11,8 @@
 #import "Company.h"
 #import "Company+Extensions.h"
 #import "UIBarButtonItem+extensions.h"
+#import "ColoredTableViewCell.h"
+#import "UIColor+extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -129,22 +131,40 @@
     return [sectionInfo numberOfObjects];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section { 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     if(sortControl.selectedSegmentIndex==1){
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-        NSString* header;
         
-        if([[sectionInfo name] isEqualToString:@"0"])
-            header = @"Best Places To Shop";
-        else if([[sectionInfo name] isEqualToString:@"1"])
-            header = @"Business Places Making Progress";
-        else 
-            header = @"Needs Improvement or Did Not Respond";
+        UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        UILabel* header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        [headerView addSubview:header];
         
-        return header;
+        header.textColor = [UIColor whiteColor];
+        header.font = [UIFont boldSystemFontOfSize:14];
+        
+        if([[sectionInfo name] isEqualToString:@"0"]){
+            header.text = @"Best Places To Shop";
+            headerView.backgroundColor = [UIColor gpGreenHeader];
+            header.backgroundColor = [UIColor gpGreenHeader];
+            
+        }else if([[sectionInfo name] isEqualToString:@"1"]){
+            header.text = @"Business Places Making Progress";
+            headerView.backgroundColor = [UIColor gpYellowHeader];
+            header.backgroundColor = [UIColor gpYellowHeader];
+            
+        }else {
+            header.text = @"Needs Improvement or Did Not Respond";
+            headerView.backgroundColor = [UIColor gpRedHeader];
+            header.backgroundColor = [UIColor gpRedHeader];
+        }
+        
+        [header release];
+        return [headerView autorelease];
     }
     return nil;
+    
+    
 }
 
 // Customize the appearance of table view cells.
@@ -152,17 +172,29 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
+        
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if([[(Company*)managedObject ratingLevel] intValue] == 0)
+        cell.cellColor = [UIColor gpGreen];
+    else if([[(Company*)managedObject ratingLevel] intValue] == 1)
+        cell.cellColor = [UIColor gpYellow];
+    else
+        cell.cellColor = [UIColor gpRed];
+    
+    
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
     cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+
 
 	
     return cell;

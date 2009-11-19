@@ -25,9 +25,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
     self.textLabel.backgroundColor = cellColor;
     self.detailTextLabel.backgroundColor = cellColor;
     self.contentView.backgroundColor = cellColor;
+    self.accessoryView.backgroundColor = cellColor;
+
 }
 
 
