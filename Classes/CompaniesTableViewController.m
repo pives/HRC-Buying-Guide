@@ -75,14 +75,15 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     return [sectionInfo numberOfObjects];
 }
 
-//TODO: must section data by nameFirstLetter for this to work (currently there are 402 sections)
-/*
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if(section == 0){
+        return @"#";
+    }
     
     return [[[fetchedResultsController sections] objectAtIndex:section] name];
 }
- 
- */
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -211,8 +212,10 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, sortDescriptor2, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
 	
@@ -220,13 +223,14 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     // nil for section name key path means "no sections".
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                 managedObjectContext:managedObjectContext 
-                                                                                                  sectionNameKeyPath:@"name" 
+                                                                                                  sectionNameKeyPath:@"namefirstLetter" 
                                                                                                            cacheName:@"CompaniesList"];
 	self.fetchedResultsController = aFetchedResultsController;
 	
 	[aFetchedResultsController release];
 	[fetchRequest release];
 	[sortDescriptor release];
+    [sortDescriptor2 release];
 	[sortDescriptors release];
 	
 	return fetchedResultsController;

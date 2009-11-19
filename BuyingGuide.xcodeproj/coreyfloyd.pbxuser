@@ -208,9 +208,9 @@
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C4FA1D7A10B45DBB0031303E /* BuyingGuide FJS */;
-		activeSDKPreference = iphoneos3.1.2;
-		activeTarget = C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */;
+		activeExecutable = C40442DC10B071D800BCCFEC /* BuyingGuide */;
+		activeSDKPreference = iphonesimulator3.1.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* BuyingGuide */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* BuyingGuide */,
 			C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */,
@@ -840,6 +840,33 @@
 			C4FA24FA10B5F97C0031303E /* PBXTextBookmark */ = C4FA24FA10B5F97C0031303E /* PBXTextBookmark */;
 			C4FA24FB10B5F97C0031303E /* PBXTextBookmark */ = C4FA24FB10B5F97C0031303E /* PBXTextBookmark */;
 			C4FA24FC10B5F97C0031303E /* PBXTextBookmark */ = C4FA24FC10B5F97C0031303E /* PBXTextBookmark */;
+			C4FA250010B5FAFF0031303E /* PBXTextBookmark */ = C4FA250010B5FAFF0031303E /* PBXTextBookmark */;
+			C4FA250110B5FB370031303E /* PBXTextBookmark */ = C4FA250110B5FB370031303E /* PBXTextBookmark */;
+			C4FA250210B5FB370031303E /* PBXTextBookmark */ = C4FA250210B5FB370031303E /* PBXTextBookmark */;
+			C4FA250310B5FB370031303E /* PBXTextBookmark */ = C4FA250310B5FB370031303E /* PBXTextBookmark */;
+			C4FA250410B5FB370031303E /* PBXTextBookmark */ = C4FA250410B5FB370031303E /* PBXTextBookmark */;
+			C4FA250510B5FB370031303E /* PBXTextBookmark */ = C4FA250510B5FB370031303E /* PBXTextBookmark */;
+			C4FA250610B5FB370031303E /* PBXTextBookmark */ = C4FA250610B5FB370031303E /* PBXTextBookmark */;
+			C4FA250710B5FB370031303E /* PBXTextBookmark */ = C4FA250710B5FB370031303E /* PBXTextBookmark */;
+			C4FA250E10B5FC270031303E /* PBXTextBookmark */ = C4FA250E10B5FC270031303E /* PBXTextBookmark */;
+			C4FA250F10B5FC270031303E /* PBXTextBookmark */ = C4FA250F10B5FC270031303E /* PBXTextBookmark */;
+			C4FA251010B5FC270031303E /* PBXTextBookmark */ = C4FA251010B5FC270031303E /* PBXTextBookmark */;
+			C4FA251110B5FC270031303E /* PBXTextBookmark */ = C4FA251110B5FC270031303E /* PBXTextBookmark */;
+			C4FA251210B5FC270031303E /* PBXTextBookmark */ = C4FA251210B5FC270031303E /* PBXTextBookmark */;
+			C4FA251310B5FC2C0031303E /* PBXTextBookmark */ = C4FA251310B5FC2C0031303E /* PBXTextBookmark */;
+			C4FA251410B5FC2C0031303E /* PBXTextBookmark */ = C4FA251410B5FC2C0031303E /* PBXTextBookmark */;
+			C4FA251610B5FC450031303E /* PBXTextBookmark */ = C4FA251610B5FC450031303E /* PBXTextBookmark */;
+			C4FA251710B5FC450031303E /* PBXTextBookmark */ = C4FA251710B5FC450031303E /* PBXTextBookmark */;
+			C4FA251810B5FC450031303E /* PBXTextBookmark */ = C4FA251810B5FC450031303E /* PBXTextBookmark */;
+			C4FA251910B5FC450031303E /* PBXTextBookmark */ = C4FA251910B5FC450031303E /* PBXTextBookmark */;
+			C4FA251F10B5FC950031303E /* PBXTextBookmark */ = C4FA251F10B5FC950031303E /* PBXTextBookmark */;
+			C4FA252010B5FC950031303E /* PBXTextBookmark */ = C4FA252010B5FC950031303E /* PBXTextBookmark */;
+			C4FA252110B5FC960031303E /* PBXTextBookmark */ = C4FA252110B5FC960031303E /* PBXTextBookmark */;
+			C4FA252210B5FC960031303E /* PBXTextBookmark */ = C4FA252210B5FC960031303E /* PBXTextBookmark */;
+			C4FA252310B5FCA80031303E /* PBXTextBookmark */ = C4FA252310B5FCA80031303E /* PBXTextBookmark */;
+			C4FA252410B5FCB30031303E /* PBXTextBookmark */ = C4FA252410B5FCB30031303E /* PBXTextBookmark */;
+			C4FA252510B5FCB30031303E /* PBXTextBookmark */ = C4FA252510B5FCB30031303E /* PBXTextBookmark */;
+			C4FA252610B5FCB30031303E /* PBXTextBookmark */ = C4FA252610B5FCB30031303E /* PBXTextBookmark */;
 		};
 		sourceControlManager = C40442EF10B071EA00BCCFEC /* Source Control */;
 		userBuildSettings = {
@@ -957,9 +984,9 @@
 	};
 	C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2010, 3374}}";
-			sepNavSelRange = "{3434, 0}";
-			sepNavVisRange = "{2410, 2034}";
+			sepNavIntBoundsRect = "{{0, 0}, {2010, 3416}}";
+			sepNavSelRange = "{2357, 0}";
+			sepNavVisRange = "{1660, 1837}";
 			sepNavWindowFrame = "{{15, 72}, {763, 1101}}";
 		};
 	};
@@ -1098,9 +1125,9 @@
 	};
 	C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2010, 4480}}";
+			sepNavIntBoundsRect = "{{0, 0}, {2010, 4452}}";
 			sepNavSelRange = "{7244, 0}";
-			sepNavVisRange = "{5986, 2179}";
+			sepNavVisRange = "{5945, 2222}";
 			sepNavWindowFrame = "{{15, 75}, {763, 1101}}";
 		};
 	};
@@ -2068,7 +2095,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {730, 1680}}";
 			sepNavSelRange = "{322, 0}";
-			sepNavVisRange = "{0, 867}";
+			sepNavVisRange = "{0, 1024}";
 		};
 	};
 	C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {
@@ -2178,7 +2205,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 78";
 		rLen = 0;
-		rLoc = 2414;
+		rLoc = 2368;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 0;
@@ -2413,8 +2440,8 @@
 	};
 	C4FA223010B5C81D0031303E /* Company.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {899, 628}}";
-			sepNavSelRange = "{611, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {795, 732}}";
+			sepNavSelRange = "{347, 0}";
 			sepNavVisRange = "{0, 1100}";
 		};
 	};
@@ -2973,7 +3000,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -2993,7 +3020,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3033,7 +3060,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 75";
 		rLen = 0;
-		rLoc = 2300;
+		rLoc = 2217;
 		rType = 0;
 		vrLen = 1754;
 		vrLoc = 1566;
@@ -3063,7 +3090,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3083,7 +3110,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3103,7 +3130,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3113,7 +3140,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3123,7 +3150,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3133,7 +3160,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3143,7 +3170,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3153,7 +3180,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3163,7 +3190,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 77";
 		rLen = 0;
-		rLoc = 2333;
+		rLoc = 2233;
 		rType = 0;
 		vrLen = 1586;
 		vrLoc = 1648;
@@ -3190,7 +3217,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3242,7 +3269,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3262,7 +3289,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -3293,7 +3320,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3436,7 +3463,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3446,7 +3473,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -3514,7 +3541,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3554,7 +3581,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3624,7 +3651,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3644,7 +3671,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3654,7 +3681,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -3674,7 +3701,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1666;
 		vrLoc = 1634;
@@ -3704,7 +3731,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3724,7 +3751,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3734,7 +3761,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -3754,7 +3781,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 1572;
@@ -3958,7 +3985,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -3978,7 +4005,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2006;
 		vrLoc = 1153;
@@ -3988,7 +4015,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -4008,7 +4035,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 1572;
@@ -4018,7 +4045,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -4028,7 +4055,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 1572;
@@ -4087,7 +4114,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 1153;
@@ -4181,7 +4208,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 143";
 		rLen = 0;
-		rLoc = 5821;
+		rLoc = 5770;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 1645;
@@ -4740,7 +4767,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 4232;
+		rLoc = 4181;
 		rType = 0;
 		vrLen = 1952;
 		vrLoc = 2034;
@@ -4750,7 +4777,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 4367;
+		rLoc = 4316;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 2385;
@@ -4790,7 +4817,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 4367;
+		rLoc = 4316;
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 2464;
@@ -4830,7 +4857,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 4367;
+		rLoc = 4316;
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 2464;
@@ -4870,7 +4897,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 4367;
+		rLoc = 4316;
 		rType = 0;
 		vrLen = 1800;
 		vrLoc = 2464;
@@ -4880,7 +4907,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 99";
 		rLen = 0;
-		rLoc = 4144;
+		rLoc = 4093;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 2380;
@@ -4900,7 +4927,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 99";
 		rLen = 0;
-		rLoc = 4144;
+		rLoc = 4093;
 		rType = 0;
 		vrLen = 1946;
 		vrLoc = 2380;
@@ -4930,7 +4957,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 99";
 		rLen = 0;
-		rLoc = 4144;
+		rLoc = 4093;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 2380;
@@ -5810,7 +5837,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 99";
 		rLen = 0;
-		rLoc = 4144;
+		rLoc = 4093;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 2380;
@@ -5820,7 +5847,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 95";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 1939;
 		vrLoc = 2285;
@@ -5840,7 +5867,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 95";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 1873;
 		vrLoc = 2285;
@@ -5880,7 +5907,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 95";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 1939;
 		vrLoc = 2285;
@@ -5890,7 +5917,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 119";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2048;
 		vrLoc = 2285;
@@ -5910,7 +5937,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 119";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 1833;
 		vrLoc = 2285;
@@ -5950,7 +5977,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 119";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 1833;
 		vrLoc = 2285;
@@ -5960,7 +5987,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 116";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2073;
 		vrLoc = 2466;
@@ -5980,7 +6007,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 116";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2070;
 		vrLoc = 2466;
@@ -6010,7 +6037,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 116";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2073;
 		vrLoc = 2466;
@@ -6169,7 +6196,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 116";
 		rLen = 0;
-		rLoc = 4425;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2067;
 		vrLoc = 2472;
@@ -6179,7 +6206,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2109;
 		vrLoc = 2187;
@@ -6199,7 +6226,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2107;
 		vrLoc = 2187;
@@ -6229,7 +6256,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2107;
 		vrLoc = 2187;
@@ -6339,7 +6366,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2105;
 		vrLoc = 2187;
@@ -6349,7 +6376,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 2188;
@@ -6369,7 +6396,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6409,7 +6436,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6419,7 +6446,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 2188;
@@ -6439,7 +6466,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6479,7 +6506,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 94";
 		rLen = 0;
-		rLoc = 3066;
+		rLoc = 3015;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6489,7 +6516,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 2188;
@@ -6509,7 +6536,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6549,7 +6576,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 97";
 		rLen = 0;
-		rLoc = 3233;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6559,7 +6586,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3741;
+		rLoc = 3690;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 2188;
@@ -6579,7 +6606,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3741;
+		rLoc = 3690;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6619,7 +6646,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3741;
+		rLoc = 3690;
 		rType = 0;
 		vrLen = 2157;
 		vrLoc = 2188;
@@ -6629,7 +6656,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 2021;
 		vrLoc = 2380;
@@ -6649,7 +6676,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 2020;
 		vrLoc = 2380;
@@ -6689,7 +6716,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 1986;
 		vrLoc = 2380;
@@ -6699,7 +6726,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 2113;
 		vrLoc = 2288;
@@ -6719,7 +6746,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 102";
 		rLen = 0;
-		rLoc = 3731;
+		rLoc = 3680;
 		rType = 0;
 		vrLen = 2111;
 		vrLoc = 2288;
@@ -6760,7 +6787,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 137;
+		rLoc = 138;
 		rType = 1;
 	};
 	C4FA24E510B5F8850031303E /* PBXTextBookmark */ = {
@@ -6768,7 +6795,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 127";
 		rLen = 0;
-		rLoc = 4618;
+		rLoc = 4567;
 		rType = 0;
 		vrLen = 1783;
 		vrLoc = 3358;
@@ -6788,7 +6815,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 127";
 		rLen = 0;
-		rLoc = 4618;
+		rLoc = 4567;
 		rType = 0;
 		vrLen = 1678;
 		vrLoc = 3358;
@@ -6828,7 +6855,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 127";
 		rLen = 0;
-		rLoc = 4618;
+		rLoc = 4567;
 		rType = 0;
 		vrLen = 1762;
 		vrLoc = 3358;
@@ -6838,7 +6865,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 111";
 		rLen = 0;
-		rLoc = 3721;
+		rLoc = 3670;
 		rType = 0;
 		vrLen = 2082;
 		vrLoc = 2496;
@@ -6858,7 +6885,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 111";
 		rLen = 0;
-		rLoc = 3721;
+		rLoc = 3670;
 		rType = 0;
 		vrLen = 2077;
 		vrLoc = 2496;
@@ -6898,7 +6925,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 111";
 		rLen = 0;
-		rLoc = 3721;
+		rLoc = 3670;
 		rType = 0;
 		vrLen = 2077;
 		vrLoc = 2496;
@@ -6908,7 +6935,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 3434;
+		rLoc = 3383;
 		rType = 0;
 		vrLen = 2036;
 		vrLoc = 2410;
@@ -6928,7 +6955,7 @@
 		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
 		name = "CompaniesTableViewController.m: 104";
 		rLen = 0;
-		rLoc = 3434;
+		rLoc = 3383;
 		rType = 0;
 		vrLen = 2034;
 		vrLoc = 2410;
@@ -6941,6 +6968,276 @@
 		rLoc = 519;
 		rType = 0;
 		vrLen = 937;
+		vrLoc = 0;
+	};
+	C4FA250010B5FAFF0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */;
+		name = "UIView-Extensions.m: 25";
+		rLen = 0;
+		rLoc = 519;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 0;
+	};
+	C4FA250110B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */;
+		name = "UIView-Extensions.m: 23";
+		rLen = 0;
+		rLoc = 511;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 0;
+	};
+	C4FA250210B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200710B4BA570031303E /* UIView-Extensions.h */;
+		name = "UIView-Extensions.h: 21";
+		rLen = 0;
+		rLoc = 322;
+		rType = 0;
+		vrLen = 1024;
+		vrLoc = 0;
+	};
+	C4FA250310B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */;
+		name = "FilteredCompaniesTableViewController.h: 30";
+		rLen = 0;
+		rLoc = 893;
+		rType = 0;
+		vrLen = 924;
+		vrLoc = 0;
+	};
+	C4FA250410B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */;
+		name = "FilteredCompaniesTableViewController.m: 197";
+		rLen = 0;
+		rLoc = 7244;
+		rType = 0;
+		vrLen = 2222;
+		vrLoc = 5945;
+	};
+	C4FA250510B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 104";
+		rLen = 0;
+		rLoc = 3383;
+		rType = 0;
+		vrLen = 2036;
+		vrLoc = 2410;
+	};
+	C4FA250610B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 104";
+		rLen = 0;
+		rLoc = 3383;
+		rType = 0;
+		vrLen = 2036;
+		vrLoc = 2410;
+	};
+	C4FA250710B5FB370031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */;
+		name = "UIView-Extensions.m: 25";
+		rLen = 0;
+		rLoc = 519;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 0;
+	};
+	C4FA250E10B5FC270031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 100";
+		rLen = 0;
+		rLoc = 3235;
+		rType = 0;
+		vrLen = 2036;
+		vrLoc = 2410;
+	};
+	C4FA250F10B5FC270031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 84";
+		rLen = 0;
+		rLoc = 2450;
+		rType = 0;
+		vrLen = 1982;
+		vrLoc = 1742;
+	};
+	C4FA251010B5FC270031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */;
+		name = "UIView-Extensions.m: 22";
+		rLen = 0;
+		rLoc = 501;
+		rType = 0;
+		vrLen = 969;
+		vrLoc = 0;
+	};
+	C4FA251110B5FC270031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 18";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA251210B5FC270031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 18";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA251310B5FC2C0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */;
+		name = "UIView-Extensions.m: 25";
+		rLen = 0;
+		rLoc = 519;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 0;
+	};
+	C4FA251410B5FC2C0031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 18";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA251610B5FC450031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 18";
+		rLen = 0;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA251710B5FC450031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 84";
+		rLen = 0;
+		rLoc = 2450;
+		rType = 0;
+		vrLen = 1964;
+		vrLoc = 1742;
+	};
+	C4FA251810B5FC450031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 162";
+		rLen = 0;
+		rLoc = 5368;
+		rType = 0;
+		vrLen = 1621;
+		vrLoc = 4513;
+	};
+	C4FA251910B5FC450031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 19";
+		rLen = 0;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA251F10B5FC950031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 81";
+		rLen = 0;
+		rLoc = 2357;
+		rType = 0;
+		vrLen = 1837;
+		vrLoc = 1660;
+	};
+	C4FA252010B5FC950031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 19";
+		rLen = 0;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA252110B5FC960031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 81";
+		rLen = 0;
+		rLoc = 2357;
+		rType = 0;
+		vrLen = 1780;
+		vrLoc = 1660;
+	};
+	C4FA252210B5FC960031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 19";
+		rLen = 0;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA252310B5FCA80031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 19";
+		rLen = 0;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA252410B5FCB30031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */;
+		name = "CompaniesTableViewController.m: 81";
+		rLen = 0;
+		rLoc = 2357;
+		rType = 0;
+		vrLen = 1837;
+		vrLoc = 1660;
+	};
+	C4FA252510B5FCB30031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 25";
+		rLen = 0;
+		rLoc = 656;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 0;
+	};
+	C4FA252610B5FCB30031303E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C4FA223010B5C81D0031303E /* Company.h */;
+		name = "Company.h: 19";
+		rLen = 0;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 1100;
 		vrLoc = 0;
 	};
 }
