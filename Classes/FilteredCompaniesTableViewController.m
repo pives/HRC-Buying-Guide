@@ -18,6 +18,7 @@
 @synthesize fetchedResultsController, managedObjectContext;
 @synthesize filterKey;
 @synthesize filterObject;
+@synthesize sortControl;
 
 
 #pragma mark -
@@ -30,6 +31,7 @@
 
 
 - (void)dealloc {
+    self.sortControl = nil;
     self.filterKey = nil;
     self.filterObject = nil;
 	[fetchedResultsController release];
@@ -64,6 +66,7 @@
     [control setWidth:155 forSegmentAtIndex:0];
     [control setWidth:155 forSegmentAtIndex:1];
     control.selectedSegmentIndex = 0;
+    [control addTarget:self action:@selector(changeSort:) forControlEvents:UIControlEventValueChanged];
 
     
     NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
@@ -72,6 +75,8 @@
                       nil];
     
     self.toolbarItems = items;
+    
+    self.sortControl = control;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -94,7 +99,22 @@
 	}
 }
 
-
+- (IBAction)changeSort:(id)sender{
+    
+    NSError *error = nil;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		/*
+		 Replace this implementation with code to handle the error appropriately.
+		 
+		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		 */
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+    [self.tableView reloadData];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    //TODO: catch exception in case table is empty (but should never be)
+}
 #pragma mark -
 #pragma mark Table view methods
 
@@ -150,9 +170,14 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
+    //ususlly returns the last configure controller, instead we are creating a new one each time so that the segmented control works
+    //this may be expensive, but we will see
+    
+    /*
     if (fetchedResultsController != nil) {
         return fetchedResultsController;
     }
+    */
     
     /*
 	 Set up the fetched results controller.
@@ -167,26 +192,54 @@
 	//[fetchRequest setFetchBatchSize:20];
     //TODO: reenable batchsize?
 	
-	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    NSFetchedResultsController *aFetchedResultsController;
     
-	[fetchRequest setSortDescriptors:sortDescriptors];
+    if(sortControl.selectedSegmentIndex == 0){
+     
+        // Edit the sort key as appropriate.
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+        
+        // Edit the section name key path and cache name if appropriate.
+        // nil for section name key path means "no sections".
+       aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                                    managedObjectContext:managedObjectContext 
+                                                                                                      sectionNameKeyPath:@"name" 
+                                                                                                               cacheName:@"CompaniesList"];
+        
+        [sortDescriptor release];
+        [sortDescriptors release];
+        
+    }else{
+        
+        // Edit the sort key as appropriate.
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+        
+        // Edit the section name key path and cache name if appropriate.
+        // nil for section name key path means "no sections".
+        aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                                    managedObjectContext:managedObjectContext 
+                                                                                                      sectionNameKeyPath:nil
+                                                                                                               cacheName:@"CompaniesList"];        
+        
+        [sortDescriptor release];
+        [sortDescriptors release];
+    }
     
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
-	
-	// Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                                                                                managedObjectContext:managedObjectContext 
-                                                                                                  sectionNameKeyPath:@"name" 
-                                                                                                           cacheName:@"CompaniesList"];
-	self.fetchedResultsController = aFetchedResultsController;
-	
+    self.fetchedResultsController = aFetchedResultsController;
+		
 	[aFetchedResultsController release];
 	[fetchRequest release];
-	[sortDescriptor release];
-	[sortDescriptors release];
+	
 	
 	return fetchedResultsController;
 } 
