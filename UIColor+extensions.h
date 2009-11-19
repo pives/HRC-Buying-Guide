@@ -12,6 +12,14 @@
 + (id)stoplightYellow;
 + (id)stoplightGreen;
 
++ (id)gpRed;
++ (id)gpYellow;
++ (id)gpGreen;
+
++ (id)gpRedHeader;
++ (id)gpYellowHeader;
++ (id)gpGreenHeader;
+
 
 
 @end

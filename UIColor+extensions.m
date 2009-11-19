@@ -10,18 +10,36 @@
 @implementation UIColor(HRC)
 
 + (id)stoplightRed{
- 
     vendColor(240, 248, 255);
 }
 + (id)stoplightYellow{
-    
     vendColor(240, 248, 255);
 }
 + (id)stoplightGreen{
-    
     vendColor(0, 183, 96);
 }
 
+
++ (id)gpRed{
+    return [UIColor colorWithRed:0.774 green:0.618 blue:0.623 alpha:1.000];
+}
++ (id)gpYellow{
+    return [UIColor colorWithRed:1.000 green:0.992 blue:0.525 alpha:1.000];
+}
++ (id)gpGreen{
+    return [UIColor colorWithRed:0.628 green:0.971 blue:0.527 alpha:1.000];
+}
+
+
++ (id)gpRedHeader{
+    return [UIColor colorWithRed:0.770 green:0.088 blue:0.110 alpha:1.000];
+}
++ (id)gpYellowHeader{
+    return [UIColor colorWithRed:0.867 green:0.674 blue:0.000 alpha:1.000];
+}
++ (id)gpGreenHeader{
+    return [UIColor colorWithRed:0.437 green:0.720 blue:0.143 alpha:1.000];
+}
 
 @end
 

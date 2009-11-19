@@ -14,6 +14,7 @@
 #import "Company.h"
 #import "FilteredCompaniesTableViewController.h"
 #import "CompanyViewController.h"
+#import "UIView-Extensions.h"
 
 @implementation MainViewController
 
@@ -112,6 +113,8 @@
     categoryView.managedObjectContext = self.context;
     
     categoryView.view.frame = self.view.bounds;
+    [categoryView.view setSizeHeight:416-44-36];
+    
     [self.view addSubview:categoryView.view];
     
     [categoryView viewWillAppear:NO];

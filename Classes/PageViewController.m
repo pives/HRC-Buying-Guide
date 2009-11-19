@@ -17,6 +17,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Company.h"
 #import "Company+Extensions.h"
+#import "ColoredTableViewCell.h"
+#import "UIColor+extensions.h"
 
 const CGFloat TEXT_VIEW_PADDING = 50.0;
 
@@ -113,18 +115,22 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell.
-    cell.backgroundView.backgroundColor = [UIColor blueColor];
-    cell.contentView.backgroundColor = [UIColor blueColor];
+    
+    if([company.ratingLevel intValue] == 0)
+        cell.cellColor = [UIColor gpGreen];
+    else if([company.ratingLevel intValue] == 1)
+        cell.cellColor = [UIColor gpYellow];
+    else
+        cell.cellColor = [UIColor gpRed];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.backgroundColor = [UIColor blueColor];
 	cell.textLabel.text = [managedObject valueForKey:@"name"];
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     return cell;
@@ -209,16 +215,6 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         
         [self fetch];
     }
-}
-
-- (void)refreshCells{
-    
-    for(UITableViewCell* eachCell in [self.table visibleCells]){
-        eachCell.textLabel.backgroundColor = [UIColor blueColor];
-    
-        [eachCell setNeedsDisplay];
-    }
-
 }
 @end
 

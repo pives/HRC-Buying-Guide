@@ -69,8 +69,6 @@
     //pageControl.currentPage = 0     
     
     [self changePageUnanianimated:[data pageOfStartingSelectedCategory]];
-    [currentPage refreshCells];
-    [nextPage refreshCells];
     /*
 	pageControl.currentPage = 0;
 	
@@ -81,16 +79,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [currentPage refreshCells];
-    [nextPage refreshCells];
 
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    [currentPage refreshCells];
-    [nextPage refreshCells];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -150,7 +144,6 @@
 		nextPage = swapController;
 	}
 
-    [currentPage refreshCells];
     //TODO: may need to send update message to tableview
 }
 
