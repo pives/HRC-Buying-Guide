@@ -75,6 +75,8 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     return [sectionInfo numberOfObjects];
 }
 
+//TODO: find out if client wants to see the header, to many colors in my opinion.
+/*
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
     if(section == 0){
@@ -83,6 +85,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     
     return [[[fetchedResultsController sections] objectAtIndex:section] name];
 }
+ */
 
 
 // Customize the appearance of table view cells.

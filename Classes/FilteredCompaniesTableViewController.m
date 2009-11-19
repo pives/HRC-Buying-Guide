@@ -131,6 +131,7 @@
     return [sectionInfo numberOfObjects];
 }
 
+
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     if(sortControl.selectedSegmentIndex==1){
@@ -163,8 +164,17 @@
         return [headerView autorelease];
     }
     return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
+    if(sortControl.selectedSegmentIndex==1){
+        
+        return 60;
+        
+    }
     
+    return 0;
 }
 
 // Customize the appearance of table view cells.

@@ -27,7 +27,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    [self setBackgroundColor:cellColor recursive:YES];
+    if(!selected)
+        [self setBackgroundColor:cellColor recursive:YES];
     
     /*
     self.textLabel.backgroundColor = cellColor;
