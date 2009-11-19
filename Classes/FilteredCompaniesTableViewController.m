@@ -129,6 +129,24 @@
     return [sectionInfo numberOfObjects];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section { 
+    
+    if(sortControl.selectedSegmentIndex==1){
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+        NSString* header;
+        
+        if([[sectionInfo name] isEqualToString:@"0"])
+            header = @"Best Places To Shop";
+        else if([[sectionInfo name] isEqualToString:@"1"])
+            header = @"Business Places Making Progress";
+        else 
+            header = @"Needs Improvement or Did Not Respond";
+        
+        return header;
+    }
+    return nil;
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -217,8 +235,10 @@
     }else{
         
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES];
+        NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO];
+
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,sortDescriptor2, nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];
         
@@ -228,10 +248,11 @@
         // nil for section name key path means "no sections".
         aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                     managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:nil
+                                                                                                      sectionNameKeyPath:@"ratingLevel"
                                                                                                                cacheName:@"CompaniesList"];        
         
         [sortDescriptor release];
+        [sortDescriptor2 release];
         [sortDescriptors release];
     }
     

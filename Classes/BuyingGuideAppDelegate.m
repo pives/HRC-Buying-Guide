@@ -57,7 +57,7 @@
     
     NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] error:nil];
     
-    if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 160){
+    if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 170){
         
         [[NSFileManager defaultManager] copyItemAtPath:db 
                                                 toPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] 

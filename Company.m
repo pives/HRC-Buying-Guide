@@ -2,7 +2,7 @@
 //  Company.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/16/09.
+//  Created by Corey Floyd on 11/19/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
@@ -14,11 +14,12 @@
 @implementation Company 
 
 @dynamic rating;
-@dynamic officialName;
+@dynamic ID;
 @dynamic partner;
+@dynamic ratingLevel;
 @dynamic namefirstLetter;
 @dynamic name;
-@dynamic ID;
+@dynamic officialName;
 @dynamic brands;
 @dynamic categories;
 
