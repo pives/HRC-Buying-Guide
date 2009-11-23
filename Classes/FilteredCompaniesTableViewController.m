@@ -22,6 +22,7 @@
 @synthesize filterKey;
 @synthesize filterObject;
 @synthesize sortControl;
+@synthesize cellColors;
 
 
 #pragma mark -
@@ -34,6 +35,7 @@
 
 
 - (void)dealloc {
+    self.cellColors = nil;    
     self.sortControl = nil;
     self.filterKey = nil;
     self.filterObject = nil;
@@ -88,6 +90,9 @@
     
     self.title = [filterObject valueForKey:@"name"];
     self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -203,31 +208,48 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+               
+        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(280, 0, 30, cell.frame.size.height)];
+        rating.tag = 999;
+        rating.font = [UIFont boldSystemFontOfSize:12];
+        rating.textColor = [UIColor blackColor];
+        rating.textAlignment = UITextAlignmentRight;
+        [cell addSubview:rating];
+        [rating release];
+        
+        UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        company.tag = 1000;
+        company.font = [UIFont boldSystemFontOfSize:14];
+        company.textColor = [UIColor blackColor];
+        company.textAlignment = UITextAlignmentLeft;
+        [cell addSubview:company];
+        [company release];
+        
+        
+        UIView* background = [[UIView alloc] initWithFrame:cell.frame];
+        cell.backgroundView = background;
+        [background release];
+        
     }
     
-        
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
     
-    if([[(Company*)managedObject ratingLevel] intValue] == 0)
-        cell.cellColor = [UIColor gpGreen];
-    else if([[(Company*)managedObject ratingLevel] intValue] == 1)
-        cell.cellColor = [UIColor gpYellow];
-    else
-        cell.cellColor = [UIColor gpRed];
+    UILabel* company = (UILabel*)[cell viewWithTag:1000];
+    company.text = [managedObject valueForKey:@"name"];
+    UILabel* rating = (UILabel*)[cell viewWithTag:999];
+    rating.text = [(Company*)managedObject ratingFormatted];
     
+    int cellColorValue = [[(Company*)managedObject ratingLevel] intValue];
+    UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
-	cell.textLabel.text = [managedObject valueForKey:@"name"];
-    cell.detailTextLabel.text = [(Company*)managedObject ratingFormatted];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
-    cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
-
-    self.tableView.separatorColor = [UIColor whiteColor];
-
+    cell.backgroundView.backgroundColor = cellColor;        
+    rating.backgroundColor = cellColor;
+    company.backgroundColor = cellColor;
+    
     return cell;
 }
 

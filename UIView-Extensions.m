@@ -15,9 +15,7 @@
 - (void)setBackgroundColor:(UIColor*)aColor recursive:(BOOL)flag{
     
     self.backgroundColor = aColor;
-    
-    RECTLOG(self.frame);
-    
+        
     if(flag){
         for(UIView* eachSubview in self.subviews){
             [eachSubview setBackgroundColor:aColor recursive:YES];

@@ -17,6 +17,8 @@
     id filterObject;
     
     UISegmentedControl* sortControl;
+    NSArray* cellColors;
+
     
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -24,6 +26,7 @@
 @property(nonatomic,retain)NSString *filterKey;
 @property(nonatomic,retain)id filterObject;
 @property(nonatomic,retain)UISegmentedControl *sortControl;
+@property (nonatomic,retain) NSArray *cellColors;
 
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;
