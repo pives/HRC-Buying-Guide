@@ -15,6 +15,7 @@
 #import "FilteredCompaniesTableViewController.h"
 #import "CompanyViewController.h"
 #import "UIView-Extensions.h"
+#import "KeyViewController.h"
 
 @implementation MainViewController
 
@@ -142,7 +143,14 @@
 
 - (void)showKey{
     
+    KeyViewController *detailViewController = [[KeyViewController alloc] init];
+    
+    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController presentModalViewController:detailViewController animated:YES];
+    [detailViewController release];
+    
 }
+
 
 - (void)ShowDonationMessage{
     

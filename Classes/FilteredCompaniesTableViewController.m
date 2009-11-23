@@ -13,6 +13,7 @@
 #import "UIBarButtonItem+extensions.h"
 #import "ColoredTableViewCell.h"
 #import "UIColor+extensions.h"
+#import "KeyViewController.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -80,6 +81,13 @@
     
     self.sortControl = control;
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"Key" 
+                                                                      style:UIBarButtonItemStyleBordered 
+                                                                     target:self 
+                                                                     action:@selector(showKey)];
+    
+    self.title = [filterObject valueForKey:@"name"];
+    self.tableView.separatorColor = [UIColor whiteColor];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -115,8 +123,21 @@
 	}
     [self.tableView reloadData];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    self.tableView.separatorColor = [UIColor whiteColor];
     //TODO: catch exception in case table is empty (but should never be)
 }
+
+
+- (void)showKey{
+    
+    KeyViewController *detailViewController = [[KeyViewController alloc] init];
+    
+    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController presentModalViewController:detailViewController animated:YES];
+    [detailViewController release];
+    
+}
+
 #pragma mark -
 #pragma mark Table view methods
 
@@ -205,14 +226,16 @@
     cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:12];
     cell.detailTextLabel.textColor = [UIColor blackColor];
 
+    self.tableView.separatorColor = [UIColor whiteColor];
 
-	
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+#ifdef DEBUG = 1
+
     Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
@@ -222,7 +245,22 @@
     //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
+#else
+    [self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
+    
+#endif
+
 }
+
+
+- (void)deselectIndexPath:(NSIndexPath*)indexPath{
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+
+
 
 
 #pragma mark -

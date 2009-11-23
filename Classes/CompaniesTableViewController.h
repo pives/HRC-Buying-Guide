@@ -10,9 +10,12 @@
 @interface CompaniesTableViewController : UITableViewController {
     NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+    NSArray* cellColors;
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,retain) NSArray *cellColors;
+
 
 @end
 

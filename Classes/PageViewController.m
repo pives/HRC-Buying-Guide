@@ -69,6 +69,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     [super viewDidLoad];
     self.table.separatorColor = [UIColor whiteColor];
+    self.table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     categoryName.textColor = [UIColor whiteColor];
 }
 

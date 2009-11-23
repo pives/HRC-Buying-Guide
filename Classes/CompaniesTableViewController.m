@@ -18,6 +18,10 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 @implementation CompaniesTableViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
+@synthesize cellColors;
+
+
+
 
 #pragma mark -
 #pragma mark Memory management
@@ -29,6 +33,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 
 - (void)dealloc {
+    self.cellColors = nil;    
 	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];
@@ -37,7 +42,14 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
     
+    
+    //self.tableView.rowHeight = 45;
+
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -107,12 +119,16 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
         
         UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
         company.tag = 1000;
-        company.font = [UIFont boldSystemFontOfSize:12];
+        company.font = [UIFont boldSystemFontOfSize:14];
         company.textColor = [UIColor blackColor];
         company.textAlignment = UITextAlignmentLeft;
         [cell addSubview:company];
         [company release];
         
+        
+        UIView* background = [[UIView alloc] initWithFrame:cell.frame];
+        cell.backgroundView = background;
+        [background release];
         
     }
     
@@ -120,17 +136,16 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* company = (UILabel*)[cell viewWithTag:1000];
-    company.font = [UIFont boldSystemFontOfSize:14];
     company.text = [managedObject valueForKey:@"name"];
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
     rating.text = [(Company*)managedObject ratingFormatted];
     
-    if([[(Company*)managedObject ratingLevel] intValue] == 0)
-        cell.cellColor = [UIColor gpGreen];
-    else if([[(Company*)managedObject ratingLevel] intValue] == 1)
-        cell.cellColor = [UIColor gpYellow];
-    else
-        cell.cellColor = [UIColor gpRed];
+    int cellColorValue = [[(Company*)managedObject ratingLevel] intValue];
+    UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
+    
+    cell.backgroundView.backgroundColor = cellColor;        
+    rating.backgroundColor = cellColor;
+    company.backgroundColor = cellColor;
     
 		
     return cell;
@@ -138,18 +153,27 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [cell.textLabel setSizeWidth:200];
-    
+       
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+#ifdef DEBUG = 1
     Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
-    	 
+    
+#else
+    [self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
+    
+#endif
 }
 
+- (void)deselectIndexPath:(NSIndexPath*)indexPath{
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
 /*
  // Override to support conditional editing of the table view.
