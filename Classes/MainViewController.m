@@ -174,7 +174,7 @@
                                                                                                                            key:@"categories" 
                                                                                                                          value:selectedCat];
     detailViewController.view.frame = self.view.bounds;
-    [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Categories" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     

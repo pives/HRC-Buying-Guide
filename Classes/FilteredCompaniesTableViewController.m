@@ -87,7 +87,17 @@
                                                                      target:self 
                                                                      action:@selector(showKey)];
     
-    self.title = [filterObject valueForKey:@"name"];
+    UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
+    tv.text = [filterObject valueForKey:@"name"];
+    tv.textAlignment = UITextAlignmentCenter;
+    tv.adjustsFontSizeToFitWidth = YES;
+    tv.backgroundColor = [UIColor clearColor];
+    tv.textColor = [UIColor whiteColor];
+    tv.font = [UIFont boldSystemFontOfSize:19];
+    tv.shadowColor = [UIColor darkGrayColor];
+    self.navigationItem.titleView = tv;
+    
+    //self.title = [filterObject valueForKey:@"name"];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];

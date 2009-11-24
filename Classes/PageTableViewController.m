@@ -146,9 +146,11 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
+    /*
     if (fetchedResultsController != nil) {
         return fetchedResultsController;
     }
+    */
     
     /*
 	 Set up the fetched results controller.
