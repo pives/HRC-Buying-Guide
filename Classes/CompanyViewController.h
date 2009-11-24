@@ -18,6 +18,7 @@
     
     UILabel* nameLabel;
     UILabel* scoreLabel;
+    UIView* scoreBackgroundColor;
     
     DataSource* data;
     
@@ -29,6 +30,7 @@
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
 @property(nonatomic,retain)IBOutlet DataSource *data;
 @property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
+@property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 
 
 

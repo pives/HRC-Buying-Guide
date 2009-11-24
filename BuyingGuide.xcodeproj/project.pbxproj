@@ -39,8 +39,14 @@
 		C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
 		C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
-		C4864D1910BB3F190064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864D1810BB3F190064A126 /* Information.png */; };
-		C4864D1A10BB3F190064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864D1810BB3F190064A126 /* Information.png */; };
+		C4864DB110BC38200064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DB010BC38200064A126 /* Information.png */; };
+		C4864DB210BC38200064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DB010BC38200064A126 /* Information.png */; };
+		C4864DFB10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
+		C4864DFC10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
+		C4864E4910BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
+		C4864E4A10BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
+		C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* PageTableViewController.m */; };
+		C486500010BC55F80064A126 /* PageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* PageTableViewController.m */; };
 		C492D5AF10BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
 		C492D5B010BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
 		C492D5B110BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
@@ -104,8 +110,6 @@
 		C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
 		C4FA223210B5C81D0031303E /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* Company.m */; };
 		C4FA223310B5C81D0031303E /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* Company.m */; };
-		C4FA22D110B5D06C0031303E /* ColoredTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA22D010B5D06C0031303E /* ColoredTableViewCell.m */; };
-		C4FA22D210B5D06C0031303E /* ColoredTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA22D010B5D06C0031303E /* ColoredTableViewCell.m */; };
 		C4FA233110B5D3440031303E /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4FA233010B5D3440031303E /* storedata.sqlite */; };
 		C4FA233210B5D3440031303E /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4FA233010B5D3440031303E /* storedata.sqlite */; };
 		C4FA235210B5DC8A0031303E /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C4FA235110B5DC8A0031303E /* iphone_bottom-bar.png */; };
@@ -150,7 +154,11 @@
 		C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNextRunloopProxy.m; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableViewController.m; sourceTree = "<group>"; };
-		C4864D1810BB3F190064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
+		C4864DB010BC38200064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
+		C4864DFA10BC3BDA0064A126 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		C4864E4810BC3DE10064A126 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
+		C4864FFD10BC55F80064A126 /* PageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTableViewController.h; sourceTree = "<group>"; };
+		C4864FFE10BC55F80064A126 /* PageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTableViewController.m; sourceTree = "<group>"; };
 		C492D5AC10BAF4490041400B /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
 		C492D5AD10BAF4490041400B /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
 		C492D5AE10BAF4490041400B /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLog.m; sourceTree = "<group>"; };
@@ -200,8 +208,6 @@
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
 		C4FA223010B5C81D0031303E /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		C4FA223110B5C81D0031303E /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		C4FA22CF10B5D06C0031303E /* ColoredTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredTableViewCell.h; sourceTree = "<group>"; };
-		C4FA22D010B5D06C0031303E /* ColoredTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredTableViewCell.m; sourceTree = "<group>"; };
 		C4FA233010B5D3440031303E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4FA235110B5DC8A0031303E /* iphone_bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_bottom-bar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,10 +493,10 @@
 			children = (
 				C4FA193210B30C180031303E /* PageViewController.h */,
 				C4FA193310B30C180031303E /* PageViewController.m */,
+				C4864FFD10BC55F80064A126 /* PageTableViewController.h */,
+				C4864FFE10BC55F80064A126 /* PageTableViewController.m */,
 				C4FA1C7510B389EB0031303E /* PageView.xib */,
 				C4FA1E0510B482FF0031303E /* BrandCellBackground.xib */,
-				C4FA22CF10B5D06C0031303E /* ColoredTableViewCell.h */,
-				C4FA22D010B5D06C0031303E /* ColoredTableViewCell.m */,
 			);
 			name = "Category Table";
 			sourceTree = "<group>";
@@ -498,7 +504,9 @@
 		C4FA235410B5DC8E0031303E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				C4864D1810BB3F190064A126 /* Information.png */,
+				C4864DFA10BC3BDA0064A126 /* info.png */,
+				C4864E4810BC3DE10064A126 /* info2.png */,
+				C4864DB010BC38200064A126 /* Information.png */,
 				C492D86B10BB27FB0041400B /* Icon.png */,
 				C4FA235110B5DC8A0031303E /* iphone_bottom-bar.png */,
 			);
@@ -601,7 +609,9 @@
 				C4FA235210B5DC8A0031303E /* iphone_bottom-bar.png in Resources */,
 				C4103F5310B6FBBB004CEC15 /* KeyView.xib in Resources */,
 				C492D86C10BB27FB0041400B /* Icon.png in Resources */,
-				C4864D1910BB3F190064A126 /* Information.png in Resources */,
+				C4864DB110BC38200064A126 /* Information.png in Resources */,
+				C4864DFB10BC3BDA0064A126 /* info.png in Resources */,
+				C4864E4910BC3DE10064A126 /* info2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +638,9 @@
 				C4FA235310B5DC8A0031303E /* iphone_bottom-bar.png in Resources */,
 				C4103F5410B6FBBB004CEC15 /* KeyView.xib in Resources */,
 				C492D86D10BB27FB0041400B /* Icon.png in Resources */,
-				C4864D1A10BB3F190064A126 /* Information.png in Resources */,
+				C4864DB210BC38200064A126 /* Information.png in Resources */,
+				C4864DFC10BC3BDA0064A126 /* info.png in Resources */,
+				C4864E4A10BC3DE10064A126 /* info2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,10 +674,10 @@
 				C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */,
 				C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */,
 				C4FA223210B5C81D0031303E /* Company.m in Sources */,
-				C4FA22D110B5D06C0031303E /* ColoredTableViewCell.m in Sources */,
 				C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */,
 				C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */,
 				C492D5AF10BAF4490041400B /* DebugLog.m in Sources */,
+				C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,10 +728,10 @@
 				C4FA200D10B4BA570031303E /* UIColor+extensions.m in Sources */,
 				C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */,
 				C4FA223310B5C81D0031303E /* Company.m in Sources */,
-				C4FA22D210B5D06C0031303E /* ColoredTableViewCell.m in Sources */,
 				C4103F5010B6FAD8004CEC15 /* KeyViewController.m in Sources */,
 				C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */,
 				C492D5B010BAF4490041400B /* DebugLog.m in Sources */,
+				C486500010BC55F80064A126 /* PageTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,9 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 @synthesize category;
 @synthesize table;
 @synthesize categoryName;
+@synthesize ratingColor;
+
+
 
 @synthesize fetchedResultsController, managedObjectContext;
 
@@ -39,7 +42,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 
 - (void) dealloc
 {
-    
+    self.ratingColor = nil;    
     self.table = nil;
     self.categoryName = nil;
     self.company = nil;
@@ -61,6 +64,14 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         self.data = someData;
         self.company = data.company;
         self.managedObjectContext = company.managedObjectContext;
+        
+        if([company.ratingLevel intValue] == 0)
+            self.ratingColor = [UIColor gpGreen];
+        else if([company.rating intValue] == 1)
+            self.ratingColor = [UIColor gpYellow];
+        else 
+            self.ratingColor = [UIColor gpRed];
+
     }
     return self;
 }
@@ -68,8 +79,10 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    self.table.separatorColor = [UIColor whiteColor];
-    self.table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
+    //TODO: manually create table
+    
+    self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
     categoryName.textColor = [UIColor whiteColor];
 }
 
@@ -117,24 +130,46 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     static NSString *CellIdentifier = @"Cell";
     
-    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        //TODO: fix cell outlines
+        
+        UIView* background = [[UIView alloc] initWithFrame:cell.bounds];
+        background.backgroundColor = [UIColor whiteColor];
+        UIView* foreground = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x+1, 
+                                                                      cell.bounds.origin.y+1, 
+                                                                      cell.bounds.size.width-10,
+                                                                      cell.bounds.size.height-2)];
+        
+        foreground.backgroundColor = self.ratingColor;
+        [background addSubview:foreground];
+        cell.backgroundView = background;
+        [foreground release];
+        [background release];
+        
+        
+        
+        UILabel* brand = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        brand.tag = 1000;
+        brand.font = [UIFont boldSystemFontOfSize:14];
+        brand.textColor = [UIColor blackColor];
+        brand.textAlignment = UITextAlignmentLeft;
+        brand.backgroundColor = [UIColor clearColor];
+        [cell addSubview:brand];
+        [brand release];
+                
     }
     
     // Configure the cell.
     
-    if([company.ratingLevel intValue] == 0)
-        cell.cellColor = [UIColor gpGreen];
-    else if([company.ratingLevel intValue] == 1)
-        cell.cellColor = [UIColor gpYellow];
-    else
-        cell.cellColor = [UIColor gpRed];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [managedObject valueForKey:@"name"];
-    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    UILabel* brand = (UILabel*)[cell viewWithTag:1000];    
+	brand.text = [managedObject valueForKey:@"name"];
+    
     return cell;
 }
 

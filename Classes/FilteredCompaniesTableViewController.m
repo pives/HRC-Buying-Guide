@@ -83,8 +83,8 @@
     
     self.sortControl = control;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"Key" 
-                                                                      style:UIBarButtonItemStyleBordered 
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2.png"] 
+                                                                      style:UIBarButtonItemStyleBordered
                                                                      target:self 
                                                                      action:@selector(showKey)];
     
@@ -155,24 +155,24 @@
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
         
         UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        UILabel* header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        UILabel* header = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 310, 60)];
         [headerView addSubview:header];
         
         header.textColor = [UIColor whiteColor];
         header.font = [UIFont boldSystemFontOfSize:14];
         
         if([[sectionInfo name] isEqualToString:@"0"]){
-            header.text = @"Best Places To Shop";
+            header.text = @"Support these brands";
             headerView.backgroundColor = [UIColor gpGreenHeader];
             header.backgroundColor = [UIColor gpGreenHeader];
             
         }else if([[sectionInfo name] isEqualToString:@"1"]){
-            header.text = @"Business Places Making Progress";
+            header.text = @"Brands that could do better";
             headerView.backgroundColor = [UIColor gpYellowHeader];
             header.backgroundColor = [UIColor gpYellowHeader];
             
-        }else {ba
-            header.text = @"Needs Improvement or Did Not Respond";
+        }else {
+            header.text = @"Avoid these brands or Non-responders";
             headerView.backgroundColor = [UIColor gpRedHeader];
             header.backgroundColor = [UIColor gpRedHeader];
         }
@@ -203,19 +203,22 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
                
-        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(280, 0, 30, cell.frame.size.height)];
+        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(260, 0, 30, cell.frame.size.height-2)];
         rating.tag = 999;
         rating.font = [UIFont boldSystemFontOfSize:12];
         rating.textColor = [UIColor blackColor];
         rating.textAlignment = UITextAlignmentRight;
+        rating.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
         [cell addSubview:rating];
         [rating release];
         
-        UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height-2)];
         company.tag = 1000;
         company.font = [UIFont boldSystemFontOfSize:14];
         company.textColor = [UIColor blackColor];
         company.textAlignment = UITextAlignmentLeft;
+        company.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+
         [cell addSubview:company];
         [company release];
         
@@ -223,6 +226,8 @@
         UIView* background = [[UIView alloc] initWithFrame:cell.frame];
         cell.backgroundView = background;
         [background release];
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     

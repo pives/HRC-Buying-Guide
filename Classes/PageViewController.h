@@ -32,6 +32,8 @@
     
     NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+    
+    UIColor* ratingColor;
 }
 
 @property NSInteger pageIndex;
@@ -42,6 +44,8 @@
 @property(nonatomic,assign)IBOutlet UILabel *categoryName;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property(nonatomic,retain)UIColor *ratingColor;
+
 
 
 - (id)initWithDataSource:(DataSource*)someData;

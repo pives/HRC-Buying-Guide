@@ -13,6 +13,7 @@
 
 + (UIBarButtonItem*)flexibleSpaceItem;
 + (UIBarButtonItem*)itemWithView:(UIView*)aView;
++ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 + (UIBarButtonItem*)itemWithTitle:(NSString*)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 + (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
 + (NSArray*)centeredToolButtonsItems:(NSArray*)toolBarItems;

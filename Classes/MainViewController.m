@@ -16,6 +16,7 @@
 #import "CompanyViewController.h"
 #import "UIView-Extensions.h"
 #import "KeyViewController.h"
+#import "UIBarButtonItem+extensions.h"
 
 @implementation MainViewController
 
@@ -49,11 +50,20 @@
     
     self.navigationController.toolbarHidden = NO;
     self.toolbarItems = items;
+                                                                     
+    /*
+    UIImageView* iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"info2.png"]];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithView:iv];
+    [self.navigationItem.rightBarButtonItem setTarget:self];
+    [self.navigationItem.rightBarButtonItem setAction:@selector(showKey)];
+    [iv release];
+    */
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"Key" 
-                                                                      style:UIBarButtonItemStyleBordered 
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2.png"] 
+                                                                      style:UIBarButtonItemStyleBordered
                                                                      target:self 
                                                                      action:@selector(showKey)];
+    
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"Donate" 
                                                                       style:UIBarButtonItemStyleBordered 

@@ -12,6 +12,7 @@
 #import "DataSource.h"
 #import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
+#import "UIColor+extensions.h"
 
 @implementation CompanyViewController
 
@@ -20,7 +21,7 @@
 @synthesize scoreLabel;
 @synthesize data;
 @synthesize brands;
-
+@synthesize scoreBackgroundColor;
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
@@ -45,6 +46,15 @@
                                                   target:nil 
                                                   action:@selector(sendEmail)],
                              nil];
+        
+        
+        if([company.ratingLevel intValue] == 0)
+            scoreBackgroundColor.backgroundColor = [UIColor gpGreen];
+        else if([company.rating intValue] == 1)
+            scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
+        else 
+            scoreBackgroundColor.backgroundColor = [UIColor gpRed];
+        
         
     }
     

@@ -9,7 +9,6 @@
 #import "CompaniesTableViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
-#import "ColoredTableViewCell.h"
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"
 
@@ -98,9 +97,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     
     static NSString *CellIdentifier = @"Cell";
     
-    ColoredTableViewCell *cell = (ColoredTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[ColoredTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
        
         UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(255, 0, 30, cell.frame.size.height)];
         rating.tag = 999;

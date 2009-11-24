@@ -22,7 +22,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.rowHeight = 42;
     
 
 }
