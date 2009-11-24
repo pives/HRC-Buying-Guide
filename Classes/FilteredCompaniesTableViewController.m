@@ -63,8 +63,8 @@
     
     UISegmentedControl* control = [[[UISegmentedControl alloc] initWithItems:
                                    [NSArray arrayWithObjects:
-                                    @"Alphabetically", 
                                     @"Rating", 
+                                    @"Alphabetically",
                                     nil]] autorelease];
 
     control.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -102,16 +102,7 @@
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
     
-    NSError *error = nil;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 */
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
+    [self changeSort:self];
 }
 
 - (IBAction)changeSort:(id)sender{
@@ -128,7 +119,6 @@
 	}
     [self.tableView reloadData];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    self.tableView.separatorColor = [UIColor whiteColor];
     //TODO: catch exception in case table is empty (but should never be)
 }
 
@@ -160,7 +150,8 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    if(sortControl.selectedSegmentIndex==1){
+    if(sortControl.selectedSegmentIndex==0){
+        
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
         
         UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
@@ -180,7 +171,7 @@
             headerView.backgroundColor = [UIColor gpYellowHeader];
             header.backgroundColor = [UIColor gpYellowHeader];
             
-        }else {
+        }else {ba
             header.text = @"Needs Improvement or Did Not Respond";
             headerView.backgroundColor = [UIColor gpRedHeader];
             header.backgroundColor = [UIColor gpRedHeader];
@@ -194,7 +185,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if(sortControl.selectedSegmentIndex==1){
+    if(sortControl.selectedSegmentIndex==0){
         
         return 60;
         
@@ -314,7 +305,7 @@
 	
     NSFetchedResultsController *aFetchedResultsController;
     
-    if(sortControl.selectedSegmentIndex == 0){
+    if(sortControl.selectedSegmentIndex == 1){
      
         // Edit the sort key as appropriate.
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];

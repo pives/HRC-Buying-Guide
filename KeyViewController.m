@@ -11,6 +11,11 @@
 
 @implementation KeyViewController
 
+@synthesize info;
+
+
+
+
 - (IBAction)dismiss{
     
     [self dismissModalViewControllerAnimated:YES];
@@ -37,6 +42,12 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView* i = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Information.png"]];
+    [info addSubview:i];
+    info.contentSize = i.frame.size;
+    [i release];
+    
 }
 
 
@@ -62,7 +73,10 @@
 
 
 - (void)dealloc {
+
+    self.info = nil;
     [super dealloc];
+
 }
 
 

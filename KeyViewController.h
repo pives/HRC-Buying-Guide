@@ -11,8 +11,11 @@
 
 @interface KeyViewController : UIViewController {
     
+    UIScrollView* info;
 
 }
+@property(nonatomic,assign)IBOutlet UIScrollView *info;
+
 - (IBAction)dismiss;
 
 @end
