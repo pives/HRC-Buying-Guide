@@ -20,6 +20,7 @@
 + (id)gpYellowHeader;
 + (id)gpGreenHeader;
 
++ (id)reallyLightGray;
 
 
 @end

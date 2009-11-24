@@ -41,6 +41,13 @@
     return [UIColor colorWithRed:0.437 green:0.720 blue:0.143 alpha:1.000];
 }
 
+
++ (id)reallyLightGray{
+    return [UIColor colorWithWhite:0.750 alpha:1.000];
+
+}
+
+
 @end
 
 
@@ -55,6 +62,8 @@
     CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
+
+
 
 +(id)tableCellNonEditableTextColor {vendColor(81, 102, 145);}
 + (id)aliceBlue                                         {vendColor(240, 248, 255);}

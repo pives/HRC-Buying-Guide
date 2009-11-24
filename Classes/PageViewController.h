@@ -16,9 +16,10 @@
 @class DataSource;
 @class Company;
 @class Category;
+@class PageTableViewController;
 
-@interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
+@interface PageViewController : UIViewController {
+    
 	NSInteger pageIndex;
 	BOOL textViewNeedsUpdate;
 	    
@@ -27,24 +28,24 @@
     Company* company;
     Category* category;
     
-    UITableView* table;
     UILabel* categoryName;
     
-    NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
     
     UIColor* ratingColor;
+    
+    PageTableViewController* tableController;
 }
 
 @property NSInteger pageIndex;
 @property(nonatomic,retain)DataSource *data;
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,retain)Category *category;
-@property(nonatomic,assign)IBOutlet UITableView *table;
 @property(nonatomic,assign)IBOutlet UILabel *categoryName;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)UIColor *ratingColor;
+@property(nonatomic,retain)PageTableViewController *tableController;
+
 
 
 
