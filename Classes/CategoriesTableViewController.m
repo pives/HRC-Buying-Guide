@@ -8,6 +8,7 @@
 
 #import "CategoriesTableViewController.h"
 #import "Category.h"
+#import "Category+Extensions.h"
 
 NSString *const DidSelectCategoryNotification = @"CategorySelected";
 
@@ -71,7 +72,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [managedObject valueForKey:@"name"];
+	cell.textLabel.text = [(Category*)managedObject nameDisplayFriendly];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
 
     return cell;

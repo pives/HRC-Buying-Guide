@@ -13,6 +13,7 @@
 #import "UIBarButtonItem+extensions.h"
 #import "UIColor+extensions.h"
 #import "KeyViewController.h"
+#import "Category+Extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -88,7 +89,7 @@
                                                                      action:@selector(showKey)];
     
     UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = [filterObject valueForKey:@"name"];
+    tv.text = [(Category*)filterObject nameDisplayFriendly];
     tv.textAlignment = UITextAlignmentCenter;
     tv.adjustsFontSizeToFitWidth = YES;
     tv.backgroundColor = [UIColor clearColor];
