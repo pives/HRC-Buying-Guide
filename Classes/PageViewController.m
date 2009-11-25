@@ -64,7 +64,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         
         if([company.ratingLevel intValue] == 0)
             self.ratingColor = [UIColor gpGreen];
-        else if([company.rating intValue] == 1)
+        else if([company.ratingLevel intValue] == 1)
             self.ratingColor = [UIColor gpYellow];
         else 
             self.ratingColor = [UIColor gpRed];
@@ -77,13 +77,12 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     [super viewDidLoad];
     
-    //TODO: manually create table
     self.tableController = [[[PageTableViewController alloc] initWithStyle:UITableViewStylePlain 
                                                                    company:self.company 
                                                                   category:self.category
                                                                      color:self.ratingColor] autorelease];
                                 
-    [tableController.view setFrame:CGRectMake(20, 50, 280, 250)];
+    tableController.tableFrame = CGRectMake(20, 50, 280, 280);
     [self.view addSubview:tableController.view];
     categoryName.textColor = [UIColor whiteColor];
 }

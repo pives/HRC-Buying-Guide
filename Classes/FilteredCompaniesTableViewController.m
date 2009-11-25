@@ -105,6 +105,8 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self changeSort:self];
+
 }
 
 
@@ -112,7 +114,6 @@
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
     
-    [self changeSort:self];
 }
 
 - (IBAction)changeSort:(id)sender{

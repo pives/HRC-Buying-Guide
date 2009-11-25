@@ -18,6 +18,9 @@
 @synthesize ratingColor;
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
+@synthesize tableFrame;
+
+
 
 - (void) dealloc
 {
@@ -34,17 +37,35 @@
 
 - (id)initWithStyle:(UITableViewStyle)style company:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor{
     
-    if(self = [super initWithStyle:style]){
+    if(self = [super init]){
         
         self.company = aCompany;
         self.managedObjectContext = company.managedObjectContext;
         self.category = aCategory;
         self.ratingColor = aColor;
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.view.backgroundColor = [UIColor reallyLightGray];
 
     }
     return self;
+}
+
+
+
+- (void)setTableFrame:(CGRect)aFrame{
+    
+    tableFrame = aFrame;
+    [self.view setFrame:tableFrame];
+    [self.tableView setFrame:tableFrame];
+    
+}
+
+- (void)loadView{
+    
+    self.view = [[[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain] autorelease];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.view.backgroundColor = [UIColor reallyLightGray];
+    
 }
 
 
@@ -68,7 +89,7 @@
 		abort();
 	}
     
-    
+    [self.tableView reloadData];
 }
 
 #pragma mark -
@@ -101,10 +122,10 @@
         
         UIView* background = [[UIView alloc] initWithFrame:cell.bounds];
         background.backgroundColor = [UIColor whiteColor];
-        UIView* foreground = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x+1, 
-                                                                      cell.bounds.origin.y+1, 
-                                                                      cell.bounds.size.width-10,
-                                                                      cell.bounds.size.height-2)];
+        UIView* foreground = [[UIView alloc] initWithFrame:CGRectMake(1, 
+                                                                      1, 
+                                                                      cell.frame.size.width-2,
+                                                                      cell.frame.size.height-2)];
         
         foreground.backgroundColor = self.ratingColor;
         [background addSubview:foreground];
@@ -114,12 +135,15 @@
         
         
         
-        UILabel* brand = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        UILabel* brand = [[UILabel alloc] initWithFrame:CGRectMake(10, 
+                                                                   1, 
+                                                                   cell.frame.size.width-10-2, 
+                                                                   cell.frame.size.height-2)];
         brand.tag = 1000;
         brand.font = [UIFont boldSystemFontOfSize:14];
         brand.textColor = [UIColor blackColor];
         brand.textAlignment = UITextAlignmentLeft;
-        brand.backgroundColor = [UIColor clearColor];
+        brand.backgroundColor = self.ratingColor;
         [cell addSubview:brand];
         [brand release];
         

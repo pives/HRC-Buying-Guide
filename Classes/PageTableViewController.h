@@ -19,6 +19,8 @@
     
     NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+    
+    CGRect tableFrame;
 
 }
 @property(nonatomic,retain)Company *company;
@@ -26,6 +28,8 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)UIColor *ratingColor;
+@property(nonatomic,assign)CGRect tableFrame;
+
 
 - (id)initWithStyle:(UITableViewStyle)style company:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor;
 - (void)fetch;

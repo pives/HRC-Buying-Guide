@@ -50,7 +50,7 @@
         
         if([company.ratingLevel intValue] == 0)
             scoreBackgroundColor.backgroundColor = [UIColor gpGreen];
-        else if([company.rating intValue] == 1)
+        else if([company.ratingLevel intValue] == 1)
             scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
         else 
             scoreBackgroundColor.backgroundColor = [UIColor gpRed];
