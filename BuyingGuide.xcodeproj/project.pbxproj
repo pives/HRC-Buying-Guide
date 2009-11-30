@@ -32,10 +32,11 @@
 		C4103FF010B71670004CEC15 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4103FEF10B71670004CEC15 /* CoreData.framework */; };
 		C4103FF210B71670004CEC15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4103FF110B71670004CEC15 /* Foundation.framework */; };
 		C410407910B718BE004CEC15 /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
-		C410407B10B718BE004CEC15 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
 		C410407D10B718BE004CEC15 /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
 		C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
+		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
+		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
 		C4864DB110BC38200064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DB010BC38200064A126 /* Information.png */; };
 		C4864DB210BC38200064A126 /* Information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DB010BC38200064A126 /* Information.png */; };
@@ -60,20 +61,20 @@
 		C4C02C4A10B0F401000D46AA /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C02C4710B0F401000D46AA /* Category.m */; };
 		C4C02DD210B1A83F000D46AA /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C4C031DA10B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
-		C4C031DB10B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
+		C4C05F1010C4368A00FE05F6 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C05F0F10C4368A00FE05F6 /* Brand.m */; };
+		C4C05F1110C4368A00FE05F6 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C05F0F10C4368A00FE05F6 /* Brand.m */; };
+		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
+		C4E6EC9B10C43B9F001F88C8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */; };
+		C4E6EC9C10C43B9F001F88C8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */; };
 		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31CE210C42089004DF94F /* email.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* email.txt */; };
 		C4F31CE310C42089004DF94F /* email.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* email.txt */; };
-		C4F31DE710C42C3E004DF94F /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F31DE610C42C3E004DF94F /* Brand.m */; };
-		C4F31DE810C42C3E004DF94F /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F31DE610C42C3E004DF94F /* Brand.m */; };
 		C4F31E1210C42EB2004DF94F /* BGImporter_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4103FA210B711C7004CEC15 /* BGImporter_AppDelegate.m */; };
 		C4F31E4310C42F95004DF94F /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
 		C4F31E5E10C431E4004DF94F /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
-		C4F31ECA10C4342A004DF94F /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4F31EC910C4342A004DF94F /* storedata.sqlite */; };
-		C4F31ECB10C4342A004DF94F /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4F31EC910C4342A004DF94F /* storedata.sqlite */; };
 		C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
 		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
@@ -91,7 +92,6 @@
 		C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
 		C4FA1D5F10B45DBB0031303E /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C02C4710B0F401000D46AA /* Category.m */; };
 		C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
-		C4FA1D6210B45DBB0031303E /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
 		C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
 		C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
@@ -158,6 +158,8 @@
 		C410407510B7187F004CEC15 /* BGImporter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BGImporter-Info.plist"; sourceTree = "<group>"; };
 		C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNextRunloopProxy.h; sourceTree = "<group>"; };
 		C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNextRunloopProxy.m; sourceTree = "<group>"; };
+		C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
+		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableViewController.m; sourceTree = "<group>"; };
 		C4864DB010BC38200064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
@@ -184,17 +186,15 @@
 		C4C02DD110B1A83F000D46AA /* bgdata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bgdata.csv; sourceTree = "<group>"; };
 		C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FJSCoreDataExtensions.h"; sourceTree = "<group>"; };
 		C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FJSCoreDataExtensions.m"; sourceTree = "<group>"; };
-		C4C031D410B1EB9B000D46AA /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
-		C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4C031D610B1EB9B000D46AA /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extensions.h"; sourceTree = "<group>"; };
 		C4C031D710B1EB9B000D46AA /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
+		C4C05F0E10C4368A00FE05F6 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
+		C4C05F0F10C4368A00FE05F6 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
+		C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
 		C4F31CE110C42089004DF94F /* email.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = email.txt; sourceTree = "<group>"; };
-		C4F31DE510C42C3E004DF94F /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
-		C4F31DE610C42C3E004DF94F /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
-		C4F31EC910C4342A004DF94F /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		C4FA187610B2F4CE0031303E /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
 		C4FA187710B2F4CE0031303E /* CompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
@@ -435,13 +435,13 @@
 		C4C02C4B10B0F413000D46AA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				C4F31EC910C4342A004DF94F /* storedata.sqlite */,
+				C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
 				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
 				C4FA223010B5C81D0031303E /* Company.h */,
 				C4FA223110B5C81D0031303E /* Company.m */,
-				C4F31DE510C42C3E004DF94F /* Brand.h */,
-				C4F31DE610C42C3E004DF94F /* Brand.m */,
+				C4C05F0E10C4368A00FE05F6 /* Brand.h */,
+				C4C05F0F10C4368A00FE05F6 /* Brand.m */,
 				C4C02C4610B0F401000D46AA /* Category.h */,
 				C4C02C4710B0F401000D46AA /* Category.m */,
 				C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */,
@@ -457,6 +457,8 @@
 		C4C031DE10B1EBAA000D46AA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */,
+				C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */,
 				C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */,
 				C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */,
 				C4FA200810B4BA570031303E /* UIColor+extensions.h */,
@@ -467,8 +469,6 @@
 				C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */,
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
-				C4C031D410B1EB9B000D46AA /* NSManagedObjectContext+Extensions.h */,
-				C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */,
 				C4C031D610B1EB9B000D46AA /* NSString+extensions.h */,
 				C4C031D710B1EB9B000D46AA /* NSString+extensions.m */,
 			);
@@ -636,7 +636,7 @@
 				C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 				C4F31CE310C42089004DF94F /* email.txt in Resources */,
-				C4F31ECB10C4342A004DF94F /* storedata.sqlite in Resources */,
+				C4E6EC9C10C43B9F001F88C8 /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +667,7 @@
 				C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 				C4F31CE210C42089004DF94F /* email.txt in Resources */,
-				C4F31ECA10C4342A004DF94F /* storedata.sqlite in Resources */,
+				C4E6EC9B10C43B9F001F88C8 /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +684,6 @@
 				28C286E10D94DF7D0034E888 /* CategoriesTableViewController.m in Sources */,
 				C4C02C4A10B0F401000D46AA /* Category.m in Sources */,
 				C4C031DA10B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m in Sources */,
-				C4C031DB10B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m in Sources */,
 				C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */,
 				C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */,
 				C4AFF94110B232F000801655 /* MainViewController.m in Sources */,
@@ -705,7 +704,8 @@
 				C492D5AF10BAF4490041400B /* DebugLog.m in Sources */,
 				C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */,
 				C48654B910BCE87A0064A126 /* Category+Extensions.m in Sources */,
-				C4F31DE810C42C3E004DF94F /* Brand.m in Sources */,
+				C4C05F1110C4368A00FE05F6 /* Brand.m in Sources */,
+				C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,10 +713,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */,
 				C4F31E4310C42F95004DF94F /* BuyingGuide.xcdatamodel in Sources */,
 				C4F31E1210C42EB2004DF94F /* BGImporter_AppDelegate.m in Sources */,
 				C410407910B718BE004CEC15 /* NSArray+FJSCoreDataExtensions.m in Sources */,
-				C410407B10B718BE004CEC15 /* NSManagedObjectContext+Extensions.m in Sources */,
 				C410407D10B718BE004CEC15 /* NSString+extensions.m in Sources */,
 				C4103FE410B715B1004CEC15 /* Company.m in Sources */,
 				C4103FE610B715B1004CEC15 /* Category.m in Sources */,
@@ -738,7 +738,6 @@
 				C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */,
 				C4FA1D5F10B45DBB0031303E /* Category.m in Sources */,
 				C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */,
-				C4FA1D6210B45DBB0031303E /* NSManagedObjectContext+Extensions.m in Sources */,
 				C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */,
 				C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */,
 				C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */,
@@ -760,7 +759,8 @@
 				C492D5B010BAF4490041400B /* DebugLog.m in Sources */,
 				C486500010BC55F80064A126 /* PageTableViewController.m in Sources */,
 				C48654B810BCE87A0064A126 /* Category+Extensions.m in Sources */,
-				C4F31DE710C42C3E004DF94F /* Brand.m in Sources */,
+				C4C05F1010C4368A00FE05F6 /* Brand.m in Sources */,
+				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

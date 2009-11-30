@@ -18,11 +18,14 @@
 
 @interface NSManagedObjectContext (CDManagedObjectContextExtensions)
 
-//mine to test
+//case insensitive
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value;
+//------
+//exact matches (not strings)
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 //------
-
 
 //returns YES if there exists an entity with 'entityName' which has a 'key' with a certain 'value', NO otherwise
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value;

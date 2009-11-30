@@ -8,6 +8,7 @@
 
 #import "CompaniesTableViewController.h"
 #import "Company.h"
+#import "Brand.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"

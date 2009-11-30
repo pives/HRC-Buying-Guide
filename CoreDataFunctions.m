@@ -55,12 +55,12 @@ NSArray* allBrands(NSManagedObjectContext* context){
 
 Brand* brandWithName(NSString* name, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Brand" whereKey:@"name" like:name];
+    return [context retrieveOrCreateEntityWithName:@"Brand" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
 Category* categoryWithName(NSString* name, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Category" whereKey:@"name" like:name];
+    return [context retrieveOrCreateEntityWithName:@"Category" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
 Company* companyWithName(NSString* name, NSManagedObjectContext* context){

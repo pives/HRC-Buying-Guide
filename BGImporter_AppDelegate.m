@@ -32,7 +32,6 @@
     NSArray* companies = allCompanies(self.managedObjectContext);
         
     NSLog(@"Number of Categories: %@", [NSString stringWithInt:[self.managedObjectContext numberOfEntitiesWithName:@"Category"]]);
-
     
     //NSLog(@"%@",[companies description]);
     

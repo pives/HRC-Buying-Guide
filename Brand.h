@@ -15,6 +15,7 @@
 {
 }
 
+@property (nonatomic, retain) NSString * namefirstLetter;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * isCompanyName;
 @property (nonatomic, retain) Company * company;

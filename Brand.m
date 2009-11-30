@@ -13,6 +13,7 @@
 
 @implementation Brand 
 
+@dynamic namefirstLetter;
 @dynamic name;
 @dynamic isCompanyName;
 @dynamic company;

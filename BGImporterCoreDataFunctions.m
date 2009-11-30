@@ -80,6 +80,8 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
     Brand* companyBrand = brandWithName(theCompany.name, context);
     companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
+    NSString* index = [companyBrand.name substringToIndex:1];
+    companyBrand.namefirstLetter = index;
     
     brands = [brands setByAddingObject:companyBrand];
     
@@ -190,6 +192,8 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 tempString = [tempString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 
                 Brand* brand = brandWithName(tempString, context);
+                NSString* index = [brand.name substringToIndex:1];
+                brand.namefirstLetter = [index capitalizedString];
                 brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
                 

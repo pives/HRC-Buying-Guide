@@ -13,6 +13,28 @@
 @implementation NSManagedObjectContext (CDManagedObjectContextExtensions)
 
 
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value
+{
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[c] %@",key , value];
+    [request setPredicate:predicate];
+    
+    return [[self executeFetchRequest:request error:NULL] firstObject];
+}
+
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value
+{
+    id obj = [self entityWithName:entityName whereKey:key caseInsensitiveLike:value];
+    if (!obj) {
+        obj = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self];
+        [obj setValue:value forKey:key];
+    }
+    return obj;
+}
+
+
 #pragma mark -
 
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value
