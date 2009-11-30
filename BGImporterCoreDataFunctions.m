@@ -81,13 +81,7 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     Brand* companyBrand = brandWithName(theCompany.name, context);
     companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
     
-    NSString* index = [companyBrand.name copy];
-    index = [index capitalizedString];
-    NSLog(@"%@",index);
-    index = [index substringToIndex:1];
-    NSLog(@"%@",index);
-    companyBrand.namefirstLetter = index;
-    [index release];
+    companyBrand.namefirstLetter = indexCharForName(companyBrand.name);
     
     brands = [brands setByAddingObject:companyBrand];
     
@@ -118,6 +112,22 @@ NSNumber* ratingLevelForScore(int rating){
 }
 
 
+NSString* indexCharForName(NSString* aString){
+    
+    NSString* index = [aString copy];
+    index = [index capitalizedString];
+    index = [index substringToIndex:1];
+    
+    if([index rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound){
+        
+        index = @"#";
+    }
+    
+    return [index autorelease];
+    
+}
+
+
 Company* companyWithRow(NSArray* row, NSManagedObjectContext* context){
     
     Company* theCompany;
@@ -129,15 +139,7 @@ Company* companyWithRow(NSArray* row, NSManagedObjectContext* context){
     if(theCompany.name == nil){
         
         theCompany.name = [row objectAtIndex:nameIndex];
-        
-        
-        NSString* index = [theCompany.name copy];
-        index = [index capitalizedString];
-        NSLog(@"%@",index);
-        index = [index substringToIndex:1];
-        NSLog(@"%@",index);
-        theCompany.namefirstLetter = index;
-        [index release];
+        theCompany.namefirstLetter = indexCharForName(theCompany.name);
                 
         if([[row objectAtIndex:ratingIndex] doesContainString:unknownRatingString]){
             
@@ -183,8 +185,6 @@ Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany){
     return aCompany;
 }
 
-
-
 NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
     
     NSMutableSet* brands = [NSMutableSet set];
@@ -204,13 +204,8 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 tempString = [tempString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 
                 Brand* brand = brandWithName(tempString, context);
-                NSString* index = [brand.name copy];
-                index = [index capitalizedString];
-                NSLog(@"%@",index);
-                index = [index substringToIndex:1];
-                NSLog(@"%@",index);
-                brand.namefirstLetter = index;
-                [index release];
+                brand.namefirstLetter = indexCharForName(brand.name);
+
                 brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
                 

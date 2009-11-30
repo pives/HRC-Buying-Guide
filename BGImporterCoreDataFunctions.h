@@ -24,3 +24,4 @@ Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany);
 NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context);
 void associateBrandsWithCategory(NSSet* someBrands, Category* aCategory);
 NSNumber* ratingLevelForScore(int rating);
+NSString* indexCharForName(NSString* aString);
