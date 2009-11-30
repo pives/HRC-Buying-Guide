@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Company;
 
+@interface CompanyScoreCardViewController : UIViewController <UIWebViewDelegate>{
 
-@interface CompanyScoreCardViewController : UIViewController {
-
+    UIToolbar* bar;
+    UIActivityIndicatorView* spinner;
+    UIWebView* card;
+    NSURL* address;
 }
+@property(nonatomic,assign)IBOutlet UIToolbar *bar;
+@property(nonatomic,retain)UIActivityIndicatorView *spinner;
+@property(nonatomic,assign)IBOutlet UIWebView *card;
+@property(nonatomic,retain)NSURL *address;
+
+- (id)initWithCompany:(Company*)aCompany;
+- (IBAction)done;
 
 @end

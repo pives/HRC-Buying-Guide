@@ -7,40 +7,27 @@
 //
 
 #import "CompanyScoreCardViewController.h"
+#import "Company.h"
+#import "NSString+extensions.h"
+#import "UIBarButtonItem+extensions.h"
 
+static NSString* urlPrefix = @"http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=";
+static NSString* urlSuffix = @"&search_id=1&search_type=Quick";
 
 @implementation CompanyScoreCardViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+@synthesize bar;
+@synthesize spinner;
+@synthesize card;
+@synthesize address;
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)dealloc {
+    self.spinner = nil;
+    self.address = nil;
+    [super dealloc];
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -49,14 +36,54 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+
+- (id)initWithCompany:(Company*)aCompany
+{
+    self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
+    if (self != nil) {
+        
+        NSString* companyID = [aCompany.ID stringValue];
+        NSString* url = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
+        self.address = [NSURL URLWithString:url];
+        
+    }
+    return self;
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
+    NSMutableArray* items = [bar.items mutableCopy];
+    [items insertObject:[UIBarButtonItem itemWithView:self.spinner]
+                atIndex:0];
+    
+    bar.items = items;
+    [items release];
+    
+    [card loadRequest:[NSURLRequest requestWithURL:address]];
+                        
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [spinner startAnimating];
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    [spinner stopAnimating];
+    
+}
+                        
+
+- (IBAction)done{
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 

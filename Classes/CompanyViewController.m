@@ -13,6 +13,7 @@
 #import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "UIColor+extensions.h"
+#import "CompanyScoreCardViewController.h"
 
 @implementation CompanyViewController
 
@@ -89,6 +90,10 @@
 }
 
 - (void)showScoreCard{
+    
+    CompanyScoreCardViewController* vc = [[[CompanyScoreCardViewController alloc] initWithCompany:self.company] autorelease];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentModalViewController:vc animated:YES];
     
 }
 

@@ -67,6 +67,8 @@
 		C4C031DB10B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D510B1EB9B000D46AA /* NSManagedObjectContext+Extensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
+		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
+		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
 		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
@@ -188,6 +190,7 @@
 		C4C031D710B1EB9B000D46AA /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
+		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		C4FA187610B2F4CE0031303E /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
 		C4FA187710B2F4CE0031303E /* CompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				C4AFF95510B233F000801655 /* Categories List View */,
 				C4340AE510B23D620049791D /* Companies List View */,
 				C4FA187A10B2F4D30031303E /* Company */,
+				C4F31C6A10C416C9004DF94F /* Score Card */,
 				C4103F5110B6FADF004CEC15 /* Key */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4C02C4B10B0F413000D46AA /* Core Data */,
@@ -467,14 +471,23 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		C4F31C6A10C416C9004DF94F /* Score Card */ = {
+			isa = PBXGroup;
+			children = (
+				C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */,
+				C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */,
+				C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */,
+			);
+			name = "Score Card";
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C4FA187A10B2F4D30031303E /* Company */ = {
 			isa = PBXGroup;
 			children = (
 				C4FA187510B2F4CE0031303E /* CompanyViewController.h */,
 				C4FA187610B2F4CE0031303E /* CompanyViewController.m */,
 				C4FA187710B2F4CE0031303E /* CompanyViewController.xib */,
-				C4FA187B10B2F5050031303E /* CompanyScoreCardViewController.h */,
-				C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */,
 				C4FA193810B30C200031303E /* Brand Scroll View */,
 			);
 			name = Company;
@@ -618,6 +631,7 @@
 				C4864DFB10BC3BDA0064A126 /* info.png in Resources */,
 				C4864E4910BC3DE10064A126 /* info2.png in Resources */,
 				C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
+				C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +661,7 @@
 				C4864DFC10BC3BDA0064A126 /* info.png in Resources */,
 				C4864E4A10BC3DE10064A126 /* info2.png in Resources */,
 				C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
+				C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

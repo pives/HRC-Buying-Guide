@@ -79,6 +79,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if([data category]==nil)
+        [self applyNewIndex:0 pageController:currentPage];
+
+        
 
 }
 
@@ -131,6 +135,12 @@
 
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)newScrollView{
+    
+    [nextPage viewWillAppear:YES];
+    
+}
+
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)newScrollView
 {
     CGFloat pageWidth = scrollView.frame.size.width;
@@ -162,6 +172,8 @@
     frame.origin.x = frame.size.width * pageIndex;
     frame.origin.y = 0;
     [scrollView scrollRectToVisible:frame animated:YES];
+    [nextPage viewWillAppear:YES];
+
 }
 
 - (void)changePageUnanianimated:(int)pageIndex

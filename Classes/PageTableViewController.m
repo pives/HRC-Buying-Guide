@@ -72,8 +72,11 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
+    //TODO: Makes me crash when switching tableviews IF the brand table is empty (company name is in the cat but no brand)
+    /*
+    if([self.tableView visibleCells] != nil || ([[self.tableView visibleCells] count] > 0))
+       [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    */
 }
 
 - (void)fetch{
@@ -90,6 +93,7 @@
 	}
     
     [self.tableView reloadData];
+
 }
 
 #pragma mark -

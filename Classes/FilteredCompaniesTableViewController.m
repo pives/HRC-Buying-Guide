@@ -263,8 +263,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-#ifdef DEBUG = 1
-
     Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
@@ -274,10 +272,8 @@
     //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
-#else
-    [self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
+    //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
     
-#endif
 
 }
 
