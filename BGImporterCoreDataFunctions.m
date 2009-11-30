@@ -78,6 +78,11 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
     NSSet* brands = brandsWithString([row objectAtIndex:brandsIndex], context);
     
+    Brand* companyBrand = brandWithName(theCompany.name, context);
+    companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
+    
+    brands = [brands setByAddingObject:companyBrand];
+    
     theCompany = companyByaddingBrandsToCompany(brands, theCompany);
     
     associateBrandsWithCategory(brands, theCategory);
@@ -185,6 +190,7 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 tempString = [tempString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 
                 Brand* brand = brandWithName(tempString, context);
+                brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
                 
             }

@@ -8,6 +8,7 @@
 
 #import "BGImporter_AppDelegate.h"
 #import "CoreDataFunctions.h"
+#import "BGImporterCoreDataFunctions.h"
 #import "NSManagedObjectContext+Extensions.h"
 #import "NSString+extensions.h"
 #import "Company.h"
