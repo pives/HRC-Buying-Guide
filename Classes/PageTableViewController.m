@@ -60,11 +60,14 @@
 
 - (void)loadView{
     
-    self.view = [[[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain] autorelease];
+    self.view = [[[UITableView alloc] initWithFrame:tableFrame style:UITableViewStyleGrouped] autorelease];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.view.backgroundColor = [UIColor reallyLightGray];
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    //self.tableView.separatorColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor reallyLightGray];
+    self.view.backgroundColor = [UIColor clearColor];
+
     
 }
 
@@ -122,8 +125,14 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        //TODO: fix cell outlines
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
         
+        //cell.backgroundView.backgroundColor = self.ratingColor;
+        //cell.textLabel.backgroundColor = [UIColor clearColor];
+        //cell.contentView.backgroundColor = self.ratingColor;
+        
+        //TODO: fix cell outlines
+        /*
         UIView* background = [[UIView alloc] initWithFrame:cell.bounds];
         background.backgroundColor = [UIColor whiteColor];
         UIView* foreground = [[UIView alloc] initWithFrame:CGRectMake(1, 
@@ -136,28 +145,32 @@
         cell.backgroundView = background;
         [foreground release];
         [background release];
+        */
         
-        
-        
+        /*
         UILabel* brand = [[UILabel alloc] initWithFrame:CGRectMake(10, 
                                                                    1, 
-                                                                   cell.frame.size.width-10-2, 
-                                                                   cell.frame.size.height-2)];
+                                                                   100, 
+                                                                   40)];
         brand.tag = 1000;
         brand.font = [UIFont boldSystemFontOfSize:14];
         brand.textColor = [UIColor blackColor];
         brand.textAlignment = UITextAlignmentLeft;
-        brand.backgroundColor = self.ratingColor;
+        brand.backgroundColor = [UIColor clearColor];
         [cell addSubview:brand];
         [brand release];
-        
+        */
     }
     
     // Configure the cell.
     
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+    
+    /*
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];    
 	brand.text = [managedObject valueForKey:@"name"];
+    */
+    cell.textLabel.text = [managedObject valueForKey:@"name"];
     
     return cell;
 }

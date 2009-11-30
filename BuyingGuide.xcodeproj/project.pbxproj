@@ -69,6 +69,8 @@
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
 		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
+		C4F31CE210C42089004DF94F /* email.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* email.txt */; };
+		C4F31CE310C42089004DF94F /* email.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* email.txt */; };
 		C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
 		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
@@ -191,6 +193,7 @@
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
+		C4F31CE110C42089004DF94F /* email.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = email.txt; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		C4FA187610B2F4CE0031303E /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
 		C4FA187710B2F4CE0031303E /* CompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyViewController.xib; sourceTree = "<group>"; };
@@ -290,6 +293,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C4F31CE110C42089004DF94F /* email.txt */,
 				C4FA1D8A10B45E770031303E /* Entitlements.plist */,
 				28A0AAE50D9B0CCF005BE974 /* BuyingGuide_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -632,6 +636,7 @@
 				C4864E4910BC3DE10064A126 /* info2.png in Resources */,
 				C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
+				C4F31CE310C42089004DF94F /* email.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +667,7 @@
 				C4864E4A10BC3DE10064A126 /* info2.png in Resources */,
 				C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
+				C4F31CE210C42089004DF94F /* email.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

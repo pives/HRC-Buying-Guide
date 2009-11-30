@@ -82,9 +82,8 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
                                                                   category:self.category
                                                                      color:self.ratingColor] autorelease];
                                 
-    tableController.tableFrame = CGRectMake(20, 50, 280, 280);
+    tableController.tableFrame = CGRectMake(0, 50, 320, 236-50);
     [self.view addSubview:tableController.view];
-    categoryName.textColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
