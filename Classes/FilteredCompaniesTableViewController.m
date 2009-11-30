@@ -14,6 +14,7 @@
 #import "UIColor+extensions.h"
 #import "KeyViewController.h"
 #import "Category+Extensions.h"
+#import "Brand.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -28,12 +29,6 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-	// Relinquish ownership of any cached data, images, etc that aren't in use.
-}
-
-
 - (void)dealloc {
     self.cellColors = nil;    
     self.sortControl = nil;
@@ -42,6 +37,12 @@
 	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+	// Relinquish ownership of any cached data, images, etc that aren't in use.
 }
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
@@ -243,19 +244,19 @@
     }
     
 	// Configure the cell.
-	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+	Brand *managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
-    UILabel* company = (UILabel*)[cell viewWithTag:1000];
-    company.text = [managedObject valueForKey:@"name"];
+    UILabel* brand = (UILabel*)[cell viewWithTag:1000];
+    brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [(Company*)managedObject ratingFormatted];
+    rating.text = [managedObject.company ratingFormatted];
     
-    int cellColorValue = [[(Company*)managedObject ratingLevel] intValue];
+    int cellColorValue = [[managedObject.company ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
-    company.backgroundColor = cellColor;
+    brand.backgroundColor = cellColor;
     
     return cell;
 }
@@ -263,7 +264,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
+    Company* selectedCompany = (Company*)[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] company];
     
     CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
                                                                                         category:(Category*)self.filterObject]; 
@@ -308,7 +309,7 @@
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Company" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -340,8 +341,8 @@
     }else{
         
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES];
-        NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES];
+        NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO];
 
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,sortDescriptor2, nil];
         
@@ -353,7 +354,7 @@
         // nil for section name key path means "no sections".
         aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                     managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:@"ratingLevel"
+                                                                                                      sectionNameKeyPath:@"company.ratingLevel"
                                                                                                                cacheName:@"CompaniesList"];        
         
         [sortDescriptor release];

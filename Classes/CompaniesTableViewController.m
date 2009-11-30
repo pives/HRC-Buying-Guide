@@ -23,17 +23,18 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-	// Relinquish ownership of any cached data, images, etc that aren't in use.
-}
-
 
 - (void)dealloc {
     self.cellColors = nil;    
 	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+	// Relinquish ownership of any cached data, images, etc that aren't in use.
 }
 
 
@@ -131,9 +132,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     UILabel* company = (UILabel*)[cell viewWithTag:1000];
     company.text = [managedObject valueForKey:@"name"];
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [(Company*)managedObject ratingFormatted];
+    rating.text = [(Company*)[(Brand*)managedObject company] ratingFormatted];
     
-    int cellColorValue = [[(Company*)managedObject ratingLevel] intValue];
+    int cellColorValue = [[(Company*)[(Brand*)managedObject company] ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
@@ -152,7 +153,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Company* selectedCompany = (Company*)[fetchedResultsController objectAtIndexPath:indexPath];
+    Company* selectedCompany = (Company*)[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] company];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
     
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
@@ -186,21 +187,15 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     if(fetchedResultsController==nil)
         return nil;
         
-    NSMutableArray* titles = [[fetchedResultsController sectionIndexTitles] mutableCopy];
-    [titles replaceObjectAtIndex:0 withObject:@"#"];    
-    
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
     
-    return titles;
+    return [fetchedResultsController sectionIndexTitles];
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if(fetchedResultsController==nil)
         return 0;
-    
-    if([title isEqualToString:@"#"])
-        title = @"3";
-        
+            
     // tell table which section corresponds to section title/index (e.g. "B",1))
     return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
@@ -222,7 +217,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Company" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
