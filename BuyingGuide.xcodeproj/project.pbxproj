@@ -56,6 +56,8 @@
 		C492D86C10BB27FB0041400B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C492D86B10BB27FB0041400B /* Icon.png */; };
 		C492D86D10BB27FB0041400B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C492D86B10BB27FB0041400B /* Icon.png */; };
 		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
+		C4AFC4E010C447AD00449FFE /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4AFC4DF10C447AD00449FFE /* storedata.sqlite */; };
+		C4AFC4E110C447AD00449FFE /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4AFC4DF10C447AD00449FFE /* storedata.sqlite */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
 		C4C02C4A10B0F401000D46AA /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C02C4710B0F401000D46AA /* Category.m */; };
@@ -66,8 +68,6 @@
 		C4C05F1010C4368A00FE05F6 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C05F0F10C4368A00FE05F6 /* Brand.m */; };
 		C4C05F1110C4368A00FE05F6 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C05F0F10C4368A00FE05F6 /* Brand.m */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
-		C4E6EC9B10C43B9F001F88C8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */; };
-		C4E6EC9C10C43B9F001F88C8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */; };
 		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31CE210C42089004DF94F /* email.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* email.txt */; };
@@ -176,6 +176,7 @@
 		C492D86B10BB27FB0041400B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesTableViewController.m; sourceTree = "<group>"; };
+		C4AFC4DF10C447AD00449FFE /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
 		C4AFF93F10B232F000801655 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C4AFF94010B232F000801655 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -192,7 +193,6 @@
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
 		C4C05F0E10C4368A00FE05F6 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		C4C05F0F10C4368A00FE05F6 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
-		C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
 		C4F31CE110C42089004DF94F /* email.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = email.txt; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
@@ -435,7 +435,7 @@
 		C4C02C4B10B0F413000D46AA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				C4E6EC9A10C43B9F001F88C8 /* storedata.sqlite */,
+				C4AFC4DF10C447AD00449FFE /* storedata.sqlite */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
 				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
 				C4FA223010B5C81D0031303E /* Company.h */,
@@ -636,7 +636,7 @@
 				C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 				C4F31CE310C42089004DF94F /* email.txt in Resources */,
-				C4E6EC9C10C43B9F001F88C8 /* storedata.sqlite in Resources */,
+				C4AFC4E110C447AD00449FFE /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +667,7 @@
 				C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
 				C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
 				C4F31CE210C42089004DF94F /* email.txt in Resources */,
-				C4E6EC9B10C43B9F001F88C8 /* storedata.sqlite in Resources */,
+				C4AFC4E010C447AD00449FFE /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

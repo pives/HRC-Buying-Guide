@@ -12,6 +12,8 @@
 #import "NSManagedObjectContext+Extensions.h"
 #import "NSString+extensions.h"
 #import "Company.h"
+#import "NSSet+blocks.h"
+#import "Brand.h"
 
 @implementation BGImporter_AppDelegate
 
@@ -23,7 +25,6 @@
     
     NSError* saveError = importUsingCSV(self.managedObjectContext);   
     NSLog(@"%@",[saveError description]);
-    
     
     int numberOfCompanies = [self.managedObjectContext numberOfEntitiesWithName:@"Company"];
     NSLog(@"Number of Companies: %@", [NSString stringWithInt:numberOfCompanies]);
@@ -37,7 +38,17 @@
     
     for(Company* eachCompany in companies){
         
-        //NSLog(@"%@", eachCompany.name);
+        NSLog(@"%@", @"____________________");
+        NSLog(@"%@", eachCompany.name);
+        NSLog(@"%@", @"____________________");
+        
+        [eachCompany.brands each:^(id eachBrand){
+            
+            NSLog(@"%@", [(Brand*)eachBrand name]);
+            NSLog(@"%@", [(Brand*)eachBrand namefirstLetter]);
+
+        }];
+        
         
     }
     

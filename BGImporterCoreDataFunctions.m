@@ -80,8 +80,14 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
     Brand* companyBrand = brandWithName(theCompany.name, context);
     companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
-    NSString* index = [companyBrand.name substringToIndex:1];
+    
+    NSString* index = [companyBrand.name copy];
+    index = [index capitalizedString];
+    NSLog(@"%@",index);
+    index = [index substringToIndex:1];
+    NSLog(@"%@",index);
     companyBrand.namefirstLetter = index;
+    [index release];
     
     brands = [brands setByAddingObject:companyBrand];
     
@@ -124,9 +130,15 @@ Company* companyWithRow(NSArray* row, NSManagedObjectContext* context){
         
         theCompany.name = [row objectAtIndex:nameIndex];
         
-        NSString* index = [theCompany.name substringToIndex:1];
-        theCompany.namefirstLetter = [index capitalizedString];
         
+        NSString* index = [theCompany.name copy];
+        index = [index capitalizedString];
+        NSLog(@"%@",index);
+        index = [index substringToIndex:1];
+        NSLog(@"%@",index);
+        theCompany.namefirstLetter = index;
+        [index release];
+                
         if([[row objectAtIndex:ratingIndex] doesContainString:unknownRatingString]){
             
             theCompany.rating = [NSNumber numberWithInt:unknownRating];
@@ -192,8 +204,13 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 tempString = [tempString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 
                 Brand* brand = brandWithName(tempString, context);
-                NSString* index = [brand.name substringToIndex:1];
-                brand.namefirstLetter = [index capitalizedString];
+                NSString* index = [brand.name copy];
+                index = [index capitalizedString];
+                NSLog(@"%@",index);
+                index = [index substringToIndex:1];
+                NSLog(@"%@",index);
+                brand.namefirstLetter = index;
+                [index release];
                 brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
                 
