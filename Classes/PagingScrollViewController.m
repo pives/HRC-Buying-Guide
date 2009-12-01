@@ -45,13 +45,20 @@
 
 - (void)viewDidLoad
 {
-	currentPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
+    [super viewDidLoad];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    currentPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
 	nextPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
     currentPage.view.frame = self.view.bounds;
     nextPage.view.frame = self.view.bounds;
 	[scrollView addSubview:currentPage.view];
 	[scrollView addSubview:nextPage.view];
-
+    
 	NSInteger widthCount = [self.data numDataPages];
 	if (widthCount == 0)
 	{
@@ -59,26 +66,24 @@
 	}
 	
     scrollView.contentSize =
-		CGSizeMake(
-			scrollView.frame.size.width * widthCount,
-			scrollView.frame.size.height);
+    CGSizeMake(
+               scrollView.frame.size.width * widthCount,
+               scrollView.frame.size.height);
 	scrollView.contentOffset = CGPointMake(0, 0);
-
+    
 	pageControl.numberOfPages = ([self.data numDataPages]); 
     
     //pageControl.currentPage = 0     
     
     [self changePageUnanianimated:[data pageOfStartingSelectedCategory]];
     /*
-	pageControl.currentPage = 0;
-	
-	[self applyNewIndex:0 pageController:currentPage];
-	[self applyNewIndex:1 pageController:nextPage];
+     pageControl.currentPage = 0;
+     
+     [self applyNewIndex:0 pageController:currentPage];
+     [self applyNewIndex:1 pageController:nextPage];
      */
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+    
+    
     if([data category]==nil)
         [self applyNewIndex:0 pageController:currentPage];
 

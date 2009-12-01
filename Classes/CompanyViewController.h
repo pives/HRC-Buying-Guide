@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+
 @class Company;
 @class DataSource;
 @class Category;
 @class PagingScrollViewController;
 
-@interface CompanyViewController : UIViewController {
+@interface CompanyViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate> {
     
     Company* company;
     
@@ -28,7 +30,7 @@
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,assign)IBOutlet UILabel *nameLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
-@property(nonatomic,retain)IBOutlet DataSource *data;
+@property(nonatomic,retain)DataSource *data;
 @property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 

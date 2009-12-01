@@ -27,7 +27,7 @@
 	PageViewController *currentPage;
 	PageViewController *nextPage;
 }
-@property(nonatomic,retain)IBOutlet DataSource *data;
+@property(nonatomic,retain)DataSource *data;
 
 - (IBAction)changePage:(id)sender;
 - (void)changePageUnanianimated:(int)pageIndex;

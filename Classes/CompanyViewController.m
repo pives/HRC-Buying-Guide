@@ -26,13 +26,13 @@
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
-    if(self = [super init]){
+    if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
                     
         self.data = [[[DataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
+        /*
         NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
         NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
-        
-        [[NSBundle mainBundle] loadNibNamed:@"CompanyViewController" owner:self options:options];
+        */ 
         
         self.company = aCompany;
         
@@ -44,18 +44,12 @@
         self.toolbarItems = [NSArray arrayWithObjects: 
                              [UIBarButtonItem flexibleSpaceItem],
                              [UIBarButtonItem systemItem:UIBarButtonSystemItemAction 
-                                                  target:nil 
-                                                  action:@selector(sendEmail)],
+                                                  target:self 
+                                                  action:@selector(launchActionSheet)],
                              nil];
         
         
-        if([company.ratingLevel intValue] == 0)
-            scoreBackgroundColor.backgroundColor = [UIColor gpGreen];
-        else if([company.ratingLevel intValue] == 1)
-            scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
-        else 
-            scoreBackgroundColor.backgroundColor = [UIColor gpRed];
-        
+                
         
     }
     
@@ -67,8 +61,16 @@
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",@"load!");
 
+    brands.data = self.data;
+
+    if([company.ratingLevel intValue] == 0)
+        scoreBackgroundColor.backgroundColor = [UIColor gpGreen];
+    else if([company.ratingLevel intValue] == 1)
+        scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
+    else 
+        scoreBackgroundColor.backgroundColor = [UIColor gpRed];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -85,21 +87,97 @@
     
     [super viewDidAppear:animated];
     
-    [brands viewWillAppear:animated];
+    [brands viewDidAppear:animated];
     
 }
 
 - (void)showScoreCard{
     
     CompanyScoreCardViewController* vc = [[[CompanyScoreCardViewController alloc] initWithCompany:self.company] autorelease];
-    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.navigationController presentModalViewController:vc animated:YES];
     
 }
 
+#pragma mark -
+#pragma mark Email
+
 - (void)sendEmail{
     
+    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+	controller.mailComposeDelegate = self;
+	[controller setSubject:@"In app email..."]; //TODO: add subject
     
+    NSString* fileName;
+    NSString* fileExtension = @"txt";
+
+    if([company.ratingLevel intValue] == 0){
+        
+        //GOOD
+        fileName = @"EmailHappy";
+    }else if([company.ratingLevel intValue] == 1){
+
+        //MIDDLE
+        fileName = @"EmailIndifferent";
+
+    }else{
+        
+        //BAD
+        fileName = @"EmailSad";
+    }
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+    NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+
+    NSString* emailText = [NSString stringWithFormat:fileContenets, company.name];
+
+    
+	[controller setMessageBody:emailText isHTML:NO];
+	[self presentModalViewController:controller animated:YES];
+	[controller release];
+    
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	//TODO: Check result?
+    [self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark UIActionSheet
+
+- (void)launchActionSheet{
+    
+    UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
+                                                                delegate:self 
+                                                       cancelButtonTitle:@"Cancel" 
+                                                  destructiveButtonTitle:nil 
+                                                       otherButtonTitles:@"Send Email", nil] autorelease];
+    
+    
+    myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
+    [myActionSheet showFromToolbar:self.navigationController.toolbar];
+    
+}
+
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+
+-(void)actionSheet:(UIActionSheet *)modalViewSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    switch (buttonIndex)
+    {
+        case 0:
+        {
+            [self sendEmail];
+            break;
+        }
+    }
+
 }
 
 

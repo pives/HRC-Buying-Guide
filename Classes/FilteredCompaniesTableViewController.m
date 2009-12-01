@@ -184,7 +184,7 @@
             header.backgroundColor = [UIColor gpYellowHeader];
             
         }else {
-            header.text = @"Avoid these brands or Non-responders";
+            header.text = @"Avoid these brands or non-responders";
             headerView.backgroundColor = [UIColor gpRedHeader];
             header.backgroundColor = [UIColor gpRedHeader];
         }
@@ -215,23 +215,22 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
                
-        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(260, 0, 30, cell.frame.size.height-2)];
+        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(260, 0, 30, cell.frame.size.height)];
         rating.tag = 999;
         rating.font = [UIFont boldSystemFontOfSize:12];
         rating.textColor = [UIColor blackColor];
         rating.textAlignment = UITextAlignmentRight;
         rating.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-        [cell addSubview:rating];
+        [cell.contentView addSubview:rating];
         [rating release];
         
-        UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height-2)];
+        UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
         company.tag = 1000;
         company.font = [UIFont boldSystemFontOfSize:14];
         company.textColor = [UIColor blackColor];
         company.textAlignment = UITextAlignmentLeft;
         company.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-
-        [cell addSubview:company];
+        [cell.contentView addSubview:company];
         [company release];
         
         
@@ -239,7 +238,6 @@
         cell.backgroundView = background;
         [background release];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     
@@ -257,6 +255,19 @@
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
     brand.backgroundColor = cellColor;
+    
+    if([[managedObject company].partner boolValue]){
+        
+        cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
+        [brand setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];
+        
+    }else{
+        
+        cell.imageView.image = nil;
+        [brand setFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        
+    }
+    
     
     return cell;
 }
@@ -343,8 +354,10 @@
         // Edit the sort key as appropriate.
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES];
         NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO];
+        NSSortDescriptor *sortDescriptor3 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
 
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,sortDescriptor2, nil];
+
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,sortDescriptor2,sortDescriptor3, nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];
         
@@ -359,6 +372,7 @@
         
         [sortDescriptor release];
         [sortDescriptor2 release];
+        [sortDescriptor3 release];
         [sortDescriptors release];
     }
     

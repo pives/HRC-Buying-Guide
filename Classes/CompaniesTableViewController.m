@@ -108,15 +108,17 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
         rating.font = [UIFont boldSystemFontOfSize:12];
         rating.textColor = [UIColor blackColor];
         rating.textAlignment = UITextAlignmentRight;
-        [cell addSubview:rating];
+        rating.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+        [cell.contentView addSubview:rating];
         [rating release];
-        
+               
         UILabel* company = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
         company.tag = 1000;
         company.font = [UIFont boldSystemFontOfSize:14];
         company.textColor = [UIColor blackColor];
         company.textAlignment = UITextAlignmentLeft;
-        [cell addSubview:company];
+        company.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+        [cell.contentView addSubview:company];
         [company release];
         
         
@@ -129,19 +131,32 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
     
+    Company* theCompany =[(Brand*)managedObject company];
+    
     UILabel* company = (UILabel*)[cell viewWithTag:1000];
     company.text = [managedObject valueForKey:@"name"];
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [(Company*)[(Brand*)managedObject company] ratingFormatted];
+    rating.text = [theCompany ratingFormatted];
     
-    int cellColorValue = [[(Company*)[(Brand*)managedObject company] ratingLevel] intValue];
+    int cellColorValue = [[theCompany ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
     company.backgroundColor = cellColor;
+        
+    if([theCompany.partner boolValue]){
+        
+        cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
+        [company setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];
+        
+    }else{
+        
+        cell.imageView.image = nil;
+        [company setFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+
+    }
     
-		
     return cell;
 }
 

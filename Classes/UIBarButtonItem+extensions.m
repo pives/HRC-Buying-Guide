@@ -20,29 +20,43 @@
     
 }
 
++ (UIBarButtonItem*)fixedSpaceItemOfSize:(float)size{
+    
+    
+    UIBarButtonItem* item = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                           target:nil 
+                                                                           action:nil] autorelease];
+    item.width = size;
+    
+    return item;
+    
+    
+}
+
+
 + (UIBarButtonItem*)itemWithView:(UIView*)aView{
     
     return [[[UIBarButtonItem alloc] initWithCustomView:aView] autorelease];
     
 }
 
-+ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action{
++ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage style:(UIBarButtonItemStyle)aStyle target:(id)aTarget action:(SEL)anAction{
     
-    UIBarButtonItem* item = [[[UIBarButtonItem alloc] initWithTitle:@"" style:style target:target action:action] autorelease];
+    UIBarButtonItem* item = [[[UIBarButtonItem alloc] initWithTitle:@"" style:aStyle target:aTarget action:anAction] autorelease];
     item.image = anImage;
     return item;
     
 }
 
-+ (UIBarButtonItem*)itemWithTitle:(NSString*)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
++ (UIBarButtonItem*)itemWithTitle:(NSString*)aTitle style:(UIBarButtonItemStyle)aStyle target:(id)aTarget action:(SEL)anAction {
     
-    return [[[UIBarButtonItem alloc] initWithTitle:title style:style target:target action:action] autorelease];
+    return [[[UIBarButtonItem alloc] initWithTitle:aTitle style:aStyle target:aTarget action:anAction] autorelease];
 
 }
 
-+ (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action{
++ (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)aTarget action:(SEL)anAction{
     
-    return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action] autorelease];
+    return [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:aTarget action:anAction] autorelease];
     
 }
 

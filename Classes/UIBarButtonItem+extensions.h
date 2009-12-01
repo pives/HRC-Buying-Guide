@@ -12,10 +12,11 @@
 @interface UIBarButtonItem(extensions)
 
 + (UIBarButtonItem*)flexibleSpaceItem;
++ (UIBarButtonItem*)fixedSpaceItemOfSize:(float)size;
 + (UIBarButtonItem*)itemWithView:(UIView*)aView;
-+ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
-+ (UIBarButtonItem*)itemWithTitle:(NSString*)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
-+ (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
++ (UIBarButtonItem*)itemWithImage:(UIImage*)anImage style:(UIBarButtonItemStyle)aStyle target:(id)aTarget action:(SEL)anAction;
++ (UIBarButtonItem*)itemWithTitle:(NSString*)aTitle style:(UIBarButtonItemStyle)aStyle target:(id)aTarget action:(SEL)anAction;
++ (UIBarButtonItem*)systemItem:(UIBarButtonSystemItem)systemItem target:(id)aTarget action:(SEL)anAction;
 + (NSArray*)centeredToolButtonsItems:(NSArray*)toolBarItems;
 
 @end

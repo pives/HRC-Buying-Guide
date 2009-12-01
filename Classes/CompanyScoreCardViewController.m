@@ -58,8 +58,9 @@ static NSString* urlSuffix = @"&search_id=1&search_type=Quick";
     
     self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
     NSMutableArray* items = [bar.items mutableCopy];
-    [items insertObject:[UIBarButtonItem itemWithView:self.spinner]
-                atIndex:0];
+        
+    [items insertObject:[UIBarButtonItem fixedSpaceItemOfSize:12]  atIndex:0];
+    [items insertObject:[UIBarButtonItem itemWithView:self.spinner] atIndex:0];
     
     bar.items = items;
     [items release];

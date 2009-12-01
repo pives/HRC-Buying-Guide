@@ -139,7 +139,7 @@
 				<object class="NSArray" key="IBSegmentTitles">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>Categories</string>
-					<string>Companies</string>
+					<string>Brands</string>
 				</object>
 				<object class="NSMutableArray" key="IBSegmentWidths">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -336,7 +336,7 @@
 					<string>MainViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{780, 964}, {310, 30}}</string>
+					<string>{{735, 964}, {310, 30}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>

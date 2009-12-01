@@ -28,10 +28,6 @@
         
         displayName = @"Oil & Gas";
         
-    }else if([self.name doesContainString:@"Food"]){
-
-        displayName = @"Food & Bev";
-
     }else if([self.name doesContainString:@"Household"]){
         
         displayName = @"Household";

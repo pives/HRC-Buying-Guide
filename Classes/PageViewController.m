@@ -77,13 +77,16 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
     
     [super viewDidLoad];
     
-    self.tableController = [[[PageTableViewController alloc] initWithStyle:UITableViewStylePlain 
-                                                                   company:self.company 
-                                                                  category:self.category
-                                                                     color:self.ratingColor] autorelease];
-                                
-    tableController.tableFrame = CGRectMake(0, 50, 320, 236-50);
-    [self.view addSubview:tableController.view];
+    if(self.tableController == nil){
+        self.tableController = [[[PageTableViewController alloc] initWithStyle:UITableViewStylePlain 
+                                                                       company:self.company 
+                                                                      category:self.category
+                                                                         color:self.ratingColor] autorelease];
+        
+        tableController.tableFrame = CGRectMake(0, 50, 320, 236-50);
+        [self.view addSubview:tableController.view];
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
