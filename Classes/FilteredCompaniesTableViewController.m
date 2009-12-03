@@ -15,6 +15,7 @@
 #import "KeyViewController.h"
 #import "Category+Extensions.h"
 #import "Brand.h"
+#import "NSString+extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -332,8 +333,9 @@
     if(sortControl.selectedSegmentIndex == 1){
      
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:
+                                    [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+                                    nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];
         
@@ -346,18 +348,16 @@
                                                                                                       sectionNameKeyPath:@"name" 
                                                                                                                cacheName:@"CompaniesList"];
         
-        [sortDescriptor release];
         [sortDescriptors release];
         
     }else{
         
-        // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES];
-        NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO];
-        NSSortDescriptor *sortDescriptor3 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-
-
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,sortDescriptor2,sortDescriptor3, nil];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
+                                    [[[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"company.partner" ascending:NO] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+                                    nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];
         
@@ -370,9 +370,6 @@
                                                                                                       sectionNameKeyPath:@"company.ratingLevel"
                                                                                                                cacheName:@"CompaniesList"];        
         
-        [sortDescriptor release];
-        [sortDescriptor2 release];
-        [sortDescriptor3 release];
         [sortDescriptors release];
     }
     

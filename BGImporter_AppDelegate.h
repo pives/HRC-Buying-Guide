@@ -24,5 +24,7 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)saveAction:sender;
-
+- (void)moveDatabaseToProjectFolder;
+- (NSString *)applicationSupportDirectory;
+- (void)removeOldDatabase;
 @end

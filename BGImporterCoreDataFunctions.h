@@ -16,7 +16,7 @@
 NSError* save(NSManagedObjectContext* context);
 
 NSError* importUsingCSV(NSManagedObjectContext* context);
-void processRowIntoContext(NSArray *row, NSManagedObjectContext* context);
+Company* processRowIntoContext(NSArray *row, NSManagedObjectContext* context);
 
 Company* companyWithRow(NSArray* row, NSManagedObjectContext* context);
 Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany);

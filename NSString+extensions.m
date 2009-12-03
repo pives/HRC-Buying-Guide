@@ -8,6 +8,21 @@
 
 #import "NSString+extensions.h"
 
+@implementation NSString (comparison) 
+
+- (NSComparisonResult)localizedCaseInsensitiveArticleStrippingCompare:(NSString*)aString{
+    
+    NSString* firstString = [self stringByRemovingArticlePrefixes];
+    aString = [aString stringByRemovingArticlePrefixes];
+    
+    return [firstString localizedCaseInsensitiveCompare:aString];    
+    
+}
+
+
+@end
+
+
 @implementation NSString (parsing) 
 
 -(NSArray *)csvRows {
@@ -123,6 +138,27 @@
     return [NSString stringWithString:[self substringToIndex:([self length]-1)]];
     
     
+}
+
+- (NSString*)stringByRemovingArticlePrefixes{
+    
+    if([self length] < 4)
+        return self; 
+    
+    NSString* aString = [self copy];
+    
+    if([[aString substringToIndex:4] doesContainString:@"The"]){
+        
+        aString = [aString substringFromIndex:4];
+        aString = [aString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+    }else if([[aString substringToIndex:4] doesContainString:@"the"]){
+        
+        aString = [aString substringFromIndex:4];
+        aString = [aString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+    
+    return [aString autorelease];
 }
 
 

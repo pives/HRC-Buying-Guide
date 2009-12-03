@@ -24,7 +24,7 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 - (NSString *)applicationDocumentsDirectory;
-- (void)loadData;
+- (void)loadDataForce:(BOOL)flag;
 
 @end
 

@@ -16,7 +16,7 @@
     
     NSString* displayName;
     
-    if([self.name doesContainString:@"Apparel"]){
+    /*if([self.name doesContainString:@"Apparel"]){
         
         displayName = @"Apparel";
         
@@ -24,15 +24,15 @@
         
         displayName = @"Finance";
         
-    }else if([self.name doesContainString:@"Filling"]){
+    }else*/ if([self.name doesContainString:@"Filling"]){
         
         displayName = @"Oil & Gas";
         
-    }else if([self.name doesContainString:@"Household"]){
+    }else /*if([self.name doesContainString:@"Household"]){
         
         displayName = @"Household";
 
-    }else if([self.name doesContainString:@"Insurance"]){
+    }else*/ if([self.name doesContainString:@"Insurance"]){
         
         displayName = @"Insurance";
         

@@ -22,9 +22,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
     
+    [self removeOldDatabase];
     
     NSError* saveError = importUsingCSV(self.managedObjectContext);   
     NSLog(@"%@",[saveError description]);
+    
+    [self moveDatabaseToProjectFolder];
     
     int numberOfCompanies = [self.managedObjectContext numberOfEntitiesWithName:@"Company"];
     NSLog(@"Number of Companies: %@", [NSString stringWithInt:numberOfCompanies]);
@@ -70,6 +73,25 @@
     
 }
 
+- (void)removeOldDatabase{
+    
+    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
+    NSURL *url = [NSURL fileURLWithPath:[applicationSupportDirectory stringByAppendingPathComponent: @"storedata.sqlite"]];
+    [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
+
+}
+
+
+- (void)moveDatabaseToProjectFolder{
+    
+    NSString *applicationSupportDirectory = [self applicationSupportDirectory];
+    NSURL *url = [NSURL fileURLWithPath:[applicationSupportDirectory stringByAppendingPathComponent: @"storedata.sqlite"]];
+    NSURL *dest = [NSURL fileURLWithPath:@"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/storedata.sqlite"];
+   
+    [[NSFileManager defaultManager] removeItemAtURL:dest error:nil];
+    [[NSFileManager defaultManager] copyItemAtURL:url toURL:dest error:nil];
+    
+}
 
 
 /**

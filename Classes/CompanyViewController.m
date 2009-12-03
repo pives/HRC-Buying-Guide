@@ -23,6 +23,7 @@
 @synthesize data;
 @synthesize brands;
 @synthesize scoreBackgroundColor;
+@synthesize partnerIcon;
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
@@ -70,6 +71,11 @@
         scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
     else 
         scoreBackgroundColor.backgroundColor = [UIColor gpRed];
+    
+    if(![company.partner boolValue])
+        self.partnerIcon.alpha = 0;
+    
+
     
 }
 

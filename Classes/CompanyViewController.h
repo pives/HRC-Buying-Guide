@@ -21,6 +21,7 @@
     UILabel* nameLabel;
     UILabel* scoreLabel;
     UIView* scoreBackgroundColor;
+    UIImageView* partnerIcon;
     
     DataSource* data;
     
@@ -33,6 +34,8 @@
 @property(nonatomic,retain)DataSource *data;
 @property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
+@property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
+
 
 
 

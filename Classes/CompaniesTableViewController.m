@@ -12,6 +12,7 @@
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"
+#import "NSString+extensions.h"
 
 NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
@@ -240,7 +241,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	
 	// Edit the sort key as appropriate.
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)];
-    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)];
 
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, sortDescriptor2, nil];
 	

@@ -15,6 +15,7 @@
 #import "Company.h"
 #import "Brand.h"
 #import "Category.h"
+#import "Brand+Extensions.h"
 
 
 static int categoryIndex = 5;
@@ -46,29 +47,39 @@ NSError* save(NSManagedObjectContext* context) {
 
 NSError* importUsingCSV(NSManagedObjectContext* context){
     
-    NSURL* url = [[[NSFileManager defaultManager] URLsForDirectory:NSUserDirectory inDomains:NSLocalDomainMask] objectAtIndex:0];
-    url = [url URLByAppendingPathComponent:@"coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/bgdata.csv"];
+    NSURL* url = [[NSBundle mainBundle] URLForResource: @"bgdata" withExtension:@"csv"];
+    
+    //[[[NSFileManager defaultManager] URLsForDirectory:NSUserDirectory inDomains:NSLocalDomainMask] objectAtIndex:0];
+    //url = [url URLByAppendingPathComponent:@"coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/bgdata.csv"];
     
     NSString* csv = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     NSArray* csvRows = [csv csvRows];
     csvRows = [csvRows mutableCopy]; 
     [(NSMutableArray*)csvRows removeObjectAtIndex:0]; //getting rid of headers! 
     
-    NSError* saveError;
+    NSError* saveError = nil;
     
     for(NSArray* eachRow in csvRows){
         
-        processRowIntoContext(eachRow, context);
+        Company* aC = processRowIntoContext(eachRow, context);
+        NSLog([aC description]);
+        
+        for (Brand* eachBrand in [aC brands])
+             NSLog([eachBrand description]);
+        
         saveError = save(context);
-        //NSLog(@"%@",[saveError description]);
+        
+        if(saveError != nil){
+            NSLog(@"%@",[saveError description]);
+            saveError = nil;
+        }
         
     }
     
     return saveError;
 }
 
-
-void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
+Company* processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
     Company* theCompany = companyWithRow(row, context);
     
@@ -82,6 +93,7 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
     
     companyBrand.namefirstLetter = indexCharForName(companyBrand.name);
+    companyBrand.nameSortFormatted = [companyBrand.name stringByRemovingArticlePrefixes];
     
     brands = [brands setByAddingObject:companyBrand];
     
@@ -89,7 +101,7 @@ void processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
     associateBrandsWithCategory(brands, theCategory);
     
-    return;
+    return theCompany;
     
 }
 
@@ -115,6 +127,7 @@ NSNumber* ratingLevelForScore(int rating){
 NSString* indexCharForName(NSString* aString){
     
     NSString* index = [aString copy];
+    index = [index stringByRemovingArticlePrefixes];
     index = [index capitalizedString];
     index = [index substringToIndex:1];
     
@@ -205,7 +218,14 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 
                 Brand* brand = brandWithName(tempString, context);
                 brand.namefirstLetter = indexCharForName(brand.name);
-
+                brand.nameSortFormatted = [brand.name stringByRemovingArticlePrefixes];
+                
+                if(brand.nameSortFormatted == nil){
+                    
+                    NSLog(@"wtf");
+                }
+                NSLog([brand description]);
+                
                 brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
                 

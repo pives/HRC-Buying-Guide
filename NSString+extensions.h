@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSString (comparison) 
+
+- (NSComparisonResult)localizedCaseInsensitiveArticleStrippingCompare:(NSString*)aString;
+
+@end
+
+
+
 @interface NSString (parsing) 
 
 -(NSArray *)csvRows;
@@ -20,6 +28,7 @@
 - (BOOL)doesContainString:(NSString *)aString;
 - (NSRange)fullRange;
 - (NSString*)stringByDeletingLastCharacter;
+- (NSString*)stringByRemovingArticlePrefixes;
 
 //also tests if string is a single space
 - (BOOL)isEmpty;

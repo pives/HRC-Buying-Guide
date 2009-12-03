@@ -23,7 +23,7 @@
         
     // Override point for customization after app launch    
 
-    [self loadData];
+    [self loadDataForce:NO];
     
 	MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
 	rootViewController.context = self.managedObjectContext;
@@ -51,17 +51,26 @@
     }
 }
 
-- (void)loadData{
+- (void)loadDataForce:(BOOL)flag{
 
     NSString* db = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
     
     NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] error:nil];
     
-    if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 200){
-        
+    if(flag){
         [[NSFileManager defaultManager] copyItemAtPath:db 
                                                 toPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] 
                                                  error:nil];
+    }else{
+        
+        if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 200){
+            
+            [[NSFileManager defaultManager] copyItemAtPath:db 
+                                                    toPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] 
+                                                     error:nil];
+            
+        }
+        
         
     } 
 }
@@ -129,10 +138,15 @@
 		 Check the error message to determine what the actual problem was.
 		 */
         
-        //TODO: replace db with stored db
+        [self loadDataForce:YES];
         
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+        if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
+         
+            
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+
     }    
 	
     return persistentStoreCoordinator;
