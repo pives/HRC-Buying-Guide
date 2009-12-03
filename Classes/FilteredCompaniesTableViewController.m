@@ -16,6 +16,7 @@
 #import "Category+Extensions.h"
 #import "Brand.h"
 #import "NSString+extensions.h"
+#import "UIView-Extensions.h"
 
 
 @implementation FilteredCompaniesTableViewController
@@ -115,6 +116,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = NO;
+    
+    [self.view setSizeHeight:self.view.frame.size.height-44];
     
 }
 
@@ -216,7 +219,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
                
-        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(260, 0, 30, cell.frame.size.height)];
+        UILabel* rating = [[UILabel alloc] initWithFrame:CGRectMake(255, 0, 30, cell.frame.size.height)];
         rating.tag = 999;
         rating.font = [UIFont boldSystemFontOfSize:12];
         rating.textColor = [UIColor blackColor];
@@ -256,6 +259,12 @@
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
     brand.backgroundColor = cellColor;
+    
+    if(sortControl.selectedSegmentIndex==0){
+        [rating setFrame:CGRectMake(278, 0, 30, cell.frame.size.height)];
+    }else{
+        [rating setFrame:CGRectMake(255, 0, 30, cell.frame.size.height)];
+    }
     
     if([[managedObject company].partner boolValue]){
         
@@ -298,6 +307,33 @@
 }
 
 
+#pragma mark -
+#pragma mark sectionIndexTitlesForTableView
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
+    if(fetchedResultsController==nil)
+        return nil;
+    if(sortControl.selectedSegmentIndex==0)
+        return nil;
+    
+    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
+    
+    return [fetchedResultsController sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if(fetchedResultsController==nil)
+        return 0;
+    if(sortControl.selectedSegmentIndex==0)
+        return 0;
+
+    
+    // tell table which section corresponds to section title/index (e.g. "B",1))
+    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+}
+
+
+
 
 
 
@@ -334,7 +370,8 @@
      
         // Edit the sort key as appropriate.
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:
-                                    [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
                                     nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];
@@ -345,7 +382,7 @@
         // nil for section name key path means "no sections".
        aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                     managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:@"name" 
+                                                                                                      sectionNameKeyPath:@"namefirstLetter" 
                                                                                                                cacheName:@"CompaniesList"];
         
         [sortDescriptors release];

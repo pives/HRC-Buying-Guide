@@ -353,7 +353,6 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>C4340AE510B23D620049791D</string>
 								<string>C4AFF95610B2342800801655</string>
-								<string>C4C02C4B10B0F413000D46AA</string>
 								<string>1C77FABC04509CD000000102</string>
 								<string>1C3E0DCA080725EA00A55177</string>
 								<string>1C3E0DCC080725EA11A45113</string>
@@ -361,7 +360,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>5</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -405,7 +404,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CompaniesTableViewController.m</string>
+										<string>FilteredCompaniesTableViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -413,11 +412,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CompaniesTableViewController.m</string>
+												<string>FilteredCompaniesTableViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4DBBCB010C73E7D0032CCE0</string>
+												<string>C4DBBD0F10C750750032CCE0</string>
 												<key>history</key>
 												<array>
 													<string>C4AFF96A10B234ED00801655</string>
@@ -474,9 +473,6 @@
 													<string>C474E40310C706B000BFFFE8</string>
 													<string>C474E40410C706B000BFFFE8</string>
 													<string>C474E44D10C709DA00BFFFE8</string>
-													<string>C474E48710C70BCE00BFFFE8</string>
-													<string>C474E49810C70CF300BFFFE8</string>
-													<string>C474E4D110C717DC00BFFFE8</string>
 													<string>C474E4D610C717DC00BFFFE8</string>
 													<string>C4DBBB9D10C718BB0032CCE0</string>
 													<string>C4DBBBAA10C71ACA0032CCE0</string>
@@ -487,7 +483,6 @@
 													<string>C4DBBC2910C71E960032CCE0</string>
 													<string>C4DBBC4410C71F180032CCE0</string>
 													<string>C4DBBC5C10C71FE70032CCE0</string>
-													<string>C4DBBC8610C720CA0032CCE0</string>
 													<string>C4DBBC8710C720CA0032CCE0</string>
 													<string>C4DBBC8810C720CA0032CCE0</string>
 													<string>C4DBBC8910C720CA0032CCE0</string>
@@ -501,8 +496,10 @@
 													<string>C4DBBC9810C7216C0032CCE0</string>
 													<string>C4DBBC9910C7216C0032CCE0</string>
 													<string>C4DBBC9A10C7216C0032CCE0</string>
-													<string>C4DBBCAA10C73E5E0032CCE0</string>
-													<string>C4DBBCAF10C73E790032CCE0</string>
+													<string>C4DBBCB710C7432D0032CCE0</string>
+													<string>C4DBBCDA10C748B90032CCE0</string>
+													<string>C4DBBCEE10C74B550032CCE0</string>
+													<string>C4DBBD0E10C750710032CCE0</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -531,7 +528,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CompaniesTableViewController.m</string>
+										<string>FilteredCompaniesTableViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -539,11 +536,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CompaniesTableViewController.m</string>
+												<string>FilteredCompaniesTableViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4DBBCB110C73E7D0032CCE0</string>
+												<string>C4DBBD1010C750750032CCE0</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -596,16 +593,14 @@
 													<string>C474E41110C706B000BFFFE8</string>
 													<string>C474E41210C706B000BFFFE8</string>
 													<string>C474E45E10C70B0700BFFFE8</string>
-													<string>C474E4AC10C7142D00BFFFE8</string>
-													<string>C474E4AD10C7142D00BFFFE8</string>
-													<string>C474E4D910C717DC00BFFFE8</string>
 													<string>C4DBBBAF10C71ACA0032CCE0</string>
 													<string>C4DBBBCD10C71B4D0032CCE0</string>
 													<string>C4DBBBE210C71CB20032CCE0</string>
 													<string>C4DBBC0F10C71D6A0032CCE0</string>
 													<string>C4DBBC9E10C7216C0032CCE0</string>
-													<string>C4DBBC9F10C7216C0032CCE0</string>
-													<string>C4DBBCA010C7216C0032CCE0</string>
+													<string>C4DBBCC510C745860032CCE0</string>
+													<string>C4DBBCDD10C748B90032CCE0</string>
+													<string>C4DBBCDE10C748B90032CCE0</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -915,7 +910,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>281493117.82370698</real>
+	<real>281497717.17457497</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
