@@ -83,7 +83,8 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
                                                                       category:self.category
                                                                          color:self.ratingColor] autorelease];
         
-        tableController.tableFrame = CGRectMake(0, 50, 320, 236-50);
+        tableController.tableFrame = CGRectMake(0, 44, 320, 236-40);
+        self.categoryName.font = [UIFont boldSystemFontOfSize:15];
         [self.view addSubview:tableController.view];
         
     }
@@ -102,7 +103,6 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 {
 	pageIndex = newPageIndex;
     
-    self.categoryName.font = [UIFont boldSystemFontOfSize:14];
 	
 	if (pageIndex >= 0 && pageIndex < ([data numDataPages]))
 	{

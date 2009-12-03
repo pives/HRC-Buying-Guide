@@ -24,16 +24,14 @@
 @synthesize fetchedResultsController, managedObjectContext;
 @synthesize filterKey;
 @synthesize filterObject;
-@synthesize sortControl;
 @synthesize cellColors;
-
+@synthesize mode;
 
 #pragma mark -
 #pragma mark Memory management
 
 - (void)dealloc {
     self.cellColors = nil;    
-    self.sortControl = nil;
     self.filterKey = nil;
     self.filterObject = nil;
 	[fetchedResultsController release];
@@ -54,6 +52,7 @@
         self.managedObjectContext = context;
         self.filterKey = key;
         self.filterObject = object;
+        self.mode = FilterdTableViewControllerModeRating;
     }
     
     return self;
@@ -62,45 +61,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.hidesBackButton = NO;
-    
-    UISegmentedControl* control = [[[UISegmentedControl alloc] initWithItems:
-                                   [NSArray arrayWithObjects:
-                                    @"Rating", 
-                                    @"Alphabetically",
-                                    nil]] autorelease];
-
-    control.segmentedControlStyle = UISegmentedControlStyleBar;
-    [control setWidth:155 forSegmentAtIndex:0];
-    [control setWidth:155 forSegmentAtIndex:1];
-    control.selectedSegmentIndex = 0;
-    [control addTarget:self action:@selector(changeSort:) forControlEvents:UIControlEventValueChanged];
-
-    
-    NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
-                      [UIBarButtonItem itemWithView:control], 
-                      [UIBarButtonItem flexibleSpaceItem],
-                      nil];
-    
-    self.toolbarItems = items;
-    
-    self.sortControl = control;
-    
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2.png"] 
-                                                                      style:UIBarButtonItemStyleBordered
-                                                                     target:self 
-                                                                     action:@selector(showKey)];
-    
-    UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = [(Category*)filterObject nameDisplayFriendly];
-    tv.textAlignment = UITextAlignmentCenter;
-    tv.adjustsFontSizeToFitWidth = YES;
-    tv.backgroundColor = [UIColor clearColor];
-    tv.textColor = [UIColor whiteColor];
-    tv.font = [UIFont boldSystemFontOfSize:19];
-    tv.shadowColor = [UIColor darkGrayColor];
-    self.navigationItem.titleView = tv;
-    
+        
     //self.title = [filterObject valueForKey:@"name"];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -108,20 +69,17 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self changeSort:self];
 
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.toolbarHidden = NO;
-    
+    [super viewWillAppear:animated];    
     [self.view setSizeHeight:self.view.frame.size.height-44];
     
 }
 
-- (IBAction)changeSort:(id)sender{
+- (void)fetch{
     
     NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
@@ -136,18 +94,52 @@
     [self.tableView reloadData];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     //TODO: catch exception in case table is empty (but should never be)
+    
+    
+}
+
+- (NSIndexPath*)sectionIndexOfRedSection{
+    
+    int sections = [self numberOfSectionsInTableView:self.tableView];
+    
+    int index = sections-1;
+    
+    return [NSIndexPath indexPathForRow:0 inSection:index];
+    
+}
+
+- (NSIndexPath*)sectionIndexOfYellowSection{
+    
+    int sections = [self numberOfSectionsInTableView:self.tableView];
+    
+    int index = -1;
+
+    if(sections == 3)
+        index = 1;
+    else if (sections == 1)
+        index = 0;
+        
+    if(index == -1){
+        for(int i = 0; i < (sections); i++){
+            
+            id data = [fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
+            index = i;
+            if([[(Brand*)data company].ratingLevel intValue] >= 1){
+                break;
+            }
+        }
+    }
+        
+    
+    return [NSIndexPath indexPathForRow:0 inSection:index];
+}
+
+- (NSIndexPath*)sectionIndexOfGreenSection{
+    
+    return [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 
-- (void)showKey{
-    
-    KeyViewController *detailViewController = [[KeyViewController alloc] init];
-    
-    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
-    [self.navigationController presentModalViewController:detailViewController animated:YES];
-    [detailViewController release];
-    
-}
 
 #pragma mark -
 #pragma mark Table view methods
@@ -166,7 +158,7 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    if(sortControl.selectedSegmentIndex==0){
+    if(mode == FilterdTableViewControllerModeRating){
         
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
         
@@ -201,7 +193,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if(sortControl.selectedSegmentIndex==0){
+    if(mode == FilterdTableViewControllerModeRating){
         
         return 60;
         
@@ -259,13 +251,13 @@
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
     brand.backgroundColor = cellColor;
-    
-    if(sortControl.selectedSegmentIndex==0){
+    /*
+    if(mode == FilterdTableViewControllerModeRating){
         [rating setFrame:CGRectMake(278, 0, 30, cell.frame.size.height)];
     }else{
         [rating setFrame:CGRectMake(255, 0, 30, cell.frame.size.height)];
     }
-    
+    */
     if([[managedObject company].partner boolValue]){
         
         cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
@@ -313,7 +305,7 @@
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
     if(fetchedResultsController==nil)
         return nil;
-    if(sortControl.selectedSegmentIndex==0)
+    if(mode == FilterdTableViewControllerModeRating)
         return nil;
     
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
@@ -324,7 +316,7 @@
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if(fetchedResultsController==nil)
         return 0;
-    if(sortControl.selectedSegmentIndex==0)
+    if(mode == FilterdTableViewControllerModeRating)
         return 0;
 
     
@@ -344,9 +336,8 @@
     
     //ususlly returns the last configure controller, instead we are creating a new one each time so that the segmented control works
     //this may be expensive, but we will see
-    
     /*
-    if (fetchedResultsController != nil) {
+    if (lastMode == mode) {
         return fetchedResultsController;
     }
     */
@@ -366,7 +357,7 @@
 	
     NSFetchedResultsController *aFetchedResultsController;
     
-    if(sortControl.selectedSegmentIndex == 1){
+    if(mode == FilterdTableViewControllerModeAlphabetically){
      
         // Edit the sort key as appropriate.
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:

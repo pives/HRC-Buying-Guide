@@ -12,7 +12,7 @@
 #import "UIBarButtonItem+extensions.h"
 #import "Category.h"
 #import "Company.h"
-#import "FilteredCompaniesTableViewController.h"
+#import "FilteredCompaniesViewController.h"
 #import "CompanyViewController.h"
 #import "UIView-Extensions.h"
 #import "KeyViewController.h"
@@ -170,7 +170,7 @@
     
     // Navigation logic may go here -- for example, create and push another view controller.
     Category* selectedCat = (Category*)[note object];
-    FilteredCompaniesTableViewController *detailViewController = [[FilteredCompaniesTableViewController alloc] initWithContext:self.context 
+    FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.context 
                                                                                                                            key:@"categories" 
                                                                                                                          value:selectedCat];
     detailViewController.view.frame = self.view.bounds;

@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="10"/>
-			<integer value="5"/>
+			<integer value="16"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -150,7 +150,7 @@
 							<object class="IBUIScrollView" id="543991769">
 								<reference key="NSNextResponder" ref="1066788612"/>
 								<int key="NSvFlags">268</int>
-								<string key="NSFrame">{{0, 10}, {320, 236}}</string>
+								<string key="NSFrameSize">{320, 246}</string>
 								<reference key="NSSuperview" ref="1066788612"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>

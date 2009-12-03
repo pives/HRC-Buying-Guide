@@ -35,6 +35,14 @@
 		C410407D10B718BE004CEC15 /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
 		C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
+		C41288DF10C82792007BB9A8 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DC10C82792007BB9A8 /* red.png */; };
+		C41288E010C82792007BB9A8 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DD10C82792007BB9A8 /* green.png */; };
+		C41288E110C82792007BB9A8 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DE10C82792007BB9A8 /* yellow.png */; };
+		C41288E210C82792007BB9A8 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DC10C82792007BB9A8 /* red.png */; };
+		C41288E310C82792007BB9A8 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DD10C82792007BB9A8 /* green.png */; };
+		C41288E410C82792007BB9A8 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DE10C82792007BB9A8 /* yellow.png */; };
+		C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
+		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
 		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
@@ -123,8 +131,6 @@
 		C4FA1D7410B45DBB0031303E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		C4FA1D7510B45DBB0031303E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
 		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
-		C4FA1F5310B48E970031303E /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1F5210B48E970031303E /* PagingScrollView.xib */; };
-		C4FA1F5410B48E970031303E /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1F5210B48E970031303E /* PagingScrollView.xib */; };
 		C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
 		C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
 		C4FA200D10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
@@ -171,6 +177,11 @@
 		C410407510B7187F004CEC15 /* BGImporter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BGImporter-Info.plist"; sourceTree = "<group>"; };
 		C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNextRunloopProxy.h; sourceTree = "<group>"; };
 		C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNextRunloopProxy.m; sourceTree = "<group>"; };
+		C41288DC10C82792007BB9A8 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		C41288DD10C82792007BB9A8 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		C41288DE10C82792007BB9A8 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		C412894710C83102007BB9A8 /* FilteredCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesViewController.h; sourceTree = "<group>"; };
+		C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesViewController.m; sourceTree = "<group>"; };
 		C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
@@ -230,7 +241,6 @@
 		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		C4FA1F5210B48E970031303E /* PagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingScrollView.xib; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
 		C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
 		C4FA200910B4BA570031303E /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
@@ -294,6 +304,7 @@
 				C4AFF95710B2344200801655 /* Main VIew */,
 				C4AFF95510B233F000801655 /* Categories List View */,
 				C4340AE510B23D620049791D /* Companies List View */,
+				C412894B10C83107007BB9A8 /* Filtered List View */,
 				C4FA187A10B2F4D30031303E /* Company */,
 				C4F31C6A10C416C9004DF94F /* Score Card */,
 				C4103F5110B6FADF004CEC15 /* Key */,
@@ -397,13 +408,23 @@
 			name = Cocoa;
 			sourceTree = "<group>";
 		};
+		C412894B10C83107007BB9A8 /* Filtered List View */ = {
+			isa = PBXGroup;
+			children = (
+				C412894710C83102007BB9A8 /* FilteredCompaniesViewController.h */,
+				C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */,
+				C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */,
+				C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */,
+			);
+			name = "Filtered List View";
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C4340AE510B23D620049791D /* Companies List View */ = {
 			isa = PBXGroup;
 			children = (
 				C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */,
 				C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */,
-				C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */,
-				C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */,
 			);
 			name = "Companies List View";
 			path = Classes;
@@ -528,7 +549,6 @@
 				C4FA192F10B30C180031303E /* DataSource.m */,
 				C4FA193010B30C180031303E /* PagingScrollViewController.h */,
 				C4FA193110B30C180031303E /* PagingScrollViewController.m */,
-				C4FA1F5210B48E970031303E /* PagingScrollView.xib */,
 				C4FA1C9C10B38F2A0031303E /* Category Table */,
 			);
 			name = "Brand Scroll View";
@@ -549,6 +569,9 @@
 		C4FA235410B5DC8E0031303E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C41288DC10C82792007BB9A8 /* red.png */,
+				C41288DD10C82792007BB9A8 /* green.png */,
+				C41288DE10C82792007BB9A8 /* yellow.png */,
 				C48BBC7510C583F200F996C6 /* Default.png */,
 				C450241E10C454C3002D5175 /* HRC_Icon.png */,
 				C486574510BD84FD0064A126 /* iphone_bottom-bar.png */,
@@ -651,7 +674,6 @@
 				C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */,
 				C4FA1C7610B389EB0031303E /* PageView.xib in Resources */,
 				C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */,
-				C4FA1F5310B48E970031303E /* PagingScrollView.xib in Resources */,
 				C4FA235210B5DC8A0031303E /* iphone_bottom-bar-clear.png in Resources */,
 				C4103F5310B6FBBB004CEC15 /* KeyView.xib in Resources */,
 				C492D86C10BB27FB0041400B /* Icon.png in Resources */,
@@ -666,6 +688,9 @@
 				C48BBBE110C5792900F996C6 /* EmailSad.txt in Resources */,
 				C48BBC7710C583F200F996C6 /* Default.png in Resources */,
 				C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */,
+				C41288E210C82792007BB9A8 /* red.png in Resources */,
+				C41288E310C82792007BB9A8 /* green.png in Resources */,
+				C41288E410C82792007BB9A8 /* yellow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +713,6 @@
 				C4FA1D5710B45DBB0031303E /* bgdata.csv in Resources */,
 				C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */,
 				C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */,
-				C4FA1F5410B48E970031303E /* PagingScrollView.xib in Resources */,
 				C4FA235310B5DC8A0031303E /* iphone_bottom-bar-clear.png in Resources */,
 				C4103F5410B6FBBB004CEC15 /* KeyView.xib in Resources */,
 				C492D86D10BB27FB0041400B /* Icon.png in Resources */,
@@ -703,6 +727,9 @@
 				C48BBBE010C5792900F996C6 /* EmailSad.txt in Resources */,
 				C48BBC7610C583F200F996C6 /* Default.png in Resources */,
 				C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */,
+				C41288DF10C82792007BB9A8 /* red.png in Resources */,
+				C41288E010C82792007BB9A8 /* green.png in Resources */,
+				C41288E110C82792007BB9A8 /* yellow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +768,7 @@
 				C48654B910BCE87A0064A126 /* Category+Extensions.m in Sources */,
 				C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C474E4C910C7167C00BFFFE8 /* Brand.m in Sources */,
+				C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +825,7 @@
 				C48654B810BCE87A0064A126 /* Category+Extensions.m in Sources */,
 				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C474E4C810C7167C00BFFFE8 /* Brand.m in Sources */,
+				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

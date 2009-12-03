@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum  {
+    FilterdTableViewControllerModeRating = 0, //Default
+    FilterdTableViewControllerModeAlphabetically = 1
+} FilterdTableViewControllerMode;
+
 
 @interface FilteredCompaniesTableViewController : UITableViewController {
 
@@ -16,21 +21,25 @@
     NSString* filterKey;
     id filterObject;
     
-    UISegmentedControl* sortControl;
     NSArray* cellColors;
-
+    
+    FilterdTableViewControllerMode mode;
+    
     
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)NSString *filterKey;
 @property(nonatomic,retain)id filterObject;
-@property(nonatomic,retain)UISegmentedControl *sortControl;
 @property (nonatomic,retain) NSArray *cellColors;
+@property(nonatomic,assign)FilterdTableViewControllerMode mode;
 
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;
-- (IBAction)changeSort:(id)sender;
+- (void)fetch;
 
+- (NSIndexPath*)sectionIndexOfRedSection;
+- (NSIndexPath*)sectionIndexOfYellowSection;
+- (NSIndexPath*)sectionIndexOfGreenSection;
 
 @end
