@@ -43,3 +43,6 @@ typedef enum  {
 - (NSIndexPath*)sectionIndexOfGreenSection;
 
 @end
+
+
+extern NSString *const DidSelectFilteredCompanyNotification;

@@ -12,6 +12,7 @@
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "Category+Extensions.h"
+#import "CompanyViewController.h"
 
 @implementation FilteredCompaniesViewController
 
@@ -29,6 +30,18 @@
     self.green = nil;
     self.sortControl = nil;
     [super dealloc];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+       
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:DidSelectFilteredCompanyNotification 
+                                                  object:nil];
+    
+    
 }
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
@@ -122,6 +135,20 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+        
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(companySelectedWithNotification:) 
+                                                 name:DidSelectFilteredCompanyNotification 
+                                               object:nil];
+    
+    
+}
+
+
+
 - (IBAction)changeSort:(id)sender{
     
     tableController.mode = sortControl.selectedSegmentIndex;
@@ -187,6 +214,23 @@
     
     
 }
+
+- (void)companySelectedWithNotification:(NSNotification*)note{
+    
+    Company* selectedCompany = (Company*)[note object];
+    
+    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+                                                                                        category:(Category*)tableController.filterObject]; 
+    
+    detailViewController.view.frame = self.view.bounds;
+    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
+        
+}
+
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

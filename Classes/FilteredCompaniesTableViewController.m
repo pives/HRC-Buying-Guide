@@ -7,17 +7,15 @@
 //
 
 #import "FilteredCompaniesTableViewController.h"
-#import "CompanyViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
-#import "UIBarButtonItem+extensions.h"
 #import "UIColor+extensions.h"
-#import "KeyViewController.h"
 #import "Category+Extensions.h"
 #import "Brand.h"
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
 
+NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompany";
 
 @implementation FilteredCompaniesTableViewController
 
@@ -277,17 +275,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     Company* selectedCompany = (Company*)[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] company];
-    
-    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-                                                                                        category:(Category*)self.filterObject]; 
-                                                                                                                      
-    detailViewController.view.frame = self.view.bounds;
-    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
+     
 
 }
 
