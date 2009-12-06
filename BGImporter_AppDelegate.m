@@ -14,6 +14,7 @@
 #import "Company.h"
 #import "NSSet+blocks.h"
 #import "Brand.h"
+#import "Category.h"
 
 @implementation BGImporter_AppDelegate
 
@@ -33,25 +34,27 @@
     NSLog(@"Number of Companies: %@", [NSString stringWithInt:numberOfCompanies]);
     
     
-    NSArray* companies = allCompanies(self.managedObjectContext);
+    NSArray* cats = allCategories(self.managedObjectContext);
         
     NSLog(@"Number of Categories: %@", [NSString stringWithInt:[self.managedObjectContext numberOfEntitiesWithName:@"Category"]]);
     
     //NSLog(@"%@",[companies description]);
     
-    for(Company* eachCompany in companies){
+    for(Category* eachCat in cats){
         
         NSLog(@"%@", @"____________________");
-        NSLog(@"%@", eachCompany.name);
+        NSLog(@"%@", eachCat.name);
+        NSLog(@"%@", eachCat.nameDisplayFriendly);
         NSLog(@"%@", @"____________________");
         
+        /*
         [eachCompany.brands each:^(id eachBrand){
             
             NSLog(@"%@", [(Brand*)eachBrand name]);
             NSLog(@"%@", [(Brand*)eachBrand namefirstLetter]);
 
         }];
-        
+        */
         
     }
     

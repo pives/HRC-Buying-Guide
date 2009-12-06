@@ -13,6 +13,68 @@
 @implementation NSManagedObjectContext (CDManagedObjectContextExtensions)
 
 
+//Containing strings
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value{
+    return [self entityWithName:entityName whereKey:key contains:value] != nil;
+
+    
+}
+
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value{
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[c] %@",key , value];
+    
+    [request setPredicate:predicate];
+    
+    return [[self executeFetchRequest:request error:NULL] firstObject];
+    
+}
+
+#pragma mark -
+#pragma mark Case Insensitive Optional
+
+- (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag{
+    
+    return [self entityWithName:entityName whereKey:key like:value caseInsensitive:flag] != nil;
+    
+}
+
+- (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag{
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    
+    NSPredicate *predicate;
+    
+    if(flag)
+        predicate = [NSPredicate predicateWithFormat:@"%K like[c] %@",key , value];
+    else
+        predicate = [NSPredicate predicateWithFormat:@"%K like %@",key , value];
+    
+    [request setPredicate:predicate];
+    
+    return [[self executeFetchRequest:request error:NULL] firstObject];
+}
+
+- (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag{
+ 
+    id obj = [self entityWithName:entityName whereKey:key like:value caseInsensitive:flag];
+    if (!obj) {
+        obj = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self];
+        [obj setValue:value forKey:key];
+    }
+    return obj;
+    
+   
+}
+
+
+#pragma mark -
+#pragma mark Case Insensitive Always
+
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key caseInsensitiveLike:(NSString *)value
 {
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
@@ -36,6 +98,7 @@
 
 
 #pragma mark -
+#pragma mark Equality
 
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value
 {
@@ -61,6 +124,7 @@
 
 
 #pragma mark -
+#pragma mark Like (Original)
 
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value
 {

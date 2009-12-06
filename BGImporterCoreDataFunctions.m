@@ -15,7 +15,6 @@
 #import "Company.h"
 #import "Brand.h"
 #import "Category.h"
-#import "Brand+Extensions.h"
 
 
 static int categoryIndex = 5;
@@ -61,12 +60,13 @@ NSError* importUsingCSV(NSManagedObjectContext* context){
     
     for(NSArray* eachRow in csvRows){
         
-        Company* aC = processRowIntoContext(eachRow, context);
-        NSLog([aC description]);
+        /*Company* aC =*/ processRowIntoContext(eachRow, context);
+        //NSLog(@"%@", [aC description]);
         
+        /*
         for (Brand* eachBrand in [aC brands])
-             NSLog([eachBrand description]);
-        
+             NSLog(@"%@", [eachBrand description]);
+        */
         saveError = save(context);
         
         if(saveError != nil){
@@ -76,8 +76,94 @@ NSError* importUsingCSV(NSManagedObjectContext* context){
         
     }
     
+    addDisplayFriendlyCategoryNames(context);
+    addPartnerSpecialCases(context);
+    
     return saveError;
 }
+
+
+void addPartnerSpecialCases(NSManagedObjectContext* context){
+
+    
+    Company* chase = [context entityWithName:@"Company" whereKey:@"name" contains:@"Chase"];
+    
+    chase.partner = [NSNumber numberWithBool:NO];
+    
+    for(Brand* eachBrand in chase.brands){
+        
+        
+        if([eachBrand.name isEqualToString:@"Chase"]){
+            
+            eachBrand.partner = [NSNumber numberWithBool:YES];
+            
+        }else{
+            
+            eachBrand.partner = [NSNumber numberWithBool:NO];
+        }
+        
+        
+    }
+    
+    Company* diageo = [context entityWithName:@"Company" whereKey:@"name" contains:@"Diageo"];
+
+    diageo.partner = [NSNumber numberWithBool:NO];
+    
+    for(Brand* eachBrand in diageo.brands){
+        
+        if([eachBrand.name doesContainString:@"Beaulieu"]){
+            
+            eachBrand.partner = [NSNumber numberWithBool:YES];
+            
+        }else{
+            
+            eachBrand.partner = [NSNumber numberWithBool:NO];
+        }
+        
+        
+    }
+        
+    Company* toyota = [context entityWithName:@"Company" whereKey:@"name" contains:@"Toyota"];
+    
+    toyota.partner = [NSNumber numberWithBool:NO];
+    
+    for(Brand* eachBrand in toyota.brands){
+        
+        if([eachBrand.name doesContainString:@"Lexus"]){
+            
+            eachBrand.partner = [NSNumber numberWithBool:YES];
+            
+        }else{
+            
+            eachBrand.partner = [NSNumber numberWithBool:NO];
+        }
+        
+        
+    }
+    
+    Company* jj = [context entityWithName:@"Company" whereKey:@"name" contains:@"Johnson & Johnson"];
+    
+    jj.partner = [NSNumber numberWithBool:NO];
+    
+    for(Brand* eachBrand in jj.brands){
+        
+        if([eachBrand.name doesContainString:@"Tylenol-PM"]){
+            
+            eachBrand.partner = [NSNumber numberWithBool:YES];
+            
+        }else{
+            
+            eachBrand.partner = [NSNumber numberWithBool:NO];
+        }
+        
+        
+    }
+    
+
+    save(context);
+    
+}
+
 
 Company* processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
@@ -193,6 +279,7 @@ Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany
 Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany){
     
     [someBrands setValue:aCompany forKey:@"company"];
+    [someBrands setValue:aCompany.partner forKey:@"partner"];
     [aCompany addBrands:someBrands];
     
     return aCompany;
@@ -224,7 +311,7 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                     
                     NSLog(@"wtf");
                 }
-                NSLog([brand description]);
+                //NSLog(@"%@", [brand description]);
                 
                 brand.isCompanyName = [NSNumber numberWithBool:NO];
                 [brands addObject:brand];
@@ -248,4 +335,62 @@ void associateBrandsWithCategory(NSSet* someBrands, Category* aCategory){
     }];
     
     [aCategory addBrands:someBrands];
+}
+
+void addDisplayFriendlyCategoryNames(NSManagedObjectContext* context){
+    
+    
+    NSArray* categories = allCategories(context);
+
+    for(Category *eachCategory in categories){
+        
+        
+        NSString* displayName;
+        
+        if([eachCategory.name doesContainString:@"Road"]){
+            
+            displayName = @"Automotive";
+            
+        }else if([eachCategory.name doesContainString:@"Trip"]){
+            
+            displayName = @"Travel and Leisure";
+            
+        }else if([eachCategory.name doesContainString:@"Filling"]){
+            
+            displayName = @"Oil & Gas";
+            
+        }else if([eachCategory.name doesContainString:@"Shop"]){
+            
+            displayName = @"Retailers";
+            
+        }else if([eachCategory.name doesContainString:@"Insurance"]){
+            
+            displayName = @"Insurance";
+            
+        }else if([eachCategory.name doesContainString:@"Entertained"]){
+            
+            displayName = @"Entertainment";
+            
+        }else if([eachCategory.name doesContainString:@"Eating"]){
+            
+            displayName = @"Restaurants";
+            
+        }else if([eachCategory.name doesContainString:@"Mail"]){
+            
+            displayName = @"Shipping";
+            
+        }else if([eachCategory.name doesContainString:@"Newsstand"]){
+            
+            displayName = @"Newsstand";
+            
+        }else{
+            
+            displayName = eachCategory.name;
+            
+        }        
+     
+        eachCategory.nameDisplayFriendly = displayName;
+    }
+    
+    save(context);
 }

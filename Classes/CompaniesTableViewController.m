@@ -133,31 +133,29 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     }
     
 	// Configure the cell.
-	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+	Brand* managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
-    Company* theCompany =[(Brand*)managedObject company];
-    
-    UILabel* company = (UILabel*)[cell viewWithTag:1000];
-    company.text = [managedObject valueForKey:@"name"];
+    UILabel* brand = (UILabel*)[cell viewWithTag:1000];
+    brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [theCompany ratingFormatted];
+    rating.text = [managedObject.company ratingFormatted];
     
-    int cellColorValue = [[theCompany ratingLevel] intValue];
+    int cellColorValue = [[managedObject.company ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
     rating.backgroundColor = cellColor;
-    company.backgroundColor = cellColor;
+    brand.backgroundColor = cellColor;
         
-    if([theCompany.partner boolValue]){
+    if([managedObject.partner boolValue]){
         
         cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
-        [company setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];
+        [brand setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];
         
     }else{
         
         cell.imageView.image = nil;
-        [company setFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+        [brand setFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
 
     }
     

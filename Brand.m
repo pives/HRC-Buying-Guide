@@ -2,7 +2,7 @@
 //  Brand.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 12/2/09.
+//  Created by Corey Floyd on 12/6/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
@@ -13,11 +13,12 @@
 
 @implementation Brand 
 
+@dynamic partner;
 @dynamic nameSortFormatted;
 @dynamic namefirstLetter;
 @dynamic name;
 @dynamic isCompanyName;
-@dynamic company;
 @dynamic categories;
+@dynamic company;
 
 @end

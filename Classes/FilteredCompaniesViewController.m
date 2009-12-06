@@ -11,7 +11,6 @@
 #import "Category.h"
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
-#import "Category+Extensions.h"
 #import "CompanyViewController.h"
 #import "UIColor+extensions.h"
 

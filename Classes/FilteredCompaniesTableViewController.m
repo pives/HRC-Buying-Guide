@@ -10,7 +10,6 @@
 #import "Company.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
-#import "Category+Extensions.h"
 #import "Brand.h"
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
@@ -104,7 +103,6 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     int sections = [self numberOfSectionsInTableView:self.tableView];
     
     int index = sections-1;
-    
     
     return [NSIndexPath indexPathForRow:0 inSection:index];
     
@@ -260,7 +258,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
         [rating setFrame:CGRectMake(255, 0, 30, cell.frame.size.height)];
     }
     */
-    if([[managedObject company].partner boolValue]){
+    if([managedObject.partner boolValue]){
         
         cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
         [brand setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];

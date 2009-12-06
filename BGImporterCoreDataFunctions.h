@@ -17,11 +17,13 @@ NSError* save(NSManagedObjectContext* context);
 
 NSError* importUsingCSV(NSManagedObjectContext* context);
 Company* processRowIntoContext(NSArray *row, NSManagedObjectContext* context);
+void addPartnerSpecialCases(NSManagedObjectContext* context);
 
 Company* companyWithRow(NSArray* row, NSManagedObjectContext* context);
 Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany);
 Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany);
 NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context);
 void associateBrandsWithCategory(NSSet* someBrands, Category* aCategory);
+void addDisplayFriendlyCategoryNames(NSManagedObjectContext* context);
 NSNumber* ratingLevelForScore(int rating);
 NSString* indexCharForName(NSString* aString);

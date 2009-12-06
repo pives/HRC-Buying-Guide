@@ -10,6 +10,7 @@
 #import "Company.h"
 #import "Category.h"
 #import "UIColor+extensions.h"
+#import "Brand.h"
 
 @implementation PageTableViewController
 
@@ -63,6 +64,7 @@
     self.view = [[[UITableView alloc] initWithFrame:tableFrame style:UITableViewStyleGrouped] autorelease];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = 40;
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     //self.tableView.separatorColor = [UIColor whiteColor];
     //self.view.backgroundColor = [UIColor reallyLightGray];
@@ -164,13 +166,29 @@
     
     // Configure the cell.
     
-	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+	Brand *managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     /*
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];    
 	brand.text = [managedObject valueForKey:@"name"];
     */
     cell.textLabel.text = [managedObject valueForKey:@"name"];
+    
+    if(!([self.company.partner boolValue])){
+        
+        if([managedObject.partner boolValue]){
+            
+            cell.imageView.image = [UIImage imageNamed:@"HRC_Icon.png"];
+            //[brand setFrame:CGRectMake(30, 0, 230-20, cell.frame.size.height)];
+            
+        }else{
+            
+            cell.imageView.image = nil;
+            //[brand setFrame:CGRectMake(10, 0, 230, cell.frame.size.height)];
+            
+        }
+        
+    }
     
     return cell;
 }

@@ -83,7 +83,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
                                                                       category:self.category
                                                                          color:self.ratingColor] autorelease];
         
-        tableController.tableFrame = CGRectMake(0, 44, 320, 236-35);
+        tableController.tableFrame = CGRectMake(0, 44, 320, 236-25);
         self.categoryName.font = [UIFont boldSystemFontOfSize:15];
         [self.view addSubview:tableController.view];
         

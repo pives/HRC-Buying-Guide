@@ -2,7 +2,7 @@
 //  Category.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/15/09.
+//  Created by Corey Floyd on 12/6/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 
 @implementation Category 
 
+@dynamic nameDisplayFriendly;
 @dynamic name;
-@dynamic companies;
 @dynamic brands;
+@dynamic companies;
 
 @end
