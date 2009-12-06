@@ -315,8 +315,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -359,7 +357,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -395,12 +393,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BuyingGuide-Info.plist</string>
+										<string>NSString+extensions.h</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -408,11 +408,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>BuyingGuide-Info.plist</string>
+												<string>NSString+extensions.h</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C46D8A1C10CC5FC400541CF1</string>
+												<string>C46D8A7810CC66F700541CF1</string>
 												<key>history</key>
 												<array>
 													<string>C4AFF96A10B234ED00801655</string>
@@ -431,9 +431,6 @@
 													<string>C4AFC43A10C43FC700449FFE</string>
 													<string>C450243010C4559A002D5175</string>
 													<string>C450250110C45D8D002D5175</string>
-													<string>C48BBBE810C57F9300F996C6</string>
-													<string>C48BBBE910C57F9300F996C6</string>
-													<string>C48BBBEA10C57F9300F996C6</string>
 													<string>C48BBBEB10C57F9300F996C6</string>
 													<string>C48BBBEC10C57F9300F996C6</string>
 													<string>C48BBC7B10C5840400F996C6</string>
@@ -445,7 +442,6 @@
 													<string>C474E40210C706B000BFFFE8</string>
 													<string>C474E40310C706B000BFFFE8</string>
 													<string>C474E4D610C717DC00BFFFE8</string>
-													<string>C4DBBB9D10C718BB0032CCE0</string>
 													<string>C4DBBC8710C720CA0032CCE0</string>
 													<string>C4DBBC8810C720CA0032CCE0</string>
 													<string>C4DBBC8910C720CA0032CCE0</string>
@@ -503,12 +499,16 @@
 													<string>C46D89CA10CC59C500541CF1</string>
 													<string>C46D89E110CC5B9000541CF1</string>
 													<string>C46D89F410CC5F3400541CF1</string>
-													<string>C46D89F510CC5F3400541CF1</string>
 													<string>C46D89F910CC5F3400541CF1</string>
-													<string>C46D8A0A10CC5F6400541CF1</string>
 													<string>C46D8A1310CC5FA500541CF1</string>
 													<string>C46D8A1B10CC5FC400541CF1</string>
-													<string>C46D8A1A10CC5FB400541CF1</string>
+													<string>C46D8A2C10CC630700541CF1</string>
+													<string>C46D8A3C10CC63E800541CF1</string>
+													<string>C46D8A4410CC640900541CF1</string>
+													<string>C46D8A6610CC659B00541CF1</string>
+													<string>C46D8A6710CC659B00541CF1</string>
+													<string>C46D8A7110CC65B300541CF1</string>
+													<string>C46D8A7010CC65AF00541CF1</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -537,7 +537,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BuyingGuide-Info.plist</string>
+										<string>NSString+extensions.h</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -545,11 +545,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>BuyingGuide-Info.plist</string>
+												<string>NSString+extensions.h</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C46D8A1D10CC5FC400541CF1</string>
+												<string>C46D8A7910CC66F700541CF1</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -581,7 +581,6 @@
 													<string>C474E41010C706B000BFFFE8</string>
 													<string>C474E41110C706B000BFFFE8</string>
 													<string>C474E41210C706B000BFFFE8</string>
-													<string>C4DBBBAF10C71ACA0032CCE0</string>
 													<string>C4DBBBCD10C71B4D0032CCE0</string>
 													<string>C4DBBC0F10C71D6A0032CCE0</string>
 													<string>C4DBBC9E10C7216C0032CCE0</string>
@@ -616,8 +615,13 @@
 													<string>C46D89FC10CC5F3400541CF1</string>
 													<string>C46D89FD10CC5F3400541CF1</string>
 													<string>C46D89FE10CC5F3400541CF1</string>
-													<string>C46D89FF10CC5F3400541CF1</string>
-													<string>C46D8A0010CC5F3400541CF1</string>
+													<string>C46D8A3210CC630700541CF1</string>
+													<string>C46D8A4A10CC64D200541CF1</string>
+													<string>C46D8A4B10CC64D200541CF1</string>
+													<string>C46D8A4C10CC64D200541CF1</string>
+													<string>C46D8A4D10CC64D200541CF1</string>
+													<string>C46D8A6A10CC659B00541CF1</string>
+													<string>C46D8A6B10CC659B00541CF1</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -927,7 +931,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>281829316.64340901</real>
+	<real>281831159.47963703</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>

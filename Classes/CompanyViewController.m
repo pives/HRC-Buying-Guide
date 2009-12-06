@@ -119,29 +119,66 @@
         
         NSString* fileName;
         NSString* fileExtension = @"txt";
+        NSString* emailText;
         
         if([company.ratingLevel intValue] == 0){
             
             //GOOD
             fileName = @"EmailHappy";
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+            NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+            emailText = [NSString stringWithFormat:fileContenets, 
+                         company.name, 
+                         [company.rating stringValue],
+                         company.name,
+                         company.name,
+                         nil
+                         ];
+            
+            
         }else if([company.ratingLevel intValue] == 1){
             
             //MIDDLE
             fileName = @"EmailIndifferent";
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+            NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+            emailText = [NSString stringWithFormat:fileContenets, company.name, 
+                        [company.rating stringValue],
+                         company.name,
+                         nil
+                         ];
+            
             
         }else{
             
             //BAD
-            fileName = @"EmailSad";
+
+            if(company.rating >= 0){
+                fileName = @"EmailSad";
+                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+                emailText = [NSString stringWithFormat:fileContenets, company.name, 
+                             [company.rating stringValue],
+                             company.name,
+                             nil
+                             ];
+                
+            }else {
+                fileName = @"EmailConfused";
+                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+                emailText = [NSString stringWithFormat:fileContenets, 
+                             company.name,
+                             company.name,
+                             nil
+                             ];
+                
+
+            }
+
         }
         
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-        NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-        
-        NSString* emailText = [NSString stringWithFormat:fileContenets, company.name];
-        
-        
-        [controller setMessageBody:emailText isHTML:NO];
+        [controller setMessageBody:emailText isHTML:YES];
         [self presentModalViewController:controller animated:YES];
         [controller release];
         

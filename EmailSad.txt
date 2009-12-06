@@ -1,5 +1,8 @@
-I wanted to let you know that X does not have policies that support the LGBT community. When you shop, you could find better companies to support. 
-
-Please choose to support equality when you shop. 
-
-For other companies and their scores, check out the Human Rights Campaign’s Buying for Equality guide.
+<p>I wanted to let you know that %@ scores a %@ on the HRC Corporate Equality Index.  
+</p>
+<p>%@ has more work to do in furthering an inclusive workplace for the LGBT community. If possible, please choose to support a more fair-minded company when you shop.
+</p>
+<p>For information on other companies and their scores, check out the Human Rights Campaign’s <a href="http://www.hrc.org/buyersguide">Buying for Equality 2010</a>.
+</p>
+<p>Click HERE to download the Buying for Equality 2010 iPhone app.
+</p>

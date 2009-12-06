@@ -63,6 +63,9 @@
 		C46D884310CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884410CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884510CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
+		C46D8A2710CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
+		C46D8A2810CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
+		C46D8A2910CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
 		C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
@@ -206,6 +209,7 @@
 		C46D883410CC3D2C00541CF1 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		C46D884110CC3F2600541CF1 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		C46D884210CC3F2600541CF1 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		C46D8A2610CC60E600541CF1 /* emailConfused.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emailConfused.txt; sourceTree = "<group>"; };
 		C474E43110C7076B00BFFFE8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4864DB010BC38200064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
 		C4864DFA10BC3BDA0064A126 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
@@ -251,7 +255,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -307,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
 				C4103F7810B71083004CEC15 /* BGImporter.app */,
 			);
 			name = Products;
@@ -464,6 +468,7 @@
 				C4F31CE110C42089004DF94F /* EmailHappy.txt */,
 				C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */,
 				C48BBBDF10C5792900F996C6 /* EmailSad.txt */,
+				C46D8A2610CC60E600541CF1 /* emailConfused.txt */,
 			);
 			name = "Email text";
 			sourceTree = "<group>";
@@ -663,7 +668,7 @@
 			);
 			name = "BuyingGuide FJS";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -721,6 +726,7 @@
 				C41288E410C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874510CC297600541CF1 /* slider.png in Resources */,
+				C46D8A2810CC60E600541CF1 /* emailConfused.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +738,7 @@
 				C4103FBE10B71532004CEC15 /* InfoPlist.strings in Resources */,
 				C4103FBF10B71532004CEC15 /* MainMenu.xib in Resources */,
 				C474E43410C7076B00BFFFE8 /* storedata.sqlite in Resources */,
+				C46D8A2910CC60E600541CF1 /* emailConfused.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +769,7 @@
 				C41288E110C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874410CC297600541CF1 /* slider.png in Resources */,
+				C46D8A2710CC60E600541CF1 /* emailConfused.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
