@@ -172,10 +172,60 @@
     
 }
 
+#pragma mark -
+#pragma mark Donation
+
 
 - (void)ShowDonationMessage{
     
+    //Unapproved UI for in app donations
+    //DonationViewController *donationViewController = [[[DonationViewController alloc] initWithNibName:@"DonateView" bundle:[NSBundle mainBundle]] autorelease];
+    //[self.navigationController pushViewController:donationViewController animated:YES];
+    
+    //NSLog(@"donated");
+    
+    NSString* donationText = @"Thank You for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store";
+    
+    UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Donate"
+                                                      message:donationText 
+                                                     delegate:self 
+                                            cancelButtonTitle:@"Cancel" 
+                                            otherButtonTitles:@"Donate", nil];
+    [message show];
+    
+    
 }
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex==0){
+        
+        //do nothing
+        
+    } else if(buttonIndex==1){
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"DonationURL"]]];
+        
+    }
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex==0){
+        
+        //do nothing
+        
+    } else if(buttonIndex==1){
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"DonationURL"]]];
+        
+    }
+    
+}
+
 
 - (void)categorySelectedWithNotification:(NSNotification*)note{
     

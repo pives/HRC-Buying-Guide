@@ -26,5 +26,9 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>DonationURL</key>
+	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
+	<key>iTunesAppURL</key>
+	<string>someURL</string>
 </dict>
 </plist>

@@ -41,5 +41,4 @@
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
 
-
 @end

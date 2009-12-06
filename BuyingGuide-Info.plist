@@ -23,10 +23,12 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
-	<false/>
+	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>iTunesAppURL</key>
 	<string>someURL</string>
+	<key>DonationURL</key>
+	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
 </dict>
 </plist>

@@ -104,6 +104,8 @@
     
 }
 
+
+
 #pragma mark -
 #pragma mark Email
 
@@ -145,8 +147,13 @@
         
     }else{
         
+        UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Cannot send email"
+                                                          message:@"Email is currently unavailable. Please check your email settings and try again." 
+                                                         delegate:self 
+                                                cancelButtonTitle:@"OK" 
+                                                otherButtonTitles:nil];
+        [message show];
         
-        //TODO: display mail not configured message
         
     }
     
