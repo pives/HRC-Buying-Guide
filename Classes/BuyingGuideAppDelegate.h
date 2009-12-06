@@ -14,6 +14,7 @@
 
     UIWindow *window;
     UINavigationController *navigationController;
+    UIView* splashView;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -22,9 +23,12 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property(nonatomic,retain)UIView *splashView;
+
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)loadDataForce:(BOOL)flag;
+-(void) addSplashScreen;
 
 @end
 

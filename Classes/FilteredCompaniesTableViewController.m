@@ -73,7 +73,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];    
-    [self.view setSizeHeight:self.view.frame.size.height-44];
+    //[self.view setSizeHeight:self.view.frame.size.height-44];
     
 }
 
@@ -96,11 +96,15 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     
 }
 
+//TODO: possiblt rework this to scroll to the bottom of the nearest section if the actual section doesn't exist
+//currently scrolls to the top of the neares section
+
 - (NSIndexPath*)sectionIndexOfRedSection{
     
     int sections = [self numberOfSectionsInTableView:self.tableView];
     
     int index = sections-1;
+    
     
     return [NSIndexPath indexPathForRow:0 inSection:index];
     
@@ -373,7 +377,6 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
         
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
                                     [[[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES] autorelease],
-                                    [[[NSSortDescriptor alloc] initWithKey:@"company.partner" ascending:NO] autorelease],
                                     [[[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO] autorelease],
                                     [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
                                     nil];

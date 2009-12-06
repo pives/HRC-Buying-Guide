@@ -12,8 +12,11 @@
 
 @implementation BuyingGuideAppDelegate
 
+static NSString* kAnimationID = @"SplashAnimation";
+
 @synthesize window;
 @synthesize navigationController;
+@synthesize splashView;
 
 
 #pragma mark -
@@ -29,8 +32,42 @@
 	rootViewController.context = self.managedObjectContext;
 	
 	[window addSubview:[navigationController view]];
+    [self addSplashScreen];
     [window makeKeyAndVisible];
 }
+
+
+-(void) removeSplashScreen{
+	
+	[UIView beginAnimations:kAnimationID context:nil];
+	[UIView setAnimationDuration:1.0];
+    splashView.alpha = 0;
+    [UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    [UIView commitAnimations];	
+	
+}
+
+-(void) addSplashScreen{
+	UIImageView *localSplashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+	localSplashView.frame = [[UIScreen mainScreen] applicationFrame];
+	self.splashView = localSplashView;
+	[window addSubview:splashView];
+	[localSplashView release];
+    
+	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
+}
+
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
+    
+    if([animationID isEqualToString:kAnimationID]){
+        
+        [self.splashView removeFromSuperview];
+        self.splashView = nil;
+        
+    }
+}
+
 
 /**
  applicationWillTerminate: saves changes in the application's managed object context before the application terminates.
@@ -169,6 +206,8 @@
 
 - (void)dealloc {
 	
+    self.splashView = nil;
+    
     [managedObjectContext release];
     [managedObjectModel release];
     [persistentStoreCoordinator release];

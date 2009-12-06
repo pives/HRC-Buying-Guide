@@ -43,11 +43,17 @@
 		C41288E410C82792007BB9A8 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DE10C82792007BB9A8 /* yellow.png */; };
 		C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
 		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
+		C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
+		C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
 		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
 		C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C450242010C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
+		C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
+		C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
+		C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
+		C46D82E710C92D3800541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
 		C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
@@ -182,11 +188,15 @@
 		C41288DE10C82792007BB9A8 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		C412894710C83102007BB9A8 /* FilteredCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesViewController.h; sourceTree = "<group>"; };
 		C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesViewController.m; sourceTree = "<group>"; };
+		C4128BE810C86EBF007BB9A8 /* info2small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2small.png; sourceTree = "<group>"; };
 		C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableViewController.m; sourceTree = "<group>"; };
 		C450241E10C454C3002D5175 /* HRC_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HRC_Icon.png; sourceTree = "<group>"; };
+		C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewColorIndex.h; sourceTree = "<group>"; };
+		C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewColorIndex.m; sourceTree = "<group>"; };
+		C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C474E43110C7076B00BFFFE8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C474E4C510C7167B00BFFFE8 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		C474E4C610C7167C00BFFFE8 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
@@ -255,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46D82E710C92D3800541CF1 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -282,6 +293,7 @@
 				C4FA1D7310B45DBB0031303E /* UIKit.framework in Frameworks */,
 				C4FA1D7410B45DBB0031303E /* CoreGraphics.framework in Frameworks */,
 				C4FA1D7510B45DBB0031303E /* CoreData.framework in Frameworks */,
+				C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +321,7 @@
 				C4F31C6A10C416C9004DF94F /* Score Card */,
 				C4103F5110B6FADF004CEC15 /* Key */,
 				C4AFF95610B2342800801655 /* Application Level */,
+				C46D828210C9263B00541CF1 /* Custom Controls */,
 				C4C031DE10B1EBAA000D46AA /* Categories */,
 				C4C02C4B10B0F413000D46AA /* Core Data */,
 				C4FA235410B5DC8E0031303E /* Images */,
@@ -354,6 +367,7 @@
 		C40443DC10B0744700BCCFEC /* Cocoa Touch */ = {
 			isa = PBXGroup;
 			children = (
+				C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */,
 				C48BBBF610C57FCE00F996C6 /* MessageUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -428,6 +442,15 @@
 			);
 			name = "Companies List View";
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C46D828210C9263B00541CF1 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */,
+				C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */,
+			);
+			name = "Custom Controls";
 			sourceTree = "<group>";
 		};
 		C48BBBE310C57A0F00F996C6 /* Email text */ = {
@@ -577,6 +600,7 @@
 				C486574510BD84FD0064A126 /* iphone_bottom-bar.png */,
 				C4864DFA10BC3BDA0064A126 /* info.png */,
 				C4864E4810BC3DE10064A126 /* info2.png */,
+				C4128BE810C86EBF007BB9A8 /* info2small.png */,
 				C4864DB010BC38200064A126 /* Information.png */,
 				C492D86B10BB27FB0041400B /* Icon.png */,
 				C4FA235110B5DC8A0031303E /* iphone_bottom-bar-clear.png */,
@@ -691,6 +715,7 @@
 				C41288E210C82792007BB9A8 /* red.png in Resources */,
 				C41288E310C82792007BB9A8 /* green.png in Resources */,
 				C41288E410C82792007BB9A8 /* yellow.png in Resources */,
+				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +755,7 @@
 				C41288DF10C82792007BB9A8 /* red.png in Resources */,
 				C41288E010C82792007BB9A8 /* green.png in Resources */,
 				C41288E110C82792007BB9A8 /* yellow.png in Resources */,
+				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +795,7 @@
 				C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C474E4C910C7167C00BFFFE8 /* Brand.m in Sources */,
 				C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
+				C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +853,7 @@
 				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C474E4C810C7167C00BFFFE8 /* Brand.m in Sources */,
 				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
+				C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,13 +952,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "73440A54-A529-4F21-9B30-BE92E14EB7C3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Beta;
 		};

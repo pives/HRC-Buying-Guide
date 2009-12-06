@@ -13,21 +13,18 @@
 #import "UIBarButtonItem+extensions.h"
 #import "Category+Extensions.h"
 #import "CompanyViewController.h"
+#import "UIColor+extensions.h"
 
 @implementation FilteredCompaniesViewController
 
 @synthesize tableController;
 @synthesize sortControl;
-@synthesize red;
-@synthesize yellow;
-@synthesize green;
+@synthesize index;
 
 
 - (void)dealloc {
+    self.index = nil;
     self.tableController = nil;
-    self.red = nil;
-    self.yellow = nil;
-    self.green = nil;
     self.sortControl = nil;
     [super dealloc];
 }
@@ -84,7 +81,7 @@
     
     self.sortControl = control;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2.png"] 
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2small.png"] 
                                                                       style:UIBarButtonItemStyleBordered
                                                                      target:self 
                                                                      action:@selector(showKey)];
@@ -99,29 +96,21 @@
     tv.shadowColor = [UIColor darkGrayColor];
     self.navigationItem.titleView = tv;
 
-    CGRect tableFrame = self.view.bounds;
-    tableFrame.size.height += 44;
-    tableController.view.frame = tableFrame;
+    tableController.view.frame = self.view.bounds;;
     [self.view addSubview:tableController.view];
-    
-    self.red = [UIButton buttonWithType:UIButtonTypeCustom];
-    [red setImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateNormal];
-    red.frame = CGRectMake(290, 330, 30, 30);
-    [red addTarget:self action:@selector(scrollToRedSection) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:red];
-    
-    self.yellow = [UIButton buttonWithType:UIButtonTypeCustom];
-    [yellow setImage:[UIImage imageNamed:@"yellow.png"] forState:UIControlStateNormal];
-    yellow.frame = CGRectMake(290, 200, 30, 30);
-    [yellow addTarget:self action:@selector(scrollToYellowSection) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:yellow];
-    
-    self.green = [UIButton buttonWithType:UIButtonTypeCustom];
-    [green setImage:[UIImage imageNamed:@"green.png"] forState:UIControlStateNormal];
-    green.frame = CGRectMake(290, 68, 30, 30);
-    [green addTarget:self action:@selector(scrollToGreenSection) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:green];
 
+    UIColor* g = [UIColor gpGreenHeader];
+    UIColor* y = [UIColor gpYellowHeader];
+    UIColor* r = [UIColor gpRedHeader];
+    
+    NSArray* colors = [NSArray arrayWithObjects:g, y, r, nil];
+    
+    CGRect myFrame = CGRectMake(296, 65, 16, 300);
+    
+    self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
+    [index setDelegate:self];
+    [self.view addSubview:index];
+    
     [self changeSort:self];
     
 }
@@ -147,7 +136,25 @@
     
 }
 
+- (void)didTouchSegment:(int)segment inColorIndex:(FJSTableViewColorIndex*)index{
+    
+    if(segment == 0){
+        
+        [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfGreenSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        
+    }else if(segment == 1){
+        
+        [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfYellowSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
+    }else {
+     
+        [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfRedSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+
+    }
+
+
+    
+}
 
 - (IBAction)changeSort:(id)sender{
     
@@ -155,14 +162,10 @@
     [tableController fetch];    
     
     if(sortControl.selectedSegmentIndex == 0){
-        red.alpha = 1;
-        yellow.alpha = 1;
-        green.alpha = 1;
+        index.alpha = 1;
                
     }else{
-        red.alpha = 0;
-        yellow.alpha = 0;
-        green.alpha = 0;
+        index.alpha = 0;
     }
 }
 

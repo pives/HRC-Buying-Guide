@@ -6,6 +6,9 @@
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
+
+//[self.tableView setContentOffset:CGPointMake(0,self.searchDisplayController.searchBar.frame.size.height)];
+
 #import "CompaniesTableViewController.h"
 #import "Company.h"
 #import "Brand.h"

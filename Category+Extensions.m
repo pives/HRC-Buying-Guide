@@ -14,25 +14,26 @@
 
 - (NSString*)nameDisplayFriendly{
     
+
     NSString* displayName;
     
-    /*if([self.name doesContainString:@"Apparel"]){
+    if([self.name doesContainString:@"Road"]){
         
-        displayName = @"Apparel";
+        displayName = @"Automotive";
         
-    }else if([self.name doesContainString:@"Finance"]){
+    }else if([self.name doesContainString:@"Trip"]){
         
-        displayName = @"Finance";
+        displayName = @"Travel and Leisure";
         
-    }else*/ if([self.name doesContainString:@"Filling"]){
+    }else if([self.name doesContainString:@"Filling"]){
         
         displayName = @"Oil & Gas";
         
-    }else /*if([self.name doesContainString:@"Household"]){
+    }else if([self.name doesContainString:@"Shop"]){
         
-        displayName = @"Household";
+        displayName = @"Retailers";
 
-    }else*/ if([self.name doesContainString:@"Insurance"]){
+    }else if([self.name doesContainString:@"Insurance"]){
         
         displayName = @"Insurance";
         
@@ -48,6 +49,10 @@
         
         displayName = @"Shipping";
 
+    }else if([self.name doesContainString:@"Newsstand"]){
+        
+        displayName = @"Newsstand";
+        
     }else{
         
         displayName = self.name;

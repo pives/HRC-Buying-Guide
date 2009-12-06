@@ -109,37 +109,46 @@
 
 - (void)sendEmail{
     
-    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-	controller.mailComposeDelegate = self;
-	[controller setSubject:@"In app email..."]; //TODO: add subject
-    
-    NSString* fileName;
-    NSString* fileExtension = @"txt";
-
-    if([company.ratingLevel intValue] == 0){
+    if([MFMailComposeViewController canSendMail]){
         
-        //GOOD
-        fileName = @"EmailHappy";
-    }else if([company.ratingLevel intValue] == 1){
-
-        //MIDDLE
-        fileName = @"EmailIndifferent";
-
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setSubject:@"In app email..."]; //TODO: add subject
+        
+        NSString* fileName;
+        NSString* fileExtension = @"txt";
+        
+        if([company.ratingLevel intValue] == 0){
+            
+            //GOOD
+            fileName = @"EmailHappy";
+        }else if([company.ratingLevel intValue] == 1){
+            
+            //MIDDLE
+            fileName = @"EmailIndifferent";
+            
+        }else{
+            
+            //BAD
+            fileName = @"EmailSad";
+        }
+        
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+        NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSString* emailText = [NSString stringWithFormat:fileContenets, company.name];
+        
+        
+        [controller setMessageBody:emailText isHTML:NO];
+        [self presentModalViewController:controller animated:YES];
+        [controller release];
+        
     }else{
         
-        //BAD
-        fileName = @"EmailSad";
+        
+        //TODO: display mail not configured message
+        
     }
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-    NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-
-    NSString* emailText = [NSString stringWithFormat:fileContenets, company.name];
-
-    
-	[controller setMessageBody:emailText isHTML:NO];
-	[self presentModalViewController:controller animated:YES];
-	[controller release];
     
 }
 

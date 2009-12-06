@@ -7,22 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FJSTableViewColorIndex.h"
 @class FilteredCompaniesTableViewController;
 
-@interface FilteredCompaniesViewController : UIViewController {
-
-    UIButton* red;
-    UIButton* yellow;
-    UIButton* green;
+@interface FilteredCompaniesViewController : UIViewController <FJSTableViewColorIndexDelegate>{
+    
+    FJSTableViewColorIndex* index;
     
     UISegmentedControl* sortControl;
     
     FilteredCompaniesTableViewController* tableController;
 
 }
-@property(nonatomic,retain) UIButton *red;
-@property(nonatomic,retain) UIButton *yellow;
-@property(nonatomic,retain) UIButton *green;
+@property(nonatomic,retain)FJSTableViewColorIndex *index;
 @property(nonatomic,retain)UISegmentedControl *sortControl;
 @property(nonatomic,retain)FilteredCompaniesTableViewController *tableController;
 
