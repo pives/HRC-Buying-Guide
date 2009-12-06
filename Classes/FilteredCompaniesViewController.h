@@ -8,18 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "FJSTableViewColorIndex.h"
+#import "FJSTableViewImageIndex.h"
+
 @class FilteredCompaniesTableViewController;
 
-@interface FilteredCompaniesViewController : UIViewController <FJSTableViewColorIndexDelegate>{
+@interface FilteredCompaniesViewController : UIViewController <FJSTableViewImageIndexDelegate>{
     
-    FJSTableViewColorIndex* index;
+    FJSTableViewImageIndex* index;
     
     UISegmentedControl* sortControl;
     
     FilteredCompaniesTableViewController* tableController;
 
 }
-@property(nonatomic,retain)FJSTableViewColorIndex *index;
+@property(nonatomic,retain)FJSTableViewImageIndex *index;
 @property(nonatomic,retain)UISegmentedControl *sortControl;
 @property(nonatomic,retain)FilteredCompaniesTableViewController *tableController;
 

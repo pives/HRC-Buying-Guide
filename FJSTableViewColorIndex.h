@@ -11,6 +11,12 @@
 
 @protocol FJSTableViewColorIndexDelegate;
 
+
+
+//TODO: bring over code from image index
+//TODO: create an image and cache it, so it doesn't take so long.
+//TODO: possibly save image to disk to allow all instances of the class to use it
+
 @interface FJSTableViewColorIndex : UIView {
     
     NSArray* colors;
@@ -29,8 +35,6 @@
 
 
 @end
-
-
 
 
 @protocol FJSTableViewColorIndexDelegate <NSObject>

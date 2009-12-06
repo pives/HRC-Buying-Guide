@@ -25,6 +25,24 @@
 @synthesize context;
 @synthesize companyView;
 
+
+
+- (void)dealloc {
+    self.companyView = nil;
+    self.categoryView = nil;
+    [super dealloc];
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc that aren't in use.
+}
+
+
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
@@ -50,14 +68,6 @@
     
     self.navigationController.toolbarHidden = NO;
     self.toolbarItems = items;
-                                                                     
-    /*
-    UIImageView* iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"info2.png"]];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithView:iv];
-    [self.navigationItem.rightBarButtonItem setTarget:self];
-    [self.navigationItem.rightBarButtonItem setAction:@selector(showKey)];
-    [iv release];
-    */
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2small.png"] 
                                                                       style:UIBarButtonItemStyleBordered
@@ -94,6 +104,7 @@
                                              selector:@selector(companySelectedWithNotification:) 
                                                  name:DidSelectCompanyNotification 
                                                object:nil];
+    
     
     
 }
@@ -196,25 +207,6 @@
     
 }
 
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    self.companyView = nil;
-    self.categoryView = nil;
-    [super dealloc];
-}
 
 
 @end

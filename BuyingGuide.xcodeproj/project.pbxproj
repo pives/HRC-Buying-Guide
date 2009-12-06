@@ -54,6 +54,10 @@
 		C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
 		C46D82E710C92D3800541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
+		C46D874410CC297600541CF1 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = C46D874310CC297600541CF1 /* slider.png */; };
+		C46D874510CC297600541CF1 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = C46D874310CC297600541CF1 /* slider.png */; };
+		C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
+		C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
 		C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
@@ -197,6 +201,9 @@
 		C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewColorIndex.h; sourceTree = "<group>"; };
 		C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewColorIndex.m; sourceTree = "<group>"; };
 		C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C46D874310CC297600541CF1 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
+		C46D874610CC29A200541CF1 /* FJSTableViewImageIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewImageIndex.h; sourceTree = "<group>"; };
+		C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewImageIndex.m; sourceTree = "<group>"; };
 		C474E43110C7076B00BFFFE8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C474E4C510C7167B00BFFFE8 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		C474E4C610C7167C00BFFFE8 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
@@ -449,6 +456,8 @@
 			children = (
 				C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */,
 				C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */,
+				C46D874610CC29A200541CF1 /* FJSTableViewImageIndex.h */,
+				C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 		C4FA235410B5DC8E0031303E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C46D874310CC297600541CF1 /* slider.png */,
 				C41288DC10C82792007BB9A8 /* red.png */,
 				C41288DD10C82792007BB9A8 /* green.png */,
 				C41288DE10C82792007BB9A8 /* yellow.png */,
@@ -716,6 +726,7 @@
 				C41288E310C82792007BB9A8 /* green.png in Resources */,
 				C41288E410C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
+				C46D874510CC297600541CF1 /* slider.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +767,7 @@
 				C41288E010C82792007BB9A8 /* green.png in Resources */,
 				C41288E110C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
+				C46D874410CC297600541CF1 /* slider.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +808,7 @@
 				C474E4C910C7167C00BFFFE8 /* Brand.m in Sources */,
 				C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
+				C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +867,7 @@
 				C474E4C810C7167C00BFFFE8 /* Brand.m in Sources */,
 				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
+				C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

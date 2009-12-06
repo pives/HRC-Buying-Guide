@@ -99,6 +99,7 @@
     tableController.view.frame = self.view.bounds;;
     [self.view addSubview:tableController.view];
 
+    /*
     UIColor* g = [UIColor gpGreenHeader];
     UIColor* y = [UIColor gpYellowHeader];
     UIColor* r = [UIColor gpRedHeader];
@@ -106,8 +107,12 @@
     NSArray* colors = [NSArray arrayWithObjects:g, y, r, nil];
     
     CGRect myFrame = CGRectMake(296, 65, 16, 300);
+    */
     
-    self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
+    //self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
+    
+    CGRect myFrame = CGRectMake(298, 66, 16, 300);
+    self.index = [[[FJSTableViewImageIndex alloc] initWithFrame:myFrame image:[UIImage imageNamed:@"slider.png"] sections:3] autorelease];
     [index setDelegate:self];
     [self.view addSubview:index];
     
@@ -136,7 +141,7 @@
     
 }
 
-- (void)didTouchSegment:(int)segment inColorIndex:(FJSTableViewColorIndex*)index{
+- (void)didTouchSegment:(int)segment inColorIndex:(FJSTableViewImageIndex*)anIndex{
     
     if(segment == 0){
         
@@ -232,16 +237,6 @@
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
         
 }
-
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
