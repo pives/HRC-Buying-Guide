@@ -30,5 +30,13 @@
 	<string>someURL</string>
 	<key>DonationURL</key>
 	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
+	<key>ScoreCardURLPrefix</key>
+	<string>http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=</string>
+	<key>ScoreCardURLSuffix</key>
+	<string>&amp;search_id=1&amp;search_type=Quick</string>
+	<key>AppStoreID</key>
+	<string></string>
+	<key>CoreDataCrashMessage</key>
+	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 </dict>
 </plist>

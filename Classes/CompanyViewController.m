@@ -97,6 +97,9 @@
     
 }
 
+#pragma mark -
+#pragma mark Scorecard
+
 - (void)showScoreCard{
     
     CompanyScoreCardViewController* vc = [[[CompanyScoreCardViewController alloc] initWithCompany:self.company] autorelease];
@@ -115,12 +118,22 @@
         
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:@"In app email..."]; //TODO: add subject
+        [controller setSubject:@"Support LGBT Equality When You Shop"]; //TODO: add subject
         
         NSString* fileName;
         NSString* fileExtension = @"txt";
         NSString* emailText;
         
+		
+		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
+		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
+        NSString* companyID = [self.company.ID stringValue];
+        NSString* companyScoreurl = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
+		
+		
+		
+		
         if([company.ratingLevel intValue] == 0){
             
             //GOOD

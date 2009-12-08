@@ -1,0 +1,1670 @@
+TBuyingGuide
+v7
+r3
+t281891617.589468
+cCheck dependencies
+cCpResource build/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Info.plist BuyingGuide-Info.plist
+cCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib
+cCpResource build/Beta-iphoneos/BuyingGuide.app/bgdata.csv bgdata.csv
+cCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib
+cCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib
+cCopyPlistFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Entitlements.plist Entitlements.plist
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png iphone_bottom-bar-clear.png
+cCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Icon.png Icon.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Information.png Information.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info.png info.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2.png info2.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png iphone_bottom-bar.png
+cCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib
+cCpResource build/Beta-iphoneos/BuyingGuide.app/EmailHappy.txt EmailHappy.txt
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png HRC_Icon.png
+cCpResource build/Beta-iphoneos/BuyingGuide.app/EmailIndifferent.txt EmailIndifferent.txt
+cCpResource build/Beta-iphoneos/BuyingGuide.app/EmailSad.txt EmailSad.txt
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Default.png Default.png
+cCpResource build/Beta-iphoneos/BuyingGuide.app/storedata.sqlite storedata.sqlite
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/red.png red.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/green.png green.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/yellow.png yellow.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2small.png info2small.png
+cCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/slider.png slider.png
+cCpResource build/Beta-iphoneos/BuyingGuide.app/emailConfused.txt emailConfused.txt
+cProcessPCH /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch.gch BuyingGuide_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cDataModelCompile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide.mom /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/main.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuideAppDelegate.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CategoriesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSArray+FJSCoreDataExtensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSString+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CoreDataFunctions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/MainViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIBarButtonItem+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompaniesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyScoreCardViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company+Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DataSource.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PagingScrollViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIColor+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIView-Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/KeyViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/SDNextRunloopProxy.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DebugLog.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSManagedObjectContext+Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewColorIndex.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewImageIndex.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Brand.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Category.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide normal armv6
+cGenerateDSYMFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app.dSYM /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide
+cProcessProductPackaging "/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision
+cTouch /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+cProcessProductPackaging /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent
+cCodeSign /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk
+c000000004ABFDAFE0000000000000110
+t1254087422
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist
+c000000004ABDB88400000000000001E5
+t1253947524
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004ABDBE6E0000000000296690
+t1253949038
+s2713232
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c000000004ABDBE5C000000000000046B
+t1253949020
+s1131
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004ABDBA1300000000005F4900
+t1253947923
+s6244608
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004ABDBDCF0000000000501370
+t1253948879
+s5247856
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004ABDBDA40000000000001355
+t1253948836
+s4949
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.h
+c000000004ABDD3640000000000000092
+t1253954404
+s146
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
+c000000004ABDD36F00000000000C32C0
+t1253954415
+s799424
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h
+c000000004ABDC796000000000000007D
+t1253951382
+s125
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004ABDC85900000000001C27F0
+t1253951577
+s1845232
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004ABDD0D10000000000000788
+t1253953745
+s1928
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004ABDD2250000000001B3F450
+t1253954085
+s28570704
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/usr/include/Availability.h
+c000000004ABDC79900000000000019F9
+t1253951385
+s6649
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.h
+c000000004B1C05AC000000000000035A
+t1260127660
+s858
+i<CoreData/CoreData.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m
+c000000004B1C05AC0000000000000182
+t1260127660
+s386
+i"Brand.h"
+i"Category.h"
+i"Company.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel
+c000000004B1C07890000000000000088
+t1260128137
+s136
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide_Prefix.pch
+c000000004B0ABD040000000000000187
+t1258994948
+s391
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i<CoreData/CoreData.h>
+i"MacroUtilities.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.h
+c000000004B1C07A8000000000000034E
+t1260128168
+s846
+i<CoreData/CoreData.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m
+c000000004B1C07A60000000000000144
+t1260128166
+s324
+i"Category.h"
+i"Brand.h"
+i"Company.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib
+c000000004B141BD80000000000007AA8
+t1259609048
+s31400
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.h
+c000000004B1834FF000000000000042E
+t1259877631
+s1070
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m
+c000000004B18356F0000000000001C64
+t1259877743
+s7268
+i"BuyingGuideAppDelegate.h"
+i"MainViewController.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.h
+c000000004B023706000000000000024C
+t1258436358
+s588
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m
+c000000004B1C0BD0000000000000143A
+t1260129232
+s5178
+i"CategoriesTableViewController.h"
+i"Category.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.h
+c000000004B0AC73D000000000000027D
+t1258997565
+s637
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m
+c000000004B1C1F8000000000000023E6
+t1260134272
+s9190
+i"CompaniesTableViewController.h"
+i"Company.h"
+i"Brand.h"
+i"Company+Extensions.h"
+i"UIColor+extensions.h"
+i"UIView-Extensions.h"
+i"NSString+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib
+c000000004B13E69E0000000000005BB1
+t1259595422
+s23473
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.h
+c000000004B13E684000000000000029F
+t1259595396
+s671
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m
+c000000004B1425DF000000000000089C
+t1259611615
+s2204
+i"CompanyScoreCardViewController.h"
+i"Company.h"
+i"NSString+extensions.h"
+i"UIBarButtonItem+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.h
+c000000004B1C27A90000000000000466
+t1260136361
+s1126
+i<UIKit/UIKit.h>
+i<MessageUI/MessageUI.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m
+c000000004B1C2E1A0000000000002223
+t1260138010
+s8739
+i"CompanyViewController.h"
+i"Company.h"
+i"Company+Extensions.h"
+i"DataSource.h"
+i"PagingScrollViewController.h"
+i"UIBarButtonItem+extensions.h"
+i"UIColor+extensions.h"
+i"CompanyScoreCardViewController.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib
+c000000004B1C20FC0000000000008D2A
+t1260134652
+s36138
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.h
+c000000004B0420F500000000000003B9
+t1258561781
+s953
+i<UIKit/UIKit.h>
+i"Company.h"
+i"Category.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m
+c000000004B04214D0000000000000732
+t1258561869
+s1842
+i"DataSource.h"
+i"Company.h"
+i"Company+Extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.h
+c0000000049C7B96E0000000000000169
+t1237825902
+s361
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m
+c000000004AAAA53600000000000003AF
+t1252697398
+s943
+i<Foundation/Foundation.h>
+i"DebugLog.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.h
+c000000004B180DA10000000000000547
+t1259867553
+s1351
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m
+c000000004B1C0DCA00000000000038C6
+t1260129738
+s14534
+i"FilteredCompaniesTableViewController.h"
+i"Company.h"
+i"Company+Extensions.h"
+i"UIColor+extensions.h"
+i"Brand.h"
+i"NSString+extensions.h"
+i"UIView-Extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.h
+c000000004B1BF695000000000000037C
+t1260123797
+s892
+i<UIKit/UIKit.h>
+i"FJSTableViewColorIndex.h"
+i"FJSTableViewImageIndex.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m
+c000000004B1C088D0000000000001F62
+t1260128397
+s8034
+i"FilteredCompaniesViewController.h"
+i"FilteredCompaniesTableViewController.h"
+i"Category.h"
+i"KeyViewController.h"
+i"UIBarButtonItem+extensions.h"
+i"CompanyViewController.h"
+i"UIColor+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MacroUtilities.h
+c000000004AC1265C00000000000018FD
+t1254172252
+s6397
+i<Foundation/Foundation.h>
+i"DebugLog.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.h
+c000000004B1BFEE80000000000000354
+t1260125928
+s852
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m
+c000000004B1C27E200000000000022F1
+t1260136418
+s8945
+i"MainViewController.h"
+i"CategoriesTableViewController.h"
+i"CompaniesTableViewController.h"
+i"UIBarButtonItem+extensions.h"
+i"Category.h"
+i"Company.h"
+i"FilteredCompaniesViewController.h"
+i"CompanyViewController.h"
+i"UIView-Extensions.h"
+i"KeyViewController.h"
+i"UIBarButtonItem+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.h
+c000000004B0D6CEC00000000000003E9
+t1259171052
+s1001
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m
+c000000004B1C236F000000000000217C
+t1260135279
+s8572
+i"PageTableViewController.h"
+i"Company.h"
+i"Category.h"
+i"UIColor+extensions.h"
+i"Brand.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib
+c000000004B18238100000000000045B4
+t1259873153
+s17844
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.h
+c000000004B0C247A00000000000005A2
+t1259086970
+s1442
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m
+c000000004B1C21410000000000000D6F
+t1260134721
+s3439
+i"PageViewController.h"
+i"DataSource.h"
+i<QuartzCore/QuartzCore.h>
+i"Company.h"
+i"Company+Extensions.h"
+i"UIColor+extensions.h"
+i"PageTableViewController.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.h
+c000000004B141FD000000000000003EA
+t1259610064
+s1002
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m
+c000000004B1423CC000000000000155D
+t1259611084
+s5469
+i"PagingScrollViewController.h"
+i"PageViewController.h"
+i"DataSource.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.h
+c000000004B15499A0000000000000323
+t1259686298
+s803
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m
+c000000004B15499E00000000000008CC
+t1259686302
+s2252
+i"UIBarButtonItem+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.h
+c000000004B06DB78000000000000017F
+t1258740600
+s383
+i<Foundation/Foundation.h>
+i"Company.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m
+c000000004B048BB80000000000000316
+t1258589112
+s790
+i"Company+Extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.h
+c000000004B1400DF000000000000044D
+t1259602143
+s1101
+i<CoreData/CoreData.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m
+c000000004B05909D000000000000019D
+t1258655901
+s413
+i"Company.h"
+i"Brand.h"
+i"Category.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.h
+c000000004B06DC4C000000000000029B
+t1258740812
+s667
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m
+c000000004B1400F90000000000000782
+t1259602169
+s1922
+i"CoreDataFunctions.h"
+i"NSString+extensions.h"
+i"NSManagedObjectContext+Extensions.h"
+i"Company.h"
+i"Brand.h"
+i"Category.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Default.png
+c000000004B1540FF000000000000671A
+t1259684095
+s26394
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailHappy.txt
+c000000004B1C2D7A00000000000001BD
+t1260137850
+s445
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailIndifferent.txt
+c000000004B1C2D2400000000000001BD
+t1260137764
+s445
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailSad.txt
+c000000004B1C2D5100000000000001FB
+t1260137809
+s507
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist
+c000000004A0A666F00000000000000E1
+t1242195567
+s225
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.h
+c000000004B1C02BB000000000000044C
+t1260126907
+s1100
+i<UIKit/UIKit.h>
+i<QuartzCore/QuartzCore.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m
+c000000004B1A9D6300000000000036FB
+t1260035427
+s14075
+i"FJSTableViewColorIndex.h"
+i"UIColor+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.h
+c000000004B1BF5E400000000000003E1
+t1260123620
+s993
+i<UIKit/UIKit.h>
+i<QuartzCore/QuartzCore.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m
+c000000004B1C02570000000000000E67
+t1260126807
+s3687
+i"FJSTableViewImageIndex.h"
+i"UIColor+extensions.h"
+i"UIView-Extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/HRC_Icon.png
+c000000004B140D5F00000000000000A5
+t1259605343
+s165
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Icon.png
+c000000004B0AF04A0000000000000324
+t1259008074
+s804
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Information.png
+c000000004B0C008C000000000000A5F2
+t1259077772
+s42482
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib
+c000000004B0B0EA3000000000000535E
+t1259015843
+s21342
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.h
+c000000004B0B0DBD000000000000015D
+t1259015613
+s349
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m
+c000000004B0B0EE4000000000000072C
+t1259015908
+s1836
+i"KeyViewController.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.h
+c000000004B0178A000000000000000F7
+t1258387616
+s247
+i<Foundation/Foundation.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m
+c000000004A8248AB0000000000000154
+t1250052267
+s340
+i"NSArray+FJSCoreDataExtensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.h
+c000000004B1C1B630000000000000D13
+t1260133219
+s3347
+i<Foundation/Foundation.h>
+i<CoreData/CoreData.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m
+c000000004B1C1B63000000000000201F
+t1260133219
+s8223
+i"NSManagedObjectContext+Extensions.h"
+i"NSArray+FJSCoreDataExtensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.h
+c000000004B1C2F5D000000000000038B
+t1260138333
+s907
+i<Foundation/Foundation.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m
+c000000004B16E5E00000000000001D6F
+t1259791840
+s7535
+i"NSString+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.h
+c000000004A976877000000000000014E
+t1251436663
+s334
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m
+c000000004A7355A900000000000003C4
+t1249072553
+s964
+i"SDNextRunloopProxy.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.h
+c000000004B1900570000000000001E3D
+t1259929687
+s7741
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m
+c000000004B191A8400000000000096A8
+t1259936388
+s38568
+i"UIColor+extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.h
+c000000004B1C008B0000000000000AAD
+t1260126347
+s2733
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m
+c000000004B1C00730000000000002557
+t1260126323
+s9559
+i"UIView-Extensions.h"
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/bgdata.csv
+c000000004B0170680000000000020893
+t1258385512
+s133267
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+t1260198729
+s1122
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app.dSYM
+t1260198729
+s102
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide
+t1260198729
+s274132
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide.mom
+t1260198724
+s5292
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/CompanyScoreCardView.nib
+t1260198723
+s2069
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/CompanyViewController.nib
+t1260198721
+s4806
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Default.png
+t1260198723
+s30147
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/EmailHappy.txt
+t1260198722
+s445
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/EmailIndifferent.txt
+t1260198722
+s445
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/EmailSad.txt
+t1260198722
+s507
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Entitlements.plist
+t1260198722
+s62
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png
+t1260198722
+s166
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Icon.png
+t1260198722
+s891
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Info.plist
+t1260198721
+s749
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Information.png
+t1260198722
+s53160
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/KeyView.nib
+t1260198722
+s1871
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/MainWindow.nib
+t1260198721
+s4070
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/PageView.nib
+t1260198722
+s1712
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/PkgInfo
+t1260198721
+s8
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist
+t1260198721
+s485
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/bgdata.csv
+t1260198721
+s133267
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/emailConfused.txt
+t1260198723
+s583
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision
+t1260198729
+s7627
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/green.png
+t1260198723
+s1735
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info.png
+t1260198722
+s1005
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2.png
+t1260198722
+s1037
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2small.png
+t1260198723
+s1128
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png
+t1260198722
+s1768
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png
+t1260198722
+s1327
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/red.png
+t1260198723
+s1799
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/slider.png
+t1260198723
+s9318
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/storedata.sqlite
+t1260198723
+s237568
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/yellow.png
+t1260198723
+s1848
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent
+t1260198729
+s311
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Brand.o
+t1260198728
+s5872
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuide.LinkFileList
+c000000004B1D1B4000000000000012B1
+t1260198720
+s4785
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuideAppDelegate.o
+t1260198725
+s62272
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CategoriesTableViewController.o
+t1260198724
+s51536
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Category.o
+t1260198728
+s5584
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompaniesTableViewController.o
+t1260198725
+s60548
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company+Extensions.o
+t1260198726
+s12916
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company.o
+t1260198726
+s5940
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyScoreCardViewController.o
+t1260198726
+s48308
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyViewController.o
+t1260198725
+s69412
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CoreDataFunctions.o
+t1260198725
+s13836
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DataSource.o
+t1260198726
+s18168
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DebugLog.o
+t1260198726
+s9536
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewColorIndex.o
+t1260198728
+s41224
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewImageIndex.o
+t1260198728
+s26336
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesTableViewController.o
+t1260198725
+s73548
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesViewController.o
+t1260198727
+s65140
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/KeyViewController.o
+t1260198726
+s33376
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/MainViewController.o
+t1260198725
+s67852
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSArray+FJSCoreDataExtensions.o
+t1260198725
+s6504
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSManagedObjectContext+Extensions.o
+t1260198727
+s34888
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSString+extensions.o
+t1260198725
+s24060
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageTableViewController.o
+t1260198727
+s58048
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageViewController.o
+t1260198726
+s52904
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PagingScrollViewController.o
+t1260198726
+s48912
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/SDNextRunloopProxy.o
+t1260198726
+s11580
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIBarButtonItem+extensions.o
+t1260198725
+s16240
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIColor+extensions.o
+t1260198728
+s235228
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIView-Extensions.o
+t1260198726
+s47532
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/main.o
+t1260198724
+s6692
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/emailConfused.txt
+c000000004B1C2D500000000000000247
+t1260137808
+s583
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/green.png
+c000000004B180160000000000000070C
+t1259864416
+s1804
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info.png
+c0000000049C7AB0F0000000000000255
+t1237822223
+s597
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2.png
+c000000004B0C086C000000000000034A
+t1259079788
+s842
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2small.png
+c000000004B18372F0000000000000376
+t1259878191
+s886
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar-clear.png
+c000000004B05A0C600000000000005C8
+t1258660038
+s1480
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar.png
+c000000004B0D4CF6000000000000048D
+t1259162870
+s1165
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m
+c000000004B01DAB90000000000000175
+t1258412729
+s373
+i<UIKit/UIKit.h>
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/red.png
+c000000004B180183000000000000073D
+t1259864451
+s1853
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/slider.png
+c000000004B1C048C0000000000002657
+t1260127372
+s9815
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/storedata.sqlite
+c000000004B1C1DD7000000000003A000
+t1260133847
+s237568
+
+N/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/yellow.png
+c000000004B18012E0000000000000768
+t1259864366
+s1896
+
+N/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision
+c000000004B1C2F340000000000001DCB
+t1260138292
+s7627
+
+N/var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch.gch
+t1260198724
+s8242092
+
+NBuyingGuide-Info.plist
+c000000004B1C2819000000000000040E
+t1260136473
+s1038
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies281891520#281891520#0(0"0(0#1#0"7947009927035180032#0"0#
+
+CCodeSign /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+s281891529.670040
+e281891617.589429
+r0
+xCodeSign
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+lSLF07#2@44"CodeSign build/Beta-iphoneos/BuyingGuide.app281891529#281891617#0(0"0(0#0#100"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app4300885448#766"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv CODESIGN_ALLOCATE /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign -f -s "iPhone Distribution: Human Rights Campaign" --resource-rules=/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist --entitlements /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app2#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Brand.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891528.191908
+e281891528.233030
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Brand.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m281891528#281891528#0(0"0(0#0#72"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m4300885448#2104"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Brand.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Brand.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuideAppDelegate.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891524.809854
+e281891525.044603
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuideAppDelegate.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@105"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m281891524#281891525#0(0"0(0#0#97"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m4300885448#2146"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/BuyingGuideAppDelegate.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuideAppDelegate.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CategoriesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891524.811805
+e281891524.975729
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CategoriesTableViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@112"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m281891524#281891524#0(0"0(0#0#104"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m4300885448#2160"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CategoriesTableViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CategoriesTableViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Category.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891528.233122
+e281891528.268088
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Category.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m281891528#281891528#0(0"0(0#0#75"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m4300885448#2110"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Category.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Category.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompaniesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.318397
+e281891525.586931
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompaniesTableViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@111"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m281891525#281891525#0(0"0(0#0#103"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m4300885448#2158"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompaniesTableViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompaniesTableViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company+Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.933655
+e281891526.008939
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company+Extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m281891525#281891526#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m4300885448#2130"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company+Extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company+Extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.704590
+e281891526.751850
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m281891526#281891526#0(0"0(0#0#74"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m4300885448#2108"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Company.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/Company.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyScoreCardViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.892271
+e281891526.173671
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyScoreCardViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@113"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m281891525#281891526#0(0"0(0#0#105"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m4300885448#2162"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyScoreCardViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.587026
+e281891525.933558
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m281891525#281891525#0(0"0(0#0#96"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m4300885448#2144"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CompanyViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CoreDataFunctions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.044698
+e281891525.136034
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CoreDataFunctions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m281891525#281891525#0(0"0(0#0#84"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m4300885448#2128"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/CoreDataFunctions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/CoreDataFunctions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DataSource.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.009075
+e281891526.102876
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DataSource.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m281891526#281891526#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m4300885448#2122"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DataSource.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DataSource.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DebugLog.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.916782
+e281891526.971263
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DebugLog.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m281891526#281891526#0(0"0(0#0#83"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m4300885448#2118"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/DebugLog.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/DebugLog.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewColorIndex.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891527.675401
+e281891528.032573
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewColorIndex.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@97"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m281891527#281891528#0(0"0(0#0#89"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m4300885448#2138"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewColorIndex.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewColorIndex.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewImageIndex.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891528.032667
+e281891528.191795
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewImageIndex.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@97"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m281891528#281891528#0(0"0(0#0#89"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m4300885448#2138"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/FJSTableViewImageIndex.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FJSTableViewImageIndex.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.460907
+e281891525.892172
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesTableViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@119"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m281891525#281891525#0(0"0(0#0#111"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m4300885448#2174"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesTableViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesTableViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891527.386701
+e281891527.675239
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@114"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m281891527#281891527#0(0"0(0#0#106"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m4300885448#2164"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/FilteredCompaniesViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/FilteredCompaniesViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/KeyViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.752037
+e281891526.829819
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/KeyViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m281891526#281891526#0(0"0(0#0#84"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m4300885448#2128"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/KeyViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/MainViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.136125
+e281891525.460818
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/MainViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m281891525#281891525#0(0"0(0#0#93"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m4300885448#2138"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/MainViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/MainViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSArray+FJSCoreDataExtensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891524.975825
+e281891525.031953
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSArray+FJSCoreDataExtensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m281891524#281891525#0(0"0(0#0#96"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m4300885448#2152"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSArray+FJSCoreDataExtensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSArray+FJSCoreDataExtensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSManagedObjectContext+Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891527.212393
+e281891527.386610
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSManagedObjectContext+Extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@108"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m281891527#281891527#0(0"0(0#0#100"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m4300885448#2160"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSManagedObjectContext+Extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSManagedObjectContext+Extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSString+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.032052
+e281891525.233076
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSString+extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m281891525#281891525#0(0"0(0#0#86"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m4300885448#2132"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/NSString+extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/NSString+extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageTableViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.971355
+e281891527.212292
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageTableViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@106"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m281891526#281891527#0(0"0(0#0#98"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m4300885448#2148"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageTableViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageTableViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.173762
+e281891526.397564
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m281891526#281891526#0(0"0(0#0#93"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m4300885448#2138"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PageViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PagingScrollViewController.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.103023
+e281891526.358510
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PagingScrollViewController.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@109"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m281891526#281891526#0(0"0(0#0#101"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m4300885448#2154"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PagingScrollViewController.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/PagingScrollViewController.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/SDNextRunloopProxy.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.829915
+e281891526.916685
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/SDNextRunloopProxy.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m281891526#281891526#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m4300885448#2130"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/SDNextRunloopProxy.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/SDNextRunloopProxy.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIBarButtonItem+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891525.233171
+e281891525.318295
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIBarButtonItem+extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@109"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m281891525#281891525#0(0"0(0#0#101"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m4300885448#2154"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/UIBarButtonItem+extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIBarButtonItem+extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIColor+extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.358606
+e281891528.580513
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIColor+extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m281891526#281891528#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m4300885448#2130"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIColor+extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIColor+extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIView-Extensions.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891526.397654
+e281891526.704473
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIView-Extensions.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m281891526#281891526#0(0"0(0#0#84"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m4300885448#2128"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/UIView-Extensions.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/UIView-Extensions.o0#
+
+CCompileC build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/main.o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891524.531554
+e281891524.811735
+r1
+xCompileC
+xbuild/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/main.o
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m281891524#281891524#0(0"0(0#0#71"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m4300885448#2102"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -include /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/main.m -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/main.o0#
+
+CCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib
+s281891521.074714
+e281891521.853066
+r1
+xCompileXIB
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@36"CompileXIB Classes/../MainWindow.xib281891521#281891521#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#90"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib4300885448#560"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/MainWindow.nib /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/../MainWindow.xib0#
+
+CCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib
+s281891522.749084
+e281891523.675627
+r1
+xCompileXIB
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@43"CompileXIB Classes/CompanyScoreCardView.xib281891522#281891523#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#97"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib4300885448#577"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/CompanyScoreCardView.nib /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyScoreCardView.xib0#
+
+CCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib
+s281891521.076950
+e281891521.866398
+r1
+xCompileXIB
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib
+lSLF07#2@44"CompileXIB Classes/CompanyViewController.xib281891521#281891521#0(0"0(0#0#98"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib4300885448#579"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/CompanyViewController.nib /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/CompanyViewController.xib0#
+
+CCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib
+s281891521.853151
+e281891522.183065
+r1
+xCompileXIB
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib
+lSLF07#2@31"CompileXIB Classes/PageView.xib281891521#281891522#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib4300885448#553"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/PageView.nib /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Classes/PageView.xib0#
+
+CCompileXIB /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib
+s281891522.440716
+e281891522.850929
+r1
+xCompileXIB
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib
+lSLF07#2@22"CompileXIB KeyView.xib281891522#281891522#0(0"0(0#0#76"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib4300885448#543"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/KeyView.nib /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/KeyView.xib0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Default.png Default.png
+s281891522.916051
+e281891523.051065
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Default.png
+xDefault.png
+lSLF07#2@71"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/Default.png Default.png281891522#281891523#0(0"0(0#0#76"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Default.png4300885448#643"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Default.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Default.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png HRC_Icon.png
+s281891522.852647
+e281891522.913422
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png
+xHRC_Icon.png
+lSLF07#2@73"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png HRC_Icon.png281891522#281891522#0(0"0(0#0#77"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/HRC_Icon.png4300885448#645"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/HRC_Icon.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/HRC_Icon.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Icon.png Icon.png
+s281891522.487244
+e281891522.525728
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Icon.png
+xIcon.png
+lSLF07#2@65"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/Icon.png Icon.png281891522#281891522#0(0"0(0#0#73"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Icon.png4300885448#637"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Icon.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Icon.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Information.png Information.png
+s281891522.525818
+e281891522.688302
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Information.png
+xInformation.png
+lSLF07#2@79"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/Information.png Information.png281891522#281891522#0(0"0(0#0#80"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Information.png4300885448#651"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Information.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Information.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/green.png green.png
+s281891523.200809
+e281891523.255081
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/green.png
+xgreen.png
+lSLF07#2@67"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/green.png green.png281891523#281891523#0(0"0(0#0#74"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/green.png4300885448#639"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/green.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/green.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info.png info.png
+s281891522.688388
+e281891522.707679
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info.png
+xinfo.png
+lSLF07#2@65"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/info.png info.png281891522#281891522#0(0"0(0#0#73"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info.png4300885448#637"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2.png info2.png
+s281891522.707770
+e281891522.727490
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2.png
+xinfo2.png
+lSLF07#2@67"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/info2.png info2.png281891522#281891522#0(0"0(0#0#74"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2.png4300885448#639"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2small.png info2small.png
+s281891523.320821
+e281891523.442909
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2small.png
+xinfo2small.png
+lSLF07#2@77"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/info2small.png info2small.png281891523#281891523#0(0"0(0#0#79"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2small.png4300885448#649"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/info2small.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/info2small.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png iphone_bottom-bar-clear.png
+s281891522.183164
+e281891522.487155
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png
+xiphone_bottom-bar-clear.png
+lSLF07#2@103"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png iphone_bottom-bar-clear.png281891522#281891522#0(0"0(0#0#92"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar-clear.png4300885448#675"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar-clear.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar-clear.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png iphone_bottom-bar.png
+s281891522.727607
+e281891522.748994
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png
+xiphone_bottom-bar.png
+lSLF07#2@91"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png iphone_bottom-bar.png281891522#281891522#0(0"0(0#0#86"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar.png4300885448#663"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/iphone_bottom-bar.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/iphone_bottom-bar.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/red.png red.png
+s281891523.052016
+e281891523.112955
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/red.png
+xred.png
+lSLF07#2@63"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/red.png red.png281891523#281891523#0(0"0(0#0#72"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/red.png4300885448#635"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/red.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/red.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/slider.png slider.png
+s281891523.443008
+e281891523.589484
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/slider.png
+xslider.png
+lSLF07#2@69"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/slider.png slider.png281891523#281891523#0(0"0(0#0#75"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/slider.png4300885448#641"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/slider.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/slider.png0#
+
+CCopyPNGFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/yellow.png yellow.png
+s281891523.255167
+e281891523.320725
+r1
+xCopyPNGFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/yellow.png
+xyellow.png
+lSLF07#2@69"CopyPNGFile build/Beta-iphoneos/BuyingGuide.app/yellow.png yellow.png281891523#281891523#0(0"0(0#0#75"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/yellow.png4300885448#641"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/yellow.png /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/yellow.png0#
+
+CCopyPlistFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Entitlements.plist Entitlements.plist
+s281891521.866485
+e281891522.440552
+r1
+xCopyPlistFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Entitlements.plist
+xEntitlements.plist
+lSLF07#2@23"Copy Entitlements.plist281891521#281891522#0(0"0(0#0#83"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist4300885448#434"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist --convert binary1 Entitlements.plist --outdir /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/EmailHappy.txt EmailHappy.txt
+s281891522.851011
+e281891522.880065
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/EmailHappy.txt
+xEmailHappy.txt
+lSLF07#2@19"Copy EmailHappy.txt281891522#281891522#0(0"0(0#0#79"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailHappy.txt4300885448#546"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailHappy.txt /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/EmailIndifferent.txt EmailIndifferent.txt
+s281891522.913506
+e281891522.925229
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/EmailIndifferent.txt
+xEmailIndifferent.txt
+lSLF07#2@25"Copy EmailIndifferent.txt281891522#281891522#0(0"0(0#0#85"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailIndifferent.txt4300885448#552"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailIndifferent.txt /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/EmailSad.txt EmailSad.txt
+s281891522.914575
+e281891522.925668
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/EmailSad.txt
+xEmailSad.txt
+lSLF07#2@17"Copy EmailSad.txt281891522#281891522#0(0"0(0#0#77"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailSad.txt4300885448#544"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/EmailSad.txt /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist
+s281891520.943174
+e281891521.074628
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist
+lSLF07#2@96"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist281891520#281891521#0(0"0(0#0#91"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist7810779306051726336#558"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/ResourceRules.plist /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/bgdata.csv bgdata.csv
+s281891521.075430
+e281891521.153017
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/bgdata.csv
+xbgdata.csv
+lSLF07#2@15"Copy bgdata.csv281891521#281891521#0(0"0(0#0#75"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/bgdata.csv4300885448#542"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/bgdata.csv /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/emailConfused.txt emailConfused.txt
+s281891523.589567
+e281891523.653834
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/emailConfused.txt
+xemailConfused.txt
+lSLF07#2@22"Copy emailConfused.txt281891523#281891523#0(0"0(0#0#82"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/emailConfused.txt4300885448#549"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/emailConfused.txt /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CCpResource build/Beta-iphoneos/BuyingGuide.app/storedata.sqlite storedata.sqlite
+s281891523.051152
+e281891523.200721
+r1
+xCpResource
+xbuild/Beta-iphoneos/BuyingGuide.app/storedata.sqlite
+xstoredata.sqlite
+lSLF07#2@21"Copy storedata.sqlite281891523#281891523#0(0"0(0#0#81"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/storedata.sqlite4300885448#548"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/storedata.sqlite /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+
+CDataModelCompile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide.mom /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel
+s281891524.530817
+e281891524.809765
+r1
+xDataModelCompile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide.mom
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel
+lSLF07#2@96"Compile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel281891524#281891524#0(0"0(0#0#88"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel4300885448#459"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/momc -XD_MOMC_TARGET_VERSION=10.5 /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcdatamodel /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide.mom0#
+
+CGenerateDSYMFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app.dSYM /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide
+s281891529.467709
+e281891529.642474
+r1
+xGenerateDSYMFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app.dSYM
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide
+lSLF07#2@105"GenerateDSYMFile build/Beta-iphoneos/BuyingGuide.app.dSYM build/Beta-iphoneos/BuyingGuide.app/BuyingGuide281891529#281891529#0(0"0(0#0#112"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide4300885448#450"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app.dSYM0#
+
+CLd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide normal armv6
+s281891528.580614
+e281891529.467539
+r1
+xLd
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide
+xnormal
+xarmv6
+lSLF07#2@117"Link /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide281891528#281891529#0(0"0(0#0#0"4300885448#1104"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv IPHONEOS_DEPLOYMENT_TARGET 3.1.2    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -L/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -filelist /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/Objects-normal/armv6/BuyingGuide.LinkFileList -mmacosx-version-min=10.5 -dead_strip -miphoneos-version-min=3.1.2 -framework QuartzCore -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreData -framework MessageUI -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/BuyingGuide0#
+
+CProcessInfoPlistFile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Info.plist BuyingGuide-Info.plist
+s281891520.976383
+e281891521.038071
+r1
+xProcessInfoPlistFile
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Info.plist
+xBuyingGuide-Info.plist
+lSLF07#2@30"Process BuyingGuide-Info.plist281891520#281891521#0(0"0(0#0#87"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide-Info.plist4300885448#679"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility BuyingGuide-Info.plist -genpkginfo /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/ResourceRules.plist -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/Info.plist0#
+
+CProcessPCH /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch.gch BuyingGuide_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s281891523.675801
+e281891524.530635
+r1
+xProcessPCH
+x/var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch.gch
+xBuyingGuide_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile BuyingGuide_Prefix.pch281891523#281891524#0(0"0(0#0#87"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide_Prefix.pch4300885448#1971"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.1.2 -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-generated-files.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-own-target-headers.hmap -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-all-target-headers.hmap -iquote /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide-project-headers.hmap -F/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/include -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources/armv6 -I/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/DerivedSources -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide_Prefix.pch -o /var/folders/0L/0L36Y-P2GeaJeFgJmmcaV++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/BuyingGuide_Prefix-dioofkyspwckyvhkhotnmufazfuy/BuyingGuide_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision" /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision
+s281891529.642568
+e281891529.654347
+r1
+xProcessProductPackaging
+x/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision
+lSLF07#2@177"ProcessProductPackaging "/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision" build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision281891529#281891529#0(0"0(0#0#125"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision4300885448#460"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/coreyfloyd/Library/MobileDevice/Provisioning Profiles/HRC_Beta_Test.mobileprovision" -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent
+s281891529.659126
+e281891529.669970
+r1
+xProcessProductPackaging
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent
+lSLF07#2@116"ProcessProductPackaging Entitlements.plist build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent281891529#281891529#0(0"0(0#0#138"/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent4300885448#490"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/Entitlements.plist -entitlements -format xml -o /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/BuyingGuide.build/Beta-iphoneos/BuyingGuide.build/BuyingGuide.xcent0#
+
+CTouch /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+s281891529.654416
+e281891529.659044
+r1
+xTouch
+x/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app
+lSLF07#2@106"Touch /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app281891529#281891529#0(0"0(0#0#0"4300885448#319"    cd /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/build/Beta-iphoneos/BuyingGuide.app0#
+

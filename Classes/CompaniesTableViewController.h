@@ -16,7 +16,9 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic,retain) NSArray *cellColors;
 
+- (void)fetch;
 
 @end
+
 
 extern NSString *const DidSelectCompanyNotification;

@@ -13,6 +13,7 @@
 #import "Brand.h"
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
+#import "NSManagedObjectContext+Extensions.h"
 
 NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompany";
 
@@ -86,7 +87,9 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
 		 */
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+		[managedObjectContext resetCoreDataStore];
+		[managedObjectContext displayCcoreDataError];
+
 	}
     [self.tableView reloadData];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -94,6 +97,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     
     
 }
+
 
 //TODO: possiblt rework this to scroll to the bottom of the nearest section if the actual section doesn't exist
 //currently scrolls to the top of the neares section

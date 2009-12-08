@@ -11,9 +11,6 @@
 #import "NSString+extensions.h"
 #import "UIBarButtonItem+extensions.h"
 
-static NSString* urlPrefix = @"http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=";
-static NSString* urlSuffix = @"&search_id=1&search_type=Quick";
-
 @implementation CompanyScoreCardViewController
 
 @synthesize bar;
@@ -42,6 +39,9 @@ static NSString* urlSuffix = @"&search_id=1&search_type=Quick";
     self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
     if (self != nil) {
         
+		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
+		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
         NSString* companyID = [aCompany.ID stringValue];
         NSString* url = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
         self.address = [NSURL URLWithString:url];

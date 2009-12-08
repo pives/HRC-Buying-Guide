@@ -28,5 +28,6 @@
 - (void)toggleViews:(id)sender;
 - (void)loadCategories;
 - (void)loadCompanies;
+- (void)preloadAllBrandsFetchedResultsController;
 
 @end

@@ -16,12 +16,21 @@
  */
 
 
+@interface NSManagedObjectContext (BuyingGuide)
+
+- (void)resetCoreDataStore;
+- (void)displayCcoreDataError;
+
+
+@end
+
 @interface NSManagedObjectContext (CDManagedObjectContextExtensions)
 
 //Containing strings
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key contains:(NSString *)value;
 
+//Seems not to work
 //Better
 - (BOOL)entityWithNameExists:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key like:(NSString *)value caseInsensitive:(BOOL)flag;
@@ -36,8 +45,6 @@
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 //------
-
-
 
 
 

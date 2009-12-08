@@ -49,6 +49,14 @@
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
 		C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C450242010C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
+		C45419FF10CEA442006A29A4 /* libPMAnalytics-r91.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45419FD10CEA442006A29A4 /* libPMAnalytics-r91.a */; };
+		C4541A0010CEA442006A29A4 /* libPMAnalytics-r91.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45419FD10CEA442006A29A4 /* libPMAnalytics-r91.a */; };
+		C4541A1710CEA4BB006A29A4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */; };
+		C4541A1910CEA4C6006A29A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */; };
+		C4541A1D10CEA4D4006A29A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */; };
+		C4541A3710CEA4F4006A29A4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */; };
+		C4541A3810CEA4F4006A29A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */; };
+		C4541A3910CEA4F4006A29A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */; };
 		C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
@@ -199,6 +207,11 @@
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableViewController.m; sourceTree = "<group>"; };
 		C450241E10C454C3002D5175 /* HRC_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HRC_Icon.png; sourceTree = "<group>"; };
+		C45419FD10CEA442006A29A4 /* libPMAnalytics-r91.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPMAnalytics-r91.a"; sourceTree = "<group>"; };
+		C45419FE10CEA442006A29A4 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewColorIndex.h; sourceTree = "<group>"; };
 		C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewColorIndex.m; sourceTree = "<group>"; };
 		C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -255,7 +268,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -272,12 +285,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4541A0010CEA442006A29A4 /* libPMAnalytics-r91.a in Frameworks */,
 				C46D82E710C92D3800541CF1 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
 				C48BBBF710C57FCE00F996C6 /* MessageUI.framework in Frameworks */,
+				C4541A1710CEA4BB006A29A4 /* libsqlite3.dylib in Frameworks */,
+				C4541A1910CEA4C6006A29A4 /* SystemConfiguration.framework in Frameworks */,
+				C4541A1D10CEA4D4006A29A4 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +312,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4541A3710CEA4F4006A29A4 /* libsqlite3.dylib in Frameworks */,
+				C4541A3810CEA4F4006A29A4 /* CoreLocation.framework in Frameworks */,
+				C4541A3910CEA4F4006A29A4 /* SystemConfiguration.framework in Frameworks */,
+				C45419FF10CEA442006A29A4 /* libPMAnalytics-r91.a in Frameworks */,
 				C48BBBFD10C57FE400F996C6 /* MessageUI.framework in Frameworks */,
 				C4FA1D7210B45DBB0031303E /* Foundation.framework in Frameworks */,
 				C4FA1D7310B45DBB0031303E /* UIKit.framework in Frameworks */,
@@ -311,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 				C4103F7810B71083004CEC15 /* BGImporter.app */,
 			);
 			name = Products;
@@ -354,6 +375,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C45419FD10CEA442006A29A4 /* libPMAnalytics-r91.a */,
+				C45419FE10CEA442006A29A4 /* Beacon.h */,
 				C410405B10B71679004CEC15 /* Cocoa */,
 				C404437E10B0743700BCCFEC /* Cocoa */,
 				C40443DC10B0744700BCCFEC /* Cocoa Touch */,
@@ -374,6 +397,9 @@
 		C40443DC10B0744700BCCFEC /* Cocoa Touch */ = {
 			isa = PBXGroup;
 			children = (
+				C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */,
+				C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */,
+				C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */,
 				C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */,
 				C48BBBF610C57FCE00F996C6 /* MessageUI.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -668,7 +694,7 @@
 			);
 			name = "BuyingGuide FJS";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -906,6 +932,10 @@
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuide;
 			};
 			name = Debug;
@@ -918,6 +948,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuide;
 			};
 			name = Release;
@@ -971,6 +1005,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuide;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
@@ -984,6 +1022,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuide;
 			};
 			name = Beta;
@@ -1072,6 +1114,10 @@
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = "BuyingGuide-FJS-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuideDev;
 			};
 			name = Debug;
@@ -1084,6 +1130,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = BuyingGuide;
 			};
 			name = Release;

@@ -106,7 +106,8 @@
                                                object:nil];
     
     
-    
+
+	[self preloadAllBrandsFetchedResultsController];
 }
 
 -(void)toggleViews:(id)sender{
@@ -129,16 +130,14 @@
     [companyView.view removeFromSuperview];
     
         
-    if(categoryView==nil)
-        self.categoryView = [[[CategoriesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    if(categoryView==nil){
+		self.categoryView = [[[CategoriesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+		categoryView.managedObjectContext = self.context;
+	}
     
-    categoryView.managedObjectContext = self.context;
-    
-    categoryView.view.frame = self.view.bounds;
-    [categoryView.view setSizeHeight:416-44-36];
-    
+	categoryView.view.frame = self.view.bounds;
+	[categoryView.view setSizeHeight:416-44-36];
     [self.view addSubview:categoryView.view];
-    
     [categoryView viewWillAppear:NO];
     
 }
@@ -150,14 +149,13 @@
     [categoryView.view removeFromSuperview];
         
 
-    if(companyView==nil)
-        self.companyView = [[[CompaniesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-    
-    companyView.managedObjectContext = self.context;
-    
-    companyView.view.frame = self.view.bounds;
+    if(companyView==nil){
+		self.companyView = [[[CompaniesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+		companyView.managedObjectContext = self.context;
+	}
+      
+	companyView.view.frame = self.view.bounds;
     [self.view addSubview:companyView.view];
-    
     [companyView viewWillAppear:NO];
     
 }
@@ -256,6 +254,24 @@
     
     
 }
+
+#pragma mark -
+#pragma mark BrandsFetchedResultsController
+
+
+- (void)preloadAllBrandsFetchedResultsController{
+    
+	if(companyView==nil){
+	
+		self.companyView = [[[CompaniesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+		
+		companyView.managedObjectContext = self.context;
+		
+		[companyView fetch];
+		
+	}
+} 
+
 
 
 

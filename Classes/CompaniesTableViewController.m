@@ -16,6 +16,7 @@
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"
 #import "NSString+extensions.h"
+#import "NSManagedObjectContext+Extensions.h"
 
 NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
@@ -56,7 +57,14 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSError *error = nil;
+	if(fetchedResultsController== nil)
+		[self fetch];
+}
+
+
+- (void)fetch{
+	
+	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*
 		 Replace this implementation with code to handle the error appropriately.
@@ -64,8 +72,12 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
 		 */
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+		[managedObjectContext resetCoreDataStore];
+		[managedObjectContext displayCcoreDataError];
+
+
 	}
+	
 }
 
 

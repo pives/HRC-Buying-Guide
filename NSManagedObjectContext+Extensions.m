@@ -10,6 +10,40 @@
 #import "NSArray+FJSCoreDataExtensions.h"
 
 
+@implementation NSManagedObjectContext (BuyingGuide)
+
+- (void)resetCoreDataStore{
+	
+	NSString* db = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
+
+	NSString* appDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	NSString* path = [appDirectory stringByAppendingPathComponent:@"storedata.sqlite"]; 
+	
+	[[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+	[[NSFileManager defaultManager] copyItemAtPath:db 
+											toPath:path
+											 error:nil];
+}
+
+
+- (void)displayCcoreDataError{
+	
+	NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+	NSString* text = [info objectForKey:@"CoreDataCrashMessage"];
+    UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Uh Oh"
+                                                      message:text 
+                                                     delegate:self 
+                                            cancelButtonTitle:@"OK" 
+                                            otherButtonTitles:nil];
+    [message show];
+	
+}
+
+
+
+@end
+
+
 @implementation NSManagedObjectContext (CDManagedObjectContextExtensions)
 
 

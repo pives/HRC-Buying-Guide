@@ -8,7 +8,7 @@
 
 #import "BuyingGuideAppDelegate.h"
 #import "MainViewController.h"
-
+#import "Beacon.h"
 
 @implementation BuyingGuideAppDelegate
 
@@ -27,6 +27,15 @@ static NSString* kAnimationID = @"SplashAnimation";
     // Override point for customization after app launch    
 
     [self loadDataForce:NO];
+	
+	
+	
+	NSString *applicationCode = @"4bbfd488141c84699824c518b281b86e";
+    [Beacon initAndStartBeaconWithApplicationCode:applicationCode
+                                  useCoreLocation:NO
+                                      useOnlyWiFi:NO
+                                  enableDebugMode:NO]; // optional
+	
     
 	MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
 	rootViewController.context = self.managedObjectContext;
@@ -86,29 +95,32 @@ static NSString* kAnimationID = @"SplashAnimation";
 			abort();
         } 
     }
+	[Beacon endBeacon];
+
 }
 
 - (void)loadDataForce:(BOOL)flag{
 
     NSString* db = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
-    
-    NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] error:nil];
+	NSString* path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+    NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
     
     if(flag){
+		
+		[[NSFileManager defaultManager] removeItemAtPath:path error:nil];
         [[NSFileManager defaultManager] copyItemAtPath:db 
-                                                toPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] 
+                                                toPath:path 
                                                  error:nil];
     }else{
         
         if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 200){
-            
+			
+			[[NSFileManager defaultManager] removeItemAtPath:path error:nil];
             [[NSFileManager defaultManager] copyItemAtPath:db 
-                                                    toPath:[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"] 
+                                                    toPath:path 
                                                      error:nil];
             
         }
-        
-        
     } 
 }
 
