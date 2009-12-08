@@ -182,7 +182,7 @@
     
     //NSLog(@"donated");
     
-    NSString* donationText = @"Thank You for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store";
+    NSString* donationText = @"Thank You for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store.";
     
     UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Donate"
                                                       message:donationText 

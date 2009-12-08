@@ -57,6 +57,12 @@
 		C4541A3710CEA4F4006A29A4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */; };
 		C4541A3810CEA4F4006A29A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */; };
 		C4541A3910CEA4F4006A29A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */; };
+		C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */ = {isa = PBXBuildFile; fileRef = C4541B6910CEE1E5006A29A4 /* Links.html */; };
+		C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */ = {isa = PBXBuildFile; fileRef = C4541B6910CEE1E5006A29A4 /* Links.html */; };
+		C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */; };
+		C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */; };
+		C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */; };
+		C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */; };
 		C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */; };
@@ -211,6 +217,10 @@
 		C4541A1610CEA4BB006A29A4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C4541A1810CEA4C6006A29A4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C4541A1C10CEA4D4006A29A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C4541B6910CEE1E5006A29A4 /* Links.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Links.html; sourceTree = "<group>"; };
+		C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyWebView.xib; sourceTree = "<group>"; };
+		C4541B9710CEEBCD006A29A4 /* KeyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyWebViewController.h; sourceTree = "<group>"; };
+		C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyWebViewController.m; sourceTree = "<group>"; };
 		C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewColorIndex.h; sourceTree = "<group>"; };
 		C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewColorIndex.m; sourceTree = "<group>"; };
 		C46D82BB10C92CEF00541CF1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -267,7 +277,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -331,7 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 				C4103F7810B71083004CEC15 /* BGImporter.app */,
 			);
 			name = Products;
@@ -415,6 +425,10 @@
 				C4103F4D10B6FAD8004CEC15 /* KeyViewController.h */,
 				C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */,
 				C4103F5210B6FBBB004CEC15 /* KeyView.xib */,
+				C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */,
+				C4541B9710CEEBCD006A29A4 /* KeyWebViewController.h */,
+				C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */,
+				C4541B6910CEE1E5006A29A4 /* Links.html */,
 			);
 			name = Key;
 			sourceTree = "<group>";
@@ -693,7 +707,7 @@
 			);
 			name = "BuyingGuide FJS";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -751,6 +765,8 @@
 				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874510CC297600541CF1 /* slider.png in Resources */,
 				C46D8A2810CC60E600541CF1 /* emailConfused.txt in Resources */,
+				C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */,
+				C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +810,8 @@
 				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874410CC297600541CF1 /* slider.png in Resources */,
 				C46D8A2710CC60E600541CF1 /* emailConfused.txt in Resources */,
+				C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */,
+				C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,6 +852,7 @@
 				C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
 				C46D883910CC3D2C00541CF1 /* Brand.m in Sources */,
 				C46D884410CC3F2600541CF1 /* Category.m in Sources */,
+				C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +911,7 @@
 				C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
 				C46D883710CC3D2C00541CF1 /* Brand.m in Sources */,
 				C46D884310CC3F2600541CF1 /* Category.m in Sources */,
+				C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,13 +7,14 @@
 //
 
 #import "KeyViewController.h"
+#import "KeyWebViewController.h"
 
 
 @implementation KeyViewController
 
 @synthesize info;
-
-
+@synthesize contentView;
+@synthesize linkView;
 
 
 - (IBAction)dismiss{
@@ -21,6 +22,74 @@
     [self dismissModalViewControllerAnimated:YES];
     
 }
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+	
+	
+	NSString* scheme = [[request URL] scheme];
+	
+	if([scheme isEqualToString:@"about"]){
+		return YES;
+		
+	}else if([scheme isEqualToString:@"mailto"]){
+		
+		if([MFMailComposeViewController canSendMail]){
+			
+			MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+			controller.mailComposeDelegate = self;
+			//[controller setSubject:@"Support LGBT Equality When You Shop"]; //TODO: add subject
+			
+			//NSString* fileName;
+			//NSString* fileExtension = @"txt";
+			//NSString* emailText = nil;
+			
+            //NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+            //NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+            //emailText = [NSString stringWithFormat:fileContenets, nil];
+			
+			//[controller setMessageBody:emailText isHTML:YES];
+			[controller setToRecipients:[NSArray arrayWithObject:@"cei@hrc.org"]];
+			[self presentModalViewController:controller animated:YES];
+			[controller release];
+			
+			
+		}else{
+			
+			UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Cannot send email"
+															  message:@"Email is currently unavailable. Please check your email settings and try again." 
+															 delegate:self 
+													cancelButtonTitle:@"OK" 
+													otherButtonTitles:nil];
+			[message show];
+			
+			
+		}
+		
+		
+		//TODO: load email
+	}else{
+		
+		KeyWebViewController* webController = [[KeyWebViewController alloc] initWithRequest:request];
+		webController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+		[self presentModalViewController:webController animated:YES];
+				
+	}
+	
+	
+	return NO;
+}
+
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	//TODO: Check result?
+    [self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -43,10 +112,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImageView* i = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Information.png"]];
-    [info addSubview:i];
-    info.contentSize = i.frame.size;
-    [i release];
+	
+	NSString* html = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Links" ofType:@"html"]
+											   encoding:NSUTF8StringEncoding 
+												  error:nil];
+ 	
+	[linkView loadHTMLString:html baseURL:nil];
+	
+	[info addSubview:contentView];
+    info.contentSize = contentView.frame.size;
     
 }
 
@@ -73,7 +147,11 @@
 
 
 - (void)dealloc {
-
+	
+	
+	self.contentView = nil;
+	self.linkView = nil;
+	
     self.info = nil;
     [super dealloc];
 
