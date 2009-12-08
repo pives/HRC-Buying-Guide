@@ -110,7 +110,7 @@
     
     //self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
     
-    CGRect myFrame = CGRectMake(298, 66, 16, 300);
+    CGRect myFrame = CGRectMake(295, 66, 16, 300);
     self.index = [[[FJSTableViewImageIndex alloc] initWithFrame:myFrame image:[UIImage imageNamed:@"slider.png"] sections:3] autorelease];
     [index setDelegate:self];
     [self.view addSubview:index];

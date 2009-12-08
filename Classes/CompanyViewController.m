@@ -124,13 +124,13 @@
         NSString* fileExtension = @"txt";
         NSString* emailText;
         
-		
+		/*
 		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
 		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
         NSString* companyID = [self.company.ID stringValue];
         NSString* companyScoreurl = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
-		
+		*/
 		
 		
 		

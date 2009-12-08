@@ -101,24 +101,34 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)loadDataForce:(BOOL)flag{
 
-    NSString* db = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
-	NSString* path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
-    NSDictionary* attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+    NSString* staticDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
+	NSString* appDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+	
+    NSDictionary* oldAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:staticDB error:nil];
+	NSDictionary* newAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:appDB error:nil];
+
     
     if(flag){
 		
-		[[NSFileManager defaultManager] removeItemAtPath:path error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:db 
-                                                toPath:path 
+		[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:staticDB 
+                                                toPath:appDB 
                                                  error:nil];
     }else{
-        
-        if([(NSNumber*)[attributes objectForKey:NSFileSize] longValue] < 200){
+		
+		if(newAttributes == nil){
 			
-			[[NSFileManager defaultManager] removeItemAtPath:path error:nil];
-            [[NSFileManager defaultManager] copyItemAtPath:db 
-                                                    toPath:path 
-                                                     error:nil];
+			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
+													toPath:appDB 
+													 error:nil];
+			
+		}else if(![(NSNumber*)[oldAttributes objectForKey:NSFileSize] isEqualToNumber:(NSNumber*)[newAttributes objectForKey:NSFileSize]] ){
+			
+			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
+													toPath:appDB 
+													 error:nil];
             
         }
     } 
@@ -192,10 +202,8 @@ static NSString* kAnimationID = @"SplashAnimation";
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
          
             
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);       
+		}
     }    
 	
     return persistentStoreCoordinator;
