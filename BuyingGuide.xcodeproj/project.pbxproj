@@ -71,9 +71,6 @@
 		C46D874510CC297600541CF1 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = C46D874310CC297600541CF1 /* slider.png */; };
 		C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
 		C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
-		C46D883710CC3D2C00541CF1 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D883410CC3D2C00541CF1 /* Brand.m */; };
-		C46D883910CC3D2C00541CF1 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D883410CC3D2C00541CF1 /* Brand.m */; };
-		C46D883B10CC3D2C00541CF1 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D883410CC3D2C00541CF1 /* Brand.m */; };
 		C46D884310CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884410CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884510CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
@@ -107,6 +104,9 @@
 		C492D5B110BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
 		C492D86C10BB27FB0041400B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C492D86B10BB27FB0041400B /* Icon.png */; };
 		C492D86D10BB27FB0041400B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C492D86B10BB27FB0041400B /* Icon.png */; };
+		C497021810CF45B2000ED22B /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* Brand.m */; };
+		C497021910CF45B2000ED22B /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* Brand.m */; };
+		C497021A10CF45B2000ED22B /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* Brand.m */; };
 		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
@@ -227,8 +227,6 @@
 		C46D874310CC297600541CF1 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
 		C46D874610CC29A200541CF1 /* FJSTableViewImageIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTableViewImageIndex.h; sourceTree = "<group>"; };
 		C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewImageIndex.m; sourceTree = "<group>"; };
-		C46D883310CC3D2C00541CF1 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
-		C46D883410CC3D2C00541CF1 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		C46D884110CC3F2600541CF1 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		C46D884210CC3F2600541CF1 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		C46D8A2610CC60E600541CF1 /* emailConfused.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emailConfused.txt; sourceTree = "<group>"; };
@@ -247,6 +245,8 @@
 		C492D5AD10BAF4490041400B /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
 		C492D5AE10BAF4490041400B /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLog.m; sourceTree = "<group>"; };
 		C492D86B10BB27FB0041400B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C497021610CF45B2000ED22B /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
+		C497021710CF45B2000ED22B /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesTableViewController.m; sourceTree = "<group>"; };
 		C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
@@ -551,23 +551,23 @@
 		C4C02C4B10B0F413000D46AA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				C497021610CF45B2000ED22B /* Brand.h */,
+				C497021710CF45B2000ED22B /* Brand.m */,
 				C46D884110CC3F2600541CF1 /* Category.h */,
 				C46D884210CC3F2600541CF1 /* Category.m */,
-				C46D883310CC3D2C00541CF1 /* Brand.h */,
-				C46D883410CC3D2C00541CF1 /* Brand.m */,
 				C4FA223010B5C81D0031303E /* Company.h */,
 				C4FA223110B5C81D0031303E /* Company.m */,
-				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
-				C474E43110C7076B00BFFFE8 /* storedata.sqlite */,
-				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
+				C4FA18CA10B308FB0031303E /* Company+Extensions.h */,
+				C4FA18CB10B308FB0031303E /* Company+Extensions.m */,
 				C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */,
 				C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */,
 				C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */,
 				C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */,
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
-				C4FA18CA10B308FB0031303E /* Company+Extensions.h */,
-				C4FA18CB10B308FB0031303E /* Company+Extensions.m */,
+				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
+				C474E43110C7076B00BFFFE8 /* storedata.sqlite */,
+				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -850,9 +850,9 @@
 				C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
 				C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
-				C46D883910CC3D2C00541CF1 /* Brand.m in Sources */,
 				C46D884410CC3F2600541CF1 /* Category.m in Sources */,
 				C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
+				C497021910CF45B2000ED22B /* Brand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,8 +872,8 @@
 				C4103FB010B7125B004CEC15 /* BGImporter_main.m in Sources */,
 				C4103FB310B712CE004CEC15 /* BGImporterCoreDataFunctions.m in Sources */,
 				C492D5B110BAF4490041400B /* DebugLog.m in Sources */,
-				C46D883B10CC3D2C00541CF1 /* Brand.m in Sources */,
 				C46D884510CC3F2600541CF1 /* Category.m in Sources */,
+				C497021810CF45B2000ED22B /* Brand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,9 +909,9 @@
 				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
 				C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
-				C46D883710CC3D2C00541CF1 /* Brand.m in Sources */,
 				C46D884310CC3F2600541CF1 /* Category.m in Sources */,
 				C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
+				C497021A10CF45B2000ED22B /* Brand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

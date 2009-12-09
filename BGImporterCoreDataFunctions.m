@@ -278,8 +278,16 @@ Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany
 
 Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany){
     
-    [someBrands setValue:aCompany forKey:@"company"];
-    [someBrands setValue:aCompany.partner forKey:@"partner"];
+	[someBrands each:^(id eachBrand){
+        
+        [(Brand*)eachBrand addCompaniesObject:aCompany];
+		[(Brand*)eachBrand setRating:aCompany.rating];
+		[(Brand*)eachBrand setRatingLevel:aCompany.ratingLevel];
+		[(Brand*)eachBrand setPartner:aCompany.partner];
+
+
+    }];
+	
     [aCompany addBrands:someBrands];
     
     return aCompany;

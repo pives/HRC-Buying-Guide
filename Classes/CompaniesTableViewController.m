@@ -150,9 +150,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [managedObject.company ratingFormatted];
+    rating.text = [[managedObject.companies anyObject] ratingFormatted];
     
-    int cellColorValue = [[managedObject.company ratingLevel] intValue];
+    int cellColorValue = [[[managedObject.companies anyObject] ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
@@ -182,7 +182,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Company* selectedCompany = (Company*)[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] company];
+    Company* selectedCompany = (Company*)[[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
     
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];

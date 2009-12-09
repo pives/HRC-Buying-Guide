@@ -15,6 +15,7 @@
  which works just the way it says
  */
 
+#if TARGET_OS_IPHONE
 
 @interface NSManagedObjectContext (BuyingGuide)
 
@@ -23,6 +24,8 @@
 
 
 @end
+
+#endif
 
 @interface NSManagedObjectContext (CDManagedObjectContextExtensions)
 

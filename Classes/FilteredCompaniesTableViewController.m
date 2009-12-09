@@ -128,7 +128,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
             
             id data = [fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
             index = i;
-            if([[(Brand*)data company].ratingLevel intValue] >= 1){
+            if([[[[(Brand*)data companies] anyObject] ratingLevel] intValue] >= 1){
                 break;
             }
         }
@@ -247,9 +247,9 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [managedObject.company ratingFormatted];
+    rating.text = [[managedObject.companies anyObject] ratingFormatted];
     
-    int cellColorValue = [[managedObject.company ratingLevel] intValue];
+    int cellColorValue = [[[managedObject.companies anyObject] ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        
@@ -282,7 +282,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    Company* selectedCompany = (Company*)[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] company];
+    Company* selectedCompany = (Company*)[[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
      
 
@@ -378,8 +378,8 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     }else{
         
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
-                                    [[[NSSortDescriptor alloc] initWithKey:@"company.ratingLevel" ascending:YES] autorelease],
-                                    [[[NSSortDescriptor alloc] initWithKey:@"company.rating" ascending:NO] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES] autorelease],
+                                    [[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO] autorelease],
                                     [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
                                     nil];
         
@@ -391,7 +391,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
         // nil for section name key path means "no sections".
         aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                     managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:@"company.ratingLevel"
+                                                                                                      sectionNameKeyPath:@"ratingLevel"
                                                                                                                cacheName:@"CompaniesList"];        
         
         [sortDescriptors release];

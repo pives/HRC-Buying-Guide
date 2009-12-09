@@ -10,6 +10,8 @@
 #import "NSArray+FJSCoreDataExtensions.h"
 
 
+#if TARGET_OS_IPHONE
+
 @implementation NSManagedObjectContext (BuyingGuide)
 
 - (void)resetCoreDataStore{
@@ -43,6 +45,7 @@
 
 @end
 
+#endif
 
 @implementation NSManagedObjectContext (CDManagedObjectContextExtensions)
 

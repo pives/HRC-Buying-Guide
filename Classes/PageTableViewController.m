@@ -234,9 +234,9 @@
 	[fetchRequest setSortDescriptors:sortDescriptors];
     
     if(category==nil)
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"company == %@", self.company]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN companies", self.company]];
     else 
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"company == %@ AND (%@ IN categories)", self.company, self.category]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(%@ IN companies) AND (%@ IN categories)", self.company, self.category]];
     
 	// Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".

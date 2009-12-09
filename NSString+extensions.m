@@ -142,19 +142,19 @@
 
 - (NSString*)stringByRemovingArticlePrefixes{
     
-    if([self length] < 4)
+    if([self length] < 5)
         return self; 
     
     NSString* aString = [self copy];
     
-    if([[aString substringToIndex:4] doesContainString:@"The"]){
+    if([[aString substringToIndex:5] doesContainString:@"The "]){
         
-        aString = [aString substringFromIndex:4];
+        aString = [aString substringFromIndex:5];
         aString = [aString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
-    }else if([[aString substringToIndex:4] doesContainString:@"the"]){
+    }else if([[aString substringToIndex:5] doesContainString:@"the "]){
         
-        aString = [aString substringFromIndex:4];
+        aString = [aString substringFromIndex:5];
         aString = [aString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     }
     
