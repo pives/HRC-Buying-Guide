@@ -9,6 +9,7 @@
 #import "CompanyViewController.h"
 #import "Company.h"
 #import "Company+Extensions.h"
+#import "Brand.h"
 #import "DataSource.h"
 #import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
@@ -28,7 +29,14 @@
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
     if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
-                    
+		
+/*
+		for(Brand* eachBrand in aCompany.brands){
+			
+			NSLog(@"%@", eachBrand.nameSortFormatted);
+			
+		}
+*/		
         self.data = [[[DataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
         /*
         NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
@@ -161,7 +169,8 @@
             fileName = @"EmailIndifferent";
             NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
             NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-            emailText = [NSString stringWithFormat:fileContenets, company.name, 
+            emailText = [NSString stringWithFormat:fileContenets, 
+						 company.name, 
                         [company.rating stringValue],
                          company.name,
 						 appStoreLink,
@@ -177,7 +186,8 @@
                 fileName = @"EmailSad";
                 NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
                 NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-                emailText = [NSString stringWithFormat:fileContenets, company.name, 
+                emailText = [NSString stringWithFormat:fileContenets, 
+							 company.name, 
                              [company.rating stringValue],
                              company.name,
 							 appStoreLink,
@@ -190,7 +200,7 @@
                 NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
                 emailText = [NSString stringWithFormat:fileContenets, 
                              company.name,
-                             company.name,
+							 company.name,
 							 appStoreLink,
                              nil
                              ];

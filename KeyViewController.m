@@ -38,7 +38,7 @@
 			
 			MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
 			controller.mailComposeDelegate = self;
-			//[controller setSubject:@"Support LGBT Equality When You Shop"]; //TODO: add subject
+			[controller setSubject:@"Feedback - Buying for Equality iPhone Application"];
 			
 			//NSString* fileName;
 			//NSString* fileExtension = @"txt";

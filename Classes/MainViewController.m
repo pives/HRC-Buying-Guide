@@ -193,7 +193,7 @@
     
     //NSLog(@"donated");
     
-    NSString* donationText = @"Thank You for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store.";
+    NSString* donationText = @"Thank you for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store.";
     
     UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Donate"
                                                       message:donationText 
@@ -259,7 +259,7 @@
                                                                                         category:nil]; 
     
     detailViewController.view.frame = self.view.bounds;
-    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     

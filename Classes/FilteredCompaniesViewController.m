@@ -230,7 +230,7 @@
                                                                                         category:(Category*)tableController.filterObject]; 
     
     detailViewController.view.frame = self.view.bounds;
-    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];

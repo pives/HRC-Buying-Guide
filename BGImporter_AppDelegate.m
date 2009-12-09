@@ -71,9 +71,6 @@
         NSLog(@"%@", ofInterest.name);
     }
     
-     
-    
-    
 }
 
 - (void)removeOldDatabase{

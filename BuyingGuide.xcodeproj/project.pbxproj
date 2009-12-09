@@ -74,9 +74,9 @@
 		C46D884310CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884410CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
 		C46D884510CC3F2600541CF1 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* Category.m */; };
-		C46D8A2710CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
-		C46D8A2810CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
-		C46D8A2910CC60E600541CF1 /* emailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* emailConfused.txt */; };
+		C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
+		C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
+		C46D8A2910CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
@@ -231,7 +231,7 @@
 		C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTableViewImageIndex.m; sourceTree = "<group>"; };
 		C46D884110CC3F2600541CF1 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		C46D884210CC3F2600541CF1 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		C46D8A2610CC60E600541CF1 /* emailConfused.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emailConfused.txt; sourceTree = "<group>"; };
+		C46D8A2610CC60E600541CF1 /* EmailConfused.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailConfused.txt; sourceTree = "<group>"; };
 		C474E43110C7076B00BFFFE8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4864DB010BC38200064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
 		C4864DFA10BC3BDA0064A126 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
@@ -511,7 +511,7 @@
 				C4F31CE110C42089004DF94F /* EmailHappy.txt */,
 				C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */,
 				C48BBBDF10C5792900F996C6 /* EmailSad.txt */,
-				C46D8A2610CC60E600541CF1 /* emailConfused.txt */,
+				C46D8A2610CC60E600541CF1 /* EmailConfused.txt */,
 			);
 			name = "Email text";
 			sourceTree = "<group>";
@@ -770,7 +770,7 @@
 				C41288E410C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874510CC297600541CF1 /* slider.png in Resources */,
-				C46D8A2810CC60E600541CF1 /* emailConfused.txt in Resources */,
+				C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */,
 				C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */,
 				C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 			);
@@ -784,7 +784,7 @@
 				C4103FBE10B71532004CEC15 /* InfoPlist.strings in Resources */,
 				C4103FBF10B71532004CEC15 /* MainMenu.xib in Resources */,
 				C474E43410C7076B00BFFFE8 /* storedata.sqlite in Resources */,
-				C46D8A2910CC60E600541CF1 /* emailConfused.txt in Resources */,
+				C46D8A2910CC60E600541CF1 /* EmailConfused.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,7 +815,7 @@
 				C41288E110C82792007BB9A8 /* yellow.png in Resources */,
 				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874410CC297600541CF1 /* slider.png in Resources */,
-				C46D8A2710CC60E600541CF1 /* emailConfused.txt in Resources */,
+				C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */,
 				C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */,
 				C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 			);
@@ -970,6 +970,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
@@ -979,6 +980,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = BuyingGuide;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "689C22D1-AE77-4DB4-95B3-191A6920F996";
 			};
 			name = Release;
 		};
