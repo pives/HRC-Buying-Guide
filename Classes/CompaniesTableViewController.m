@@ -17,6 +17,7 @@
 #import "UIView-Extensions.h"
 #import "NSString+extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
+#import "Brand+Extensions.h"
 
 NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
@@ -150,9 +151,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [[managedObject.companies anyObject] ratingFormatted];
+    rating.text = [managedObject ratingFormatted];
     
-    int cellColorValue = [[[managedObject.companies anyObject] ratingLevel] intValue];
+    int cellColorValue = [[managedObject ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        

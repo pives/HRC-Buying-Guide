@@ -75,8 +75,26 @@
     [spinner stopAnimating];
     
 }
-                        
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+	
+	[spinner stopAnimating];
+	
+	UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"No Internet Connection"
+													  message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again." 
+													 delegate:self 
+											cancelButtonTitle:@"OK" 
+											otherButtonTitles:nil];
+	[message show];
+	
+	
+}
+                        
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+	
+	[self done];
+	
+}
 - (IBAction)done{
     
     [self dismissModalViewControllerAnimated:YES];

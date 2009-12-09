@@ -4,5 +4,5 @@
 </p>
 <p>For information on other companies and their scores, check out the Human Rights Campaign’s <a href="http://www.hrc.org/buyersguide">Buying for Equality 2010</a>.
 </p>
-<p>Click HERE to download the Buying for Equality 2010 iPhone app.
+<p>Click <a href="%@">HERE</a> to download the Buying for Equality 2010 iPhone app.
 </p>

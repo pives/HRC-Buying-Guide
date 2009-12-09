@@ -124,6 +124,11 @@
         NSString* fileExtension = @"txt";
         NSString* emailText;
         
+		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+		NSString* rawLink = [info objectForKey:@"AppStoreURL"];
+		//NSString* appStoreID = [info objectForKey:@"AppStoreIDCompounds"];
+		NSString* appStoreID = [info objectForKey:@"AppStoreID"];
+		NSString* appStoreLink = [NSString stringWithFormat:rawLink, appStoreID];
 		/*
 		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
@@ -145,6 +150,7 @@
                          [company.rating stringValue],
                          company.name,
                          company.name,
+						 appStoreLink,
                          nil
                          ];
             
@@ -158,6 +164,7 @@
             emailText = [NSString stringWithFormat:fileContenets, company.name, 
                         [company.rating stringValue],
                          company.name,
+						 appStoreLink,
                          nil
                          ];
             
@@ -166,13 +173,14 @@
             
             //BAD
 
-            if(company.rating >= 0){
+            if([company.rating intValue] >= 0){
                 fileName = @"EmailSad";
                 NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
                 NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
                 emailText = [NSString stringWithFormat:fileContenets, company.name, 
                              [company.rating stringValue],
                              company.name,
+							 appStoreLink,
                              nil
                              ];
                 
@@ -183,6 +191,7 @@
                 emailText = [NSString stringWithFormat:fileContenets, 
                              company.name,
                              company.name,
+							 appStoreLink,
                              nil
                              ];
                 

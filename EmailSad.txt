@@ -1,8 +1,8 @@
 <p>I wanted to let you know that %@ scores a %@ on the HRC Corporate Equality Index.  
 </p>
-<p>%@ has more work to do in furthering an inclusive workplace for the LGBT community. If possible, please choose to support a more fair-minded company when you shop.
+<p>%@ has more work to do in furthering an inclusive workplace for the LGBT community. If possible, please choose to support a more fair-minded company.
 </p>
 <p>For information on other companies and their scores, check out the Human Rights Campaign’s <a href="http://www.hrc.org/buyersguide">Buying for Equality 2010</a>.
 </p>
-<p>Click HERE to download the Buying for Equality 2010 iPhone app.
+<p>Click <a href="%@">HERE</a> to download the Buying for Equality 2010 iPhone app.
 </p>

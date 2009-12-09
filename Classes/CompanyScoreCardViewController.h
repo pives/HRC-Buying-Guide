@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Company;
 
-@interface CompanyScoreCardViewController : UIViewController <UIWebViewDelegate>{
+@interface CompanyScoreCardViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>{
 
     UIToolbar* bar;
     UIActivityIndicatorView* spinner;

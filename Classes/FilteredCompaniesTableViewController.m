@@ -14,6 +14,7 @@
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
+#import "Brand+Extensions.h"
 
 NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompany";
 
@@ -128,7 +129,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
             
             id data = [fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
             index = i;
-            if([[[[(Brand*)data companies] anyObject] ratingLevel] intValue] >= 1){
+            if([[(Brand*)data ratingLevel] intValue] >= 1){
                 break;
             }
         }
@@ -247,9 +248,9 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
-    rating.text = [[managedObject.companies anyObject] ratingFormatted];
+    rating.text = [managedObject  ratingFormatted];
     
-    int cellColorValue = [[[managedObject.companies anyObject] ratingLevel] intValue];
+    int cellColorValue = [[managedObject ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];
     
     cell.backgroundView.backgroundColor = cellColor;        

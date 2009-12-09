@@ -80,7 +80,18 @@
                                                                      target:self 
                                                                      action:@selector(ShowDonationMessage)];
     
-    self.title = @"Buying Guide";
+    //self.title = @"Buying For Equality";
+	
+	UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
+    tv.text = @"Buying For Equality";
+    tv.textAlignment = UITextAlignmentCenter;
+    tv.adjustsFontSizeToFitWidth = YES;
+    tv.backgroundColor = [UIColor clearColor];
+    tv.textColor = [UIColor whiteColor];
+    tv.font = [UIFont boldSystemFontOfSize:19];
+    tv.shadowColor = [UIColor darkGrayColor];
+    self.navigationItem.titleView = tv;
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated{

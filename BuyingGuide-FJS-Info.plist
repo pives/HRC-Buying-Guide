@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Buy4Equality</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -28,11 +28,17 @@
 	<string>MainWindow</string>
 	<key>DonationURL</key>
 	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
-	<key>iTunesAppURL</key>
-	<string>someURL</string>
 	<key>ScoreCardURLSuffix</key>
 	<string>&amp;search_id=1&amp;search_type=Quick</string>
 	<key>ScoreCardURLPrefix</key>
 	<string>http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=</string>
+	<key>AppStoreID</key>
+	<string>345546590</string>
+	<key>AppStoreIDCompounds</key>
+	<string>336805670</string>
+	<key>CoreDataCrashMessage</key>
+	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
+	<key>AppStoreURL</key>
+	<string>http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&amp;mt=8&amp;uo=6</string>
 </dict>
 </plist>

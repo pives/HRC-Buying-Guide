@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Company;
 
-@interface KeyWebViewController : UIViewController <UIWebViewDelegate>{
+@interface KeyWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>{
 
     UIToolbar* bar;
     UIActivityIndicatorView* spinner;

@@ -26,8 +26,6 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>iTunesAppURL</key>
-	<string>someURL</string>
 	<key>DonationURL</key>
 	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
 	<key>ScoreCardURLPrefix</key>
@@ -35,8 +33,12 @@
 	<key>ScoreCardURLSuffix</key>
 	<string>&amp;search_id=1&amp;search_type=Quick</string>
 	<key>AppStoreID</key>
-	<string></string>
+	<string>345546590</string>
+	<key>AppStoreIDCompounds</key>
+	<string>336805670</string>
 	<key>CoreDataCrashMessage</key>
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
+	<key>AppStoreURL</key>
+	<string>http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&amp;mt=8&amp;uo=6</string>
 </dict>
 </plist>
