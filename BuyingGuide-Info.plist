@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -33,7 +33,7 @@
 	<key>ScoreCardURLSuffix</key>
 	<string>&amp;search_id=1&amp;search_type=Quick</string>
 	<key>AppStoreID</key>
-	<string>345546590</string>
+	<string>345618414</string>
 	<key>AppStoreIDCompounds</key>
 	<string>336805670</string>
 	<key>CoreDataCrashMessage</key>
