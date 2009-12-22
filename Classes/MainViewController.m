@@ -22,7 +22,7 @@
 
 @synthesize categoryView;
 @synthesize modeSwitch;
-@synthesize context;
+@synthesize managedObjectContext;
 @synthesize companyView;
 
 
@@ -143,10 +143,12 @@
         
     if(categoryView==nil){
 		self.categoryView = [[[CategoriesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-		categoryView.managedObjectContext = self.context;
+		categoryView.managedObjectContext = self.managedObjectContext;
 	}
     
 	categoryView.view.frame = self.view.bounds;
+	//[categoryView.view setOriginY:44];
+	//[categoryView.view setSizeHeight:416-44-36-44];
 	[categoryView.view setSizeHeight:416-44-36];
     [self.view addSubview:categoryView.view];
     [categoryView viewWillAppear:NO];
@@ -161,12 +163,14 @@
         
 
     if(companyView==nil){
-		self.companyView = [[[CompaniesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-		companyView.managedObjectContext = self.context;
+		self.companyView = [[[CompaniesTableViewController alloc] init] autorelease];
+		companyView.managedObjectContext = self.managedObjectContext;
 	}
       
 	companyView.view.frame = self.view.bounds;
-    [self.view addSubview:companyView.view];
+    //[companyView.view setOriginY:44];
+	//[companyView.view setSizeHeight:416-44-36-44];
+	[self.view addSubview:companyView.view];	
     [companyView viewWillAppear:NO];
     
 }
@@ -240,7 +244,7 @@
     
     // Navigation logic may go here -- for example, create and push another view controller.
     Category* selectedCat = (Category*)[note object];
-    FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.context 
+    FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.managedObjectContext 
                                                                                                                            key:@"categories" 
                                                                                                                          value:selectedCat];
     detailViewController.view.frame = self.view.bounds;
@@ -274,12 +278,9 @@
     
 	if(companyView==nil){
 	
-		self.companyView = [[[CompaniesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-		
-		companyView.managedObjectContext = self.context;
-		
+		self.companyView =[[[CompaniesTableViewController alloc] init] autorelease];
+		companyView.managedObjectContext = self.managedObjectContext;
 		[companyView fetch];
-		
 	}
 } 
 

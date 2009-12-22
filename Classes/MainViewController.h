@@ -16,13 +16,13 @@
     CompaniesTableViewController* companyView;
     UISegmentedControl* modeSwitch;
     
-    NSManagedObjectContext* context;
+    NSManagedObjectContext* managedObjectContext;
         
 }
 @property(nonatomic,retain)CategoriesTableViewController *categoryView;
 @property(nonatomic,retain)CompaniesTableViewController *companyView;
 @property(nonatomic,assign)IBOutlet UISegmentedControl *modeSwitch;
-@property(nonatomic,retain)NSManagedObjectContext *context;
+@property(nonatomic,retain)NSManagedObjectContext *managedObjectContext;
 
 
 - (void)toggleViews:(id)sender;

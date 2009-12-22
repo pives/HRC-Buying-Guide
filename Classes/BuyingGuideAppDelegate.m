@@ -9,6 +9,7 @@
 #import "BuyingGuideAppDelegate.h"
 #import "MainViewController.h"
 #import "Beacon.h"
+#import "RootViewController.h"
 
 @implementation BuyingGuideAppDelegate
 
@@ -19,7 +20,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize splashView;
 
 
-#pragma mark -
+#pragma mark -e
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -37,9 +38,10 @@ static NSString* kAnimationID = @"SplashAnimation";
                                   enableDebugMode:NO]; // optional
 	
     
-	MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
-	rootViewController.context = self.managedObjectContext;
+	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
 	
+		
 	[window addSubview:[navigationController view]];
     [self addSplashScreen];
     [window makeKeyAndVisible];

@@ -116,6 +116,20 @@
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
+		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
+		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
+		C4EFE68B10DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
+		C4EFE68C10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
+		C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
+		C4EFE69710E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
+		C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */; };
+		C4EFE6AC10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */; };
+		C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */; };
+		C4EFE6B010E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */; };
+		C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
+		C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
+		C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
+		C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
 		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31CE210C42089004DF94F /* EmailHappy.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* EmailHappy.txt */; };
@@ -265,6 +279,18 @@
 		C4C031D710B1EB9B000D46AA /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
+		C4EFE68610DFF61F005180AC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		C4EFE68710DFF61F005180AC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C4EFE68810DFF61F005180AC /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		C4EFE69410E08749005180AC /* HRCSearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCSearchResultsController.h; sourceTree = "<group>"; };
+		C4EFE69510E08749005180AC /* HRCSearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCSearchResultsController.m; sourceTree = "<group>"; };
+		C4EFE6A910E08BCC005180AC /* HRCCompaniesResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCCompaniesResultsController.h; sourceTree = "<group>"; };
+		C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCCompaniesResultsController.m; sourceTree = "<group>"; };
+		C4EFE6AD10E08BDF005180AC /* HRCCategoriesResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCCategoriesResultsController.h; sourceTree = "<group>"; };
+		C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCCategoriesResultsController.m; sourceTree = "<group>"; };
+		C4EFE74510E09878005180AC /* NSObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectHelper.h; sourceTree = "<group>"; };
+		C4EFE74610E09878005180AC /* NSObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectHelper.m; sourceTree = "<group>"; };
+		C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompaniesTableViewController.xib; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
 		C4F31CE110C42089004DF94F /* EmailHappy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailHappy.txt; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
@@ -281,7 +307,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -345,7 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 				C4103F7810B71083004CEC15 /* BGImporter.app */,
 			);
 			name = Products;
@@ -354,9 +380,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				C4AFF95710B2344200801655 /* Main VIew */,
-				C4AFF95510B233F000801655 /* Categories List View */,
-				C4340AE510B23D620049791D /* Companies List View */,
+				C4EFE88010E0AA44005180AC /* Main View */,
+				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
 				C412894B10C83107007BB9A8 /* Filtered List View */,
 				C4FA187A10B2F4D30031303E /* Company */,
 				C4F31C6A10C416C9004DF94F /* Score Card */,
@@ -489,6 +514,7 @@
 			children = (
 				C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */,
 				C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */,
+				C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */,
 			);
 			name = "Companies List View";
 			path = Classes;
@@ -581,6 +607,8 @@
 		C4C031DE10B1EBAA000D46AA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C4EFE74510E09878005180AC /* NSObjectHelper.h */,
+				C4EFE74610E09878005180AC /* NSObjectHelper.m */,
 				C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */,
 				C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */,
 				C4FA200810B4BA570031303E /* UIColor+extensions.h */,
@@ -593,6 +621,57 @@
 				C4C031D710B1EB9B000D46AA /* NSString+extensions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		C4EFE68D10DFF628005180AC /* Main View (Seperated) */ = {
+			isa = PBXGroup;
+			children = (
+				C4EFE68610DFF61F005180AC /* RootViewController.h */,
+				C4EFE68710DFF61F005180AC /* RootViewController.m */,
+				C4EFE68810DFF61F005180AC /* RootViewController.xib */,
+				C4EFE6B210E08BF4005180AC /* Companies */,
+				C4EFE6B510E08C15005180AC /* Categories */,
+				C4EFE6B110E08BEA005180AC /* Search */,
+			);
+			name = "Main View (Seperated)";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C4EFE6B110E08BEA005180AC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C4EFE69410E08749005180AC /* HRCSearchResultsController.h */,
+				C4EFE69510E08749005180AC /* HRCSearchResultsController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		C4EFE6B210E08BF4005180AC /* Companies */ = {
+			isa = PBXGroup;
+			children = (
+				C4EFE6A910E08BCC005180AC /* HRCCompaniesResultsController.h */,
+				C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */,
+			);
+			name = Companies;
+			sourceTree = "<group>";
+		};
+		C4EFE6B510E08C15005180AC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C4EFE6AD10E08BDF005180AC /* HRCCategoriesResultsController.h */,
+				C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		C4EFE88010E0AA44005180AC /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				C4AFF95710B2344200801655 /* Main VIew */,
+				C4AFF95510B233F000801655 /* Categories List View */,
+				C4340AE510B23D620049791D /* Companies List View */,
+			);
+			name = "Main View";
 			sourceTree = "<group>";
 		};
 		C4F31C6A10C416C9004DF94F /* Score Card */ = {
@@ -699,9 +778,9 @@
 			productReference = C4103F7810B71083004CEC15 /* BGImporter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */ = {
+		C4FA1D5410B45DBB0031303E /* BuyingGuide Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide FJS" */;
+			buildConfigurationList = C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide Dev" */;
 			buildPhases = (
 				C4FA1D5510B45DBB0031303E /* Resources */,
 				C4FA1D5B10B45DBB0031303E /* Sources */,
@@ -711,9 +790,9 @@
 			);
 			dependencies = (
 			);
-			name = "BuyingGuide FJS";
+			name = "BuyingGuide Dev";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -736,7 +815,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* BuyingGuide */,
-				C4FA1D5410B45DBB0031303E /* BuyingGuide FJS */,
+				C4FA1D5410B45DBB0031303E /* BuyingGuide Dev */,
 				C4103F7710B71083004CEC15 /* BGImporter */,
 			);
 		};
@@ -773,6 +852,8 @@
 				C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */,
 				C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */,
 				C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
+				C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */,
+				C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +899,8 @@
 				C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */,
 				C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */,
 				C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
+				C4EFE68C10DFF61F005180AC /* RootViewController.xib in Resources */,
+				C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +943,11 @@
 				C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
 				C497021910CF45B2000ED22B /* Brand.m in Sources */,
 				C497025D10CF4A86000ED22B /* Brand+Extensions.m in Sources */,
+				C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */,
+				C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */,
+				C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
+				C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
+				C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +1008,11 @@
 				C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
 				C497021A10CF45B2000ED22B /* Brand.m in Sources */,
 				C497025C10CF4A86000ED22B /* Brand+Extensions.m in Sources */,
+				C4EFE68B10DFF61F005180AC /* RootViewController.m in Sources */,
+				C4EFE69710E08749005180AC /* HRCSearchResultsController.m in Sources */,
+				C4EFE6AC10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
+				C4EFE6B010E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
+				C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,7 +1292,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide FJS" */ = {
+		C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4FA1D7710B45DBB0031303E /* Debug */,

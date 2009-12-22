@@ -25,12 +25,16 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 @synthesize fetchedResultsController, managedObjectContext;
 @synthesize cellColors;
+@synthesize searching;
+@synthesize searchResultsController;
+
 
 #pragma mark -
 #pragma mark Memory management
 
 
 - (void)dealloc {
+	self.searchResultsController = nil;
     self.cellColors = nil;    
 	[fetchedResultsController release];
 	[managedObjectContext release];
@@ -43,13 +47,33 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	// Relinquish ownership of any cached data, images, etc that aren't in use.
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+	
+	return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	
+}
+
+- (id) init
+{
+	self = [super initWithNibName:@"CompaniesTableViewController" bundle:nil];
+	if (self != nil) {
+		self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
+	}
+	return self;
+}
+
+- (void)loadView{
+	
+	
+	[super loadView];
+	
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
-    
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -58,6 +82,12 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+	//elf.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+	//self.tableView.tableHeaderView.backgroundColor = [UIColor blueColor];
+//	self.searchBar = [[UISearchBar alloc] init];
+	//self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
+	//self.tableView.tableHeaderView.frame = CGRectMake(0, 0, 320, 44);
+
 	if(fetchedResultsController== nil)
 		[self fetch];
 }
@@ -88,13 +118,14 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSUInteger count = [[fetchedResultsController sections] count];
+	
+    NSUInteger count = [[self.fetchedResultsController sections] count];
     return (count == 0) ? 1 : count;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
@@ -146,7 +177,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     }
     
 	// Configure the cell.
-	Brand* managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
+	Brand* managedObject = (Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
@@ -175,24 +206,13 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-       
-}
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Company* selectedCompany = (Company*)[[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
+    Company* selectedCompany = (Company*)[[(Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
     
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
-    
-}
-
-- (void)deselectIndexPath:(NSIndexPath*)indexPath{
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
@@ -211,7 +231,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
         
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
     
-    return [fetchedResultsController sectionIndexTitles];
+    return [self.fetchedResultsController sectionIndexTitles];
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -219,7 +239,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
         return 0;
             
     // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
 
 
@@ -229,6 +249,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
+	if(searching)
+		return searchResultsController;
+	
     if (fetchedResultsController != nil) {
         return fetchedResultsController;
     }
@@ -270,6 +293,138 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	return fetchedResultsController;
 } 
 
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)aTableView{
+	
+	NSLog(@"did load tv");
+
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)aTableView{
+	
+	NSLog(@"will show tv");
+	
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)aTableView{
+	
+	NSLog(@"did show tv");
+	
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)aTableView{
+	
+	
+
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)aTableView{
+	
+}
+
+
+
+
+- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
+	
+	NSLog(@"will begin search");
+
+	self.searching = YES;
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller{
+	
+	NSLog(@"did begin search");
+
+}
+
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+	/*
+	 Set up the fetched results controller.
+     */
+	// Create the fetch request for the entity.
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	// Edit the entity name as appropriate.
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	[fetchRequest setEntity:entity];
+	
+	// Set the batch size to a suitable number.
+	[fetchRequest setFetchBatchSize:20];
+	
+	// Edit the sort key as appropriate.
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+	
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, sortDescriptor2, nil];
+	
+	[fetchRequest setSortDescriptors:sortDescriptors];
+	
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameSortFormatted contains[c] %@", searchString];
+	[fetchRequest setPredicate:predicate];
+	
+	// Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                                managedObjectContext:managedObjectContext 
+                                                                                                  sectionNameKeyPath:nil 
+                                                                                                           cacheName:@"SearchCompaniesList"];
+	self.searchResultsController = aFetchedResultsController;
+	
+	[aFetchedResultsController release];
+	[fetchRequest release];
+	[sortDescriptor release];
+    [sortDescriptor2 release];
+	[sortDescriptors release];
+	
+	[self fetch];
+	// Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
+	
+	
+}
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
+	
+	self.searching = NO;
+}
+
+
+
+
+#pragma mark -
+#pragma mark UISearchBar Delegate Methods
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)aSearchBar{
+		
+
+	
+}
+
+- (BOOL)earchBarShouldBeginEditing:(UISearchBar *)searchBar{
+	
+	NSLog(@"will begin editing");
+	
+	return YES;
+	
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+	
+	NSLog(@"Began editing");
+	
+}
 
 @end
 
