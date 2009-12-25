@@ -80,11 +80,11 @@
 	
 	[spinner stopAnimating];
 	
-	UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"No Internet Connection"
+	UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"No Internet Connection"
 													  message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again." 
 													 delegate:self 
 											cancelButtonTitle:@"OK" 
-											otherButtonTitles:nil];
+											otherButtonTitles:nil] autorelease];
 	[message show];
 	
 	

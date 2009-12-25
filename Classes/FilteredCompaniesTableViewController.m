@@ -17,23 +17,36 @@
 #import "Brand+Extensions.h"
 
 NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompany";
+NSString *const FilteredCompanySearchBegan = @"FilteredSearchBegan";
+NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
 @implementation FilteredCompaniesTableViewController
 
-@synthesize fetchedResultsController, managedObjectContext;
+@synthesize managedObjectContext;
 @synthesize filterKey;
 @synthesize filterObject;
 @synthesize cellColors;
 @synthesize mode;
+@synthesize searchResultsController;
+@synthesize searching;
+@synthesize ratingFetchedResultsController;
+@synthesize nameFetchedResultsController;
+
+
+
+
+
 
 #pragma mark -
 #pragma mark Memory management
 
 - (void)dealloc {
+	self.ratingFetchedResultsController = nil;
+	self.nameFetchedResultsController = nil;	
+	self.searchResultsController = nil;
     self.cellColors = nil;    
     self.filterKey = nil;
     self.filterObject = nil;
-	[fetchedResultsController release];
 	[managedObjectContext release];
     [super dealloc];
 }
@@ -46,7 +59,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
     
-    if(self = [super initWithStyle:UITableViewStylePlain]){
+    if(self = [super initWithNibName:@"CompaniesTableViewController" bundle:nil]){
         
         self.managedObjectContext = context;
         self.filterKey = key;
@@ -82,21 +95,23 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     
     NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 */
+
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		[managedObjectContext resetCoreDataStore];
 		[managedObjectContext displayCcoreDataError];
 
 	}
-    [self.tableView reloadData];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    //TODO: catch exception in case table is empty (but should never be)
-    
-    
+}
+
+- (void)reload{
+	
+	[self.tableView reloadData];
+	
+	if([[self.fetchedResultsController sections] count]>0)
+		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+
+	    //TODO: catch exception in case table is empty (but should never be)
+	
 }
 
 
@@ -127,7 +142,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     if(index == -1){
         for(int i = 0; i < (sections); i++){
             
-            id data = [fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
+            id data = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
             index = i;
             if([[(Brand*)data ratingLevel] intValue] >= 1){
                 break;
@@ -150,22 +165,32 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSUInteger count = [[fetchedResultsController sections] count];
+    NSUInteger count = [[self.fetchedResultsController sections] count];
     return (count == 0) ? 1 : count;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+	
+	if([[self.fetchedResultsController sections] count]==0)
+		return 0;
+	
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
+	if(searching)
+		return nil;
+	
     if(mode == FilterdTableViewControllerModeRating){
-        
-        id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+		
+		if([[self.fetchedResultsController sections] count]==0)
+			return nil;
+		
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
         
         UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         UILabel* header = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 310, 60)];
@@ -198,11 +223,11 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if(mode == FilterdTableViewControllerModeRating){
-        
+	if(searching)
+		return 0;
+	
+    if(mode == FilterdTableViewControllerModeRating)
         return 60;
-        
-    }
     
     return 0;
 }
@@ -243,7 +268,7 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
     }
     
 	// Configure the cell.
-	Brand *managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
+	Brand *managedObject = (Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
@@ -283,17 +308,10 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    Company* selectedCompany = (Company*)[[(Brand*)[fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
+    Company* selectedCompany = (Company*)[[(Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
      
 
-}
-
-
-- (void)deselectIndexPath:(NSIndexPath*)indexPath{
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 
@@ -301,25 +319,25 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 #pragma mark sectionIndexTitlesForTableView
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)table {
-    if(fetchedResultsController==nil)
+    if(self.fetchedResultsController==nil)
         return nil;
     if(mode == FilterdTableViewControllerModeRating)
         return nil;
     
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
     
-    return [fetchedResultsController sectionIndexTitles];
+    return [self.fetchedResultsController sectionIndexTitles];
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if(fetchedResultsController==nil)
+    if(self.fetchedResultsController==nil)
         return 0;
     if(mode == FilterdTableViewControllerModeRating)
         return 0;
 
     
     // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
 }
 
 
@@ -332,17 +350,144 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 
 - (NSFetchedResultsController *)fetchedResultsController {
     
-    //ususlly returns the last configure controller, instead we are creating a new one each time so that the segmented control works
-    //this may be expensive, but we will see
-    /*
-    if (lastMode == mode) {
-        return fetchedResultsController;
+	if(searching)
+		return searchResultsController;
+	
+	
+	
+	if(mode == FilterdTableViewControllerModeAlphabetically){
+
+		if(nameFetchedResultsController==nil){
+			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+			// Edit the entity name as appropriate.
+			
+			NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+			[fetchRequest setEntity:entity];
+			
+			// Set the batch size to a suitable number.
+			[fetchRequest setFetchBatchSize:20];
+			
+			NSFetchedResultsController *aFetchedResultsController;
+			
+			
+			// Edit the sort key as appropriate.
+			NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:
+										[[[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+										[[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+										nil];
+			
+			[fetchRequest setSortDescriptors:sortDescriptors];
+			
+			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+			
+			// Edit the section name key path and cache name if appropriate.
+			// nil for section name key path means "no sections".
+			aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																			managedObjectContext:managedObjectContext 
+																			  sectionNameKeyPath:@"namefirstLetter" 
+																					   cacheName:@"CompaniesList"];
+			
+			[sortDescriptors release];
+			[fetchRequest release];
+			
+			
+			self.nameFetchedResultsController = aFetchedResultsController;
+			[aFetchedResultsController release];
+			
+		}
+		
+		return nameFetchedResultsController;
+		
+    }else{
+        
+		if(ratingFetchedResultsController == nil){
+			
+			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+			// Edit the entity name as appropriate.
+			
+			NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+			[fetchRequest setEntity:entity];
+			
+			// Set the batch size to a suitable number.
+			//[fetchRequest setFetchBatchSize:20];
+			//TODO: reenable batchsize?
+			
+			NSFetchedResultsController *aFetchedResultsController;
+			
+			NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
+										[[[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES] autorelease],
+										[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO] autorelease],
+										[[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+										nil];
+			
+			[fetchRequest setSortDescriptors:sortDescriptors];
+			
+			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+			
+			// Edit the section name key path and cache name if appropriate.
+			// nil for section name key path means "no sections".
+			aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																			managedObjectContext:managedObjectContext 
+																			  sectionNameKeyPath:@"ratingLevel"
+																					   cacheName:@"CompaniesList"];        
+			
+			[sortDescriptors release];
+			[fetchRequest release];
+			
+			self.ratingFetchedResultsController = aFetchedResultsController;
+			[aFetchedResultsController release];
+			
+		}
+		
+		return ratingFetchedResultsController;
     }
-    */
-    
-    /*
-	 Set up the fetched results controller.
-     */
+    		
+	
+	
+	return nil;
+} 
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
+		
+	self.searching = YES;
+	[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+	[[NSNotificationCenter defaultCenter] postNotificationName:FilteredCompanySearchBegan object:self];
+
+}
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
+	
+	self.searching = NO;
+	[[NSNotificationCenter defaultCenter] postNotificationName:FilteredCompanySearchEnded object:self];
+	[self.tableView reloadData];
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+	
+	if(mode == FilterdTableViewControllerModeAlphabetically){
+		
+		self.searchResultsController = [self alphabeticalSearchResultsControllerForString:searchString];
+		
+	}else{
+		
+		self.searchResultsController = [self ratingSearchResultsControllerForString:searchString];
+
+	}
+	
+	
+	[self fetch];
+	// Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (NSFetchedResultsController*)alphabeticalSearchResultsControllerForString:(NSString*)searchString{
+	
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
@@ -350,62 +495,88 @@ NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompan
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
-	//[fetchRequest setFetchBatchSize:20];
-    //TODO: reenable batchsize?
+	[fetchRequest setFetchBatchSize:20];
 	
     NSFetchedResultsController *aFetchedResultsController;
-    
-    if(mode == FilterdTableViewControllerModeAlphabetically){
-     
-        // Edit the sort key as appropriate.
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:
-                                    [[[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
-                                    [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
-                                    nil];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-        
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-       aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                                                                                    managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:@"namefirstLetter" 
-                                                                                                               cacheName:@"CompaniesList"];
-        
-        [sortDescriptors release];
-        
-    }else{
-        
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
-                                    [[[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES] autorelease],
-                                    [[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO] autorelease],
-                                    [[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
-                                    nil];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-        
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                                                                                    managedObjectContext:managedObjectContext 
-                                                                                                      sectionNameKeyPath:@"ratingLevel"
-                                                                                                               cacheName:@"CompaniesList"];        
-        
-        [sortDescriptors release];
-    }
-    
-    self.fetchedResultsController = aFetchedResultsController;
+	
+	// Edit the sort key as appropriate.
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:
+								[[[NSSortDescriptor alloc] initWithKey:@"namefirstLetter" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+								[[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+								nil];
+	
+	[fetchRequest setSortDescriptors:sortDescriptors];
 		
-	[aFetchedResultsController release];
+	NSPredicate* filterPredicate = [NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey];
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameSortFormatted contains[c] %@", searchString];
+	
+	NSArray* predicates = [NSArray arrayWithObjects:
+						   filterPredicate,
+						   predicate,
+						   nil];
+	
+	NSCompoundPredicate* andPredicate = [[[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:predicates] autorelease];
+	[fetchRequest setPredicate:andPredicate];
+	
+	// Edit the section name key path and cache name if appropriate.
+	// nil for section name key path means "no sections".
+	aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																	managedObjectContext:managedObjectContext 
+																	  sectionNameKeyPath:nil 
+																			   cacheName:@"namesList"];
+	
+	[sortDescriptors release];
 	[fetchRequest release];
 	
 	
-	return fetchedResultsController;
-} 
+	return [aFetchedResultsController autorelease];
+	
+}
+
+- (NSFetchedResultsController*)ratingSearchResultsControllerForString:(NSString*)searchString{
+	
+	// Create the fetch request for the entity.
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	// Edit the entity name as appropriate.
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	[fetchRequest setEntity:entity];
+	
+	// Set the batch size to a suitable number.
+	[fetchRequest setFetchBatchSize:20];
+	
+    NSFetchedResultsController *aFetchedResultsController;
+	
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: 
+								[[[NSSortDescriptor alloc] initWithKey:@"ratingLevel" ascending:YES] autorelease],
+								[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:NO] autorelease],
+								[[[NSSortDescriptor alloc] initWithKey:@"nameSortFormatted"  ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease],
+								nil];
+	
+	[fetchRequest setSortDescriptors:sortDescriptors];
+		
+	NSPredicate* filterPredicate = [NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey];
+	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameSortFormatted contains[c] %@", searchString];
+	NSArray* predicates = [NSArray arrayWithObjects:
+						   filterPredicate,
+						   predicate,
+						   nil];
+	
+	NSCompoundPredicate* andPredicate = [[[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:predicates] autorelease];
+	[fetchRequest setPredicate:andPredicate];
+	
+	// Edit the section name key path and cache name if appropriate.
+	// nil for section name key path means "no sections".
+	aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																	managedObjectContext:managedObjectContext 
+																	  sectionNameKeyPath:nil
+																			   cacheName:@"ratingsList"];        
+	
+	[sortDescriptors release];
+	[fetchRequest release];
+	
+	
+	return [aFetchedResultsController autorelease];
+}
 
 
 

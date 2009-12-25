@@ -213,11 +213,11 @@
     
     NSString* donationText = @"Thank you for your help! This application will now close and Safari will open. All contributions are sent directly to the Human Rights Campaign and are not related to or endorsed by Apple, iTunes, or the App Store.";
     
-    UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Donate"
+    UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"Donate"
                                                       message:donationText 
                                                      delegate:self 
                                             cancelButtonTitle:@"Cancel" 
-                                            otherButtonTitles:@"Donate", nil];
+                                            otherButtonTitles:@"Donate", nil] autorelease];
     [message show];
     
     

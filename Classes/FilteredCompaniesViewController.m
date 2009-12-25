@@ -33,9 +33,7 @@
     
     [super viewDidDisappear:animated];
        
-    [[NSNotificationCenter defaultCenter] removeObserver:self 
-                                                    name:DidSelectFilteredCompanyNotification 
-                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     
 }
@@ -136,8 +134,29 @@
                                              selector:@selector(companySelectedWithNotification:) 
                                                  name:DidSelectFilteredCompanyNotification 
                                                object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(searchBeganWithNotification:) 
+                                                 name:FilteredCompanySearchBegan 
+                                               object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(searchEndedWithNotification:) 
+                                                 name:FilteredCompanySearchEnded 
+                                               object:nil];
     
     
+}
+
+
+- (void)searchBeganWithNotification:(NSNotification*)note{
+	
+	[index removeFromSuperview];
+}
+
+- (void)searchEndedWithNotification:(NSNotification*)note{
+	
+    [self.view addSubview:index];
 }
 
 - (void)didTouchSegment:(int)segment inColorIndex:(FJSTableViewImageIndex*)anIndex{
@@ -163,7 +182,8 @@
 - (IBAction)changeSort:(id)sender{
     
     tableController.mode = sortControl.selectedSegmentIndex;
-    [tableController fetch];    
+    [tableController fetch];   
+	[tableController reload];
     
     if(sortControl.selectedSegmentIndex == 0){
         index.alpha = 1;
@@ -184,43 +204,7 @@
 }
 
 
-- (void)scrollToRedSection{
-    
-    int section;
-    
-    if(section < 0 )
-        section = 0;
-    
-    [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfRedSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    
-}
 
-- (void)scrollToYellowSection{
-    
-    int section = 1;
-    
-    if(section < 0 )
-        section = 0;
-    
-    [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfYellowSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    
-    
-}
-
-- (void)scrollToGreenSection{
-    
-    int section = 0;
-    
-    if(section < 0 )
-        section = 0;
-    
-    [tableController.tableView scrollToRowAtIndexPath:[tableController sectionIndexOfGreenSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    
-    
-}
 
 - (void)companySelectedWithNotification:(NSNotification*)note{
     

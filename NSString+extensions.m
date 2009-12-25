@@ -155,7 +155,7 @@
     if([self length] < 5)
         return self; 
     
-    NSString* aString = [self copy];
+    NSString* aString = [[self copy] autorelease];
     
     if([[aString substringToIndex:4] doesContainString:@"The "]){
         
@@ -168,7 +168,7 @@
         aString = [aString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     }
     
-    return [aString autorelease];
+    return aString;
 }
 
 /*

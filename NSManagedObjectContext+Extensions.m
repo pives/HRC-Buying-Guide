@@ -32,11 +32,11 @@
 	
 	NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 	NSString* text = [info objectForKey:@"CoreDataCrashMessage"];
-    UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Uh Oh"
+    UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"Uh Oh"
                                                       message:text 
                                                      delegate:self 
                                             cancelButtonTitle:@"OK" 
-                                            otherButtonTitles:nil];
+                                            otherButtonTitles:nil] autorelease];
     [message show];
 	
 }

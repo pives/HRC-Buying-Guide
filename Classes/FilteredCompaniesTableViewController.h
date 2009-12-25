@@ -14,9 +14,11 @@ typedef enum  {
 } FilterdTableViewControllerMode;
 
 
+
 @interface FilteredCompaniesTableViewController : UITableViewController {
 
-    NSFetchedResultsController *fetchedResultsController;
+    NSFetchedResultsController *ratingFetchedResultsController;
+	NSFetchedResultsController *nameFetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
     NSString* filterKey;
     id filterObject;
@@ -24,25 +26,38 @@ typedef enum  {
     NSArray* cellColors;
     
     FilterdTableViewControllerMode mode;
+	
+	NSFetchedResultsController *searchResultsController;
+	BOOL searching;
     
     
 }
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+@property(nonatomic,retain)NSFetchedResultsController *ratingFetchedResultsController;
+@property(nonatomic,retain)NSFetchedResultsController *nameFetchedResultsController;
+
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)NSString *filterKey;
 @property(nonatomic,retain)id filterObject;
 @property (nonatomic,retain) NSArray *cellColors;
 @property(nonatomic,assign)FilterdTableViewControllerMode mode;
-
+@property(nonatomic,retain)NSFetchedResultsController *searchResultsController;
+@property(nonatomic,assign)BOOL searching;
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;
 - (void)fetch;
+- (void)reload;
 
 - (NSIndexPath*)sectionIndexOfRedSection;
 - (NSIndexPath*)sectionIndexOfYellowSection;
 - (NSIndexPath*)sectionIndexOfGreenSection;
 
+- (NSFetchedResultsController*)alphabeticalSearchResultsControllerForString:(NSString*)searchString;
+- (NSFetchedResultsController*)ratingSearchResultsControllerForString:(NSString*)searchString;
+
 @end
 
 
 extern NSString *const DidSelectFilteredCompanyNotification;
+extern NSString *const FilteredCompanySearchBegan;
+extern NSString *const FilteredCompanySearchEnded;

@@ -32,8 +32,6 @@
 		C4103FF210B71670004CEC15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4103FF110B71670004CEC15 /* Foundation.framework */; };
 		C410407910B718BE004CEC15 /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
 		C410407D10B718BE004CEC15 /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
-		C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
-		C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */; };
 		C41288DF10C82792007BB9A8 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DC10C82792007BB9A8 /* red.png */; };
 		C41288E010C82792007BB9A8 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DD10C82792007BB9A8 /* green.png */; };
 		C41288E110C82792007BB9A8 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C41288DE10C82792007BB9A8 /* yellow.png */; };
@@ -130,6 +128,8 @@
 		C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
 		C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
 		C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
+		C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */; };
+		C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */; };
 		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31CE210C42089004DF94F /* EmailHappy.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* EmailHappy.txt */; };
@@ -215,8 +215,6 @@
 		C4103FF110B71670004CEC15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C410407110B7180D004CEC15 /* BGImporter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGImporter_Prefix.pch; sourceTree = "<group>"; };
 		C410407510B7187F004CEC15 /* BGImporter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BGImporter-Info.plist"; sourceTree = "<group>"; };
-		C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNextRunloopProxy.h; sourceTree = "<group>"; };
-		C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNextRunloopProxy.m; sourceTree = "<group>"; };
 		C41288DC10C82792007BB9A8 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		C41288DD10C82792007BB9A8 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		C41288DE10C82792007BB9A8 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
@@ -291,6 +289,7 @@
 		C4EFE74510E09878005180AC /* NSObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectHelper.h; sourceTree = "<group>"; };
 		C4EFE74610E09878005180AC /* NSObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectHelper.m; sourceTree = "<group>"; };
 		C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompaniesTableViewController.xib; sourceTree = "<group>"; };
+		C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteredCompaniesTableViewController.xib; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
 		C4F31CE110C42089004DF94F /* EmailHappy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailHappy.txt; sourceTree = "<group>"; };
 		C4FA187510B2F4CE0031303E /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
@@ -504,6 +503,7 @@
 				C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */,
 				C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */,
 				C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */,
+				C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */,
 			);
 			name = "Filtered List View";
 			path = Classes;
@@ -609,8 +609,6 @@
 			children = (
 				C4EFE74510E09878005180AC /* NSObjectHelper.h */,
 				C4EFE74610E09878005180AC /* NSObjectHelper.m */,
-				C41040ED10B72EAA004CEC15 /* SDNextRunloopProxy.h */,
-				C41040EE10B72EAA004CEC15 /* SDNextRunloopProxy.m */,
 				C4FA200810B4BA570031303E /* UIColor+extensions.h */,
 				C4FA200910B4BA570031303E /* UIColor+extensions.m */,
 				C4FA200710B4BA570031303E /* UIView-Extensions.h */,
@@ -854,6 +852,7 @@
 				C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 				C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */,
 				C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
+				C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +900,7 @@
 				C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
 				C4EFE68C10DFF61F005180AC /* RootViewController.xib in Resources */,
 				C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
+				C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,7 +932,6 @@
 				C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */,
 				C4FA223210B5C81D0031303E /* Company.m in Sources */,
 				C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */,
-				C41040EF10B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */,
 				C492D5AF10BAF4490041400B /* DebugLog.m in Sources */,
 				C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */,
 				C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
@@ -997,7 +996,6 @@
 				C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */,
 				C4FA223310B5C81D0031303E /* Company.m in Sources */,
 				C4103F5010B6FAD8004CEC15 /* KeyViewController.m in Sources */,
-				C41040F010B72EAA004CEC15 /* SDNextRunloopProxy.m in Sources */,
 				C492D5B010BAF4490041400B /* DebugLog.m in Sources */,
 				C486500010BC55F80064A126 /* PageTableViewController.m in Sources */,
 				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
