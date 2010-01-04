@@ -97,19 +97,22 @@
     [self.view addSubview:tableController.view];
 
     /*
-    UIColor* g = [UIColor gpGreenHeader];
-    UIColor* y = [UIColor gpYellowHeader];
-    UIColor* r = [UIColor gpRedHeader];
+    UIColor* g = [UIColor headerGreen];
+    UIColor* y = [UIColor headerYellow];
+    UIColor* r = [UIColor headerRed];
     
     NSArray* colors = [NSArray arrayWithObjects:g, y, r, nil];
     
-    CGRect myFrame = CGRectMake(296, 65, 16, 300);
-    */
-    
-    //self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
-    
     CGRect myFrame = CGRectMake(295, 66, 16, 300);
-    self.index = [[[FJSTableViewImageIndex alloc] initWithFrame:myFrame image:[UIImage imageNamed:@"slider.png"] sections:3] autorelease];
+    
+    self.index = [[[FJSTableViewColorIndex alloc] initWithFrame:myFrame colors:colors gradient:NO] autorelease];
+    self.index.delegate = self;
+	[self.view addSubview:index];
+	*/
+	
+	
+    CGRect myFrame = CGRectMake(295, 66, 16, 300);
+    self.index = [[[FJSTableViewImageIndex alloc] initWithFrame:myFrame image:[UIImage imageNamed:@"slidernew.png"] sections:3] autorelease];
     [index setDelegate:self];
     [self.view addSubview:index];
     

@@ -371,10 +371,12 @@
 								<dict>
 									<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 									<array>
-										<real>231</real>
+										<real>22</real>
+										<real>209</real>
 									</array>
 									<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 									<array>
+										<string>TargetStatusColumn</string>
 										<string>MainColumn</string>
 									</array>
 								</dict>
@@ -385,7 +387,10 @@
 										<string>29B97314FDCFA39411CA2CEA</string>
 										<string>C4EFE88010E0AA44005180AC</string>
 										<string>C4AFF95710B2344200801655</string>
-										<string>C4AFF95510B233F000801655</string>
+										<string>C412894B10C83107007BB9A8</string>
+										<string>C46D828210C9263B00541CF1</string>
+										<string>C4FA235410B5DC8E0031303E</string>
+										<string>19C28FACFE9D520D11CA2CBB</string>
 										<string>1C37FBAC04509CD000000102</string>
 										<string>1C37FAAC04509CD000000102</string>
 										<string>1C77FABC04509CD000000102</string>
@@ -393,12 +398,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>11</integer>
+											<integer>45</integer>
+											<integer>44</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 0}, {231, 968}}</string>
+									<string>{{0, 67}, {231, 968}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -411,8 +417,10 @@
 								<string>{{0, 5}, {248, 986}}</string>
 								<key>GroupTreeTableConfiguration</key>
 								<array>
+									<string>TargetStatusColumn</string>
+									<real>22</real>
 									<string>MainColumn</string>
-									<real>231</real>
+									<real>209</real>
 								</array>
 								<key>RubberWindowFrame</key>
 								<string>0 146 1920 1032 0 0 1920 1178 </string>
@@ -440,7 +448,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CategoriesTableViewController.m</string>
+										<string>FilteredCompaniesViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -448,11 +456,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CategoriesTableViewController.m</string>
+												<string>FilteredCompaniesViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C41CD35210F25A6900973374</string>
+												<string>C41CD3B810F264B100973374</string>
 												<key>history</key>
 												<array>
 													<string>C4AFF96A10B234ED00801655</string>
@@ -474,7 +482,6 @@
 													<string>C4128BF310C86EE1007BB9A8</string>
 													<string>C46D834410C92E6000541CF1</string>
 													<string>C46D882310CC3B8000541CF1</string>
-													<string>C46D882A10CC3B9B00541CF1</string>
 													<string>C46D885810CC40B500541CF1</string>
 													<string>C46D887310CC40F300541CF1</string>
 													<string>C46D888A10CC417600541CF1</string>
@@ -505,9 +512,6 @@
 													<string>C42E955D10D6DE5200754443</string>
 													<string>C42E955E10D6DE5200754443</string>
 													<string>C42E955F10D6DE5200754443</string>
-													<string>C4993C7210DAEA19009AC153</string>
-													<string>C4993C7310DAEA19009AC153</string>
-													<string>C4993C7410DAEA19009AC153</string>
 													<string>C4993C7510DAEA19009AC153</string>
 													<string>C4993C7610DAEA19009AC153</string>
 													<string>C4CC11C710DD7C1C00DBE821</string>
@@ -527,7 +531,6 @@
 													<string>C4EFEC1610E19ED1005180AC</string>
 													<string>C4EFEC6010E1AD81005180AC</string>
 													<string>C4EFED1A10E709CD005180AC</string>
-													<string>C4EFED1B10E709CD005180AC</string>
 													<string>C4EFED1D10E709CD005180AC</string>
 													<string>C4EFED1E10E709CD005180AC</string>
 													<string>C4EFED1F10E709CD005180AC</string>
@@ -541,11 +544,8 @@
 													<string>C4AAF99110EA808C00001F3E</string>
 													<string>C4AAF99510EA808C00001F3E</string>
 													<string>C4AAF99610EA808C00001F3E</string>
-													<string>C4AAF9AE10EA81B400001F3E</string>
 													<string>C4AAF9B910EA855C00001F3E</string>
 													<string>C41CCDA110F1621500973374</string>
-													<string>C41CCDA310F1621500973374</string>
-													<string>C41CCDA410F1621500973374</string>
 													<string>C41CCE0A10F16E9F00973374</string>
 													<string>C41CCE0B10F16E9F00973374</string>
 													<string>C41CCE0C10F16E9F00973374</string>
@@ -563,7 +563,16 @@
 													<string>C41CCFCF10F197A100973374</string>
 													<string>C41CCFD010F197A100973374</string>
 													<string>C41CCFD110F197A100973374</string>
-													<string>C41CCFD310F197A100973374</string>
+													<string>C41CD36910F25ED800973374</string>
+													<string>C41CD36A10F25ED800973374</string>
+													<string>C41CD36B10F25ED800973374</string>
+													<string>C41CD36C10F25ED800973374</string>
+													<string>C41CD36D10F25ED800973374</string>
+													<string>C41CD3A410F2642F00973374</string>
+													<string>C41CD3A510F2642F00973374</string>
+													<string>C41CD3A610F2642F00973374</string>
+													<string>C41CD3A710F2642F00973374</string>
+													<string>C41CD3A810F2642F00973374</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -592,7 +601,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CategoriesTableViewController.m</string>
+										<string>FilteredCompaniesViewController.h</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -600,11 +609,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>CategoriesTableViewController.m</string>
+												<string>FilteredCompaniesViewController.h</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C41CD35310F25A6900973374</string>
+												<string>C41CD3B910F264B100973374</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -617,7 +626,6 @@
 													<string>C474E41210C706B000BFFFE8</string>
 													<string>C46D834710C92E6000541CF1</string>
 													<string>C46D853810C951C800541CF1</string>
-													<string>C46D86AA10CAD4E900541CF1</string>
 													<string>C46D87BE10CC380E00541CF1</string>
 													<string>C46D87BF10CC380E00541CF1</string>
 													<string>C46D885D10CC40B500541CF1</string>
@@ -673,8 +681,6 @@
 													<string>C4EFEBA610E19218005180AC</string>
 													<string>C4EFEC3710E1AB0F005180AC</string>
 													<string>C4EFEC3810E1AB0F005180AC</string>
-													<string>C4EFEC6310E1AD81005180AC</string>
-													<string>C4EFEC6B10E1ADF7005180AC</string>
 													<string>C41CCE1410F16E9F00973374</string>
 													<string>C41CCE1510F16E9F00973374</string>
 													<string>C41CCE1610F16E9F00973374</string>
@@ -690,7 +696,10 @@
 													<string>C41CCF8310F1900C00973374</string>
 													<string>C41CCF8410F1900C00973374</string>
 													<string>C41CCF8510F1900C00973374</string>
-													<string>C41CCFD310F197A100973374</string>
+													<string>C41CD36F10F25ED800973374</string>
+													<string>C41CD37110F25ED800973374</string>
+													<string>C41CD3AA10F2642F00973374</string>
+													<string>C41CD37010F25ED800973374</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -981,14 +990,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C41CCDBB10F1622800973374</string>
+				<string>C41CD37410F25ED800973374</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>C41CCDBC10F1622800973374</string>
-				<string>C41CCDBD10F1622800973374</string>
-				<string>C41CCDBE10F1622800973374</string>
-				<string>C41CCDBF10F1622800973374</string>
-				<string>C41CCDC010F1622800973374</string>
+				<string>C41CD37510F25ED800973374</string>
+				<string>C41CD37610F25ED800973374</string>
+				<string>C41CD37710F25ED800973374</string>
+				<string>C41CD37810F25ED800973374</string>
+				<string>C41CD37910F25ED800973374</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -1005,7 +1014,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>284318313.60448498</real>
+	<real>284320945.66407001</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>

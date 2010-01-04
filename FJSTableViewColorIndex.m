@@ -71,8 +71,8 @@
         if(flag)
             [self drawGradient];
         else 
-            [self drawSegments];
-        //[self drawSegmentsShiny];
+            //[self drawSegments];
+			[self drawSegmentsShiny];
     
     }
     return self;
