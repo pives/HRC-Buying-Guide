@@ -39,7 +39,8 @@
 {
 	self = [super init];
 	if (self != nil) {
-		self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
+		self.cellColors = [NSArray arrayWithObjects:[UIColor cellGreen], [UIColor cellYellow], [UIColor cellRed], nil];
+
 
 	}
 	return self;

@@ -77,7 +77,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     //self.title = [filterObject valueForKey:@"name"];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.cellColors = [NSArray arrayWithObjects:[UIColor gpGreen], [UIColor gpYellow], [UIColor gpRed], nil];
+    self.cellColors = [NSArray arrayWithObjects:[UIColor cellGreen], [UIColor cellYellow], [UIColor cellRed], nil];
     //self.tableView.showsVerticalScrollIndicator = NO;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -201,18 +201,18 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
         
         if([[sectionInfo name] isEqualToString:@"0"]){
             header.text = @"Support these brands";
-            headerView.backgroundColor = [UIColor gpGreenHeader];
-            header.backgroundColor = [UIColor gpGreenHeader];
+            headerView.backgroundColor = [UIColor headerGreen];
+            header.backgroundColor = [UIColor headerGreen];
             
         }else if([[sectionInfo name] isEqualToString:@"1"]){
             header.text = @"Brands that could do better";
-            headerView.backgroundColor = [UIColor gpYellowHeader];
-            header.backgroundColor = [UIColor gpYellowHeader];
+            headerView.backgroundColor = [UIColor headerYellow];
+            header.backgroundColor = [UIColor headerYellow];
             
         }else {
             header.text = @"Avoid these brands or non-responders";
-            headerView.backgroundColor = [UIColor gpRedHeader];
-            header.backgroundColor = [UIColor gpRedHeader];
+            headerView.backgroundColor = [UIColor headerRed];
+            header.backgroundColor = [UIColor headerRed];
         }
         
         [header release];

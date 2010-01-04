@@ -15,23 +15,24 @@
 #import <UIKit/UIKit.h>
 
 @class PageViewController;
-@class DataSource;
+@class HRCBrandTableDataSource;
 
 @interface PagingScrollViewController : UIViewController
 {
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIPageControl *pageControl;
     
-    DataSource* data;
+    HRCBrandTableDataSource* data;
 	
 	PageViewController *currentPage;
 	PageViewController *nextPage;
 }
-@property(nonatomic,retain)DataSource *data;
+@property(nonatomic,retain)HRCBrandTableDataSource *data;
 
-- (IBAction)changePage:(id)sender;
-- (void)changePageUnanianimated:(int)pageIndex;
+- (IBAction)changePageWithPageControl:(id)sender;
+- (void)setCurrentPage:(int)pageIndex animated:(BOOL)flag;
 
+- (void)scrollViewDidChangePage:(UIScrollView*)newScrollView;
 @end
 
 //TODO: handle case of no brands

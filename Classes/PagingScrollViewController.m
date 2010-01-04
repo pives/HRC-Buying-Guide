@@ -14,7 +14,7 @@
 
 #import "PagingScrollViewController.h"
 #import "PageViewController.h"
-#import "DataSource.h"
+#import "HRCBrandTableDataSource.h"
 
 @implementation PagingScrollViewController
 
@@ -54,6 +54,7 @@
     
     currentPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
 	nextPage = [[[PageViewController alloc] initWithDataSource:self.data] retain];
+	
     currentPage.view.frame = self.view.bounds;
     nextPage.view.frame = self.view.bounds;
 	[scrollView addSubview:currentPage.view];
@@ -72,22 +73,12 @@
 	scrollView.contentOffset = CGPointMake(0, 0);
     
 	pageControl.numberOfPages = ([self.data numDataPages]); 
-    
-    //pageControl.currentPage = 0     
-    
-    [self changePageUnanianimated:[data pageOfStartingSelectedCategory]];
-    /*
-     pageControl.currentPage = 0;
-     
-     [self applyNewIndex:0 pageController:currentPage];
-     [self applyNewIndex:1 pageController:nextPage];
-     */
-    
+        
+	[currentPage viewWillAppear:YES];
+    [self setCurrentPage:[data pageOfStartingSelectedCategory] animated:NO];
     
     if([data category]==nil)
         [self applyNewIndex:0 pageController:currentPage];
-
-        
 
 }
 
@@ -134,61 +125,31 @@
 			[self applyNewIndex:upperNumber pageController:nextPage];
 		}
 	}
-	
-    //TODO: cells set need display
-    //TODO: may need to send update message to tableview
-
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)newScrollView{
-    
-    [nextPage viewWillAppear:YES];
-    
-}
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)newScrollView
-{
-    CGFloat pageWidth = scrollView.frame.size.width;
-    float fractionalPage = scrollView.contentOffset.x / pageWidth;
-	NSInteger nearestNumber = lround(fractionalPage);
-
-	if (currentPage.pageIndex != nearestNumber)
-	{
-		PageViewController *swapController = currentPage;
-		currentPage = nextPage;
-		nextPage = swapController;
-	}
-
-    //TODO: may need to send update message to tableview
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)newScrollView
-{
-	[self scrollViewDidEndScrollingAnimation:newScrollView];
-	pageControl.currentPage = currentPage.pageIndex;
-}
-
-- (IBAction)changePage:(id)sender
+- (IBAction)changePageWithPageControl:(id)sender
 {
 	NSInteger pageIndex = pageControl.currentPage;
-
+	
 	// update the scroll view to the appropriate page
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * pageIndex;
     frame.origin.y = 0;
+	
     [scrollView scrollRectToVisible:frame animated:YES];
-    [nextPage viewWillAppear:YES];
-
+	
 }
 
-- (void)changePageUnanianimated:(int)pageIndex
+//Does not send viewWillAppear/Dissapear messages. That is your responsibility fool.
+- (void)setCurrentPage:(int)pageIndex animated:(BOOL)flag
 {
 	pageControl.currentPage = pageIndex;
     [self applyNewIndex:pageIndex pageController:currentPage];
     
     if(pageIndex==0){
         [self applyNewIndex:pageIndex+1 pageController:nextPage];
-
+		
     }else{
         
         [self applyNewIndex:pageIndex-1 pageController:nextPage];
@@ -197,10 +158,45 @@
         CGRect frame = scrollView.frame;
         frame.origin.x = frame.size.width * pageIndex;
         frame.origin.y = 0;
-        [scrollView scrollRectToVisible:frame animated:NO];
-
+        [scrollView scrollRectToVisible:frame animated:flag];
+		
     }
 }
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)newScrollView{
+    
+}
+
+//called when using scrollRectToVisible (i.e. when using page control)
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)newScrollView
+{
+	[self scrollViewDidChangePage:newScrollView];
+}
+
+
+//Called when user scrolls with finger
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)newScrollView
+{	
+	[self scrollViewDidChangePage:newScrollView];
+	pageControl.currentPage = currentPage.pageIndex;
+}
+
+//Not a delegate method, called by the above 2 methods
+- (void)scrollViewDidChangePage:(UIScrollView*)newScrollView{
+	
+	CGFloat pageWidth = scrollView.frame.size.width;
+    float fractionalPage = scrollView.contentOffset.x / pageWidth;
+	NSInteger nearestNumber = lround(fractionalPage);
+	
+	if (currentPage.pageIndex != nearestNumber)
+	{
+		PageViewController *swapController = currentPage;
+		currentPage = nextPage;
+		nextPage = swapController;
+	}
+}
+
+
 
 - (void)dealloc
 {

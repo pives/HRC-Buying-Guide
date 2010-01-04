@@ -9,6 +9,57 @@
 
 @implementation UIColor(HRC)
 
++ (id)headerRed{
+    return [UIColor gpRedHeader];
+}
+
++ (id)headerYellow{
+    return [UIColor newYellowHeader];
+}
+
++ (id)headerGreen{
+    return [UIColor newGreenHeader];
+}
+
++ (id)cellRed{
+    return [UIColor gpRedDarker];
+}
+
++ (id)cellYellow{
+    return [UIColor newCellYellow];
+}
+
++ (id)cellGreen{
+    return [UIColor newCellGreen];
+}
+
+
++ (id)newRedHeader{
+    return [UIColor colorWithRed:0.802 green:0.093 blue:0.097 alpha:1.000];
+}
+
++ (id)newYellowHeader{
+    return [UIColor colorWithRed:0.885 green:0.633 blue:0.000 alpha:1.000];
+}
+
++ (id)newGreenHeader{
+    return [UIColor colorWithRed:0.074 green:0.670 blue:0.282 alpha:1.000];
+}
+
++ (id)newCellRed{
+    return [UIColor colorWithRed:0.808 green:0.216 blue:0.225 alpha:1.000];
+}
+
++ (id)newCellYellow{
+    return [UIColor colorWithRed:0.967 green:0.794 blue:0.402 alpha:1.000];
+}
+
++ (id)newCellGreen{
+    return [UIColor colorWithRed:0.425 green:0.782 blue:0.464 alpha:1.000];
+}
+
+
+
 + (id)stoplightRed{
     vendColor(240, 248, 255);
 }
@@ -19,6 +70,10 @@
     vendColor(0, 183, 96);
 }
 
+
++ (id)gpRedDarker{
+    return [UIColor colorWithRed:0.774 green:0.461 blue:0.470 alpha:1.000];
+}
 
 + (id)gpRed{
     return [UIColor colorWithRed:0.774 green:0.618 blue:0.623 alpha:1.000];

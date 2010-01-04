@@ -10,11 +10,13 @@
 #import "Company.h"
 #import "Company+Extensions.h"
 #import "Brand.h"
-#import "DataSource.h"
+#import "HRCBrandTableDataSource.h"
 #import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "UIColor+extensions.h"
 #import "CompanyScoreCardViewController.h"
+#import "HRCBrandTableViewController.h"
+#import "FilteredCompaniesViewController.h"
 
 @implementation CompanyViewController
 
@@ -37,7 +39,7 @@
 			
 		}
 */		
-        self.data = [[[DataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
+        self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
         /*
         NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
         NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
@@ -66,7 +68,6 @@
 }
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,17 +75,24 @@
     brands.data = self.data;
 
     if([company.ratingLevel intValue] == 0)
-        scoreBackgroundColor.backgroundColor = [UIColor gpGreen];
+        scoreBackgroundColor.backgroundColor = [UIColor cellGreen];
+	
     else if([company.ratingLevel intValue] == 1)
-        scoreBackgroundColor.backgroundColor = [UIColor gpYellow];
+        scoreBackgroundColor.backgroundColor = [UIColor cellYellow];
+	
     else 
-        scoreBackgroundColor.backgroundColor = [UIColor gpRed];
+        scoreBackgroundColor.backgroundColor = [UIColor cellRed];
     
     if(![company.partner boolValue])
         self.partnerIcon.alpha = 0;
     
 
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -100,10 +108,31 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(categorySelectedWithNotification:) 
+                                                 name:BrandsTableCategoryButtonTouchedNotification 
+                                               object:nil];
     [brands viewDidAppear:animated];
     
+	
 }
+
+
+- (void)categorySelectedWithNotification:(NSNotification*)note{
+    
+    // Navigation logic may go here -- for example, create and push another view controller.
+    Category* selectedCat = (Category*)[note object];
+    FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:company.managedObjectContext 
+																												 key:@"categories" 
+																											   value:selectedCat];
+    detailViewController.view.frame = self.view.bounds;
+    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    
+}
+
 
 #pragma mark -
 #pragma mark Scorecard

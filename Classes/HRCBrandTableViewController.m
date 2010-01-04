@@ -6,15 +6,17 @@
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "PageTableViewController.h"
+#import "HRCBrandTableViewController.h"
 #import "Company.h"
 #import "Category.h"
 #import "UIColor+extensions.h"
 #import "Brand.h"
 #import "NSManagedObjectContext+Extensions.h"
+#import "FilteredCompaniesViewController.h"
 
+NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCategory";
 
-@implementation PageTableViewController
+@implementation HRCBrandTableViewController
 
 @synthesize company;
 @synthesize category;
@@ -72,7 +74,22 @@
     //self.view.backgroundColor = [UIColor reallyLightGray];
     self.view.backgroundColor = [UIColor clearColor];
 
+	UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[button setTitle:@"Show Other Brands in Category" forState:UIControlStateNormal];
+	[button addTarget:self action:@selector(showOtherBrandsCategory:) forControlEvents:UIControlEventTouchUpInside];
+	[button setFrame:CGRectMake(10, 10, tableFrame.size.width-20, 45)];
+	
+	UIView* footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableFrame.size.width, 65)];
+	[footer addSubview:button];
+	
+	self.tableView.tableFooterView = footer;
     
+}
+
+- (void)showOtherBrandsCategory:(id)sender{
+	
+    [[NSNotificationCenter defaultCenter] postNotificationName:BrandsTableCategoryButtonTouchedNotification 
+														object:self.category];   
 }
 
 

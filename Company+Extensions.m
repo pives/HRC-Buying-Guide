@@ -7,7 +7,10 @@
 //
 
 #import "Company+Extensions.h"
+#import "Category.h"
+#import "NSObject+AssociatedObjects.h"
 
+//static NSString* categoryKey = @"category";
 
 @implementation Company(Extensions)
 
@@ -38,4 +41,39 @@
     return cats;
 }
 
+@end
+
+
+
+@implementation Company(BrandsTable)
+
+
+/*
+- (void)setSelectedCategory:(Category*)aCategory{
+	
+	[self associateValue:aCategory withKey:categoryKey];
+	
+}
+
+- (Category*)selectedCategory{
+	
+	return [self associatedValueForKey:categoryKey];
+}
+
+- (NSInteger)numDataPages{
+	
+	return [[self.categories count] intValue]+1;
+}
+
+- (int)pageOfCategory:(Category*)aCategory{
+	
+	return [self.categoriesSortedAlphabetically indexOfObject:aCategory]+1;
+}
+
+- (int)pageOfStartingSelectedCategory{
+	
+	return [self pageOfCategory:self.selectedCategory];
+}
+
+ */
 @end

@@ -16,7 +16,7 @@
 #import "Company.h"
 #import "Category.h"
 
-@interface DataSource : NSObject
+@interface HRCBrandTableDataSource : NSObject
 {
 	NSDictionary *data;
 }

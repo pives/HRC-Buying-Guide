@@ -12,7 +12,7 @@
 //  appreciated but not required.
 //
 
-#import "DataSource.h"
+#import "HRCBrandTableDataSource.h"
 #import "Company.h"
 #import "Company+Extensions.h"
 
@@ -21,7 +21,7 @@ NSString* const kCategoryKey = @"CategoryKey";
 NSString* const kNumberOfCategoriesKey = @"NumOfCats";
 
 
-@implementation DataSource
+@implementation HRCBrandTableDataSource
 @synthesize data;
 
 - (void) dealloc

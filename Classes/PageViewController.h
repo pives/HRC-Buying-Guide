@@ -13,17 +13,17 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DataSource;
+@class HRCBrandTableDataSource;
 @class Company;
 @class Category;
-@class PageTableViewController;
+@class HRCBrandTableViewController;
 
 @interface PageViewController : UIViewController {
     
 	NSInteger pageIndex;
 	BOOL textViewNeedsUpdate;
 	    
-    DataSource* data;
+    HRCBrandTableDataSource* data;
     
     Company* company;
     Category* category;
@@ -34,21 +34,21 @@
     
     UIColor* ratingColor;
     
-    PageTableViewController* tableController;
+    HRCBrandTableViewController* tableController;
 }
 
 @property NSInteger pageIndex;
-@property(nonatomic,retain)DataSource *data;
+@property(nonatomic,retain)HRCBrandTableDataSource *data;
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,retain)Category *category;
 @property(nonatomic,assign)IBOutlet UILabel *categoryName;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)UIColor *ratingColor;
-@property(nonatomic,retain)PageTableViewController *tableController;
+@property(nonatomic,retain)HRCBrandTableViewController *tableController;
 
 
 
 
-- (id)initWithDataSource:(DataSource*)someData;
+- (id)initWithDataSource:(HRCBrandTableDataSource*)someData;
 
 @end

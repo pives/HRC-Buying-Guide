@@ -10,7 +10,7 @@
 @class Company;
 @class Category;
 
-@interface PageTableViewController : UITableViewController {
+@interface HRCBrandTableViewController : UITableViewController {
     
     Company* company;
     Category* category;
@@ -36,3 +36,6 @@
 
 
 @end
+
+
+extern NSString *const BrandsTableCategoryButtonTouchedNotification;

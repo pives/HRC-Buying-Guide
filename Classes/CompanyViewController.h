@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 
 @class Company;
-@class DataSource;
+@class HRCBrandTableDataSource;
 @class Category;
 @class PagingScrollViewController;
 
@@ -23,7 +23,7 @@
     UIView* scoreBackgroundColor;
     UIImageView* partnerIcon;
     
-    DataSource* data;
+    HRCBrandTableDataSource* data;
     
     PagingScrollViewController* brands;
 
@@ -31,12 +31,10 @@
 @property(nonatomic,retain)Company *company;
 @property(nonatomic,assign)IBOutlet UILabel *nameLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
-@property(nonatomic,retain)DataSource *data;
+@property(nonatomic,retain)HRCBrandTableDataSource *data;
 @property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 @property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
-
-
 
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;

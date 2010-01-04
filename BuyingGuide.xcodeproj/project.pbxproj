@@ -42,6 +42,8 @@
 		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
 		C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
 		C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
+		C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
+		C41CCDEF10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
 		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
@@ -85,8 +87,8 @@
 		C4864DFC10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
 		C4864E4910BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
 		C4864E4A10BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
-		C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* PageTableViewController.m */; };
-		C486500010BC55F80064A126 /* PageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* PageTableViewController.m */; };
+		C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
+		C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
 		C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
@@ -141,7 +143,7 @@
 		C4FA187910B2F4CE0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
 		C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
-		C4FA193510B30C180031303E /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* DataSource.m */; };
+		C4FA193510B30C180031303E /* HRCBrandTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* HRCBrandTableDataSource.m */; };
 		C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
 		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1C7610B389EB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
@@ -163,7 +165,7 @@
 		C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
 		C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
 		C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
-		C4FA1D6E10B45DBB0031303E /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* DataSource.m */; };
+		C4FA1D6E10B45DBB0031303E /* HRCBrandTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* HRCBrandTableDataSource.m */; };
 		C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
 		C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1D7210B45DBB0031303E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -221,6 +223,8 @@
 		C412894710C83102007BB9A8 /* FilteredCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesViewController.h; sourceTree = "<group>"; };
 		C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesViewController.m; sourceTree = "<group>"; };
 		C4128BE810C86EBF007BB9A8 /* info2small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2small.png; sourceTree = "<group>"; };
+		C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociatedObjects.h"; sourceTree = "<group>"; };
+		C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObjects.m"; sourceTree = "<group>"; };
 		C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
@@ -248,8 +252,8 @@
 		C4864DB010BC38200064A126 /* Information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Information.png; sourceTree = "<group>"; };
 		C4864DFA10BC3BDA0064A126 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		C4864E4810BC3DE10064A126 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
-		C4864FFD10BC55F80064A126 /* PageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTableViewController.h; sourceTree = "<group>"; };
-		C4864FFE10BC55F80064A126 /* PageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTableViewController.m; sourceTree = "<group>"; };
+		C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableViewController.h; sourceTree = "<group>"; };
+		C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCBrandTableViewController.m; sourceTree = "<group>"; };
 		C486574510BD84FD0064A126 /* iphone_bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_bottom-bar.png"; sourceTree = "<group>"; };
 		C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailIndifferent.txt; sourceTree = "<group>"; };
 		C48BBBDF10C5792900F996C6 /* EmailSad.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailSad.txt; sourceTree = "<group>"; };
@@ -299,8 +303,8 @@
 		C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyScoreCardViewController.m; sourceTree = "<group>"; };
 		C4FA18CA10B308FB0031303E /* Company+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Company+Extensions.h"; sourceTree = "<group>"; };
 		C4FA18CB10B308FB0031303E /* Company+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Company+Extensions.m"; sourceTree = "<group>"; };
-		C4FA192E10B30C180031303E /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
-		C4FA192F10B30C180031303E /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		C4FA192E10B30C180031303E /* HRCBrandTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableDataSource.h; sourceTree = "<group>"; };
+		C4FA192F10B30C180031303E /* HRCBrandTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCBrandTableDataSource.m; sourceTree = "<group>"; };
 		C4FA193010B30C180031303E /* PagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingScrollViewController.h; sourceTree = "<group>"; };
 		C4FA193110B30C180031303E /* PagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingScrollViewController.m; sourceTree = "<group>"; };
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -607,6 +611,8 @@
 		C4C031DE10B1EBAA000D46AA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */,
+				C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */,
 				C4EFE74510E09878005180AC /* NSObjectHelper.h */,
 				C4EFE74610E09878005180AC /* NSObjectHelper.m */,
 				C4FA200810B4BA570031303E /* UIColor+extensions.h */,
@@ -698,8 +704,8 @@
 		C4FA193810B30C200031303E /* Brand Scroll View */ = {
 			isa = PBXGroup;
 			children = (
-				C4FA192E10B30C180031303E /* DataSource.h */,
-				C4FA192F10B30C180031303E /* DataSource.m */,
+				C4FA192E10B30C180031303E /* HRCBrandTableDataSource.h */,
+				C4FA192F10B30C180031303E /* HRCBrandTableDataSource.m */,
 				C4FA193010B30C180031303E /* PagingScrollViewController.h */,
 				C4FA193110B30C180031303E /* PagingScrollViewController.m */,
 				C4FA1C9C10B38F2A0031303E /* Category Table */,
@@ -712,8 +718,8 @@
 			children = (
 				C4FA193210B30C180031303E /* PageViewController.h */,
 				C4FA193310B30C180031303E /* PageViewController.m */,
-				C4864FFD10BC55F80064A126 /* PageTableViewController.h */,
-				C4864FFE10BC55F80064A126 /* PageTableViewController.m */,
+				C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */,
+				C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */,
 				C4FA1C7510B389EB0031303E /* PageView.xib */,
 			);
 			name = "Category Table";
@@ -925,7 +931,7 @@
 				C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */,
 				C4FA187D10B2F5050031303E /* CompanyScoreCardViewController.m in Sources */,
 				C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */,
-				C4FA193510B30C180031303E /* DataSource.m in Sources */,
+				C4FA193510B30C180031303E /* HRCBrandTableDataSource.m in Sources */,
 				C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */,
 				C4FA193710B30C180031303E /* PageViewController.m in Sources */,
 				C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */,
@@ -933,7 +939,7 @@
 				C4FA223210B5C81D0031303E /* Company.m in Sources */,
 				C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */,
 				C492D5AF10BAF4490041400B /* DebugLog.m in Sources */,
-				C4864FFF10BC55F80064A126 /* PageTableViewController.m in Sources */,
+				C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */,
 				C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
@@ -947,6 +953,7 @@
 				C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
 				C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
 				C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */,
+				C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,7 +996,7 @@
 				C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */,
 				C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */,
 				C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */,
-				C4FA1D6E10B45DBB0031303E /* DataSource.m in Sources */,
+				C4FA1D6E10B45DBB0031303E /* HRCBrandTableDataSource.m in Sources */,
 				C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */,
 				C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */,
 				C4FA200D10B4BA570031303E /* UIColor+extensions.m in Sources */,
@@ -997,7 +1004,7 @@
 				C4FA223310B5C81D0031303E /* Company.m in Sources */,
 				C4103F5010B6FAD8004CEC15 /* KeyViewController.m in Sources */,
 				C492D5B010BAF4490041400B /* DebugLog.m in Sources */,
-				C486500010BC55F80064A126 /* PageTableViewController.m in Sources */,
+				C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */,
 				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
 				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
 				C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
@@ -1011,6 +1018,7 @@
 				C4EFE6AC10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
 				C4EFE6B010E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
 				C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */,
+				C41CCDEF10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

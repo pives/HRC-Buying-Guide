@@ -8,9 +8,27 @@
 
 @interface UIColor(HRC)
 
++ (id)headerRed;
++ (id)headerYellow;
++ (id)headerGreen;
+
++ (id)cellRed;
++ (id)cellYellow;
++ (id)cellGreen;
+
++ (id)newRedHeader;
++ (id)newYellowHeader;
++ (id)newGreenHeader;
+
++ (id)newCellRed;
++ (id)newCellYellow;
++ (id)newCellGreen;
+
 + (id)stoplightRed;
 + (id)stoplightYellow;
 + (id)stoplightGreen;
+
++ (id)gpRedDarker;
 
 + (id)gpRed;
 + (id)gpYellow;
