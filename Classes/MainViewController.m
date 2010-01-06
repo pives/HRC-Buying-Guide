@@ -259,14 +259,24 @@
     // Navigation logic may go here -- for example, create and push another view controller.
     Company* selectedCompany = (Company*)[note object];
     
-    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-                                                                                        category:nil]; 
+	if(self.companyController == nil){
+		CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+																							category:nil]; 
+		
+		detailViewController.view.frame = self.view.bounds;		
+		self.companyController = detailViewController;
+		[detailViewController release];
+		
+		
+	}else{
+		
+		[companyController setCompany:selectedCompany 
+							 category:nil];
+	}
+	
     
-    detailViewController.view.frame = self.view.bounds;
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    
+    [self.navigationController pushViewController:companyController animated:YES];    
     
 }
 

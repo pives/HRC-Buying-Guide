@@ -19,9 +19,13 @@
 @synthesize tableController;
 @synthesize sortControl;
 @synthesize index;
+@synthesize companyController;
+
+
 
 
 - (void)dealloc {
+	self.companyController = nil;
     self.index = nil;
     self.tableController = nil;
     self.sortControl = nil;
@@ -213,14 +217,25 @@
     
     Company* selectedCompany = (Company*)[note object];
     
-    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-                                                                                        category:(Category*)tableController.filterObject]; 
-    
-    detailViewController.view.frame = self.view.bounds;
-    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
+	
+	if(self.companyController == nil){
+		CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+																							category:(Category*)tableController.filterObject]; 
+		
+		detailViewController.view.frame = self.view.bounds;		
+		self.companyController = detailViewController;
+		[detailViewController release];
+
+		
+	}else{
+		
+		[companyController setCompany:selectedCompany 
+							 category:(Category*)tableController.filterObject];
+	}
+	
+	
+	[self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
+    [self.navigationController pushViewController:companyController animated:YES];
         
 }
 

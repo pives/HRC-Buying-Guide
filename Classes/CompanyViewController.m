@@ -47,39 +47,44 @@ static CGPoint partnerImageOrigin = {2,34};
     
     if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
 		
-/*
-		for(Brand* eachBrand in aCompany.brands){
-			
-			NSLog(@"%@", eachBrand.nameSortFormatted);
-			
-		}
-*/		
-        self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
-        /*
-        NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
-        NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
-        */ 
-        
-        self.company = aCompany;
-        
-        [self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Score Card" 
-                                                                            style:UIBarButtonItemStyleBordered 
-                                                                           target:self 
-                                                                           action:@selector(showScoreCard)]];
-        
-        self.toolbarItems = [NSArray arrayWithObjects: 
-                             [UIBarButtonItem flexibleSpaceItem],
-                             [UIBarButtonItem systemItem:UIBarButtonSystemItemAction 
-                                                  target:self 
-                                                  action:@selector(launchActionSheet)],
-                             nil];
-        
-        
-                
-        
+		[self setCompany:aCompany category:aCategory];
+		
+		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Score Card" 
+																			style:UIBarButtonItemStyleBordered 
+																		   target:self 
+																		   action:@selector(showScoreCard)]];
+		
+		self.toolbarItems = [NSArray arrayWithObjects: 
+							 [UIBarButtonItem flexibleSpaceItem],
+							 [UIBarButtonItem systemItem:UIBarButtonSystemItemAction 
+												  target:self 
+												  action:@selector(launchActionSheet)],
+							 nil];
+		
+		
     }
     
     return self;
+}
+
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+	
+	/*
+	 for(Brand* eachBrand in aCompany.brands){
+	 
+	 NSLog(@"%@", eachBrand.nameSortFormatted);
+	 
+	 }
+	 */		
+	self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
+	/*
+	 NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
+	 NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
+	 */ 
+	
+	self.company = aCompany;
+	
+		
 }
 
 
