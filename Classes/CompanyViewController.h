@@ -39,4 +39,6 @@
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
 
+- (void)layoutPartnerImageAndCompanyLabel;
+
 @end

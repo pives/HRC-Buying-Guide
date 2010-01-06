@@ -18,6 +18,21 @@
 #import "HRCBrandTableViewController.h"
 #import "FilteredCompaniesViewController.h"
 
+static CGRect nameRectPartner = {
+	{10,0},
+	{230,80}
+};
+
+static CGRect nameRectNonPartner = {
+	{0,0},
+	{240,80}
+};
+
+static CGSize nameRectMaxSize = {240,80};
+static CGSize partnerImageSize = {14,14};
+
+static CGPoint partnerImageOrigin = {2,34};
+
 @implementation CompanyViewController
 
 @synthesize company;
@@ -83,11 +98,6 @@
     else 
         scoreBackgroundColor.backgroundColor = [UIColor cellRed];
     
-    if(![company.partner boolValue])
-        self.partnerIcon.alpha = 0;
-    
-
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -100,10 +110,11 @@
     [super viewWillAppear:animated];
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
-    //self.navigationController.toolbarHidden = YES;
+	[self layoutPartnerImageAndCompanyLabel];
     [brands viewWillAppear:animated];
     
 }
+
 
 - (void)viewDidAppear:(BOOL)animated{
     
@@ -118,6 +129,52 @@
 	
 }
 
+#pragma mark -
+#pragma mark Image and label Layout
+
+- (void)layoutPartnerImageAndCompanyLabel{
+	
+	if(![company.partner boolValue]){
+		
+		self.partnerIcon.alpha = 0;
+		self.nameLabel.frame = nameRectNonPartner;
+		
+	}else{
+		
+		self.partnerIcon.alpha = 1;
+		CGSize nameBoundingBox = [nameLabel.text sizeWithFont:nameLabel.font
+											constrainedToSize:nameLabel.frame.size
+												lineBreakMode:nameLabel.lineBreakMode];
+		
+		
+		if(nameBoundingBox.width > (nameRectMaxSize.width - partnerImageSize.width + 2)){
+			
+			//label text WILL overlap icon, resize label to compensate
+			nameLabel.frame = nameRectPartner;
+			
+			//setting image to original position
+			self.partnerIcon.frame = CGRectMake(partnerImageOrigin.x, 
+												partnerImageOrigin.y, 
+												partnerImageSize.width, 
+												partnerImageSize.height);
+			
+			
+		}else{
+			//label text will NOT overlap icon, move icon closer to look good			
+			self.partnerIcon.frame = CGRectMake(floorf((nameRectMaxSize.width - nameBoundingBox.width)/2 - partnerImageSize.width - 2), 
+												partnerImageOrigin.y, 
+												partnerImageSize.width, 
+												partnerImageSize.height);
+			
+			nameLabel.frame = nameRectNonPartner;
+			
+			
+		}
+	}
+}
+
+#pragma mark -
+#pragma mark More Brands View Controller
 
 - (void)categorySelectedWithNotification:(NSNotification*)note{
     
