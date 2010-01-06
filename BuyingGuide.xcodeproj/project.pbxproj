@@ -470,6 +470,7 @@
 		C4103FA010B711AD004CEC15 /* BGImporter */ = {
 			isa = PBXGroup;
 			children = (
+				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
 				C4103FA310B711F8004CEC15 /* Categories */,
 				C4103FBA10B71532004CEC15 /* InfoPlist.strings */,
 				C4103FBC10B71532004CEC15 /* MainMenu.xib */,
@@ -561,12 +562,12 @@
 		C4AFF95610B2342800801655 /* Application Level */ = {
 			isa = PBXGroup;
 			children = (
-				C492D5AC10BAF4490041400B /* MacroUtilities.h */,
-				C492D5AD10BAF4490041400B /* DebugLog.h */,
-				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				1D3623240D0F684500981E51 /* BuyingGuideAppDelegate.h */,
 				1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				C492D5AC10BAF4490041400B /* MacroUtilities.h */,
+				C492D5AD10BAF4490041400B /* DebugLog.h */,
+				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
 				C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */,
 			);
@@ -605,7 +606,6 @@
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
 				C474E43110C7076B00BFFFE8 /* storedata.sqlite */,
-				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
