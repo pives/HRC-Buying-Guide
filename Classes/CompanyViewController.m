@@ -146,7 +146,6 @@ static CGPoint partnerImageOrigin = {2,34};
 											constrainedToSize:nameLabel.frame.size
 												lineBreakMode:nameLabel.lineBreakMode];
 		
-		
 		if(nameBoundingBox.width > (nameRectMaxSize.width - partnerImageSize.width + 2)){
 			
 			//label text WILL overlap icon, resize label to compensate
