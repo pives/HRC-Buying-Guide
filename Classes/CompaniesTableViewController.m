@@ -229,17 +229,28 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     if(fetchedResultsController==nil)
         return nil;
         
+	 NSMutableArray* array = [[self.fetchedResultsController sectionIndexTitles] mutableCopy];
+	[array insertObject:UITableViewIndexSearch atIndex:0];
+	
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    
-    return [self.fetchedResultsController sectionIndexTitles];
+    return array;
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if(fetchedResultsController==nil)
         return 0;
-            
+           
+	int newIndex = index;
+
+	if(index != 0)
+		newIndex -= 1;
+	else{
+		[self.tableView scrollRectToVisible:self.tableView.tableHeaderView.bounds animated:NO];
+		return -1;
+	} 
+	
     // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:newIndex];
 }
 
 

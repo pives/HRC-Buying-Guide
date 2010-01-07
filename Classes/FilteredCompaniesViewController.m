@@ -159,6 +159,7 @@
 - (void)searchBeganWithNotification:(NSNotification*)note{
 	
 	[index removeFromSuperview];
+
 }
 
 - (void)searchEndedWithNotification:(NSNotification*)note{

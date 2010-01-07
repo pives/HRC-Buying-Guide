@@ -107,11 +107,14 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	
 	[self.tableView reloadData];
 	
+	//[self.tableView scrollRectToVisible:self.tableView.tableHeaderView.bounds animated:NO];
+
+	/*
 	if([[self.fetchedResultsController sections] count]>0)
 		[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
 	    //TODO: catch exception in case table is empty (but should never be)
-	
+	*/
 }
 
 
@@ -226,6 +229,11 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	if(searching)
 		return 0;
 	
+	/*
+	if(tableView == self.searchDisplayController.searchResultsTableView)
+		return 0;
+	*/				
+	
     if(mode == FilterdTableViewControllerModeRating)
         return 60;
     
@@ -324,9 +332,13 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     if(mode == FilterdTableViewControllerModeRating)
         return nil;
     
+	
+    NSMutableArray* array = [[self.fetchedResultsController sectionIndexTitles] mutableCopy];
+	[array insertObject:UITableViewIndexSearch atIndex:0];
+	
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    
-    return [self.fetchedResultsController sectionIndexTitles];
+    return array;
+	
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
@@ -336,8 +348,17 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
         return 0;
 
     
+	int newIndex = index;
+	
+	if(index != 0)
+		newIndex -= 1;
+	else{
+		[self.tableView scrollRectToVisible:self.tableView.tableHeaderView.bounds animated:NO];
+		return -1;
+	} 
+	
     // tell table which section corresponds to section title/index (e.g. "B",1))
-    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index];
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:newIndex];
 }
 
 
@@ -453,9 +474,16 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
 		
 	self.searching = YES;
-	[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+	//[controller.searchResultsTableView scrollRectToVisible:self.tableView.tableHeaderView.bounds animated:NO];
+
 	[[NSNotificationCenter defaultCenter] postNotificationName:FilteredCompanySearchBegan object:self];
 
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller{
+	
+	//[controller.searchResultsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+	
 }
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
