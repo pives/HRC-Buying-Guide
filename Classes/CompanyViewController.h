@@ -24,7 +24,6 @@
     UIImageView* partnerIcon;
     
     HRCBrandTableDataSource* data;
-    
     PagingScrollViewController* brands;
 
 }

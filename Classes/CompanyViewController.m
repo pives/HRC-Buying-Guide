@@ -43,11 +43,32 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize scoreBackgroundColor;
 @synthesize partnerIcon;
 
+#pragma mark -
+#pragma mark NSObject
+
+
+- (void)dealloc {
+    self.brands = nil;
+    self.data = nil;
+    self.nameLabel = nil;
+    self.scoreLabel = nil;
+    self.company = nil;
+    [super dealloc];
+}
+
+
+
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
     
     if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
 		
 		[self setCompany:aCompany category:aCategory];
+		
+		
+		/*
+		 NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
+		 NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
+		 */ 
 		
 		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Score Card" 
 																			style:UIBarButtonItemStyleBordered 
@@ -67,24 +88,26 @@ static CGPoint partnerImageOrigin = {2,34};
     return self;
 }
 
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+#pragma mark -
+#pragma mark UIViewController
+
+
+- (void)viewDidUnload {
+	self.brands = nil;
+	[super viewDidUnload];
+}
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
 	
-	/*
-	 for(Brand* eachBrand in aCompany.brands){
-	 
-	 NSLog(@"%@", eachBrand.nameSortFormatted);
-	 
-	 }
-	 */		
-	self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
-	/*
-	 NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
-	 NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
-	 */ 
+	// Release any cached data, images, etc that aren't in use.
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated{
 	
-	self.company = aCompany;
-	
-		
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -105,10 +128,6 @@ static CGPoint partnerImageOrigin = {2,34};
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -135,7 +154,21 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 #pragma mark -
-#pragma mark Image and label Layout
+#pragma mark Setup
+
+
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+	
+	if(self.data==nil){
+		self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
+	}else{
+		[data setCompany:aCompany category:aCategory];
+	}
+	
+	self.company = aCompany;
+}
+
+
 
 - (void)layoutPartnerImageAndCompanyLabel{
 	
@@ -362,27 +395,6 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    self.brands = nil;
-    self.data = nil;
-    self.nameLabel = nil;
-    self.scoreLabel = nil;
-    self.company = nil;
-    [super dealloc];
-}
 
 
 @end

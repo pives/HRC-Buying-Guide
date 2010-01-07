@@ -35,18 +35,24 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
     self = [super init];
 	if (self != nil)
 	{
-        
-        NSMutableDictionary* info = [NSMutableDictionary dictionary];
-        [info setObject:aCompany forKey:kCompnayKey];
-        if(aCategory!=nil)
-            [info setObject:aCategory forKey:kCategoryKey];
-
-        [info setObject:[NSNumber numberWithInt:[aCompany.categories count]] forKey:kNumberOfCategoriesKey];
-        
-        self.data = info;
-
-    }
+		[self setCompany:aCompany category:aCategory];
+	}
 	return self;
+}
+
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+    
+	NSMutableDictionary* info = [NSMutableDictionary dictionary];
+	
+	[info setObject:aCompany forKey:kCompnayKey];
+	if(aCategory!=nil)
+		[info setObject:aCategory forKey:kCategoryKey];
+	
+	[info setObject:[NSNumber numberWithInt:[aCompany.categories count]] forKey:kNumberOfCategoriesKey];
+	
+	self.data = info;
+	
+
 }
 
 - (NSInteger)numDataPages

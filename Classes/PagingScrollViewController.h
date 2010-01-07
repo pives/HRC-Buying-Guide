@@ -28,9 +28,13 @@
 	PageViewController *nextPage;
 }
 @property(nonatomic,retain)HRCBrandTableDataSource *data;
+@property(nonatomic,retain)PageViewController *currentPage;
+@property(nonatomic,retain)PageViewController *nextPage;
+
 
 - (IBAction)changePageWithPageControl:(id)sender;
 - (void)setCurrentPage:(int)pageIndex animated:(BOOL)flag;
+- (void)applyNewIndex:(NSInteger)newIndex pageController:(PageViewController *)pageController;
 
 - (void)scrollViewDidChangePage:(UIScrollView*)newScrollView;
 @end

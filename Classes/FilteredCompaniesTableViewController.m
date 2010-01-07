@@ -453,7 +453,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
 		
 	self.searching = YES;
-	[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+	[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 	[[NSNotificationCenter defaultCenter] postNotificationName:FilteredCompanySearchBegan object:self];
 
 }

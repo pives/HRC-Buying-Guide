@@ -55,21 +55,30 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 	// Relinquish ownership of any cached data, images, etc that aren't in use.
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+	
+	if([keyPath isEqualToString:@"data"]){
+		
+		self.company = data.company;
+		self.managedObjectContext = company.managedObjectContext;
+		
+		if([company.ratingLevel intValue] == 0)
+			self.ratingColor = [UIColor cellGreen];
+		else if([company.ratingLevel intValue] == 1)
+			self.ratingColor = [UIColor cellYellow];
+		else 
+			self.ratingColor = [UIColor cellRed];
+		
+		[self.tableController setCompany:self.company category:self.category color:self.ratingColor];
+	}
+}
+
 - (id)initWithDataSource:(HRCBrandTableDataSource*)someData{
     
     if(self = [super init]){
         
-        self.data = someData;
-        self.company = data.company;
-        self.managedObjectContext = company.managedObjectContext;
-        
-        if([company.ratingLevel intValue] == 0)
-            self.ratingColor = [UIColor cellGreen];
-        else if([company.ratingLevel intValue] == 1)
-            self.ratingColor = [UIColor cellYellow];
-        else 
-            self.ratingColor = [UIColor cellRed];
-
+		[self addObserver:self forKeyPath:@"data" options:0 context:nil];
+		self.data = someData;
     }
     return self;
 }
@@ -100,7 +109,11 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         
         tableController.tableFrame = CGRectMake(0, 44, 320, 236-25);
         self.categoryName.font = [UIFont boldSystemFontOfSize:15];
+		
+		[self.tableController setCompany:self.company category:self.category color:self.ratingColor];
         [self.view addSubview:tableController.view];
+		
+
         
     }
 }
@@ -111,7 +124,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 	
 	//FJSLog([NSString stringWithInt:self.pageIndex]);
 	
-    [self.tableController viewWillAppear:animated];
+    //[self.tableController viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -122,6 +135,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 
 - (void)setPageIndex:(NSInteger)newPageIndex
 {
+	
 	pageIndex = newPageIndex;
     
 	if (pageIndex >= 0 && pageIndex < ([data numDataPages]))
@@ -143,7 +157,9 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 
         }
         
-        [tableController fetch];
+		[tableController viewWillAppear:YES];
+		
+        //[tableController fetch];
     }
 }
 @end

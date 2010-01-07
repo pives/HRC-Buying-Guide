@@ -32,6 +32,7 @@
 
 
 - (id)initWithStyle:(UITableViewStyle)style company:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor;
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor;
 - (void)fetch;
 
 

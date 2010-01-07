@@ -26,6 +26,7 @@
 
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory;
 
 - (NSInteger)numDataPages;
 - (int)pageOfCategory:(Category*)aCategory;

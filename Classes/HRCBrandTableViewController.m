@@ -44,15 +44,20 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
     
     if(self = [super init]){
         
-        self.company = aCompany;
-        self.managedObjectContext = company.managedObjectContext;
-        self.category = aCategory;
-        self.ratingColor = aColor;
-
+		[self setCompany:aCompany category:aCategory color:aColor];
+        
     }
     return self;
 }
 
+- (void)setCompany:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor{
+	
+	self.company = aCompany;
+	self.managedObjectContext = company.managedObjectContext;
+	self.category = aCategory;
+	self.ratingColor = aColor;
+	
+}
 
 
 - (void)setTableFrame:(CGRect)aFrame{
@@ -96,11 +101,13 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    //TODO: Makes me crash when switching tableviews IF the brand table is empty (company name is in the cat but no brand)
-    /*
-    if([self.tableView visibleCells] != nil || ([[self.tableView visibleCells] count] > 0))
+	[self fetch];
+	//when switching tableviews IF the brand table is empty (company name is in the cat but no brand)
+    if((self.tableView != nil) && 
+	   ([self.tableView numberOfSections] > 0) && 
+	   ([self.tableView numberOfRowsInSection:0] > 0))
        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    */
+    
 }
 
 - (void)fetch{

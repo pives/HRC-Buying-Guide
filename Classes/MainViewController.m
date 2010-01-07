@@ -24,10 +24,11 @@
 @synthesize modeSwitch;
 @synthesize managedObjectContext;
 @synthesize companyView;
-
+@synthesize companyController;
 
 
 - (void)dealloc {
+	self.companyController = nil;
     self.companyView = nil;
     self.categoryView = nil;
     [super dealloc];
