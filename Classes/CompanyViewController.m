@@ -19,8 +19,8 @@
 #import "FilteredCompaniesViewController.h"
 
 static CGRect nameRectPartner = {
-	{10,0},
-	{230,80}
+	{18,0},
+	{240-18,80}
 };
 
 static CGRect nameRectNonPartner = {
@@ -184,7 +184,7 @@ static CGPoint partnerImageOrigin = {2,34};
 											constrainedToSize:nameLabel.frame.size
 												lineBreakMode:nameLabel.lineBreakMode];
 		
-		if(nameBoundingBox.width > (nameRectMaxSize.width - partnerImageSize.width + 2)){
+		if(nameBoundingBox.width > (nameRectMaxSize.width - partnerImageSize.width - 4)){
 			
 			//label text WILL overlap icon, resize label to compensate
 			nameLabel.frame = nameRectPartner;
@@ -198,7 +198,7 @@ static CGPoint partnerImageOrigin = {2,34};
 			
 		}else{
 			//label text will NOT overlap icon, move icon closer to look good			
-			self.partnerIcon.frame = CGRectMake(floorf((nameRectMaxSize.width - nameBoundingBox.width)/2 - partnerImageSize.width - 2), 
+			self.partnerIcon.frame = CGRectMake(floorf((nameRectMaxSize.width - nameBoundingBox.width)/2 - partnerImageSize.width - 6), 
 												partnerImageOrigin.y, 
 												partnerImageSize.width, 
 												partnerImageSize.height);

@@ -79,7 +79,8 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
     //self.view.backgroundColor = [UIColor reallyLightGray];
     self.view.backgroundColor = [UIColor clearColor];
 
-	UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setBackgroundImage:[UIImage imageNamed:@"brandsButton.png"] forState:UIControlStateNormal];
 	[button setTitle:@"Show Other Brands in Category" forState:UIControlStateNormal];
 	[button addTarget:self action:@selector(showOtherBrandsCategory:) forControlEvents:UIControlEventTouchUpInside];
 	[button setFrame:CGRectMake(10, 10, tableFrame.size.width-20, 45)];

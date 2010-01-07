@@ -110,6 +110,8 @@
 		C497021A10CF45B2000ED22B /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* Brand.m */; };
 		C497025C10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
 		C497025D10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
+		C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
+		C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
 		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
@@ -269,6 +271,7 @@
 		C497021710CF45B2000ED22B /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		C497025A10CF4A86000ED22B /* Brand+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brand+Extensions.h"; sourceTree = "<group>"; };
 		C497025B10CF4A86000ED22B /* Brand+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brand+Extensions.m"; sourceTree = "<group>"; };
+		C49AD08610F5A1C800B1130E /* brandsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brandsButton.png; sourceTree = "<group>"; };
 		C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesTableViewController.m; sourceTree = "<group>"; };
 		C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
@@ -730,6 +733,7 @@
 		C4FA235410B5DC8E0031303E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C49AD08610F5A1C800B1130E /* brandsButton.png */,
 				C46D874310CC297600541CF1 /* slider.png */,
 				C41CD39B10F263E700973374 /* slidernew.png */,
 				C41288DC10C82792007BB9A8 /* red.png */,
@@ -863,6 +867,7 @@
 				C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
 				C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 				C41CD39C10F263E700973374 /* slidernew.png in Resources */,
+				C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +916,7 @@
 				C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
 				C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 				C41CD39D10F263E700973374 /* slidernew.png in Resources */,
+				C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
