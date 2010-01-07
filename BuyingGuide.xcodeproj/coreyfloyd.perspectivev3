@@ -388,7 +388,7 @@
 										<string>C4FA187A10B2F4D30031303E</string>
 										<string>C4FA193810B30C200031303E</string>
 										<string>C4FA1C9C10B38F2A0031303E</string>
-										<string>19C28FACFE9D520D11CA2CBB</string>
+										<string>C4103FA010B711AD004CEC15</string>
 										<string>1C37FBAC04509CD000000102</string>
 										<string>1C37FAAC04509CD000000102</string>
 										<string>1C77FABC04509CD000000102</string>
@@ -396,8 +396,10 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>31</integer>
-											<integer>30</integer>
+											<integer>17</integer>
+											<integer>13</integer>
+											<integer>8</integer>
+											<integer>4</integer>
 											<integer>0</integer>
 										</array>
 									</array>
@@ -439,12 +441,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PageViewController.m</string>
+										<string>HRCBrandTableViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -452,11 +456,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>PageViewController.m</string>
+												<string>HRCBrandTableViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C49AD2CC10F6874300B1130E</string>
+												<string>C49AD30410F68D2800B1130E</string>
 												<key>history</key>
 												<array>
 													<string>C4AFF96A10B234ED00801655</string>
@@ -487,7 +491,6 @@
 													<string>C4541BAB10CEED0B006A29A4</string>
 													<string>C4541BCE10CEEDBC006A29A4</string>
 													<string>C4541C2710CEF893006A29A4</string>
-													<string>C4541C3710CF058C006A29A4</string>
 													<string>C4541C3910CF058C006A29A4</string>
 													<string>C49701BE10CF432C000ED22B</string>
 													<string>C497022610CF464A000ED22B</string>
@@ -550,7 +553,6 @@
 													<string>C41CD3A410F2642F00973374</string>
 													<string>C41CD3A610F2642F00973374</string>
 													<string>C41CD3A710F2642F00973374</string>
-													<string>C49ACEA910F52CFA00B1130E</string>
 													<string>C49ACEB010F52D5F00B1130E</string>
 													<string>C49ACEB110F52D5F00B1130E</string>
 													<string>C49ACEB210F52D5F00B1130E</string>
@@ -568,8 +570,10 @@
 													<string>C49ACFFA10F55BE300B1130E</string>
 													<string>C49AD08D10F5A20400B1130E</string>
 													<string>C49AD08E10F5A20400B1130E</string>
-													<string>C49AD08F10F5A20400B1130E</string>
-													<string>C49AD2C910F6873800B1130E</string>
+													<string>C49AD2D610F68B1200B1130E</string>
+													<string>C49AD2F710F68C8C00B1130E</string>
+													<string>C49AD30210F68D2800B1130E</string>
+													<string>C49AD30310F68D2800B1130E</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -610,7 +614,7 @@
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C49AD2CD10F6874300B1130E</string>
+												<string>C49AD30510F68D2800B1130E</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -634,7 +638,6 @@
 													<string>C4541C8B10CF2E77006A29A4</string>
 													<string>C4541C8E10CF2E77006A29A4</string>
 													<string>C49701F310CF4478000ED22B</string>
-													<string>C497022210CF464A000ED22B</string>
 													<string>C497022310CF464A000ED22B</string>
 													<string>C497022610CF464A000ED22B</string>
 													<string>C497022710CF464A000ED22B</string>
@@ -1011,7 +1014,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>284591939.33642</real>
+	<real>284593448.014184</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -1028,6 +1031,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C49AD2D410F68AFE00B1130E</string>
+		<string>C49AD2D510F68AFE00B1130E</string>
 		<string>/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

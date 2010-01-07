@@ -217,7 +217,11 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
             
         }
         
-    }
+    }else{
+		
+		cell.imageView.image = nil;
+
+	}
     
     return cell;
 }

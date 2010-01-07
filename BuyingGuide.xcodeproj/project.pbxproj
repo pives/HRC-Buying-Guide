@@ -78,7 +78,6 @@
 		C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C46D8A2910CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
-		C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C474E43410C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
@@ -112,6 +111,7 @@
 		C497025D10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
 		C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
 		C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
+		C49AD2F410F68C7500B1130E /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49AD2F310F68C7500B1130E /* bgdata.csv */; };
 		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
@@ -151,7 +151,6 @@
 		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1C7610B389EB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
 		C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		C4FA1D5710B45DBB0031303E /* bgdata.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4C02DD110B1A83F000D46AA /* bgdata.csv */; };
 		C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
 		C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
 		C4FA1D5C10B45DBB0031303E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -272,6 +271,7 @@
 		C497025A10CF4A86000ED22B /* Brand+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brand+Extensions.h"; sourceTree = "<group>"; };
 		C497025B10CF4A86000ED22B /* Brand+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brand+Extensions.m"; sourceTree = "<group>"; };
 		C49AD08610F5A1C800B1130E /* brandsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brandsButton.png; sourceTree = "<group>"; };
+		C49AD2F310F68C7500B1130E /* bgdata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bgdata.csv; sourceTree = "<group>"; };
 		C4AAD3A310B26A8300D393AE /* FilteredCompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredCompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredCompaniesTableViewController.m; sourceTree = "<group>"; };
 		C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
@@ -279,7 +279,6 @@
 		C4AFF94010B232F000801655 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C4AFF98F10B2388600801655 /* UIBarButtonItem+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+extensions.h"; path = "Classes/UIBarButtonItem+extensions.h"; sourceTree = "<group>"; };
 		C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+extensions.m"; path = "Classes/UIBarButtonItem+extensions.m"; sourceTree = "<group>"; };
-		C4C02DD110B1A83F000D46AA /* bgdata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bgdata.csv; sourceTree = "<group>"; };
 		C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FJSCoreDataExtensions.h"; sourceTree = "<group>"; };
 		C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FJSCoreDataExtensions.m"; sourceTree = "<group>"; };
 		C4C031D610B1EB9B000D46AA /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extensions.h"; sourceTree = "<group>"; };
@@ -473,7 +472,7 @@
 		C4103FA010B711AD004CEC15 /* BGImporter */ = {
 			isa = PBXGroup;
 			children = (
-				C4C02DD110B1A83F000D46AA /* bgdata.csv */,
+				C49AD2F310F68C7500B1130E /* bgdata.csv */,
 				C4103FA310B711F8004CEC15 /* Categories */,
 				C4103FBA10B71532004CEC15 /* InfoPlist.strings */,
 				C4103FBC10B71532004CEC15 /* MainMenu.xib */,
@@ -875,11 +874,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C474E3D610C703B400BFFFE8 /* bgdata.csv in Resources */,
 				C4103FBE10B71532004CEC15 /* InfoPlist.strings in Resources */,
 				C4103FBF10B71532004CEC15 /* MainMenu.xib in Resources */,
 				C474E43410C7076B00BFFFE8 /* storedata.sqlite in Resources */,
 				C46D8A2910CC60E600541CF1 /* EmailConfused.txt in Resources */,
+				C49AD2F410F68C7500B1130E /* bgdata.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,7 +887,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */,
-				C4FA1D5710B45DBB0031303E /* bgdata.csv in Resources */,
 				C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */,
 				C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */,
 				C4FA235310B5DC8A0031303E /* iphone_bottom-bar-clear.png in Resources */,
