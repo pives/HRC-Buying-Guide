@@ -31,6 +31,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	
 	
+	
 	NSString *applicationCode = @"4bbfd488141c84699824c518b281b86e";
     [Beacon initAndStartBeaconWithApplicationCode:applicationCode
                                   useCoreLocation:NO
@@ -109,6 +110,10 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSDictionary* oldAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:staticDB error:nil];
 	NSDictionary* newAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:appDB error:nil];
 
+	NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+	
+	NSString* oldBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
+	NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
     
     if(flag){
 		
@@ -132,8 +137,18 @@ static NSString* kAnimationID = @"SplashAnimation";
 													toPath:appDB 
 													 error:nil];
             
-        }
-    } 
+        }else if(![newBundleID isEqualToString:oldBundleID]){
+			
+			
+			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
+													toPath:appDB 
+													 error:nil];
+		}
+    }
+	
+	[[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
+
 }
 
 
