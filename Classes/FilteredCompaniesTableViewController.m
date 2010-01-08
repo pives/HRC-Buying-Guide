@@ -34,9 +34,6 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
 
 
-
-
-
 #pragma mark -
 #pragma mark Memory management
 
@@ -87,6 +84,11 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];    
+	
+	for(UITableViewCell* eachCell in [self.searchDisplayController.searchResultsTableView visibleCells]){		
+		[eachCell setSelected:NO animated:YES];
+	}
+	
     //[self.view setSizeHeight:self.view.frame.size.height-44];
     
 }
@@ -318,10 +320,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     
     Company* selectedCompany = (Company*)[[(Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
-     
-
+	
 }
-
 
 #pragma mark -
 #pragma mark sectionIndexTitlesForTableView

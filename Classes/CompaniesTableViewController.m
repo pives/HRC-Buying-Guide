@@ -82,6 +82,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+	for(UITableViewCell* eachCell in [self.searchDisplayController.searchResultsTableView visibleCells]){		
+		[eachCell setSelected:NO animated:YES];
+	}
 	//elf.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
 	//self.tableView.tableHeaderView.backgroundColor = [UIColor blueColor];
 //	self.searchBar = [[UISearchBar alloc] init];
