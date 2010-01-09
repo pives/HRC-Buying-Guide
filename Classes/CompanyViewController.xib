@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="16"/>
+			<integer value="5"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -60,10 +60,52 @@
 						<float key="IBUISectionHeaderHeight">10</float>
 						<float key="IBUISectionFooterHeight">10</float>
 					</object>
+					<object class="IBUIView" id="931002531">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<object class="NSMutableArray" key="NSSubviews">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUILabel" id="727651201">
+								<reference key="NSNextResponder" ref="931002531"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{250, 0}, {70, 80}}</string>
+								<reference key="NSSuperview" ref="931002531"/>
+								<object class="NSColor" key="IBUIBackgroundColor" id="567185113">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MCAwAA</bytes>
+								</object>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="IBUIText">100</string>
+								<object class="NSFont" key="IBUIFont" id="775998944">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">17</double>
+									<int key="NSfFlags">16</int>
+								</object>
+								<object class="NSColor" key="IBUITextColor" id="697835025">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MCAwIDAAA</bytes>
+								</object>
+								<nil key="IBUIHighlightedColor"/>
+								<int key="IBUIBaselineAdjustment">1</int>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
+							</object>
+						</object>
+						<string key="NSFrameSize">{320, 80}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MCAwLjcxNzY0NzA3NTcgMC4zNzY0NzA1OTU2AA</bytes>
+						</object>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+					</object>
 					<object class="IBUILabel" id="592381345">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{240, 80}</string>
+						<string key="NSFrame">{{18, 0}, {222, 80}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -76,27 +118,20 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Company Name</string>
-						<object class="NSFont" key="IBUIFont" id="775998944">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">17</double>
-							<int key="NSfFlags">16</int>
-						</object>
-						<object class="NSColor" key="IBUITextColor" id="697835025">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
-						</object>
+						<reference key="IBUIFont" ref="775998944"/>
+						<reference key="IBUITextColor" ref="697835025"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">15</float>
 						<int key="IBUINumberOfLines">6</int>
-						<int key="IBUITextAlignment">1</int>
 						<int key="IBUILineBreakMode">0</int>
 					</object>
 					<object class="IBUIImageView" id="315472020">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 31}, {20, 20}}</string>
+						<string key="NSFrame">{{10, 31}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="IBUIBackgroundColor" ref="567185113"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<int key="IBUIContentMode">4</int>
@@ -105,41 +140,6 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">HRC_Icon.png</string>
 						</object>
-					</object>
-					<object class="IBUIView" id="931002531">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<object class="NSMutableArray" key="NSSubviews">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUILabel" id="727651201">
-								<reference key="NSNextResponder" ref="931002531"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{80, 80}</string>
-								<reference key="NSSuperview" ref="931002531"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="567185113">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MCAwAA</bytes>
-								</object>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="IBUIText">Score</string>
-								<reference key="IBUIFont" ref="775998944"/>
-								<reference key="IBUITextColor" ref="697835025"/>
-								<nil key="IBUIHighlightedColor"/>
-								<int key="IBUIBaselineAdjustment">1</int>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-								<float key="IBUIMinimumFontSize">10</float>
-								<int key="IBUITextAlignment">1</int>
-							</object>
-						</object>
-						<string key="NSFrame">{{240, 0}, {80, 80}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">2</int>
-							<bytes key="NSRGB">MCAwLjcxNzY0NzA3NTcgMC4zNzY0NzA1OTU2AA</bytes>
-						</object>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					</object>
 					<object class="IBUIToolbar" id="707150189">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -162,6 +162,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrameSize">{320, 256}</string>
 								<reference key="NSSuperview" ref="1066788612"/>
+								<reference key="IBUIBackgroundColor" ref="567185113"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<bool key="IBUIPagingEnabled">YES</bool>
@@ -324,10 +325,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="592381345"/>
 							<reference ref="1066788612"/>
-							<reference ref="931002531"/>
 							<reference ref="294114201"/>
 							<reference ref="707150189"/>
 							<reference ref="315472020"/>
+							<reference ref="931002531"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -388,11 +389,6 @@
 						<string key="objectName">scoreColor</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">7</int>
-						<reference key="object" ref="727651201"/>
-						<reference key="parent" ref="931002531"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
 						<reference key="object" ref="294114201"/>
 						<reference key="parent" ref="191373211"/>
@@ -415,6 +411,11 @@
 						<int key="objectID">27</int>
 						<reference key="object" ref="315472020"/>
 						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">7</int>
+						<reference key="object" ref="727651201"/>
+						<reference key="parent" ref="931002531"/>
 					</object>
 				</object>
 			</object>

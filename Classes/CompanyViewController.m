@@ -19,20 +19,20 @@
 #import "FilteredCompaniesViewController.h"
 
 static CGRect nameRectPartner = {
-	{18,0},
-	{240-18,80}
+	{18+18,0},
+	{222-18,80}
 };
 
 static CGRect nameRectNonPartner = {
-	{0,0},
-	{240,80}
+	{18,0},
+	{222,80}
 };
-
+/*
 static CGSize nameRectMaxSize = {240,80};
 static CGSize partnerImageSize = {14,14};
 
 static CGPoint partnerImageOrigin = {2,34};
-
+*/
 @implementation CompanyViewController
 
 @synthesize company;
@@ -114,18 +114,7 @@ static CGPoint partnerImageOrigin = {2,34};
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     brands.data = self.data;
-
-    if([company.ratingLevel intValue] == 0)
-        scoreBackgroundColor.backgroundColor = [UIColor cellGreen];
-	
-    else if([company.ratingLevel intValue] == 1)
-        scoreBackgroundColor.backgroundColor = [UIColor cellYellow];
-	
-    else 
-        scoreBackgroundColor.backgroundColor = [UIColor cellRed];
-    
 }
 
 
@@ -134,6 +123,19 @@ static CGPoint partnerImageOrigin = {2,34};
     [super viewWillAppear:animated];
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
+	
+	UIColor* color; 
+	
+    if([company.ratingLevel intValue] == 0)
+        color = [UIColor cellGreen];
+    else if([company.ratingLevel intValue] == 1)
+        color = [UIColor cellYellow];
+    else 
+        color = [UIColor cellRed];
+    
+	scoreBackgroundColor.backgroundColor = color;
+	nameLabel.backgroundColor = color;
+	
 	[self layoutPartnerImageAndCompanyLabel];
     [brands viewWillAppear:animated];
     
@@ -180,6 +182,8 @@ static CGPoint partnerImageOrigin = {2,34};
 	}else{
 		
 		self.partnerIcon.alpha = 1;
+		self.nameLabel.frame = nameRectPartner;
+		/*
 		CGSize nameBoundingBox = [nameLabel.text sizeWithFont:nameLabel.font
 											constrainedToSize:nameLabel.frame.size
 												lineBreakMode:nameLabel.lineBreakMode];
@@ -194,7 +198,7 @@ static CGPoint partnerImageOrigin = {2,34};
 												partnerImageOrigin.y, 
 												partnerImageSize.width, 
 												partnerImageSize.height);
-			
+		
 			
 		}else{
 			//label text will NOT overlap icon, move icon closer to look good			
@@ -207,6 +211,7 @@ static CGPoint partnerImageOrigin = {2,34};
 			
 			
 		}
+		 */
 	}
 }
 
