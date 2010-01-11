@@ -112,13 +112,12 @@
 
 - (BOOL)isEmpty{
     
-    BOOL answer = NO;
+	BOOL answer = NO;
     
-    if([self length]==0)
+	NSString* stripped = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
+    if([stripped length]==0)
         answer = YES;
-    else if([self isEqualToString:@" "])
-        answer = YES;
-    
     return answer;
 }
 
