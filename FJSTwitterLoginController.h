@@ -22,14 +22,13 @@
 @property(nonatomic,retain)IBOutlet UIButton *passwordCheckBox;
 @property(nonatomic,retain)MGTwitterEngine *twitterEngine;
 
+- (id)initWithTwitterEngine:(MGTwitterEngine*)engine;
 
+//Actions, not for You!
 - (IBAction)login;
 - (IBAction)togglePasswordSaving:(id)sender;
 - (IBAction)cancel;
 
-- (id)initWithTwitterEngine:(MGTwitterEngine*)engine;
-
-- (void)saveUserCredentials;
 
 @end
 

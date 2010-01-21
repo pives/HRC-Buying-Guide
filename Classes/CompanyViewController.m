@@ -17,6 +17,8 @@
 #import "CompanyScoreCardViewController.h"
 #import "HRCBrandTableViewController.h"
 #import "FilteredCompaniesViewController.h"
+#import "FJSTweetViewController.h"
+
 
 static CGRect nameRectPartner = {
 	{18+18,0},
@@ -353,7 +355,19 @@ static CGPoint partnerImageOrigin = {2,34};
         
         
     }
-    
+}
+
+- (void)postTweet{
+	
+	FJSTweetViewController* tvc = [[FJSTweetViewController alloc] initWithCompany:self.company];
+	
+	UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
+	nc.navigationBarHidden = YES;
+	
+	[self.navigationController presentModalViewController:nc animated:YES];
+	
+	[tvc release];
+	[nc release];
 }
 
 #pragma mark -
@@ -374,7 +388,7 @@ static CGPoint partnerImageOrigin = {2,34};
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Send Email", nil] autorelease];
+                                                       otherButtonTitles:@"Post a Tweet", @"Send Email", nil] autorelease];
     
     
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
@@ -390,7 +404,12 @@ static CGPoint partnerImageOrigin = {2,34};
     
     switch (buttonIndex)
     {
-        case 0:
+		case 0:
+        {
+            [self postTweet];
+            break;
+        }
+		case 1:
         {
             [self sendEmail];
             break;

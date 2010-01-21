@@ -19,6 +19,13 @@ NSString* const FJSTwitterLoginUnsuccessful = @"FJSTwitterLoginUnsuccessful";
 NSString* const FJSTwitterUsernameKey = @"FJSTwitterUsername";
 NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
+
+@interface FJSTwitterLoginController()
+
+- (void)saveUserCredentials;
+
+@end
+
 @implementation FJSTwitterLoginController
 
 
@@ -37,6 +44,7 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 }
 
 - (id)initWithTwitterEngine:(MGTwitterEngine*)engine{
+	
 	self = [super initWithNibName:@"FJSTwitterLoginController" bundle:nil];
 	if (self != nil) {		
 		self.twitterEngine = engine;

@@ -8,22 +8,27 @@
 
 #import <UIKit/UIKit.h>
 @class MGTwitterEngine;
+@class Company;
 
 @interface FJSTweetViewController : UIViewController {
 
 	UITextView* tweetTextView;
 	UILabel* charCount;
 	
+	Company* company;
 	MGTwitterEngine* twitterEngine;
 	
 }
 @property(nonatomic,retain)IBOutlet UITextView *tweetTextView;
 @property(nonatomic,retain)IBOutlet UILabel *charCount;
-@property(nonatomic,retain)MGTwitterEngine *twitterEngine;
 
+
+
+- (id)initWithCompany:(Company*)aCompany;
+
+//Don't you touch me!
 - (IBAction)tweet;
 - (IBAction)cancel;
 
-- (void)launchLoginView;
 
 @end

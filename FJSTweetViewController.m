@@ -10,21 +10,49 @@
 #import "SFHFKeychainUtils.h"
 #import "FJSTwitterLoginController.h"
 #import "MGTwitterEngine.h"
+#import "Company.h"
+
+
+@interface FJSTweetViewController()
+
+@property(nonatomic,retain)Company *company;
+@property(nonatomic,retain)MGTwitterEngine *twitterEngine;
+
+- (void)launchLoginView;
+
+@end
+
 
 @implementation FJSTweetViewController
 
 @synthesize tweetTextView;
 @synthesize charCount;
 @synthesize twitterEngine;
+@synthesize company;
+
+
 
 
 - (void)dealloc {
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	self.company = nil;
 	self.tweetTextView = nil;
 	self.charCount = nil;
 	self.twitterEngine = nil;
     [super dealloc];
+}
+
+
+- (id)initWithCompany:(Company*)aCompany{
+	
+	self = [super initWithNibName:@"FJSTweetViewController" bundle:nil];
+	if (self != nil) {
+		
+		self.company = aCompany;
+		
+	}
+	return self;
 }
 
 
@@ -33,17 +61,35 @@
     [super viewDidLoad];
 	
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLoginWithNotification:) name:FJSTwitterLoginSuccessful object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didNotLoginWithNotification:) name:FJSTwitterLoginUnsuccessful object:nil];	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(didLoginWithNotification:) 
+												 name:FJSTwitterLoginSuccessful 
+											   object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(didNotLoginWithNotification:) 
+												 name:FJSTwitterLoginUnsuccessful 
+											   object:nil];	
+	
+	
+	
+	NSMutableString* initialtext = [NSMutableString string];
+	[initialtext appendString:@"@HRC "];
+	[initialtext appendString:self.company.name];
+	self.tweetTextView.text = initialtext;
+
 	
 	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
+	
+	}
+
+- (void)viewDidAppear:(BOOL)animated{
 	
 	NSString* twitterName = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
 	
 	if(twitterName == nil){
 		
-		[self launchLoginView];
+		[self performSelector:@selector(launchLoginView) withObject:nil afterDelay:0.2];
 		
 	}else{
 		
@@ -63,12 +109,12 @@
 			
 		}else{
 			
-			[self launchLoginView];
+			[self performSelector:@selector(launchLoginView) withObject:nil afterDelay:0.2];
 			
 		}
 	}
+	
 }
-
 
 - (IBAction)tweet{
 	
@@ -83,11 +129,12 @@
 
 - (void)launchLoginView{
 	
-		
-	FJSTwitterLoginController* tvc = [[FJSTwitterLoginController alloc] initWithTwitterEngine:self.twitterEngine];
+	
+	FJSTwitterLoginController* tvc = [[[FJSTwitterLoginController alloc] initWithTwitterEngine:self.twitterEngine] autorelease];
+	
 	tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:tvc animated:YES];
-	[tvc release];
+	
 }
 
 - (void)didLoginWithNotification:(NSNotification*)note{

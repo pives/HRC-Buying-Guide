@@ -385,19 +385,15 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 									<array>
 										<string>29B97314FDCFA39411CA2CEA</string>
+										<string>C4FA187A10B2F4D30031303E</string>
+										<string>C4103F5110B6FADF004CEC15</string>
 										<string>C4CDF7A11108DD510036F44F</string>
-										<string>C4C031DE10B1EBAA000D46AA</string>
 										<string>1C37FBAC04509CD000000102</string>
 										<string>1C37FAAC04509CD000000102</string>
 										<string>1C77FABC04509CD000000102</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
-										<array>
-											<integer>19</integer>
-											<integer>18</integer>
-											<integer>0</integer>
-										</array>
 										<array>
 											<integer>20</integer>
 											<integer>18</integer>
@@ -449,7 +445,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FJSTwitterLoginController.m</string>
+										<string>FJSTweetViewController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -457,11 +453,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>FJSTwitterLoginController.m</string>
+												<string>FJSTweetViewController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4CDF899110907490036F44F</string>
+												<string>C4CDF9B1110913E70036F44F</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -496,7 +492,6 @@
 													<string>C497034410D01293000ED22B</string>
 													<string>C497040A10D017F7000ED22B</string>
 													<string>C497048610D050C0000ED22B</string>
-													<string>C4D2DFB110D178B600E050F4</string>
 													<string>C42E98B810D88C0800754443</string>
 													<string>C42E98B910D88C0800754443</string>
 													<string>C42E98BA10D88C0800754443</string>
@@ -518,7 +513,6 @@
 													<string>C4EFEC3710E1AB0F005180AC</string>
 													<string>C4EFEC3810E1AB0F005180AC</string>
 													<string>C41CCE1410F16E9F00973374</string>
-													<string>C41CCE1510F16E9F00973374</string>
 													<string>C41CCE1610F16E9F00973374</string>
 													<string>C41CCE1710F16E9F00973374</string>
 													<string>C41CCEF110F1842400973374</string>
@@ -530,10 +524,7 @@
 													<string>C49ACED710F52E1E00B1130E</string>
 													<string>C49ACED810F52E1E00B1130E</string>
 													<string>C49ACED910F52E1E00B1130E</string>
-													<string>C49ACF2710F5350300B1130E</string>
-													<string>C49ACF2810F5350300B1130E</string>
 													<string>C49ACF2A10F5350300B1130E</string>
-													<string>C49ACF2B10F5350300B1130E</string>
 													<string>C49ACF3A10F53B8A00B1130E</string>
 													<string>C49ACF3B10F53B8A00B1130E</string>
 													<string>C49ACF4710F5497800B1130E</string>
@@ -545,7 +536,6 @@
 													<string>C49AD5EC10F7A7B900B1130E</string>
 													<string>C49B9EB710F7C83700C649E8</string>
 													<string>C4CDF80C1108F3240036F44F</string>
-													<string>C4CDF80D1108F3240036F44F</string>
 													<string>C4CDF80E1108F3240036F44F</string>
 													<string>C4CDF80F1108F3240036F44F</string>
 													<string>C4CDF8121108F3240036F44F</string>
@@ -557,18 +547,25 @@
 													<string>C4CDF8181108F3240036F44F</string>
 													<string>C4CDF8191108F3240036F44F</string>
 													<string>C4CDF81A1108F3240036F44F</string>
-													<string>C4CDF8441108F9690036F44F</string>
-													<string>C4CDF8451108F9690036F44F</string>
 													<string>C4CDF8461108F9690036F44F</string>
 													<string>C4CDF8471108F9690036F44F</string>
-													<string>C4CDF8491108F9690036F44F</string>
 													<string>C4CDF866110902900036F44F</string>
 													<string>C4CDF867110902900036F44F</string>
 													<string>C4CDF868110902900036F44F</string>
 													<string>C4CDF869110902900036F44F</string>
 													<string>C4CDF86A110902900036F44F</string>
-													<string>C4CDF86B110902900036F44F</string>
-													<string>C4CDF86C110902900036F44F</string>
+													<string>C4CDF8AA1109092C0036F44F</string>
+													<string>C4CDF8B611090BE40036F44F</string>
+													<string>C4CDF8B711090BE40036F44F</string>
+													<string>C4CDF8B811090BE40036F44F</string>
+													<string>C4CDF8201108F3240036F44F</string>
+													<string>C4CDF8F711090E000036F44F</string>
+													<string>C4CDF91B11090F110036F44F</string>
+													<string>C4CDF936110910090036F44F</string>
+													<string>C4CDF937110910090036F44F</string>
+													<string>C4CDF956110911050036F44F</string>
+													<string>C4CDF9AF110913E70036F44F</string>
+													<string>C4CDF9B0110913E70036F44F</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -597,7 +594,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C40442E910B071E900BCCFEC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FJSTweetViewController.m</string>
+										<string>FJSTwitterLoginController.m</string>
 										<key>PBXSplitModuleInNavigatorKey</key>
 										<dict>
 											<key>Split0</key>
@@ -605,11 +602,11 @@
 												<key>PBXProjectModuleGUID</key>
 												<string>C40442EA10B071E900BCCFEC</string>
 												<key>PBXProjectModuleLabel</key>
-												<string>FJSTweetViewController.m</string>
+												<string>FJSTwitterLoginController.m</string>
 												<key>_historyCapacity</key>
 												<integer>0</integer>
 												<key>bookmark</key>
-												<string>C4CDF89B110907490036F44F</string>
+												<string>C4CDF9B2110913E70036F44F</string>
 												<key>history</key>
 												<array>
 													<string>C4C031E810B1EBC8000D46AA</string>
@@ -681,7 +678,6 @@
 													<string>C49ACED810F52E1E00B1130E</string>
 													<string>C49ACED910F52E1E00B1130E</string>
 													<string>C49ACF2710F5350300B1130E</string>
-													<string>C49ACF2810F5350300B1130E</string>
 													<string>C49ACF2A10F5350300B1130E</string>
 													<string>C49ACF2B10F5350300B1130E</string>
 													<string>C49ACF3A10F53B8A00B1130E</string>
@@ -692,8 +688,6 @@
 													<string>C49AD01B10F55DC300B1130E</string>
 													<string>C49AD31810F6910C00B1130E</string>
 													<string>C49AD37C10F6964C00B1130E</string>
-													<string>C49AD5EC10F7A7B900B1130E</string>
-													<string>C49B9EB710F7C83700C649E8</string>
 													<string>C4CDF81D1108F3240036F44F</string>
 													<string>C4CDF81E1108F3240036F44F</string>
 													<string>C4CDF81F1108F3240036F44F</string>
@@ -701,10 +695,13 @@
 													<string>C4CDF8211108F3240036F44F</string>
 													<string>C4CDF8221108F3240036F44F</string>
 													<string>C4CDF8231108F3240036F44F</string>
-													<string>C4CDF84C1108F9690036F44F</string>
-													<string>C4CDF84D1108F9690036F44F</string>
-													<string>C4CDF874110905230036F44F</string>
-													<string>C4CDF89A110907490036F44F</string>
+													<string>C4CDF8CB11090CC20036F44F</string>
+													<string>C4CDF92911090F5F0036F44F</string>
+													<string>C4CDF948110910950036F44F</string>
+													<string>C4CDF97F1109124B0036F44F</string>
+													<string>C4CDF996110913240036F44F</string>
+													<string>C4CDF997110913240036F44F</string>
+													<string>C4CDF9801109124B0036F44F</string>
 												</array>
 											</dict>
 											<key>SplitCount</key>
@@ -897,12 +894,12 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {1920, 344}}</string>
+						<string>{{0, 0}, {1918, 347}}</string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
 					<key>Proportion</key>
-					<string>344pt</string>
+					<string>347pt</string>
 				</dict>
 				<dict>
 					<key>ContentConfiguration</key>
@@ -921,8 +918,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {933, 320}}</string>
-									<string>{{0, 320}, {933, 322}}</string>
+									<string>{{0, 0}, {932, 322}}</string>
+									<string>{{0, 322}, {932, 325}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -937,8 +934,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {933, 642}}</string>
-									<string>{{933, 0}, {987, 642}}</string>
+									<string>{{0, 0}, {932, 647}}</string>
+									<string>{{932, 0}, {986, 647}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -958,7 +955,7 @@
 						<key>DebugSTDIOWindowFrame</key>
 						<string>{{200, 200}, {500, 300}}</string>
 						<key>Frame</key>
-						<string>{{0, 349}, {1920, 642}}</string>
+						<string>{{0, 352}, {1918, 647}}</string>
 						<key>PBXDebugSessionStackFrameViewKey</key>
 						<dict>
 							<key>DebugVariablesTableConfiguration</key>
@@ -968,16 +965,16 @@
 								<string>Value</string>
 								<real>85</real>
 								<string>Summary</string>
-								<real>604</real>
+								<real>603</real>
 							</array>
 							<key>Frame</key>
-							<string>{{0, 320}, {933, 322}}</string>
+							<string>{{0, 322}, {932, 325}}</string>
 						</dict>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
 					<key>Proportion</key>
-					<string>642pt</string>
+					<string>647pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1019,7 +1016,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>285804361.52576703</real>
+	<real>285807591.66110802</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -1036,6 +1033,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C4CDF9AE1109139B0036F44F</string>
+		<string>C4CDF8DE11090DA90036F44F</string>
+		<string>C4CDF8D911090D8D0036F44F</string>
 		<string>C4AFF95110B2338E00801655</string>
 		<string>/Users/coreyfloyd/Development/ProductionProjects/HRC/BuyingGuide/BuyingGuide.xcodeproj</string>
 	</array>

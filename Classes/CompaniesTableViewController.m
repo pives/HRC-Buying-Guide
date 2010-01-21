@@ -315,19 +315,19 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)aTableView{
 	
-	NSLog(@"did load tv");
+	FJSLog(@"did load tv");
 
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)aTableView{
 	
-	NSLog(@"will show tv");
+	FJSLog(@"will show tv");
 	
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)aTableView{
 	
-	NSLog(@"did show tv");
+	FJSLog(@"did show tv");
 	
 }
 

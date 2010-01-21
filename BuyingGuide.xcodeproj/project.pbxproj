@@ -865,10 +865,18 @@
 				C4CDF7A21108DD670036F44F /* FJSTwitterLoginController.h */,
 				C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */,
 				C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */,
+				C4CDF8B411090B120036F44F /* Key Chain */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		C4CDF8B411090B120036F44F /* Key Chain */ = {
+			isa = PBXGroup;
+			children = (
 				C4CDF83A1108F4680036F44F /* SFHFKeychainUtils.h */,
 				C4CDF83B1108F4680036F44F /* SFHFKeychainUtils.m */,
 			);
-			name = Twitter;
+			name = "Key Chain";
 			sourceTree = "<group>";
 		};
 		C4EFE68D10DFF628005180AC /* Main View (Seperated) */ = {
