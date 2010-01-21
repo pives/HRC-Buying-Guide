@@ -7,10 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MGTwitterEngine;
 
 @interface FJSTweetViewController : UIViewController {
 
+	UITextView* tweetTextView;
+	UILabel* charCount;
+	
+	MGTwitterEngine* twitterEngine;
+	
 }
+@property(nonatomic,retain)IBOutlet UITextView *tweetTextView;
+@property(nonatomic,retain)IBOutlet UILabel *charCount;
+@property(nonatomic,retain)MGTwitterEngine *twitterEngine;
+
+- (IBAction)tweet;
+- (IBAction)cancel;
+
+- (void)launchLoginView;
 
 @end

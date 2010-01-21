@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="1"/>
 			<integer value="10"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -36,7 +37,7 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 			</object>
 			<object class="IBUIView" id="191373211">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -72,6 +73,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
+				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -89,21 +91,21 @@
 					<object class="IBUIImageView" id="327064243">
 						<reference key="NSNextResponder" ref="377698217"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 1190}</string>
+						<string key="NSFrameSize">{320, 2450}</string>
 						<reference key="NSSuperview" ref="377698217"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUIContentMode">4</int>
+						<int key="IBUIContentMode">5</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Information.png</string>
+							<string key="NSResourceName">information_page.png</string>
 						</object>
 					</object>
 					<object class="IBUIWebView" id="330832120">
 						<reference key="NSNextResponder" ref="377698217"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 1188}, {320, 180}}</string>
+						<string key="NSFrame">{{0, 2448}, {320, 180}}</string>
 						<reference key="NSSuperview" ref="377698217"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -115,7 +117,7 @@
 						<bool key="IBUIDetectsPhoneNumbers">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 1370}</string>
+				<string key="NSFrameSize">{320, 2630}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -277,7 +279,7 @@
 					<string>UIResponder</string>
 					<string>{{354, 412}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{1026, 91}, {320, 1065}}</string>
+					<string>{{1026, 79}, {320, 1077}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -339,7 +341,21 @@
 					<string key="className">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">SDNextRunloopProxy.h</string>
+						<string key="minorKey">NSObject+AssociatedObjects.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">NSObjectHelper.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">yajl/NSObject+YAJL.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

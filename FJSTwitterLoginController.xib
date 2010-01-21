@@ -49,14 +49,14 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIBarButtonItem" id="318399968">
-								<reference key="IBUIToolbar" ref="104416535"/>
-								<int key="IBUISystemItemIdentifier">5</int>
-							</object>
 							<object class="IBUIBarButtonItem" id="7601942">
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="104416535"/>
 								<int key="IBUISystemItemIdentifier">1</int>
+							</object>
+							<object class="IBUIBarButtonItem" id="318399968">
+								<reference key="IBUIToolbar" ref="104416535"/>
+								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 						</object>
 					</object>
@@ -347,8 +347,8 @@
 						<reference key="object" ref="104416535"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="7601942"/>
 							<reference ref="318399968"/>
+							<reference ref="7601942"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -466,7 +466,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>cancel</string>
 							<string>login</string>
-							<string>togglePasswordSaving</string>
+							<string>togglePasswordSaving:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
