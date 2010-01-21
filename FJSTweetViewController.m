@@ -144,7 +144,8 @@
 
 - (void)didNotLoginWithNotification:(NSNotification*)note{
 	
-	[self cancel];
+	self.modalViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self.navigationController.parentViewController dismissModalViewControllerAnimated:YES];
 	
 }
 
