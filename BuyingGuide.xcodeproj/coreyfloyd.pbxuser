@@ -10,7 +10,7 @@
 	};
 	1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {769, 3668}}";
+			sepNavIntBoundsRect = "{{0, 0}, {769, 3654}}";
 			sepNavSelRange = "{2681, 0}";
 			sepNavVisRange = "{1826, 2174}";
 			sepNavWindowFrame = "{{435, 148}, {968, 1014}}";
@@ -1936,6 +1936,13 @@
 		rType = 0;
 		vrLen = 2174;
 		vrLoc = 1826;
+	};
+	C4CDF79A1108DD4D0036F44F /* FJSTweetViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {769, 797}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 250}";
+		};
 	};
 	C4D279311100C27400AD0F1F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

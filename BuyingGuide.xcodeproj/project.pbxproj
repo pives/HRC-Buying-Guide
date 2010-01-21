@@ -161,6 +161,14 @@
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
 		C4CDF7761108DC0F0036F44F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CDF7751108DC0F0036F44F /* libxml2.dylib */; };
+		C4CDF79D1108DD4D0036F44F /* FJSTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */; };
+		C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */; };
+		C4CDF79F1108DD4D0036F44F /* FJSTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */; };
+		C4CDF7A01108DD4D0036F44F /* FJSTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */; };
+		C4CDF7A51108DD670036F44F /* FJSTwitterLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */; };
+		C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
+		C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */; };
+		C4CDF7A81108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
@@ -382,6 +390,12 @@
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
 		C4CDF7751108DC0F0036F44F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C4CDF79A1108DD4D0036F44F /* FJSTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTweetViewController.h; sourceTree = "<group>"; };
+		C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTweetViewController.m; sourceTree = "<group>"; };
+		C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FJSTweetViewController.xib; sourceTree = "<group>"; };
+		C4CDF7A21108DD670036F44F /* FJSTwitterLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTwitterLoginController.h; sourceTree = "<group>"; };
+		C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTwitterLoginController.m; sourceTree = "<group>"; };
+		C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FJSTwitterLoginController.xib; sourceTree = "<group>"; };
 		C4EFE68610DFF61F005180AC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C4EFE68710DFF61F005180AC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C4EFE68810DFF61F005180AC /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -503,6 +517,7 @@
 				C4103FA010B711AD004CEC15 /* BGImporter */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				C4CDF7A11108DD510036F44F /* Twitter */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -809,6 +824,19 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		C4CDF7A11108DD510036F44F /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDF79A1108DD4D0036F44F /* FJSTweetViewController.h */,
+				C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */,
+				C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */,
+				C4CDF7A21108DD670036F44F /* FJSTwitterLoginController.h */,
+				C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */,
+				C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
 		C4EFE68D10DFF628005180AC /* Main View (Seperated) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1073,8 @@
 				C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 				C41CD39C10F263E700973374 /* slidernew.png in Resources */,
 				C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */,
+				C4CDF7A01108DD4D0036F44F /* FJSTweetViewController.xib in Resources */,
+				C4CDF7A81108DD670036F44F /* FJSTwitterLoginController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,6 +1123,8 @@
 				C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 				C41CD39D10F263E700973374 /* slidernew.png in Resources */,
 				C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */,
+				C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */,
+				C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,6 +1192,8 @@
 				C48653A61108DB840013470D /* MGTwitterYAJLParser.m in Sources */,
 				C48653A71108DB840013470D /* NSData+Base64.m in Sources */,
 				C48653A81108DB840013470D /* NSString+UUID.m in Sources */,
+				C4CDF79F1108DD4D0036F44F /* FJSTweetViewController.m in Sources */,
+				C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1279,8 @@
 				C48653921108DB840013470D /* MGTwitterYAJLParser.m in Sources */,
 				C48653931108DB840013470D /* NSData+Base64.m in Sources */,
 				C48653941108DB840013470D /* NSString+UUID.m in Sources */,
+				C4CDF79D1108DD4D0036F44F /* FJSTweetViewController.m in Sources */,
+				C4CDF7A51108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
