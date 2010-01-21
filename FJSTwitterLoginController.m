@@ -7,51 +7,70 @@
 //
 
 #import "FJSTwitterLoginController.h"
+#import "NSString+extensions.h"
 
+NSString* const FJSTwitterLoginSuccessful = @"FJSTwitterLoginSuccessful";
+NSString* const FJSTwitterLoginUnsuccessful = @"FJSTwitterLoginUnsuccessful";
 
 @implementation FJSTwitterLoginController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
+@synthesize username;
+@synthesize password;
+@synthesize passwordCheckBox;
 
 
 - (void)dealloc {
+	self.passwordCheckBox = nil;
+	self.username = nil;
+	self.password = nil;
     [super dealloc];
 }
+
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+}
+
+
+
+- (IBAction)login{
+	
+	if(password.text == nil || [password.text isEmpty])
+		return;
+	if(username.text == nil || [username.text isEmpty])
+		return;
+	
+	//TODO: login
+	
+	[self saveUserCredentials];
+		
+}
+
+
+- (IBAction)togglePasswordSaving:(id)sender{
+	
+	UIButton* save = (UIButton*)sender;
+	
+	save.selected = !save.selected;
+	
+}
+
+- (IBAction)cancel{
+	
+	[self dismissModalViewControllerAnimated:YES];
+	
+}
+
+- (void)saveUserCredentials{
+	
+	if([self.passwordCheckBox state] != UIControlStateSelected)
+		return;
+	
+	//TODO: save login. Use keychain?
+	
+}
+
 
 
 @end

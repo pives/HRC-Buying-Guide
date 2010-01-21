@@ -1944,6 +1944,28 @@
 			sepNavVisRange = "{0, 250}";
 		};
 	};
+	C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {769, 826}}";
+			sepNavSelRange = "{236, 0}";
+			sepNavVisRange = "{0, 1415}";
+		};
+	};
+	C4CDF7A21108DD670036F44F /* FJSTwitterLoginController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {769, 797}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 256}";
+		};
+	};
+	C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {909, 901}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1429}";
+			sepNavWindowFrame = "{{15, 159}, {968, 1014}}";
+		};
+	};
 	C4D279311100C27400AD0F1F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;

@@ -169,6 +169,12 @@
 		C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
 		C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */; };
 		C4CDF7A81108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
+		C4CDF7AE1108E20B0036F44F /* check_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AB1108E20B0036F44F /* check_down.png */; };
+		C4CDF7AF1108E20B0036F44F /* check_no.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AC1108E20B0036F44F /* check_no.png */; };
+		C4CDF7B01108E20B0036F44F /* check_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AD1108E20B0036F44F /* check_yes.png */; };
+		C4CDF7B11108E20B0036F44F /* check_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AB1108E20B0036F44F /* check_down.png */; };
+		C4CDF7B21108E20B0036F44F /* check_no.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AC1108E20B0036F44F /* check_no.png */; };
+		C4CDF7B31108E20B0036F44F /* check_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AD1108E20B0036F44F /* check_yes.png */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
@@ -396,6 +402,9 @@
 		C4CDF7A21108DD670036F44F /* FJSTwitterLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTwitterLoginController.h; sourceTree = "<group>"; };
 		C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTwitterLoginController.m; sourceTree = "<group>"; };
 		C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FJSTwitterLoginController.xib; sourceTree = "<group>"; };
+		C4CDF7AB1108E20B0036F44F /* check_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_down.png; sourceTree = "<group>"; };
+		C4CDF7AC1108E20B0036F44F /* check_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_no.png; sourceTree = "<group>"; };
+		C4CDF7AD1108E20B0036F44F /* check_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_yes.png; sourceTree = "<group>"; };
 		C4EFE68610DFF61F005180AC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C4EFE68710DFF61F005180AC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C4EFE68810DFF61F005180AC /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -953,6 +962,9 @@
 				C4864DB010BC38200064A126 /* Information.png */,
 				C492D86B10BB27FB0041400B /* Icon.png */,
 				C4FA235110B5DC8A0031303E /* iphone_bottom-bar-clear.png */,
+				C4CDF7AB1108E20B0036F44F /* check_down.png */,
+				C4CDF7AC1108E20B0036F44F /* check_no.png */,
+				C4CDF7AD1108E20B0036F44F /* check_yes.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1075,6 +1087,9 @@
 				C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */,
 				C4CDF7A01108DD4D0036F44F /* FJSTweetViewController.xib in Resources */,
 				C4CDF7A81108DD670036F44F /* FJSTwitterLoginController.xib in Resources */,
+				C4CDF7B11108E20B0036F44F /* check_down.png in Resources */,
+				C4CDF7B21108E20B0036F44F /* check_no.png in Resources */,
+				C4CDF7B31108E20B0036F44F /* check_yes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,6 +1140,9 @@
 				C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */,
 				C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */,
 				C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */,
+				C4CDF7AE1108E20B0036F44F /* check_down.png in Resources */,
+				C4CDF7AF1108E20B0036F44F /* check_no.png in Resources */,
+				C4CDF7B01108E20B0036F44F /* check_yes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
