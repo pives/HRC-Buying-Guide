@@ -236,7 +236,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	[array insertObject:UITableViewIndexSearch atIndex:0];
 	
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    return array;
+    return [array autorelease];
 }
 
 - (NSInteger)tableView:(UITableView *)table sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {

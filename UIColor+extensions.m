@@ -14,11 +14,11 @@
 }
 
 + (id)headerYellow{
-    return [UIColor newYellowHeader];
+    return [UIColor updatedYellowHeader];
 }
 
 + (id)headerGreen{
-    return [UIColor newGreenHeader];
+    return [UIColor updatedGreenHeader];
 }
 
 + (id)cellRed{
@@ -26,35 +26,35 @@
 }
 
 + (id)cellYellow{
-    return [UIColor newCellYellow];
+    return [UIColor updatedCellYellow];
 }
 
 + (id)cellGreen{
-    return [UIColor newCellGreen];
+    return [UIColor updatedCellGreen];
 }
 
 
-+ (id)newRedHeader{
++ (id)updatedRedHeader{
     return [UIColor colorWithRed:0.802 green:0.093 blue:0.097 alpha:1.000];
 }
 
-+ (id)newYellowHeader{
++ (id)updatedYellowHeader{
     return [UIColor colorWithRed:0.885 green:0.633 blue:0.000 alpha:1.000];
 }
 
-+ (id)newGreenHeader{
++ (id)updatedGreenHeader{
     return [UIColor colorWithRed:0.074 green:0.670 blue:0.282 alpha:1.000];
 }
 
-+ (id)newCellRed{
++ (id)updatedCellRed{
     return [UIColor colorWithRed:0.808 green:0.216 blue:0.225 alpha:1.000];
 }
 
-+ (id)newCellYellow{
++ (id)updatedCellYellow{
     return [UIColor colorWithRed:0.967 green:0.794 blue:0.402 alpha:1.000];
 }
 
-+ (id)newCellGreen{
++ (id)updatedCellGreen{
     return [UIColor colorWithRed:0.425 green:0.782 blue:0.464 alpha:1.000];
 }
 

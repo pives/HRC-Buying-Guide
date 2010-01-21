@@ -16,13 +16,13 @@
 + (id)cellYellow;
 + (id)cellGreen;
 
-+ (id)newRedHeader;
-+ (id)newYellowHeader;
-+ (id)newGreenHeader;
++ (id)updatedRedHeader;
++ (id)updatedYellowHeader;
++ (id)updatedGreenHeader;
 
-+ (id)newCellRed;
-+ (id)newCellYellow;
-+ (id)newCellGreen;
++ (id)updatedCellRed;
++ (id)updatedCellYellow;
++ (id)updatedCellGreen;
 
 + (id)stoplightRed;
 + (id)stoplightYellow;

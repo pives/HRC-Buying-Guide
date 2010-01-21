@@ -27,7 +27,7 @@
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>DonationURL</key>
-	<string>https://secure3.convio.net/hrc/site/SPageServer?pagename=main_donate_go</string>
+	<string>http://www.hrc.org/mobiledonate</string>
 	<key>ScoreCardURLPrefix</key>
 	<string>http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=</string>
 	<key>ScoreCardURLSuffix</key>

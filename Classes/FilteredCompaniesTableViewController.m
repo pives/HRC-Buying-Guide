@@ -337,7 +337,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	[array insertObject:UITableViewIndexSearch atIndex:0];
 	
     // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-    return array;
+    return [array autorelease];
 	
 }
 
