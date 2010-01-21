@@ -182,6 +182,8 @@
 		C4CDF83F1108F6BA0036F44F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CDF83E1108F6BA0036F44F /* Security.framework */; };
 		C4CDF8571108FBC80036F44F /* information_page.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF8561108FBC80036F44F /* information_page.png */; };
 		C4CDF8581108FBC80036F44F /* information_page.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF8561108FBC80036F44F /* information_page.png */; };
+		C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
+		C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
@@ -418,6 +420,8 @@
 		C4CDF83B1108F4680036F44F /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		C4CDF83E1108F6BA0036F44F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C4CDF8561108FBC80036F44F /* information_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information_page.png; sourceTree = "<group>"; };
+		C4CDF893110907170036F44F /* NSError+Alertview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Alertview.h"; sourceTree = "<group>"; };
+		C4CDF894110907170036F44F /* NSError+Alertview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Alertview.m"; sourceTree = "<group>"; };
 		C4EFE68610DFF61F005180AC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C4EFE68710DFF61F005180AC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C4EFE68810DFF61F005180AC /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -832,6 +836,8 @@
 		C4C031DE10B1EBAA000D46AA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDF893110907170036F44F /* NSError+Alertview.h */,
+				C4CDF894110907170036F44F /* NSError+Alertview.m */,
 				C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */,
 				C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */,
 				C4EFE74510E09878005180AC /* NSObjectHelper.h */,
@@ -1236,6 +1242,7 @@
 				C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
 				C4CDF7DD1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */,
 				C4CDF83D1108F4680036F44F /* SFHFKeychainUtils.m in Sources */,
+				C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,6 +1332,7 @@
 				C4CDF7A51108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
 				C4CDF7DC1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */,
 				C4CDF83C1108F4680036F44F /* SFHFKeychainUtils.m in Sources */,
+				C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

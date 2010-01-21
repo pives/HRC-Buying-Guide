@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class MGTwitterEngine;
 
-@interface FJSTwitterLoginController : UIViewController {
+@interface FJSTwitterLoginController : UIViewController <UITextFieldDelegate> {
 	
 	UITextField* username;
 	UITextField* password;

@@ -11,6 +11,7 @@
 #import "UIAlertViewHelper.h"
 #import "MGTwitterEngine.h"
 #import "SFHFKeychainUtils.h"
+#import "NSError+Alertview.h"
 
 NSString* const FJSTwitterLoginSuccessful = @"FJSTwitterLoginSuccessful";
 NSString* const FJSTwitterLoginUnsuccessful = @"FJSTwitterLoginUnsuccessful";
@@ -45,8 +46,17 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+	
+	[super viewWillAppear:animated];
+	
+	[self.username becomeFirstResponder];
+	
+}
 
 
 - (IBAction)login{
@@ -76,8 +86,25 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 - (IBAction)cancel{
 	
-	[self dismissModalViewControllerAnimated:YES];
+	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginUnsuccessful object:self];
+
+	//Might not need
+	//[self dismissModalViewControllerAnimated:YES];
 	
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	
+	if(textField == self.username){
+		
+		[self.password becomeFirstResponder];
+		
+	}else{
+		
+		[self login];
+	}
+	
+	return NO;
 }
 
 - (void)saveUserCredentials{
@@ -100,14 +127,13 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	
 }
 
-
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
 
 	[self saveUserCredentials];	
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginSuccessful object:self];
 	
-	[self cancel];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 
@@ -115,8 +141,8 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	
 	if([error code] == -1009)
 		[UIAlertView presentNoInternetAlertWithDelegate:nil];
-	
-	
+	else 
+		[error presentAlertViewWithDelegate:nil];
 	
 }
 

@@ -19,6 +19,8 @@
 
 
 - (void)dealloc {
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	self.tweetTextView = nil;
 	self.charCount = nil;
 	self.twitterEngine = nil;
@@ -26,21 +28,14 @@
 }
 
 
-- (IBAction)tweet{
-	
-	//TODO: post
-	
-}
-
-- (IBAction)cancel{
-	
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLoginWithNotification:) name:FJSTwitterLoginSuccessful object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didNotLoginWithNotification:) name:FJSTwitterLoginUnsuccessful object:nil];	
+	
 	
 	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
 	
@@ -74,25 +69,36 @@
 	}
 }
 
+
+- (IBAction)tweet{
+	
+	//TODO: post
+	
+}
+
+- (IBAction)cancel{
+	
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 - (void)launchLoginView{
 	
+		
 	FJSTwitterLoginController* tvc = [[FJSTwitterLoginController alloc] initWithTwitterEngine:self.twitterEngine];
 	tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:tvc animated:YES];
 	[tvc release];
 }
 
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+- (void)didLoginWithNotification:(NSNotification*)note{
 	
-	// Release any cached data, images, etc that aren't in use.
+	//TODO: do I care?
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+- (void)didNotLoginWithNotification:(NSNotification*)note{
+	
+	[self cancel];
+	
 }
 
 
