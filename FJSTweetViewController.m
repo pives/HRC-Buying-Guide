@@ -12,7 +12,7 @@
 #import "MGTwitterEngine.h"
 #import "Company.h"
 #import "NSError+Alertview.h"
-
+#import "LoadingView.h"
 
 @interface FJSTweetViewController()
 
@@ -30,6 +30,7 @@
 @synthesize charCount;
 @synthesize twitterEngine;
 @synthesize prefilledText;
+@synthesize accountName;
 
 
 #pragma mark -
@@ -38,6 +39,7 @@
 - (void)dealloc {
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	self.accountName = nil;
 	self.prefilledText = nil;
 	self.tweetTextView = nil;
 	self.charCount = nil;
@@ -75,11 +77,23 @@
 											   object:nil];	
 	
 	
+	self.tweetTextView.font = [UIFont systemFontOfSize:14];
 	self.tweetTextView.text = self.prefilledText;
 	
 	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
 
 	
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+	
+	NSString* username = [self.twitterEngine username];
+
+	if(username == nil)
+		username = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
+	
+	[self.accountName setTitle:username forState:UIControlStateNormal];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -106,8 +120,8 @@
 		return;
 	}
 
-	
 	[self.twitterEngine setUsername:username password:password];
+	[self.tweetTextView becomeFirstResponder];
 
 }
 
@@ -115,12 +129,57 @@
 #pragma mark IBActions
 
 - (IBAction)tweet{
+	
+	int maxChars = 140;
+	
+	if(self.tweetTextView.text.length > maxChars){
+		
+		UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"No more characters"
+														 message:[NSString stringWithFormat:@"You have reached the character limit of %d.",maxChars]
+														delegate:nil
+											   cancelButtonTitle:@"Ok"
+											   otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		return;
+	}
+	
+	CGRect rect = self.view.bounds;
+	rect.size.height = rect.size.height - 215;
+	
+	[[LoadingView loadingViewInView:self.view frame:rect] setDelegate:self];
+	
 	[self.twitterEngine sendUpdate:self.tweetTextView.text];	
 }
 
 - (IBAction)cancel{
 	[self dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)login{
+	
+	[self launchLoginView];
+}
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	
+	[self tweet];	
+	return NO;
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+	
+	int maxChars = 140;
+	int charsLeft = maxChars - [textView.text length];
+	
+	self.charCount.text = [NSString stringWithFormat:@"%d",charsLeft];
+	
+}
+
 
 #pragma mark -
 #pragma mark FJSTwitterLoginController
@@ -161,16 +220,30 @@
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
 		
-	//TODO: display success
-	//[self dismissModalViewControllerAnimated:YES];
+	
+	for(UIView* aView in self.view.subviews){
+		
+		if([aView isKindOfClass:[LoadingView class]])
+			[(LoadingView*)aView updateTextAndRemoveView:@"Tweet Sent!"];
+	}
 }
 
 
 - (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
 	
+	for(UIView* aView in self.view.subviews){
+		
+		if([aView isKindOfClass:[LoadingView class]])
+			[(LoadingView*)aView removeView];
+	}
+	
 	[error presentAlertViewWithDelegate:nil];	
 }
 
+
+- (void)loadingViewDidClose:(LoadingView*)loadingView{
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 
 

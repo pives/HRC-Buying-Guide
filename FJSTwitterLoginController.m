@@ -12,6 +12,7 @@
 #import "MGTwitterEngine.h"
 #import "SFHFKeychainUtils.h"
 #import "NSError+Alertview.h"
+#import "LoadingView.h"
 
 NSString* const FJSTwitterLoginSuccessful = @"FJSTwitterLoginSuccessful";
 NSString* const FJSTwitterLoginUnsuccessful = @"FJSTwitterLoginUnsuccessful";
@@ -83,6 +84,11 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
 	[self.twitterEngine setUsername:username.text password:password.text];
 	
+	CGRect rect = self.view.bounds;
+	rect.size.height = rect.size.height - 215;
+	
+	[[LoadingView loadingViewInView:self.view frame:rect] setDelegate:self];
+	
 	[self.twitterEngine checkUserCredentials];
 				
 }
@@ -99,9 +105,6 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 - (IBAction)cancel{
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginUnsuccessful object:self];
-
-	//Might not need
-	//[self dismissModalViewControllerAnimated:YES];
 	
 }
 
@@ -110,20 +113,27 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 - (void)saveUserCredentials{
 	
-	if([self.passwordCheckBox state] != UIControlStateSelected)
-		return;
-	
 	NSError* error = nil;
-	[SFHFKeychainUtils storeUsername:self.username.text 
-						 andPassword:self.password.text 
-					  forServiceName:FJSTwitterServiceName 
-					  updateExisting:YES 
-							   error:&error];
-	
+
+	if([self.passwordCheckBox state] != UIControlStateSelected){
+		
+		[SFHFKeychainUtils deleteItemForUsername:self.username.text 
+								  andServiceName:FJSTwitterServiceName 
+										   error:&error];
+		
+	}else{
+		
+		[SFHFKeychainUtils storeUsername:self.username.text 
+							 andPassword:self.password.text 
+						  forServiceName:FJSTwitterServiceName 
+						  updateExisting:YES 
+								   error:&error];
+		
+	}
 	
 	if(error!=nil){
 		
-		//wtf, couldn't save, oh well
+		//wtf, couldn't save or delete, oh well
 	}
 	
 }
@@ -151,6 +161,12 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
 
+	for(UIView* aView in self.view.subviews){
+		
+		if([aView isKindOfClass:[LoadingView class]])
+			[(LoadingView*)aView updateTextAndRemoveView:@"Success!"];
+	}
+	
 	[self saveUserCredentials];	
 	
 	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -160,16 +176,28 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 							  FJSTwitterPasswordKey, 
 							  nil];
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginSuccessful object:self userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginSuccessful 
+														object:self 
+													  userInfo:userInfo];
 	
-	[self dismissModalViewControllerAnimated:YES];
 }
 
 
 - (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
 	
+	for(UIView* aView in self.view.subviews){
+		
+		if([aView isKindOfClass:[LoadingView class]])
+			[(LoadingView*)aView removeView];
+	}
 	[error presentAlertViewWithDelegate:nil];	
 }
+
+
+- (void)loadingViewDidClose:(LoadingView*)loadingView{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 
 @end
