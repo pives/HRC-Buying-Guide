@@ -20,9 +20,7 @@
 @property(nonatomic,assign)IBOutlet UITextField *username;
 @property(nonatomic,assign)IBOutlet UITextField *password;
 @property(nonatomic,retain)IBOutlet UIButton *passwordCheckBox;
-@property(nonatomic,retain)MGTwitterEngine *twitterEngine;
 
-- (id)initWithTwitterEngine:(MGTwitterEngine*)engine;
 
 //Actions, not for You!
 - (IBAction)login;
@@ -32,9 +30,17 @@
 
 @end
 
+//Notifications
 
+//called when login successful, account info in userInfo dictionary
 extern NSString* const FJSTwitterLoginSuccessful;
+
+//only called if the user gives up, not posted for each unsuccessful login attempt
 extern NSString* const FJSTwitterLoginUnsuccessful;
 
-extern NSString* const FJSTwitterUsernameKey;
+//Userinfo Dictionary Keys
+extern NSString* const FJSTwitterUsernameKey; //Check the user defualts for this key before launching
+extern NSString* const FJSTwitterPasswordKey;
+
+//Use this service name with the username to retrieve the password from the keychain (Using SFHFKeychainUtils)
 extern NSString* const FJSTwitterServiceName;

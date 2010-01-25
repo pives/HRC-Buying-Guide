@@ -17,10 +17,14 @@ NSString* const FJSTwitterLoginSuccessful = @"FJSTwitterLoginSuccessful";
 NSString* const FJSTwitterLoginUnsuccessful = @"FJSTwitterLoginUnsuccessful";
 
 NSString* const FJSTwitterUsernameKey = @"FJSTwitterUsername";
+NSString* const FJSTwitterPasswordKey = @"FJSTwitterPassord";
+
 NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 
 @interface FJSTwitterLoginController()
+
+@property(nonatomic,retain)MGTwitterEngine *twitterEngine;
 
 - (void)saveUserCredentials;
 
@@ -34,6 +38,8 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 @synthesize passwordCheckBox;
 @synthesize twitterEngine;
 
+#pragma mark -
+#pragma mark NSObject
 
 - (void)dealloc {
 	self.twitterEngine = nil;
@@ -43,14 +49,8 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
     [super dealloc];
 }
 
-- (id)initWithTwitterEngine:(MGTwitterEngine*)engine{
-	
-	self = [super initWithNibName:@"FJSTwitterLoginController" bundle:nil];
-	if (self != nil) {		
-		self.twitterEngine = engine;
-	}
-	return self;
-}
+#pragma mark -
+#pragma mark UIViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -62,10 +62,13 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	
 	[super viewWillAppear:animated];
 	
+	self.username.text = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
 	[self.username becomeFirstResponder];
 	
 }
 
+#pragma mark -
+#pragma mark IBActions
 
 - (IBAction)login{
 	
@@ -77,6 +80,7 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	[[NSUserDefaults standardUserDefaults] setObject:self.username.text forKey:FJSTwitterUsernameKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
+	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
 	[self.twitterEngine setUsername:username.text password:password.text];
 	
 	[self.twitterEngine checkUserCredentials];
@@ -101,19 +105,8 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-	
-	if(textField == self.username){
-		
-		[self.password becomeFirstResponder];
-		
-	}else{
-		
-		[self login];
-	}
-	
-	return NO;
-}
+#pragma mark -
+#pragma mark SFHFKeychainUtils
 
 - (void)saveUserCredentials{
 	
@@ -130,16 +123,44 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 	
 	if(error!=nil){
 		
-		//TODO: wtf, couldn't save
+		//wtf, couldn't save, oh well
 	}
 	
 }
+
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	
+	if(textField == self.username){
+		
+		[self.password becomeFirstResponder];
+		
+	}else{
+		
+		[self login];
+	}
+	
+	return NO;
+}
+
+#pragma mark -
+#pragma mark MGTwitterEngineDelegate
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
 
 	[self saveUserCredentials];	
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginSuccessful object:self];
+	NSDictionary* userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+							  username.text, 
+							  FJSTwitterUsernameKey, 
+							  password.text, 
+							  FJSTwitterPasswordKey, 
+							  nil];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:FJSTwitterLoginSuccessful object:self userInfo:userInfo];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -147,13 +168,8 @@ NSString* const FJSTwitterServiceName = @"FJSTwitterKeychainServiceName";
 
 - (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
 	
-	if([error code] == -1009)
-		[UIAlertView presentNoInternetAlertWithDelegate:nil];
-	else 
-		[error presentAlertViewWithDelegate:nil];
-	
+	[error presentAlertViewWithDelegate:nil];	
 }
-
 
 
 @end

@@ -18,6 +18,7 @@
 #import "HRCBrandTableViewController.h"
 #import "FilteredCompaniesViewController.h"
 #import "FJSTweetViewController.h"
+#import "FJSTweetViewController+HRC.h"
 
 
 static CGRect nameRectPartner = {
@@ -248,7 +249,7 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 #pragma mark -
-#pragma mark Email
+#pragma mark MFMailComposeViewController
 
 - (void)sendEmail{
     
@@ -357,6 +358,18 @@ static CGPoint partnerImageOrigin = {2,34};
     }
 }
 
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	//TODO: Check result?
+    [self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark FJSTweetViewController
+
 - (void)postTweet{
 	
 	FJSTweetViewController* tvc = [[FJSTweetViewController alloc] initWithCompany:self.company];
@@ -368,15 +381,6 @@ static CGPoint partnerImageOrigin = {2,34};
 	
 	[tvc release];
 	[nc release];
-}
-
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	//TODO: Check result?
-    [self becomeFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -

@@ -22,4 +22,6 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 //Specific Alerts
 + (id)presentNoInternetAlertWithDelegate:(id)object;
 
++ (id)presentIncorrectPasswordAlertWithDelegate:(id)object;
+
 @end

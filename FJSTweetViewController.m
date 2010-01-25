@@ -11,12 +11,13 @@
 #import "FJSTwitterLoginController.h"
 #import "MGTwitterEngine.h"
 #import "Company.h"
+#import "NSError+Alertview.h"
 
 
 @interface FJSTweetViewController()
 
-@property(nonatomic,retain)Company *company;
 @property(nonatomic,retain)MGTwitterEngine *twitterEngine;
+@property(nonatomic,copy)NSString *prefilledText;
 
 - (void)launchLoginView;
 
@@ -28,15 +29,16 @@
 @synthesize tweetTextView;
 @synthesize charCount;
 @synthesize twitterEngine;
-@synthesize company;
+@synthesize prefilledText;
 
 
-
+#pragma mark -
+#pragma mark NSObject
 
 - (void)dealloc {
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	self.company = nil;
+	self.prefilledText = nil;
 	self.tweetTextView = nil;
 	self.charCount = nil;
 	self.twitterEngine = nil;
@@ -44,19 +46,20 @@
 }
 
 
-- (id)initWithCompany:(Company*)aCompany{
+- (id)initWithText:(NSString*)someText{
 	
 	self = [super initWithNibName:@"FJSTweetViewController" bundle:nil];
 	if (self != nil) {
 		
-		self.company = aCompany;
+		self.prefilledText = someText;
 		
 	}
 	return self;
 }
 
+#pragma mark -
+#pragma mark UIViewController
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
@@ -72,82 +75,103 @@
 											   object:nil];	
 	
 	
-	
-	NSMutableString* initialtext = [NSMutableString string];
-	[initialtext appendString:@"@HRC "];
-	[initialtext appendString:self.company.name];
-	self.tweetTextView.text = initialtext;
-
+	self.tweetTextView.text = self.prefilledText;
 	
 	self.twitterEngine = [MGTwitterEngine twitterEngineWithDelegate:self];
+
 	
-	}
+}
 
 - (void)viewDidAppear:(BOOL)animated{
 	
-	NSString* twitterName = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
+	//Check the twitter engine to see if credentials are already supplied
+	NSString* username = [self.twitterEngine username];
+	NSString* password = [self.twitterEngine password];
 	
-	if(twitterName == nil){
+	if(username!=nil && password!=nil)
+		return;
 		
+	
+	//lets get credentials from user defaults and the keychain
+	username = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
+	
+	NSError* error = nil;
+	password = [SFHFKeychainUtils getPasswordForUsername:username 
+										  andServiceName:FJSTwitterServiceName 
+												   error:&error];
+	
+	
+	if(username==nil || password==nil){
 		[self performSelector:@selector(launchLoginView) withObject:nil afterDelay:0.2];
-		
-	}else{
-		
-		NSError* error = nil;
-		NSString* password = [SFHFKeychainUtils getPasswordForUsername:twitterName 
-														andServiceName:FJSTwitterServiceName 
-																 error:&error];
-		if(error!=nil){
-			
-			//can't get a password oh well, should be nil.
-			
-		}
-		
-		if(password != nil){
-			
-			[self.twitterEngine setUsername:twitterName password:password];
-			
-		}else{
-			
-			[self performSelector:@selector(launchLoginView) withObject:nil afterDelay:0.2];
-			
-		}
+		return;
 	}
+
 	
+	[self.twitterEngine setUsername:username password:password];
+
 }
 
+#pragma mark -
+#pragma mark IBActions
+
 - (IBAction)tweet{
-	
-	//TODO: post
-	
+	[self.twitterEngine sendUpdate:self.tweetTextView.text];	
 }
 
 - (IBAction)cancel{
-	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma mark FJSTwitterLoginController
+
 - (void)launchLoginView{
 	
-	
-	FJSTwitterLoginController* tvc = [[[FJSTwitterLoginController alloc] initWithTwitterEngine:self.twitterEngine] autorelease];
+	FJSTwitterLoginController* tvc = [[[FJSTwitterLoginController alloc] init] autorelease];
 	
 	tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:tvc animated:YES];
 	
 }
 
+#pragma mark -
+#pragma mark FJSTwitterLoginController Notifications
+
 - (void)didLoginWithNotification:(NSNotification*)note{
 	
-	//TODO: do I care?
+	NSDictionary* userInfo = [note userInfo];
+	
+	NSString* username = [userInfo objectForKey:FJSTwitterUsernameKey];
+	NSString* password = [userInfo objectForKey:FJSTwitterPasswordKey];
+	
+	[self.twitterEngine setUsername:username password:password];
 }
 
 - (void)didNotLoginWithNotification:(NSNotification*)note{
 	
+	//not so fancy trick to get the the tweet view and login view to dismiss in one animation
 	self.modalViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self.navigationController.parentViewController dismissModalViewControllerAnimated:YES];
 	
 }
+
+
+#pragma mark -
+#pragma mark MGTwitterEngineDelegate
+
+- (void)requestSucceeded:(NSString *)connectionIdentifier{
+		
+	//TODO: display success
+	//[self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (void)requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error{
+	
+	[error presentAlertViewWithDelegate:nil];	
+}
+
+
 
 
 @end

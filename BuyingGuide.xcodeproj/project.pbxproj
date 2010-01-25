@@ -184,6 +184,8 @@
 		C4CDF8581108FBC80036F44F /* information_page.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF8561108FBC80036F44F /* information_page.png */; };
 		C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
 		C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
+		C4CDFA15110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */; };
+		C4CDFA16110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */; };
 		C4E6EC2D10C43935001F88C8 /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
@@ -422,6 +424,8 @@
 		C4CDF8561108FBC80036F44F /* information_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information_page.png; sourceTree = "<group>"; };
 		C4CDF893110907170036F44F /* NSError+Alertview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Alertview.h"; sourceTree = "<group>"; };
 		C4CDF894110907170036F44F /* NSError+Alertview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Alertview.m"; sourceTree = "<group>"; };
+		C4CDFA13110A0C320036F44F /* FJSTweetViewController+HRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FJSTweetViewController+HRC.h"; sourceTree = "<group>"; };
+		C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FJSTweetViewController+HRC.m"; sourceTree = "<group>"; };
 		C4EFE68610DFF61F005180AC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C4EFE68710DFF61F005180AC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C4EFE68810DFF61F005180AC /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -545,7 +549,6 @@
 				C4103FA010B711AD004CEC15 /* BGImporter */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				C4CDF83E1108F6BA0036F44F /* Security.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDF83E1108F6BA0036F44F /* Security.framework */,
 				C4CDF7751108DC0F0036F44F /* libxml2.dylib */,
 				C48653471108DB780013470D /* yajl */,
 				C48653531108DB840013470D /* MGTwitterEngine */,
@@ -859,6 +863,8 @@
 		C4CDF7A11108DD510036F44F /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDFA13110A0C320036F44F /* FJSTweetViewController+HRC.h */,
+				C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */,
 				C4CDF79A1108DD4D0036F44F /* FJSTweetViewController.h */,
 				C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */,
 				C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */,
@@ -1251,6 +1257,7 @@
 				C4CDF7DD1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */,
 				C4CDF83D1108F4680036F44F /* SFHFKeychainUtils.m in Sources */,
 				C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */,
+				C4CDFA16110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1341,6 +1348,7 @@
 				C4CDF7DC1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */,
 				C4CDF83C1108F4680036F44F /* SFHFKeychainUtils.m in Sources */,
 				C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */,
+				C4CDFA15110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

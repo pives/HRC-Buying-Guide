@@ -39,14 +39,27 @@ void UIAlertViewQuick(NSString* title, NSString* message, NSString* dismissButto
 + (id)presentNoInternetAlertWithDelegate:(id)object{
 	
 
-	UIAlertView* message = [[UIAlertView alloc] initWithTitle:@"Could not connect to Twitter"
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Could not connect to Twitter"
 													  message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again."
 													 delegate:object 
 											cancelButtonTitle:@"OK" 
 											otherButtonTitles:nil];
-	[message show];
-	return [message autorelease];
+	[alert show];
+	return [alert autorelease];
 	
+	
+}
+
++ (id)presentIncorrectPasswordAlertWithDelegate:(id)object{
+	
+
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Could not authenticate"
+													message:@"Please check your username and password and try again."
+												   delegate:object 
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil];
+	[alert show];
+	return [alert autorelease];
 	
 }
 

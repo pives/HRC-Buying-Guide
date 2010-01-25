@@ -14,17 +14,15 @@
 
 	UITextView* tweetTextView;
 	UILabel* charCount;
-	
-	Company* company;
+
+	NSString* prefilledText;
 	MGTwitterEngine* twitterEngine;
 	
 }
 @property(nonatomic,retain)IBOutlet UITextView *tweetTextView;
 @property(nonatomic,retain)IBOutlet UILabel *charCount;
 
-
-
-- (id)initWithCompany:(Company*)aCompany;
+- (id)initWithText:(NSString*)someText;
 
 //Don't you touch me!
 - (IBAction)tweet;
