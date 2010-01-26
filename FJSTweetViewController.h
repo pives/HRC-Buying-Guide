@@ -30,6 +30,6 @@
 //Don't you touch me!
 - (IBAction)tweet;
 - (IBAction)cancel;
-- (IBAction)login;
+- (IBAction)loginManually;
 
 @end

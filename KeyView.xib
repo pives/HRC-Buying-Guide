@@ -91,7 +91,7 @@
 					<object class="IBUIImageView" id="327064243">
 						<reference key="NSNextResponder" ref="377698217"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 2450}</string>
+						<string key="NSFrameSize">{320, 3950}</string>
 						<reference key="NSSuperview" ref="377698217"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -99,13 +99,13 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">information_page.png</string>
+							<string key="NSResourceName">information_page-v3.png</string>
 						</object>
 					</object>
 					<object class="IBUIWebView" id="330832120">
 						<reference key="NSNextResponder" ref="377698217"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 2448}, {320, 180}}</string>
+						<string key="NSFrame">{{0, 3200}, {320, 180}}</string>
 						<reference key="NSSuperview" ref="377698217"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -117,7 +117,7 @@
 						<bool key="IBUIDetectsPhoneNumbers">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 2630}</string>
+				<string key="NSFrameSize">{320, 3380}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -279,7 +279,7 @@
 					<string>UIResponder</string>
 					<string>{{354, 412}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{1026, 79}, {320, 1077}}</string>
+					<string>{{1026, 70}, {320, 1086}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

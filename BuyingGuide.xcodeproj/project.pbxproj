@@ -50,6 +50,8 @@
 		C41ACB93110E2E4700942016 /* credentialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB91110E2E4700942016 /* credentialBackground.png */; };
 		C41ACBD3110E367F00942016 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41ACBD2110E367F00942016 /* LoadingView.m */; };
 		C41ACBD4110E367F00942016 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41ACBD2110E367F00942016 /* LoadingView.m */; };
+		C41ACC51110E712100942016 /* information_page-v3.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACC50110E712100942016 /* information_page-v3.png */; };
+		C41ACC52110E712100942016 /* information_page-v3.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACC50110E712100942016 /* information_page-v3.png */; };
 		C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
 		C41CCDEF10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
 		C41CD39C10F263E700973374 /* slidernew.png in Resources */ = {isa = PBXBuildFile; fileRef = C41CD39B10F263E700973374 /* slidernew.png */; };
@@ -168,6 +170,8 @@
 		C4C031DA10B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
+		C4C3D084110FA0D700010208 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */; };
+		C4C3D085110FA0D700010208 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */; };
 		C4CDF7761108DC0F0036F44F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CDF7751108DC0F0036F44F /* libxml2.dylib */; };
 		C4CDF79D1108DD4D0036F44F /* FJSTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */; };
 		C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */; };
@@ -306,6 +310,7 @@
 		C41ACB91110E2E4700942016 /* credentialBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credentialBackground.png; sourceTree = "<group>"; };
 		C41ACBD1110E367F00942016 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		C41ACBD2110E367F00942016 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		C41ACC50110E712100942016 /* information_page-v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "information_page-v3.png"; sourceTree = "<group>"; };
 		C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociatedObjects.h"; sourceTree = "<group>"; };
 		C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObjects.m"; sourceTree = "<group>"; };
 		C41CD39B10F263E700973374 /* slidernew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slidernew.png; sourceTree = "<group>"; };
@@ -419,6 +424,8 @@
 		C4C031D710B1EB9B000D46AA /* NSString+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extensions.m"; sourceTree = "<group>"; };
 		C4C031DF10B1EBC1000D46AA /* CoreDataFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFunctions.h; sourceTree = "<group>"; };
 		C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFunctions.m; sourceTree = "<group>"; };
+		C4C3D082110FA0D700010208 /* SDNextRunloopProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNextRunloopProxy.h; sourceTree = "<group>"; };
+		C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNextRunloopProxy.m; sourceTree = "<group>"; };
 		C4CDF7751108DC0F0036F44F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C4CDF79A1108DD4D0036F44F /* FJSTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJSTweetViewController.h; sourceTree = "<group>"; };
 		C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJSTweetViewController.m; sourceTree = "<group>"; };
@@ -555,6 +562,8 @@
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4CDF8B411090B120036F44F /* Key Chain */,
 				C46D828210C9263B00541CF1 /* Custom Controls */,
+				C4C3D082110FA0D700010208 /* SDNextRunloopProxy.h */,
+				C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */,
 				C4C031DE10B1EBAA000D46AA /* Categories */,
 				C4C02C4B10B0F413000D46AA /* Core Data */,
 				C4FA235410B5DC8E0031303E /* Images */,
@@ -1001,6 +1010,7 @@
 		C4FA235410B5DC8E0031303E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C41ACC50110E712100942016 /* information_page-v3.png */,
 				C41ACB91110E2E4700942016 /* credentialBackground.png */,
 				C41ACB8E110E2C2C00942016 /* yellowButton.png */,
 				C41ACB8B110E2C2000942016 /* grayButton.png */,
@@ -1152,6 +1162,7 @@
 				C41ACB8D110E2C2000942016 /* grayButton.png in Resources */,
 				C41ACB90110E2C2C00942016 /* yellowButton.png in Resources */,
 				C41ACB93110E2E4700942016 /* credentialBackground.png in Resources */,
+				C41ACC52110E712100942016 /* information_page-v3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,6 +1220,7 @@
 				C41ACB8C110E2C2000942016 /* grayButton.png in Resources */,
 				C41ACB8F110E2C2C00942016 /* yellowButton.png in Resources */,
 				C41ACB92110E2E4700942016 /* credentialBackground.png in Resources */,
+				C41ACC51110E712100942016 /* information_page-v3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,6 +1295,7 @@
 				C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */,
 				C4CDFA16110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */,
 				C41ACBD4110E367F00942016 /* LoadingView.m in Sources */,
+				C4C3D085110FA0D700010208 /* SDNextRunloopProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1375,6 +1388,7 @@
 				C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */,
 				C4CDFA15110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */,
 				C41ACBD3110E367F00942016 /* LoadingView.m in Sources */,
+				C4C3D084110FA0D700010208 /* SDNextRunloopProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,13 +13,14 @@
 #import "Company.h"
 #import "NSError+Alertview.h"
 #import "LoadingView.h"
+#import "SDNextRunloopProxy.h"
 
 @interface FJSTweetViewController()
 
 @property(nonatomic,retain)MGTwitterEngine *twitterEngine;
 @property(nonatomic,copy)NSString *prefilledText;
 
-- (void)launchLoginView;
+- (void)launchLoginViewAnimated:(BOOL)flag;
 
 @end
 
@@ -87,11 +88,13 @@
 
 - (void)viewWillAppear:(BOOL)animated{
 	
+	//Check the twitter engine to see if credentials are already supplied
 	NSString* username = [self.twitterEngine username];
-
+	
 	if(username == nil)
 		username = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
-	
+		
+	//If we got this far, all the credentials are in place, lets set the twitter engine and configure the ui
 	[self.accountName setTitle:username forState:UIControlStateNormal];
 
 }
@@ -104,7 +107,7 @@
 	
 	if(username!=nil && password!=nil)
 		return;
-		
+	
 	
 	//lets get credentials from user defaults and the keychain
 	username = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
@@ -116,11 +119,14 @@
 	
 	
 	if(username==nil || password==nil){
-		[self performSelector:@selector(launchLoginView) withObject:nil afterDelay:0.2];
+		[[self nextRunloopProxy] launchLoginViewAnimated:YES];
 		return;
 	}
 
+	//If we got this far, all the credentials are in place, lets set the twitter engine properties
 	[self.twitterEngine setUsername:username password:password];
+	
+	//get the keyboard up for ui purposes
 	[self.tweetTextView becomeFirstResponder];
 
 }
@@ -149,6 +155,11 @@
 	
 	[[LoadingView loadingViewInView:self.view frame:rect] setDelegate:self];
 	
+	[self.twitterEngine setClientName:@"HRC Buying Guide" 
+							  version:@"1.0" 
+								  URL:nil 
+								token:nil];
+	
 	[self.twitterEngine sendUpdate:self.tweetTextView.text];	
 }
 
@@ -156,9 +167,9 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)login{
+- (IBAction)loginManually{
 	
-	[self launchLoginView];
+	[self launchLoginViewAnimated:YES];
 }
 
 
@@ -184,12 +195,13 @@
 #pragma mark -
 #pragma mark FJSTwitterLoginController
 
-- (void)launchLoginView{
+- (void)launchLoginViewAnimated:(BOOL)flag{
 	
 	FJSTwitterLoginController* tvc = [[[FJSTwitterLoginController alloc] init] autorelease];
 	
 	tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:tvc animated:YES];
+	
+	[self presentModalViewController:tvc animated:flag];
 	
 }
 
