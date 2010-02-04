@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MGTwitterEngine;
+#import "SA_OAuthTwitterController.h"
+
+@class SA_OAuthTwitterEngine;
 @class Company;
 
-@interface FJSTweetViewController : UIViewController {
+@interface FJSTweetViewController : UIViewController <SA_OAuthTwitterControllerDelegate> {
 
 	UITextView* tweetTextView;
 	UILabel* charCount;
 	UIButton* accountName;
 	
 	NSString* prefilledText;
-	MGTwitterEngine* twitterEngine;
+	SA_OAuthTwitterEngine* twitterEngine;
 	
 }
 @property(nonatomic,retain)IBOutlet UITextView *tweetTextView;

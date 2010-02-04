@@ -1477,7 +1477,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1508,7 +1516,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1580,7 +1596,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
