@@ -57,7 +57,7 @@
 					<object class="IBUITextView" id="452092733">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 55}, {280, 135}}</string>
+						<string key="NSFrame">{{20, 55}, {289, 135}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="750969339">
 							<int key="NSColorSpace">3</int>
@@ -71,6 +71,10 @@
 						<bool key="IBUICanCancelContentTouches">NO</bool>
 						<bool key="IBUIBouncesZoom">NO</bool>
 						<string key="IBUIText"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4wNDgzNTIwNDMwNSAwLjEyNDc2NDAwNDUgMC4yODA3NDg2NjMxAA</bytes>
+						</object>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
 							<int key="IBUIReturnKeyType">7</int>

@@ -80,7 +80,7 @@ static CGPoint partnerImageOrigin = {2,34};
 		
 		self.toolbarItems = [NSArray arrayWithObjects: 
 							 [UIBarButtonItem flexibleSpaceItem],
-							 [UIBarButtonItem systemItem:UIBarButtonSystemItemAction 
+							 [UIBarButtonItem itemWithTitle:@"Share" style:UIBarButtonItemStyleBordered 
 												  target:self 
 												  action:@selector(launchActionSheet)],
 							 nil];

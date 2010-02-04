@@ -471,7 +471,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
 				C4103F7810B71083004CEC15 /* BGImporter.app */,
 			);
 			name = Products;
@@ -560,8 +560,7 @@
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4CDF8B411090B120036F44F /* Key Chain */,
 				C46D828210C9263B00541CF1 /* Custom Controls */,
-				C4C3D082110FA0D700010208 /* SDNextRunloopProxy.h */,
-				C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */,
+				C4A2477A111B5E980015786E /* RunLoop Proxy */,
 				C4C031DE10B1EBAA000D46AA /* Categories */,
 				C4C02C4B10B0F413000D46AA /* Core Data */,
 				C4FA235410B5DC8E0031303E /* Images */,
@@ -815,6 +814,15 @@
 				C4A245EE111B46F70015786E /* twitter_load.png */,
 			);
 			path = SAOAuthTwitterEngine;
+			sourceTree = "<group>";
+		};
+		C4A2477A111B5E980015786E /* RunLoop Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				C4C3D082110FA0D700010208 /* SDNextRunloopProxy.h */,
+				C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */,
+			);
+			name = "RunLoop Proxy";
 			sourceTree = "<group>";
 		};
 		C4AFF95510B233F000801655 /* Categories List View */ = {
@@ -1102,7 +1110,7 @@
 			);
 			name = "BuyingGuide Dev";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1443,7 +1451,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
 					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1479,7 +1486,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
 					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1556,7 +1562,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
 					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
@@ -1583,11 +1588,18 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = BuyingGuide;
@@ -1678,15 +1690,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				HEADER_SEARCH_PATHS = (
-					$SDKROOT/usr/include/libxml2,
-					$SRCROOT/yajl,
-				);
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-FJS-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1704,11 +1719,18 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/yajl\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = BuyingGuide;

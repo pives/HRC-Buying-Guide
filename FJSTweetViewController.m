@@ -72,8 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.tweetTextView.font = [UIFont systemFontOfSize:14];
-	self.tweetTextView.text = self.prefilledText;
+	self.tweetTextView.font = [UIFont boldSystemFontOfSize:14];
 	
 	self.twitterEngine = [SA_OAuthTwitterEngine OAuthTwitterEngineWithDelegate:self];
 
@@ -185,6 +184,9 @@
 	if (controller) 
 		[self presentModalViewController: controller animated: YES];
 	else {
+		self.tweetTextView.text = self.prefilledText;
+		[self textViewDidChange:self.tweetTextView];
+		
 		NSString* username = [self.twitterEngine username];
 		[self.accountName setTitle:username forState:UIControlStateNormal];
 		
