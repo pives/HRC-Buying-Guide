@@ -95,8 +95,6 @@
 		C4864E4A10BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
 		C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
 		C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
-		C48653511108DB780013470D /* yajl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48653481108DB780013470D /* yajl.a */; };
-		C48653521108DB780013470D /* yajl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48653481108DB780013470D /* yajl.a */; };
 		C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
@@ -339,15 +337,6 @@
 		C4864E4810BC3DE10064A126 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
 		C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableViewController.h; sourceTree = "<group>"; };
 		C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCBrandTableViewController.m; sourceTree = "<group>"; };
-		C48653481108DB780013470D /* yajl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = yajl.a; sourceTree = "<group>"; };
-		C48653491108DB780013470D /* NSObject+YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YAJL.h"; sourceTree = "<group>"; };
-		C486534A1108DB780013470D /* YAJL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJL.h; sourceTree = "<group>"; };
-		C486534B1108DB780013470D /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
-		C486534C1108DB780013470D /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
-		C486534D1108DB780013470D /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
-		C486534E1108DB780013470D /* YAJLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLDocument.h; sourceTree = "<group>"; };
-		C486534F1108DB780013470D /* YAJLGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLGen.h; sourceTree = "<group>"; };
-		C48653501108DB780013470D /* YAJLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAJLParser.h; sourceTree = "<group>"; };
 		C486574510BD84FD0064A126 /* iphone_bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_bottom-bar.png"; sourceTree = "<group>"; };
 		C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailIndifferent.txt; sourceTree = "<group>"; };
 		C48BBBDF10C5792900F996C6 /* EmailSad.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailSad.txt; sourceTree = "<group>"; };
@@ -509,7 +498,6 @@
 				C4541A1710CEA4BB006A29A4 /* libsqlite3.dylib in Frameworks */,
 				C4541A1910CEA4C6006A29A4 /* SystemConfiguration.framework in Frameworks */,
 				C4541A1D10CEA4D4006A29A4 /* CoreLocation.framework in Frameworks */,
-				C48653521108DB780013470D /* yajl.a in Frameworks */,
 				C4CDF7761108DC0F0036F44F /* libxml2.dylib in Frameworks */,
 				C4CDF83F1108F6BA0036F44F /* Security.framework in Frameworks */,
 				C4A24605111B46F70015786E /* libOAuth.a in Frameworks */,
@@ -540,7 +528,6 @@
 				C4FA1D7410B45DBB0031303E /* CoreGraphics.framework in Frameworks */,
 				C4FA1D7510B45DBB0031303E /* CoreData.framework in Frameworks */,
 				C46D82BC10C92CEF00541CF1 /* QuartzCore.framework in Frameworks */,
-				C48653511108DB780013470D /* yajl.a in Frameworks */,
 				C4FFA611111362B300196F62 /* libxml2.dylib in Frameworks */,
 				C4FFA614111362D800196F62 /* Security.framework in Frameworks */,
 				C4A245F1111B46F70015786E /* libOAuth.a in Frameworks */,
@@ -603,7 +590,6 @@
 			children = (
 				C4CDF83E1108F6BA0036F44F /* Security.framework */,
 				C4CDF7751108DC0F0036F44F /* libxml2.dylib */,
-				C48653471108DB780013470D /* yajl */,
 				C45419FE10CEA442006A29A4 /* Beacon.h */,
 				C410405B10B71679004CEC15 /* Cocoa */,
 				C404437E10B0743700BCCFEC /* Cocoa */,
@@ -724,22 +710,6 @@
 				C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */,
 			);
 			name = "Custom Controls";
-			sourceTree = "<group>";
-		};
-		C48653471108DB780013470D /* yajl */ = {
-			isa = PBXGroup;
-			children = (
-				C48653481108DB780013470D /* yajl.a */,
-				C48653491108DB780013470D /* NSObject+YAJL.h */,
-				C486534A1108DB780013470D /* YAJL.h */,
-				C486534B1108DB780013470D /* yajl_common.h */,
-				C486534C1108DB780013470D /* yajl_gen.h */,
-				C486534D1108DB780013470D /* yajl_parse.h */,
-				C486534E1108DB780013470D /* YAJLDocument.h */,
-				C486534F1108DB780013470D /* YAJLGen.h */,
-				C48653501108DB780013470D /* YAJLParser.h */,
-			);
-			path = yajl;
 			sourceTree = "<group>";
 		};
 		C48BBBE310C57A0F00F996C6 /* Email text */ = {
@@ -1468,10 +1438,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				HEADER_SEARCH_PATHS = (
-					$SRCROOT/yajl,
-					$SDKROOT/usr/include/libxml2,
-				);
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1507,10 +1474,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
-				HEADER_SEARCH_PATHS = (
-					$SRCROOT/yajl,
-					$SDKROOT/usr/include/libxml2,
-				);
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1587,10 +1551,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
-				HEADER_SEARCH_PATHS = (
-					$SRCROOT/yajl,
-					$SDKROOT/usr/include/libxml2,
-				);
+				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
