@@ -21,6 +21,7 @@
     NSString *newUUID = (NSString*)CFUUIDCreateString(nil, uuidObj);
     CFRelease(uuidObj);
     return [newUUID autorelease];
+	//return newUUID;
 }
 
 
