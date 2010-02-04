@@ -26,7 +26,7 @@
 @property(nonatomic,retain)SA_OAuthTwitterEngine *twitterEngine;
 @property(nonatomic,copy)NSString *prefilledText;
 
-- (void)launchLoginViewAnimated:(BOOL)flag;
+- (void)launchLoginViewForce:(BOOL)flag;
 
 @end
 
@@ -72,22 +72,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(didLoginWithNotification:) 
-												 name:FJSTwitterLoginSuccessful 
-											   object:nil];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self 
-											 selector:@selector(didNotLoginWithNotification:) 
-												 name:FJSTwitterLoginUnsuccessful 
-											   object:nil];	
-	
-	
 	self.tweetTextView.font = [UIFont systemFontOfSize:14];
 	self.tweetTextView.text = self.prefilledText;
 	
 	self.twitterEngine = [SA_OAuthTwitterEngine OAuthTwitterEngineWithDelegate:self];
+
+	twitterEngine.consumerKey = kOAuthConsumerKey;
+	twitterEngine.consumerSecret = kOAuthConsumerSecret;
 
 }
 
@@ -99,46 +90,12 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{	
-	
-	twitterEngine.consumerKey = kOAuthConsumerKey;
-	twitterEngine.consumerSecret = kOAuthConsumerSecret;
-	
+			
 	[twitterEngine requestRequestToken];	
 		
-	[[self nextRunloopProxy] launchLoginViewAnimated:YES];
+	//this is sloppy, but UIKit dreads popping up 2 modal views in quick succession
+	[[self nextRunloopProxy] launchLoginViewForce:NO];
 		
-	//Check the twitter engine to see if credentials are already supplied
-	
-	
-	/*
-	//Check the twitter engine to see if credentials are already supplied
-	NSString* username = [self.twitterEngine username];
-	NSString* password = [self.twitterEngine password];
-	
-	if(username!=nil && password!=nil)
-		return;
-	
-	
-	//lets get credentials from user defaults and the keychain
-	username = [[NSUserDefaults standardUserDefaults] objectForKey:FJSTwitterUsernameKey];
-	
-	NSError* error = nil;
-	password = [SFHFKeychainUtils getPasswordForUsername:username 
-										  andServiceName:FJSTwitterServiceName 
-												   error:&error];
-	
-	
-	if(username==nil || password==nil){
-		[[self nextRunloopProxy] launchLoginViewAnimated:YES];
-		return;
-	}
-
-	//If we got this far, all the credentials are in place, lets set the twitter engine properties
-	[self.twitterEngine setUsername:username password:password];
-	
-	 */
-	
-	//get the keyboard up for ui purposes
 
 }
 
@@ -166,11 +123,6 @@
 	
 	[[LoadingView loadingViewInView:self.view frame:rect] setDelegate:self];
 	
-	[self.twitterEngine setClientName:@"HRC Buying Guide" 
-							  version:@"1.0" 
-								  URL:nil 
-								token:nil];
-	
 	[self.twitterEngine sendUpdate:self.tweetTextView.text];	
 }
 
@@ -180,7 +132,7 @@
 
 - (IBAction)loginManually{
 	
-	[self launchLoginViewAnimated:YES];
+	[self launchLoginViewForce:YES];
 }
 
 
@@ -206,56 +158,45 @@
 #pragma mark -
 #pragma mark FJSTwitterLoginController
 
-- (void)launchLoginViewAnimated:(BOOL)flag{
+- (void)launchLoginViewForce:(BOOL)force{
 	
+	if(force){
+		
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		
+		[defaults setObject: nil forKey: @"authData"];
+		[defaults setObject: nil forKey:FJSTwitterUsernameKey];
+		
+		[defaults synchronize];
+		
+		self.twitterEngine = [SA_OAuthTwitterEngine OAuthTwitterEngineWithDelegate:self];
+		
+		twitterEngine.consumerKey = kOAuthConsumerKey;
+		twitterEngine.consumerSecret = kOAuthConsumerSecret;
+		
+		[twitterEngine requestRequestToken];	
+		
+	}
 	
 	UIViewController *controller = 
 	[SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine: self.twitterEngine 
 																	delegate: self];
-	
+
 	if (controller) 
 		[self presentModalViewController: controller animated: YES];
 	else {
 		NSString* username = [self.twitterEngine username];
 		[self.accountName setTitle:username forState:UIControlStateNormal];
+		
+		//get the keyboard up for ui purposes
 		[self.tweetTextView becomeFirstResponder];
 	}	
-
-	
-	/*
-	FJSTwitterLoginController* tvc = [[[FJSTwitterLoginController alloc] init] autorelease];
-	
-	tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	
-	[self presentModalViewController:tvc animated:flag];
-	 */
-	
-}
-
-#pragma mark -
-#pragma mark FJSTwitterLoginController Notifications
-
-- (void)didLoginWithNotification:(NSNotification*)note{
-	
-	NSDictionary* userInfo = [note userInfo];
-	
-	NSString* username = [userInfo objectForKey:FJSTwitterUsernameKey];
-	NSString* password = [userInfo objectForKey:FJSTwitterPasswordKey];
-	
-	[self.twitterEngine setUsername:username password:password];
-}
-
-- (void)didNotLoginWithNotification:(NSNotification*)note{
-	
-	//not so fancy trick to get the the tweet view and login view to dismiss in one animation
-	self.modalViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self.navigationController.parentViewController dismissModalViewControllerAnimated:YES];
-	
 }
 
 
 //=============================================================================================================================
 #pragma mark SA_OAuthTwitterEngineDelegate
+
 - (void) storeCachedTwitterOAuthData: (NSString *) data forUsername: (NSString *) username {
 	NSUserDefaults			*defaults = [NSUserDefaults standardUserDefaults];
 	
@@ -271,6 +212,7 @@
 
 //=============================================================================================================================
 #pragma mark SA_OAuthTwitterControllerDelegate
+
 - (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
 	NSLog(@"Authenicated for %@", username);
 }
@@ -286,14 +228,11 @@
 }
 
 
-
-
 #pragma mark -
 #pragma mark MGTwitterEngineDelegate
 
 - (void)requestSucceeded:(NSString *)connectionIdentifier{
 		
-	
 	for(UIView* aView in self.view.subviews){
 		
 		if([aView isKindOfClass:[LoadingView class]])
@@ -313,6 +252,8 @@
 	[error presentAlertViewWithDelegate:nil];	
 }
 
+
+#pragma mark LoadingViewDelegate
 
 - (void)loadingViewDidClose:(LoadingView*)loadingView{
 	[self dismissModalViewControllerAnimated:YES];
