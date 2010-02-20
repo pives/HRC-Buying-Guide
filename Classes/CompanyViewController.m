@@ -392,7 +392,7 @@ static CGPoint partnerImageOrigin = {2,34};
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Post a Tweet", @"Send Email", nil] autorelease];
+                                                       otherButtonTitles:@"Twitter", @"Email", nil] autorelease];
     
     
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;

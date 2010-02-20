@@ -99,7 +99,7 @@
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 							<object class="IBUIBarButtonItem" id="155906844">
-								<string key="IBUITitle">Tweet</string>
+								<string key="IBUITitle">Send</string>
 								<int key="IBUIStyle">2</int>
 								<reference key="IBUIToolbar" ref="191746811"/>
 							</object>
@@ -365,7 +365,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>FJSTweetViewController</string>
 					<string>UIResponder</string>
-					<string>{{853, 527}, {320, 480}}</string>
+					<string>{{841, 527}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
