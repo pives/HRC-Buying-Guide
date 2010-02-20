@@ -73,7 +73,7 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
     self.view = [[[UITableView alloc] initWithFrame:tableFrame style:UITableViewStyleGrouped] autorelease];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 40;
+    self.tableView.rowHeight = 30;
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     //self.tableView.separatorColor = [UIColor whiteColor];
     //self.view.backgroundColor = [UIColor reallyLightGray];
@@ -81,7 +81,10 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
 
 	UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
 	[button setBackgroundImage:[UIImage imageNamed:@"brandsButton.png"] forState:UIControlStateNormal];
-	[button setTitle:@"Show Other Brands in Category" forState:UIControlStateNormal];
+	[button setTitle:@"Find Alternative Brands" forState:UIControlStateNormal];
+	[button setTitleColor:[UIColor colorWithRed:0.048 green:0.125 blue:0.281 alpha:1.000] 
+				 forState:UIControlStateNormal];
+	[button.titleLabel setFont:[UIFont boldSystemFontOfSize:17]];
 	[button addTarget:self action:@selector(showOtherBrandsCategory:) forControlEvents:UIControlEventTouchUpInside];
 	[button setFrame:CGRectMake(10, 10, tableFrame.size.width-20, 45)];
 	

@@ -35,6 +35,7 @@
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 @property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
 
+- (IBAction)showScoreCard;
 
 - (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
 

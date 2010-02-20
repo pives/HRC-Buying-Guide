@@ -72,7 +72,7 @@ static CGPoint partnerImageOrigin = {2,34};
 		 NSDictionary* myData = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
 		 NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:myData, UINibExternalObjects, nil];
 		 */ 
-		
+		/*
 		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Score Card" 
 																			style:UIBarButtonItemStyleBordered 
 																		   target:self 
@@ -86,6 +86,10 @@ static CGPoint partnerImageOrigin = {2,34};
 							 nil];
 		
 		
+		*/
+		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Share" style:UIBarButtonItemStyleBordered 
+																		   target:self 
+																		   action:@selector(launchActionSheet)]];
     }
     
     return self;
@@ -107,6 +111,11 @@ static CGPoint partnerImageOrigin = {2,34};
 	// Release any cached data, images, etc that aren't in use.
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+	
+	self.navigationController.toolbarHidden = NO;	
+
+}
 
 - (void)viewWillDisappear:(BOOL)animated{
 	
@@ -124,6 +133,7 @@ static CGPoint partnerImageOrigin = {2,34};
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+	
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
 	
@@ -148,6 +158,8 @@ static CGPoint partnerImageOrigin = {2,34};
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
+	
+	self.navigationController.toolbarHidden = YES;	
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(categorySelectedWithNotification:) 
@@ -239,10 +251,10 @@ static CGPoint partnerImageOrigin = {2,34};
 #pragma mark -
 #pragma mark Scorecard
 
-- (void)showScoreCard{
+- (IBAction)showScoreCard{
     
     CompanyScoreCardViewController* vc = [[[CompanyScoreCardViewController alloc] initWithCompany:self.company] autorelease];
-    [self.navigationController presentModalViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -396,7 +408,7 @@ static CGPoint partnerImageOrigin = {2,34};
     
     
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
-    [myActionSheet showFromToolbar:self.navigationController.toolbar];
+    [myActionSheet showInView:self.view];
     
 }
 

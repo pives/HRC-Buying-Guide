@@ -107,7 +107,10 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
                                                                       category:self.category
                                                                          color:self.ratingColor] autorelease];
         
-        tableController.tableFrame = CGRectMake(0, 44, 320, 236-25);
+        tableController.tableFrame = CGRectMake(0, 
+												44, 
+												320, 
+												self.view.frame.size.height-36-1);
         self.categoryName.font = [UIFont boldSystemFontOfSize:15];
 		
 		[self.tableController setCompany:self.company category:self.category color:self.ratingColor];

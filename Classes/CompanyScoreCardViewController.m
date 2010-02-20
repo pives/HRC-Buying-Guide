@@ -38,7 +38,7 @@
 {
     self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
     if (self != nil) {
-        
+        self.title = @"Score Card";
 		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
 		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
@@ -57,14 +57,22 @@
     [super viewDidLoad];
     
     self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
-    NSMutableArray* items = [bar.items mutableCopy];
+    
+	
+	self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithView:self.spinner];
+	
+	/*
+	NSMutableArray* items = [bar.items mutableCopy];
+	
+	
         
     [items insertObject:[UIBarButtonItem fixedSpaceItemOfSize:12]  atIndex:0];
     [items insertObject:[UIBarButtonItem itemWithView:self.spinner] atIndex:0];
     
     bar.items = items;
     [items release];
-    
+    */
+	
     [card loadRequest:[NSURLRequest requestWithURL:address]];
                         
 }
