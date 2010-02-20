@@ -35,7 +35,7 @@
 
 	}
 	
-	someText = [NSString stringWithFormat:someText, aCompany.name, [aCompany.ratingLevel intValue]];
+	someText = [NSString stringWithFormat:someText, aCompany.name, [aCompany.rating intValue]];
 	
 	self = [self initWithText:someText];
 	
