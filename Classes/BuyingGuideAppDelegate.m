@@ -144,6 +144,13 @@ static NSString* kAnimationID = @"SplashAnimation";
 			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
 													toPath:appDB 
 													 error:nil];
+			
+		}else if(![(NSDate*)[oldAttributes objectForKey:NSFileCreationDate] isEqualToDate:(NSDate*)[newAttributes objectForKey:NSFileCreationDate]] ){
+			
+			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
+													toPath:appDB 
+													 error:nil];
 		}
     }
 	

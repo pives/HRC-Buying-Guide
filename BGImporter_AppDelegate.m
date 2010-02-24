@@ -33,13 +33,12 @@
     int numberOfCompanies = [self.managedObjectContext numberOfEntitiesWithName:@"Company"];
     NSLog(@"Number of Companies: %@", [NSString stringWithInt:numberOfCompanies]);
     
-    
-    NSArray* cats = allCategories(self.managedObjectContext);
+    //NSArray* cats = allCategories(self.managedObjectContext);
         
     NSLog(@"Number of Categories: %@", [NSString stringWithInt:[self.managedObjectContext numberOfEntitiesWithName:@"Category"]]);
     
     //NSLog(@"%@",[companies description]);
-    
+    /*
     for(Category* eachCat in cats){
         
         NSLog(@"%@", @"____________________");
@@ -47,30 +46,31 @@
         NSLog(@"%@", eachCat.nameDisplayFriendly);
         NSLog(@"%@", @"____________________");
         
-        /*
+        
         [eachCompany.brands each:^(id eachBrand){
             
             NSLog(@"%@", [(Brand*)eachBrand name]);
             NSLog(@"%@", [(Brand*)eachBrand namefirstLetter]);
 
         }];
-        */
+        
         
     }
-    
+    */
+	
     //Company* ofInterest = [[companies filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name == 402"]] objectAtIndex:0];
     
     //NSLog(@"%@", ofInterest.name);
 
     //Company* ofInterest = [[self.managedObjectContext entitiesWithName:@"Company" where:@"name" like:@"Wells"] objectAtIndex:0];
     //NSLog(@"%@", ofInterest.name);
-    
+    /*
     NSArray* results = [self.managedObjectContext entitiesWithName:@"Company" where:@"name" like:@"Wells Fargo"];
     if([results count]>0){
         Company* ofInterest = [results objectAtIndex:0];
         NSLog(@"%@", ofInterest.name);
     }
-    
+    */
 }
 
 - (void)removeOldDatabase{
