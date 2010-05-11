@@ -38,6 +38,8 @@
 @synthesize twitterEngine;
 @synthesize prefilledText;
 @synthesize accountName;
+@synthesize canceled;
+@synthesize sendButton;
 
 
 #pragma mark -
@@ -46,6 +48,7 @@
 - (void)dealloc {
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+    [sendButton release], sendButton = nil;
 	self.accountName = nil;
 	self.prefilledText = nil;
 	self.tweetTextView = nil;
@@ -72,6 +75,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+    self.canceled = NO;
 	self.tweetTextView.font = [UIFont boldSystemFontOfSize:14];
 	
 	self.twitterEngine = [SA_OAuthTwitterEngine OAuthTwitterEngineWithDelegate:self];
@@ -90,12 +94,24 @@
 
 - (void)viewDidAppear:(BOOL)animated{	
 			
-	[twitterEngine requestRequestToken];	
-		
-	//this is sloppy, but UIKit dreads popping up 2 modal views in quick succession
-	[[self nextRunloopProxy] launchLoginViewForce:NO];
-		
+    if(!canceled){
+        
+        [twitterEngine requestRequestToken];	
+        
+        //this is sloppy, but UIKit dreads popping up 2 modal views in quick succession
+        [[self nextRunloopProxy] launchLoginViewForce:NO];
+        
+        self.sendButton.enabled = YES;
+        
+    }else{
+        
+        [self.accountName setTitle:@"Log In" forState:UIControlStateNormal];
+        
+        self.canceled = NO;
+        
+        self.sendButton.enabled = NO;
 
+    }
 }
 
 #pragma mark -
@@ -221,11 +237,13 @@
 
 - (void) OAuthTwitterControllerFailed: (SA_OAuthTwitterController *) controller {
 	NSLog(@"Authentication Failed!");
+    self.canceled = YES;
+    
 }
 
 - (void) OAuthTwitterControllerCanceled: (SA_OAuthTwitterController *) controller {
 	NSLog(@"Authentication Canceled.");
-	[self.navigationController.parentViewController dismissModalViewControllerAnimated:YES];
+    self.canceled = YES;
 
 }
 

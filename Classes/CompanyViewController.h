@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "FacebookAgent.h"
 
 @class Company;
 @class HRCBrandTableDataSource;
 @class Category;
 @class PagingScrollViewController;
 
-@interface CompanyViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate> {
+@interface CompanyViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate> {
     
     Company* company;
     
@@ -25,6 +26,8 @@
     
     HRCBrandTableDataSource* data;
     PagingScrollViewController* brands;
+    
+    FacebookAgent* agent;
 
 }
 @property(nonatomic,retain)Company *company;
@@ -34,6 +37,7 @@
 @property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 @property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
+@property(nonatomic,retain)FacebookAgent *agent;
 
 - (IBAction)showScoreCard;
 

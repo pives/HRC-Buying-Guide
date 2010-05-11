@@ -19,6 +19,7 @@
 #import "FilteredCompaniesViewController.h"
 #import "FJSTweetViewController.h"
 #import "FJSTweetViewController+HRC.h"
+#import "DebugLog.h"
 
 
 static CGRect nameRectPartner = {
@@ -45,12 +46,17 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize brands;
 @synthesize scoreBackgroundColor;
 @synthesize partnerIcon;
+@synthesize agent;
+
+
+
 
 #pragma mark -
 #pragma mark NSObject
 
 
 - (void)dealloc {
+    [agent release], agent = nil;
     self.brands = nil;
     self.data = nil;
     self.nameLabel = nil;
@@ -395,6 +401,98 @@ static CGPoint partnerImageOrigin = {2,34};
 	[nc release];
 }
 
+
+#pragma mark -
+#pragma mark Facebook
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// This application will not work until you enter your Facebook application's API key here:
+
+static NSString* kApiKey = @"a103b98ed528fc842fd1daa9c7c97713";
+
+// Enter either your API secret or a callback URL (as described in documentation):
+static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SECRET KEY>";
+
+
+- (void)sendFacebookPost{
+ 
+    if(self.agent == nil){
+        
+        self.agent = [[[FacebookAgent alloc] initWithApiKey:kApiKey ApiSecret:kApiSecret ApiProxy:nil] autorelease];
+        agent.delegate = self;
+    }
+   
+    
+    NSString* someText;
+	
+	if([company.ratingLevel intValue] == 0){
+        
+		someText = 
+		@"Human Rights Campaign rates @%@ %i%%. Support them. More: http://bit.ly/buy4eq";
+		
+		
+	}else if([company.ratingLevel intValue] == 1){
+        
+		someText = 
+		@"Human Rights Campaign rates @%@ %i%%. Needs improvement. More: http://bit.ly/buy4eq";
+        
+        
+	}else{
+		
+		someText = 
+		@"Human Rights Campaign Buyer's Guide rates @%@ %i%%. Find alternative. More: http://bit.ly/buy4eq";
+        
+	}
+	
+	someText = [NSString stringWithFormat:someText, company.name, [company.rating intValue]];
+    
+
+    [agent publishFeedWithName:@"Human Rights Campaign iPhone App" 
+				   captionText:someText 
+					  imageurl:@"http://www.hrc.org/hrc-logo.gif" 
+					   linkurl:@"http://www.hrc.org/iPhone" 
+			 userMessagePrompt:[NSString stringWithFormat:@"Tell others about %@",company.name]];
+    
+}
+
+- (void) facebookAgent:(FacebookAgent*)agent didLoadInfo:(NSDictionary*) info{
+    
+    DebugLog(@"request load info: %@", [info description]);
+
+}
+
+- (void) facebookAgent:(FacebookAgent*)agent requestFaild:(NSString*) message{
+    
+	NSLog(@"Facebook request failed: %@", message);
+}
+
+
+- (void) facebookAgent:(FacebookAgent*)agent loginStatus:(BOOL) loggedIn{
+	
+	if(loggedIn)
+		DebugLog(@"loggedin");
+	
+	DebugLog(@"should be logged in");
+	
+}
+
+- (void) facebookAgent:(FacebookAgent*)agent statusChanged:(BOOL) success{
+	
+	if(success)
+		DebugLog(@"YES!");
+	else {
+		DebugLog(@"NO!");
+	}
+}
+
+
+- (void) facebookAgent:(FacebookAgent*)agent dialog:(FBDialog*)dialog didFailWithError:(NSError*)error{
+	
+	NSLog(@"Facebook dialog failed with error: %@", [error description]);
+	
+}
+
+
 #pragma mark -
 #pragma mark UIActionSheet
 
@@ -404,13 +502,15 @@ static CGPoint partnerImageOrigin = {2,34};
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Twitter", @"Email", nil] autorelease];
+                                                       otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
     
     
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
     [myActionSheet showInView:self.view];
     
 }
+
+
 
 
 #pragma mark -
@@ -426,6 +526,11 @@ static CGPoint partnerImageOrigin = {2,34};
             break;
         }
 		case 1:
+        {
+            [self sendFacebookPost];
+            break;
+        }
+        case 2:
         {
             [self sendEmail];
             break;

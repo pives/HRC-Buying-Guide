@@ -17,14 +17,19 @@
 	UITextView* tweetTextView;
 	UILabel* charCount;
 	UIButton* accountName;
-	
+    UIBarButtonItem* sendButton;
+    
 	NSString* prefilledText;
 	SA_OAuthTwitterEngine* twitterEngine;
+    
+    BOOL canceled;
 	
 }
 @property(nonatomic,retain)IBOutlet UITextView *tweetTextView;
 @property(nonatomic,retain)IBOutlet UILabel *charCount;
 @property(nonatomic,retain)IBOutlet UIButton *accountName;
+@property(nonatomic,retain)IBOutlet UIBarButtonItem *sendButton;
+@property(nonatomic,assign)BOOL canceled;
 
 
 - (id)initWithText:(NSString*)someText;

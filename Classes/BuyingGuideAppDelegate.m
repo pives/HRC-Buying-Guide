@@ -20,7 +20,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize splashView;
 
 
-#pragma mark -e
+#pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

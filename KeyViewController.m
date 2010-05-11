@@ -67,7 +67,6 @@
 		}
 		
 		
-		//TODO: load email
 	}else{
 		
 		KeyWebViewController* webController = [[KeyWebViewController alloc] initWithRequest:request];
