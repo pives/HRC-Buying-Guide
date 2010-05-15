@@ -478,8 +478,9 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 
 - (void) facebookAgent:(FacebookAgent*)agent statusChanged:(BOOL) success{
 	
-	if(success)
-		DebugLog(@"YES!");
+	if(success){
+        DebugLog(@"YES!");
+    }
 	else {
 		DebugLog(@"NO!");
 	}
@@ -497,12 +498,19 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 #pragma mark UIActionSheet
 
 - (void)launchActionSheet{
-    
+    /*
     UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
                                                        otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
+    
+    */
+    UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
+                                                                delegate:self 
+                                                       cancelButtonTitle:@"Cancel" 
+                                                  destructiveButtonTitle:nil 
+                                                       otherButtonTitles:@"Twitter", @"Email", nil] autorelease];
     
     
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
@@ -518,6 +526,7 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 
 -(void)actionSheet:(UIActionSheet *)modalViewSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
+    /*
     switch (buttonIndex)
     {
 		case 0:
@@ -536,7 +545,20 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
             break;
         }
     }
-
+*/
+    switch (buttonIndex)
+    {
+		case 0:
+        {
+            [self postTweet];
+            break;
+        }
+		case 1:
+        {
+            [self sendEmail];
+            break;
+        }
+    }
 }
 
 
