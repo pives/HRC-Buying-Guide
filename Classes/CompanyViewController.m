@@ -428,19 +428,19 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 	if([company.ratingLevel intValue] == 0){
         
 		someText = 
-		@"Human Rights Campaign rates @%@ %i%%. Support them. More: http://bit.ly/buy4eq";
+		@"HRC’s Buying For Equality Guide rates %@ %i%%. Make sure to support them. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
 		
 		
 	}else if([company.ratingLevel intValue] == 1){
         
 		someText = 
-		@"Human Rights Campaign rates @%@ %i%%. Needs improvement. More: http://bit.ly/buy4eq";
+		@"HRC’s Buying For Equality Guide rates %@ %i%%. This company needs improvement. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
         
         
 	}else{
 		
 		someText = 
-		@"Human Rights Campaign Buyer's Guide rates @%@ %i%%. Find alternative. More: http://bit.ly/buy4eq";
+		@"HRC’s Buying For Equality Guide rates %@ %i%%. Find an alternative brand. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
         
 	}
 	
@@ -498,21 +498,14 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 #pragma mark UIActionSheet
 
 - (void)launchActionSheet{
-    /*
+    
     UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
                                                        otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
     
-    */
-    UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
-                                                                delegate:self 
-                                                       cancelButtonTitle:@"Cancel" 
-                                                  destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Twitter", @"Email", nil] autorelease];
-    
-    
+        
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
     [myActionSheet showInView:self.view];
     
@@ -526,7 +519,7 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 
 -(void)actionSheet:(UIActionSheet *)modalViewSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    /*
+
     switch (buttonIndex)
     {
 		case 0:
@@ -540,20 +533,6 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
             break;
         }
         case 2:
-        {
-            [self sendEmail];
-            break;
-        }
-    }
-*/
-    switch (buttonIndex)
-    {
-		case 0:
-        {
-            [self postTweet];
-            break;
-        }
-		case 1:
         {
             [self sendEmail];
             break;
