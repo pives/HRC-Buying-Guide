@@ -34,19 +34,19 @@ static NSString* unknownRatingString = @"?";
 
 NSArray* allCompanies(NSManagedObjectContext* context){
     
-    return [context entitiesWithName:@"Company"];
+    return [context entitiesWithName:@"BGCompany"];
     
 }
 
 NSArray* allCategories(NSManagedObjectContext* context){
     
-    return [context entitiesWithName:@"Category"];
+    return [context entitiesWithName:@"BGCategory"];
     
 }
 
 NSArray* allBrands(NSManagedObjectContext* context){
     
-    return [context entitiesWithName:@"Brands"];
+    return [context entitiesWithName:@"BGBrands"];
     
 }
 
@@ -55,20 +55,20 @@ NSArray* allBrands(NSManagedObjectContext* context){
 
 BGBrand* brandWithName(NSString* name, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Brand" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    return [context retrieveOrCreateEntityWithName:@"BGBrand" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
 BGCategory* categoryWithName(NSString* name, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Category" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    return [context retrieveOrCreateEntityWithName:@"BGCategory" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
 BGCompany* companyWithName(NSString* name, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Company" whereKey:@"name" like:name];
+    return [context retrieveOrCreateEntityWithName:@"BGCompany" whereKey:@"name" like:name];
 }
 
 BGCompany* companyWithID(NSNumber* ID, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"Company" whereKey:@"ID" equalToObject:ID];
+    return [context retrieveOrCreateEntityWithName:@"BGCompany" whereKey:@"ID" equalToObject:ID];
 }

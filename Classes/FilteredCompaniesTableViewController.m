@@ -382,7 +382,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 			// Edit the entity name as appropriate.
 			
-			NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+			NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 			[fetchRequest setEntity:entity];
 			
 			// Set the batch size to a suitable number.
@@ -406,7 +406,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
 																			managedObjectContext:managedObjectContext 
 																			  sectionNameKeyPath:@"namefirstLetter" 
-																					   cacheName:@"CompaniesList"];
+																					   cacheName:nil];
 			
 			[sortDescriptors release];
 			[fetchRequest release];
@@ -426,7 +426,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 			// Edit the entity name as appropriate.
 			
-			NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+			NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 			[fetchRequest setEntity:entity];
 			
 			// Set the batch size to a suitable number.
@@ -450,7 +450,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
 																			managedObjectContext:managedObjectContext 
 																			  sectionNameKeyPath:@"ratingLevel"
-																					   cacheName:@"CompaniesList"];        
+																					   cacheName:nil];        
 			
 			[sortDescriptors release];
 			[fetchRequest release];
@@ -519,7 +519,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -551,7 +551,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
 																	managedObjectContext:managedObjectContext 
 																	  sectionNameKeyPath:nil 
-																			   cacheName:@"namesList"];
+																			   cacheName:nil];
 	
 	[sortDescriptors release];
 	[fetchRequest release];
@@ -566,7 +566,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -597,7 +597,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
 																	managedObjectContext:managedObjectContext 
 																	  sectionNameKeyPath:nil
-																			   cacheName:@"ratingsList"];        
+																			   cacheName:nil];        
 	
 	[sortDescriptors release];
 	[fetchRequest release];

@@ -276,7 +276,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -295,7 +295,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                 managedObjectContext:managedObjectContext 
                                                                                                   sectionNameKeyPath:@"namefirstLetter" 
-                                                                                                           cacheName:@"CompaniesList"];
+                                                                                                           cacheName:nil];
 	self.fetchedResultsController = aFetchedResultsController;
 	
 	[aFetchedResultsController release];
@@ -367,7 +367,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -389,7 +389,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                 managedObjectContext:managedObjectContext 
                                                                                                   sectionNameKeyPath:nil 
-                                                                                                           cacheName:@"SearchCompaniesList"];
+                                                                                                           cacheName:nil];
 	self.searchResultsController = aFetchedResultsController;
 	
 	[aFetchedResultsController release];

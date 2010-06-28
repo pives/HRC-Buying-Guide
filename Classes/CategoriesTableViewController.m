@@ -109,7 +109,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGCategory" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -126,7 +126,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                 managedObjectContext:managedObjectContext 
                                                                                                   sectionNameKeyPath:nil 
-                                                                                                           cacheName:@"Categories"];
+                                                                                                           cacheName:nil];
     aFetchedResultsController.delegate = self;
 	self.fetchedResultsController = aFetchedResultsController;
 	

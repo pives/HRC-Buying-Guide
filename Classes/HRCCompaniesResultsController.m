@@ -210,7 +210,7 @@
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
@@ -229,7 +229,7 @@
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                                                                                 managedObjectContext:managedObjectContext 
                                                                                                   sectionNameKeyPath:@"namefirstLetter" 
-                                                                                                           cacheName:@"CompaniesList"];
+                                                                                                           cacheName:nil];
 	self.fetchedResultsController = aFetchedResultsController;
 	
 	[aFetchedResultsController release];
