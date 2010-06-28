@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Company.h"
+#import "BGCompany.h"
 
-@class Category;
+@class BGCategory;
 
 
-@interface Company(Extensions)
+@interface BGCompany(Extensions)
 
 @property (nonatomic, readonly)NSString* ratingFormatted;
 @property (nonatomic, readonly)NSArray* categoriesSortedAlphabetically;
@@ -27,7 +27,7 @@
 @end
 
 
-@interface Company(BrandsTable)
+@interface BGCompany(BrandsTable)
 
 //@property (nonatomic, retain)Category* selectedCategory;
 

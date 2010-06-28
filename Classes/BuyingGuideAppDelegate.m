@@ -8,7 +8,7 @@
 
 #import "BuyingGuideAppDelegate.h"
 #import "MainViewController.h"
-#import "Beacon.h"
+#import "FlurryAPI.h"
 #import "RootViewController.h"
 
 @implementation BuyingGuideAppDelegate
@@ -31,14 +31,11 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	
 	
-	
-	NSString *applicationCode = @"4bbfd488141c84699824c518b281b86e";
-    [Beacon initAndStartBeaconWithApplicationCode:applicationCode
-                                  useCoreLocation:NO
-                                      useOnlyWiFi:NO
-                                  enableDebugMode:NO]; // optional
-	
     
+    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
+
+    [FlurryAPI setSessionReportsOnCloseEnabled:NO];
+
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
 	
@@ -98,8 +95,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 			abort();
         } 
     }
-	[Beacon endBeacon];
-
 }
 
 - (void)loadDataForce:(BOOL)flag{

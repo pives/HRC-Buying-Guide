@@ -13,23 +13,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Company.h"
-#import "Category.h"
+#import "BGCompany.h"
+#import "BGCategory.h"
 
 @interface HRCBrandTableDataSource : NSObject
 {
 	NSDictionary *data;
 }
 @property(nonatomic,retain)NSDictionary *data;
-@property(nonatomic, readonly)Company* company;
-@property(nonatomic, readonly)Category* category;
+@property(nonatomic, readonly)BGCompany* company;
+@property(nonatomic, readonly)BGCategory* category;
 
 
-- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory;
+- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
 
 - (NSInteger)numDataPages;
-- (int)pageOfCategory:(Category*)aCategory;
+- (int)pageOfCategory:(BGCategory*)aCategory;
 - (int)pageOfStartingSelectedCategory;
 
 @end

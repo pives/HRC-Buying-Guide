@@ -14,8 +14,8 @@
 
 #import <UIKit/UIKit.h>
 @class HRCBrandTableDataSource;
-@class Company;
-@class Category;
+@class BGCompany;
+@class BGCategory;
 @class HRCBrandTableViewController;
 
 @interface PageViewController : UIViewController {
@@ -25,8 +25,8 @@
 	    
     HRCBrandTableDataSource* data;
     
-    Company* company;
-    Category* category;
+    BGCompany* company;
+    BGCategory* category;
     
     UILabel* categoryName;
     
@@ -39,8 +39,8 @@
 
 @property NSInteger pageIndex;
 @property(nonatomic,retain)HRCBrandTableDataSource *data;
-@property(nonatomic,retain)Company *company;
-@property(nonatomic,retain)Category *category;
+@property(nonatomic,retain)BGCompany *company;
+@property(nonatomic,retain)BGCategory *category;
 @property(nonatomic,assign)IBOutlet UILabel *categoryName;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)UIColor *ratingColor;

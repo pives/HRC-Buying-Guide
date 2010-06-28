@@ -7,7 +7,7 @@
 //
 
 #import "CompanyScoreCardViewController.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "NSString+extensions.h"
 #import "UIBarButtonItem+extensions.h"
 
@@ -34,7 +34,7 @@
 }
 
 
-- (id)initWithCompany:(Company*)aCompany
+- (id)initWithCompany:(BGCompany*)aCompany
 {
     self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
     if (self != nil) {

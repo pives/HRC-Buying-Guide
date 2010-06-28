@@ -12,9 +12,9 @@
 #import "NSArray+blocks.h"
 #import "NSSet+blocks.h"
 #import "NSManagedObjectContext+Extensions.h"
-#import "Company.h"
-#import "Brand.h"
-#import "Category.h"
+#import "BGCompany.h"
+#import "BGBrand.h"
+#import "BGCategory.h"
 
 
 static int categoryIndex = 5;
@@ -86,11 +86,11 @@ NSError* importUsingCSV(NSManagedObjectContext* context){
 void addPartnerSpecialCases(NSManagedObjectContext* context){
 
     
-    Company* chase = [context entityWithName:@"Company" whereKey:@"name" contains:@"Chase"];
+    BGCompany* chase = [context entityWithName:@"Company" whereKey:@"name" contains:@"Chase"];
     
     chase.partner = [NSNumber numberWithBool:NO];
     
-    for(Brand* eachBrand in chase.brands){
+    for(BGBrand* eachBrand in chase.brands){
         
         
         if([eachBrand.name isEqualToString:@"Chase"]){
@@ -105,11 +105,11 @@ void addPartnerSpecialCases(NSManagedObjectContext* context){
         
     }
     
-    Company* diageo = [context entityWithName:@"Company" whereKey:@"name" contains:@"Diageo"];
+    BGCompany* diageo = [context entityWithName:@"Company" whereKey:@"name" contains:@"Diageo"];
 
     diageo.partner = [NSNumber numberWithBool:NO];
     
-    for(Brand* eachBrand in diageo.brands){
+    for(BGBrand* eachBrand in diageo.brands){
         
         if([eachBrand.name doesContainString:@"Beaulieu"]){
             
@@ -123,11 +123,11 @@ void addPartnerSpecialCases(NSManagedObjectContext* context){
         
     }
         
-    Company* toyota = [context entityWithName:@"Company" whereKey:@"name" contains:@"Toyota"];
+    BGCompany* toyota = [context entityWithName:@"Company" whereKey:@"name" contains:@"Toyota"];
     
     toyota.partner = [NSNumber numberWithBool:NO];
     
-    for(Brand* eachBrand in toyota.brands){
+    for(BGBrand* eachBrand in toyota.brands){
         
         if([eachBrand.name doesContainString:@"Lexus"]){
             
@@ -141,11 +141,11 @@ void addPartnerSpecialCases(NSManagedObjectContext* context){
         
     }
     
-    Company* jj = [context entityWithName:@"Company" whereKey:@"name" contains:@"Johnson & Johnson"];
+    BGCompany* jj = [context entityWithName:@"Company" whereKey:@"name" contains:@"Johnson & Johnson"];
     
     jj.partner = [NSNumber numberWithBool:NO];
     
-    for(Brand* eachBrand in jj.brands){
+    for(BGBrand* eachBrand in jj.brands){
         
         if([eachBrand.name doesContainString:@"Tylenol-PM"]){
             
@@ -165,17 +165,17 @@ void addPartnerSpecialCases(NSManagedObjectContext* context){
 }
 
 
-Company* processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
+BGCompany* processRowIntoContext(NSArray *row, NSManagedObjectContext* context){
     
-    Company* theCompany = companyWithRow(row, context);
+    BGCompany* theCompany = companyWithRow(row, context);
     
-    Category* theCategory = categoryWithName([row objectAtIndex:categoryIndex], context);
+    BGCategory* theCategory = categoryWithName([row objectAtIndex:categoryIndex], context);
     
     theCompany = companyByaddingCategoryToCompany(theCategory, theCompany);
     
     NSSet* brands = brandsWithString([row objectAtIndex:brandsIndex], context);
     
-    Brand* companyBrand = brandWithName(theCompany.name, context);
+    BGBrand* companyBrand = brandWithName(theCompany.name, context);
     companyBrand.isCompanyName = [NSNumber numberWithBool:YES];
     
     companyBrand.namefirstLetter = indexCharForName(companyBrand.name);
@@ -227,9 +227,9 @@ NSString* indexCharForName(NSString* aString){
 }
 
 
-Company* companyWithRow(NSArray* row, NSManagedObjectContext* context){
+BGCompany* companyWithRow(NSArray* row, NSManagedObjectContext* context){
     
-    Company* theCompany;
+    BGCompany* theCompany;
     NSString* IDString = [row objectAtIndex:IDIndex];
     NSNumber* ID = [NSNumber numberWithInt:[IDString intValue]];
     
@@ -267,7 +267,7 @@ Company* companyWithRow(NSArray* row, NSManagedObjectContext* context){
 }
 
 
-Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany){
+BGCompany* companyByaddingCategoryToCompany(BGCategory* aCategory, BGCompany* aCompany){
     
     [aCompany addCategoriesObject:aCategory];
     [aCategory addCompaniesObject:aCompany];
@@ -276,14 +276,14 @@ Company* companyByaddingCategoryToCompany(Category* aCategory, Company* aCompany
 }
 
 
-Company* companyByaddingBrandsToCompany(NSSet* someBrands, Company* aCompany){
+BGCompany* companyByaddingBrandsToCompany(NSSet* someBrands, BGCompany* aCompany){
     
 	[someBrands each:^(id eachBrand){
         
-        [(Brand*)eachBrand addCompaniesObject:aCompany];
-		[(Brand*)eachBrand setRating:aCompany.rating];
-		[(Brand*)eachBrand setRatingLevel:aCompany.ratingLevel];
-		[(Brand*)eachBrand setPartner:aCompany.partner];
+        [(BGBrand*)eachBrand addCompaniesObject:aCompany];
+		[(BGBrand*)eachBrand setRating:aCompany.rating];
+		[(BGBrand*)eachBrand setRatingLevel:aCompany.ratingLevel];
+		[(BGBrand*)eachBrand setPartner:aCompany.partner];
 
 
     }];
@@ -311,7 +311,7 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
                 
                 tempString = [tempString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
                 
-                Brand* brand = brandWithName(tempString, context);
+                BGBrand* brand = brandWithName(tempString, context);
                 brand.namefirstLetter = indexCharForName(brand.name);
                 brand.nameSortFormatted = [brand.name stringByRemovingArticlePrefixes];
                 
@@ -333,12 +333,12 @@ NSSet* brandsWithString(NSString* string, NSManagedObjectContext* context){
     
 }
 
-void associateBrandsWithCategory(NSSet* someBrands, Category* aCategory){
+void associateBrandsWithCategory(NSSet* someBrands, BGCategory* aCategory){
     
     
     [someBrands each:^(id eachBrand){
         
-        [(Brand*)eachBrand addCategoriesObject:aCategory];
+        [(BGBrand*)eachBrand addCategoriesObject:aCategory];
         
     }];
     
@@ -350,7 +350,7 @@ void addDisplayFriendlyCategoryNames(NSManagedObjectContext* context){
     
     NSArray* categories = allCategories(context);
 
-    for(Category *eachCategory in categories){
+    for(BGCategory *eachCategory in categories){
         
         
         NSString* displayName;

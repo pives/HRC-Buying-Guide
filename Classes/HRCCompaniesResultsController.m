@@ -7,9 +7,9 @@
 //
 
 #import "HRCCompaniesResultsController.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "NSManagedObjectContext+Extensions.h"
-#import "Brand.h"
+#import "BGBrand.h"
 #import "Brand+Extensions.h"
 #import "UIColor+extensions.h"
 
@@ -127,7 +127,7 @@
     }
     
 	// Configure the cell.
-	Brand* managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
+	BGBrand* managedObject = (BGBrand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;

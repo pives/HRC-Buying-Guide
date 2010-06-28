@@ -1,26 +1,26 @@
 // 
-//  Company.m
+//  Brand.m
 //  BuyingGuide
 //
-//  Created by Corey Floyd on 11/19/09.
+//  Created by Corey Floyd on 12/8/09.
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "Company.h"
+#import "BGBrand.h"
 
-#import "Brand.h"
-#import "Category.h"
+#import "BGCategory.h"
+#import "BGCompany.h"
 
-@implementation Company 
+@implementation BGBrand 
 
 @dynamic rating;
-@dynamic ID;
 @dynamic partner;
+@dynamic nameSortFormatted;
 @dynamic ratingLevel;
 @dynamic namefirstLetter;
 @dynamic name;
-@dynamic officialName;
-@dynamic brands;
+@dynamic isCompanyName;
 @dynamic categories;
+@dynamic companies;
 
 @end

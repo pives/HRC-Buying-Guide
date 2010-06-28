@@ -7,7 +7,7 @@
 //
 
 #import "KeyWebViewController.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "NSString+extensions.h"
 #import "UIBarButtonItem+extensions.h"
 

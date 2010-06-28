@@ -8,10 +8,10 @@
 
 #import <CoreData/CoreData.h>
 
-@class Brand;
-@class Company;
+@class BGBrand;
+@class BGCompany;
 
-@interface Category :  NSManagedObject  
+@interface BGCategory :  NSManagedObject  
 {
 }
 
@@ -23,14 +23,14 @@
 @end
 
 
-@interface Category (CoreDataGeneratedAccessors)
-- (void)addBrandsObject:(Brand *)value;
-- (void)removeBrandsObject:(Brand *)value;
+@interface BGCategory (CoreDataGeneratedAccessors)
+- (void)addBrandsObject:(BGBrand *)value;
+- (void)removeBrandsObject:(BGBrand *)value;
 - (void)addBrands:(NSSet *)value;
 - (void)removeBrands:(NSSet *)value;
 
-- (void)addCompaniesObject:(Company *)value;
-- (void)removeCompaniesObject:(Company *)value;
+- (void)addCompaniesObject:(BGCompany *)value;
+- (void)removeCompaniesObject:(BGCompany *)value;
 - (void)addCompanies:(NSSet *)value;
 - (void)removeCompanies:(NSSet *)value;
 

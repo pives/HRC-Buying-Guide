@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Company;
+@class BGCompany;
 
 @interface CompanyScoreCardViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>{
 
@@ -21,7 +21,7 @@
 @property(nonatomic,assign)IBOutlet UIWebView *card;
 @property(nonatomic,retain)NSURL *address;
 
-- (id)initWithCompany:(Company*)aCompany;
+- (id)initWithCompany:(BGCompany*)aCompany;
 - (IBAction)done;
 
 @end

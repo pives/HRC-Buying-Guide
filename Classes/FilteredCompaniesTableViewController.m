@@ -7,10 +7,10 @@
 //
 
 #import "FilteredCompaniesTableViewController.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
-#import "Brand.h"
+#import "BGBrand.h"
 #import "NSString+extensions.h"
 #import "UIView-Extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
@@ -149,7 +149,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
             
             id data = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
             index = i;
-            if([[(Brand*)data ratingLevel] intValue] >= 1){
+            if([[(BGBrand*)data ratingLevel] intValue] >= 1){
                 break;
             }
         }
@@ -278,7 +278,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     }
     
 	// Configure the cell.
-	Brand *managedObject = (Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+	BGBrand *managedObject = (BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
@@ -318,7 +318,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    Company* selectedCompany = (Company*)[[(Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
+    BGCompany* selectedCompany = (BGCompany*)[[(BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
 	
 }

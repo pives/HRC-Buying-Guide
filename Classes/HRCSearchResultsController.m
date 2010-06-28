@@ -7,9 +7,9 @@
 //
 
 #import "HRCSearchResultsController.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "Company+Extensions.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "NSManagedObjectContext+Extensions.h"
 
 @implementation HRCSearchResultsController
@@ -70,7 +70,7 @@
     }
     
 	// Configure the cell.
-	Category *managedObject = (Category*)[fetchedResultsController objectAtIndexPath:indexPath];
+	BGCategory *managedObject = (BGCategory*)[fetchedResultsController objectAtIndexPath:indexPath];
     NSString* name = managedObject.nameDisplayFriendly;
 	cell.textLabel.text = name;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];

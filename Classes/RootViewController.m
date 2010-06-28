@@ -10,7 +10,7 @@
 #import "HRCCompaniesResultsController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "KeyViewController.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "FilteredCompaniesViewController.h"
 #import "CompanyViewController.h"
 #import "NSObjectHelper.h"
@@ -259,7 +259,7 @@
 - (void)categorySelectedWithNotification:(NSNotification*)note{
     
     // Navigation logic may go here -- for example, create and push another view controller.
-    Category* selectedCat = (Category*)[note object];
+    BGCategory* selectedCat = (BGCategory*)[note object];
     FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.managedObjectContext 
 																												 key:@"categories" 
 																											   value:selectedCat];
@@ -273,7 +273,7 @@
 - (void)companySelectedWithNotification:(NSNotification*)note{
     
     // Navigation logic may go here -- for example, create and push another view controller.
-    Company* selectedCompany = (Company*)[note object];
+    BGCompany* selectedCompany = (BGCompany*)[note object];
     
     CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
                                                                                         category:nil]; 

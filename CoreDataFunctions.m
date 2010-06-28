@@ -10,9 +10,9 @@
 
 #import "NSString+extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
-#import "Company.h"
-#import "Brand.h"
-#import "Category.h"
+#import "BGCompany.h"
+#import "BGBrand.h"
+#import "BGCategory.h"
 
 /*
 static int categoryIndex = 5;
@@ -53,22 +53,22 @@ NSArray* allBrands(NSManagedObjectContext* context){
 #pragma mark -
 #pragma mark New Entities 
 
-Brand* brandWithName(NSString* name, NSManagedObjectContext* context){
+BGBrand* brandWithName(NSString* name, NSManagedObjectContext* context){
     
     return [context retrieveOrCreateEntityWithName:@"Brand" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
-Category* categoryWithName(NSString* name, NSManagedObjectContext* context){
+BGCategory* categoryWithName(NSString* name, NSManagedObjectContext* context){
     
     return [context retrieveOrCreateEntityWithName:@"Category" whereKey:@"name" caseInsensitiveLike:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 }
 
-Company* companyWithName(NSString* name, NSManagedObjectContext* context){
+BGCompany* companyWithName(NSString* name, NSManagedObjectContext* context){
     
     return [context retrieveOrCreateEntityWithName:@"Company" whereKey:@"name" like:name];
 }
 
-Company* companyWithID(NSNumber* ID, NSManagedObjectContext* context){
+BGCompany* companyWithID(NSNumber* ID, NSManagedObjectContext* context){
     
     return [context retrieveOrCreateEntityWithName:@"Company" whereKey:@"ID" equalToObject:ID];
 }

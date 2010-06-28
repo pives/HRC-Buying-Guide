@@ -7,9 +7,9 @@
 //
 
 #import "CompanyViewController.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "Company+Extensions.h"
-#import "Brand.h"
+#import "BGBrand.h"
 #import "HRCBrandTableDataSource.h"
 #import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
@@ -67,7 +67,7 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 
-- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
+- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
     
     if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
 		
@@ -180,7 +180,7 @@ static CGPoint partnerImageOrigin = {2,34};
 #pragma mark Setup
 
 
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
 	
 	if(self.data==nil){
 		self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
@@ -242,7 +242,7 @@ static CGPoint partnerImageOrigin = {2,34};
 - (void)categorySelectedWithNotification:(NSNotification*)note{
     
     // Navigation logic may go here -- for example, create and push another view controller.
-    Category* selectedCat = (Category*)[note object];
+    BGCategory* selectedCat = (BGCategory*)[note object];
     FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:company.managedObjectContext 
 																												 key:@"categories" 
 																											   value:selectedCat];

@@ -7,10 +7,10 @@
 //
 
 #import "HRCCategoriesResultsController.h"
-#import "Company.h"
-#import "Brand.h"
+#import "BGCompany.h"
+#import "BGBrand.h"
 #import "Company+Extensions.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"
 #import "NSString+extensions.h"
@@ -75,7 +75,7 @@
     }
     
 	// Configure the cell.
-	Category *managedObject = (Category*)[fetchedResultsController objectAtIndexPath:indexPath];
+	BGCategory *managedObject = (BGCategory*)[fetchedResultsController objectAtIndexPath:indexPath];
     NSString* name = managedObject.nameDisplayFriendly;
 	cell.textLabel.text = name;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];

@@ -15,7 +15,7 @@
 #import "PageViewController.h"
 #import "HRCBrandTableDataSource.h"
 #import <QuartzCore/QuartzCore.h>
-#import "Company.h"
+#import "BGCompany.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
 #import "HRCBrandTableViewController.h"

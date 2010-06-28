@@ -11,10 +11,10 @@
 #import "BGImporterCoreDataFunctions.h"
 #import "NSManagedObjectContext+Extensions.h"
 #import "NSString+extensions.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "NSSet+blocks.h"
 #import "Brand.h"
-#import "Category.h"
+#import "BGCategory.h"
 
 @implementation BGImporter_AppDelegate
 

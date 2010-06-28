@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FJSTweetViewController.h"
 
-@class Company;
+@class BGCompany;
 
 @interface FJSTweetViewController (HRC)
 
-- (id)initWithCompany:(Company*)aCompany;
+- (id)initWithCompany:(BGCompany*)aCompany;
 
 @end

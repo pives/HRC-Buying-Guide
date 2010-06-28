@@ -7,12 +7,12 @@
 //
 
 #import "Company+Extensions.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "NSObject+AssociatedObjects.h"
 
 //static NSString* categoryKey = @"category";
 
-@implementation Company(Extensions)
+@implementation BGCompany(Extensions)
 
 - (NSString*)ratingFormatted{
     
@@ -45,7 +45,7 @@
 
 
 
-@implementation Company(BrandsTable)
+@implementation BGCompany(BrandsTable)
 
 
 /*

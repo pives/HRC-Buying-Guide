@@ -13,7 +13,7 @@
 //
 
 #import "HRCBrandTableDataSource.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "Company+Extensions.h"
 
 NSString* const kCompnayKey = @"CompanyKey";
@@ -30,7 +30,7 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
     [super dealloc];
 }
 
-- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory{
+- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
     
     self = [super init];
 	if (self != nil)
@@ -40,7 +40,7 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
 	return self;
 }
 
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory{
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
     
 	NSMutableDictionary* info = [NSMutableDictionary dictionary];
 	
@@ -60,18 +60,18 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
 	return [(NSNumber*)[data objectForKey:kNumberOfCategoriesKey] intValue]+1;
 }
 
-- (Company*)company{
+- (BGCompany*)company{
     
     return [data objectForKey:kCompnayKey];
 }
 
-- (Category*)category{
+- (BGCategory*)category{
     
     return [data objectForKey:kCategoryKey];
     
 }
 
-- (int)pageOfCategory:(Category*)aCategory{
+- (int)pageOfCategory:(BGCategory*)aCategory{
     
     return [self.company.categoriesSortedAlphabetically indexOfObject:aCategory]+1;
     

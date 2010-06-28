@@ -10,8 +10,8 @@
 //[self.tableView setContentOffset:CGPointMake(0,self.searchDisplayController.searchBar.frame.size.height)];
 
 #import "CompaniesTableViewController.h"
-#import "Company.h"
-#import "Brand.h"
+#import "BGCompany.h"
+#import "BGBrand.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
 #import "UIView-Extensions.h"
@@ -180,7 +180,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     }
     
 	// Configure the cell.
-	Brand* managedObject = (Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+	BGBrand* managedObject = (BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
@@ -212,7 +212,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Company* selectedCompany = (Company*)[[(Brand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
+    BGCompany* selectedCompany = (BGCompany*)[[(BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
     
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];

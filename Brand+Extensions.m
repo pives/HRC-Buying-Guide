@@ -9,7 +9,7 @@
 #import "Brand+Extensions.h"
 
 
-@implementation Brand(Extensions)
+@implementation BGBrand(Extensions)
 
 - (NSString*)ratingFormatted{
     

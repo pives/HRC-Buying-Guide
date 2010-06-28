@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Brand.h"
+#import "BGBrand.h"
 
-@interface  Brand(Extensions)
+@interface  BGBrand(Extensions)
 
 @property (nonatomic, readonly)NSString* ratingFormatted;
 

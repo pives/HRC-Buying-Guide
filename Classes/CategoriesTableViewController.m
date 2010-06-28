@@ -7,7 +7,7 @@
 //
 
 #import "CategoriesTableViewController.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "NSManagedObjectContext+Extensions.h"
 
 NSString *const DidSelectCategoryNotification = @"CategorySelected";
@@ -72,7 +72,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
     }
     
 	// Configure the cell.
-	Category *managedObject = (Category*)[fetchedResultsController objectAtIndexPath:indexPath];
+	BGCategory *managedObject = (BGCategory*)[fetchedResultsController objectAtIndexPath:indexPath];
     NSString* name = managedObject.nameDisplayFriendly;
 	cell.textLabel.text = name;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -83,7 +83,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here -- for example, create and push another view controller.
-    Category* selectedCat = (Category*)[fetchedResultsController objectAtIndexPath:indexPath];
+    BGCategory* selectedCat = (BGCategory*)[fetchedResultsController objectAtIndexPath:indexPath];
     [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCategoryNotification object:selectedCat];    
 }
 

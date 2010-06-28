@@ -6,12 +6,12 @@
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "Category.h"
+#import "BGCategory.h"
 
-#import "Brand.h"
-#import "Company.h"
+#import "BGBrand.h"
+#import "BGCompany.h"
 
-@implementation Category 
+@implementation BGCategory 
 
 @dynamic nameDisplayFriendly;
 @dynamic name;

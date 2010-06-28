@@ -10,7 +10,7 @@
 #import "SA_OAuthTwitterController.h"
 
 @class SA_OAuthTwitterEngine;
-@class Company;
+@class BGCompany;
 
 @interface FJSTweetViewController : UIViewController <SA_OAuthTwitterControllerDelegate> {
 

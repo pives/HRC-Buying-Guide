@@ -7,12 +7,12 @@
 //
 
 #import "FJSTweetViewController+HRC.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "NSString+extensions.h"
 
 @implementation FJSTweetViewController (HRC)
 
-- (id)initWithCompany:(Company*)aCompany{
+- (id)initWithCompany:(BGCompany*)aCompany{
 	
 	NSString* someText;
 	

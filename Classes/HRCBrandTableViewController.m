@@ -7,10 +7,10 @@
 //
 
 #import "HRCBrandTableViewController.h"
-#import "Company.h"
-#import "Category.h"
+#import "BGCompany.h"
+#import "BGCategory.h"
 #import "UIColor+extensions.h"
-#import "Brand.h"
+#import "BGBrand.h"
 #import "NSManagedObjectContext+Extensions.h"
 #import "FilteredCompaniesViewController.h"
 
@@ -40,7 +40,7 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
 
 
 
-- (id)initWithStyle:(UITableViewStyle)style company:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor{
+- (id)initWithStyle:(UITableViewStyle)style company:(BGCompany*)aCompany category:(BGCategory*)aCategory color:(UIColor*)aColor{
     
     if(self = [super init]){
         
@@ -50,7 +50,7 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
     return self;
 }
 
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor{
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory color:(UIColor*)aColor{
 	
 	self.company = aCompany;
 	self.managedObjectContext = company.managedObjectContext;
@@ -198,7 +198,7 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
     
     // Configure the cell.
     
-	Brand *managedObject = (Brand*)[fetchedResultsController objectAtIndexPath:indexPath];
+	BGBrand *managedObject = (BGBrand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     /*
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];    

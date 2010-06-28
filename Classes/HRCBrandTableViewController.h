@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Company;
-@class Category;
+@class BGCompany;
+@class BGCategory;
 
 @interface HRCBrandTableViewController : UITableViewController {
     
-    Company* company;
-    Category* category;
+    BGCompany* company;
+    BGCategory* category;
     
     UIColor* ratingColor;
     
@@ -23,16 +23,16 @@
     CGRect tableFrame;
 
 }
-@property(nonatomic,retain)Company *company;
-@property(nonatomic,retain)Category *category;
+@property(nonatomic,retain)BGCompany *company;
+@property(nonatomic,retain)BGCategory *category;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic,retain)UIColor *ratingColor;
 @property(nonatomic,assign)CGRect tableFrame;
 
 
-- (id)initWithStyle:(UITableViewStyle)style company:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor;
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory color:(UIColor*)aColor;
+- (id)initWithStyle:(UITableViewStyle)style company:(BGCompany*)aCompany category:(BGCategory*)aCategory color:(UIColor*)aColor;
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory color:(UIColor*)aColor;
 - (void)fetch;
 
 

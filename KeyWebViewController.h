@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Company;
+@class BGCompany;
 
 @interface KeyWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>{
 

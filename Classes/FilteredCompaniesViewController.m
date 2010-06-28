@@ -8,7 +8,7 @@
 
 #import "FilteredCompaniesViewController.h"
 #import "FilteredCompaniesTableViewController.h"
-#import "Category.h"
+#import "BGCategory.h"
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "CompanyViewController.h"
@@ -88,7 +88,7 @@
                                                                      action:@selector(showKey)];
     
     UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = [(Category*)[tableController filterObject] nameDisplayFriendly];
+    tv.text = [(BGCategory*)[tableController filterObject] nameDisplayFriendly];
     tv.textAlignment = UITextAlignmentCenter;
     tv.adjustsFontSizeToFitWidth = YES;
     tv.backgroundColor = [UIColor clearColor];
@@ -216,12 +216,12 @@
 
 - (void)companySelectedWithNotification:(NSNotification*)note{
     
-    Company* selectedCompany = (Company*)[note object];
+    BGCompany* selectedCompany = (BGCompany*)[note object];
     
 	
 	if(self.companyController == nil){
 		CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-																							category:(Category*)tableController.filterObject]; 
+																							category:(BGCategory*)tableController.filterObject]; 
 		
 		detailViewController.view.frame = self.view.bounds;		
 		self.companyController = detailViewController;
@@ -231,7 +231,7 @@
 	}else{
 		
 		[companyController setCompany:selectedCompany 
-							 category:(Category*)tableController.filterObject];
+							 category:(BGCategory*)tableController.filterObject];
 	}
 	
 	

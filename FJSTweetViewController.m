@@ -10,7 +10,7 @@
 #import "SFHFKeychainUtils.h"
 #import "FJSTwitterLoginController.h"
 #import "SA_OAuthTwitterEngine.h"
-#import "Company.h"
+#import "BGCompany.h"
 #import "NSError+Alertview.h"
 #import "LoadingView.h"
 #import "SDNextRunloopProxy.h"

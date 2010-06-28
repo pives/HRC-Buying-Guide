@@ -10,14 +10,14 @@
 #import <MessageUI/MessageUI.h>
 #import "FacebookAgent.h"
 
-@class Company;
+@class BGCompany;
 @class HRCBrandTableDataSource;
-@class Category;
+@class BGCategory;
 @class PagingScrollViewController;
 
 @interface CompanyViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate> {
     
-    Company* company;
+    BGCompany* company;
     
     UILabel* nameLabel;
     UILabel* scoreLabel;
@@ -30,7 +30,7 @@
     FacebookAgent* agent;
 
 }
-@property(nonatomic,retain)Company *company;
+@property(nonatomic,retain)BGCompany *company;
 @property(nonatomic,assign)IBOutlet UILabel *nameLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
 @property(nonatomic,retain)HRCBrandTableDataSource *data;
@@ -41,9 +41,9 @@
 
 - (IBAction)showScoreCard;
 
-- (id)initWithCompany:(Company*)aCompany category:(Category*)aCategory;
+- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
 
-- (void)setCompany:(Company*)aCompany category:(Category*)aCategory;
+- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
 
 - (void)layoutPartnerImageAndCompanyLabel;
 
