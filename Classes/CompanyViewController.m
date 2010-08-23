@@ -503,7 +503,7 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
+                                                       otherButtonTitles:@"Twitter"/*, @"Facebook"*/, @"Email", nil] autorelease];
     
         
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
@@ -529,12 +529,12 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
         }
 		case 1:
         {
-            [self sendFacebookPost];
+           /* [self sendFacebookPost];
             break;
         }
         case 2:
         {
-            [self sendEmail];
+            */[self sendEmail];
             break;
         }
     }
