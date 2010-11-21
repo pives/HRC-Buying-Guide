@@ -154,7 +154,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
         }else{
             
             self.category = [company.categoriesSortedAlphabetically objectAtIndex:(pageIndex-1)];     
-            self.categoryName.text = self.category.nameDisplayFriendly;
+            self.categoryName.text = self.category.name;
             tableController.category = [company.categoriesSortedAlphabetically objectAtIndex:(pageIndex-1)];
 			tableController.tableView.tableFooterView.alpha = 1;
 

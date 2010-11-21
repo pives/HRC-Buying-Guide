@@ -88,7 +88,7 @@
                                                                      action:@selector(showKey)];
     
     UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = [(BGCategory*)[tableController filterObject] nameDisplayFriendly];
+    tv.text = [(BGCategory*)[tableController filterObject] name];
     tv.textAlignment = UITextAlignmentCenter;
     tv.adjustsFontSizeToFitWidth = YES;
     tv.backgroundColor = [UIColor clearColor];

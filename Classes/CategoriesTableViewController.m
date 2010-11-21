@@ -73,7 +73,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
     
 	// Configure the cell.
 	BGCategory *managedObject = (BGCategory*)[fetchedResultsController objectAtIndexPath:indexPath];
-    NSString* name = managedObject.nameDisplayFriendly;
+    NSString* name = managedObject.name;
 	cell.textLabel.text = name;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
 
@@ -116,7 +116,7 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nameDisplayFriendly" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];

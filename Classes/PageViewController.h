@@ -37,7 +37,7 @@
     HRCBrandTableViewController* tableController;
 }
 
-@property NSInteger pageIndex;
+@property(nonatomic,assign)NSInteger pageIndex;
 @property(nonatomic,retain)HRCBrandTableDataSource *data;
 @property(nonatomic,retain)BGCompany *company;
 @property(nonatomic,retain)BGCategory *category;
