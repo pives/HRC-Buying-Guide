@@ -15,7 +15,6 @@
 {
 }
 
-@property (nonatomic, retain) NSString * nameDisplayFriendly;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet* brands;
 @property (nonatomic, retain) NSSet* companies;

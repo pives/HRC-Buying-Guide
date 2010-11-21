@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSNumber * isCompanyName;
 @property (nonatomic, retain) NSSet* categories;
 @property (nonatomic, retain) NSSet* companies;
+@property (nonatomic, retain) NSNumber* nonResponder;
 
 @end
 

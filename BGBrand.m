@@ -22,5 +22,6 @@
 @dynamic isCompanyName;
 @dynamic categories;
 @dynamic companies;
+@dynamic nonResponder;
 
 @end

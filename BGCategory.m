@@ -13,7 +13,6 @@
 
 @implementation BGCategory 
 
-@dynamic nameDisplayFriendly;
 @dynamic name;
 @dynamic brands;
 @dynamic companies;

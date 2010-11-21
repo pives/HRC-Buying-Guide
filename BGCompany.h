@@ -6,6 +6,11 @@
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
+#define GOOD_COMPANY_RATING 0
+#define OK_COMPANY_RATING 1
+#define BAD_COMPANY_RATING 2
+
+
 #import <CoreData/CoreData.h>
 
 @class BGBrand;
@@ -21,9 +26,9 @@
 @property (nonatomic, retain) NSNumber * ratingLevel;
 @property (nonatomic, retain) NSString * namefirstLetter;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * officialName;
 @property (nonatomic, retain) NSSet* brands;
 @property (nonatomic, retain) NSSet* categories;
+@property (nonatomic, retain) NSNumber* nonResponder;
 
 @end
 

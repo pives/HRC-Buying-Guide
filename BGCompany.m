@@ -19,8 +19,8 @@
 @dynamic ratingLevel;
 @dynamic namefirstLetter;
 @dynamic name;
-@dynamic officialName;
 @dynamic brands;
 @dynamic categories;
+@dynamic nonResponder;
 
 @end
