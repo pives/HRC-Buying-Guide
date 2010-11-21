@@ -8,8 +8,6 @@
 	<string>Buy4Equality</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>org.hrc.guide</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -21,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.2</string>
+	<string>1.2.9</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -40,5 +38,12 @@
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 	<key>AppStoreURL</key>
 	<string>http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=%@&amp;mt=8&amp;uo=6</string>
+	<key>FacebookIcon</key>
+	<string>http://www.hrc.org/buyersguide2010/images/2011-iphone_icon-90x90.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>2011-iphone_icon-57x57.png</string>
+		<string>2011-iphone_icon-114x114.png</string>
+	</array>
 </dict>
 </plist>
