@@ -425,31 +425,41 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
     
     NSString* someText;
 	
-	if([company.ratingLevel intValue] == 0){
+    if([company.nonResponder boolValue] == YES){
         
-		someText = 
-		@"HRC’s Buying For Equality Guide rates %@ %i%%. Make sure to support them. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
+        someText = 
+        @"HRC’s Buying For Workplace Equality Guide gives %@ an unofficial score of %i%%. They have failed to respond to our survey despite repeated attempts.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
+
+    }else{
+        
+        if([company.ratingLevel intValue] == 0){
+            
+            someText = 
+            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive one of the highest workplace equality scores. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
+            
+            
+        }else if([company.ratingLevel intValue] == 1){
+            
+            someText = 
+            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive a moderate workplace equality score.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
+            
+            
+        }else{
+            
+            someText = 
+            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive one of the lowest workplace equality scores.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
+            
+        }
+        
+    }
+    
 		
-		
-	}else if([company.ratingLevel intValue] == 1){
-        
-		someText = 
-		@"HRC’s Buying For Equality Guide rates %@ %i%%. This company needs improvement. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-        
-        
-	}else{
-		
-		someText = 
-		@"HRC’s Buying For Equality Guide rates %@ %i%%. Find an alternative brand. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-        
-	}
-	
 	someText = [NSString stringWithFormat:someText, company.name, [company.rating intValue]];
     
 
     [agent publishFeedWithName:@"Human Rights Campaign iPhone App" 
 				   captionText:someText 
-					  imageurl:@"http://www.hrc.org/hrc-logo.gif" 
+					  imageurl:@"http://www.hrc.org/buyersguide2010/images/2011-iphone_icon-90x90.png" 
 					   linkurl:@"http://www.hrc.org/iPhone" 
 			 userMessagePrompt:[NSString stringWithFormat:@"Tell others about %@",company.name]];
     
@@ -503,7 +513,7 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
                                                                 delegate:self 
                                                        cancelButtonTitle:@"Cancel" 
                                                   destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Twitter"/*, @"Facebook"*/, @"Email", nil] autorelease];
+                                                       otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
     
         
     myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
@@ -529,12 +539,12 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
         }
 		case 1:
         {
-           /* [self sendFacebookPost];
+           [self sendFacebookPost];
             break;
         }
         case 2:
         {
-            */[self sendEmail];
+            [self sendEmail];
             break;
         }
     }
