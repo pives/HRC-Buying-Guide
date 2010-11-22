@@ -205,17 +205,17 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
         header.font = [UIFont boldSystemFontOfSize:14];
         
         if([[sectionInfo name] isEqualToString:@"0"]){
-            header.text = @"Support these brands";
+            header.text = @"Highest workplace equality scores";
             headerView.backgroundColor = [UIColor headerGreen];
             header.backgroundColor = [UIColor headerGreen];
             
         }else if([[sectionInfo name] isEqualToString:@"1"]){
-            header.text = @"Brands that could do better";
+            header.text = @"Moderate workplace equality scores";
             headerView.backgroundColor = [UIColor headerYellow];
             header.backgroundColor = [UIColor headerYellow];
             
         }else {
-            header.text = @"Avoid these brands";
+            header.text = @"Lowest workplace equality scores";
             headerView.backgroundColor = [UIColor headerRed];
             header.backgroundColor = [UIColor headerRed];
         }
