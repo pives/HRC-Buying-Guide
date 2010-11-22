@@ -485,7 +485,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -533,7 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 			);
 			name = "BuyingGuide Dev";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1546,7 +1546,7 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FC2A60A6-2D8B-4D90-B5A7-583BDD0C2030";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D9DFFC9A-5E32-4F87-8377-110ED7350A5E";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv6";
 			};
