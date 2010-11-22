@@ -77,6 +77,8 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 	cell.textLabel.text = name;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
 
+    
+
     return cell;
 }
 

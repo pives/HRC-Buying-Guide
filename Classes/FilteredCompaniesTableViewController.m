@@ -215,7 +215,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
             header.backgroundColor = [UIColor headerYellow];
             
         }else {
-            header.text = @"Avoid these brands or non-responders";
+            header.text = @"Avoid these brands";
             headerView.backgroundColor = [UIColor headerRed];
             header.backgroundColor = [UIColor headerRed];
         }
@@ -282,6 +282,14 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];
     brand.text = managedObject.name;
+    
+    BOOL nonResponder = [[managedObject nonResponder] boolValue];
+    
+    if(nonResponder)
+        [brand setFont:[UIFont italicSystemFontOfSize:14]];
+    else
+        [brand setFont:[UIFont boldSystemFontOfSize:14]];
+
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
     rating.text = [managedObject  ratingFormatted];
     
