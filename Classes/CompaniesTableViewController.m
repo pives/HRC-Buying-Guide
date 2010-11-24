@@ -193,9 +193,15 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     else
         [brand setFont:[UIFont boldSystemFontOfSize:14]];
     
-    
+   
     UILabel* rating = (UILabel*)[cell viewWithTag:999];
     rating.text = [managedObject ratingFormatted];
+   
+    if(nonResponder)
+        [rating setFont:[UIFont italicSystemFontOfSize:14]];
+    else
+        [rating setFont:[UIFont boldSystemFontOfSize:14]];
+    
     
     int cellColorValue = [[managedObject ratingLevel] intValue];
     UIColor* cellColor = [cellColors objectAtIndex:cellColorValue];

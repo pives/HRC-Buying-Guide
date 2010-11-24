@@ -1,8 +1,6 @@
-<p>I wanted to let you know that %@ has not responded to the HRC Corporate Equality Index.  %@ has unclear policies on LGBT workplace inclusion.  
+<p>HRC’s Buying For Workplace Equality Guide gives %@ an unofficial score of %@.
 </p>
-<p> Please encourage this business to participate in the Corporate Equality Index.  For more information reaching out to businesses click <a href="http://www.hrc.org/consumeradvocacy">here</a>. 
+<p>They have failed to respond to our survey despite repeated attempts. For more information and to download the iPhone app visit http://bit.ly/buy4eq
 </p>
-<p>For information on other companies and their scores, check out the Human Rights Campaign’s <a href="http://www.hrc.org/buyersguide">Buying for Equality 2010</a>.
-</p>
-<p>Click <a href="%@">here</a> to download the Buying for Equality 2010 iPhone app.
-</p>
+
+ 

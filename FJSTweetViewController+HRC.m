@@ -19,7 +19,7 @@
     if([aCompany.nonResponder boolValue] == YES){
         
         someText = 
-        @"@HRC #LGBT Buyer's Guide rates @%@ an unofficial score of %i%% for not responding to our survey. More: http://bit.ly/buy4eq";
+        @"@HRC #LGBT Buyer's Guide gives @%@ an unofficial score of %i%% for not responding to our survey. More: http://bit.ly/buy4eq";
 
         
     }else{
@@ -27,19 +27,19 @@
         if([aCompany.ratingLevel intValue] == 0){
             
             someText = 
-            @"@HRC #LGBT Buyer's Guide rates @%@ %i%%, one of the highest scores. More: http://bit.ly/buy4eq";
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, one of the highest scores. More: http://bit.ly/buy4eq";
             
             
         }else if([aCompany.ratingLevel intValue] == 1){
             
             someText = 
-            @"@HRC #LGBT Buyer's Guide rates @%@ %i%%, a moderate score. More: http://bit.ly/buy4eq";
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, a moderate score. More: http://bit.ly/buy4eq";
             
             
         }else{
             
             someText = 
-            @"@HRC #LGBT Buyer's Guide rates @%@ %i%%, one of the lowest scores. More: http://bit.ly/buy4eq";
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, one of the lowest scores. More: http://bit.ly/buy4eq";
             
         }
         

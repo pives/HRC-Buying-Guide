@@ -106,11 +106,9 @@
 																	 style:UIBarButtonItemStyleBordered 
 																	target:self 
 																	action:@selector(ShowDonationMessage)];
-    
-    //self.title = @"Buying For Equality";
-	
+    	
 	UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = @"Buying For Equality";
+    tv.text = @"Buyer's Guide";
     tv.textAlignment = UITextAlignmentCenter;
     tv.adjustsFontSizeToFitWidth = YES;
     tv.backgroundColor = [UIColor clearColor];

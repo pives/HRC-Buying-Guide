@@ -1,8 +1,7 @@
-<p>I wanted to let you know that %@ scores a %@ on the HRC Corporate Equality Index.  
+<p>HRC’s Buying For Workplace Equality Guide rates %@ %@.  
 </p>
-<p>%@ has taken steps toward a fair-minded workplace for the LGBT community but still needs improvement.
+<p>They receive a moderate workplace equality score.  For more information and to download the iPhone app visit http://bit.ly/buy4eq
 </p>
-<p>For information on other companies and their scores, check out the Human Rights Campaign’s <a href="http://www.hrc.org/buyersguide">Buying for Equality 2010</a>.
-</p>
-<p>Click <a href="%@">here</a> to download the Buying for Equality 2010 iPhone app.
-</p>
+
+
+ 

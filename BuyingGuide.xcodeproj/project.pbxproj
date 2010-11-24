@@ -78,6 +78,10 @@
 		C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
 		C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
+		C486AF19129C5BC600912219 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF17129C5BC600912219 /* information.png */; };
+		C486AF1A129C5BC600912219 /* information@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF18129C5BC600912219 /* information@2x.png */; };
+		C486AF1B129C5BC600912219 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF17129C5BC600912219 /* information.png */; };
+		C486AF1C129C5BC600912219 /* information@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF18129C5BC600912219 /* information@2x.png */; };
 		C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
 		C48BBBD910C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
 		C48BBBE010C5792900F996C6 /* EmailSad.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBDF10C5792900F996C6 /* EmailSad.txt */; };
@@ -90,8 +94,6 @@
 		C497025D10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
 		C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
 		C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
-		C4A2453E111B41360015786E /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A2453D111B41360015786E /* information.png */; };
-		C4A2453F111B41360015786E /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A2453D111B41360015786E /* information.png */; };
 		C4A245EF111B46F70015786E /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B5111B46F70015786E /* jQueryInject.txt */; };
 		C4A245F0111B46F70015786E /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B6111B46F70015786E /* jQueryInjectLandscape.txt */; };
 		C4A245F1111B46F70015786E /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A245B7111B46F70015786E /* libOAuth.a */; };
@@ -321,6 +323,8 @@
 		C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableViewController.h; sourceTree = "<group>"; };
 		C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCBrandTableViewController.m; sourceTree = "<group>"; };
 		C486574510BD84FD0064A126 /* iphone_bottom-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone_bottom-bar.png"; sourceTree = "<group>"; };
+		C486AF17129C5BC600912219 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
+		C486AF18129C5BC600912219 /* information@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "information@2x.png"; sourceTree = "<group>"; };
 		C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailIndifferent.txt; sourceTree = "<group>"; };
 		C48BBBDF10C5792900F996C6 /* EmailSad.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailSad.txt; sourceTree = "<group>"; };
 		C492D5AC10BAF4490041400B /* MacroUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUtilities.h; sourceTree = "<group>"; };
@@ -331,7 +335,6 @@
 		C497025A10CF4A86000ED22B /* Brand+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brand+Extensions.h"; sourceTree = "<group>"; };
 		C497025B10CF4A86000ED22B /* Brand+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brand+Extensions.m"; sourceTree = "<group>"; };
 		C49AD08610F5A1C800B1130E /* brandsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brandsButton.png; sourceTree = "<group>"; };
-		C4A2453D111B41360015786E /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		C4A245B5111B46F70015786E /* jQueryInject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInject.txt; sourceTree = "<group>"; };
 		C4A245B6111B46F70015786E /* jQueryInjectLandscape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInjectLandscape.txt; sourceTree = "<group>"; };
 		C4A245B7111B46F70015786E /* libOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOAuth.a; sourceTree = "<group>"; };
@@ -1063,8 +1066,9 @@
 			children = (
 				C4C9229C12997A57005C12F4 /* 2011-iphone_icon-57x57.png */,
 				C4C9229D12997A57005C12F4 /* 2011-iphone_icon-114x114.png */,
-				C4A2453D111B41360015786E /* information.png */,
 				C49AD08610F5A1C800B1130E /* brandsButton.png */,
+				C486AF17129C5BC600912219 /* information.png */,
+				C486AF18129C5BC600912219 /* information@2x.png */,
 				C46D874310CC297600541CF1 /* slider.png */,
 				C41CD39B10F263E700973374 /* slidernew.png */,
 				C4C922B312997BC0005C12F4 /* Default.png */,
@@ -1184,7 +1188,6 @@
 				C41ACB8D110E2C2000942016 /* grayButton.png in Resources */,
 				C41ACB90110E2C2C00942016 /* yellowButton.png in Resources */,
 				C41ACB93110E2E4700942016 /* credentialBackground.png in Resources */,
-				C4A2453F111B41360015786E /* information.png in Resources */,
 				C4A24603111B46F70015786E /* jQueryInject.txt in Resources */,
 				C4A24604111B46F70015786E /* jQueryInjectLandscape.txt in Resources */,
 				C4A24616111B46F70015786E /* twitter_load.png in Resources */,
@@ -1196,6 +1199,8 @@
 				C4C922B112997AC9005C12F4 /* HRC_Icon@2x.png in Resources */,
 				C4C922B712997BC0005C12F4 /* Default.png in Resources */,
 				C4C922B812997BC0005C12F4 /* Default@2x.png in Resources */,
+				C486AF1B129C5BC600912219 /* information.png in Resources */,
+				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,7 +1241,6 @@
 				C41ACB8C110E2C2000942016 /* grayButton.png in Resources */,
 				C41ACB8F110E2C2C00942016 /* yellowButton.png in Resources */,
 				C41ACB92110E2E4700942016 /* credentialBackground.png in Resources */,
-				C4A2453E111B41360015786E /* information.png in Resources */,
 				C4A245EF111B46F70015786E /* jQueryInject.txt in Resources */,
 				C4A245F0111B46F70015786E /* jQueryInjectLandscape.txt in Resources */,
 				C4A24602111B46F70015786E /* twitter_load.png in Resources */,
@@ -1248,6 +1252,8 @@
 				C4C922B012997AC9005C12F4 /* HRC_Icon@2x.png in Resources */,
 				C4C922B512997BC0005C12F4 /* Default.png in Resources */,
 				C4C922B612997BC0005C12F4 /* Default@2x.png in Resources */,
+				C486AF19129C5BC600912219 /* information.png in Resources */,
+				C486AF1A129C5BC600912219 /* information@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1430,7 +1436,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1459,7 +1465,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1535,7 +1541,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

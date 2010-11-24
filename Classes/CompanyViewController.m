@@ -142,6 +142,13 @@ static CGPoint partnerImageOrigin = {2,34};
 	
     self.scoreLabel.text = company.ratingFormatted;
     self.nameLabel.text = company.name;
+    
+    if([company.nonResponder boolValue] == YES){
+        
+        self.nameLabel.font = [UIFont italicSystemFontOfSize:17];
+        self.scoreLabel.font = [UIFont italicSystemFontOfSize:17];
+        
+    }    
 	
 	UIColor* color; 
 	
@@ -285,7 +292,6 @@ static CGPoint partnerImageOrigin = {2,34};
 		NSString* rawLink = [info objectForKey:@"AppStoreURL"];
 		//NSString* appStoreID = [info objectForKey:@"AppStoreIDCompounds"];
 		NSString* appStoreID = [info objectForKey:@"AppStoreID"];
-		NSString* appStoreLink = [NSString stringWithFormat:rawLink, appStoreID];
 		/*
 		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
@@ -294,71 +300,65 @@ static CGPoint partnerImageOrigin = {2,34};
         NSString* companyScoreurl = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
 		*/
 		
-		
-		
-        if([company.ratingLevel intValue] == 0){
+        
+        if([company.nonResponder boolValue] == YES){
             
-            //GOOD
-            fileName = @"EmailHappy";
+            fileName = @"EmailConfused";
             NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
             NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
             emailText = [NSString stringWithFormat:fileContenets, 
-                         company.name, 
+                         company.name,
                          [company.rating stringValue],
-                         company.name,
-                         company.name,
-						 appStoreLink,
                          nil
                          ];
             
-            
-        }else if([company.ratingLevel intValue] == 1){
-            
-            //MIDDLE
-            fileName = @"EmailIndifferent";
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-            NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-            emailText = [NSString stringWithFormat:fileContenets, 
-						 company.name, 
-                        [company.rating stringValue],
-                         company.name,
-						 appStoreLink,
-                         nil
-                         ];
-            
-            
+                    
         }else{
             
-            //BAD
-
-            if([company.rating intValue] >= 0){
+            if([company.ratingLevel intValue] == 0){
+                
+                //GOOD
+                fileName = @"EmailHappy";
+                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+                emailText = [NSString stringWithFormat:fileContenets, 
+                             company.name, 
+                             [company.rating stringValue],
+                             nil
+                             ];
+                
+                
+            }else if([company.ratingLevel intValue] == 1){
+                
+                //MIDDLE
+                fileName = @"EmailIndifferent";
+                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
+                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+                emailText = [NSString stringWithFormat:fileContenets, 
+                             company.name, 
+                             [company.rating stringValue],
+                             nil
+                             ];
+                
+                
+            }else{
+                
                 fileName = @"EmailSad";
                 NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
                 NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
                 emailText = [NSString stringWithFormat:fileContenets, 
-							 company.name, 
+                             company.name, 
                              [company.rating stringValue],
-                             company.name,
-							 appStoreLink,
                              nil
                              ];
                 
-            }else {
-                fileName = @"EmailConfused";
-                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-                emailText = [NSString stringWithFormat:fileContenets, 
-                             company.name,
-							 company.name,
-							 appStoreLink,
-                             nil
-                             ];
-                
-
             }
-
+            
+            
         }
-        
+		
+		
+               
         [controller setMessageBody:emailText isHTML:YES];
         [self presentModalViewController:controller animated:YES];
         [controller release];
@@ -457,7 +457,7 @@ static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SE
 	someText = [NSString stringWithFormat:someText, company.name, [company.rating intValue]];
     
 
-    [agent publishFeedWithName:@"Human Rights Campaign iPhone App" 
+    [agent publishFeedWithName:@"HRC Buying for Workplace Equality iPhone App" //can put it here
 				   captionText:someText 
 					  imageurl:@"http://www.hrc.org/buyersguide2010/images/2011-iphone_icon-90x90.png" 
 					   linkurl:@"http://www.hrc.org/iPhone" 
