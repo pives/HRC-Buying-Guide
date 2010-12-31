@@ -66,14 +66,13 @@ NSString* const kNumberOfCategoriesKey = @"NumOfCats";
 }
 
 - (BGCategory*)category{
-    
-    return [data objectForKey:kCategoryKey];
-    
+	id object = [data objectForKey:kCategoryKey];
+    return object;
 }
 
 - (int)pageOfCategory:(BGCategory*)aCategory{
-    
-    return [self.company.categoriesSortedAlphabetically indexOfObject:aCategory]+1;
+    NSArray *categories = self.company.categoriesSortedAlphabetically;
+    return [categories indexOfObject:aCategory]+1;
     
 }
 

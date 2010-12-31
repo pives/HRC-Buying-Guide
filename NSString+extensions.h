@@ -72,7 +72,7 @@ enum {
 - (NSString*)stringByTruncatingToLength:(int)length;
 - (NSString*)stringByTruncatingToLength:(int)length direction:(NSTruncateStringPosition)truncateFrom;
 - (NSString*)stringByTruncatingToLength:(int)length direction:(NSTruncateStringPosition)truncateFrom withEllipsisString:(NSString*)ellipsis;
-
+- (NSString*)uppercaseFirstCharacter;
 
 
 

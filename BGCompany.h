@@ -20,10 +20,11 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * rating;
 @property (nonatomic, retain) NSNumber * ID;
+@property (nonatomic, retain) NSNumber * rating;
 @property (nonatomic, retain) NSNumber * partner;
 @property (nonatomic, retain) NSNumber * ratingLevel;
+@property (nonatomic, retain) NSNumber * includeInIndex;
 @property (nonatomic, retain) NSString * namefirstLetter;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet* brands;

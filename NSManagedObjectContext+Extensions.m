@@ -159,6 +159,19 @@
     return obj;
 }
 
+#pragma mark - 
+#pragma mark In
+
+- (NSArray *)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key isIn:(id)values
+{
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K IN %@",key , values];
+    [request setPredicate:predicate];
+    
+    return [self executeFetchRequest:request error:NULL];
+}
 
 #pragma mark -
 #pragma mark Like (Original)

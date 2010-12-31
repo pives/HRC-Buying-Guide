@@ -133,6 +133,7 @@ const CGFloat TEXT_VIEW_PADDING = 50.0;
 - (void)viewDidAppear:(BOOL)animated{
 	
 	FJSLog([NSString stringWithInt:self.pageIndex]);
+	[self setPageIndex:0];
 
 }
 

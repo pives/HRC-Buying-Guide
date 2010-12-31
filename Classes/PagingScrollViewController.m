@@ -77,8 +77,8 @@
 	scrollView.contentOffset = CGPointMake(0, 0);
     
 	pageControl.numberOfPages = ([self.data numDataPages]); 
-        
-    [self setCurrentPage:[data pageOfStartingSelectedCategory] animated:NO];
+	NSUInteger page = [data pageOfStartingSelectedCategory];
+    [self setCurrentPage:page animated:NO];
     
     if([data category]==nil)
         [self applyNewIndex:0 pageController:currentPage];

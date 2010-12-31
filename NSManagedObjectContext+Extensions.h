@@ -49,6 +49,7 @@
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 //------
 
+- (NSArray *)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key isIn:(id)values;
 
 
 //returns YES if there exists an entity with 'entityName' which has a 'key' with a certain 'value', NO otherwise

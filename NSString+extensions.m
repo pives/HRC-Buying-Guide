@@ -230,6 +230,9 @@
 	}
 }
 
+- (NSString *)uppercaseFirstCharacter {
+	return [[self substringToIndex:1] uppercaseString];
+}
 
 
 

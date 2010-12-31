@@ -15,6 +15,12 @@
     UIWindow *window;
     UINavigationController *navigationController;
     UIView* splashView;
+	
+	NSURLConnection *_updateConnection;
+	NSMutableData *_updateData;
+	
+	NSNumberFormatter *_integerFormatter;
+	
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
@@ -25,10 +31,10 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property(nonatomic,retain)UIView *splashView;
 
-
 - (NSString *)applicationDocumentsDirectory;
 - (void)loadDataForce:(BOOL)flag;
--(void) addSplashScreen;
+- (void)updateData;
+- (void)addSplashScreen;
 
 @end
 

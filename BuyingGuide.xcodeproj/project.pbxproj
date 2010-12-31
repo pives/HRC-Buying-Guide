@@ -68,8 +68,6 @@
 		C46D884410CC3F2600541CF1 /* BGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* BGCategory.m */; };
 		C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
-		C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
-		C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C474E43110C7076B00BFFFE8 /* storedata.sqlite */; };
 		C4864DFB10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
 		C4864DFC10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
 		C4864E4910BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
@@ -260,7 +258,53 @@
 		C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
 		C4FA223210B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
 		C4FA223310B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
+		D837763212BFB4DF00998649 /* test_json.txt in Resources */ = {isa = PBXBuildFile; fileRef = D837763112BFB4DF00998649 /* test_json.txt */; };
+		D837763312BFB4DF00998649 /* test_json.txt in Resources */ = {isa = PBXBuildFile; fileRef = D837763112BFB4DF00998649 /* test_json.txt */; };
+		D83777DE12BFBF4900998649 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D83777BA12BFBE5A00998649 /* libjson.a */; };
+		D837788412C0FF0A00998649 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D837788212C0FF0A00998649 /* SplashViewController.m */; };
+		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
+		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
+		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
+		D842A95412CE018900D8D766 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D842A95312CE018900D8D766 /* storedata.sqlite */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D83777B512BFBE5A00998649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D229810C96121600276605;
+			remoteInfo = JSON;
+		};
+		D83777B712BFBE5A00998649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53D2298D0C96122A00276605;
+			remoteInfo = Tests;
+		};
+		D83777B912BFBE5A00998649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBD800D8B0D3900184787;
+			remoteInfo = libjson;
+		};
+		D83777BB12BFBE5A00998649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE2BBDAB0D8B0EE000184787;
+			remoteInfo = libjsontests;
+		};
+		D83777DA12BFBF4000998649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2BBD7F0D8B0D3900184787;
+			remoteInfo = libjson;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D3623240D0F684500981E51 /* BuyingGuideAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyingGuideAppDelegate.h; sourceTree = "<group>"; };
@@ -317,7 +361,6 @@
 		C46D884110CC3F2600541CF1 /* BGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCategory.h; sourceTree = "<group>"; };
 		C46D884210CC3F2600541CF1 /* BGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCategory.m; sourceTree = "<group>"; };
 		C46D8A2610CC60E600541CF1 /* EmailConfused.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailConfused.txt; sourceTree = "<group>"; };
-		C474E43110C7076B00BFFFE8 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		C4864DFA10BC3BDA0064A126 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		C4864E4810BC3DE10064A126 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
 		C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableViewController.h; sourceTree = "<group>"; };
@@ -497,6 +540,25 @@
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
 		C4FA223010B5C81D0031303E /* BGCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCompany.h; sourceTree = "<group>"; };
 		C4FA223110B5C81D0031303E /* BGCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCompany.m; sourceTree = "<group>"; };
+		D837763112BFB4DF00998649 /* test_json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_json.txt; sourceTree = "<group>"; };
+		D83777AD12BFBE5A00998649 /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "json-framework/JSON.xcodeproj"; sourceTree = "<group>"; };
+		D83777F912BFC16600998649 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "json-framework/Classes/JSON.h"; sourceTree = "<group>"; };
+		D83777FA12BFC16600998649 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+JSON.h"; path = "json-framework/Classes/NSObject+JSON.h"; sourceTree = "<group>"; };
+		D83777FB12BFC16600998649 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "json-framework/Classes/SBJsonParser.h"; sourceTree = "<group>"; };
+		D83777FC12BFC16600998649 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = "json-framework/Classes/SBJsonStreamParser.h"; sourceTree = "<group>"; };
+		D83777FD12BFC16600998649 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = "json-framework/Classes/SBJsonStreamParserAdapter.h"; sourceTree = "<group>"; };
+		D83777FE12BFC16600998649 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = "json-framework/Classes/SBJsonStreamParserState.h"; sourceTree = "<group>"; };
+		D83777FF12BFC16600998649 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = "json-framework/Classes/SBJsonStreamWriter.h"; sourceTree = "<group>"; };
+		D837780012BFC16600998649 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = "json-framework/Classes/SBJsonStreamWriterState.h"; sourceTree = "<group>"; };
+		D837780112BFC16600998649 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = "json-framework/Classes/SBJsonTokeniser.h"; sourceTree = "<group>"; };
+		D837780212BFC16600998649 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "json-framework/Classes/SBJsonWriter.h"; sourceTree = "<group>"; };
+		D837788112C0FF0A00998649 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		D837788212C0FF0A00998649 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		D837788312C0FF0A00998649 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = JSONSync.plist; path = ../JSONSync.plist; sourceTree = "<group>"; };
+		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
+		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
+		D842A95312CE018900D8D766 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,6 +566,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83777DE12BFBF4900998649 /* libjson.a in Frameworks */,
 				C4A24605111B46F70015786E /* libOAuth.a in Frameworks */,
 				C460090B11D1A6B500545996 /* CoreData.framework in Frameworks */,
 				C460090D11D1A6B500545996 /* CoreGraphics.framework in Frameworks */,
@@ -581,6 +644,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D83777E912BFBF7D00998649 /* JSON */,
 				C4BC980111D82D9E001CCEF7 /* FlurryLib */,
 				C4F4121411D1C1F500FD3659 /* iPhone */,
 				C4F4122211D1C25700FD3659 /* Mac */,
@@ -774,6 +838,11 @@
 				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
 				C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */,
+				D8377AA212C243C800998649 /* JSONSync.plist */,
+				D837788112C0FF0A00998649 /* SplashViewController.h */,
+				D837788212C0FF0A00998649 /* SplashViewController.m */,
+				D837788312C0FF0A00998649 /* SplashViewController.xib */,
+				D842A95312CE018900D8D766 /* storedata.sqlite */,
 			);
 			name = "Application Level";
 			path = Classes;
@@ -867,7 +936,7 @@
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
-				C474E43110C7076B00BFFFE8 /* storedata.sqlite */,
+				D837763112BFB4DF00998649 /* test_json.txt */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -889,6 +958,8 @@
 				C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */,
 				C4C031D610B1EB9B000D46AA /* NSString+extensions.h */,
 				C4C031D710B1EB9B000D46AA /* NSString+extensions.m */,
+				D8377C8012C27FC800998649 /* NSNumber+Transformers.h */,
+				D8377C8112C27FC800998649 /* NSNumber+Transformers.m */,
 				C4CDF7DA1108E8DD0036F44F /* UIAlertViewHelper.h */,
 				C4CDF7DB1108E8DD0036F44F /* UIAlertViewHelper.m */,
 			);
@@ -1085,6 +1156,43 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		D83777AE12BFBE5A00998649 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D83777B612BFBE5A00998649 /* JSON.framework */,
+				D83777B812BFBE5A00998649 /* Tests.octest */,
+				D83777BA12BFBE5A00998649 /* libjson.a */,
+				D83777BC12BFBE5A00998649 /* libjsontests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D83777E912BFBF7D00998649 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D83777EA12BFBF8600998649 /* Headers */,
+				D83777AD12BFBE5A00998649 /* JSON.xcodeproj */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		D83777EA12BFBF8600998649 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				D83777F912BFC16600998649 /* JSON.h */,
+				D83777FA12BFC16600998649 /* NSObject+JSON.h */,
+				D83777FB12BFC16600998649 /* SBJsonParser.h */,
+				D83777FC12BFC16600998649 /* SBJsonStreamParser.h */,
+				D83777FD12BFC16600998649 /* SBJsonStreamParserAdapter.h */,
+				D83777FE12BFC16600998649 /* SBJsonStreamParserState.h */,
+				D83777FF12BFC16600998649 /* SBJsonStreamWriter.h */,
+				D837780012BFC16600998649 /* SBJsonStreamWriterState.h */,
+				D837780112BFC16600998649 /* SBJsonTokeniser.h */,
+				D837780212BFC16600998649 /* SBJsonWriter.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1099,6 +1207,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D83777DB12BFBF4000998649 /* PBXTargetDependency */,
 			);
 			name = BuyingGuide;
 			productName = BuyingGuide;
@@ -1140,6 +1249,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D83777AE12BFBE5A00998649 /* Products */;
+					ProjectRef = D83777AD12BFBE5A00998649 /* JSON.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* BuyingGuide */,
@@ -1147,6 +1262,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D83777B612BFBE5A00998649 /* JSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSON.framework;
+			remoteRef = D83777B512BFBE5A00998649 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D83777B812BFBE5A00998649 /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = D83777B712BFBE5A00998649 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D83777BA12BFBE5A00998649 /* libjson.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjson.a;
+			remoteRef = D83777B912BFBE5A00998649 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D83777BC12BFBE5A00998649 /* libjsontests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libjsontests.octest;
+			remoteRef = D83777BB12BFBE5A00998649 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -1166,7 +1312,6 @@
 				C450242010C454C3002D5175 /* HRC_Icon.png in Resources */,
 				C48BBBD910C5791400F996C6 /* EmailIndifferent.txt in Resources */,
 				C48BBBE110C5792900F996C6 /* EmailSad.txt in Resources */,
-				C474E43310C7076B00BFFFE8 /* storedata.sqlite in Resources */,
 				C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D874510CC297600541CF1 /* slider.png in Resources */,
 				C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */,
@@ -1201,6 +1346,10 @@
 				C4C922B812997BC0005C12F4 /* Default@2x.png in Resources */,
 				C486AF1B129C5BC600912219 /* information.png in Resources */,
 				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
+				D837763212BFB4DF00998649 /* test_json.txt in Resources */,
+				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
+				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
+				D842A95412CE018900D8D766 /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,7 +1369,6 @@
 				C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */,
 				C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */,
 				C48BBBE010C5792900F996C6 /* EmailSad.txt in Resources */,
-				C474E43210C7076B00BFFFE8 /* storedata.sqlite in Resources */,
 				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
 				C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */,
 				C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */,
@@ -1254,6 +1402,7 @@
 				C4C922B612997BC0005C12F4 /* Default@2x.png in Resources */,
 				C486AF19129C5BC600912219 /* information.png in Resources */,
 				C486AF1A129C5BC600912219 /* information@2x.png in Resources */,
+				D837763312BFB4DF00998649 /* test_json.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1485,8 @@
 				C4B8FC001188BE3600B59CD7 /* FBSession.m in Sources */,
 				C4B8FC011188BE3600B59CD7 /* FBStreamDialog.m in Sources */,
 				C4B8FC021188BE3600B59CD7 /* FBXMLHandler.m in Sources */,
+				D837788412C0FF0A00998649 /* SplashViewController.m in Sources */,
+				D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1419,6 +1570,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D83777DB12BFBF4000998649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libjson;
+			targetProxy = D83777DA12BFBF4000998649 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

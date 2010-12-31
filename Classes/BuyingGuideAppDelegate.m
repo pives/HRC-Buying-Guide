@@ -10,6 +10,9 @@
 #import "MainViewController.h"
 #import "FlurryAPI.h"
 #import "RootViewController.h"
+#import "JSON.h"
+#import "NSManagedObjectContext+Extensions.h"
+#import "BGBrand.h"
 
 @implementation BuyingGuideAppDelegate
 
@@ -20,29 +23,41 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize splashView;
 
 
++ (void)initialize {
+	if ( self == [BuyingGuideAppDelegate class] ) {
+		NSDateComponents *components = [[NSDateComponents alloc] init];
+		[components setCalendar:[NSCalendar currentCalendar]];
+		[components setDay:31];
+		[components setMonth:12];
+		[components setYear:2010];
+		NSDate *date = [components date];
+		if ( date ) {
+			NSDictionary *defaults = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
+			[components release];
+			[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+		}
+	}
+}
+
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-        
     // Override point for customization after app launch    
-
     [self loadDataForce:NO];
-	
-	
-	
-    
-    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
-
+	[self updateData];
+	[self addSplashScreen];
+	[FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
-
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
-	
-		
 	[window addSubview:[navigationController view]];
-    [self addSplashScreen];
-    [window makeKeyAndVisible];
+	[window makeKeyAndVisible];
+}
+
+
+- (void) dataUpdateDidFinish {
+	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
 
@@ -63,8 +78,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 	self.splashView = localSplashView;
 	[window addSubview:splashView];
 	[localSplashView release];
-    
-	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
@@ -97,6 +110,158 @@ static NSString* kAnimationID = @"SplashAnimation";
     }
 }
 
+- (NSNumberFormatter *)integerFormatter {
+	if ( !_integerFormatter ) {
+		_integerFormatter = [[NSNumberFormatter alloc] init];
+	}
+	return _integerFormatter;
+}
+
+- (BOOL)syncEntity:(NSString *)entityName withJSONObjects:(NSArray *)JSONObjects syncDictionaries:(NSArray *)syncDictionaries {
+	if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects )
+		goto bail;
+	
+	NSDictionary *primaryKeyDict = [syncDictionaries objectAtIndex:0];
+	
+	NSString *coreDataKey = [primaryKeyDict valueForKey:@"CoreDataKey"];
+	NSString *JSONKey = [primaryKeyDict valueForKey:@"JSONKey"];
+	
+	NSFormatter *uniqueIDFormatter = ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
+	
+	NSManagedObjectContext *moc = [self managedObjectContext];
+	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
+	[uniqueKeySet removeObject:[NSNull null]];
+	
+	NSArray *entitesToUpdate = [moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet];
+	NSArray *entityUniqueIDs = [entitesToUpdate valueForKey:coreDataKey];
+	
+	NSUInteger count = [entitesToUpdate count];
+	for ( id JSONObject in JSONObjects ) {
+		NSString *IDString = [JSONObject valueForKey:JSONKey];
+		id ID = nil;
+		if ( uniqueIDFormatter )
+			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:nil];
+		else
+			ID = IDString;
+		
+		id entity = nil;
+		NSInteger index = [entityUniqueIDs indexOfObject:ID];
+		if ( index < count )
+			entity = [entitesToUpdate objectAtIndex:index];
+		else 
+			entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
+		
+		for ( NSDictionary *keyDict in syncDictionaries ) {
+			NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
+			NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
+			id value = nil;
+			id JSONValue = [JSONObject valueForKey:JSONKey];
+			
+			NSFormatter *formatter = ( [[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
+			if ( formatter )
+				[formatter getObjectValue:&value forString:JSONValue errorDescription:nil];
+			else
+				value = JSONValue;
+			
+			NSString *transformer = [keyDict objectForKey:@"transformer"];
+			if ( transformer ) {
+				SEL selector = NSSelectorFromString(transformer);
+				if ( [value respondsToSelector:selector] ) 
+					value = [value performSelector:selector];
+			}
+			
+			if ( !value )
+				continue;
+			
+			NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
+			if ( relationshipEntity ) {
+				NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
+				NSString *relationshipSelectorString = [keyDict objectForKey:@"CoreDataRelationshipMethod"];
+				SEL relationshipSelector = NSSelectorFromString(relationshipSelectorString);
+				if ( [entity respondsToSelector:relationshipSelector] ) {
+				
+					id relatedObject = [moc entityWithName:relationshipEntity whereKey:relationshipKey equalToObject:value];
+				
+					if (!relatedObject)
+						continue;
+					[entity performSelector:relationshipSelector withObject:relatedObject];
+				}
+			}
+			else {
+				[entity setValue:value forKey:coreDataKey];
+			}
+		}
+	}
+
+	return YES;
+bail:
+	return NO;
+}
+
+- (void)updateLoadedData {
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	NSDictionary *updateDict = [parser objectWithData:_updateData];
+	[parser release];
+	[_updateData release];
+	_updateData = nil;
+	
+	NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
+	NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
+	NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
+	
+	NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
+	NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
+	
+	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
+	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
+	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+	
+	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
+	
+	NSError *error = nil;
+	[[self managedObjectContext] save:&error];
+	
+	if ( error )
+		NSLog(@"%@", error);
+	
+	[self dataUpdateDidFinish];
+}
+
+
+- (void)updateLoadedDataInBackground { 
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	[self updateLoadedData];
+	[pool drain];
+}
+
+- (void)updateData {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSDate *lastUpdate = [defaults objectForKey:@"LastUpdate"];
+	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json";
+	if ( lastUpdate ) {
+		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
+		[updateURLDateFormatter setDateFormat:@"ddMMMYYYY"];
+		URLString = [NSString stringWithFormat:@"%@?date=%@", URLString, [updateURLDateFormatter stringFromDate:lastUpdate]];
+		[updateURLDateFormatter release];
+	}
+	
+	BOOL async = NO;
+	NSURL *url = [NSURL URLWithString:URLString]; //[[NSBundle mainBundle] URLForResource:@"test_json" withExtension:@"txt"]; //
+	if ( async ) {
+		_updateData = [[NSMutableData alloc] init];
+	
+		NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+		_updateConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+		[request release];
+	}
+	else {
+		_updateData = [[NSMutableData alloc] initWithContentsOfURL:url];
+		[self updateLoadedData];
+	}
+
+
+}
+
 - (void)loadDataForce:(BOOL)flag{
 
     NSString* staticDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
@@ -110,29 +275,23 @@ static NSString* kAnimationID = @"SplashAnimation";
 	NSString* oldBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
 	NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
     
-    if(flag){
-		
+    if( flag ){
+		[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"LastUpdate"];
 		[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:staticDB 
+        if ( staticDB )
+			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
                                                 toPath:appDB 
                                                  error:nil];
     }else{
 		
-		if(newAttributes == nil){
+		if(newAttributes == nil && staticDB){
 			
 			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
 			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
 													toPath:appDB 
 													 error:nil];
 			
-		}else if(![(NSNumber*)[oldAttributes objectForKey:NSFileSize] isEqualToNumber:(NSNumber*)[newAttributes objectForKey:NSFileSize]] ){
-			
-			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
-													toPath:appDB 
-													 error:nil];
-            
-        }else if(![newBundleID isEqualToString:oldBundleID]){
+		}else if(![newBundleID isEqualToString:oldBundleID] && staticDB){
 			
 			
 			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
@@ -140,7 +299,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 													toPath:appDB 
 													 error:nil];
 			
-		}else if(![(NSDate*)[oldAttributes objectForKey:NSFileCreationDate] isEqualToDate:(NSDate*)[newAttributes objectForKey:NSFileCreationDate]] ){
+		}else if(![(NSDate*)[oldAttributes objectForKey:NSFileCreationDate] isEqualToDate:(NSDate*)[newAttributes objectForKey:NSFileCreationDate]] && staticDB ){
 			
 			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
 			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
@@ -246,8 +405,12 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)dealloc {
 	
     self.splashView = nil;
-    
-    [managedObjectContext release];
+	
+    [_integerFormatter release];
+    [_updateData release];
+	[_updateConnection release];
+	
+	[managedObjectContext release];
     [managedObjectModel release];
     [persistentStoreCoordinator release];
     
@@ -256,6 +419,55 @@ static NSString* kAnimationID = @"SplashAnimation";
 	[super dealloc];
 }
 
+						
+#pragma mark -
+#pragma mark NSURLConnectionDelegate
+
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+	return YES;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	NSLog(@"Did receive auth challenge: %@", challenge);
+}
+- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	NSLog(@"Did cancel auth challenge: %@", challenge);
+}
+
+- (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection {
+	return YES;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	if ( [response isKindOfClass:[NSHTTPURLResponse class]] ) {
+		NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+		NSInteger statusCode = [httpResponse statusCode];
+		if ( statusCode != 200 )
+			NSLog(@"Unable to reach update server: %@", [NSHTTPURLResponse localizedStringForStatusCode:statusCode]);
+	}
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	[_updateData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	if ( connection == _updateConnection ) {
+		[_updateConnection release];
+		_updateConnection = nil;
+		//[self performSelectorInBackground:@selector(updateLoadedDataInBackground) withObject:nil];
+		[self performSelectorOnMainThread:@selector(updateLoadedData) withObject:nil waitUntilDone:NO];
+	}
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	if ( connection == _updateConnection ) {
+		[_updateConnection release];
+		_updateConnection = nil;
+		
+	}
+}
 
 @end
 

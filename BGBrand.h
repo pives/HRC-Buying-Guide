@@ -15,16 +15,19 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * rating;
-@property (nonatomic, retain) NSNumber * partner;
+@property (nonatomic, retain) NSNumber * ID;
 @property (nonatomic, retain) NSString * nameSortFormatted;
-@property (nonatomic, retain) NSNumber * ratingLevel;
 @property (nonatomic, retain) NSString * namefirstLetter;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * isCompanyName;
 @property (nonatomic, retain) NSSet* categories;
 @property (nonatomic, retain) NSSet* companies;
-@property (nonatomic, retain) NSNumber* nonResponder;
+
+@property (nonatomic, retain) NSNumber * nonResponder;
+@property (nonatomic, retain) NSNumber * ratingLevel;
+@property (nonatomic, retain) NSNumber * rating;
+@property (nonatomic, retain) NSNumber * partner;
+@property (nonatomic, retain) NSNumber * includeInIndex;
 
 @end
 

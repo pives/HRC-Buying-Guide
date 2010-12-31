@@ -17,6 +17,7 @@
 @dynamic ID;
 @dynamic partner;
 @dynamic ratingLevel;
+@dynamic includeInIndex;
 @dynamic namefirstLetter;
 @dynamic name;
 @dynamic brands;

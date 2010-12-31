@@ -13,6 +13,7 @@
 
 @implementation BGCategory 
 
+@dynamic ID;
 @dynamic name;
 @dynamic brands;
 @dynamic companies;

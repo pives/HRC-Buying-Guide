@@ -128,8 +128,14 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+	if ( [[self.fetchedResultsController sections] count] > section ) {
+		id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+		return [sectionInfo numberOfObjects];
+	}
+	else {
+		return 0;
+	}
+
 }
 
 //TODO: find out if client wants to see the header, to many colors in my opinion.
