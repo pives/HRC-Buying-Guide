@@ -258,8 +258,6 @@
 		C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
 		C4FA223210B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
 		C4FA223310B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
-		D837763212BFB4DF00998649 /* test_json.txt in Resources */ = {isa = PBXBuildFile; fileRef = D837763112BFB4DF00998649 /* test_json.txt */; };
-		D837763312BFB4DF00998649 /* test_json.txt in Resources */ = {isa = PBXBuildFile; fileRef = D837763112BFB4DF00998649 /* test_json.txt */; };
 		D83777DE12BFBF4900998649 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D83777BA12BFBE5A00998649 /* libjson.a */; };
 		D837788412C0FF0A00998649 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D837788212C0FF0A00998649 /* SplashViewController.m */; };
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
@@ -540,7 +538,6 @@
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
 		C4FA223010B5C81D0031303E /* BGCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCompany.h; sourceTree = "<group>"; };
 		C4FA223110B5C81D0031303E /* BGCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCompany.m; sourceTree = "<group>"; };
-		D837763112BFB4DF00998649 /* test_json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_json.txt; sourceTree = "<group>"; };
 		D83777AD12BFBE5A00998649 /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "json-framework/JSON.xcodeproj"; sourceTree = "<group>"; };
 		D83777F912BFC16600998649 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "json-framework/Classes/JSON.h"; sourceTree = "<group>"; };
 		D83777FA12BFC16600998649 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+JSON.h"; path = "json-framework/Classes/NSObject+JSON.h"; sourceTree = "<group>"; };
@@ -555,10 +552,10 @@
 		D837788112C0FF0A00998649 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		D837788212C0FF0A00998649 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		D837788312C0FF0A00998649 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
-		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = JSONSync.plist; path = ../JSONSync.plist; sourceTree = "<group>"; };
+		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JSONSync.plist; sourceTree = "<group>"; };
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
-		D842A95312CE018900D8D766 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		D842A95312CE018900D8D766 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = storedata.sqlite; path = Classes/storedata.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -838,11 +835,9 @@
 				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
 				C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */,
-				D8377AA212C243C800998649 /* JSONSync.plist */,
 				D837788112C0FF0A00998649 /* SplashViewController.h */,
 				D837788212C0FF0A00998649 /* SplashViewController.m */,
 				D837788312C0FF0A00998649 /* SplashViewController.xib */,
-				D842A95312CE018900D8D766 /* storedata.sqlite */,
 			);
 			name = "Application Level";
 			path = Classes;
@@ -936,7 +931,8 @@
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
-				D837763112BFB4DF00998649 /* test_json.txt */,
+				D842A95312CE018900D8D766 /* storedata.sqlite */,
+				D8377AA212C243C800998649 /* JSONSync.plist */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -1346,7 +1342,6 @@
 				C4C922B812997BC0005C12F4 /* Default@2x.png in Resources */,
 				C486AF1B129C5BC600912219 /* information.png in Resources */,
 				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
-				D837763212BFB4DF00998649 /* test_json.txt in Resources */,
 				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
 				D842A95412CE018900D8D766 /* storedata.sqlite in Resources */,
@@ -1402,7 +1397,6 @@
 				C4C922B612997BC0005C12F4 /* Default@2x.png in Resources */,
 				C486AF19129C5BC600912219 /* information.png in Resources */,
 				C486AF1A129C5BC600912219 /* information@2x.png in Resources */,
-				D837763312BFB4DF00998649 /* test_json.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
