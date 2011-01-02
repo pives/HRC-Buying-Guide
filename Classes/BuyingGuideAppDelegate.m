@@ -54,7 +54,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
-	BOOL forceUpdate = YES;
+	BOOL forceUpdate = NO;
 	
 	[self loadDataForce:forceUpdate];
 	

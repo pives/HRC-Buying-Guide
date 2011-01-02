@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1034, 6162}}";
-			sepNavSelRange = "{9464, 0}";
-			sepNavVisRange = "{8695, 2091}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 6617}}";
+			sepNavSelRange = "{1392, 0}";
+			sepNavVisRange = "{417, 1619}";
 			sepNavWindowFrame = "{{78, 31}, {1245, 821}}";
 		};
 	};
@@ -294,6 +294,7 @@
 			D8793C2A12D0DFC5000095D3 /* PBXTextBookmark */ = D8793C2A12D0DFC5000095D3 /* PBXTextBookmark */;
 			D8793C2B12D0DFC5000095D3 /* PBXTextBookmark */ = D8793C2B12D0DFC5000095D3 /* PBXTextBookmark */;
 			D8793C2C12D0DFCA000095D3 /* PBXTextBookmark */ = D8793C2C12D0DFCA000095D3 /* PBXTextBookmark */;
+			D8793C2D12D0DFEC000095D3 /* PBXTextBookmark */ = D8793C2D12D0DFEC000095D3 /* PBXTextBookmark */;
 			D87D722B12CA79D00017DE2B = D87D722B12CA79D00017DE2B /* PBXTextBookmark */;
 			D87D722E12CA79D00017DE2B = D87D722E12CA79D00017DE2B /* PBXTextBookmark */;
 			D87D723112CA79D00017DE2B = D87D723112CA79D00017DE2B /* PBXTextBookmark */;
@@ -1592,7 +1593,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 58";
 		rLen = 32;
-		rLoc = 1666;
+		rLoc = 1665;
 		rType = 0;
 		vrLen = 1799;
 		vrLoc = 227;
@@ -1602,7 +1603,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 248";
 		rLen = 51;
-		rLoc = 9254;
+		rLoc = 9253;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 7497;
@@ -1793,7 +1794,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 248";
 		rLen = 51;
-		rLoc = 9254;
+		rLoc = 9253;
 		rType = 0;
 		vrLen = 2116;
 		vrLoc = 7592;
@@ -2051,7 +2052,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 229";
 		rLen = 9;
-		rLoc = 8420;
+		rLoc = 8419;
 		rType = 0;
 		vrLen = 773;
 		vrLoc = 7683;
@@ -2140,7 +2141,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 230";
 		rLen = 0;
-		rLoc = 8444;
+		rLoc = 8443;
 		rType = 0;
 		vrLen = 1938;
 		vrLoc = 7012;
@@ -2150,7 +2151,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 231";
 		rLen = 0;
-		rLoc = 8482;
+		rLoc = 8481;
 		rType = 0;
 		vrLen = 2049;
 		vrLoc = 7031;
@@ -2190,7 +2191,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 236";
 		rLen = 0;
-		rLoc = 8659;
+		rLoc = 8658;
 		rType = 0;
 		vrLen = 1915;
 		vrLoc = 7012;
@@ -2200,7 +2201,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 239";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 2096;
 		vrLoc = 7043;
@@ -2210,7 +2211,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 235";
 		rLen = 0;
-		rLoc = 8655;
+		rLoc = 8654;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 7008;
@@ -2500,7 +2501,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 235";
 		rLen = 0;
-		rLoc = 8655;
+		rLoc = 8654;
 		rType = 0;
 		vrLen = 1907;
 		vrLoc = 7004;
@@ -2510,7 +2511,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 66";
 		rLen = 0;
-		rLoc = 2035;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1755;
 		vrLoc = 1165;
@@ -2520,7 +2521,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 66";
 		rLen = 0;
-		rLoc = 2035;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1864;
 		vrLoc = 727;
@@ -2530,7 +2531,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 66";
 		rLen = 0;
-		rLoc = 2035;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 784;
@@ -2540,7 +2541,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 74";
 		rLen = 0;
-		rLoc = 2035;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1750;
 		vrLoc = 838;
@@ -2550,7 +2551,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 65";
 		rLen = 0;
-		rLoc = 1634;
+		rLoc = 1633;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 1010;
@@ -2560,7 +2561,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 60";
 		rLen = 0;
-		rLoc = 1409;
+		rLoc = 1408;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 1010;
@@ -2570,7 +2571,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 60";
 		rLen = 0;
-		rLoc = 1409;
+		rLoc = 1408;
 		rType = 0;
 		vrLen = 1657;
 		vrLoc = 1035;
@@ -2580,7 +2581,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 76";
 		rLen = 28;
-		rLoc = 2037;
+		rLoc = 2036;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 1232;
@@ -2590,7 +2591,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 76";
 		rLen = 28;
-		rLoc = 2037;
+		rLoc = 2036;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 1235;
@@ -2600,7 +2601,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 95";
 		rLen = 104;
-		rLoc = 2640;
+		rLoc = 2639;
 		rType = 0;
 		vrLen = 2043;
 		vrLoc = 1779;
@@ -2610,7 +2611,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 73";
 		rLen = 0;
-		rLoc = 2004;
+		rLoc = 2003;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 1237;
@@ -2620,7 +2621,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 73";
 		rLen = 0;
-		rLoc = 2004;
+		rLoc = 2003;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 1237;
@@ -2630,7 +2631,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 73";
 		rLen = 0;
-		rLoc = 2004;
+		rLoc = 2003;
 		rType = 0;
 		vrLen = 1724;
 		vrLoc = 1236;
@@ -2690,7 +2691,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 250";
 		rLen = 0;
-		rLoc = 8792;
+		rLoc = 8791;
 		rType = 0;
 		vrLen = 1891;
 		vrLoc = 8573;
@@ -2700,7 +2701,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 250";
 		rLen = 0;
-		rLoc = 8792;
+		rLoc = 8791;
 		rType = 0;
 		vrLen = 1992;
 		vrLoc = 2210;
@@ -2710,7 +2711,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1393;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1662;
 		vrLoc = 511;
@@ -2720,7 +2721,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 265";
 		rLen = 0;
-		rLoc = 9271;
+		rLoc = 9270;
 		rType = 0;
 		vrLen = 2035;
 		vrLoc = 8686;
@@ -2730,7 +2731,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 265";
 		rLen = 0;
-		rLoc = 9271;
+		rLoc = 9270;
 		rType = 0;
 		vrLen = 1991;
 		vrLoc = 8730;
@@ -2740,7 +2741,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 279";
 		rLen = 0;
-		rLoc = 9905;
+		rLoc = 9904;
 		rType = 0;
 		vrLen = 2226;
 		vrLoc = 8730;
@@ -2750,7 +2751,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1393;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1946;
 		vrLoc = 5118;
@@ -2770,7 +2771,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 271";
 		rLen = 0;
-		rLoc = 9504;
+		rLoc = 9503;
 		rType = 0;
 		vrLen = 2200;
 		vrLoc = 8794;
@@ -2780,7 +2781,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 57";
 		rLen = 0;
-		rLoc = 1393;
+		rLoc = 1392;
 		rType = 0;
 		vrLen = 1589;
 		vrLoc = 343;
@@ -2800,7 +2801,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 244";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 2182;
 		vrLoc = 7147;
@@ -2810,7 +2811,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 244";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 1681;
 		vrLoc = 662;
@@ -2820,7 +2821,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 244";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 2105;
 		vrLoc = 8513;
@@ -2830,7 +2831,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 244";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 8933;
@@ -2840,7 +2841,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 244";
 		rLen = 0;
-		rLoc = 8701;
+		rLoc = 8700;
 		rType = 0;
 		vrLen = 2371;
 		vrLoc = 8935;
@@ -2850,7 +2851,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 271";
 		rLen = 0;
-		rLoc = 9506;
+		rLoc = 9505;
 		rType = 0;
 		vrLen = 2091;
 		vrLoc = 8626;
@@ -2860,7 +2861,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 271";
 		rLen = 0;
-		rLoc = 9506;
+		rLoc = 9505;
 		rType = 0;
 		vrLen = 2022;
 		vrLoc = 8695;
@@ -2870,7 +2871,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 271";
 		rLen = 0;
-		rLoc = 9506;
+		rLoc = 9505;
 		rType = 0;
 		vrLen = 2022;
 		vrLoc = 8695;
@@ -2900,10 +2901,20 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 271";
 		rLen = 0;
-		rLoc = 9464;
+		rLoc = 9463;
 		rType = 0;
 		vrLen = 2091;
 		vrLoc = 8695;
+	};
+	D8793C2D12D0DFEC000095D3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
+		name = "BuyingGuideAppDelegate.m: 57";
+		rLen = 0;
+		rLoc = 1392;
+		rType = 0;
+		vrLen = 1619;
+		vrLoc = 417;
 	};
 	D87D722B12CA79D00017DE2B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2994,7 +3005,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 58";
 		rLen = 32;
-		rLoc = 1666;
+		rLoc = 1665;
 		rType = 0;
 		vrLen = 1692;
 		vrLoc = 249;
@@ -3004,7 +3015,7 @@
 		fRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */;
 		name = "BuyingGuideAppDelegate.m: 58";
 		rLen = 32;
-		rLoc = 1666;
+		rLoc = 1665;
 		rType = 0;
 		vrLen = 1692;
 		vrLoc = 249;
