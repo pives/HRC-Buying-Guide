@@ -22,16 +22,6 @@
 		</dict>
 		<dict>
 			<key>JSONKey</key>
-			<string>CommonName</string>
-			<key>CoreDataKey</key>
-			<string>namefirstLetter</string>
-			<key>kind</key>
-			<string>String</string>
-			<key>transformer</key>
-			<string>uppercaseFirstCharacter</string>
-		</dict>
-		<dict>
-			<key>JSONKey</key>
 			<string>CEIRating</string>
 			<key>CoreDataKey</key>
 			<string>ratingLevel</string>
@@ -123,26 +113,6 @@
 			<string>name</string>
 			<key>kind</key>
 			<string>String</string>
-		</dict>
-		<dict>
-			<key>JSONKey</key>
-			<string>BrandName</string>
-			<key>CoreDataKey</key>
-			<string>nameSortFormatted</string>
-			<key>kind</key>
-			<string>String</string>
-			<key>transformer</key>
-			<string>lowercaseString</string>
-		</dict>
-		<dict>
-			<key>JSONKey</key>
-			<string>BrandName</string>
-			<key>CoreDataKey</key>
-			<string>namefirstLetter</string>
-			<key>kind</key>
-			<string>String</string>
-			<key>transformer</key>
-			<string>uppercaseFirstCharacter</string>
 		</dict>
 		<dict>
 			<key>JSONKey</key>

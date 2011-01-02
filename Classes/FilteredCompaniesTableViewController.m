@@ -389,7 +389,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	if(searching)
 		return searchResultsController;
 	
-	
+	NSNumber *yesNumber = [NSNumber numberWithBool:YES];
+	NSString *predicateString = @"(%@ IN %K)&&(includeInIndex == %@)";
 	
 	if(mode == FilterdTableViewControllerModeAlphabetically){
 
@@ -414,7 +415,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			
 			[fetchRequest setSortDescriptors:sortDescriptors];
 			
-			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:predicateString, filterObject, filterKey, yesNumber]];
 			
 			// Edit the section name key path and cache name if appropriate.
 			// nil for section name key path means "no sections".
@@ -458,7 +459,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			
 			[fetchRequest setSortDescriptors:sortDescriptors];
 			
-			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey]];
+			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:predicateString, filterObject, filterKey, yesNumber]];
 			
 			// Edit the section name key path and cache name if appropriate.
 			// nil for section name key path means "no sections".

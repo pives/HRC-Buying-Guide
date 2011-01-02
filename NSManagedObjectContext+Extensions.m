@@ -159,6 +159,18 @@
     return obj;
 }
 
+- (NSArray *)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key equalsObject:(id)value
+{
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@",key , value];
+    [request setPredicate:predicate];
+    
+    return [self executeFetchRequest:request error:NULL];
+}
+
+
 #pragma mark - 
 #pragma mark In
 

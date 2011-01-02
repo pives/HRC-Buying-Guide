@@ -13,6 +13,9 @@
 #import "JSON.h"
 #import "NSManagedObjectContext+Extensions.h"
 #import "BGBrand.h"
+#import "BGCompany.h"
+
+#define UPDATE_INTERVAL 604800
 
 @implementation BuyingGuideAppDelegate
 
@@ -44,8 +47,14 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
-    [self loadDataForce:NO];
-	[self updateData];
+    
+	BOOL forceUpdate = NO;
+	
+	[self loadDataForce:forceUpdate];
+	
+	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"]] > UPDATE_INTERVAL	)
+		[self updateData];
+	
 	[self addSplashScreen];
 	[FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
@@ -215,6 +224,18 @@ bail:
 	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
 	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+	
+	NSManagedObjectContext *moc = [self managedObjectContext];
+	NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
+	
+	//Need to create Brands for Companies whose name is the Brand
+	for ( BGCompany *company in allCompanies ) {
+		if ( !company.brands || ![company.brands count] ) {
+			BGBrand *brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
+			brand.name = company.name;
+			[brand addCompaniesObject:company];
+		}
+	}
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
 	

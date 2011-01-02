@@ -7,9 +7,16 @@
 //
 
 #import "BGCompany.h"
-
+#import "NSString+extensions.h"
 #import "BGBrand.h"
 #import "BGCategory.h"
+
+@interface BGCompany (CoreDataGeneratedPrimitiveAccessors)
+
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
+
+@end
 
 @implementation BGCompany 
 
@@ -23,5 +30,15 @@
 @dynamic brands;
 @dynamic categories;
 @dynamic nonResponder;
+
+
+- (void)setName:(NSString *)value 
+{
+    [self willChangeValueForKey:@"name"];
+    [self setPrimitiveName:value];
+    [self didChangeValueForKey:@"name"];
+	
+	self.namefirstLetter = [value uppercaseFirstCharacter];
+}
 
 @end

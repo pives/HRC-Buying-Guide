@@ -9,10 +9,12 @@
 #import "BGBrand.h"
 #import "BGCategory.h"
 #import "BGCompany.h"
-
+#import "NSString+extensions.h"
 
 @interface BGBrand (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 - (NSMutableSet*)primitiveCompanies;
 - (void)setPrimitiveCompanies:(NSMutableSet*)value;
 
@@ -32,6 +34,16 @@
 @dynamic categories;
 @dynamic companies;
 @dynamic nonResponder;
+
+- (void)setName:(NSString *)value 
+{
+    [self willChangeValueForKey:@"name"];
+    [self setPrimitiveName:value];
+    [self didChangeValueForKey:@"name"];
+	
+	self.namefirstLetter = [value uppercaseFirstCharacter];
+	self.nameSortFormatted = [value lowercaseString];
+}
 
 - (void)updateAttributesInheritedFromCompanies {
 	BGCompany *company = [self.companies anyObject];

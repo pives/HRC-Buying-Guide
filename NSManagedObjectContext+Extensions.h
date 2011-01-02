@@ -48,6 +48,7 @@
 - (id)entityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 - (id)retrieveOrCreateEntityWithName:(NSString *)entityName whereKey:(NSString *)key equalToObject:(id )value;
 //------
+- (NSArray *)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key equalsObject:(id)value;
 
 - (NSArray *)entitiesWithName:(NSString *)entityName whereKey:(NSString *)key isIn:(id)values;
 
