@@ -17,6 +17,10 @@
 
 #define UPDATE_INTERVAL 604800
 
+@interface BuyingGuideAppDelegate ()
+- (void) dataUpdateDidFinish;
+@end
+
 @implementation BuyingGuideAppDelegate
 
 static NSString* kAnimationID = @"SplashAnimation";
@@ -30,9 +34,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:31];
-		[components setMonth:12];
-		[components setYear:2010];
+		[components setDay:2];
+		[components setMonth:1];
+		[components setYear:2011];
 		NSDate *date = [components date];
 		if ( date ) {
 			NSDictionary *defaults = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
@@ -43,10 +47,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 
-- (void) dataUpdateDidFinish {
-	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
-}
-
 
 
 #pragma mark -
@@ -54,8 +54,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
-    
-	BOOL forceUpdate = NO;
+	BOOL forceUpdate = YES;
 	
 	[self loadDataForce:forceUpdate];
 	
@@ -63,7 +62,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 		[self updateData];
 	else
 		[self dataUpdateDidFinish];
-	
 	
 	[FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
@@ -103,6 +101,9 @@ static NSString* kAnimationID = @"SplashAnimation";
     }
 }
 
+- (void) dataUpdateDidFinish {
+	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
+}
 
 /**
  applicationWillTerminate: saves changes in the application's managed object context before the application terminates.
@@ -232,7 +233,8 @@ bail:
 	NSManagedObjectContext *moc = [self managedObjectContext];
 	NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
 	
-	//Need to create Brands for Companies whose name is the Brand
+	//Need to create brands for companies whose name is the brand
+	//So, find all companies where brands is nil or brand count is 0
 	for ( BGCompany *company in allCompanies ) {
 		if ( !company.brands || ![company.brands count] ) {
 			BGBrand *brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
@@ -241,13 +243,13 @@ bail:
 		}
 	}
 	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
-	
 	NSError *error = nil;
 	[[self managedObjectContext] save:&error];
 	
 	if ( error )
-		NSLog(@"%@", error);
+		FJSLog(@"%@", error);
+	
+	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
 	
 	[self dataUpdateDidFinish];
 }
@@ -266,25 +268,16 @@ bail:
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
 		[updateURLDateFormatter setDateFormat:@"ddMMMYYYY"];
-		URLString = [NSString stringWithFormat:@"%@?date=%@", URLString, [updateURLDateFormatter stringFromDate:lastUpdate]];
+		URLString = [NSString stringWithFormat:@"%@&date=%@", URLString, [updateURLDateFormatter stringFromDate:lastUpdate]];
 		[updateURLDateFormatter release];
 	}
-	
-	BOOL async = NO;
-	NSURL *url = [NSURL URLWithString:URLString]; //[[NSBundle mainBundle] URLForResource:@"test_json" withExtension:@"txt"]; //
-	if ( async ) {
-		_updateData = [[NSMutableData alloc] init];
-	
-		NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-		_updateConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-		[request release];
-	}
-	else {
-		_updateData = [[NSMutableData alloc] initWithContentsOfURL:url];
-		[self updateLoadedData];
-	}
 
-
+	NSURL *url = [NSURL URLWithString:URLString];
+	
+	_updateData = [[NSMutableData alloc] init];
+	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+	_updateConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+	[request release];
 }
 
 - (void)loadDataForce:(BOOL)flag{
@@ -454,10 +447,10 @@ bail:
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	NSLog(@"Did receive auth challenge: %@", challenge);
+	FJSLog(@"Did receive auth challenge: %@", challenge);
 }
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	NSLog(@"Did cancel auth challenge: %@", challenge);
+	[self dataUpdateDidFinish];
 }
 
 - (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection {
@@ -481,7 +474,6 @@ bail:
 	if ( connection == _updateConnection ) {
 		[_updateConnection release];
 		_updateConnection = nil;
-		//[self performSelectorInBackground:@selector(updateLoadedDataInBackground) withObject:nil];
 		[self performSelectorOnMainThread:@selector(updateLoadedData) withObject:nil waitUntilDone:NO];
 	}
 }
@@ -490,8 +482,8 @@ bail:
 	if ( connection == _updateConnection ) {
 		[_updateConnection release];
 		_updateConnection = nil;
-		
 	}
+	[self dataUpdateDidFinish];
 }
 
 @end
