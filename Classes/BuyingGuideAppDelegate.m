@@ -42,6 +42,13 @@ static NSString* kAnimationID = @"SplashAnimation";
 	}
 }
 
+
+- (void) dataUpdateDidFinish {
+	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
+}
+
+
+
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -54,21 +61,18 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"]] > UPDATE_INTERVAL	)
 		[self updateData];
+	else
+		[self dataUpdateDidFinish];
 	
-	[self addSplashScreen];
+	
 	[FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
 	[window addSubview:[navigationController view]];
+	[self addSplashScreen];
 	[window makeKeyAndVisible];
 }
-
-
-- (void) dataUpdateDidFinish {
-	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
-}
-
 
 -(void) removeSplashScreen{
 	
