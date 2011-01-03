@@ -46,9 +46,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 	}
 }
 
-
-
-
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -264,7 +261,7 @@ bail:
 - (void)updateData {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSDate *lastUpdate = [defaults objectForKey:@"LastUpdate"];
-	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json";
+	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
 		[updateURLDateFormatter setDateFormat:@"ddMMMYYYY"];
