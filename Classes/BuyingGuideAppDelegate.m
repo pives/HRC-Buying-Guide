@@ -51,7 +51,11 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
-	BOOL forceUpdate = NO;
+	
+    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
+    [FlurryAPI setSessionReportsOnCloseEnabled:NO];
+    
+    BOOL forceUpdate = NO;
 	
 	[self loadDataForce:forceUpdate];
 	
@@ -60,8 +64,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	else
 		[self dataUpdateDidFinish];
 	
-	[FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
-    [FlurryAPI setSessionReportsOnCloseEnabled:NO];
+	
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
 	[window addSubview:[navigationController view]];
