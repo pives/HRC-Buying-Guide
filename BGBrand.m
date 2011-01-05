@@ -41,8 +41,9 @@
     [self setPrimitiveName:value];
     [self didChangeValueForKey:@"name"];
 	
-	self.namefirstLetter = [value uppercaseFirstCharacter];
-	self.nameSortFormatted = [value lowercaseString];
+	
+	self.nameSortFormatted = [value stringByRemovingArticlePrefixes];
+	self.namefirstLetter = [self.nameSortFormatted uppercaseFirstCharacter];
 }
 
 - (void)updateAttributesInheritedFromCompanies {

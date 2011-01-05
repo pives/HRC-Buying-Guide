@@ -34,7 +34,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:4];
+		[components setDay:5];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
@@ -54,12 +54,15 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
 	
+	[self addSplashScreen];
+	
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
     
     BOOL forceUpdate = NO;
+	BOOL copyBundleLibary = YES;
 	
-	[self loadDataForce:forceUpdate];
+	[self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
 	
 	NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"];
 	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
@@ -67,22 +70,16 @@ static NSString* kAnimationID = @"SplashAnimation";
 	else
 		[self dataUpdateDidFinish];
 	
-	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-	[window addSubview:[navigationController view]];
-	[self addSplashScreen];
 	[window makeKeyAndVisible];
 }
 
 -(void) removeSplashScreen{
-	
 	[UIView beginAnimations:kAnimationID context:nil];
 	[UIView setAnimationDuration:1.0];
     splashView.alpha = 0;
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
     [UIView commitAnimations];	
-	
 }
 
 -(void) addSplashScreen{
@@ -104,6 +101,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 - (void) dataUpdateDidFinish {
+	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+	[window insertSubview:[navigationController view] belowSubview:self.splashView];
 	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
@@ -292,7 +292,7 @@ bail:
 	[request release];
 }
 
-- (void)loadDataForce:(BOOL)flag{
+- (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary{
 
     NSString* staticDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
 	NSString* appDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
@@ -308,7 +308,7 @@ bail:
     if( flag ){
 		[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"LastUpdate"];
 		[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-        if ( staticDB )
+        if ( staticDB && copyBundleLibrary )
 			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
                                                 toPath:appDB 
                                                  error:nil];
@@ -405,7 +405,7 @@ bail:
 		 Check the error message to determine what the actual problem was.
 		 */
         
-        [self loadDataForce:YES];
+        [self loadDataForceUpdate:YES copyBundleLibrary:YES];
         
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
          
