@@ -38,11 +38,13 @@ static NSString* kAnimationID = @"SplashAnimation";
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		if ( date ) {
-			NSDictionary *defaults = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
+			NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
 			[components release];
-			[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+			[defaults registerDefaults:defaultsDictionary];
 		}
+		[defaults synchronize];
 	}
 }
 
@@ -64,7 +66,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 		[self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
 	else
 		[self dataUpdateDidFinish];
-	
 	
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
@@ -262,6 +263,7 @@ bail:
 	[self saveData];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[self dataUpdateDidFinish];
 }
