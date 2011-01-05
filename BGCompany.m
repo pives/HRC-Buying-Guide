@@ -35,7 +35,7 @@ static const NSArray *BGCompanyInheritedKeys;
 
 + (void)initialize {
 	if ( self == [BGCompany class] ) {
-		BGCompanyInheritedKeys = [[NSArray alloc] initWithObjects:@"includeInIndex", @"rating", @"ratingLevel", nil];
+		BGCompanyInheritedKeys = [[NSArray alloc] initWithObjects:@"includeInIndex", @"rating", @"ratingLevel", @"partner", @"nonResponder", nil];
 	}
 }
 
