@@ -33,7 +33,7 @@
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)loadDataForce:(BOOL)flag;
-- (void)updateData;
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate;
 - (void)addSplashScreen;
 
 @end

@@ -15,7 +15,7 @@
 #import "BGBrand.h"
 #import "BGCompany.h"
 
-#define UPDATE_INTERVAL 604800
+#define UPDATE_INTERVAL 172800 //seconds == 2 days
 
 @interface BuyingGuideAppDelegate ()
 - (void) dataUpdateDidFinish;
@@ -34,7 +34,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:2];
+		[components setDay:4];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
@@ -59,8 +59,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	[self loadDataForce:forceUpdate];
 	
-	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"]] > UPDATE_INTERVAL	)
-		[self updateData];
+	NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"];
+	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
+		[self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
 	else
 		[self dataUpdateDidFinish];
 	
@@ -212,6 +213,15 @@ bail:
 	return NO;
 }
 
+- (void)saveData {
+	NSError *error = nil;
+	[[self managedObjectContext] save:&error];
+	if ( error ) {
+		FJSLog(@"%@", error);
+		error = nil;
+	}
+}
+	
 - (void)updateLoadedData {
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *updateDict = [parser objectWithData:_updateData];
@@ -226,9 +236,14 @@ bail:
 	NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
 	NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
 	
+	
+	
 	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
+	[self saveData];
 	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
+	[self saveData];
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+	[self saveData];
 	
 	NSManagedObjectContext *moc = [self managedObjectContext];
 	NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
@@ -243,11 +258,8 @@ bail:
 		}
 	}
 	
-	NSError *error = nil;
-	[[self managedObjectContext] save:&error];
 	
-	if ( error )
-		FJSLog(@"%@", error);
+	[self saveData];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
 	
@@ -261,9 +273,7 @@ bail:
 	[pool drain];
 }
 
-- (void)updateData {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDate *lastUpdate = [defaults objectForKey:@"LastUpdate"];
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {
 	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];

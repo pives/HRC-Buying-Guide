@@ -263,7 +263,7 @@
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
-		D8793BBC12D0D9AD000095D3 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8793BBB12D0D9AD000095D3 /* storedata.sqlite */; };
+		D8F0430512D403880087341A /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8F0430412D403880087341A /* storedata.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -529,7 +529,7 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
@@ -555,7 +555,7 @@
 		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JSONSync.plist; sourceTree = "<group>"; };
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
-		D8793BBB12D0D9AD000095D3 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		D8F0430412D403880087341A /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,7 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuide.app */,
+				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -930,8 +930,8 @@
 				C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */,
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
+				D8F0430412D403880087341A /* storedata.sqlite */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
-				D8793BBB12D0D9AD000095D3 /* storedata.sqlite */,
 				D8377AA212C243C800998649 /* JSONSync.plist */,
 			);
 			name = "Core Data";
@@ -1224,7 +1224,7 @@
 			);
 			name = "BuyingGuide Dev";
 			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuide.app */;
+			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1344,7 +1344,7 @@
 				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
 				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
-				D8793BBC12D0D9AD000095D3 /* storedata.sqlite in Resources */,
+				D8F0430512D403880087341A /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

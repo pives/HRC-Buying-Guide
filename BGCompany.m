@@ -31,6 +31,22 @@
 @dynamic categories;
 @dynamic nonResponder;
 
+static const NSArray *BGCompanyInheritedKeys;
+
++ (void)initialize {
+	if ( self == [BGCompany class] ) {
+		BGCompanyInheritedKeys = [[NSArray alloc] initWithObjects:@"includeInIndex", @"rating", @"ratingLevel", nil];
+	}
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key {
+	[super setValue:value forKey:key];
+	if ( [BGCompanyInheritedKeys containsObject:key] ) {
+		for ( BGBrand *brand in self.brands ) {
+			[brand setValue:value forKey:key];
+		}
+	}
+}
 
 - (void)setName:(NSString *)value 
 {
