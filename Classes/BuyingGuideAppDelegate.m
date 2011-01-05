@@ -246,15 +246,26 @@ bail:
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
 	[self saveData];
 	
-	NSManagedObjectContext *moc = [self managedObjectContext];
-	NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
 	
-	//Need to create brands for companies whose name is the brand
-	//So, find all companies where brands is nil or brand count is 0
-	for ( BGCompany *company in allCompanies ) {
-		if ( !company.brands || ![company.brands count] ) {
-			BGBrand *brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
-			brand.name = company.name;
+	if ( [organizations count] ) {
+		NSManagedObjectContext *moc = [self managedObjectContext];
+		NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
+		NSArray *allBrands = [moc entitiesWithName:@"BGBrand"];
+		
+		NSArray *allBrandNames = [allBrands valueForKey:@"name"];
+		
+		//Need to create brands for all company names
+		//I know there is a convienence method "brandWithName" but a bunch
+		//of tiny fetches are slow.
+		for ( BGCompany *company in allCompanies ) {
+			NSUInteger index = [allBrandNames indexOfObject:company.name];
+			BGBrand *brand = nil;
+			if ( index < [allBrands count] ) {
+				brand = [allBrands objectAtIndex:index];
+			} else {
+				brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
+				brand.name = company.name;
+			}
 			[brand addCompaniesObject:company];
 		}
 	}
@@ -284,7 +295,7 @@ bail:
 		[updateURLDateFormatter release];
 	}
 
-	NSURL *url = [NSURL URLWithString:URLString];
+	NSURL *url = [NSURL URLWithString:URLString];//[[NSBundle  mainBundle] URLForResource:@"TestJSON" withExtension:@"txt"];//
 	
 	_updateData = [[NSMutableData alloc] init];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];

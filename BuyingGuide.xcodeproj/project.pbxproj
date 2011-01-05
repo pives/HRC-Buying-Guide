@@ -263,7 +263,7 @@
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
-		D8B3C23212D49591006F2B47 /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8B3C23112D49591006F2B47 /* storedata.sqlite */; };
+		D8A2A49412D4A7D700EF982E /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A49312D4A7D700EF982E /* storedata.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -555,7 +555,7 @@
 		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JSONSync.plist; sourceTree = "<group>"; };
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
-		D8B3C23112D49591006F2B47 /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		D8A2A49312D4A7D700EF982E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -931,8 +931,8 @@
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
 				C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */,
-				D8B3C23112D49591006F2B47 /* storedata.sqlite */,
 				D8377AA212C243C800998649 /* JSONSync.plist */,
+				D8A2A49312D4A7D700EF982E /* storedata.sqlite */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -1344,7 +1344,7 @@
 				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
 				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
-				D8B3C23212D49591006F2B47 /* storedata.sqlite in Resources */,
+				D8A2A49412D4A7D700EF982E /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
