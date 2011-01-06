@@ -16,6 +16,9 @@
 - (NSString *)primitiveName;
 - (void)setPrimitiveName:(NSString *)value;
 
+- (NSMutableSet*)primitiveCategories;
+- (void)setPrimitiveCategories:(NSMutableSet*)value;
+
 @end
 
 @implementation BGCompany 
@@ -31,6 +34,22 @@
 @dynamic categories;
 @dynamic nonResponder;
 
+static const NSArray *BGCompanyInheritedKeys;
+
++ (void)initialize {
+	if ( self == [BGCompany class] ) {
+		BGCompanyInheritedKeys = [[NSArray alloc] initWithObjects:@"includeInIndex", @"rating", @"ratingLevel", @"partner", @"nonResponder", nil];
+	}
+}
+
+- (void)setValue:(id)value forKey:(NSString *)key {
+	[super setValue:value forKey:key];
+	if ( [BGCompanyInheritedKeys containsObject:key] ) {
+		for ( BGBrand *brand in self.brands ) {
+			[brand setValue:value forKey:key];
+		}
+	}
+}
 
 - (void)setName:(NSString *)value 
 {
@@ -40,5 +59,61 @@
 	
 	self.namefirstLetter = [value uppercaseFirstCharacter];
 }
+
+
+#pragma mark Categories
+
+- (void)syncCategories {
+	[self removeCategories:self.categories];
+	for (BGBrand *brand in self.brands) {
+		if ( ![brand.categories isSubsetOfSet:self.categories] )
+			[self addCategories:brand.categories];
+	}
+}
+
+- (void)updateCompanyBrandsWithCategory:(BGCategory *)category {
+	for (BGBrand *brand in self.brands) {
+		if ( [brand.isCompanyName boolValue] ) {
+			NSSet *brandCategories = brand.categories;
+			if ( ![brandCategories containsObject:category] ) {
+				[brand removeCategories:brandCategories];
+				[brand addCategoriesObject:category];
+			}
+		}
+	}
+}
+
+
+- (void)addCategoriesObject:(BGCategory *)value 
+{    
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    
+    [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveCategories] addObject:value];
+    [self didChangeValueForKey:@"categories" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    
+    [changedObjects release];
+	
+	[self updateCompanyBrandsWithCategory:value];
+}
+
+- (void)removeCategoriesObject:(BGCategory *)value 
+{
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    
+    [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveCategories] removeObject:value];
+    [self didChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    
+    [changedObjects release];
+	
+	[self updateCompanyBrandsWithCategory:value];
+}
+
+
+
+
+
+
 
 @end

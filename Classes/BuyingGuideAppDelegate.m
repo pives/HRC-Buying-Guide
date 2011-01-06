@@ -15,7 +15,7 @@
 #import "BGBrand.h"
 #import "BGCompany.h"
 
-#define UPDATE_INTERVAL 604800 //seconds
+#define UPDATE_INTERVAL 172800 //seconds == 2 days
 
 @interface BuyingGuideAppDelegate ()
 - (void) dataUpdateDidFinish;
@@ -34,15 +34,17 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:2];
+		[components setDay:5];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		if ( date ) {
-			NSDictionary *defaults = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
+			NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
 			[components release];
-			[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+			[defaults registerDefaults:defaultsDictionary];
 		}
+		[defaults synchronize];
 	}
 }
 
@@ -52,35 +54,32 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
 	
+	[self addSplashScreen];
+	
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     [FlurryAPI setSessionReportsOnCloseEnabled:NO];
     
     BOOL forceUpdate = NO;
+	BOOL copyBundleLibary = YES;
 	
-	[self loadDataForce:forceUpdate];
+	[self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
 	
-	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"]] > UPDATE_INTERVAL	)
-		[self updateData];
+	NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"];
+	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
+		[self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
 	else
 		[self dataUpdateDidFinish];
 	
-	
-	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-	[window addSubview:[navigationController view]];
-	[self addSplashScreen];
 	[window makeKeyAndVisible];
 }
 
 -(void) removeSplashScreen{
-	
 	[UIView beginAnimations:kAnimationID context:nil];
 	[UIView setAnimationDuration:1.0];
     splashView.alpha = 0;
     [UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
     [UIView commitAnimations];	
-	
 }
 
 -(void) addSplashScreen{
@@ -102,6 +101,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 - (void) dataUpdateDidFinish {
+	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+	[window insertSubview:[navigationController view] belowSubview:self.splashView];
 	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
@@ -212,6 +214,15 @@ bail:
 	return NO;
 }
 
+- (void)saveData {
+	NSError *error = nil;
+	[[self managedObjectContext] save:&error];
+	if ( error ) {
+		FJSLog(@"%@", error);
+		error = nil;
+	}
+}
+	
 - (void)updateLoadedData {
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *updateDict = [parser objectWithData:_updateData];
@@ -226,30 +237,44 @@ bail:
 	NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
 	NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
 	
+	
+	
 	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
+	[self saveData];
 	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
+	[self saveData];
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+	[self saveData];
 	
-	NSManagedObjectContext *moc = [self managedObjectContext];
-	NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
 	
-	//Need to create brands for companies whose name is the brand
-	//So, find all companies where brands is nil or brand count is 0
-	for ( BGCompany *company in allCompanies ) {
-		if ( !company.brands || ![company.brands count] ) {
-			BGBrand *brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
-			brand.name = company.name;
+	if ( [organizations count] ) {
+		NSManagedObjectContext *moc = [self managedObjectContext];
+		NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
+		NSArray *allBrands = [moc entitiesWithName:@"BGBrand"];
+		
+		NSArray *allBrandNames = [allBrands valueForKey:@"name"];
+		
+		//Need to create brands for all company names
+		//I know there is a convienence method "brandWithName" but a bunch
+		//of tiny fetches are slow.
+		for ( BGCompany *company in allCompanies ) {
+			NSUInteger index = [allBrandNames indexOfObject:company.name];
+			BGBrand *brand = nil;
+			if ( index < [allBrands count] ) {
+				brand = [allBrands objectAtIndex:index];
+			} else {
+				brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
+				brand.name = company.name;
+			}
 			[brand addCompaniesObject:company];
 		}
 	}
 	
-	NSError *error = nil;
-	[[self managedObjectContext] save:&error];
 	
-	if ( error )
-		FJSLog(@"%@", error);
+	[self saveData];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[self dataUpdateDidFinish];
 }
@@ -261,9 +286,7 @@ bail:
 	[pool drain];
 }
 
-- (void)updateData {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDate *lastUpdate = [defaults objectForKey:@"LastUpdate"];
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {
 	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
@@ -272,7 +295,7 @@ bail:
 		[updateURLDateFormatter release];
 	}
 
-	NSURL *url = [NSURL URLWithString:URLString];
+	NSURL *url = [NSURL URLWithString:URLString];//[[NSBundle  mainBundle] URLForResource:@"TestJSON" withExtension:@"txt"];//
 	
 	_updateData = [[NSMutableData alloc] init];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
@@ -280,7 +303,7 @@ bail:
 	[request release];
 }
 
-- (void)loadDataForce:(BOOL)flag{
+- (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary{
 
     NSString* staticDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
 	NSString* appDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
@@ -296,7 +319,7 @@ bail:
     if( flag ){
 		[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"LastUpdate"];
 		[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-        if ( staticDB )
+        if ( staticDB && copyBundleLibrary )
 			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
                                                 toPath:appDB 
                                                  error:nil];
@@ -393,7 +416,7 @@ bail:
 		 Check the error message to determine what the actual problem was.
 		 */
         
-        [self loadDataForce:YES];
+        [self loadDataForceUpdate:YES copyBundleLibrary:YES];
         
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
          

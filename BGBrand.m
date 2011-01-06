@@ -15,8 +15,12 @@
 
 - (NSString *)primitiveName;
 - (void)setPrimitiveName:(NSString *)value;
+
 - (NSMutableSet*)primitiveCompanies;
 - (void)setPrimitiveCompanies:(NSMutableSet*)value;
+
+- (NSMutableSet*)primitiveCategories;
+- (void)setPrimitiveCategories:(NSMutableSet*)value;
 
 @end
 
@@ -41,15 +45,15 @@
     [self setPrimitiveName:value];
     [self didChangeValueForKey:@"name"];
 	
-	self.namefirstLetter = [value uppercaseFirstCharacter];
-	self.nameSortFormatted = [value lowercaseString];
+	
+	self.nameSortFormatted = [value stringByRemovingArticlePrefixes];
+	self.namefirstLetter = [self.nameSortFormatted uppercaseFirstCharacter];
 }
 
 - (void)updateAttributesInheritedFromCompanies {
 	BGCompany *company = [self.companies anyObject];
 	if ( company ) {
 		[company addCategories:self.categories];
-		[self addCategories:company.categories];
 		self.rating = company.rating;
 		self.ratingLevel = company.ratingLevel;
 		self.partner = company.partner;
@@ -58,6 +62,11 @@
 		
 		if ( [self.name isEqualToString:company.name] )
 			self.isCompanyName = [NSNumber numberWithBool:YES];
+		
+		if ( [self.isCompanyName boolValue] ) {
+			if ( ![self.categories isSubsetOfSet:company.categories] )
+				[self addCategories:company.categories];
+		}
 	}
 	
 	NSSet *safeCopy = [self.companies copy];
@@ -109,6 +118,40 @@
 }
 
 
+#pragma mark Categories
 
+- (void)syncCategories {
+	for ( BGCompany *company in self.companies ) {
+		[company syncCategories];
+	}
+}
+
+- (void)addCategoriesObject:(BGCategory *)value 
+{   
+	[self removeCategories:self.categories];
+	
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    
+    [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    [[self primitiveCategories] addObject:value];
+    [self didChangeValueForKey:@"categories" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
+    
+    [changedObjects release];
+	
+	[self syncCategories];
+}
+
+- (void)removeCategoriesObject:(BGCategory *)value 
+{
+    NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    
+    [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    [[self primitiveCategories] removeObject:value];
+    [self didChangeValueForKey:@"categories" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
+    
+    [changedObjects release];
+	
+	[self syncCategories];
+}
 
 @end

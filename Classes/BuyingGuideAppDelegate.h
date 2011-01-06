@@ -32,8 +32,8 @@
 @property(nonatomic,retain)UIView *splashView;
 
 - (NSString *)applicationDocumentsDirectory;
-- (void)loadDataForce:(BOOL)flag;
-- (void)updateData;
+- (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary;
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate;
 - (void)addSplashScreen;
 
 @end

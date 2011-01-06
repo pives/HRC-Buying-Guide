@@ -31,6 +31,8 @@
 @property (nonatomic, retain) NSSet* categories;
 @property (nonatomic, retain) NSNumber* nonResponder;
 
+- (void)syncCategories;
+
 @end
 
 
