@@ -297,6 +297,11 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
      */
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSNumber *yesNumber = [NSNumber numberWithBool:YES];
+
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"includeInIndex == %@", yesNumber]];
+
 	// Edit the entity name as appropriate.
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGBrand" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
