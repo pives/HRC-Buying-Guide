@@ -148,6 +148,10 @@ static CGPoint partnerImageOrigin = {2,34};
         self.nameLabel.font = [UIFont italicSystemFontOfSize:17];
         self.scoreLabel.font = [UIFont italicSystemFontOfSize:17];
         
+    }else{
+        
+        self.nameLabel.font = [UIFont boldSystemFontOfSize:17];
+        self.scoreLabel.font = [UIFont boldSystemFontOfSize:17];
     }    
 	
 	UIColor* color; 
