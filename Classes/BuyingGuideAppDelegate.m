@@ -15,7 +15,7 @@
 #import "BGBrand.h"
 #import "BGCompany.h"
 
-#define UPDATE_INTERVAL 604800
+#define UPDATE_INTERVAL 604800 //seconds
 
 @interface BuyingGuideAppDelegate ()
 - (void) dataUpdateDidFinish;
