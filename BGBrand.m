@@ -128,8 +128,6 @@
 
 - (void)addCategoriesObject:(BGCategory *)value 
 {   
-	[self removeCategories:self.categories];
-	
     NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
     
     [self willChangeValueForKey:@"categories" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];

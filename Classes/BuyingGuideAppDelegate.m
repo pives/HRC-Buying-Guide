@@ -36,7 +36,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:5];
+		[components setDay:16];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
@@ -150,33 +150,41 @@ static NSString* kAnimationID = @"SplashAnimation";
 	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
 	[uniqueKeySet removeObject:[NSNull null]];
 	
-	NSArray *entitesToUpdate = [moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet];
-	NSArray *entityUniqueIDs = [entitesToUpdate valueForKey:coreDataKey];
+	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
+	NSMutableArray *entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
 	
-	NSUInteger count = [entitesToUpdate count];
+	NSUInteger count = [entitiesToUpdate count];
 	for ( id JSONObject in JSONObjects ) {
 		NSString *IDString = [JSONObject valueForKey:JSONKey];
 		id ID = nil;
-		if ( uniqueIDFormatter )
+		if ( uniqueIDFormatter && IDString )
 			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:nil];
 		else
 			ID = IDString;
 		
+		
 		id entity = nil;
 		NSInteger index = [entityUniqueIDs indexOfObject:ID];
 		if ( index < count )
-			entity = [entitesToUpdate objectAtIndex:index];
-		else 
+			entity = [entitiesToUpdate objectAtIndex:index];
+		else {
 			entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
+			if ( ID && entity ) {
+				[entitiesToUpdate addObject:entity];
+				[entityUniqueIDs addObject:ID];
+				count++;
+			}
+		}
 		
 		for ( NSDictionary *keyDict in syncDictionaries ) {
 			NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
 			NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
+			
 			id value = nil;
 			id JSONValue = [JSONObject valueForKey:JSONKey];
 			
 			NSFormatter *formatter = ( [[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
-			if ( formatter )
+			if ( formatter && JSONValue )
 				[formatter getObjectValue:&value forString:JSONValue errorDescription:nil];
 			else
 				value = JSONValue;
@@ -211,6 +219,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 		}
 	}
 
+	[entitiesToUpdate release];
+	[entityUniqueIDs release];
+	
 	return YES;
 bail:
 	return NO;
