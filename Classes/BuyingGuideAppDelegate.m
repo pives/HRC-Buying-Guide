@@ -18,7 +18,9 @@
 #define UPDATE_INTERVAL 172800 //seconds == 2 days
 
 @interface BuyingGuideAppDelegate ()
+
 - (void) dataUpdateDidFinish;
+
 @end
 
 @implementation BuyingGuideAppDelegate
@@ -246,7 +248,7 @@ bail:
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
 	[self saveData];
 	
-	
+	/*
 	if ( [organizations count] ) {
 		NSManagedObjectContext *moc = [self managedObjectContext];
 		NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
@@ -269,6 +271,7 @@ bail:
 			[brand addCompaniesObject:company];
 		}
 	}
+     */
 	
 	
 	[self saveData];
