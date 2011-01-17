@@ -12,44 +12,25 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
 		C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */; };
-		C4103F5010B6FAD8004CEC15 /* KeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */; };
 		C4103F5310B6FBBB004CEC15 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4103F5210B6FBBB004CEC15 /* KeyView.xib */; };
-		C4103F5410B6FBBB004CEC15 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4103F5210B6FBBB004CEC15 /* KeyView.xib */; };
-		C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
 		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
-		C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
 		C4128BEA10C86EBF007BB9A8 /* info2small.png in Resources */ = {isa = PBXBuildFile; fileRef = C4128BE810C86EBF007BB9A8 /* info2small.png */; };
-		C41ACB76110E232100942016 /* tweetbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB75110E232100942016 /* tweetbubble.png */; };
 		C41ACB77110E232100942016 /* tweetbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB75110E232100942016 /* tweetbubble.png */; };
-		C41ACB79110E249900942016 /* twittername.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB78110E249900942016 /* twittername.png */; };
 		C41ACB7A110E249900942016 /* twittername.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB78110E249900942016 /* twittername.png */; };
-		C41ACB84110E25AD00942016 /* charCount.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB83110E25AD00942016 /* charCount.png */; };
 		C41ACB85110E25AD00942016 /* charCount.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB83110E25AD00942016 /* charCount.png */; };
-		C41ACB8C110E2C2000942016 /* grayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB8B110E2C2000942016 /* grayButton.png */; };
 		C41ACB8D110E2C2000942016 /* grayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB8B110E2C2000942016 /* grayButton.png */; };
-		C41ACB8F110E2C2C00942016 /* yellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB8E110E2C2C00942016 /* yellowButton.png */; };
 		C41ACB90110E2C2C00942016 /* yellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB8E110E2C2C00942016 /* yellowButton.png */; };
-		C41ACB92110E2E4700942016 /* credentialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB91110E2E4700942016 /* credentialBackground.png */; };
 		C41ACB93110E2E4700942016 /* credentialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C41ACB91110E2E4700942016 /* credentialBackground.png */; };
-		C41ACBD3110E367F00942016 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41ACBD2110E367F00942016 /* LoadingView.m */; };
 		C41ACBD4110E367F00942016 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41ACBD2110E367F00942016 /* LoadingView.m */; };
 		C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
-		C41CCDEF10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
 		C41CD39C10F263E700973374 /* slidernew.png in Resources */ = {isa = PBXBuildFile; fileRef = C41CD39B10F263E700973374 /* slidernew.png */; };
-		C41CD39D10F263E700973374 /* slidernew.png in Resources */ = {isa = PBXBuildFile; fileRef = C41CD39B10F263E700973374 /* slidernew.png */; };
-		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
-		C446CFAD12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */; };
 		C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */; };
-		C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C450242010C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */ = {isa = PBXBuildFile; fileRef = C4541B6910CEE1E5006A29A4 /* Links.html */; };
-		C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */ = {isa = PBXBuildFile; fileRef = C4541B6910CEE1E5006A29A4 /* Links.html */; };
 		C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */; };
 		C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */; };
-		C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */; };
-		C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */; };
 		C460090B11D1A6B500545996 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090A11D1A6B500545996 /* CoreData.framework */; };
 		C460090D11D1A6B500545996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090C11D1A6B500545996 /* CoreGraphics.framework */; };
 		C460090F11D1A6B500545996 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090E11D1A6B500545996 /* CoreLocation.framework */; };
@@ -61,59 +42,23 @@
 		C460091B11D1A6DE00545996 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091A11D1A6DE00545996 /* Security.framework */; };
 		C460091F11D1A70400545996 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091E11D1A70400545996 /* libxml2.dylib */; };
 		C460098B11D1A8FD00545996 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460098A11D1A8FD00545996 /* SystemConfiguration.framework */; };
-		C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D828110C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D827F10C9263500541CF1 /* FJSTableViewColorIndex.m */; };
 		C46D874510CC297600541CF1 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = C46D874310CC297600541CF1 /* slider.png */; };
-		C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
 		C46D874910CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D874710CC29A200541CF1 /* FJSTableViewImageIndex.m */; };
-		C46D884310CC3F2600541CF1 /* BGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* BGCategory.m */; };
 		C46D884410CC3F2600541CF1 /* BGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D884210CC3F2600541CF1 /* BGCategory.m */; };
-		C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C46D8A2810CC60E600541CF1 /* EmailConfused.txt in Resources */ = {isa = PBXBuildFile; fileRef = C46D8A2610CC60E600541CF1 /* EmailConfused.txt */; };
 		C4864DFB10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
-		C4864DFC10BC3BDA0064A126 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864DFA10BC3BDA0064A126 /* info.png */; };
 		C4864E4910BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
-		C4864E4A10BC3DE10064A126 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = C4864E4810BC3DE10064A126 /* info2.png */; };
 		C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
-		C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
-		C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
 		C486574710BD84FD0064A126 /* iphone_bottom-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C486574510BD84FD0064A126 /* iphone_bottom-bar.png */; };
-		C486AF19129C5BC600912219 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF17129C5BC600912219 /* information.png */; };
-		C486AF1A129C5BC600912219 /* information@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF18129C5BC600912219 /* information@2x.png */; };
 		C486AF1B129C5BC600912219 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF17129C5BC600912219 /* information.png */; };
 		C486AF1C129C5BC600912219 /* information@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C486AF18129C5BC600912219 /* information@2x.png */; };
-		C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
 		C48BBBD910C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
-		C48BBBE010C5792900F996C6 /* EmailSad.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBDF10C5792900F996C6 /* EmailSad.txt */; };
 		C48BBBE110C5792900F996C6 /* EmailSad.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBDF10C5792900F996C6 /* EmailSad.txt */; };
 		C492D5AF10BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
-		C492D5B010BAF4490041400B /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C492D5AE10BAF4490041400B /* DebugLog.m */; };
 		C497021910CF45B2000ED22B /* BGBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* BGBrand.m */; };
-		C497021A10CF45B2000ED22B /* BGBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = C497021710CF45B2000ED22B /* BGBrand.m */; };
-		C497025C10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
 		C497025D10CF4A86000ED22B /* Brand+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C497025B10CF4A86000ED22B /* Brand+Extensions.m */; };
 		C49AD08710F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
-		C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C49AD08610F5A1C800B1130E /* brandsButton.png */; };
-		C4A245EF111B46F70015786E /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B5111B46F70015786E /* jQueryInject.txt */; };
-		C4A245F0111B46F70015786E /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B6111B46F70015786E /* jQueryInjectLandscape.txt */; };
-		C4A245F1111B46F70015786E /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A245B7111B46F70015786E /* libOAuth.a */; };
-		C4A245F2111B46F70015786E /* MGTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245CA111B46F70015786E /* MGTwitterEngine.m */; };
-		C4A245F3111B46F70015786E /* MGTwitterHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245CE111B46F70015786E /* MGTwitterHTTPURLConnection.m */; };
-		C4A245F4111B46F70015786E /* MGTwitterLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245D0111B46F70015786E /* MGTwitterLibXMLParser.m */; };
-		C4A245F5111B46F70015786E /* MGTwitterMessagesLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245D2111B46F70015786E /* MGTwitterMessagesLibXMLParser.m */; };
-		C4A245F6111B46F70015786E /* MGTwitterMessagesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245D4111B46F70015786E /* MGTwitterMessagesParser.m */; };
-		C4A245F7111B46F70015786E /* MGTwitterMiscLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245D6111B46F70015786E /* MGTwitterMiscLibXMLParser.m */; };
-		C4A245F8111B46F70015786E /* MGTwitterMiscParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245D8111B46F70015786E /* MGTwitterMiscParser.m */; };
-		C4A245F9111B46F70015786E /* MGTwitterStatusesLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245DC111B46F70015786E /* MGTwitterStatusesLibXMLParser.m */; };
-		C4A245FA111B46F70015786E /* MGTwitterStatusesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245DE111B46F70015786E /* MGTwitterStatusesParser.m */; };
-		C4A245FB111B46F70015786E /* MGTwitterUsersLibXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245E0111B46F70015786E /* MGTwitterUsersLibXMLParser.m */; };
-		C4A245FC111B46F70015786E /* MGTwitterUsersParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245E2111B46F70015786E /* MGTwitterUsersParser.m */; };
-		C4A245FD111B46F70015786E /* MGTwitterXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245E4111B46F70015786E /* MGTwitterXMLParser.m */; };
-		C4A245FE111B46F70015786E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245E6111B46F70015786E /* NSData+Base64.m */; };
-		C4A245FF111B46F70015786E /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245E8111B46F70015786E /* NSString+UUID.m */; };
-		C4A24600111B46F70015786E /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245EB111B46F70015786E /* SA_OAuthTwitterController.m */; };
-		C4A24601111B46F70015786E /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A245ED111B46F70015786E /* SA_OAuthTwitterEngine.m */; };
-		C4A24602111B46F70015786E /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A245EE111B46F70015786E /* twitter_load.png */; };
 		C4A24603111B46F70015786E /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B5111B46F70015786E /* jQueryInject.txt */; };
 		C4A24604111B46F70015786E /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4A245B6111B46F70015786E /* jQueryInjectLandscape.txt */; };
 		C4A24605111B46F70015786E /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A245B7111B46F70015786E /* libOAuth.a */; };
@@ -137,19 +82,6 @@
 		C4AAD3A510B26A8300D393AE /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
 		C4AFF94110B232F000801655 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
 		C4AFF99110B2388600801655 /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
-		C4B8FBE91188BE3600B59CD7 /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B8FBCE1188BE3600B59CD7 /* Connect_iphone.png */; };
-		C4B8FBEA1188BE3600B59CD7 /* FacebookAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBD01188BE3600B59CD7 /* FacebookAgent.m */; };
-		C4B8FBEB1188BE3600B59CD7 /* Logout_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B8FBD11188BE3600B59CD7 /* Logout_iphone.png */; };
-		C4B8FBEC1188BE3600B59CD7 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBDE1188BE3600B59CD7 /* FBConnectGlobal.m */; };
-		C4B8FBED1188BE3600B59CD7 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBDF1188BE3600B59CD7 /* FBDialog.m */; };
-		C4B8FBEE1188BE3600B59CD7 /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE01188BE3600B59CD7 /* FBFeedDialog.m */; };
-		C4B8FBEF1188BE3600B59CD7 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE11188BE3600B59CD7 /* FBLoginButton.m */; };
-		C4B8FBF01188BE3600B59CD7 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE21188BE3600B59CD7 /* FBLoginDialog.m */; };
-		C4B8FBF11188BE3600B59CD7 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE31188BE3600B59CD7 /* FBPermissionDialog.m */; };
-		C4B8FBF21188BE3600B59CD7 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE41188BE3600B59CD7 /* FBRequest.m */; };
-		C4B8FBF31188BE3600B59CD7 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE51188BE3600B59CD7 /* FBSession.m */; };
-		C4B8FBF41188BE3600B59CD7 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE61188BE3600B59CD7 /* FBStreamDialog.m */; };
-		C4B8FBF51188BE3600B59CD7 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE81188BE3600B59CD7 /* FBXMLHandler.m */; };
 		C4B8FBF61188BE3600B59CD7 /* Connect_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B8FBCE1188BE3600B59CD7 /* Connect_iphone.png */; };
 		C4B8FBF71188BE3600B59CD7 /* FacebookAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBD01188BE3600B59CD7 /* FacebookAgent.m */; };
 		C4B8FBF81188BE3600B59CD7 /* Logout_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C4B8FBD11188BE3600B59CD7 /* Logout_iphone.png */; };
@@ -163,66 +95,37 @@
 		C4B8FC001188BE3600B59CD7 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE51188BE3600B59CD7 /* FBSession.m */; };
 		C4B8FC011188BE3600B59CD7 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE61188BE3600B59CD7 /* FBStreamDialog.m */; };
 		C4B8FC021188BE3600B59CD7 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE81188BE3600B59CD7 /* FBXMLHandler.m */; };
-		C4BC980511D82D9F001CCEF7 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC980411D82D9F001CCEF7 /* libFlurry.a */; };
 		C4BC980611D82DA0001CCEF7 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC980411D82D9F001CCEF7 /* libFlurry.a */; };
 		C4C031DA10B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
-		C4C3D084110FA0D700010208 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */; };
 		C4C3D085110FA0D700010208 /* SDNextRunloopProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C3D083110FA0D700010208 /* SDNextRunloopProxy.m */; };
-		C4C9229E12997A57005C12F4 /* 2011-iphone_icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C9229C12997A57005C12F4 /* 2011-iphone_icon-57x57.png */; };
-		C4C9229F12997A57005C12F4 /* 2011-iphone_icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C9229D12997A57005C12F4 /* 2011-iphone_icon-114x114.png */; };
 		C4C922A012997A57005C12F4 /* 2011-iphone_icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C9229C12997A57005C12F4 /* 2011-iphone_icon-57x57.png */; };
 		C4C922A112997A57005C12F4 /* 2011-iphone_icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C9229D12997A57005C12F4 /* 2011-iphone_icon-114x114.png */; };
-		C4C922A412997A9A005C12F4 /* iphone_bottom-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922A312997A9A005C12F4 /* iphone_bottom-bar@2x.png */; };
 		C4C922A512997A9A005C12F4 /* iphone_bottom-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922A312997A9A005C12F4 /* iphone_bottom-bar@2x.png */; };
-		C4C922B012997AC9005C12F4 /* HRC_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922AF12997AC9005C12F4 /* HRC_Icon@2x.png */; };
 		C4C922B112997AC9005C12F4 /* HRC_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922AF12997AC9005C12F4 /* HRC_Icon@2x.png */; };
-		C4C922B512997BC0005C12F4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922B312997BC0005C12F4 /* Default.png */; };
-		C4C922B612997BC0005C12F4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922B412997BC0005C12F4 /* Default@2x.png */; };
 		C4C922B712997BC0005C12F4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922B312997BC0005C12F4 /* Default.png */; };
 		C4C922B812997BC0005C12F4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C922B412997BC0005C12F4 /* Default@2x.png */; };
-		C4CDF79D1108DD4D0036F44F /* FJSTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */; };
-		C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */; };
 		C4CDF79F1108DD4D0036F44F /* FJSTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF79B1108DD4D0036F44F /* FJSTweetViewController.m */; };
 		C4CDF7A01108DD4D0036F44F /* FJSTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF79C1108DD4D0036F44F /* FJSTweetViewController.xib */; };
-		C4CDF7A51108DD670036F44F /* FJSTwitterLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */; };
-		C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
 		C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7A31108DD670036F44F /* FJSTwitterLoginController.m */; };
 		C4CDF7A81108DD670036F44F /* FJSTwitterLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7A41108DD670036F44F /* FJSTwitterLoginController.xib */; };
-		C4CDF7AE1108E20B0036F44F /* check_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AB1108E20B0036F44F /* check_down.png */; };
-		C4CDF7AF1108E20B0036F44F /* check_no.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AC1108E20B0036F44F /* check_no.png */; };
-		C4CDF7B01108E20B0036F44F /* check_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AD1108E20B0036F44F /* check_yes.png */; };
 		C4CDF7B11108E20B0036F44F /* check_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AB1108E20B0036F44F /* check_down.png */; };
 		C4CDF7B21108E20B0036F44F /* check_no.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AC1108E20B0036F44F /* check_no.png */; };
 		C4CDF7B31108E20B0036F44F /* check_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CDF7AD1108E20B0036F44F /* check_yes.png */; };
-		C4CDF7DC1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7DB1108E8DD0036F44F /* UIAlertViewHelper.m */; };
 		C4CDF7DD1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF7DB1108E8DD0036F44F /* UIAlertViewHelper.m */; };
-		C4CDF83C1108F4680036F44F /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF83B1108F4680036F44F /* SFHFKeychainUtils.m */; };
 		C4CDF83D1108F4680036F44F /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF83B1108F4680036F44F /* SFHFKeychainUtils.m */; };
-		C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
 		C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
-		C4CDFA15110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */; };
 		C4CDFA16110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
-		C4EFE68B10DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
-		C4EFE68C10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
 		C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
-		C4EFE69710E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
 		C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */; };
-		C4EFE6AC10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */; };
 		C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */; };
-		C4EFE6B010E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */; };
 		C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
-		C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
 		C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
-		C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
 		C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */; };
-		C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */; };
-		C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
-		C4F31CE210C42089004DF94F /* EmailHappy.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* EmailHappy.txt */; };
 		C4F31CE310C42089004DF94F /* EmailHappy.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F31CE110C42089004DF94F /* EmailHappy.txt */; };
 		C4F31E5E10C431E4004DF94F /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
 		C4FA187810B2F4CE0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
@@ -233,33 +136,10 @@
 		C4FA193610B30C180031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
 		C4FA193710B30C180031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1C7610B389EB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
-		C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA187710B2F4CE0031303E /* CompanyViewController.xib */; };
-		C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1C7510B389EB0031303E /* PageView.xib */; };
-		C4FA1D5C10B45DBB0031303E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		C4FA1D5D10B45DBB0031303E /* BuyingGuideAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* BuyingGuideAppDelegate.m */; };
-		C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
-		C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
-		C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
-		C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
-		C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF73710B1FE8E00801655 /* BuyingGuide.xcdatamodel */; };
-		C4FA1D6610B45DBB0031303E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF94010B232F000801655 /* MainViewController.m */; };
-		C4FA1D6710B45DBB0031303E /* UIBarButtonItem+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF99010B2388600801655 /* UIBarButtonItem+extensions.m */; };
-		C4FA1D6810B45DBB0031303E /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
-		C4FA1D6A10B45DBB0031303E /* FilteredCompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAD3A410B26A8300D393AE /* FilteredCompaniesTableViewController.m */; };
-		C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187610B2F4CE0031303E /* CompanyViewController.m */; };
-		C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA187C10B2F5050031303E /* CompanyScoreCardViewController.m */; };
-		C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA18CB10B308FB0031303E /* Company+Extensions.m */; };
-		C4FA1D6E10B45DBB0031303E /* HRCBrandTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA192F10B30C180031303E /* HRCBrandTableDataSource.m */; };
-		C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193110B30C180031303E /* PagingScrollViewController.m */; };
-		C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA193310B30C180031303E /* PageViewController.m */; };
 		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
 		C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
 		C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
-		C4FA200D10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
-		C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
 		C4FA223210B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
-		C4FA223310B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
 		D83777DE12BFBF4900998649 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D83777BA12BFBE5A00998649 /* libjson.a */; };
 		D837788412C0FF0A00998649 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D837788212C0FF0A00998649 /* SplashViewController.m */; };
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
@@ -533,8 +413,6 @@
 		C4FA193210B30C180031303E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		C4FA193310B30C180031303E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		C4FA1C7510B389EB0031303E /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
-		C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyingGuideDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BuyingGuide-FJS-Info.plist"; path = "../BuyingGuide-FJS-Info.plist"; sourceTree = "<group>"; };
 		C4FA1D8A10B45E770031303E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C4FA200710B4BA570031303E /* UIView-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Extensions.h"; sourceTree = "<group>"; };
 		C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
@@ -584,15 +462,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C4FA1D7110B45DBB0031303E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4A245F1111B46F70015786E /* libOAuth.a in Frameworks */,
-				C4BC980511D82D9F001CCEF7 /* libFlurry.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -600,7 +469,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* BuyingGuide.app */,
-				C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -848,7 +716,6 @@
 				C492D5AD10BAF4490041400B /* DebugLog.h */,
 				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
-				C4FA1D7B10B45DBB0031303E /* BuyingGuide-FJS-Info.plist */,
 				D837788112C0FF0A00998649 /* SplashViewController.h */,
 				D837788212C0FF0A00998649 /* SplashViewController.m */,
 				D837788312C0FF0A00998649 /* SplashViewController.xib */,
@@ -1224,23 +1091,6 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* BuyingGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C4FA1D5410B45DBB0031303E /* BuyingGuide Dev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide Dev" */;
-			buildPhases = (
-				C4FA1D5510B45DBB0031303E /* Resources */,
-				C4FA1D5B10B45DBB0031303E /* Sources */,
-				C4FA1D7110B45DBB0031303E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "BuyingGuide Dev";
-			productName = BuyingGuide;
-			productReference = C4FA1D7910B45DBB0031303E /* BuyingGuideDev.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1268,7 +1118,6 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* BuyingGuide */,
-				C4FA1D5410B45DBB0031303E /* BuyingGuide Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -1362,58 +1211,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C4FA1D5510B45DBB0031303E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4FA1D5610B45DBB0031303E /* MainWindow.xib in Resources */,
-				C4FA1D5910B45DBB0031303E /* CompanyViewController.xib in Resources */,
-				C4FA1D5A10B45DBB0031303E /* PageView.xib in Resources */,
-				C4103F5410B6FBBB004CEC15 /* KeyView.xib in Resources */,
-				C4864DFC10BC3BDA0064A126 /* info.png in Resources */,
-				C4864E4A10BC3DE10064A126 /* info2.png in Resources */,
-				C486574610BD84FD0064A126 /* iphone_bottom-bar.png in Resources */,
-				C4F31C6C10C41703004DF94F /* CompanyScoreCardView.xib in Resources */,
-				C4F31CE210C42089004DF94F /* EmailHappy.txt in Resources */,
-				C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */,
-				C48BBBD810C5791400F996C6 /* EmailIndifferent.txt in Resources */,
-				C48BBBE010C5792900F996C6 /* EmailSad.txt in Resources */,
-				C4128BE910C86EBF007BB9A8 /* info2small.png in Resources */,
-				C46D8A2710CC60E600541CF1 /* EmailConfused.txt in Resources */,
-				C4541B6B10CEE1E5006A29A4 /* Links.html in Resources */,
-				C4541B9B10CEEBCD006A29A4 /* KeyWebView.xib in Resources */,
-				C4EFE68C10DFF61F005180AC /* RootViewController.xib in Resources */,
-				C4EFE95910E135AC005180AC /* CompaniesTableViewController.xib in Resources */,
-				C4EFEB7D10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
-				C41CD39D10F263E700973374 /* slidernew.png in Resources */,
-				C49AD08810F5A1C800B1130E /* brandsButton.png in Resources */,
-				C4CDF79E1108DD4D0036F44F /* FJSTweetViewController.xib in Resources */,
-				C4CDF7A61108DD670036F44F /* FJSTwitterLoginController.xib in Resources */,
-				C4CDF7AE1108E20B0036F44F /* check_down.png in Resources */,
-				C4CDF7AF1108E20B0036F44F /* check_no.png in Resources */,
-				C4CDF7B01108E20B0036F44F /* check_yes.png in Resources */,
-				C41ACB76110E232100942016 /* tweetbubble.png in Resources */,
-				C41ACB79110E249900942016 /* twittername.png in Resources */,
-				C41ACB84110E25AD00942016 /* charCount.png in Resources */,
-				C41ACB8C110E2C2000942016 /* grayButton.png in Resources */,
-				C41ACB8F110E2C2C00942016 /* yellowButton.png in Resources */,
-				C41ACB92110E2E4700942016 /* credentialBackground.png in Resources */,
-				C4A245EF111B46F70015786E /* jQueryInject.txt in Resources */,
-				C4A245F0111B46F70015786E /* jQueryInjectLandscape.txt in Resources */,
-				C4A24602111B46F70015786E /* twitter_load.png in Resources */,
-				C4B8FBE91188BE3600B59CD7 /* Connect_iphone.png in Resources */,
-				C4B8FBEB1188BE3600B59CD7 /* Logout_iphone.png in Resources */,
-				C4C9229E12997A57005C12F4 /* 2011-iphone_icon-57x57.png in Resources */,
-				C4C9229F12997A57005C12F4 /* 2011-iphone_icon-114x114.png in Resources */,
-				C4C922A412997A9A005C12F4 /* iphone_bottom-bar@2x.png in Resources */,
-				C4C922B012997AC9005C12F4 /* HRC_Icon@2x.png in Resources */,
-				C4C922B512997BC0005C12F4 /* Default.png in Resources */,
-				C4C922B612997BC0005C12F4 /* Default@2x.png in Resources */,
-				C486AF19129C5BC600912219 /* information.png in Resources */,
-				C486AF1A129C5BC600912219 /* information@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1496,86 +1293,6 @@
 				D837788412C0FF0A00998649 /* SplashViewController.m in Sources */,
 				D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */,
 				C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4FA1D5B10B45DBB0031303E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4FA1D5C10B45DBB0031303E /* main.m in Sources */,
-				C4FA1D5D10B45DBB0031303E /* BuyingGuideAppDelegate.m in Sources */,
-				C4FA1D5E10B45DBB0031303E /* CategoriesTableViewController.m in Sources */,
-				C4FA1D6110B45DBB0031303E /* NSArray+FJSCoreDataExtensions.m in Sources */,
-				C4FA1D6310B45DBB0031303E /* NSString+extensions.m in Sources */,
-				C4FA1D6410B45DBB0031303E /* CoreDataFunctions.m in Sources */,
-				C4FA1D6510B45DBB0031303E /* BuyingGuide.xcdatamodel in Sources */,
-				C4FA1D6610B45DBB0031303E /* MainViewController.m in Sources */,
-				C4FA1D6710B45DBB0031303E /* UIBarButtonItem+extensions.m in Sources */,
-				C4FA1D6810B45DBB0031303E /* CompaniesTableViewController.m in Sources */,
-				C4FA1D6A10B45DBB0031303E /* FilteredCompaniesTableViewController.m in Sources */,
-				C4FA1D6B10B45DBB0031303E /* CompanyViewController.m in Sources */,
-				C4FA1D6C10B45DBB0031303E /* CompanyScoreCardViewController.m in Sources */,
-				C4FA1D6D10B45DBB0031303E /* Company+Extensions.m in Sources */,
-				C4FA1D6E10B45DBB0031303E /* HRCBrandTableDataSource.m in Sources */,
-				C4FA1D6F10B45DBB0031303E /* PagingScrollViewController.m in Sources */,
-				C4FA1D7010B45DBB0031303E /* PageViewController.m in Sources */,
-				C4FA200D10B4BA570031303E /* UIColor+extensions.m in Sources */,
-				C4FA200E10B4BA570031303E /* UIView-Extensions.m in Sources */,
-				C4FA223310B5C81D0031303E /* BGCompany.m in Sources */,
-				C4103F5010B6FAD8004CEC15 /* KeyViewController.m in Sources */,
-				C492D5B010BAF4490041400B /* DebugLog.m in Sources */,
-				C486500010BC55F80064A126 /* HRCBrandTableViewController.m in Sources */,
-				C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */,
-				C412894910C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */,
-				C46D828010C9263500541CF1 /* FJSTableViewColorIndex.m in Sources */,
-				C46D874810CC29A200541CF1 /* FJSTableViewImageIndex.m in Sources */,
-				C46D884310CC3F2600541CF1 /* BGCategory.m in Sources */,
-				C4541B9C10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */,
-				C497021A10CF45B2000ED22B /* BGBrand.m in Sources */,
-				C497025C10CF4A86000ED22B /* Brand+Extensions.m in Sources */,
-				C4EFE68B10DFF61F005180AC /* RootViewController.m in Sources */,
-				C4EFE69710E08749005180AC /* HRCSearchResultsController.m in Sources */,
-				C4EFE6AC10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
-				C4EFE6B010E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
-				C4EFE74810E09878005180AC /* NSObjectHelper.m in Sources */,
-				C41CCDEF10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */,
-				C4CDF79D1108DD4D0036F44F /* FJSTweetViewController.m in Sources */,
-				C4CDF7A51108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
-				C4CDF7DC1108E8DD0036F44F /* UIAlertViewHelper.m in Sources */,
-				C4CDF83C1108F4680036F44F /* SFHFKeychainUtils.m in Sources */,
-				C4CDF895110907170036F44F /* NSError+Alertview.m in Sources */,
-				C4CDFA15110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */,
-				C41ACBD3110E367F00942016 /* LoadingView.m in Sources */,
-				C4C3D084110FA0D700010208 /* SDNextRunloopProxy.m in Sources */,
-				C4A245F2111B46F70015786E /* MGTwitterEngine.m in Sources */,
-				C4A245F3111B46F70015786E /* MGTwitterHTTPURLConnection.m in Sources */,
-				C4A245F4111B46F70015786E /* MGTwitterLibXMLParser.m in Sources */,
-				C4A245F5111B46F70015786E /* MGTwitterMessagesLibXMLParser.m in Sources */,
-				C4A245F6111B46F70015786E /* MGTwitterMessagesParser.m in Sources */,
-				C4A245F7111B46F70015786E /* MGTwitterMiscLibXMLParser.m in Sources */,
-				C4A245F8111B46F70015786E /* MGTwitterMiscParser.m in Sources */,
-				C4A245F9111B46F70015786E /* MGTwitterStatusesLibXMLParser.m in Sources */,
-				C4A245FA111B46F70015786E /* MGTwitterStatusesParser.m in Sources */,
-				C4A245FB111B46F70015786E /* MGTwitterUsersLibXMLParser.m in Sources */,
-				C4A245FC111B46F70015786E /* MGTwitterUsersParser.m in Sources */,
-				C4A245FD111B46F70015786E /* MGTwitterXMLParser.m in Sources */,
-				C4A245FE111B46F70015786E /* NSData+Base64.m in Sources */,
-				C4A245FF111B46F70015786E /* NSString+UUID.m in Sources */,
-				C4A24600111B46F70015786E /* SA_OAuthTwitterController.m in Sources */,
-				C4A24601111B46F70015786E /* SA_OAuthTwitterEngine.m in Sources */,
-				C4B8FBEA1188BE3600B59CD7 /* FacebookAgent.m in Sources */,
-				C4B8FBEC1188BE3600B59CD7 /* FBConnectGlobal.m in Sources */,
-				C4B8FBED1188BE3600B59CD7 /* FBDialog.m in Sources */,
-				C4B8FBEE1188BE3600B59CD7 /* FBFeedDialog.m in Sources */,
-				C4B8FBEF1188BE3600B59CD7 /* FBLoginButton.m in Sources */,
-				C4B8FBF01188BE3600B59CD7 /* FBLoginDialog.m in Sources */,
-				C4B8FBF11188BE3600B59CD7 /* FBPermissionDialog.m in Sources */,
-				C4B8FBF21188BE3600B59CD7 /* FBRequest.m in Sources */,
-				C4B8FBF31188BE3600B59CD7 /* FBSession.m in Sources */,
-				C4B8FBF41188BE3600B59CD7 /* FBStreamDialog.m in Sources */,
-				C4B8FBF51188BE3600B59CD7 /* FBXMLHandler.m in Sources */,
-				C446CFAD12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,92 +1444,6 @@
 			};
 			name = Beta;
 		};
-		C4103F7010B71015004CEC15 /* Beta */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
-				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
-				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
-					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
-					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
-					"\"$(SRCROOT)/FlurryLib\"",
-				);
-				PRODUCT_NAME = BuyingGuide;
-			};
-			name = Beta;
-		};
-		C4FA1D7710B45DBB0031303E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
-				INFOPLIST_FILE = "BuyingGuide-FJS-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
-					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
-					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
-					"\"$(SRCROOT)/FlurryLib\"",
-				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
-				PRODUCT_NAME = BuyingGuideDev;
-			};
-			name = Debug;
-		};
-		C4FA1D7810B45DBB0031303E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
-				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
-				INFOPLIST_FILE = "../BuyingGuide-Info copy.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumer-iPhone/build/Debug-iphoneos\"",
-					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/../OAuthConsumeriPhoneLib/build/Debug\"",
-					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
-					"\"$(SRCROOT)/FlurryLib\"",
-				);
-				PRODUCT_NAME = BuyingGuide;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1832,16 +1463,6 @@
 				C01FCF4F08A954540054247B /* Debug */,
 				C4103F6E10B71015004CEC15 /* Beta */,
 				C01FCF5008A954540054247B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C4FA1D7610B45DBB0031303E /* Build configuration list for PBXNativeTarget "BuyingGuide Dev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C4FA1D7710B45DBB0031303E /* Debug */,
-				C4103F7010B71015004CEC15 /* Beta */,
-				C4FA1D7810B45DBB0031303E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

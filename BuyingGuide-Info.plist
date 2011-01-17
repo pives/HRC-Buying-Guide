@@ -19,21 +19,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>2.0.1</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<false/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 	<key>DonationURL</key>
 	<string>http://www.hrc.org/mobiledonate</string>
 	<key>ScoreCardURLPrefix</key>
-	<string>http://www.hrc.org/issues/workplace/organization_profile.asp?organization_id=</string>
+	<string>http://www.hrc.org/buyersguide2011/profile.html?orgid=</string>
 	<key>ScoreCardURLSuffix</key>
-	<string>&amp;search_id=1&amp;search_type=Quick</string>
+	<string></string>
 	<key>AppStoreID</key>
 	<string>345618414</string>
-	<key>AppStoreIDCompounds</key>
-	<string>336805670</string>
 	<key>CoreDataCrashMessage</key>
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 	<key>AppStoreURL</key>
