@@ -14,6 +14,7 @@
 #import "NSManagedObjectContext+Extensions.h"
 #import "BGBrand.h"
 #import "BGCompany.h"
+#import "MBProgressHUD.h"
 
 #define UPDATE_INTERVAL 172800 //seconds == 2 days
 
@@ -30,13 +31,17 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize window;
 @synthesize navigationController;
 @synthesize splashView;
+@synthesize hud;
+
+
+
 
 
 + (void)initialize {
 	if ( self == [BuyingGuideAppDelegate class] ) {
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:16];
+		[components setDay:14];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
@@ -103,6 +108,11 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 - (void) dataUpdateDidFinish {
+    
+    [self.hud hide:NO];
+    [self.hud removeFromSuperview];
+    self.hud = nil;
+    
 	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
 	[window insertSubview:[navigationController view] belowSubview:self.splashView];
@@ -301,6 +311,14 @@ bail:
 }
 
 - (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {
+    
+    [self.hud hide:NO];
+    [self.hud removeFromSuperview];
+    self.hud = [[MBProgressHUD alloc] initWithWindow:self.window];
+    self.hud.labelText = @"Updating";
+    [self.window addSubview:self.hud];
+    [self.hud show:YES];
+    
 	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
@@ -461,6 +479,9 @@ bail:
 	
     self.splashView = nil;
 	
+    [hud release];
+    hud = nil;
+    
     [_integerFormatter release];
     [_updateData release];
 	[_updateConnection release];

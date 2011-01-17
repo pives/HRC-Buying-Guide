@@ -40,6 +40,8 @@
 		C4274B6C10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
+		C446CFAD12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */; };
+		C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */; };
 		C450241F10C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C450242010C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
 		C4541B6A10CEE1E5006A29A4 /* Links.html in Resources */ = {isa = PBXBuildFile; fileRef = C4541B6910CEE1E5006A29A4 /* Links.html */; };
@@ -335,6 +337,8 @@
 		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
 		C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompaniesTableViewController.m; sourceTree = "<group>"; };
+		C446CFAB12E4B9EB009D3A09 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C450241E10C454C3002D5175 /* HRC_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HRC_Icon.png; sourceTree = "<group>"; };
 		C4541B6910CEE1E5006A29A4 /* Links.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Links.html; sourceTree = "<group>"; };
 		C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyWebView.xib; sourceTree = "<group>"; };
@@ -609,6 +613,7 @@
 				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
 				C412894B10C83107007BB9A8 /* Filtered List View */,
 				C4FA187A10B2F4D30031303E /* Company */,
+				C446CFB012E4B9EE009D3A09 /* Hud */,
 				C4F31C6A10C416C9004DF94F /* Score Card */,
 				C4103F5110B6FADF004CEC15 /* Key */,
 				C4CDF7A11108DD510036F44F /* Twitter */,
@@ -685,6 +690,15 @@
 			);
 			name = "Companies List View";
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C446CFB012E4B9EE009D3A09 /* Hud */ = {
+			isa = PBXGroup;
+			children = (
+				C446CFAB12E4B9EB009D3A09 /* MBProgressHUD.h */,
+				C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */,
+			);
+			name = Hud;
 			sourceTree = "<group>";
 		};
 		C46D828210C9263B00541CF1 /* Custom Controls */ = {
@@ -1481,6 +1495,7 @@
 				C4B8FC021188BE3600B59CD7 /* FBXMLHandler.m in Sources */,
 				D837788412C0FF0A00998649 /* SplashViewController.m in Sources */,
 				D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */,
+				C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1560,6 +1575,7 @@
 				C4B8FBF31188BE3600B59CD7 /* FBSession.m in Sources */,
 				C4B8FBF41188BE3600B59CD7 /* FBStreamDialog.m in Sources */,
 				C4B8FBF51188BE3600B59CD7 /* FBXMLHandler.m in Sources */,
+				C446CFAD12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,8 @@
 //  Copyright Flying Jalapeño Software 2009. All rights reserved.
 //
 
+@class MBProgressHUD;
+
 @interface BuyingGuideAppDelegate : NSObject <UIApplicationDelegate> {
     
     NSManagedObjectModel *managedObjectModel;
@@ -15,6 +17,8 @@
     UIWindow *window;
     UINavigationController *navigationController;
     UIView* splashView;
+    
+    MBProgressHUD* hud;
 	
 	NSURLConnection *_updateConnection;
 	NSMutableData *_updateData;
@@ -22,6 +26,7 @@
 	NSNumberFormatter *_integerFormatter;
 	
 }
+@property (nonatomic, retain) MBProgressHUD *hud;
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
