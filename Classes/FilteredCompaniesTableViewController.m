@@ -69,8 +69,15 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    BGCategory* cat = (BGCategory*)self.filterObject;
+
+    NSString* catName = [cat name];
     
-        
+    NSString* searchString = [NSString stringWithFormat:@"Search in %@", catName];
+    
+    self.searchDisplayController.searchBar.placeholder = searchString;
+    
     //self.title = [filterObject valueForKey:@"name"];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;

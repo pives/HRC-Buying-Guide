@@ -39,6 +39,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 + (void)initialize {
 	if ( self == [BuyingGuideAppDelegate class] ) {
+        
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
 		[components setDay:14];
@@ -52,6 +53,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 			[defaults registerDefaults:defaultsDictionary];
 		}
 		[defaults synchronize];
+         
 	}
 }
 
