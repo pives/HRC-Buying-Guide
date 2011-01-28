@@ -201,6 +201,15 @@ NSString *const BrandsTableCategoryButtonTouchedNotification = @"BrandsTableCate
 	BGBrand *managedObject = (BGBrand*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     /*
+    NSSet* cats = [managedObject categories];
+    
+    for(BGCategory* each in cats){
+        
+        NSLog([each description]);
+    }
+    */
+    
+    /*
     UILabel* brand = (UILabel*)[cell viewWithTag:1000];    
 	brand.text = [managedObject valueForKey:@"name"];
     */

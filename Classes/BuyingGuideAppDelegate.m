@@ -16,7 +16,7 @@
 #import "BGCompany.h"
 #import "MBProgressHUD.h"
 
-#define UPDATE_INTERVAL 172800 //seconds == 2 days
+#define UPDATE_INTERVAL 86400 //seconds == 1 days
 
 @interface BuyingGuideAppDelegate ()
 
@@ -42,18 +42,21 @@ static NSString* kAnimationID = @"SplashAnimation";
         
 		NSDateComponents *components = [[NSDateComponents alloc] init];
 		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:14];
+		[components setDay:16];
 		[components setMonth:1];
 		[components setYear:2011];
 		NSDate *date = [components date];
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		if ( date ) {
-			NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
-			[components release];
-			[defaults registerDefaults:defaultsDictionary];
-		}
-		[defaults synchronize];
-         
+			//NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
+			//[defaults registerDefaults:defaultsDictionary];
+            [defaults setObject:date forKey:@"LastUpdate"];
+            [defaults synchronize];
+
+        }
+        
+        [components release];
+
 	}
 }
 
@@ -63,10 +66,17 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
 	
+    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
+
 	[self addSplashScreen];
 	
-    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
-    [FlurryAPI setSessionReportsOnCloseEnabled:NO];
+    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+
+	[window makeKeyAndVisible];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application{
     
     BOOL forceUpdate = NO;
 	BOOL copyBundleLibary = YES;
@@ -77,9 +87,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
 		[self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
 	else
-		[self dataUpdateDidFinish];
-	
-	[window makeKeyAndVisible];
+		[self dataUpdateDidFinish];    
+    
 }
 
 -(void) removeSplashScreen{
@@ -115,9 +124,7 @@ static NSString* kAnimationID = @"SplashAnimation";
     [self.hud removeFromSuperview];
     self.hud = nil;
     
-	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-	[window insertSubview:[navigationController view] belowSubview:self.splashView];
+    [window insertSubview:[navigationController view] belowSubview:self.splashView];
 	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
@@ -298,9 +305,6 @@ bail:
 	
 	
 	[self saveData];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastUpdate"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[self dataUpdateDidFinish];
 }
