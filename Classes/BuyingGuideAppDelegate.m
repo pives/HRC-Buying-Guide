@@ -16,7 +16,7 @@
 #import "BGCompany.h"
 #import "MBProgressHUD.h"
 
-#define UPDATE_INTERVAL 86400 //seconds == 1 days
+#define UPDATE_INTERVAL 0 //86400 //seconds == 1 days
 
 @interface BuyingGuideAppDelegate ()
 
@@ -33,32 +33,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize splashView;
 @synthesize hud;
 
-
-
-
-
-+ (void)initialize {
-	if ( self == [BuyingGuideAppDelegate class] ) {
-        
-		NSDateComponents *components = [[NSDateComponents alloc] init];
-		[components setCalendar:[NSCalendar currentCalendar]];
-		[components setDay:16];
-		[components setMonth:1];
-		[components setYear:2011];
-		NSDate *date = [components date];
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-		if ( date ) {
-			//NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithObject:date forKey:@"LastUpdate"];
-			//[defaults registerDefaults:defaultsDictionary];
-            [defaults setObject:date forKey:@"LastUpdate"];
-            [defaults synchronize];
-
-        }
-        
-        [components release];
-
-	}
-}
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -82,12 +56,23 @@ static NSString* kAnimationID = @"SplashAnimation";
 	BOOL copyBundleLibary = YES;
 	
 	[self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
-	
-	NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastUpdate"];
-	if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
-		[self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
-	else
-		[self dataUpdateDidFinish];    
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setCalendar:[NSCalendar currentCalendar]];
+    [components setDay:16];
+    [components setMonth:1];
+    [components setYear:2011];
+    NSDate *lastUpdateDate = [components date];
+    
+    if ( date ) {
+        
+        if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
+            [self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
+        else
+            [self dataUpdateDidFinish];            
+    }
+    
+    [components release];
     
 }
 
