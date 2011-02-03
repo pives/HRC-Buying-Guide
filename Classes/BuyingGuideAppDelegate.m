@@ -21,6 +21,7 @@
 @interface BuyingGuideAppDelegate ()
 
 - (void) dataUpdateDidFinish;
+- (void)updateDataWFromLocalJSON;
 
 @end
 
@@ -52,7 +53,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL forceUpdate = YES;
+    BOOL forceUpdate = NO;
 	BOOL copyBundleLibary = NO;
     
 	BOOL loadFromFile = NO;
@@ -204,12 +205,32 @@ static NSString* kAnimationID = @"SplashAnimation";
 		if ( index < count )
 			entity = [entitiesToUpdate objectAtIndex:index];
 		else {
-			entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
-			if ( ID && entity ) {
-				[entitiesToUpdate addObject:entity];
-				[entityUniqueIDs addObject:ID];
-				count++;
-			}
+            
+            NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
+            id secondaryID = nil;
+            if ( secondaryIDFormatter && secondaryIDString )
+                [uniqueIDFormatter getObjectValue:&secondaryID forString:secondaryIDString errorDescription:nil];
+            else
+                ID = IDString;
+            
+            index = [entitySecondaryIDs indexOfObject:secondaryID];
+            if ( index != NSNotFound ){
+                
+                entity = [secondaryEntitiesToUpdate objectAtIndex:index];
+                [entitiesToUpdate addObject:entity];
+                [entityUniqueIDs addObject:ID];
+                count++;
+                
+            }else{
+                
+                entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
+                if ( ID && entity ) {
+                    [entitiesToUpdate addObject:entity];
+                    [entityUniqueIDs addObject:ID];
+                    count++;
+                }
+            }
+                
 		}
 		
 		for ( NSDictionary *keyDict in syncDictionaries ) {
