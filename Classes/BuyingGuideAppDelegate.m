@@ -52,28 +52,41 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL forceUpdate = NO;
-	BOOL copyBundleLibary = YES;
-	
+    BOOL forceUpdate = YES;
+	BOOL copyBundleLibary = NO;
+    
+	BOOL loadFromFile = NO;
+
 	[self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
     
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setCalendar:[NSCalendar currentCalendar]];
-    [components setDay:16];
-    [components setMonth:1];
-    [components setYear:2011];
-    NSDate *lastUpdateDate = [components date];
-    
-    if ( date ) {
+    if(loadFromFile){
         
-        if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL	)
-            [self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
-        else
-            [self dataUpdateDidFinish];            
+        [self updateDataWFromLocalJSON];
+        
+    }else{
+        
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setCalendar:[NSCalendar currentCalendar]];
+        [components setDay:16];
+        [components setMonth:1];
+        [components setYear:2011];
+        NSDate *lastUpdateDate = [components date];
+        
+        if ( lastUpdateDate ) {
+            
+            if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL)
+                [self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
+            else
+                [self dataUpdateDidFinish];            
+        }
+        
+        [components release];
+        
     }
     
-    [components release];
     
+    
+        
 }
 
 -(void) removeSplashScreen{
@@ -156,6 +169,25 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
 	NSMutableArray *entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
+    
+    
+    //use name just in case
+    NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
+    NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
+    NSString *secondaryJSONKey = [secondaryKeyDict valueForKey:@"JSONKey"];
+            
+    
+    
+    
+    NSFormatter *secondaryIDFormatter = ([[secondaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
+    
+    NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
+    [secondaryKeySet removeObject:[NSNull null]];
+    
+    NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
+    NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
+    
+    
 	
 	NSUInteger count = [entitiesToUpdate count];
 	for ( id JSONObject in JSONObjects ) {
@@ -299,6 +331,16 @@ bail:
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[self updateLoadedData];
 	[pool drain];
+}
+
+- (void)updateDataWFromLocalJSON {
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"TestJSON" ofType:@"txt"];	
+    NSMutableData* d = [[NSMutableData alloc] initWithContentsOfFile:path];
+    _updateData = d;
+    
+    [self performSelectorOnMainThread:@selector(updateLoadedData) withObject:nil waitUntilDone:NO];
+
 }
 
 - (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {

@@ -24,6 +24,7 @@
 		C41ACBD4110E367F00942016 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41ACBD2110E367F00942016 /* LoadingView.m */; };
 		C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */; };
 		C41CD39C10F263E700973374 /* slidernew.png in Resources */ = {isa = PBXBuildFile; fileRef = C41CD39B10F263E700973374 /* slidernew.png */; };
+		C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4244AEA12FA653000B466F5 /* TestJSON.txt */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
 		C42864C512E5F031003DE68C /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A49312D4A7D700EF982E /* storedata.sqlite */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
@@ -213,6 +214,7 @@
 		C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociatedObjects.h"; sourceTree = "<group>"; };
 		C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObjects.m"; sourceTree = "<group>"; };
 		C41CD39B10F263E700973374 /* slidernew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slidernew.png; sourceTree = "<group>"; };
+		C4244AEA12FA653000B466F5 /* TestJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJSON.txt; sourceTree = "<group>"; };
 		C4274B6A10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extensions.h"; sourceTree = "<group>"; };
 		C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extensions.m"; sourceTree = "<group>"; };
 		C4340AE210B23D5B0049791D /* CompaniesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompaniesTableViewController.h; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				C4A245B3111B46F70015786E /* Twitter+OAuth */,
 				C4B8FBCD1188BE3600B59CD7 /* FacebookAgent */,
+				C4244AEA12FA653000B466F5 /* TestJSON.txt */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -1208,6 +1211,7 @@
 				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
 				C42864C512E5F031003DE68C /* storedata.sqlite in Resources */,
+				C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

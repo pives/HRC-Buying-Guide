@@ -6,19 +6,19 @@
 	<array>
 		<dict>
 			<key>JSONKey</key>
-			<string>OrgID</string>
-			<key>CoreDataKey</key>
-			<string>ID</string>
-			<key>kind</key>
-			<string>Integer</string>
-		</dict>
-		<dict>
-			<key>JSONKey</key>
 			<string>CommonName</string>
 			<key>CoreDataKey</key>
 			<string>name</string>
 			<key>kind</key>
 			<string>String</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>OrgID</string>
+			<key>CoreDataKey</key>
+			<string>ID</string>
+			<key>kind</key>
+			<string>Integer</string>
 		</dict>
 		<dict>
 			<key>JSONKey</key>
@@ -100,19 +100,19 @@
 	<array>
 		<dict>
 			<key>JSONKey</key>
-			<string>OrgBrandID</string>
-			<key>CoreDataKey</key>
-			<string>ID</string>
-			<key>kind</key>
-			<string>Integer</string>
-		</dict>
-		<dict>
-			<key>JSONKey</key>
 			<string>BrandName</string>
 			<key>CoreDataKey</key>
 			<string>name</string>
 			<key>kind</key>
 			<string>String</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>OrgBrandID</string>
+			<key>CoreDataKey</key>
+			<string>ID</string>
+			<key>kind</key>
+			<string>Integer</string>
 		</dict>
 		<dict>
 			<key>JSONKey</key>
@@ -147,6 +147,14 @@
 			<string>BrandNationalSponsorInd</string>
 			<key>CoreDataKey</key>
 			<string>partner</string>
+			<key>kind</key>
+			<string>Integer</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>InclInBuyersGuideInd</string>
+			<key>CoreDataKey</key>
+			<string>includeInIndex</string>
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>
