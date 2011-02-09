@@ -54,9 +54,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
     BOOL forceUpdate = NO;
-	BOOL copyBundleLibary = NO;
+	BOOL copyBundleLibary = YES;
     
-	BOOL loadFromFile = YES;
+	BOOL loadFromFile = NO;
 
     
     if(loadFromFile){
@@ -416,8 +416,14 @@ bail:
                                                  error:nil];
     }else{
 		
-        //no current DB
-		if(currentAttributes == nil && bundleDB){
+        if(currentBundleID == nil){ //no bundleID, app never launched?
+            
+            [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+													toPath:currentAppDB 
+													 error:nil];
+            
+        }else if(currentAttributes == nil && bundleDB){ //no current DB
 			
 			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
 			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
@@ -425,16 +431,15 @@ bail:
 													 error:nil];
 			
             
-        //if this is a new version of the app
-		}else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){
+        }else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){ //if this is a new version of the app
 			
 			
 			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
 			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
 													toPath:currentAppDB 
 													 error:nil];
-        //If the creation date of the bundle db is newer
-		}else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){
+       
+		}else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){  //If the creation date of the bundle db is newer
 			
 			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
 			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
@@ -444,6 +449,7 @@ bail:
     }
 	
 	[[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
 }
 
