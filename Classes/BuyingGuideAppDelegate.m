@@ -56,9 +56,8 @@ static NSString* kAnimationID = @"SplashAnimation";
     BOOL forceUpdate = NO;
 	BOOL copyBundleLibary = NO;
     
-	BOOL loadFromFile = NO;
+	BOOL loadFromFile = YES;
 
-	[self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
     
     if(loadFromFile){
         
@@ -66,10 +65,12 @@ static NSString* kAnimationID = @"SplashAnimation";
         
     }else{
         
+        [self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
+
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setCalendar:[NSCalendar currentCalendar]];
-        [components setDay:16];
-        [components setMonth:1];
+        [components setDay:2];
+        [components setMonth:2];
         [components setYear:2011];
         NSDate *lastUpdateDate = [components date];
         
@@ -178,8 +179,6 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSString *secondaryJSONKey = [secondaryKeyDict valueForKey:@"JSONKey"];
             
     
-    
-    
     NSFormatter *secondaryIDFormatter = ([[secondaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
     
     NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
@@ -188,6 +187,7 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
     
+    NSString* formatErrorString = nil;
     
 	
 	NSUInteger count = [entitiesToUpdate count];
@@ -195,23 +195,24 @@ static NSString* kAnimationID = @"SplashAnimation";
 		NSString *IDString = [JSONObject valueForKey:JSONKey];
 		id ID = nil;
 		if ( uniqueIDFormatter && IDString )
-			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:nil];
+			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:&formatErrorString];
 		else
 			ID = IDString;
 		
 		
 		id entity = nil;
 		NSInteger index = [entityUniqueIDs indexOfObject:ID];
-		if ( index < count )
+		if ( index != NSNotFound )
 			entity = [entitiesToUpdate objectAtIndex:index];
 		else {
             
             NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
             id secondaryID = nil;
             if ( secondaryIDFormatter && secondaryIDString )
-                [uniqueIDFormatter getObjectValue:&secondaryID forString:secondaryIDString errorDescription:nil];
+                secondaryID = [NSNumber numberWithInt:[secondaryIDString intValue]];
+                //[uniqueIDFormatter getObjectValue:&secondaryID forString:secondaryIDString errorDescription:&formatErrorString];
             else
-                ID = IDString;
+                secondaryID = secondaryIDString;
             
             index = [entitySecondaryIDs indexOfObject:secondaryID];
             if ( index != NSNotFound ){
@@ -381,7 +382,7 @@ bail:
 		[updateURLDateFormatter release];
 	}
 
-	NSURL *url = [NSURL URLWithString:URLString];//[[NSBundle  mainBundle] URLForResource:@"TestJSON" withExtension:@"txt"];//
+	NSURL *url = [NSURL URLWithString:URLString];
 	
 	_updateData = [[NSMutableData alloc] init];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
@@ -391,46 +392,53 @@ bail:
 
 - (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary{
 
-    NSString* staticDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
-	NSString* appDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+    NSString* bundleDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
+	NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
 	
-    NSDictionary* oldAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:staticDB error:nil];
-	NSDictionary* newAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:appDB error:nil];
+    NSDictionary* bundleAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:bundleDB error:nil];
+	NSDictionary* currentAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:currentAppDB error:nil];
+    NSDate* bundleCreationDate = [bundleAttributes objectForKey:NSFileCreationDate];
+    NSDate* currentCreationDate = [currentAttributes objectForKey:NSFileCreationDate];
+    
 
 	NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
 	
-	NSString* oldBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
 	NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
+    NSString* currentBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
+
     
     if( flag ){
 		[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"LastUpdate"];
-		[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-        if ( staticDB && copyBundleLibrary )
-			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
-                                                toPath:appDB 
+		[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+        if ( bundleDB && copyBundleLibrary )
+			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+                                                toPath:currentAppDB 
                                                  error:nil];
     }else{
 		
-		if(newAttributes == nil && staticDB){
+        //no current DB
+		if(currentAttributes == nil && bundleDB){
 			
-			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
-													toPath:appDB 
+			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+													toPath:currentAppDB 
 													 error:nil];
 			
-		}else if(![newBundleID isEqualToString:oldBundleID] && staticDB){
+            
+        //if this is a new version of the app
+		}else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){
 			
 			
-			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
-													toPath:appDB 
+			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+													toPath:currentAppDB 
 													 error:nil];
+        //If the creation date of the bundle db is newer
+		}else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){
 			
-		}else if(![(NSDate*)[oldAttributes objectForKey:NSFileCreationDate] isEqualToDate:(NSDate*)[newAttributes objectForKey:NSFileCreationDate]] && staticDB ){
-			
-			[[NSFileManager defaultManager] removeItemAtPath:appDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:staticDB 
-													toPath:appDB 
+			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+													toPath:currentAppDB 
 													 error:nil];
 		}
     }
