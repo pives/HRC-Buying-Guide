@@ -55,8 +55,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL forceUpdate = YES;
-	BOOL copyBundleLibary = YES;
+    BOOL forceUpdate = NO;
+	BOOL copyBundleLibary = NO;
     
 	BOOL loadFromFile = NO;
 
@@ -86,6 +86,13 @@ static NSString* kAnimationID = @"SplashAnimation";
         [components release];
         
     }
+    
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
+    [[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+
 }
 
 -(void) removeSplashScreen{
@@ -184,31 +191,32 @@ static NSString* kAnimationID = @"SplashAnimation";
                 [moc deleteObject:eachBrand];
                 
             }
+            
+            //each.brands = nil;
         }
+        
+        [self saveData];
+
     }
     
-    /*
+    
     //use name just in case
     NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
     NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
     NSString *secondaryJSONKey = [secondaryKeyDict valueForKey:@"JSONKey"];
             
-    
-    NSFormatter *secondaryIDFormatter = ([[secondaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
-    
     NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
     [secondaryKeySet removeObject:[NSNull null]];
     
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
-    */
     
     NSString* formatErrorString = nil;
-    
 	
-	NSUInteger count = [entitiesToUpdate count];
 	for ( id JSONObject in JSONObjects ) {
 		NSString *IDString = [JSONObject valueForKey:JSONKey];
+        NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
+        
 		id ID = nil;
 		if ( uniqueIDFormatter && IDString )
 			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:&formatErrorString];
@@ -221,31 +229,24 @@ static NSString* kAnimationID = @"SplashAnimation";
 			entity = [entitiesToUpdate objectAtIndex:index];
 		else {
             
-            /*
-            NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
-            id secondaryID = nil;
-            if ( secondaryIDFormatter && secondaryIDString )
-                secondaryID = [NSNumber numberWithInt:[secondaryIDString intValue]];
-                //[uniqueIDFormatter getObjectValue:&secondaryID forString:secondaryIDString errorDescription:&formatErrorString];
-            else
-                secondaryID = secondaryIDString;
-            
+            id secondaryID = secondaryIDString;
+
             index = [entitySecondaryIDs indexOfObject:secondaryID];
             if ( index != NSNotFound ){
                 
                 entity = [secondaryEntitiesToUpdate objectAtIndex:index];
                 [entitiesToUpdate addObject:entity];
                 [entityUniqueIDs addObject:ID];
-                count++;
                 
             }else{
-                */
+                
                 entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
                 if ( ID && entity ) {
                     [entitiesToUpdate addObject:entity];
                     [entityUniqueIDs addObject:ID];
-                    count++;
-                //}
+                    [secondaryEntitiesToUpdate addObject:entity];
+                    [entitySecondaryIDs addObject:secondaryID];
+                }
             }
                 
 		}
@@ -466,10 +467,6 @@ bail:
 													 error:nil];
 		}
     }
-	
-	[[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
 }
 
 /*
