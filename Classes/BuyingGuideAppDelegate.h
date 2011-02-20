@@ -24,6 +24,8 @@
 	NSMutableData *_updateData;
 	
 	NSNumberFormatter *_integerFormatter;
+    
+    NSDate* start;
 	
 }
 @property (nonatomic, retain) MBProgressHUD *hud;
@@ -35,6 +37,9 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property(nonatomic,retain)UIView *splashView;
+
+@property (nonatomic, copy) NSDate *start;
+
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary;

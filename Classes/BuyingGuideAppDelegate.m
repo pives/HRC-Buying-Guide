@@ -33,6 +33,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize navigationController;
 @synthesize splashView;
 @synthesize hud;
+@synthesize start;
+
 
 
 #pragma mark -
@@ -53,12 +55,11 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL forceUpdate = NO;
+    BOOL forceUpdate = YES;
 	BOOL copyBundleLibary = YES;
     
 	BOOL loadFromFile = NO;
 
-    
     if(loadFromFile){
         
         [self updateDataWFromLocalJSON];
@@ -85,10 +86,6 @@ static NSString* kAnimationID = @"SplashAnimation";
         [components release];
         
     }
-    
-    
-    
-        
 }
 
 -(void) removeSplashScreen{
@@ -119,6 +116,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 - (void) dataUpdateDidFinish {
+        
+    NSTimeInterval s = [[NSDate date] timeIntervalSinceDate:self.start];
+    NSLog(@"Time to import: %f", s);
     
     [self.hud hide:NO];
     [self.hud removeFromSuperview];
@@ -173,6 +173,21 @@ static NSString* kAnimationID = @"SplashAnimation";
 	NSMutableArray *entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
     
     
+    if([entityName isEqualToString:@"BGCompany"]){
+        
+        //Delete all brands for any updated company
+        
+        for(BGCompany* each in entitiesToUpdate){
+            
+            for(BGBrand* eachBrand in each.brands){
+                
+                [moc deleteObject:eachBrand];
+                
+            }
+        }
+    }
+    
+    /*
     //use name just in case
     NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
     NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
@@ -186,6 +201,7 @@ static NSString* kAnimationID = @"SplashAnimation";
     
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
+    */
     
     NSString* formatErrorString = nil;
     
@@ -199,13 +215,13 @@ static NSString* kAnimationID = @"SplashAnimation";
 		else
 			ID = IDString;
 		
-		
 		id entity = nil;
 		NSInteger index = [entityUniqueIDs indexOfObject:ID];
 		if ( index != NSNotFound )
 			entity = [entitiesToUpdate objectAtIndex:index];
 		else {
             
+            /*
             NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
             id secondaryID = nil;
             if ( secondaryIDFormatter && secondaryIDString )
@@ -223,13 +239,13 @@ static NSString* kAnimationID = @"SplashAnimation";
                 count++;
                 
             }else{
-                
+                */
                 entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
                 if ( ID && entity ) {
                     [entitiesToUpdate addObject:entity];
                     [entityUniqueIDs addObject:ID];
                     count++;
-                }
+                //}
             }
                 
 		}
@@ -366,6 +382,9 @@ bail:
 }
 
 - (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {
+        
+    self.start = [NSDate date]; 
+    
     
     [self.hud hide:NO];
     [self.hud removeFromSuperview];
@@ -452,6 +471,29 @@ bail:
     [[NSUserDefaults standardUserDefaults] synchronize];
 
 }
+
+/*
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    [fetchRequest release];
+    
+    
+    for (NSManagedObject *managedObject in items) {
+        [_managedObjectContext deleteObject:managedObject];
+        DLog(@"%@ object deleted",entityDescription);
+    }
+    if (![_managedObjectContext save:&error]) {
+        DLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+    
+}
+*/
+
 
 
 #pragma mark -
