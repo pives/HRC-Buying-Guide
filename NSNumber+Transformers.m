@@ -7,14 +7,25 @@
 //
 
 #import "NSNumber+Transformers.h"
-
+#import "BGCompany.h"
 
 @implementation NSNumber (Transformers)
 
 - (NSNumber *)ratingLevelFromRating {
+    
 	NSInteger rating = [self integerValue];
-	NSInteger ratingLevel = (100 - rating)/34;
-	return [NSNumber numberWithInteger:ratingLevel];
+    
+    NSNumber* level;
+    
+    if(rating<46)
+        level = [NSNumber numberWithInt:BAD_COMPANY_RATING];
+    else if(rating<80)
+        level = [NSNumber numberWithInt:OK_COMPANY_RATING];
+    else 
+        level = [NSNumber numberWithInt:GOOD_COMPANY_RATING];
+    
+    return level;
+
 }
 
 
