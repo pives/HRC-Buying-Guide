@@ -42,9 +42,11 @@
 
 
 - (NSString *)applicationDocumentsDirectory;
-- (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary;
+- (void)loadDataBaseCopyFromBundleForce:(BOOL)flag;
 - (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate;
 - (void)addSplashScreen;
+
+- (void)saveData;
 
 @end
 

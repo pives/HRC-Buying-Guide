@@ -55,10 +55,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL forceUpdate = NO;
-	BOOL copyBundleLibary = NO;
-    
-	BOOL loadFromFile = NO;
+    BOOL loadFromFile = NO; //nils out db
+	BOOL forceCopyBundleLibary = NO; //copies the static db first
+    BOOL forceFullDownload = NO; //forces a full data download
 
     if(loadFromFile){
         
@@ -66,19 +65,19 @@ static NSString* kAnimationID = @"SplashAnimation";
         
     }else{
         
-        [self loadDataForceUpdate:forceUpdate copyBundleLibrary:copyBundleLibary];
+        [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
 
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setCalendar:[NSCalendar currentCalendar]];
-        [components setDay:2];
+        [components setDay:21];
         [components setMonth:2];
         [components setYear:2011];
         NSDate *lastUpdateDate = [components date];
         
         if ( lastUpdateDate ) {
             
-            if ( forceUpdate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL)
-                [self updateDataWithLastUpdateDate:(forceUpdate ? nil : lastUpdateDate)];
+            if ( forceFullDownload || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL)
+                [self updateDataWithLastUpdateDate:(forceFullDownload ? nil : lastUpdateDate)];
             else
                 [self dataUpdateDidFinish];            
         }
@@ -176,7 +175,22 @@ static NSString* kAnimationID = @"SplashAnimation";
 	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
 	[uniqueKeySet removeObject:[NSNull null]];
 	
-	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
+    NSFetchRequest* f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
+    [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",coreDataKey , uniqueKeySet]];
+    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"ID" ascending:YES]]];
+    
+    NSError* error = nil;
+    NSMutableArray *entitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
+    
+    if(entitiesToUpdate == nil){
+        
+        NSLog(@"error: %@", [error description]);
+    }
+    
+    [f release];
+    
+	//NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
 	NSMutableArray *entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
     
     
@@ -207,6 +221,23 @@ static NSString* kAnimationID = @"SplashAnimation";
             
     NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
     [secondaryKeySet removeObject:[NSNull null]];
+    
+    /*
+    f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
+    [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",secondaryCoreDataKey , secondaryKeySet]];
+    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"ID" ascending:YES]]];
+    
+    error = nil;
+    NSMutableArray *secondaryEntitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
+    
+    if(secondaryEntitiesToUpdate == nil){
+        
+        NSLog(@"error: %@", [error description]);
+    }
+    
+    [f release];
+    */
     
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
@@ -296,6 +327,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 	[entitiesToUpdate release];
 	[entityUniqueIDs release];
+    [secondaryEntitiesToUpdate release];
+    [entitySecondaryIDs release];
 	
 	return YES;
 bail:
@@ -310,6 +343,76 @@ bail:
 		error = nil;
 	}
 }
+
+- (void)markOrganizationsAsDeletedWithJSON:(NSArray*)JSONObjects{
+    
+    NSManagedObjectContext *moc = [self managedObjectContext];
+
+    NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:@"OrgID"]];
+	[uniqueKeySet removeObject:[NSNull null]];
+
+    NSFetchRequest* f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:@"BGCompany" inManagedObjectContext:moc]];
+    [f setResultType:NSDictionaryResultType];
+    [f setPropertiesToFetch:[NSArray arrayWithObject:@"ID"]];
+    
+    NSError* error = nil;
+    NSArray *allEentities = [moc executeFetchRequest:f error:&error];
+    NSMutableArray* allIDs = [[allEentities valueForKey:@"allObjects"] mutableCopy];
+    [allIDs removeObject:[NSNull null]];
+
+    
+    /*
+    NSMutableArray* allKeysAsNumbers = [NSMutableArray arrayWithCapacity:[uniqueKeySet count]];
+    [uniqueKeySet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+    
+        NSString* key = obj;
+        int intVal = [key intValue];
+        NSNumber* num = [NSNumber numberWithInt:intVal];
+        [allKeysAsNumbers addObject:num];
+        
+    }];
+    
+    
+    [allKeysAsNumbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        [allIDs enumerateObjectsUsingBlock:^(id obj2, NSUInteger idx, BOOL *stop) {
+        
+            if([obj isEqualToNumber:obj2]){
+                
+                NSLog(@"found! %@ %@", [obj description], [obj2 description]);
+
+            }
+   
+        }];
+        
+        if([allIDs containsObject:obj]){
+            
+        }
+        
+    
+    }];
+    */
+    
+    
+	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:@"BGCompany" whereKey:@"ID" isIn:uniqueKeySet] mutableCopy];
+    
+    
+    [entitiesToUpdate enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    
+        BGCompany* c = obj;
+        c.includeInIndex = [NSNumber numberWithBool:NO];
+        
+        [c.brands enumerateObjectsUsingBlock:^(id bobj, BOOL *stop) {
+        
+            BGBrand* b = bobj;
+            b.includeInIndex = [NSNumber numberWithBool:NO];
+            
+        }];
+    
+    }];
+    
+}
 	
 - (void)updateLoadedData {
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -321,10 +424,11 @@ bail:
 	NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
 	NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
 	NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
+
+	NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
 	
 	NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
 	NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
-	
 	
 	
 	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
@@ -333,35 +437,10 @@ bail:
 	[self saveData];
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
 	[self saveData];
-	
-	/*
-	if ( [organizations count] ) {
-		NSManagedObjectContext *moc = [self managedObjectContext];
-		NSArray *allCompanies = [moc entitiesWithName:@"BGCompany"];
-		NSArray *allBrands = [moc entitiesWithName:@"BGBrand"];
-		
-		NSArray *allBrandNames = [allBrands valueForKey:@"name"];
-		
-		//Need to create brands for all company names
-		//I know there is a convienence method "brandWithName" but a bunch
-		//of tiny fetches are slow.
-		for ( BGCompany *company in allCompanies ) {
-			NSUInteger index = [allBrandNames indexOfObject:company.name];
-			BGBrand *brand = nil;
-			if ( index < [allBrands count] ) {
-				brand = [allBrands objectAtIndex:index];
-			} else {
-				brand = [NSEntityDescription insertNewObjectForEntityForName:@"BGBrand" inManagedObjectContext:moc];
-				brand.name = company.name;
-			}
-			[brand addCompaniesObject:company];
-		}
-	}
-     */
-	
-	
-	[self saveData];
-	
+    [self markOrganizationsAsDeletedWithJSON:removed];
+    [self saveData];
+    
+    	
 	[self dataUpdateDidFinish];
 }
 
@@ -374,6 +453,23 @@ bail:
 
 - (void)updateDataWFromLocalJSON {
     
+    /*
+    [managedObjectContext release];
+    managedObjectContext = nil;
+    [persistentStoreCoordinator release];
+    persistentStoreCoordinator = nil;
+    [managedObjectModel release];
+    managedObjectModel = nil;
+    
+    NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+    [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+    
+    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+     
+     */
+    
+       
     NSString* path = [[NSBundle mainBundle] pathForResource:@"TestJSON" ofType:@"txt"];	
     NSMutableData* d = [[NSMutableData alloc] initWithContentsOfFile:path];
     _updateData = d;
@@ -410,7 +506,7 @@ bail:
 	[request release];
 }
 
-- (void)loadDataForceUpdate:(BOOL)flag copyBundleLibrary:(BOOL)copyBundleLibrary{
+- (void)loadDataBaseCopyFromBundleForce:(BOOL)flag{
 
     NSString* bundleDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
 	NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
@@ -427,45 +523,41 @@ bail:
     NSString* currentBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
 
     
-    if( flag ){
-		[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"LastUpdate"];
+    if( flag ){//force the issue
+        
 		[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-        if ( bundleDB && copyBundleLibrary )
-			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
                                                 toPath:currentAppDB 
                                                  error:nil];
-    }else{
-		
-        if(currentBundleID == nil){ //no bundleID, app never launched?
-            
-            [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-													toPath:currentAppDB 
-													 error:nil];
-            
-        }else if(currentAttributes == nil && bundleDB){ //no current DB
-			
-			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-													toPath:currentAppDB 
-													 error:nil];
-			
-            
-        }else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){ //if this is a new version of the app
-			
-			
-			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-													toPath:currentAppDB 
-													 error:nil];
-       
-		}else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){  //If the creation date of the bundle db is newer
-			
-			[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-			[[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-													toPath:currentAppDB 
-													 error:nil];
-		}
+        
+    }else if(currentBundleID == nil){ //no bundleID, app never launched?
+        
+        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+                                                toPath:currentAppDB 
+                                                 error:nil];
+        
+    }else if(currentAttributes == nil && bundleDB){ //no current DB
+        
+        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+                                                toPath:currentAppDB 
+                                                 error:nil];
+        
+        
+    }else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){ //if this is a new version of the app
+        
+        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+                                                toPath:currentAppDB 
+                                                 error:nil];
+        
+    }else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){  //If the creation date of the bundle db is newer
+        
+        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
+                                                toPath:currentAppDB 
+                                                 error:nil];
     }
 }
 
@@ -544,18 +636,9 @@ bail:
 	NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 
-		 Typical reasons for an error here include:
-		 * The persistent store is not accessible
-		 * The schema for the persistent store is incompatible with current managed object model
-		 Check the error message to determine what the actual problem was.
-		 */
         
-        [self loadDataForceUpdate:YES copyBundleLibrary:YES];
+        //looks like we have an old db version, lets just blow it away and grab the static one. no need to migrate, no personal data
+        [self loadDataBaseCopyFromBundleForce:YES];
         
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
          
