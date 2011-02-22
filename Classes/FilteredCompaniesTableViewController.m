@@ -453,7 +453,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			[fetchRequest setEntity:entity];
 			
 			// Set the batch size to a suitable number.
-			//[fetchRequest setFetchBatchSize:20];
+			[fetchRequest setFetchBatchSize:20];
 			//TODO: reenable batchsize?
 			
 			NSFetchedResultsController *aFetchedResultsController;
