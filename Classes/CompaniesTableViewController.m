@@ -92,11 +92,11 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	//self.tableView.tableHeaderView.frame = CGRectMake(0, 0, 320, 44);
 
 	if(fetchedResultsController== nil)
-		[self fetch];
+		[self fetchAndReload];
 }
 
 
-- (void)fetch{
+- (void)fetchAndReload{
 	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
@@ -111,7 +111,9 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 
 	}
-	
+
+    [self.tableView reloadData];
+
 }
 
 
@@ -425,7 +427,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
     [sortDescriptor2 release];
 	[sortDescriptors release];
 	
-	[self fetch];
+	[self fetchAndReload];
 	// Return YES to cause the search result table view to be reloaded.
     return YES;
 }

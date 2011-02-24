@@ -15,6 +15,8 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 
+- (void)fetchAndReload;
+
 @end
 
 

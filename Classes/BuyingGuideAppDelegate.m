@@ -8,6 +8,8 @@
 
 #import "BuyingGuideAppDelegate.h"
 #import "MainViewController.h"
+#import "CompaniesTableViewController.h"
+#import "CategoriesTableViewController.h"
 #import "FlurryAPI.h"
 #import "RootViewController.h"
 #import "JSON.h"
@@ -44,10 +46,8 @@ static NSString* kAnimationID = @"SplashAnimation";
     // Override point for customization after app launch    
 	
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
-
-	[self addSplashScreen];
 	
-    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
 
 	[window makeKeyAndVisible];
@@ -59,6 +59,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 	BOOL forceCopyBundleLibary = NO; //copies the static db first
     BOOL forceFullDownload = NO; //forces a full data download
 
+    [self addSplashScreen];
+    
     if(loadFromFile){
         
         [self updateDataWFromLocalJSON];
@@ -439,6 +441,14 @@ bail:
 	[self saveData];
     [self markOrganizationsAsDeletedWithJSON:removed];
     [self saveData];
+    
+    
+    [self.navigationController popViewControllerAnimated:NO];
+    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+    [rootViewController.categoryView fetchAndReload];
+    [rootViewController.companyView fetchAndReload];
+    [rootViewController loadCategories];
     
     	
 	[self dataUpdateDidFinish];

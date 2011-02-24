@@ -299,7 +299,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 	
 		self.companyView =[[[CompaniesTableViewController alloc] init] autorelease];
 		companyView.managedObjectContext = self.managedObjectContext;
-		[companyView fetch];
+		[companyView fetchAndReload];
 	}
 } 
 

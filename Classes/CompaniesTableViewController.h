@@ -22,7 +22,7 @@
 @property(nonatomic,retain)NSFetchedResultsController *searchResultsController;
 @property(nonatomic,assign)BOOL searching;
 
-- (void)fetch;
+- (void)fetchAndReload;
 
 @end
 
