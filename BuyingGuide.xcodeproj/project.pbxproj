@@ -26,7 +26,6 @@
 		C41CD39C10F263E700973374 /* slidernew.png in Resources */ = {isa = PBXBuildFile; fileRef = C41CD39B10F263E700973374 /* slidernew.png */; };
 		C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4244AEA12FA653000B466F5 /* TestJSON.txt */; };
 		C4274B6D10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4274B6B10C4385D00ADF6EC /* NSManagedObjectContext+Extensions.m */; };
-		C42864C512E5F031003DE68C /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A49312D4A7D700EF982E /* storedata.sqlite */; };
 		C4340AE410B23D5B0049791D /* CompaniesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4340AE310B23D5B0049791D /* CompaniesTableViewController.m */; };
 		C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C446CFAC12E4B9EB009D3A09 /* MBProgressHUD.m */; };
 		C450242010C454C3002D5175 /* HRC_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C450241E10C454C3002D5175 /* HRC_Icon.png */; };
@@ -119,6 +118,7 @@
 		C4CDF83D1108F4680036F44F /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF83B1108F4680036F44F /* SFHFKeychainUtils.m */; };
 		C4CDF896110907170036F44F /* NSError+Alertview.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF894110907170036F44F /* NSError+Alertview.m */; };
 		C4CDFA16110A0C320036F44F /* FJSTweetViewController+HRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDFA14110A0C320036F44F /* FJSTweetViewController+HRC.m */; };
+		C4E9B15D1318430E007547DF /* storedata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A49312D4A7D700EF982E /* storedata.sqlite */; };
 		C4EFE68910DFF61F005180AC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE68710DFF61F005180AC /* RootViewController.m */; };
 		C4EFE68A10DFF61F005180AC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE68810DFF61F005180AC /* RootViewController.xib */; };
 		C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
@@ -1210,8 +1210,8 @@
 				C486AF1C129C5BC600912219 /* information@2x.png in Resources */,
 				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
-				C42864C512E5F031003DE68C /* storedata.sqlite in Resources */,
 				C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */,
+				C4E9B15D1318430E007547DF /* storedata.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

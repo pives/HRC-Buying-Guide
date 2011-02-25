@@ -18,7 +18,7 @@
 #import "BGCompany.h"
 #import "MBProgressHUD.h"
 
-#define UPDATE_INTERVAL 0 //86400 //seconds == 1 days
+#define UPDATE_INTERVAL 86400 //seconds == 1 days
 
 @interface BuyingGuideAppDelegate ()
 
