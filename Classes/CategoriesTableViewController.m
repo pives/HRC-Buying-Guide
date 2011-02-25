@@ -47,6 +47,8 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
 
 - (void)fetchAndReload{
     
+    self.fetchedResultsController = nil;
+    
     NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*

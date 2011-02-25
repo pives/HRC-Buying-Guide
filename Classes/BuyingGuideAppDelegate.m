@@ -174,6 +174,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 	NSFormatter *uniqueIDFormatter = ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
 	
 	NSManagedObjectContext *moc = [self managedObjectContext];
+    [moc setMergePolicy:NSOverwriteMergePolicy];
+    
 	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
 	[uniqueKeySet removeObject:[NSNull null]];
 	
@@ -448,6 +450,7 @@ bail:
 	rootViewController.managedObjectContext = self.managedObjectContext;
     [rootViewController.categoryView fetchAndReload];
     [rootViewController.companyView fetchAndReload];
+    [rootViewController.modeSwitch setSelectedSegmentIndex:0];
     [rootViewController loadCategories];
     
     	

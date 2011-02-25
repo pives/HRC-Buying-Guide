@@ -34,6 +34,7 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 	self.searchResultsController = nil;
     self.cellColors = nil;    
 	[fetchedResultsController release];
@@ -69,10 +70,22 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 	
 }
 
+- (void)resignWithNotification:(NSNotification*)note{
+    
+    [self.searchDisplayController.searchBar resignFirstResponder];
+    [self.searchDisplayController setActive:NO animated:NO];
+    self.searching = NO;
+    self.searchResultsController = nil;
+    
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignWithNotification:) name:UIApplicationWillResignActiveNotification object:nil];
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -98,6 +111,8 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)fetchAndReload{
 	
+    self.fetchedResultsController = nil;
+    
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*

@@ -38,6 +38,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 #pragma mark Memory management
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 	self.ratingFetchedResultsController = nil;
 	self.nameFetchedResultsController = nil;	
 	self.searchResultsController = nil;
@@ -67,8 +69,16 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     return self;
 }
 
+- (void)resignWithNotification:(NSNotification*)note{
+    
+    [self.searchDisplayController.searchBar resignFirstResponder];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignWithNotification:) name:UIApplicationWillResignActiveNotification object:nil];
 
     BGCategory* cat = (BGCategory*)self.filterObject;
 
