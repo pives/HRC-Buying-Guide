@@ -27,4 +27,4 @@
 @end
 
 
-extern NSString *const DidSelectCompanyNotification;
+extern NSString *const DidSelectBrandNotification;

@@ -12,7 +12,7 @@
 #import "KeyViewController.h"
 #import "BGCategory.h"
 #import "FilteredCompaniesViewController.h"
-#import "CompanyViewController.h"
+#import "BrandViewController.h"
 #import "NSObjectHelper.h"
 #import "UIView-Extensions.h"
 
@@ -268,21 +268,21 @@
     
 }
 
-- (void)companySelectedWithNotification:(NSNotification*)note{
-    
-    // Navigation logic may go here -- for example, create and push another view controller.
-    BGCompany* selectedCompany = (BGCompany*)[note object];
-    
-    CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-                                                                                        category:nil]; 
-    
-    detailViewController.view.frame = self.view.bounds;
-    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    
-    
-}
+//- (void)companySelectedWithNotification:(NSNotification*)note{
+//    
+//    // Navigation logic may go here -- for example, create and push another view controller.
+//    BGCompany* selectedCompany = (BGCompany*)[note object];
+//    
+//    BrandViewController *detailViewController = [[BrandViewController alloc] initWithCompany:selectedCompany 
+//                                                                                        category:nil]; 
+//    
+//    detailViewController.view.frame = self.view.bounds;
+//    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [detailViewController release];
+//    
+//    
+//}
 
 #pragma mark -
 #pragma mark Accessors

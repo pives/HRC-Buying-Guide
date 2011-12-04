@@ -11,7 +11,7 @@
 #import "FJSTableViewImageIndex.h"
 
 @class FilteredCompaniesTableViewController;
-@class CompanyViewController;
+@class BrandViewController;
 
 @interface FilteredCompaniesViewController : UIViewController <FJSTableViewImageIndexDelegate>{
     
@@ -20,13 +20,13 @@
     UISegmentedControl* sortControl;
     
     FilteredCompaniesTableViewController* tableController;
-	CompanyViewController* companyController;
+	BrandViewController* companyController;
 
 }
 @property(nonatomic,retain)FJSTableViewImageIndex *index;
 @property(nonatomic,retain)UISegmentedControl *sortControl;
 @property(nonatomic,retain)FilteredCompaniesTableViewController *tableController;
-@property(nonatomic,retain)CompanyViewController *companyController;
+@property(nonatomic,retain)BrandViewController *companyController;
 
 
 - (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;

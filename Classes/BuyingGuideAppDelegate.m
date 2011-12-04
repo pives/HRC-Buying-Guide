@@ -67,7 +67,8 @@ static NSString* kAnimationID = @"SplashAnimation";
         
     }else{
         
-        [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
+        if(!forceFullDownload)
+            [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
 
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setCalendar:[NSCalendar currentCalendar]];
@@ -629,7 +630,20 @@ bail:
     if (managedObjectModel != nil) {
         return managedObjectModel;
     }
+    
+    /*
     managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+    return managedObjectModel;
+    */
+    
+    NSString *momdPath = [[NSBundle mainBundle]
+                          pathForResource:@"BuyingGuide" ofType:@"momd"];
+    
+    NSURL *momdURL = [NSURL fileURLWithPath:momdPath];
+    
+    managedObjectModel = [[NSManagedObjectModel alloc]
+                          initWithContentsOfURL:momdURL];
+    
     return managedObjectModel;
 }
 

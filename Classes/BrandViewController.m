@@ -6,12 +6,11 @@
 //  Copyright 2009 Flying Jalapeño Software. All rights reserved.
 //
 
-#import "CompanyViewController.h"
+#import "BrandViewController.h"
 #import "BGCompany.h"
+#import "BGCategory.h"
 #import "Company+Extensions.h"
 #import "BGBrand.h"
-#import "HRCBrandTableDataSource.h"
-#import "PagingScrollViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "UIColor+extensions.h"
 #import "CompanyScoreCardViewController.h"
@@ -37,15 +36,20 @@ static CGSize partnerImageSize = {14,14};
 
 static CGPoint partnerImageOrigin = {2,34};
 */
-@implementation CompanyViewController
+@implementation BrandViewController
 
 @synthesize company;
-@synthesize nameLabel;
+@synthesize brand;
+@synthesize category;
+@synthesize companyCategories;
+@synthesize brandLabel;
+@synthesize categoryLabel;
 @synthesize scoreLabel;
-@synthesize data;
-@synthesize brands;
+@synthesize companyLabel;
 @synthesize scoreBackgroundColor;
 @synthesize partnerIcon;
+@synthesize categoriesTableView;
+@synthesize findAlternateView;
 @synthesize agent;
 
 
@@ -57,21 +61,26 @@ static CGPoint partnerImageOrigin = {2,34};
 
 - (void)dealloc {
     [agent release], agent = nil;
-    self.brands = nil;
-    self.data = nil;
-    self.nameLabel = nil;
+    self.brandLabel = nil;
+    self.companyLabel = nil;
+    self.companyLabel = nil;
     self.scoreLabel = nil;
+    self.brand = nil;
     self.company = nil;
+    self.category = nil;
+    self.companyCategories = nil;
+    self.categoriesTableView = nil;
+    self.findAlternateView = nil;
     [super dealloc];
 }
 
 
 
-- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
+- (id)initWithBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory{
     
-    if(self = [super initWithNibName:@"CompanyViewController" bundle:nil]){
+    if(self = [super initWithNibName:@"BrandViewController" bundle:nil]){
 		
-		[self setCompany:aCompany category:aCategory];
+		[self setBrand:aBrand category:aCategory];
 		
 		
 		/*
@@ -106,7 +115,6 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 - (void)viewDidUnload {
-	self.brands = nil;
 	[super viewDidUnload];
 }
 
@@ -132,7 +140,6 @@ static CGPoint partnerImageOrigin = {2,34};
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
-    brands.data = self.data;
 }
 
 
@@ -140,17 +147,18 @@ static CGPoint partnerImageOrigin = {2,34};
     
     [super viewWillAppear:animated];
 	
-    self.scoreLabel.text = company.ratingFormatted;
-    self.nameLabel.text = company.name;
+    self.scoreLabel.text = self.company.ratingFormatted;
+    self.brandLabel.text = self.brand.name;
+    self.companyLabel.text = self.company.name;
     
     if([company.nonResponder boolValue] == YES){
         
-        self.nameLabel.font = [UIFont italicSystemFontOfSize:17];
+        self.brandLabel.font = [UIFont italicSystemFontOfSize:17];
         self.scoreLabel.font = [UIFont italicSystemFontOfSize:17];
         
     }else{
         
-        self.nameLabel.font = [UIFont boldSystemFontOfSize:17];
+        self.brandLabel.font = [UIFont boldSystemFontOfSize:17];
         self.scoreLabel.font = [UIFont boldSystemFontOfSize:17];
     }    
 	
@@ -164,10 +172,8 @@ static CGPoint partnerImageOrigin = {2,34};
         color = [UIColor cellRed];
     
 	scoreBackgroundColor.backgroundColor = color;
-	nameLabel.backgroundColor = color;
 	
 	[self layoutPartnerImageAndCompanyLabel];
-    [brands viewWillAppear:animated];
     
 }
 
@@ -182,7 +188,6 @@ static CGPoint partnerImageOrigin = {2,34};
                                              selector:@selector(categorySelectedWithNotification:) 
                                                  name:BrandsTableCategoryButtonTouchedNotification 
                                                object:nil];
-    [brands viewDidAppear:animated];
     
 	
 }
@@ -191,15 +196,12 @@ static CGPoint partnerImageOrigin = {2,34};
 #pragma mark Setup
 
 
-- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory{
+- (void)setBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory{
 	
-	if(self.data==nil){
-		self.data = [[[HRCBrandTableDataSource alloc] initWithCompany:aCompany category:aCategory] autorelease];
-	}else{
-		[data setCompany:aCompany category:aCategory];
-	}
-	
-	self.company = aCompany;
+	self.brand = aBrand;
+	self.company = [[self.brand companies] anyObject];
+    self.category = [[self.brand categories] anyObject];
+    self.companyCategories = [[self.company categories] allObjects];
 }
 
 
@@ -209,12 +211,12 @@ static CGPoint partnerImageOrigin = {2,34};
 	if(![company.partner boolValue]){
 		
 		self.partnerIcon.alpha = 0;
-		self.nameLabel.frame = nameRectNonPartner;
+		self.brandLabel.frame = nameRectNonPartner;
 		
 	}else{
 		
 		self.partnerIcon.alpha = 1;
-		self.nameLabel.frame = nameRectPartner;
+		self.brandLabel.frame = nameRectPartner;
 		/*
 		CGSize nameBoundingBox = [nameLabel.text sizeWithFont:nameLabel.font
 											constrainedToSize:nameLabel.frame.size
@@ -275,6 +277,62 @@ static CGPoint partnerImageOrigin = {2,34};
     
 }
 
+
+
+#pragma mark UITableView Delegate & Datasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.companyCategories.count + 1;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44.0;    
+}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    
+//}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return self.findAlternateView;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [NSString stringWithFormat:@"Other brands owned by %@", self.company.name];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"CellIdentifier";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.row == self.companyCategories.count) {
+        cell.textLabel.text = @"All Brands";
+    } else {
+        BGCategory *cat = [self.companyCategories objectAtIndex:indexPath.row];
+        cell.textLabel.text = cat.name;
+    }
+    
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 
 #pragma mark -

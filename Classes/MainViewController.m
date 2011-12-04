@@ -13,7 +13,7 @@
 #import "BGCategory.h"
 #import "BGCompany.h"
 #import "FilteredCompaniesViewController.h"
-#import "CompanyViewController.h"
+#import "BrandViewController.h"
 #import "UIView-Extensions.h"
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
@@ -26,11 +26,11 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 @synthesize modeSwitch;
 @synthesize managedObjectContext;
 @synthesize companyView;
-@synthesize companyController;
+@synthesize brandController;
 
 
 - (void)dealloc {
-	self.companyController = nil;
+	self.brandController = nil;
     self.companyView = nil;
     self.categoryView = nil;
     [super dealloc];
@@ -54,7 +54,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
                                                   object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self 
-                                                    name:DidSelectCompanyNotification 
+                                                    name:DidSelectBrandNotification 
                                                   object:nil];
     
     
@@ -121,8 +121,8 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(companySelectedWithNotification:) 
-                                                 name:DidSelectCompanyNotification 
+                                             selector:@selector(brandSelectedWithNotification:) 
+                                                 name:DidSelectBrandNotification 
                                                object:nil];
     
     
@@ -263,29 +263,29 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     
 }
 
-- (void)companySelectedWithNotification:(NSNotification*)note{
+- (void)brandSelectedWithNotification:(NSNotification*)note{
     
     // Navigation logic may go here -- for example, create and push another view controller.
-    BGCompany* selectedCompany = (BGCompany*)[note object];
+    BGBrand* selectedBrand = (BGBrand*)[note object];
     
-	if(self.companyController == nil){
-		CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
-																							category:nil]; 
+	if(self.brandController == nil){
+		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand 
+                                                                                      category:nil]; 
 		
 		detailViewController.view.frame = self.view.bounds;		
-		self.companyController = detailViewController;
+		self.brandController = detailViewController;
 		[detailViewController release];
 		
 		
 	}else{
 		
-		[companyController setCompany:selectedCompany 
-							 category:nil];
+		[brandController setBrand:selectedBrand 
+                         category:nil];
 	}
 	
     
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
-    [self.navigationController pushViewController:companyController animated:YES];    
+    [self.navigationController pushViewController:brandController animated:YES];    
     
 }
 

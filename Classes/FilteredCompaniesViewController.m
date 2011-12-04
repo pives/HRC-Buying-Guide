@@ -11,7 +11,7 @@
 #import "BGCategory.h"
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
-#import "CompanyViewController.h"
+#import "BrandViewController.h"
 #import "UIColor+extensions.h"
 
 @implementation FilteredCompaniesViewController
@@ -138,8 +138,8 @@
     [super viewDidAppear:animated];
         
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(companySelectedWithNotification:) 
-                                                 name:DidSelectFilteredCompanyNotification 
+                                             selector:@selector(brandSelectedWithNotification:) 
+                                                 name:DidSelectFilteredBrandNotification 
                                                object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self 
@@ -214,13 +214,13 @@
 
 
 
-- (void)companySelectedWithNotification:(NSNotification*)note{
+- (void)brandSelectedWithNotification:(NSNotification*)note{
     
-    BGCompany* selectedCompany = (BGCompany*)[note object];
+    BGBrand* selectedBrand = (BGBrand*)[note object];
     
 	
 	if(self.companyController == nil){
-		CompanyViewController *detailViewController = [[CompanyViewController alloc] initWithCompany:selectedCompany 
+		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand 
 																							category:(BGCategory*)tableController.filterObject]; 
 		
 		detailViewController.view.frame = self.view.bounds;		
@@ -230,7 +230,7 @@
 		
 	}else{
 		
-		[companyController setCompany:selectedCompany 
+		[companyController setBrand:selectedBrand 
 							 category:(BGCategory*)tableController.filterObject];
 	}
 	

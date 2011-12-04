@@ -19,7 +19,7 @@
 #import "NSManagedObjectContext+Extensions.h"
 #import "Brand+Extensions.h"
 
-NSString *const DidSelectCompanyNotification = @"CompanySelected";
+NSString *const DidSelectBrandNotification = @"DidSelectBrandNotification";
 
 @implementation CompaniesTableViewController
 
@@ -251,8 +251,8 @@ NSString *const DidSelectCompanyNotification = @"CompanySelected";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BGCompany* selectedCompany = (BGCompany*)[[(BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectCompanyNotification object:selectedCompany]; 
+    BGBrand* selectedBrand = (BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectBrandNotification object:selectedBrand]; 
     
     //[self performSelector:@selector(deselectIndexPath:) withObject:indexPath afterDelay:0.25];
     

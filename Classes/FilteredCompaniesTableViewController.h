@@ -58,6 +58,6 @@ typedef enum  {
 @end
 
 
-extern NSString *const DidSelectFilteredCompanyNotification;
+extern NSString *const DidSelectFilteredBrandNotification;
 extern NSString *const FilteredCompanySearchBegan;
 extern NSString *const FilteredCompanySearchEnded;

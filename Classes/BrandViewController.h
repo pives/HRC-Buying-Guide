@@ -11,11 +11,10 @@
 #import "FacebookAgent.h"
 
 @class BGCompany;
-@class HRCBrandTableDataSource;
 @class BGCategory;
-@class PagingScrollViewController;
+@class BGBrand;
 
-@interface CompanyViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate> {
+@interface BrandViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate, UITableViewDelegate, UITableViewDataSource> {
     
     BGCompany* company;
     
@@ -24,26 +23,34 @@
     UIView* scoreBackgroundColor;
     UIImageView* partnerIcon;
     
-    HRCBrandTableDataSource* data;
-    PagingScrollViewController* brands;
     
     FacebookAgent* agent;
 
 }
 @property(nonatomic,retain)BGCompany *company;
-@property(nonatomic,assign)IBOutlet UILabel *nameLabel;
+@property(nonatomic,retain)BGBrand *brand;
+@property(nonatomic,retain)BGCategory *category;
+@property(nonatomic,retain)NSArray *companyCategories;
+
+@property(nonatomic,assign)IBOutlet UILabel *brandLabel;
+@property(nonatomic,assign)IBOutlet UILabel *categoryLabel;
 @property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
-@property(nonatomic,retain)HRCBrandTableDataSource *data;
-@property(nonatomic,retain)IBOutlet PagingScrollViewController *brands;
+@property(nonatomic,assign)IBOutlet UILabel *companyLabel;
 @property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
 @property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
+
+@property(nonatomic,retain)IBOutlet UITableView *categoriesTableView;
+@property(nonatomic,retain)IBOutlet UIView *findAlternateView;
+
+
+
 @property(nonatomic,retain)FacebookAgent *agent;
 
 - (IBAction)showScoreCard;
 
-- (id)initWithCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
+- (id)initWithBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory;
 
-- (void)setCompany:(BGCompany*)aCompany category:(BGCategory*)aCategory;
+- (void)setBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory;
 
 - (void)layoutPartnerImageAndCompanyLabel;
 

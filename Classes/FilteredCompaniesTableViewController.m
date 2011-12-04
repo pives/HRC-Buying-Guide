@@ -16,7 +16,7 @@
 #import "NSManagedObjectContext+Extensions.h"
 #import "Brand+Extensions.h"
 
-NSString *const DidSelectFilteredCompanyNotification = @"didSelectFilteredCompany";
+NSString *const DidSelectFilteredBrandNotification = @"DidSelectFilteredBrandNotification";
 NSString *const FilteredCompanySearchBegan = @"FilteredSearchBegan";
 NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
@@ -350,8 +350,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    BGCompany* selectedCompany = (BGCompany*)[[(BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath] companies] anyObject];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredCompanyNotification object:selectedCompany];
+    BGBrand* selectedBrand = (BGBrand*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectFilteredBrandNotification object:selectedBrand];
 	
 }
 
