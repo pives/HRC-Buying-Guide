@@ -81,11 +81,11 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 
-- (id)initWithBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory{
+- (id)initWithBrand:(BGBrand*)aBrand {
     
     if(self = [super initWithNibName:@"BrandViewController" bundle:nil]){
 		
-		[self setBrand:aBrand category:aCategory];
+		[self setBrand:aBrand];
 		
 		
 		/*
@@ -155,6 +155,7 @@ static CGPoint partnerImageOrigin = {2,34};
     self.scoreLabel.text = self.company.ratingFormatted;
     self.brandLabel.text = self.brand.name;
     self.companyLabel.text = self.company.name;
+    self.categoryLabel.text = self.category.name;
     
     if([company.nonResponder boolValue] == YES){
         
@@ -201,9 +202,9 @@ static CGPoint partnerImageOrigin = {2,34};
 #pragma mark Setup
 
 
-- (void)setBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory{
+- (void)setBrand:(BGBrand*)aBrand {
 	
-	self.brand = aBrand;
+	brand = aBrand;
 	self.company = [[self.brand companies] anyObject];
     self.category = [[self.brand categories] anyObject];
     self.companyCategories = [[self.company categories] allObjects];
@@ -216,7 +217,7 @@ static CGPoint partnerImageOrigin = {2,34};
     NSError *error = nil;
     
     req = [NSFetchRequest fetchRequestWithEntityName:@"BGBrand"];
-    [req setPredicate:[NSPredicate predicateWithFormat:@"(%@ IN companies)", self.company]];
+    [req setPredicate:[NSPredicate predicateWithFormat:@"(includeInIndex == %@) AND (%@ IN companies)", [NSNumber numberWithBool:YES], self.company]];
     count = [context countForFetchRequest:req error:&error];
     if (error == nil)
         [self.companyCategoryCounts setObject:[NSNumber numberWithInt:count] forKey:AllCategoriesKey];
@@ -225,7 +226,7 @@ static CGPoint partnerImageOrigin = {2,34};
     for (BGCategory *cat in self.companyCategories) {
         error = nil;
         req = [NSFetchRequest fetchRequestWithEntityName:@"BGBrand"];
-        [req setPredicate:[NSPredicate predicateWithFormat:@"(%@ IN companies) AND (%@ IN categories)", self.company, self.category]];
+        [req setPredicate:[NSPredicate predicateWithFormat:@"(includeInIndex == %@) AND (%@ IN companies) AND (%@ IN categories)", [NSNumber numberWithBool:YES], self.company, cat]];
         count = [context countForFetchRequest:req error:&error];
         if (error == nil)
             [self.companyCategoryCounts setObject:[NSNumber numberWithInt:count] forKey:cat.name];
@@ -287,8 +288,8 @@ static CGPoint partnerImageOrigin = {2,34};
     // Navigation logic may go here -- for example, create and push another view controller.
     BGCategory* selectedCat = (BGCategory*)[note object];
     FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:company.managedObjectContext 
-																												 key:@"categories" 
-																											   value:selectedCat];
+                                                                                                  filteredOnCategory:selectedCat
+                                                                                                   filteredOnCompany:nil];
     detailViewController.view.frame = self.view.bounds;
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:detailViewController animated:YES];
@@ -330,6 +331,10 @@ static CGPoint partnerImageOrigin = {2,34};
     return 44.0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 77.0;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0;    
 }
@@ -343,7 +348,7 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"Other brands owned by %@", self.company.name];
+    return @"Other brands";
 }
 
 
@@ -390,7 +395,21 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BGCategory *cat;
     
+    if (indexPath.row == self.companyCategories.count)
+        cat = nil;
+    else
+        cat = [self.companyCategories objectAtIndex:indexPath.row];
+               
+    FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:company.managedObjectContext 
+                                                                                                  filteredOnCategory:cat
+                                                                                                   filteredOnCompany:self.company];
+    detailViewController.view.frame = self.view.bounds;
+    [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark -

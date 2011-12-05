@@ -49,9 +49,9 @@
 
 - (IBAction)showScoreCard;
 
-- (id)initWithBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory;
+- (id)initWithBrand:(BGBrand*)aBrand;
 
-- (void)setBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory;
+- (void)setBrand:(BGBrand*)aBrand;
 
 - (void)layoutPartnerImageAndCompanyLabel;
 

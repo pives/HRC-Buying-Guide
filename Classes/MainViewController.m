@@ -254,8 +254,8 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     // Navigation logic may go here -- for example, create and push another view controller.
     BGCategory* selectedCat = (BGCategory*)[note object];
     FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.managedObjectContext 
-                                                                                                                           key:@"categories" 
-                                                                                                                         value:selectedCat];
+                                                                                                  filteredOnCategory:selectedCat
+                                                                                                   filteredOnCompany:nil];
     detailViewController.view.frame = self.view.bounds;
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:detailViewController animated:YES];
@@ -269,8 +269,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     BGBrand* selectedBrand = (BGBrand*)[note object];
     
 	if(self.brandController == nil){
-		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand 
-                                                                                      category:nil]; 
+		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
 		
 		detailViewController.view.frame = self.view.bounds;		
 		self.brandController = detailViewController;
@@ -279,8 +278,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 		
 	}else{
 		
-		[brandController setBrand:selectedBrand 
-                         category:nil];
+		[brandController setBrand:selectedBrand];
 	}
 	
     

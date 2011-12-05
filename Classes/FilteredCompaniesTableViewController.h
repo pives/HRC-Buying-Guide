@@ -13,15 +13,14 @@ typedef enum  {
     FilterdTableViewControllerModeAlphabetically = 1
 } FilterdTableViewControllerMode;
 
-
+@class BGCategory;
+@class BGCompany;
 
 @interface FilteredCompaniesTableViewController : UITableViewController {
 
     NSFetchedResultsController *ratingFetchedResultsController;
 	NSFetchedResultsController *nameFetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
-    NSString* filterKey;
-    id filterObject;
     
     NSArray* cellColors;
     
@@ -37,14 +36,14 @@ typedef enum  {
 @property(nonatomic,retain)NSFetchedResultsController *nameFetchedResultsController;
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property(nonatomic,retain)NSString *filterKey;
-@property(nonatomic,retain)id filterObject;
+@property(nonatomic,retain)BGCategory *filterCategory;
+@property(nonatomic,retain)BGCompany *filterCompany;
 @property (nonatomic,retain) NSArray *cellColors;
 @property(nonatomic,assign)FilterdTableViewControllerMode mode;
 @property(nonatomic,retain)NSFetchedResultsController *searchResultsController;
 @property(nonatomic,assign)BOOL searching;
 
-- (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;
+- (id)initWithContext:(NSManagedObjectContext*)context filteredOnCategory:(BGCategory *)category filteredOnCompany:(BGCompany *)company;
 - (void)fetch;
 - (void)reload;
 
@@ -54,6 +53,8 @@ typedef enum  {
 
 - (NSFetchedResultsController*)alphabeticalSearchResultsControllerForString:(NSString*)searchString;
 - (NSFetchedResultsController*)ratingSearchResultsControllerForString:(NSString*)searchString;
+
+- (NSPredicate *)predicate;
 
 @end
 

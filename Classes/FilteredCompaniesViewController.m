@@ -9,6 +9,7 @@
 #import "FilteredCompaniesViewController.h"
 #import "FilteredCompaniesTableViewController.h"
 #import "BGCategory.h"
+#import "BGCompany.h"
 #import "KeyViewController.h"
 #import "UIBarButtonItem+extensions.h"
 #import "BrandViewController.h"
@@ -42,11 +43,11 @@
     
 }
 
-- (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
+- (id)initWithContext:(NSManagedObjectContext*)context filteredOnCategory:(BGCategory *)category filteredOnCompany:(BGCompany *)company {
     
-    if(self = [super init]){
+    if((self = [super init])){
         
-        self.tableController = [[[FilteredCompaniesTableViewController alloc] initWithContext:context key:key value:object] autorelease];
+        self.tableController = [[[FilteredCompaniesTableViewController alloc] initWithContext:context filteredOnCategory:category filteredOnCompany:company] autorelease];
     }
     
     return self;
@@ -88,7 +89,14 @@
                                                                      action:@selector(showKey)];
     
     UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
-    tv.text = [(BGCategory*)[tableController filterObject] name];
+    NSString *titleText;
+    if (self.tableController.filterCompany != nil)
+        titleText = self.tableController.filterCompany.name;
+    else if (self.tableController.filterCategory != nil)
+        titleText = self.tableController.filterCategory.name;
+    else 
+        titleText = @"";
+    tv.text = titleText;
     tv.textAlignment = UITextAlignmentCenter;
     tv.adjustsFontSizeToFitWidth = YES;
     tv.backgroundColor = [UIColor clearColor];
@@ -220,8 +228,7 @@
     
 	
 	if(self.companyController == nil){
-		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand 
-																							category:(BGCategory*)tableController.filterObject]; 
+		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
 		
 		detailViewController.view.frame = self.view.bounds;		
 		self.companyController = detailViewController;
@@ -230,8 +237,7 @@
 		
 	}else{
 		
-		[companyController setBrand:selectedBrand 
-							 category:(BGCategory*)tableController.filterObject];
+		[companyController setBrand:selectedBrand];
 	}
 	
 	

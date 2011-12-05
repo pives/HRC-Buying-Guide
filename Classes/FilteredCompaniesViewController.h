@@ -12,6 +12,8 @@
 
 @class FilteredCompaniesTableViewController;
 @class BrandViewController;
+@class BGCompany;
+@class BGCategory;
 
 @interface FilteredCompaniesViewController : UIViewController <FJSTableViewImageIndexDelegate>{
     
@@ -29,7 +31,7 @@
 @property(nonatomic,retain)BrandViewController *companyController;
 
 
-- (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object;
+- (id)initWithContext:(NSManagedObjectContext*)context filteredOnCategory:(BGCategory *)category filteredOnCompany:(BGCompany *)company;
 - (IBAction)changeSort:(id)sender;
 
 

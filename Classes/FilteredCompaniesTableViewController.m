@@ -8,6 +8,7 @@
 
 #import "FilteredCompaniesTableViewController.h"
 #import "BGCompany.h"
+#import "BGCategory.h"
 #import "Company+Extensions.h"
 #import "UIColor+extensions.h"
 #import "BGBrand.h"
@@ -23,8 +24,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 @implementation FilteredCompaniesTableViewController
 
 @synthesize managedObjectContext;
-@synthesize filterKey;
-@synthesize filterObject;
+@synthesize filterCategory;
+@synthesize filterCompany;
 @synthesize cellColors;
 @synthesize mode;
 @synthesize searchResultsController;
@@ -44,8 +45,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	self.nameFetchedResultsController = nil;	
 	self.searchResultsController = nil;
     self.cellColors = nil;    
-    self.filterKey = nil;
-    self.filterObject = nil;
+    self.filterCategory = nil;
+    self.filterCompany = nil;
 	[managedObjectContext release];
     [super dealloc];
 }
@@ -56,13 +57,13 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	// Relinquish ownership of any cached data, images, etc that aren't in use.
 }
 
-- (id)initWithContext:(NSManagedObjectContext*)context key:(NSString*)key value:(id)object{
+- (id)initWithContext:(NSManagedObjectContext*)context filteredOnCategory:(BGCategory *)category filteredOnCompany:(BGCompany *)company {
     
     if(self = [super initWithNibName:@"CompaniesTableViewController" bundle:nil]){
         
         self.managedObjectContext = context;
-        self.filterKey = key;
-        self.filterObject = object;
+        self.filterCategory = category;
+        self.filterCompany = company;
         self.mode = FilterdTableViewControllerModeRating;
     }
     
@@ -80,11 +81,13 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignWithNotification:) name:UIApplicationWillResignActiveNotification object:nil];
 
-    BGCategory* cat = (BGCategory*)self.filterObject;
-
-    NSString* catName = [cat name];
-    
-    NSString* searchString = [NSString stringWithFormat:@"Search in %@", catName];
+    NSString* searchString;
+    if (self.filterCompany == nil && self.filterCategory != nil)
+        searchString = [NSString stringWithFormat:@"Search in %@", self.filterCategory.name];
+    else if (self.filterCompany != nil && self.filterCategory == nil)
+        searchString = [NSString stringWithFormat:@"Search in %@", self.filterCompany];
+    else 
+        searchString = @"Search";
     
     self.searchDisplayController.searchBar.placeholder = searchString;
     
@@ -406,9 +409,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	if(searching)
 		return searchResultsController;
 	
-	NSNumber *yesNumber = [NSNumber numberWithBool:YES];
-	NSString *predicateString = @"(%@ IN %K)&&(includeInIndex == %@)";
-	
+    
+    
 	if(mode == FilterdTableViewControllerModeAlphabetically){
 
 		if(nameFetchedResultsController==nil){
@@ -431,8 +433,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 										nil];
 			
 			[fetchRequest setSortDescriptors:sortDescriptors];
-			
-			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:predicateString, filterObject, filterKey, yesNumber]];
+            
+            [fetchRequest setPredicate:[self predicate]];
 			
 			// Edit the section name key path and cache name if appropriate.
 			// nil for section name key path means "no sections".
@@ -476,7 +478,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 			
 			[fetchRequest setSortDescriptors:sortDescriptors];
 			
-			[fetchRequest setPredicate:[NSPredicate predicateWithFormat:predicateString, filterObject, filterKey, yesNumber]];
+            [fetchRequest setPredicate:[self predicate]];
 			
 			// Edit the section name key path and cache name if appropriate.
 			// nil for section name key path means "no sections".
@@ -567,8 +569,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 								nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
-		
-	NSPredicate* filterPredicate = [NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey];
+    
+	NSPredicate* filterPredicate = [self predicate];
 	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameSortFormatted contains[c] %@", searchString];
 	
 	NSArray* predicates = [NSArray arrayWithObjects:
@@ -614,8 +616,9 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 								nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
-		
-	NSPredicate* filterPredicate = [NSPredicate predicateWithFormat:@"%@ IN %K", filterObject, filterKey];
+    
+	NSPredicate* filterPredicate = [self predicate];
+    
 	NSPredicate* predicate = [NSPredicate predicateWithFormat:@"nameSortFormatted contains[c] %@", searchString];
 	NSArray* predicates = [NSArray arrayWithObjects:
 						   filterPredicate,
@@ -639,6 +642,25 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 	return [aFetchedResultsController autorelease];
 }
 
+- (NSPredicate *)predicate {
+    
+
+    
+    NSPredicate *pred = nil;
+    if (self.filterCompany != nil) {
+        if (self.filterCategory != nil) 
+            pred = [NSPredicate predicateWithFormat:@"(includeInIndex == %@) AND (%@ IN %K) AND (%@ IN %K)", [NSNumber numberWithBool:YES], self.filterCompany, @"companies", self.filterCategory, @"categories"];
+        else
+            pred = [NSPredicate predicateWithFormat:@"(includeInIndex == %@) AND (%@ IN %K)", [NSNumber numberWithBool:YES], self.filterCompany, @"companies"];
+    } else {
+        if (self.filterCategory != nil) 
+            pred = [NSPredicate predicateWithFormat:@"(includeInIndex == %@) AND (%@ IN %K)", [NSNumber numberWithBool:YES], self.filterCategory, @"categories"];
+        else
+            pred = [NSPredicate predicateWithFormat:@"(includeInIndex == %@)", [NSNumber numberWithBool:YES]];
+    }
+    return pred;
+    
+}
 
 
 @end

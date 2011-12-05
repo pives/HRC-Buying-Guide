@@ -259,8 +259,8 @@
     // Navigation logic may go here -- for example, create and push another view controller.
     BGCategory* selectedCat = (BGCategory*)[note object];
     FilteredCompaniesViewController *detailViewController = [[FilteredCompaniesViewController alloc] initWithContext:self.managedObjectContext 
-																												 key:@"categories" 
-																											   value:selectedCat];
+                                                                                                  filteredOnCategory:selectedCat
+                                                                                                   filteredOnCompany:nil];
     detailViewController.view.frame = self.view.bounds;
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:detailViewController animated:YES];
