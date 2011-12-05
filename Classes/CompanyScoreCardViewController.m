@@ -15,13 +15,13 @@
 
 @synthesize bar;
 @synthesize spinner;
-@synthesize card;
-@synthesize address;
-
+@synthesize tableView;
+@synthesize totalLabel;
 
 - (void)dealloc {
     self.spinner = nil;
-    self.address = nil;
+    self.tableView = nil;
+    self.totalLabel = nil;
     [super dealloc];
 }
 
@@ -39,12 +39,6 @@
     self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
     if (self != nil) {
         self.title = @"Score Card";
-		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
-		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
-        NSString* companyID = [aCompany.ID stringValue];
-        NSString* url = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
-        self.address = [NSURL URLWithString:url];
         
     }
     return self;
@@ -75,7 +69,6 @@
     [items release];
     */
 	
-    [card loadRequest:[NSURLRequest requestWithURL:address]];
                         
 }
 
@@ -85,25 +78,67 @@
     
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    
-    [spinner stopAnimating];
-    
+#pragma mark - UITableView Delegate & Datasource
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65.0;
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-	
-	[spinner stopAnimating];
-	
-	UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"No Internet Connection"
-													  message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again." 
-													 delegate:self 
-											cancelButtonTitle:@"OK" 
-											otherButtonTitles:nil] autorelease];
-	[message show];
-	
-	
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"CellIdentifier";
+    
+    static int IconImageViewTag = 243;
+    static int DescriptionLabelTag = 244;
+    static int RatingLabelTag = 245;
+    
+    UIImageView *iconImageView;
+    UILabel *descriptionLabel;
+    UILabel *ratingLabel;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        
+        iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5.0, 7.0, 30.0, 30.0)];
+        iconImageView.tag = IconImageViewTag;
+        [cell addSubview:iconImageView];
+        
+        descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 7.0, 200.0, 30.0)];
+        descriptionLabel.tag = DescriptionLabelTag;
+        descriptionLabel.numberOfLines = 2;
+        descriptionLabel.font = [UIFont systemFontOfSize:13.0];
+        [cell addSubview:descriptionLabel];
+        
+        ratingLabel = [[UILabel alloc] initWithFrame:CGRectMake(24.0, 7.0, 60.0, 30.0)];
+        ratingLabel.tag = RatingLabelTag;
+        ratingLabel.textColor = [UIColor greenColor];
+        ratingLabel.font = [UIFont systemFontOfSize:15.0];
+        [cell addSubview:ratingLabel];
+    }
+    
+    iconImageView = (UIImageView *)[cell viewWithTag:IconImageViewTag];
+    iconImageView.image = [UIImage imageNamed:@""];
+    
+    descriptionLabel = (UILabel *)[cell viewWithTag:DescriptionLabelTag];
+    descriptionLabel.text = @"";
+    
+    ratingLabel = (UILabel *)[cell viewWithTag:RatingLabelTag];
+    ratingLabel.text = @"";
+    
+    return cell;
+}
+
+#pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
 	
