@@ -19,7 +19,7 @@
 #import "FJSTweetViewController.h"
 #import "FJSTweetViewController+HRC.h"
 #import "DebugLog.h"
-
+#import "LKBadgeView.h"
 
 static CGRect nameRectPartner = {
 	{18+18,0},
@@ -30,6 +30,9 @@ static CGRect nameRectNonPartner = {
 	{18,0},
 	{222,80}
 };
+
+static NSString *AllCategoriesKey = @"AllCategories";
+
 /*
 static CGSize nameRectMaxSize = {240,80};
 static CGSize partnerImageSize = {14,14};
@@ -42,6 +45,7 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize brand;
 @synthesize category;
 @synthesize companyCategories;
+@synthesize companyCategoryCounts;
 @synthesize brandLabel;
 @synthesize categoryLabel;
 @synthesize scoreLabel;
@@ -69,6 +73,7 @@ static CGPoint partnerImageOrigin = {2,34};
     self.company = nil;
     self.category = nil;
     self.companyCategories = nil;
+    self.companyCategoryCounts = nil;
     self.categoriesTableView = nil;
     self.findAlternateView = nil;
     [super dealloc];
@@ -202,6 +207,31 @@ static CGPoint partnerImageOrigin = {2,34};
 	self.company = [[self.brand companies] anyObject];
     self.category = [[self.brand categories] anyObject];
     self.companyCategories = [[self.company categories] allObjects];
+    
+    self.companyCategoryCounts = [NSMutableDictionary dictionaryWithCapacity:self.companyCategories.count+1];
+    
+    NSManagedObjectContext *context = self.brand.managedObjectContext;
+    NSFetchRequest *req;
+    NSUInteger count;
+    NSError *error = nil;
+    
+    req = [NSFetchRequest fetchRequestWithEntityName:@"BGBrand"];
+    [req setPredicate:[NSPredicate predicateWithFormat:@"(%@ IN companies)", self.company]];
+    count = [context countForFetchRequest:req error:&error];
+    if (error == nil)
+        [self.companyCategoryCounts setObject:[NSNumber numberWithInt:count] forKey:AllCategoriesKey];
+
+    
+    for (BGCategory *cat in self.companyCategories) {
+        error = nil;
+        req = [NSFetchRequest fetchRequestWithEntityName:@"BGBrand"];
+        [req setPredicate:[NSPredicate predicateWithFormat:@"(%@ IN companies) AND (%@ IN categories)", self.company, self.category]];
+        count = [context countForFetchRequest:req error:&error];
+        if (error == nil)
+            [self.companyCategoryCounts setObject:[NSNumber numberWithInt:count] forKey:cat.name];
+
+    }
+    
 }
 
 
@@ -267,6 +297,12 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 
+- (void)showOtherBrandsCategory:(id)sender{
+	
+    [[NSNotificationCenter defaultCenter] postNotificationName:BrandsTableCategoryButtonTouchedNotification 
+														object:self.category];   
+}
+
 #pragma mark -
 #pragma mark Scorecard
 
@@ -279,7 +315,7 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 
-#pragma mark UITableView Delegate & Datasource
+#pragma mark - UITableView Delegate & Datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -313,18 +349,41 @@ static CGPoint partnerImageOrigin = {2,34};
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CellIdentifier";
-
+    static int badgeTag = 849;
+    
+    LKBadgeView* badgeView;
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        
+        badgeView = [[LKBadgeView alloc] initWithFrame:CGRectMake(240, 10, 50, 26)];
+        badgeView.textColor = [UIColor whiteColor];
+        badgeView.badgeColor = [UIColor darkGrayColor];
+        [cell addSubview:badgeView];
+        badgeView.tag = badgeTag;
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    NSNumber *count;
+    
+    badgeView = (LKBadgeView *)[cell viewWithTag:badgeTag];
     if (indexPath.row == self.companyCategories.count) {
         cell.textLabel.text = @"All Brands";
+        count = [self.companyCategoryCounts objectForKey:AllCategoriesKey];
     } else {
         BGCategory *cat = [self.companyCategories objectAtIndex:indexPath.row];
         cell.textLabel.text = cat.name;
+        count = [self.companyCategoryCounts objectForKey:cat.name];
     }
+    
+    NSString *countString;
+    if (count != nil)
+        countString = [count stringValue];
+    else 
+        countString = @"0";
+    badgeView.text = countString;
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
 
     return cell;
@@ -333,7 +392,6 @@ static CGPoint partnerImageOrigin = {2,34};
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
-
 
 #pragma mark -
 #pragma mark MFMailComposeViewController

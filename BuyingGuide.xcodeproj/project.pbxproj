@@ -142,6 +142,8 @@
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
+		FE3E64FC148C6BF2004D3EDE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FE3E64F9148C6BF2004D3EDE /* README.md */; };
+		FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */; };
 		FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEC872A8148935A700B212AE /* BuyingGuide.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -428,6 +430,9 @@
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
 		D8A2A49312D4A7D700EF982E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		FE3E64F9148C6BF2004D3EDE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKBadgeView.m; sourceTree = "<group>"; };
+		FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKBadgeView.h; sourceTree = "<group>"; };
 		FEC872A9148935A700B212AE /* BuyingGuide 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BuyingGuide 2.xcdatamodel"; sourceTree = "<group>"; };
 		FEC872AA148935A700B212AE /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -565,6 +570,9 @@
 		C46D828210C9263B00541CF1 /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
+				FE3E64F9148C6BF2004D3EDE /* README.md */,
+				FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */,
+				FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */,
 				C41ACBD1110E367F00942016 /* LoadingView.h */,
 				C41ACBD2110E367F00942016 /* LoadingView.m */,
 				C46D827E10C9263500541CF1 /* FJSTableViewColorIndex.h */,
@@ -1194,6 +1202,7 @@
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
 				C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */,
 				C4E9B15D1318430E007547DF /* storedata.sqlite in Resources */,
+				FE3E64FC148C6BF2004D3EDE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1285,7 @@
 				D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */,
 				C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 				FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */,
+				FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

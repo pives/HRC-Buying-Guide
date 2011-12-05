@@ -31,6 +31,7 @@
 @property(nonatomic,retain)BGBrand *brand;
 @property(nonatomic,retain)BGCategory *category;
 @property(nonatomic,retain)NSArray *companyCategories;
+@property(nonatomic,retain)NSMutableDictionary *companyCategoryCounts;
 
 @property(nonatomic,assign)IBOutlet UILabel *brandLabel;
 @property(nonatomic,assign)IBOutlet UILabel *categoryLabel;
@@ -53,5 +54,7 @@
 - (void)setBrand:(BGBrand*)aBrand category:(BGCategory*)aCategory;
 
 - (void)layoutPartnerImageAndCompanyLabel;
+
+- (IBAction)showOtherBrandsCategory:(id)sender;
 
 @end
