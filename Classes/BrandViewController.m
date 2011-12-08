@@ -20,16 +20,10 @@
 #import "FJSTweetViewController+HRC.h"
 #import "DebugLog.h"
 #import "LKBadgeView.h"
+#import "BALabel.h"
 
-static CGRect nameRectPartner = {
-	{18+18,0},
-	{222-18,80}
-};
 
-static CGRect nameRectNonPartner = {
-	{18,0},
-	{222,80}
-};
+
 
 static NSString *AllCategoriesKey = @"AllCategories";
 
@@ -54,8 +48,9 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize partnerIcon;
 @synthesize categoriesTableView;
 @synthesize findAlternateView;
+@synthesize tableHeaderView;
 @synthesize agent;
-
+@synthesize companyView;
 
 
 
@@ -67,7 +62,9 @@ static CGPoint partnerImageOrigin = {2,34};
     [agent release], agent = nil;
     self.brandLabel = nil;
     self.companyLabel = nil;
-    self.companyLabel = nil;
+    self.categoryLabel = nil;
+    self.scoreBackgroundColor = nil;
+    self.partnerIcon = nil;
     self.scoreLabel = nil;
     self.brand = nil;
     self.company = nil;
@@ -76,6 +73,8 @@ static CGPoint partnerImageOrigin = {2,34};
     self.companyCategoryCounts = nil;
     self.categoriesTableView = nil;
     self.findAlternateView = nil;
+    self.tableHeaderView = nil;
+    self.companyView = nil;
     [super dealloc];
 }
 
@@ -110,6 +109,10 @@ static CGPoint partnerImageOrigin = {2,34};
 		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Share" style:UIBarButtonItemStyleBordered 
 																		   target:self 
 																		   action:@selector(launchActionSheet)]];
+
+                                     
+        
+        
     }
     
     return self;
@@ -145,6 +148,20 @@ static CGPoint partnerImageOrigin = {2,34};
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    BALabel *baLabel = [[BALabel alloc] initWithFrame:CGRectMake(15, 0, 205, 54)];
+    self.brandLabel = baLabel;
+    [baLabel release];
+    [self.companyView addSubview:self.brandLabel];
+    self.brandLabel.verticalAlignment = BAVerticalAlignmentBottom;
+    self.brandLabel.font = [UIFont boldSystemFontOfSize:22];
+    self.brandLabel.textColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+    self.brandLabel.backgroundColor = [UIColor clearColor];
+    self.brandLabel.shadowColor = [UIColor whiteColor];
+    self.brandLabel.shadowOffset = CGSizeMake(0.0,1.0);
+    self.brandLabel.numberOfLines = 2;
+    self.brandLabel.minimumFontSize = 15.0;
+    self.brandLabel.adjustsFontSizeToFitWidth = YES;
 }
 
 
@@ -159,13 +176,13 @@ static CGPoint partnerImageOrigin = {2,34};
     
     if([company.nonResponder boolValue] == YES){
         
-        self.brandLabel.font = [UIFont italicSystemFontOfSize:17];
-        self.scoreLabel.font = [UIFont italicSystemFontOfSize:17];
+        self.brandLabel.font = [UIFont italicSystemFontOfSize:22];
+        self.scoreLabel.font = [UIFont italicSystemFontOfSize:24];
         
     }else{
         
-        self.brandLabel.font = [UIFont boldSystemFontOfSize:17];
-        self.scoreLabel.font = [UIFont boldSystemFontOfSize:17];
+        self.brandLabel.font = [UIFont boldSystemFontOfSize:22];
+        self.scoreLabel.font = [UIFont boldSystemFontOfSize:24];
     }    
 	
 	UIColor* color; 
@@ -242,12 +259,11 @@ static CGPoint partnerImageOrigin = {2,34};
 	if(![company.partner boolValue]){
 		
 		self.partnerIcon.alpha = 0;
-		self.brandLabel.frame = nameRectNonPartner;
-		
+		self.brandLabel.frame = CGRectMake(15, 0, 205, self.brandLabel.frame.size.height);
 	}else{
 		
 		self.partnerIcon.alpha = 1;
-		self.brandLabel.frame = nameRectPartner;
+		self.brandLabel.frame = CGRectMake(32, 0, 198, self.brandLabel.frame.size.height);
 		/*
 		CGSize nameBoundingBox = [nameLabel.text sizeWithFont:nameLabel.font
 											constrainedToSize:nameLabel.frame.size
@@ -328,7 +344,7 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44.0;
+    return 79.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -338,18 +354,18 @@ static CGPoint partnerImageOrigin = {2,34};
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0;    
 }
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return self.tableHeaderView;
+}
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return self.findAlternateView;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Other brands";
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return @"Other brands";
+//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

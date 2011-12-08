@@ -162,6 +162,7 @@
 		FE6AAD6D1491462B00FDDEED /* tweetbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6AAD421491462B00FDDEED /* tweetbubble.png */; };
 		FE6AAD6E1491462B00FDDEED /* twittername.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6AAD431491462B00FDDEED /* twittername.png */; };
 		FE6AAD6F1491462B00FDDEED /* yellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6AAD441491462B00FDDEED /* yellowButton.png */; };
+		FE6AAD721491598D00FDDEED /* BALabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6AAD711491598D00FDDEED /* BALabel.m */; };
 		FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEC872A8148935A700B212AE /* BuyingGuide.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -470,6 +471,9 @@
 		FE6AAD421491462B00FDDEED /* tweetbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweetbubble.png; sourceTree = "<group>"; };
 		FE6AAD431491462B00FDDEED /* twittername.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twittername.png; sourceTree = "<group>"; };
 		FE6AAD441491462B00FDDEED /* yellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowButton.png; sourceTree = "<group>"; };
+		FE6AAD701491598D00FDDEED /* BALabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALabel.h; sourceTree = "<group>"; };
+		FE6AAD711491598D00FDDEED /* BALabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALabel.m; sourceTree = "<group>"; };
+		FE6AAD7314915A8900FDDEED /* BACommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACommon.h; sourceTree = "<group>"; };
 		FEC872A9148935A700B212AE /* BuyingGuide 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BuyingGuide 2.xcdatamodel"; sourceTree = "<group>"; };
 		FEC872AA148935A700B212AE /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -607,6 +611,9 @@
 		C46D828210C9263B00541CF1 /* Custom Controls */ = {
 			isa = PBXGroup;
 			children = (
+				FE6AAD7314915A8900FDDEED /* BACommon.h */,
+				FE6AAD701491598D00FDDEED /* BALabel.h */,
+				FE6AAD711491598D00FDDEED /* BALabel.m */,
 				FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */,
 				FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */,
 				C41ACBD1110E367F00942016 /* LoadingView.h */,
@@ -1376,6 +1383,7 @@
 				FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */,
 				FE618325149020AB007AB21D /* BGScorecard.m in Sources */,
 				FE618328149020E2007AB21D /* BGCompany.m in Sources */,
+				FE6AAD721491598D00FDDEED /* BALabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

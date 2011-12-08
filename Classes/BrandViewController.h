@@ -13,6 +13,7 @@
 @class BGCompany;
 @class BGCategory;
 @class BGBrand;
+@class BALabel;
 
 @interface BrandViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate, UITableViewDelegate, UITableViewDataSource> {
     
@@ -33,14 +34,16 @@
 @property(nonatomic,retain)NSArray *companyCategories;
 @property(nonatomic,retain)NSMutableDictionary *companyCategoryCounts;
 
-@property(nonatomic,assign)IBOutlet UILabel *brandLabel;
-@property(nonatomic,assign)IBOutlet UILabel *categoryLabel;
-@property(nonatomic,assign)IBOutlet UILabel *scoreLabel;
-@property(nonatomic,assign)IBOutlet UILabel *companyLabel;
-@property(nonatomic,assign)IBOutlet UIView *scoreBackgroundColor;
-@property(nonatomic,assign)IBOutlet UIImageView *partnerIcon;
+@property(nonatomic,retain)IBOutlet UIView *companyView;
+@property(nonatomic,retain)IBOutlet BALabel *brandLabel;
+@property(nonatomic,retain)IBOutlet UILabel *categoryLabel;
+@property(nonatomic,retain)IBOutlet UILabel *scoreLabel;
+@property(nonatomic,retain)IBOutlet UILabel *companyLabel;
+@property(nonatomic,retain)IBOutlet UIView *scoreBackgroundColor;
+@property(nonatomic,retain)IBOutlet UIImageView *partnerIcon;
 
 @property(nonatomic,retain)IBOutlet UITableView *categoriesTableView;
+@property(nonatomic,retain)IBOutlet UIView *tableHeaderView;
 @property(nonatomic,retain)IBOutlet UIView *findAlternateView;
 
 

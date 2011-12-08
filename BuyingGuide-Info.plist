@@ -28,7 +28,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0.4</string>
+	<string>3.0</string>
 	<key>CoreDataCrashMessage</key>
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 	<key>DonationURL</key>
