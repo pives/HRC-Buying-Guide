@@ -27,7 +27,7 @@
 @implementation BGBrand 
 
 @dynamic includeInIndex;
-@dynamic ID;
+@dynamic remoteID;
 @dynamic rating;
 @dynamic partner;
 @dynamic nameSortFormatted;

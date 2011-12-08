@@ -8,7 +8,7 @@
 			<key>JSONKey</key>
 			<string>OrgID</string>
 			<key>CoreDataKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>
@@ -70,7 +70,7 @@
 			<key>CoreDataRelationshipMethod</key>
 			<string>addCategoriesObject:</string>
 			<key>CoreDataRelationshipKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>CoreDataRelationshipEntity</key>
 			<string>BGCategory</string>
 			<key>kind</key>
@@ -83,7 +83,7 @@
 			<key>JSONKey</key>
 			<string>CategoryID</string>
 			<key>CoreDataKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>
@@ -102,7 +102,7 @@
 			<key>JSONKey</key>
 			<string>OrgBrandID</string>
 			<key>CoreDataKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>
@@ -120,7 +120,7 @@
 			<key>CoreDataKey</key>
 			<string>categories</string>
 			<key>CoreDataRelationshipKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>CoreDataRelationshipEntity</key>
 			<string>BGCategory</string>
 			<key>CoreDataRelationshipMethod</key>
@@ -134,7 +134,7 @@
 			<key>CoreDataKey</key>
 			<string>companies</string>
 			<key>CoreDataRelationshipKey</key>
-			<string>ID</string>
+			<string>remoteID</string>
 			<key>CoreDataRelationshipEntity</key>
 			<string>BGCompany</string>
 			<key>CoreDataRelationshipMethod</key>
@@ -155,6 +155,47 @@
 			<string>InclInBuyersGuideInd</string>
 			<key>CoreDataKey</key>
 			<string>includeInIndex</string>
+			<key>kind</key>
+			<string>Integer</string>
+		</dict>
+	</array>
+	<key>BGScorecard</key>
+	<array>
+		<dict>
+			<key>JSONKey</key>
+			<string>PolicyDescription</string>
+			<key>CoreDataKey</key>
+			<string>policyDescription</string>
+			<key>kind</key>
+			<string>String</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>PolicyRating</string>
+			<key>CoreDataKey</key>
+			<string>policyRating</string>
+			<key>kind</key>
+			<string>Integer</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>DisplayOrder</string>
+			<key>CoreDataKey</key>
+			<string>displayOrder</string>
+			<key>kind</key>
+			<string>Integer</string>
+		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>OrgID</string>
+			<key>CoreDataKey</key>
+			<string>company</string>
+			<key>CoreDataRelationshipMethod</key>
+			<string>setCompany</string>
+			<key>CoreDataRelationshipKey</key>
+			<string>remoteID</string>
+			<key>CoreDataRelationshipEntity</key>
+			<string>BGCompany</string>
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>

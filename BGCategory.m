@@ -13,7 +13,7 @@
 
 @implementation BGCategory 
 
-@dynamic ID;
+@dynamic remoteID;
 @dynamic name;
 @dynamic brands;
 @dynamic companies;

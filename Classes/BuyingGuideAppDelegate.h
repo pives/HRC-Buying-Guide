@@ -22,9 +22,7 @@
 	
 	NSURLConnection *_updateConnection;
 	NSMutableData *_updateData;
-	
-	NSNumberFormatter *_integerFormatter;
-    
+	    
     NSDate* start;
 	
 }

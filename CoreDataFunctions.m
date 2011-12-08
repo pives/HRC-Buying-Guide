@@ -70,5 +70,5 @@ BGCompany* companyWithName(NSString* name, NSManagedObjectContext* context){
 
 BGCompany* companyWithID(NSNumber* ID, NSManagedObjectContext* context){
     
-    return [context retrieveOrCreateEntityWithName:@"BGCompany" whereKey:@"ID" equalToObject:ID];
+    return [context retrieveOrCreateEntityWithName:@"BGCompany" whereKey:@"remoteID" equalToObject:ID];
 }

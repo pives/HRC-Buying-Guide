@@ -156,12 +156,6 @@ static NSString* kAnimationID = @"SplashAnimation";
     }
 }
 
-- (NSNumberFormatter *)integerFormatter {
-	if ( !_integerFormatter ) {
-		_integerFormatter = [[NSNumberFormatter alloc] init];
-	}
-	return _integerFormatter;
-}
 
 - (BOOL)syncEntity:(NSString *)entityName withJSONObjects:(NSArray *)JSONObjects syncDictionaries:(NSArray *)syncDictionaries {
 	if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects )
@@ -171,9 +165,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
 	NSString *coreDataKey = [primaryKeyDict valueForKey:@"CoreDataKey"];
 	NSString *JSONKey = [primaryKeyDict valueForKey:@"JSONKey"];
-	
-	NSFormatter *uniqueIDFormatter = ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
-	
+		
 	NSManagedObjectContext *moc = [self managedObjectContext];
     [moc setMergePolicy:NSOverwriteMergePolicy];
     
@@ -183,7 +175,10 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSFetchRequest* f = [[NSFetchRequest alloc] init];
     [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
     [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",coreDataKey , uniqueKeySet]];
-    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"ID" ascending:YES]]];
+    if ([entityName isEqualToString:@"BGScorecard"])
+        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"displayOrder" ascending:YES]]];
+    else
+        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"remoteID" ascending:YES]]];
     
     NSError* error = nil;
     NSMutableArray *entitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
@@ -217,6 +212,7 @@ static NSString* kAnimationID = @"SplashAnimation";
         [self saveData];
 
     }
+#warning delete scorecards
     
     
     //use name just in case
@@ -231,7 +227,7 @@ static NSString* kAnimationID = @"SplashAnimation";
     f = [[NSFetchRequest alloc] init];
     [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
     [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",secondaryCoreDataKey , secondaryKeySet]];
-    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"ID" ascending:YES]]];
+    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"remoteID" ascending:YES]]];
     
     error = nil;
     NSMutableArray *secondaryEntitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
@@ -247,28 +243,28 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
     
-    NSString* formatErrorString = nil;
 	
 	for ( id JSONObject in JSONObjects ) {
 		NSString *IDString = [JSONObject valueForKey:JSONKey];
         NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
         
-		id ID = nil;
-		if ( uniqueIDFormatter && IDString )
-			[uniqueIDFormatter getObjectValue:&ID forString:IDString errorDescription:&formatErrorString];
-		else
-			ID = IDString;
-		
+		id ID = nil;        
+        if ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"]) {
+            ID = [NSNumber numberWithInt:[IDString intValue]];
+        } else {
+            ID = IDString;
+        }
+        
 		id entity = nil;
 		NSInteger index = [entityUniqueIDs indexOfObject:ID];
-		if ( index != NSNotFound )
+		if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"])
 			entity = [entitiesToUpdate objectAtIndex:index];
 		else {
             
             id secondaryID = secondaryIDString;
 
             index = [entitySecondaryIDs indexOfObject:secondaryID];
-            if ( index != NSNotFound ){
+            if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"]){
                 
                 entity = [secondaryEntitiesToUpdate objectAtIndex:index];
                 [entitiesToUpdate addObject:entity];
@@ -287,6 +283,7 @@ static NSString* kAnimationID = @"SplashAnimation";
                 
 		}
 		
+        
 		for ( NSDictionary *keyDict in syncDictionaries ) {
 			NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
 			NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
@@ -294,11 +291,12 @@ static NSString* kAnimationID = @"SplashAnimation";
 			id value = nil;
 			id JSONValue = [JSONObject valueForKey:JSONKey];
 			
-			NSFormatter *formatter = ( [[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"] ? [self integerFormatter] : nil );
-			if ( formatter && JSONValue )
-				[formatter getObjectValue:&value forString:JSONValue errorDescription:nil];
-			else
+            if ([[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"]) {
+                value = [NSNumber numberWithInt:[JSONValue intValue]];
+            } else {
 				value = JSONValue;
+            }
+            
 			
 			NSString *transformer = [keyDict objectForKey:@"transformer"];
 			if ( transformer ) {
@@ -309,7 +307,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 			
 			if ( !value )
 				continue;
-			
+            
+                 
 			NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
 			if ( relationshipEntity ) {
 				NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
@@ -359,7 +358,7 @@ bail:
     NSFetchRequest* f = [[NSFetchRequest alloc] init];
     [f setEntity:[NSEntityDescription entityForName:@"BGCompany" inManagedObjectContext:moc]];
     [f setResultType:NSDictionaryResultType];
-    [f setPropertiesToFetch:[NSArray arrayWithObject:@"ID"]];
+    [f setPropertiesToFetch:[NSArray arrayWithObject:@"remoteID"]];
     
     NSError* error = nil;
     NSArray *allEentities = [moc executeFetchRequest:f error:&error];
@@ -400,7 +399,7 @@ bail:
     */
     
     
-	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:@"BGCompany" whereKey:@"ID" isIn:uniqueKeySet] mutableCopy];
+	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:@"BGCompany" whereKey:@"remoteID" isIn:uniqueKeySet] mutableCopy];
     
     
     [entitiesToUpdate enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -429,6 +428,7 @@ bail:
 	NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
 	NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
 	NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
+	NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
 
 	NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
 	
@@ -441,6 +441,8 @@ bail:
 	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
 	[self saveData];
 	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+	[self saveData];
+	[self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
 	[self saveData];
     [self markOrganizationsAsDeletedWithJSON:removed];
     [self saveData];
@@ -504,7 +506,7 @@ bail:
     [self.window addSubview:self.hud];
     [self.hud show:YES];
     
-	NSString *URLString = @"http://fj.hrc.org/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
+	NSString *URLString = @"http://fj.hrc.org/app_connect2.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
 		[updateURLDateFormatter setDateFormat:@"ddMMMYYYY"];
@@ -699,7 +701,6 @@ bail:
     [hud release];
     hud = nil;
     
-    [_integerFormatter release];
     [_updateData release];
 	[_updateConnection release];
 	

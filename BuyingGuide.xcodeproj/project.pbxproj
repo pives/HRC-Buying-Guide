@@ -136,13 +136,14 @@
 		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
 		C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
 		C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
-		C4FA223210B5C81D0031303E /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA223110B5C81D0031303E /* BGCompany.m */; };
 		D83777DE12BFBF4900998649 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D83777BA12BFBE5A00998649 /* libjson.a */; };
 		D837788412C0FF0A00998649 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D837788212C0FF0A00998649 /* SplashViewController.m */; };
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
 		FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */; };
+		FE618325149020AB007AB21D /* BGScorecard.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618324149020AB007AB21D /* BGScorecard.m */; };
+		FE618328149020E2007AB21D /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618327149020E2007AB21D /* BGCompany.m */; };
 		FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEC872A8148935A700B212AE /* BuyingGuide.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -409,8 +410,6 @@
 		C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
 		C4FA200910B4BA570031303E /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
-		C4FA223010B5C81D0031303E /* BGCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCompany.h; sourceTree = "<group>"; };
-		C4FA223110B5C81D0031303E /* BGCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCompany.m; sourceTree = "<group>"; };
 		D83777AD12BFBE5A00998649 /* JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSON.xcodeproj; path = "json-framework/JSON.xcodeproj"; sourceTree = "<group>"; };
 		D83777F912BFC16600998649 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "json-framework/Classes/JSON.h"; sourceTree = "<group>"; };
 		D83777FA12BFC16600998649 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+JSON.h"; path = "json-framework/Classes/NSObject+JSON.h"; sourceTree = "<group>"; };
@@ -431,6 +430,10 @@
 		D8A2A49312D4A7D700EF982E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKBadgeView.m; sourceTree = "<group>"; };
 		FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKBadgeView.h; sourceTree = "<group>"; };
+		FE618323149020AB007AB21D /* BGScorecard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGScorecard.h; sourceTree = "<group>"; };
+		FE618324149020AB007AB21D /* BGScorecard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGScorecard.m; sourceTree = "<group>"; };
+		FE618326149020E2007AB21D /* BGCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCompany.h; sourceTree = "<group>"; };
+		FE618327149020E2007AB21D /* BGCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCompany.m; sourceTree = "<group>"; };
 		FEC872A9148935A700B212AE /* BuyingGuide 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BuyingGuide 2.xcdatamodel"; sourceTree = "<group>"; };
 		FEC872AA148935A700B212AE /* BuyingGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuyingGuide.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -797,8 +800,6 @@
 				C497021710CF45B2000ED22B /* BGBrand.m */,
 				C46D884110CC3F2600541CF1 /* BGCategory.h */,
 				C46D884210CC3F2600541CF1 /* BGCategory.m */,
-				C4FA223010B5C81D0031303E /* BGCompany.h */,
-				C4FA223110B5C81D0031303E /* BGCompany.m */,
 				C4FA18CA10B308FB0031303E /* Company+Extensions.h */,
 				C4FA18CB10B308FB0031303E /* Company+Extensions.m */,
 				C497025A10CF4A86000ED22B /* Brand+Extensions.h */,
@@ -810,6 +811,10 @@
 				C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */,
 				C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */,
 				FEC872A8148935A700B212AE /* BuyingGuide.xcdatamodeld */,
+				FE618326149020E2007AB21D /* BGCompany.h */,
+				FE618327149020E2007AB21D /* BGCompany.m */,
+				FE618323149020AB007AB21D /* BGScorecard.h */,
+				FE618324149020AB007AB21D /* BGScorecard.m */,
 				D8377AA212C243C800998649 /* JSONSync.plist */,
 				D8A2A49312D4A7D700EF982E /* storedata.sqlite */,
 			);
@@ -1224,7 +1229,6 @@
 				C4FA18CC10B308FB0031303E /* Company+Extensions.m in Sources */,
 				C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */,
 				C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */,
-				C4FA223210B5C81D0031303E /* BGCompany.m in Sources */,
 				C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */,
 				C492D5AF10BAF4490041400B /* DebugLog.m in Sources */,
 				C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */,
@@ -1282,6 +1286,8 @@
 				C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 				FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */,
 				FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */,
+				FE618325149020AB007AB21D /* BGScorecard.m in Sources */,
+				FE618328149020E2007AB21D /* BGCompany.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

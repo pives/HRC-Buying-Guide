@@ -9,7 +9,7 @@
 #import "BGCompany.h"
 #import "NSString+extensions.h"
 #import "BGBrand.h"
-#import "BGCategory.h"
+#import "BGScorecard.h"
 
 @interface BGCompany (CoreDataGeneratedPrimitiveAccessors)
 
@@ -24,7 +24,7 @@
 @implementation BGCompany 
 
 @dynamic rating;
-@dynamic ID;
+@dynamic remoteID;
 @dynamic partner;
 @dynamic ratingLevel;
 @dynamic includeInIndex;
@@ -33,6 +33,7 @@
 @dynamic brands;
 @dynamic categories;
 @dynamic nonResponder;
+@dynamic scorecards;
 
 static const NSArray *BGCompanyInheritedKeys;
 
