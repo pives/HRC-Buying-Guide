@@ -9,17 +9,20 @@
 #import <UIKit/UIKit.h>
 @class BGCompany;
 
-@interface CompanyScoreCardViewController : UIViewController <UIAlertViewDelegate,UITableViewDataSource,UITableViewDelegate>{
+@interface CompanyScoreCardViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate>{
 
-    UIToolbar* bar;
-    UIActivityIndicatorView* spinner;
 }
-@property(nonatomic,assign)IBOutlet UIToolbar *bar;
-@property(nonatomic,retain)UIActivityIndicatorView *spinner;
-@property(nonatomic,retain)UITableView *tableView;
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property(nonatomic,retain)IBOutlet UITableView *tableView;
 @property(nonatomic,retain)UILabel *totalLabel;
+@property(nonatomic,retain)IBOutlet UIView *scoreBGView;
+@property(nonatomic,retain)IBOutlet UILabel *scoreLabel;
+@property(nonatomic,retain)IBOutlet UIView *finalTotalBGView;
+@property(nonatomic,retain)BGCompany *company;
 
 - (id)initWithCompany:(BGCompany*)aCompany;
-- (IBAction)done;
+- (void)fetchAndReload;
+
 
 @end

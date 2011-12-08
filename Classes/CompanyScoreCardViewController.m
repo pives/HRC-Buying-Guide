@@ -7,21 +7,33 @@
 //
 
 #import "CompanyScoreCardViewController.h"
+#import "BGScorecard.h"
 #import "BGCompany.h"
 #import "NSString+extensions.h"
 #import "UIBarButtonItem+extensions.h"
+#import "UIColor+extensions.h"
+#import "Company+Extensions.h"
+#import "NSManagedObjectContext+Extensions.h"
 
 @implementation CompanyScoreCardViewController
 
-@synthesize bar;
-@synthesize spinner;
 @synthesize tableView;
 @synthesize totalLabel;
+@synthesize finalTotalBGView;
+@synthesize scoreBGView;
+@synthesize scoreLabel;
+@synthesize company;
+@synthesize fetchedResultsController;
+
 
 - (void)dealloc {
-    self.spinner = nil;
     self.tableView = nil;
     self.totalLabel = nil;
+    self.finalTotalBGView = nil;
+    self.scoreLabel = nil;
+    self.scoreBGView = nil;
+    self.company = nil;
+    self.fetchedResultsController = nil;
     [super dealloc];
 }
 
@@ -39,6 +51,7 @@
     self = [super initWithNibName:@"CompanyScoreCardView" bundle:nil];
     if (self != nil) {
         self.title = @"Score Card";
+        self.company = aCompany;
         
     }
     return self;
@@ -49,47 +62,121 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	self.navigationController.toolbarHidden = YES;
     
-    self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-	
-	self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithView:self.spinner];
-	
-	/*
-	NSMutableArray* items = [bar.items mutableCopy];
-	
-	
-        
-    [items insertObject:[UIBarButtonItem fixedSpaceItemOfSize:12]  atIndex:0];
-    [items insertObject:[UIBarButtonItem itemWithView:self.spinner] atIndex:0];
+    self.finalTotalBGView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"finalRatingPattern.png"]];
     
-    bar.items = items;
-    [items release];
-    */
+	UIColor* color; 
+	
+    if([self.company.ratingLevel intValue] == 0)
+        color = [UIColor cellGreen];
+    else if([company.ratingLevel intValue] == 1)
+        color = [UIColor cellYellow];
+    else 
+        color = [UIColor cellRed];
+    
+    self.scoreBGView.backgroundColor = color;
+    
+    self.scoreLabel.text = self.company.ratingFormatted;
+    
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    
+
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" 
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(share)];
+    [self.navigationItem setRightBarButtonItem:shareButton];
+    [shareButton release];
+
 	
                         
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self fetchAndReload];
     
-    [spinner startAnimating];
-    
+	self.navigationController.toolbarHidden = YES;
 }
+
+- (void)share {
+    [self.tableView reloadData];
+}
+
+#pragma mark Fetching
+
+- (void)fetchAndReload{
+    
+    self.fetchedResultsController = nil;
+    
+    NSError *error = nil;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		/*
+		 Replace this implementation with code to handle the error appropriately.
+		 
+		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		 */
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		[self.company.managedObjectContext resetCoreDataStore];
+		[self.company.managedObjectContext displayCcoreDataError];
+	}
+    
+    [self.tableView reloadData];
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (fetchedResultsController != nil) {
+        return fetchedResultsController;
+    }
+    
+    NSManagedObjectContext *managedObjectContext = self.company.managedObjectContext;
+
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"BGScorecard" inManagedObjectContext:managedObjectContext];
+	[fetchRequest setEntity:entity];
+	
+	[fetchRequest setFetchBatchSize:20];
+	
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(company == %@)", self.company]];
+    
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayOrder" ascending:YES];	
+	[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	
+    
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                                                                                managedObjectContext:managedObjectContext 
+                                                                                                  sectionNameKeyPath:nil 
+                                                                                                           cacheName:nil];
+    aFetchedResultsController.delegate = self;
+	self.fetchedResultsController = aFetchedResultsController;
+	
+	[aFetchedResultsController release];
+	[fetchRequest release];
+	[sortDescriptor release];
+	
+	return fetchedResultsController;
+} 
 
 #pragma mark - UITableView Delegate & Datasource
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65.0;
+-(CGFloat)tableView:(UITableView *)tv heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 55.0;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
+    NSUInteger count = [[fetchedResultsController sections] count];
+    return (count == 0) ? 1 : count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+- (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
+
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 
@@ -105,53 +192,58 @@
     UILabel *descriptionLabel;
     UILabel *ratingLabel;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         
+        cell.backgroundColor = [UIColor clearColor];
+        
         iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5.0, 7.0, 30.0, 30.0)];
         iconImageView.tag = IconImageViewTag;
+        iconImageView.backgroundColor = [UIColor clearColor];
         [cell addSubview:iconImageView];
+        [iconImageView release];
         
-        descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 7.0, 200.0, 30.0)];
+        descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 4.0, 220.0, 36.0)];
         descriptionLabel.tag = DescriptionLabelTag;
+        descriptionLabel.backgroundColor = [UIColor clearColor];
         descriptionLabel.numberOfLines = 2;
-        descriptionLabel.font = [UIFont systemFontOfSize:13.0];
+        descriptionLabel.font = [UIFont systemFontOfSize:15.0];
         [cell addSubview:descriptionLabel];
+        [descriptionLabel release];
         
-        ratingLabel = [[UILabel alloc] initWithFrame:CGRectMake(24.0, 7.0, 60.0, 30.0)];
+        ratingLabel = [[UILabel alloc] initWithFrame:CGRectMake(270.0, 5.0, 60.0, 32.0)];
         ratingLabel.tag = RatingLabelTag;
-        ratingLabel.textColor = [UIColor greenColor];
-        ratingLabel.font = [UIFont systemFontOfSize:15.0];
+        ratingLabel.backgroundColor = [UIColor clearColor];
+        ratingLabel.textAlignment = UITextAlignmentCenter;
+        ratingLabel.font = [UIFont systemFontOfSize:18.0];
         [cell addSubview:ratingLabel];
+        [ratingLabel release];
     }
     
+	BGScorecard *scorecard = (BGScorecard*)[fetchedResultsController objectAtIndexPath:indexPath];
+    
     iconImageView = (UIImageView *)[cell viewWithTag:IconImageViewTag];
-    iconImageView.image = [UIImage imageNamed:@""];
+    
+    if ([scorecard.policyRating intValue] > 0) {
+        iconImageView.image = [UIImage imageNamed:@"check.png"];
+        ratingLabel.textColor = [UIColor colorWithRed:0.0 green:0.8 blue:0.0 alpha:1.0];
+    } else {
+        iconImageView.image = [UIImage imageNamed:@"x.png"];
+        ratingLabel.textColor = [UIColor colorWithRed:0.8 green:1.0 blue:0.0 alpha:1.0];
+    }
     
     descriptionLabel = (UILabel *)[cell viewWithTag:DescriptionLabelTag];
-    descriptionLabel.text = @"";
+    descriptionLabel.text = scorecard.policyDescription;
     
     ratingLabel = (UILabel *)[cell viewWithTag:RatingLabelTag];
-    ratingLabel.text = @"";
+    ratingLabel.text = [NSString stringWithFormat:@"%@%@", [scorecard.policyRating intValue] > 0 ? @"+" : @"", scorecard.policyRating];
     
     return cell;
 }
 
-#pragma mark - UIAlertViewDelegate
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-	
-	[self done];
-	
-}
 
-                        
-
-- (IBAction)done{
-    
-    [self dismissModalViewControllerAnimated:YES];
-}
-
+             
 
 @end

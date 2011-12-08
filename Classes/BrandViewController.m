@@ -149,7 +149,7 @@ static CGPoint partnerImageOrigin = {2,34};
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BALabel *baLabel = [[BALabel alloc] initWithFrame:CGRectMake(15, 0, 205, 54)];
+    BALabel *baLabel = [[BALabel alloc] initWithFrame:CGRectMake(15, 0, 205, 57)];
     self.brandLabel = baLabel;
     [baLabel release];
     [self.companyView addSubview:self.brandLabel];
