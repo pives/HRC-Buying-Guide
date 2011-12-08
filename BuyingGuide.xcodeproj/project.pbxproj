@@ -116,6 +116,7 @@
 		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
+		FE071B7514917DD400E87C7D /* SharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE071B7414917DD400E87C7D /* SharingManager.m */; };
 		FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */; };
 		FE618325149020AB007AB21D /* BGScorecard.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618324149020AB007AB21D /* BGScorecard.m */; };
 		FE618328149020E2007AB21D /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618327149020E2007AB21D /* BGCompany.m */; };
@@ -422,6 +423,8 @@
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
 		D8A2A49312D4A7D700EF982E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
+		FE071B7314917DD400E87C7D /* SharingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingManager.h; sourceTree = "<group>"; };
+		FE071B7414917DD400E87C7D /* SharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingManager.m; sourceTree = "<group>"; };
 		FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKBadgeView.m; sourceTree = "<group>"; };
 		FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKBadgeView.h; sourceTree = "<group>"; };
 		FE618323149020AB007AB21D /* BGScorecard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGScorecard.h; sourceTree = "<group>"; };
@@ -519,6 +522,7 @@
 				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
 				C412894B10C83107007BB9A8 /* Filtered List View */,
 				C4FA187A10B2F4D30031303E /* Company */,
+				FE071B7214917DAE00E87C7D /* Sharing */,
 				C446CFB012E4B9EE009D3A09 /* Hud */,
 				C4F31C6A10C416C9004DF94F /* Score Card */,
 				C4103F5110B6FADF004CEC15 /* Key */,
@@ -1069,6 +1073,15 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
+		FE071B7214917DAE00E87C7D /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				FE071B7314917DD400E87C7D /* SharingManager.h */,
+				FE071B7414917DD400E87C7D /* SharingManager.m */,
+			);
+			name = Sharing;
+			sourceTree = "<group>";
+		};
 		FE6AAD161491462B00FDDEED /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1384,6 +1397,7 @@
 				FE618325149020AB007AB21D /* BGScorecard.m in Sources */,
 				FE618328149020E2007AB21D /* BGCompany.m in Sources */,
 				FE6AAD721491598D00FDDEED /* BALabel.m in Sources */,
+				FE071B7514917DD400E87C7D /* SharingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

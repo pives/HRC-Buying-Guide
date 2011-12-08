@@ -16,12 +16,10 @@
 #import "CompanyScoreCardViewController.h"
 #import "HRCBrandTableViewController.h"
 #import "FilteredCompaniesViewController.h"
-#import "FJSTweetViewController.h"
-#import "FJSTweetViewController+HRC.h"
 #import "DebugLog.h"
 #import "LKBadgeView.h"
 #import "BALabel.h"
-
+#import "SharingManager.h"
 
 
 
@@ -49,7 +47,6 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize categoriesTableView;
 @synthesize findAlternateView;
 @synthesize tableHeaderView;
-@synthesize agent;
 @synthesize companyView;
 
 
@@ -59,7 +56,6 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 - (void)dealloc {
-    [agent release], agent = nil;
     self.brandLabel = nil;
     self.companyLabel = nil;
     self.categoryLabel = nil;
@@ -106,9 +102,12 @@ static CGPoint partnerImageOrigin = {2,34};
 		
 		
 		*/
+        
+        [SharingManager sharedSharingManager].viewController = self;
+        [SharingManager sharedSharingManager].company = self.company;
 		[self.navigationItem setRightBarButtonItem:[UIBarButtonItem itemWithTitle:@"Share" style:UIBarButtonItemStyleBordered 
-																		   target:self 
-																		   action:@selector(launchActionSheet)]];
+																		   target:[SharingManager sharedSharingManager] 
+																		   action:@selector(showSharingOptions)]];
 
                                      
         
@@ -148,6 +147,7 @@ static CGPoint partnerImageOrigin = {2,34};
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     BALabel *baLabel = [[BALabel alloc] initWithFrame:CGRectMake(15, 0, 205, 57)];
     self.brandLabel = baLabel;
@@ -428,282 +428,6 @@ static CGPoint partnerImageOrigin = {2,34};
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark -
-#pragma mark MFMailComposeViewController
-
-- (void)sendEmail{
-    
-    if([MFMailComposeViewController canSendMail]){
-        
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        controller.mailComposeDelegate = self;
-        [controller setSubject:@"Support LGBT Equality When You Shop"]; //TODO: add subject
-        
-        NSString* fileName;
-        NSString* fileExtension = @"txt";
-        NSString* emailText;
-        
-		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-		NSString* rawLink = [info objectForKey:@"AppStoreURL"];
-		//NSString* appStoreID = [info objectForKey:@"AppStoreIDCompounds"];
-		NSString* appStoreID = [info objectForKey:@"AppStoreID"];
-		/*
-		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-		NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
-		NSString* urlSuffix = [info objectForKey:@"ScoreCardURLSuffix"];
-        NSString* companyID = [self.company.ID stringValue];
-        NSString* companyScoreurl = [NSString stringWithFormat:@"%@%@%@", urlPrefix, companyID, urlSuffix];
-		*/
-		
-        
-        if([company.nonResponder boolValue] == YES){
-            
-            fileName = @"EmailConfused";
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-            NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-            emailText = [NSString stringWithFormat:fileContenets, 
-                         company.name,
-                         [company.rating stringValue],
-                         nil
-                         ];
-            
-                    
-        }else{
-            
-            if([company.ratingLevel intValue] == 0){
-                
-                //GOOD
-                fileName = @"EmailHappy";
-                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-                emailText = [NSString stringWithFormat:fileContenets, 
-                             company.name, 
-                             [company.rating stringValue],
-                             nil
-                             ];
-                
-                
-            }else if([company.ratingLevel intValue] == 1){
-                
-                //MIDDLE
-                fileName = @"EmailIndifferent";
-                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-                emailText = [NSString stringWithFormat:fileContenets, 
-                             company.name, 
-                             [company.rating stringValue],
-                             nil
-                             ];
-                
-                
-            }else{
-                
-                fileName = @"EmailSad";
-                NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:fileExtension];
-                NSString *fileContenets = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-                emailText = [NSString stringWithFormat:fileContenets, 
-                             company.name, 
-                             [company.rating stringValue],
-                             nil
-                             ];
-                
-            }
-            
-            
-        }
-		
-		
-               
-        [controller setMessageBody:emailText isHTML:YES];
-        [self presentModalViewController:controller animated:YES];
-        [controller release];
-        
-    }else{
-        
-        UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"Cannot send email"
-                                                          message:@"Email is currently unavailable. Please check your email settings and try again." 
-                                                         delegate:self 
-                                                cancelButtonTitle:@"OK" 
-                                                otherButtonTitles:nil] autorelease];
-        [message show];
-        
-        
-    }
-}
-
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	//TODO: Check result?
-    [self becomeFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-#pragma mark -
-#pragma mark FJSTweetViewController
-
-- (void)postTweet{
-	
-	FJSTweetViewController* tvc = [[FJSTweetViewController alloc] initWithCompany:self.company];
-	
-	UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
-	nc.navigationBarHidden = YES;
-	
-	[self.navigationController presentModalViewController:nc animated:YES];
-	
-	[tvc release];
-	[nc release];
-}
-
-
-#pragma mark -
-#pragma mark Facebook
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// This application will not work until you enter your Facebook application's API key here:
-
-static NSString* kApiKey = @"a103b98ed528fc842fd1daa9c7c97713";
-
-// Enter either your API secret or a callback URL (as described in documentation):
-static NSString* kApiSecret = @"514d14ac9dd9ef105d5207ca62accd3e"; // @"<YOUR SECRET KEY>";
-
-
-- (void)sendFacebookPost{
- 
-    if(self.agent == nil){
-        
-        self.agent = [[[FacebookAgent alloc] initWithApiKey:kApiKey ApiSecret:kApiSecret ApiProxy:nil] autorelease];
-        agent.delegate = self;
-    }
-   
-    
-    NSString* someText;
-	
-    if([company.nonResponder boolValue] == YES){
-        
-        someText = 
-        @"HRC’s Buying For Workplace Equality Guide gives %@ an unofficial score of %i%%. They have failed to respond to our survey despite repeated attempts.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-
-    }else{
-        
-        if([company.ratingLevel intValue] == 0){
-            
-            someText = 
-            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive one of the highest workplace equality scores. For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-            
-            
-        }else if([company.ratingLevel intValue] == 1){
-            
-            someText = 
-            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive a moderate workplace equality score.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-            
-            
-        }else{
-            
-            someText = 
-            @"HRC’s Buying For Workplace Equality Guide rates %@ %i%%. They receive one of the lowest workplace equality scores.  For more information and to download the iPhone app visit http://bit.ly/buy4eq";
-            
-        }
-        
-    }
-    
-		
-	someText = [NSString stringWithFormat:someText, company.name, [company.rating intValue]];
-    
-
-    [agent publishFeedWithName:@"HRC Buying for Workplace Equality iPhone App" //can put it here
-				   captionText:someText 
-					  imageurl:@"http://www.hrc.org/buyersguide2010/images/2011-iphone_icon-90x90.png" 
-					   linkurl:@"http://www.hrc.org/iPhone" 
-			 userMessagePrompt:[NSString stringWithFormat:@"Tell others about %@",company.name]];
-    
-}
-
-- (void) facebookAgent:(FacebookAgent*)agent didLoadInfo:(NSDictionary*) info{
-    
-    DebugLog(@"request load info: %@", [info description]);
-
-}
-
-- (void) facebookAgent:(FacebookAgent*)agent requestFaild:(NSString*) message{
-    
-	NSLog(@"Facebook request failed: %@", message);
-}
-
-
-- (void) facebookAgent:(FacebookAgent*)agent loginStatus:(BOOL) loggedIn{
-	
-	if(loggedIn)
-		DebugLog(@"loggedin");
-	
-	DebugLog(@"should be logged in");
-	
-}
-
-- (void) facebookAgent:(FacebookAgent*)agent statusChanged:(BOOL) success{
-	
-	if(success){
-        DebugLog(@"YES!");
-    }
-	else {
-		DebugLog(@"NO!");
-	}
-}
-
-
-- (void) facebookAgent:(FacebookAgent*)agent dialog:(FBDialog*)dialog didFailWithError:(NSError*)error{
-	
-	NSLog(@"Facebook dialog failed with error: %@", [error description]);
-	
-}
-
-
-#pragma mark -
-#pragma mark UIActionSheet
-
-- (void)launchActionSheet{
-    
-    UIActionSheet* myActionSheet = [[[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Help spread the word about %@", company.name] 
-                                                                delegate:self 
-                                                       cancelButtonTitle:@"Cancel" 
-                                                  destructiveButtonTitle:nil 
-                                                       otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil] autorelease];
-    
-        
-    myActionSheet.actionSheetStyle=UIActionSheetStyleAutomatic;
-    [myActionSheet showInView:self.view];
-    
-}
-
-
-
-
-#pragma mark -
-#pragma mark UIActionSheetDelegate
-
--(void)actionSheet:(UIActionSheet *)modalViewSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-
-    switch (buttonIndex)
-    {
-		case 0:
-        {
-            [self postTweet];
-            break;
-        }
-		case 1:
-        {
-           [self sendFacebookPost];
-            break;
-        }
-        case 2:
-        {
-            [self sendEmail];
-            break;
-        }
-    }
-}
 
 
 

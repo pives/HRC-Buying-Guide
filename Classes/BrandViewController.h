@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
-#import "FacebookAgent.h"
 
 @class BGCompany;
 @class BGCategory;
 @class BGBrand;
 @class BALabel;
 
-@interface BrandViewController : UIViewController <UIActionSheetDelegate ,MFMailComposeViewControllerDelegate, FacebookAgentDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface BrandViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
     BGCompany* company;
     
@@ -25,7 +23,6 @@
     UIImageView* partnerIcon;
     
     
-    FacebookAgent* agent;
 
 }
 @property(nonatomic,retain)BGCompany *company;
@@ -48,7 +45,6 @@
 
 
 
-@property(nonatomic,retain)FacebookAgent *agent;
 
 - (IBAction)showScoreCard;
 

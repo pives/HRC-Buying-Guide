@@ -14,6 +14,8 @@
 #import "UIColor+extensions.h"
 #import "Company+Extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
+#import "SharingManager.h"
+
 
 @implementation CompanyScoreCardViewController
 
@@ -53,6 +55,7 @@
         self.title = @"Score Card";
         self.company = aCompany;
         
+
     }
     return self;
 }
@@ -82,11 +85,13 @@
     
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
-
+    
+    [SharingManager sharedSharingManager].viewController = self;
+    [SharingManager sharedSharingManager].company = self.company;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" 
-                                                                    style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:@selector(share)];
+                                                                    style:UIBarButtonItemStyleBordered
+                                                                   target:[SharingManager sharedSharingManager] 
+                                                                   action:@selector(showSharingOptions)];
     [self.navigationItem setRightBarButtonItem:shareButton];
     [shareButton release];
 
@@ -101,9 +106,6 @@
 	self.navigationController.toolbarHidden = YES;
 }
 
-- (void)share {
-    [self.tableView reloadData];
-}
 
 #pragma mark Fetching
 
