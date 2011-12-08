@@ -16,9 +16,12 @@
 #import "NSManagedObjectContext+Extensions.h"
 #import "BGBrand.h"
 #import "BGCompany.h"
+#import "BGScorecard.h"
 #import "MBProgressHUD.h"
 
 #define UPDATE_INTERVAL 86400 //seconds == 1 days
+
+static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 @interface BuyingGuideAppDelegate ()
 
@@ -67,25 +70,28 @@ static NSString* kAnimationID = @"SplashAnimation";
         
     }else{
         
+        
+        NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastUpdateDateKey];
+        
+        
         if(!forceFullDownload)
             [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
 
-        NSDateComponents *components = [[NSDateComponents alloc] init];
-        [components setCalendar:[NSCalendar currentCalendar]];
-        [components setDay:21];
-        [components setMonth:2];
-        [components setYear:2011];
-        NSDate *lastUpdateDate = [components date];
         
-        if ( lastUpdateDate ) {
+        
+        if ( forceFullDownload || 
+             lastUpdateDate == nil ||
+             [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL) {
             
-            if ( forceFullDownload || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL)
-                [self updateDataWithLastUpdateDate:(forceFullDownload ? nil : lastUpdateDate)];
-            else
-                [self dataUpdateDidFinish];            
+            [self updateDataWithLastUpdateDate:(forceFullDownload ? nil : lastUpdateDate)];
+            
+        } else {
+            
+            [self dataUpdateDidFinish];            
+            
         }
+
         
-        [components release];
         
     }
     
@@ -206,13 +212,17 @@ static NSString* kAnimationID = @"SplashAnimation";
                 
             }
             
-            //each.brands = nil;
+            for(BGScorecard* eachScorecard in each.scorecards){
+                
+                [moc deleteObject:eachScorecard];
+                
+            }
+            
         }
         
         [self saveData];
 
     }
-#warning delete scorecards
     
     
     //use name just in case
@@ -448,6 +458,11 @@ bail:
     [self saveData];
     
     
+    NSDate *lastUpdateDate = [NSDate date];
+    [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
     [self.navigationController popViewControllerAnimated:NO];
     MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
@@ -538,42 +553,54 @@ bail:
 	NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
     NSString* currentBundleID = [[NSUserDefaults standardUserDefaults] objectForKey:(NSString*)kCFBundleVersionKey];
 
+    BOOL shouldCopyDb = NO;
     
     if( flag ){//force the issue
         
+        shouldCopyDb = YES;
+        
+    }else if(currentBundleID == nil){ //no bundleID, app never launched?
+        
+        shouldCopyDb = YES;
+        
+    }else if(currentAttributes == nil && bundleDB){ //no current DB
+        
+        shouldCopyDb = YES;
+        
+        
+    }else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){ //if this is a new version of the app
+        
+        shouldCopyDb = YES;
+        
+    }else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){  //If the creation date of the bundle db is newer
+        
+        shouldCopyDb = YES;
+    }
+    
+    if (shouldCopyDb) {
+        
+        // copy db
 		[[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
         [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
                                                 toPath:currentAppDB 
                                                  error:nil];
         
-    }else if(currentBundleID == nil){ //no bundleID, app never launched?
+        // set date that bundled db pulled data
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setCalendar:[NSCalendar currentCalendar]];
+        [components setYear:2011];
+        [components setMonth:12];
+        [components setDay:8];
+        [components setHour:9];
+        [components setMinute:0];
+        [components setSecond:0];
+        NSDate *lastUpdateDate = [components date];
         
-        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-                                                toPath:currentAppDB 
-                                                 error:nil];
+        [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-    }else if(currentAttributes == nil && bundleDB){ //no current DB
+        [components release];
         
-        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-                                                toPath:currentAppDB 
-                                                 error:nil];
-        
-        
-    }else if(currentBundleID != nil && ![newBundleID isEqualToString:currentBundleID] && bundleDB){ //if this is a new version of the app
-        
-        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-                                                toPath:currentAppDB 
-                                                 error:nil];
-        
-    }else if([bundleCreationDate compare:currentCreationDate] == NSOrderedDescending && bundleDB ){  //If the creation date of the bundle db is newer
-        
-        [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-        [[NSFileManager defaultManager] copyItemAtPath:bundleDB 
-                                                toPath:currentAppDB 
-                                                 error:nil];
     }
 }
 
