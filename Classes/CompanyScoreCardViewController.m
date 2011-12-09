@@ -83,7 +83,7 @@
     
     self.scoreLabel.text = self.company.ratingFormatted;
     
-    self.tableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
     
     [SharingManager sharedSharingManager].viewController = self;
