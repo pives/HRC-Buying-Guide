@@ -87,7 +87,7 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
     if (self.filterCompany == nil && self.filterCategory != nil)
         searchString = [NSString stringWithFormat:@"Search in %@", self.filterCategory.name];
     else if (self.filterCompany != nil && self.filterCategory == nil)
-        searchString = [NSString stringWithFormat:@"Search in %@", self.filterCompany];
+        searchString = [NSString stringWithFormat:@"Search in %@", self.filterCompany.name];
     else 
         searchString = @"Search";
     
