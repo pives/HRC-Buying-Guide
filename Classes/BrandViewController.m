@@ -143,24 +143,23 @@ static CGPoint partnerImageOrigin = {2,34};
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+static float kBrandNameFontSize = 19.0;
+
 
 // not called when i do the loadnib thing
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    BALabel *baLabel = [[BALabel alloc] initWithFrame:CGRectMake(15, 0, 205, 57)];
-    self.brandLabel = baLabel;
-    [baLabel release];
-    [self.companyView addSubview:self.brandLabel];
-    self.brandLabel.verticalAlignment = BAVerticalAlignmentBottom;
-    self.brandLabel.font = [UIFont boldSystemFontOfSize:22];
+    self.categoriesTableView.rowHeight  = 44.0;
+
+    //self.brandLabel.verticalAlignment = BAVerticalAlignmentCenter;
+    self.brandLabel.font = [UIFont boldSystemFontOfSize:kBrandNameFontSize];
     self.brandLabel.textColor = [UIColor colorWithWhite:0.2 alpha:1.0];
     self.brandLabel.backgroundColor = [UIColor clearColor];
     self.brandLabel.shadowColor = [UIColor whiteColor];
     self.brandLabel.shadowOffset = CGSizeMake(0.0,1.0);
     self.brandLabel.numberOfLines = 2;
-    self.brandLabel.minimumFontSize = 15.0;
+    self.brandLabel.minimumFontSize = 13.0;
     self.brandLabel.adjustsFontSizeToFitWidth = YES;
 }
 
@@ -176,12 +175,12 @@ static CGPoint partnerImageOrigin = {2,34};
     
     if([company.nonResponder boolValue] == YES){
         
-        self.brandLabel.font = [UIFont italicSystemFontOfSize:22];
+        self.brandLabel.font = [UIFont italicSystemFontOfSize:kBrandNameFontSize];
         self.scoreLabel.font = [UIFont italicSystemFontOfSize:24];
         
     }else{
         
-        self.brandLabel.font = [UIFont boldSystemFontOfSize:22];
+        self.brandLabel.font = [UIFont boldSystemFontOfSize:kBrandNameFontSize];
         self.scoreLabel.font = [UIFont boldSystemFontOfSize:24];
     }    
 	
@@ -259,11 +258,29 @@ static CGPoint partnerImageOrigin = {2,34};
 	if(![company.partner boolValue]){
 		
 		self.partnerIcon.alpha = 0;
-		self.brandLabel.frame = CGRectMake(15, 0, 205, self.brandLabel.frame.size.height);
+        CGRect f = self.brandLabel.frame;
+        f.origin.x = 10;
+        f.size.width = 205;
+		self.brandLabel.frame = f;
+       
+        f = self.categoryLabel.frame;
+        f.origin.x = 10;
+        f.size.width = 205;
+		self.categoryLabel.frame = f;
+        
 	}else{
 		
 		self.partnerIcon.alpha = 1;
-		self.brandLabel.frame = CGRectMake(32, 0, 198, self.brandLabel.frame.size.height);
+        CGRect f = self.brandLabel.frame;
+        f.origin.x = 32;
+        f.size.width = 205 - 22;
+		self.brandLabel.frame = f;
+        
+        f = self.categoryLabel.frame;
+        f.origin.x = 32;
+        f.size.width = 205 - 22;
+		self.categoryLabel.frame = f;
+        
 		/*
 		CGSize nameBoundingBox = [nameLabel.text sizeWithFont:nameLabel.font
 											constrainedToSize:nameLabel.frame.size
@@ -343,26 +360,6 @@ static CGPoint partnerImageOrigin = {2,34};
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 79.0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 77.0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44.0;    
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return self.tableHeaderView;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return self.findAlternateView;
-}
-
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 //    return @"Other brands";
 //}
@@ -378,11 +375,13 @@ static CGPoint partnerImageOrigin = {2,34};
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         
-        badgeView = [[LKBadgeView alloc] initWithFrame:CGRectMake(240, 10, 50, 26)];
+        badgeView = [[LKBadgeView alloc] initWithFrame:CGRectMake(240, 12, 50, 22)];
         badgeView.textColor = [UIColor whiteColor];
-        badgeView.badgeColor = [UIColor darkGrayColor];
+        badgeView.badgeColor = [UIColor colorWithHexString:@"8B98B3"];
         [cell addSubview:badgeView];
         badgeView.tag = badgeTag;
+        //badgeView.widthMode = LKBadgeViewWidthModeSmall;
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
     
     NSNumber *count;

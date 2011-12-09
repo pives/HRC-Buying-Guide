@@ -32,7 +32,7 @@
 @property(nonatomic,retain)NSMutableDictionary *companyCategoryCounts;
 
 @property(nonatomic,retain)IBOutlet UIView *companyView;
-@property(nonatomic,retain)IBOutlet BALabel *brandLabel;
+@property(nonatomic,retain)IBOutlet UILabel *brandLabel;
 @property(nonatomic,retain)IBOutlet UILabel *categoryLabel;
 @property(nonatomic,retain)IBOutlet UILabel *scoreLabel;
 @property(nonatomic,retain)IBOutlet UILabel *companyLabel;
