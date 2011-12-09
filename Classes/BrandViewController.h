@@ -42,6 +42,7 @@
 @property(nonatomic,retain)IBOutlet UITableView *categoriesTableView;
 @property(nonatomic,retain)IBOutlet UIView *tableHeaderView;
 @property(nonatomic,retain)IBOutlet UIView *findAlternateView;
+@property (retain, nonatomic) IBOutlet UIButton *scorecardButton;
 
 
 

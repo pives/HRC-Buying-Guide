@@ -47,6 +47,8 @@
 		C4850F5B1491A60300CE8CB9 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = C4850F501491A60300CE8CB9 /* SBJsonStreamWriterState.m */; };
 		C4850F5C1491A60300CE8CB9 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = C4850F521491A60300CE8CB9 /* SBJsonTokeniser.m */; };
 		C4850F5D1491A60300CE8CB9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C4850F541491A60300CE8CB9 /* SBJsonWriter.m */; };
+		C4850F621491CF2C00CE8CB9 /* selectionButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4850F601491CF2C00CE8CB9 /* selectionButton@2x.png */; };
+		C4850F631491CF2C00CE8CB9 /* selectionButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4850F611491CF2C00CE8CB9 /* selectionButton.png */; };
 		C4864FFF10BC55F80064A126 /* HRCBrandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */; };
 		C48BBBD910C5791400F996C6 /* EmailIndifferent.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */; };
 		C48BBBE110C5792900F996C6 /* EmailSad.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48BBBDF10C5792900F996C6 /* EmailSad.txt */; };
@@ -244,6 +246,8 @@
 		C4850F521491A60300CE8CB9 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		C4850F531491A60300CE8CB9 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		C4850F541491A60300CE8CB9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		C4850F601491CF2C00CE8CB9 /* selectionButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionButton@2x.png"; sourceTree = "<group>"; };
+		C4850F611491CF2C00CE8CB9 /* selectionButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionButton.png; sourceTree = "<group>"; };
 		C4864FFD10BC55F80064A126 /* HRCBrandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCBrandTableViewController.h; sourceTree = "<group>"; };
 		C4864FFE10BC55F80064A126 /* HRCBrandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCBrandTableViewController.m; sourceTree = "<group>"; };
 		C48BBBD710C5791400F996C6 /* EmailIndifferent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmailIndifferent.txt; sourceTree = "<group>"; };
@@ -1056,6 +1060,8 @@
 		FE6AAD161491462B00FDDEED /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C4850F601491CF2C00CE8CB9 /* selectionButton@2x.png */,
+				C4850F611491CF2C00CE8CB9 /* selectionButton.png */,
 				FE6AAD171491462B00FDDEED /* 2011-iphone_icon-114x114.png */,
 				FE6AAD181491462B00FDDEED /* 2011-iphone_icon-57x57.png */,
 				FE6AAD191491462B00FDDEED /* Default.png */,
@@ -1249,6 +1255,8 @@
 				FE6AAD6F1491462B00FDDEED /* yellowButton.png in Resources */,
 				FE071B7B14918D5D00E87C7D /* Default-Cropped.png in Resources */,
 				FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */,
+				C4850F621491CF2C00CE8CB9 /* selectionButton@2x.png in Resources */,
+				C4850F631491CF2C00CE8CB9 /* selectionButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

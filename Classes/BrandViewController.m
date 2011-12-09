@@ -46,6 +46,7 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize partnerIcon;
 @synthesize categoriesTableView;
 @synthesize findAlternateView;
+@synthesize scorecardButton;
 @synthesize tableHeaderView;
 @synthesize companyView;
 
@@ -71,6 +72,7 @@ static CGPoint partnerImageOrigin = {2,34};
     self.findAlternateView = nil;
     self.tableHeaderView = nil;
     self.companyView = nil;
+    [scorecardButton release];
     [super dealloc];
 }
 
@@ -122,6 +124,7 @@ static CGPoint partnerImageOrigin = {2,34};
 
 
 - (void)viewDidUnload {
+    [self setScorecardButton:nil];
 	[super viewDidUnload];
 }
 
