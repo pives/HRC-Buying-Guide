@@ -502,7 +502,7 @@
 				C4EFE88010E0AA44005180AC /* Main View */,
 				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
 				C412894B10C83107007BB9A8 /* Filtered List View */,
-				C4FA187A10B2F4D30031303E /* Company */,
+				C4FA187A10B2F4D30031303E /* Brand */,
 				FE071B7214917DAE00E87C7D /* Sharing */,
 				C446CFB012E4B9EE009D3A09 /* Hud */,
 				C4F31C6A10C416C9004DF94F /* Score Card */,
@@ -1015,7 +1015,7 @@
 			name = Mac;
 			sourceTree = "<group>";
 		};
-		C4FA187A10B2F4D30031303E /* Company */ = {
+		C4FA187A10B2F4D30031303E /* Brand */ = {
 			isa = PBXGroup;
 			children = (
 				C4FA187510B2F4CE0031303E /* BrandViewController.h */,
@@ -1023,7 +1023,7 @@
 				C4FA187710B2F4CE0031303E /* BrandViewController.xib */,
 				C4FA193810B30C200031303E /* Brand Scroll View */,
 			);
-			name = Company;
+			name = Brand;
 			path = Classes;
 			sourceTree = "<group>";
 		};
