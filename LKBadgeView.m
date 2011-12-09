@@ -22,7 +22,7 @@
 
 #import "LKBadgeView.h"
 
-#define LK_BADGE_VIEW_MINUM_WIDTH           24.0
+#define LK_BADGE_VIEW_MINUM_WIDTH           22.0
 #define LK_BADGE_VIEW_HORIZONTAL_PADDING    6.0
 #define LK_BADGE_VIEW_TRUNCATED_SUFFIX      @"..."
 
