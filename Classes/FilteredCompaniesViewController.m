@@ -230,19 +230,11 @@
     
     BGBrand* selectedBrand = (BGBrand*)[note object];
     
-	
-	if(self.companyController == nil){
-		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
-		
-		detailViewController.view.frame = self.view.bounds;		
-		self.companyController = detailViewController;
-		[detailViewController release];
-
-		
-	}else{
-		
-		[companyController setBrand:selectedBrand];
-	}
+    BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
+    
+    detailViewController.view.frame = self.view.bounds;		
+    self.companyController = detailViewController;
+    [detailViewController release];
 	
 	
 	[self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];

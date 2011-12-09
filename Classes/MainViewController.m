@@ -45,10 +45,19 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 	// Release any cached data, images, etc that aren't in use.
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+}
+
+
 
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
+    
+
     [[NSNotificationCenter defaultCenter] removeObserver:self 
                                                     name:DidSelectCategoryNotification 
                                                   object:nil];
@@ -64,7 +73,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
+     NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
                       [UIBarButtonItem itemWithView:modeSwitch], 
                       [UIBarButtonItem flexibleSpaceItem],
                       nil];
@@ -268,19 +277,11 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     // Navigation logic may go here -- for example, create and push another view controller.
     BGBrand* selectedBrand = (BGBrand*)[note object];
     
-	if(self.brandController == nil){
-		BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
-		
-		detailViewController.view.frame = self.view.bounds;		
-		self.brandController = detailViewController;
-		[detailViewController release];
-		
-		
-	}else{
-		
-		[brandController setBrand:selectedBrand];
-	}
-	
+	BrandViewController *detailViewController = [[BrandViewController alloc] initWithBrand:selectedBrand]; 
+    
+    detailViewController.view.frame = self.view.bounds;		
+    self.brandController = detailViewController;
+    [detailViewController release];
     
     [self.navigationItem setBackBarButtonItem:[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]autorelease]];
     [self.navigationController pushViewController:brandController animated:YES];    
