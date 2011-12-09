@@ -137,12 +137,15 @@ static CGPoint partnerImageOrigin = {2,34};
 
 - (void)viewDidDisappear:(BOOL)animated{
 	
-	self.navigationController.toolbarHidden = NO;	
-
+    [super viewDidDisappear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
 	
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setToolbarHidden:NO animated:YES];
+
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -154,6 +157,7 @@ static float kBrandNameFontSize = 19.0;
     [super viewDidLoad];
     
     self.categoriesTableView.rowHeight  = 44.0;
+    
 
     //self.brandLabel.verticalAlignment = BAVerticalAlignmentCenter;
     self.brandLabel.font = [UIFont boldSystemFontOfSize:kBrandNameFontSize];
@@ -207,7 +211,7 @@ static float kBrandNameFontSize = 19.0;
     
     [super viewDidAppear:animated];
 	
-	self.navigationController.toolbarHidden = YES;	
+    [self.navigationController setToolbarHidden:YES animated:YES];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(categorySelectedWithNotification:) 
