@@ -78,6 +78,8 @@ NSString *const FilteredCompanySearchEnded = @"FilteredSearchEnded";;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignWithNotification:) name:UIApplicationWillResignActiveNotification object:nil];
 

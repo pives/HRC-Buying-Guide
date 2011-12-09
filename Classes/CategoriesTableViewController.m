@@ -25,6 +25,9 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
     [super viewDidLoad];
     self.tableView.rowHeight = 42;
     
+    UIColor* c = [UIColor colorWithPatternImage:[UIImage imageNamed:@"detailBG"]];
+    self.tableView.backgroundColor = c;
+
 
 }
 
@@ -88,6 +91,11 @@ NSString *const DidSelectCategoryNotification = @"CategorySelected";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.textLabel.backgroundColor = [UIColor whiteColor];
+        cell.textLabel.opaque = YES;
+        cell.contentView.opaque = YES;
+        cell.opaque = YES;
     }
     
 	// Configure the cell.

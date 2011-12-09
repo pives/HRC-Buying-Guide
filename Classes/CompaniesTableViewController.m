@@ -82,6 +82,13 @@ NSString *const DidSelectBrandNotification = @"DidSelectBrandNotification";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView* iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"detailBG"]];
+    iv.frame = self.view.bounds;
+    self.tableView.backgroundView = iv;
+    [iv release];
+    
+    
     self.tableView.separatorColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     

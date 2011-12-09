@@ -37,7 +37,7 @@
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
-       
+           
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     
@@ -58,6 +58,11 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView* iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"detailBG"]];
+    iv.frame = self.view.bounds;
+    [self.view insertSubview:iv atIndex:0];
+    [iv release];
     
     self.navigationItem.hidesBackButton = NO;
     
@@ -105,7 +110,7 @@
     tv.shadowColor = [UIColor darkGrayColor];
     self.navigationItem.titleView = tv;
 
-    tableController.view.frame = self.view.bounds;;
+    tableController.view.frame = self.view.bounds;
     [self.view addSubview:tableController.view];
 
     /*
