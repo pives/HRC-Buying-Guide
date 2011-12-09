@@ -15,7 +15,7 @@
 #import "Company+Extensions.h"
 #import "NSManagedObjectContext+Extensions.h"
 #import "SharingManager.h"
-
+#import "BALabel.h"
 
 @implementation CompanyScoreCardViewController
 
@@ -167,7 +167,13 @@
 #pragma mark - UITableView Delegate & Datasource
 
 -(CGFloat)tableView:(UITableView *)tv heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55.0;
+    //return 128.0;
+    
+	BGScorecard *scorecard = (BGScorecard*)[fetchedResultsController objectAtIndexPath:indexPath];
+    CGSize size = [scorecard.policyDescription sizeWithFont:[UIFont systemFontOfSize:14]
+                                          constrainedToSize:CGSizeMake(232.0,400.0)
+                                              lineBreakMode:UILineBreakModeWordWrap]; 
+    return size.height + 15.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
@@ -206,15 +212,18 @@
         [cell addSubview:iconImageView];
         [iconImageView release];
         
-        descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 4.0, 220.0, 36.0)];
+        descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0, 5.0, 232.0, 120.0)];
         descriptionLabel.tag = DescriptionLabelTag;
+        descriptionLabel.lineBreakMode = UILineBreakModeWordWrap;
         descriptionLabel.backgroundColor = [UIColor clearColor];
-        descriptionLabel.numberOfLines = 2;
-        descriptionLabel.font = [UIFont systemFontOfSize:15.0];
+        descriptionLabel.numberOfLines = 7;
+//        descriptionLabel.adjustsFontSizeToFitWidth = YES;
+//        descriptionLabel.minimumFontSize = 11.0;
+        descriptionLabel.font = [UIFont systemFontOfSize:14];
         [cell addSubview:descriptionLabel];
         [descriptionLabel release];
         
-        ratingLabel = [[UILabel alloc] initWithFrame:CGRectMake(270.0, 5.0, 60.0, 32.0)];
+        ratingLabel = [[UILabel alloc] initWithFrame:CGRectMake(277.0, 5.0, 33.0, 25.0)];
         ratingLabel.tag = RatingLabelTag;
         ratingLabel.backgroundColor = [UIColor clearColor];
         ratingLabel.textAlignment = UITextAlignmentCenter;
@@ -226,19 +235,26 @@
 	BGScorecard *scorecard = (BGScorecard*)[fetchedResultsController objectAtIndexPath:indexPath];
     
     iconImageView = (UIImageView *)[cell viewWithTag:IconImageViewTag];
+    descriptionLabel = (UILabel *)[cell viewWithTag:DescriptionLabelTag];
+    ratingLabel = (UILabel *)[cell viewWithTag:RatingLabelTag];
     
     if ([scorecard.policyRating intValue] > 0) {
         iconImageView.image = [UIImage imageNamed:@"check.png"];
         ratingLabel.textColor = [UIColor colorWithRed:0.0 green:0.8 blue:0.0 alpha:1.0];
     } else {
         iconImageView.image = [UIImage imageNamed:@"x.png"];
-        ratingLabel.textColor = [UIColor colorWithRed:0.8 green:1.0 blue:0.0 alpha:1.0];
+        ratingLabel.textColor = [UIColor colorWithRed:0.8 green:0.0 blue:0.0 alpha:1.0];
     }
     
-    descriptionLabel = (UILabel *)[cell viewWithTag:DescriptionLabelTag];
+    CGSize size = [scorecard.policyDescription sizeWithFont:[UIFont systemFontOfSize:14]
+                                          constrainedToSize:CGSizeMake(232.0,400.0)
+                                              lineBreakMode:UILineBreakModeWordWrap];
+    descriptionLabel.frame = CGRectMake(descriptionLabel.frame.origin.x,
+                                        descriptionLabel.frame.origin.y,
+                                        descriptionLabel.frame.size.width,
+                                        size.height);
     descriptionLabel.text = scorecard.policyDescription;
     
-    ratingLabel = (UILabel *)[cell viewWithTag:RatingLabelTag];
     ratingLabel.text = [NSString stringWithFormat:@"%@%@", [scorecard.policyRating intValue] > 0 ? @"+" : @"", scorecard.policyRating];
     
     return cell;

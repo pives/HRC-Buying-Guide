@@ -64,7 +64,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
     [self addSplashScreen];
     
-    if(loadFromFile){
+    if(loadFromFile) {
         
         [self updateDataWFromLocalJSON];
         

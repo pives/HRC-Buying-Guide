@@ -117,6 +117,8 @@
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
 		FE071B7514917DD400E87C7D /* SharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE071B7414917DD400E87C7D /* SharingManager.m */; };
+		FE071B7B14918D5D00E87C7D /* Default-Cropped.png in Resources */ = {isa = PBXBuildFile; fileRef = FE071B7A14918D5D00E87C7D /* Default-Cropped.png */; };
+		FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE071B7C14918D6700E87C7D /* Default-Cropped@2x.png */; };
 		FE3E64FD148C6BF2004D3EDE /* LKBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */; };
 		FE618325149020AB007AB21D /* BGScorecard.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618324149020AB007AB21D /* BGScorecard.m */; };
 		FE618328149020E2007AB21D /* BGCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = FE618327149020E2007AB21D /* BGCompany.m */; };
@@ -425,6 +427,8 @@
 		D8A2A49312D4A7D700EF982E /* storedata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = storedata.sqlite; sourceTree = "<group>"; };
 		FE071B7314917DD400E87C7D /* SharingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingManager.h; sourceTree = "<group>"; };
 		FE071B7414917DD400E87C7D /* SharingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingManager.m; sourceTree = "<group>"; };
+		FE071B7A14918D5D00E87C7D /* Default-Cropped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Cropped.png"; sourceTree = "<group>"; };
+		FE071B7C14918D6700E87C7D /* Default-Cropped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Cropped@2x.png"; sourceTree = "<group>"; };
 		FE3E64FA148C6BF2004D3EDE /* LKBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKBadgeView.m; sourceTree = "<group>"; };
 		FE3E64FB148C6BF2004D3EDE /* LKBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKBadgeView.h; sourceTree = "<group>"; };
 		FE618323149020AB007AB21D /* BGScorecard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGScorecard.h; sourceTree = "<group>"; };
@@ -1101,6 +1105,7 @@
 		FE6AAD1D1491462B00FDDEED /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				FE071B7A14918D5D00E87C7D /* Default-Cropped.png */,
 				FE6AAD1E1491462B00FDDEED /* brandsButton.png */,
 				FE6AAD1F1491462B00FDDEED /* buttonFindAlternatesBlue.png */,
 				FE6AAD201491462B00FDDEED /* buttonFindAlternatesOrange.png */,
@@ -1125,6 +1130,7 @@
 		FE6AAD2F1491462B00FDDEED /* iPhone@2x */ = {
 			isa = PBXGroup;
 			children = (
+				FE071B7C14918D6700E87C7D /* Default-Cropped@2x.png */,
 				FE6AAD301491462B00FDDEED /* buttonFindAlternatesBlue@2x.png */,
 				FE6AAD311491462B00FDDEED /* buttonFindAlternatesOrange@2x.png */,
 				FE6AAD321491462B00FDDEED /* buttonFindAlternatesPurple@2x.png */,
@@ -1312,6 +1318,8 @@
 				FE6AAD6D1491462B00FDDEED /* tweetbubble.png in Resources */,
 				FE6AAD6E1491462B00FDDEED /* twittername.png in Resources */,
 				FE6AAD6F1491462B00FDDEED /* yellowButton.png in Resources */,
+				FE071B7B14918D5D00E87C7D /* Default-Cropped.png in Resources */,
+				FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

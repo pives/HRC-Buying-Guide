@@ -191,7 +191,7 @@
 			<key>CoreDataKey</key>
 			<string>company</string>
 			<key>CoreDataRelationshipMethod</key>
-			<string>setCompany</string>
+			<string>setCompany:</string>
 			<key>CoreDataRelationshipKey</key>
 			<string>remoteID</string>
 			<key>CoreDataRelationshipEntity</key>
