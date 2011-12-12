@@ -388,7 +388,6 @@ static float kBrandNameFontSize = 19.0;
         [cell addSubview:badgeView];
         badgeView.tag = badgeTag;
         //badgeView.widthMode = LKBadgeViewWidthModeSmall;
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
     
     NSNumber *count;
@@ -397,10 +396,14 @@ static float kBrandNameFontSize = 19.0;
     if (indexPath.row == self.companyCategories.count) {
         cell.textLabel.text = @"All Brands";
         count = [self.companyCategoryCounts objectForKey:AllCategoriesKey];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
+
     } else {
         BGCategory *cat = [self.companyCategories objectAtIndex:indexPath.row];
         cell.textLabel.text = cat.name;
         count = [self.companyCategoryCounts objectForKey:cat.name];
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+
     }
     
     NSString *countString;
