@@ -590,8 +590,8 @@ bail:
         [components setCalendar:[NSCalendar currentCalendar]];
         [components setYear:2011];
         [components setMonth:12];
-        [components setDay:8];
-        [components setHour:9];
+        [components setDay:11];
+        [components setHour:12];
         [components setMinute:0];
         [components setSecond:0];
         NSDate *lastUpdateDate = [components date];
