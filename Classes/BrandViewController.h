@@ -22,7 +22,7 @@
     UIView* scoreBackgroundColor;
     UIImageView* partnerIcon;
     
-    
+    BOOL shouldShowToolBarWhenDismissing;
 
 }
 @property(nonatomic,retain)BGCompany *company;
@@ -44,7 +44,7 @@
 @property(nonatomic,retain)IBOutlet UIView *findAlternateView;
 @property (retain, nonatomic) IBOutlet UIButton *scorecardButton;
 
-
+@property (nonatomic, assign) BOOL shouldShowToolBarWhenDismissing;
 
 
 - (IBAction)showScoreCard;

@@ -49,6 +49,7 @@ static CGPoint partnerImageOrigin = {2,34};
 @synthesize scorecardButton;
 @synthesize tableHeaderView;
 @synthesize companyView;
+@synthesize shouldShowToolBarWhenDismissing;
 
 
 
@@ -119,6 +120,7 @@ static CGPoint partnerImageOrigin = {2,34};
     return self;
 }
 
+
 #pragma mark -
 #pragma mark UIViewController
 
@@ -144,7 +146,8 @@ static CGPoint partnerImageOrigin = {2,34};
 	
     [super viewWillDisappear:animated];
     
-    [self.navigationController setToolbarHidden:NO animated:YES];
+    if(self.shouldShowToolBarWhenDismissing)
+        [self.navigationController setToolbarHidden:NO animated:YES];
 
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -175,6 +178,8 @@ static float kBrandNameFontSize = 19.0;
     
     [super viewWillAppear:animated];
 	
+    self.shouldShowToolBarWhenDismissing = YES;
+
     self.scoreLabel.text = self.company.ratingFormatted;
     self.brandLabel.text = self.brand.name;
     self.companyLabel.text = self.company.name;
@@ -348,6 +353,8 @@ static float kBrandNameFontSize = 19.0;
 #pragma mark Scorecard
 
 - (IBAction)showScoreCard{
+    
+    self.shouldShowToolBarWhenDismissing = NO;
     
     CompanyScoreCardViewController* vc = [[[CompanyScoreCardViewController alloc] initWithCompany:self.company] autorelease];
     [self.navigationController pushViewController:vc animated:YES];
