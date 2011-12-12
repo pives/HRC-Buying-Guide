@@ -21,6 +21,12 @@
 
 #define UPDATE_INTERVAL 86400 //seconds == 1 days
 
+//#define LOAD_FROM_FILE
+//#define FORCE_COPY_BUNDLE_LIBRARY
+//#define FORCE_FULL_DOWNLOAD
+
+
+
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 @interface BuyingGuideAppDelegate ()
@@ -49,58 +55,67 @@ static NSString* kAnimationID = @"SplashAnimation";
     // Override point for customization after app launch    
 	
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
-	
-    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-
-	[window makeKeyAndVisible];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application{
     
-    BOOL loadFromFile = NO; //nils out db
-	BOOL forceCopyBundleLibary = NO; //copies the static db first
-    BOOL forceFullDownload = NO; //forces a full data download
-
-    [self addSplashScreen];
     
-    if(loadFromFile) {
-        
-        [self updateDataWFromLocalJSON];
-        
-    }else{
-        
-        
-        NSDate *lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastUpdateDateKey];
-        
-        
-        if(!forceFullDownload)
-            [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
+    BOOL forceCopyBundleLibary = NO;
+    
+#ifdef FORCE_COPY_BUNDLE_LIBRARY
+    
+    forceCopyBundleLibary = YES;
+    
+#endif
 
-        
-        
-        if ( forceFullDownload || 
-             lastUpdateDate == nil ||
-             [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL) {
-            
-            [self updateDataWithLastUpdateDate:(forceFullDownload ? nil : lastUpdateDate)];
-            
-        } else {
-            
-            [self dataUpdateDidFinish];            
-            
-        }
+    [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
 
-        
-        
-    }
     
     NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
     NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
     [[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
 
+    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+    [window addSubview:[navigationController view]];
 
+	[window makeKeyAndVisible];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+        
+    
+#ifdef LOAD_FROM_FILE
+    
+    [self updateDataWFromLocalJSON];
+    
+    
+#endif
+    
+
+    NSDate *lastUpdateDate = nil;
+
+    
+#ifdef FORCE_FULL_DOWNLOAD
+    
+    lastUpdateDate = nil;
+
+#else
+    
+
+    lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastUpdateDateKey];
+    
+#endif
+    
+    if(!lastUpdateDate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL){
+        
+        [self updateDataWithLastUpdateDate:lastUpdateDate];
+
+    }else{
+        
+        [self dataUpdateDidFinish];            
+
+    }
+    
 }
 
 -(void) removeSplashScreen{
@@ -113,7 +128,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 }
 
 -(void) addSplashScreen{
-	UIImageView *localSplashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+	UIImageView *localSplashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
 	localSplashView.frame = [[UIScreen mainScreen] applicationFrame];
 	self.splashView = localSplashView;
 	[window addSubview:splashView];
@@ -139,7 +154,6 @@ static NSString* kAnimationID = @"SplashAnimation";
     [self.hud removeFromSuperview];
     self.hud = nil;
     
-    [window insertSubview:[navigationController view] belowSubview:self.splashView];
 	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
@@ -429,50 +443,90 @@ bail:
 }
 	
 - (void)updateLoadedData {
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSDictionary *updateDict = [parser objectWithData:_updateData];
-	[parser release];
-	[_updateData release];
-	_updateData = nil;
-	
-	NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
-	NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
-	NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
-	NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        NSDictionary *updateDict = [parser objectWithData:_updateData];
+        [parser release];
+        [_updateData release];
+        _updateData = nil;
+        
+        NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
+        NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
+        NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
+        NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
+        
+        NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
+        
+        NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
+        NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
+        
 
-	NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
-	
-	NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
-	NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
-	
-	
-	[self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
-	[self saveData];
-	[self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
-	[self saveData];
-	[self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
-	[self saveData];
-	[self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
-	[self saveData];
-    [self markOrganizationsAsDeletedWithJSON:removed];
-    [self saveData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if([organizations count] > 0 || [brands count] > 0){
+                
+                [self addSplashScreen];
+                
+                [self.hud hide:NO];
+                [self.hud removeFromSuperview];
+                self.hud = [[MBProgressHUD alloc] initWithWindow:self.window];
+                self.hud.labelText = @"Updating. Please wait…";
+                [self.window addSubview:self.hud];
+                [self.hud show:YES];
+            }
+            
+            
+            
+            double delayInSeconds = 1.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
+                [self saveData];
+                [self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
+                [self saveData];
+                [self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+                [self saveData];
+                
+                if([organizations count] > 0 || [brands count] > 0){
+                    [self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
+                    [self saveData];
+                }
+                
+                [self markOrganizationsAsDeletedWithJSON:removed];
+                [self saveData];
+                
+                
+                NSDate *lastUpdateDate = [NSDate date];
+                [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                
+                [self.navigationController popViewControllerAnimated:NO];
+                MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+                rootViewController.managedObjectContext = self.managedObjectContext;
+                [rootViewController.categoryView fetchAndReload];
+                [rootViewController.companyView fetchAndReload];
+                [rootViewController.modeSwitch setSelectedSegmentIndex:0];
+                [rootViewController loadCategories];
+                
+                
+                [self dataUpdateDidFinish];
+                
+            });
+            
+        });
+            
+        });
+        
+        
+           
+   
     
     
-    NSDate *lastUpdateDate = [NSDate date];
-    [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
-    [self.navigationController popViewControllerAnimated:NO];
-    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-    [rootViewController.categoryView fetchAndReload];
-    [rootViewController.companyView fetchAndReload];
-    [rootViewController.modeSwitch setSelectedSegmentIndex:0];
-    [rootViewController loadCategories];
-    
-    	
-	[self dataUpdateDidFinish];
+	    
 }
 
 
@@ -513,13 +567,6 @@ bail:
         
     self.start = [NSDate date]; 
     
-    
-    [self.hud hide:NO];
-    [self.hud removeFromSuperview];
-    self.hud = [[MBProgressHUD alloc] initWithWindow:self.window];
-    self.hud.labelText = @"Updating";
-    [self.window addSubview:self.hud];
-    [self.hud show:YES];
     
 	NSString *URLString = @"http://fj.hrc.org/app_connect2.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
