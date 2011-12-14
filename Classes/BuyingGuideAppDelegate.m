@@ -57,7 +57,9 @@ static NSString* kAnimationID = @"SplashAnimation";
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     
     
-    BOOL forceCopyBundleLibary = NO;
+    BOOL forceCopyBundleLibary;
+    
+    forceCopyBundleLibary = NO;
     
 #ifdef FORCE_COPY_BUNDLE_LIBRARY
     
@@ -65,8 +67,16 @@ static NSString* kAnimationID = @"SplashAnimation";
     
 #endif
 
+#ifdef FORCE_FULL_DOWNLOAD
+
+    NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+    [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
+
+#else
+    
     [self loadDataBaseCopyFromBundleForce:forceCopyBundleLibary];
 
+#endif
     
     NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
     NSString* newBundleID = [info objectForKey:(NSString*)kCFBundleVersionKey];
@@ -586,6 +596,11 @@ bail:
 
 - (void)loadDataBaseCopyFromBundleForce:(BOOL)flag{
 
+    //remove old DB
+    NSString* oldDatabase = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"storedata.sqlite"];
+    [[NSFileManager defaultManager] removeItemAtPath:oldDatabase error:nil];
+    
+    
     NSString* bundleDB = [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
 	NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
 	
@@ -637,7 +652,7 @@ bail:
         [components setCalendar:[NSCalendar currentCalendar]];
         [components setYear:2011];
         [components setMonth:12];
-        [components setDay:11];
+        [components setDay:14];
         [components setHour:12];
         [components setMinute:0];
         [components setSecond:0];
@@ -761,7 +776,7 @@ bail:
  Returns the path to the application's Documents directory.
  */
 - (NSString *)applicationDocumentsDirectory {
-	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 
