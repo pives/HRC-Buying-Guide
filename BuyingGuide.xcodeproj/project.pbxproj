@@ -1400,7 +1400,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv6,
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1419,7 +1419,7 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3B1D95CF-0BC3-4EE1-A29A-FFAF0936FC0F";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv6";
 			};
