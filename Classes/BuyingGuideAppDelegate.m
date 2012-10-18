@@ -18,6 +18,7 @@
 #import "BGCompany.h"
 #import "BGScorecard.h"
 #import "MBProgressHUD.h"
+#import <Parse/Parse.h>
 
 #define UPDATE_INTERVAL 86400 //seconds == 1 days
 
@@ -56,6 +57,9 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     
+    // Linked to App in Alfie Hanssen's Parse.com account temporarily
+    [Parse setApplicationId:@"o72InGUfmTyAjoVZY3syfy7lgSfcyQwgLsBBbpcM"
+                  clientKey:@"WvHSLPC3FzRe5ApKrgnK8ritZOps8pCW4z7EtviX"];
     
     BOOL forceCopyBundleLibary;
     
@@ -88,7 +92,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	rootViewController.managedObjectContext = self.managedObjectContext;
     [window addSubview:[navigationController view]];
 
-	[window makeKeyAndVisible];
+	[window makeKeyAndVisible];    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{

@@ -13,14 +13,14 @@
 		28C286E10D94DF7D0034E888 /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
 		91FD305E163026DE00909B2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305D163026DE00909B2B /* Parse.framework */; };
 		91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305F1630270A00909B2B /* AudioToolbox.framework */; };
-		91FD30621630271300909B2B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30611630271300909B2B /* Accounts.framework */; };
-		91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30631630271B00909B2B /* AdSupport.framework */; };
+		91FD30621630271300909B2B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30611630271300909B2B /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30631630271B00909B2B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30651630272000909B2B /* CFNetwork.framework */; };
 		91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30671630272900909B2B /* CoreGraphics.framework */; };
 		91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30691630272D00909B2B /* CoreLocation.framework */; };
 		91FD306C1630275400909B2B /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306B1630275400909B2B /* libz.1.1.3.dylib */; };
 		91FD306E1630276100909B2B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306D1630276100909B2B /* MobileCoreServices.framework */; };
-		91FD30701630278300909B2B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306F1630278300909B2B /* Social.framework */; };
+		91FD30701630278300909B2B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306F1630278300909B2B /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30711630278B00909B2B /* StoreKit.framework */; };
 		91FD3074163027B700909B2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3073163027B700909B2B /* UIKit.framework */; };
 		91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3075163027C100909B2B /* MessageUI.framework */; };
