@@ -157,14 +157,14 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
       [self utfAppendBody:body
                      data:[NSString stringWithFormat:@"Content-Disposition: form-data; filename=\"photo\"\r\n"]];
       [self utfAppendBody:body
-                     data:[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"]];
+                     data:@"Content-Type: image/png\r\n\r\n"];
       [body appendData:imageData];
     } else {
       NSAssert([_dataParam isKindOfClass:[NSData class]], @"dataParam must be a UIImage or NSData");
       [self utfAppendBody:body
                      data:[NSString stringWithFormat:@"Content-Disposition: form-data; filename=\"data\"\r\n"]];
       [self utfAppendBody:body
-                     data:[NSString stringWithString:@"Content-Type: content/unknown\r\n\r\n"]];
+                     data:@"Content-Type: content/unknown\r\n\r\n"];
       [body appendData:(NSData*)_dataParam];
     }
     [self utfAppendBody:body data:endLine];

@@ -7,7 +7,7 @@
 //
 
 #import "NSObjectHelper.h"
-#import </usr/include/objc/objc-class.h>
+//#import </usr/include/objc/objc-class.h>
 
 // Credit: http://www.cocoadev.com/index.pl?MethodSwizzle
 BOOL MethodSwizzle(Class klass, SEL origSel, SEL altSel, BOOL forInstance) {

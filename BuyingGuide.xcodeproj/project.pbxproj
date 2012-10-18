@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,20 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
+		91FD305E163026DE00909B2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305D163026DE00909B2B /* Parse.framework */; };
+		91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305F1630270A00909B2B /* AudioToolbox.framework */; };
+		91FD30621630271300909B2B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30611630271300909B2B /* Accounts.framework */; };
+		91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30631630271B00909B2B /* AdSupport.framework */; };
+		91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30651630272000909B2B /* CFNetwork.framework */; };
+		91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30671630272900909B2B /* CoreGraphics.framework */; };
+		91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30691630272D00909B2B /* CoreLocation.framework */; };
+		91FD306C1630275400909B2B /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306B1630275400909B2B /* libz.1.1.3.dylib */; };
+		91FD306E1630276100909B2B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306D1630276100909B2B /* MobileCoreServices.framework */; };
+		91FD30701630278300909B2B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306F1630278300909B2B /* Social.framework */; };
+		91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30711630278B00909B2B /* StoreKit.framework */; };
+		91FD3074163027B700909B2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3073163027B700909B2B /* UIKit.framework */; };
+		91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3075163027C100909B2B /* MessageUI.framework */; };
+		91FDD222162E3D7300376856 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FDD221162E3D7300376856 /* Default-568h@2x.png */; };
 		C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */; };
 		C4103F5310B6FBBB004CEC15 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4103F5210B6FBBB004CEC15 /* KeyView.xib */; };
 		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
@@ -24,12 +38,8 @@
 		C4541B9910CEEBCD006A29A4 /* KeyWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4541B9610CEEBCD006A29A4 /* KeyWebView.xib */; };
 		C4541B9A10CEEBCD006A29A4 /* KeyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4541B9810CEEBCD006A29A4 /* KeyWebViewController.m */; };
 		C460090B11D1A6B500545996 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090A11D1A6B500545996 /* CoreData.framework */; };
-		C460090D11D1A6B500545996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090C11D1A6B500545996 /* CoreGraphics.framework */; };
-		C460090F11D1A6B500545996 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460090E11D1A6B500545996 /* CoreLocation.framework */; };
 		C460091111D1A6B500545996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091011D1A6B500545996 /* Foundation.framework */; };
-		C460091311D1A6B500545996 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091211D1A6B500545996 /* MessageUI.framework */; };
 		C460091511D1A6B500545996 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091411D1A6B500545996 /* QuartzCore.framework */; };
-		C460091711D1A6B500545996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091611D1A6B500545996 /* UIKit.framework */; };
 		C460091911D1A6D000545996 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091811D1A6D000545996 /* libsqlite3.dylib */; };
 		C460091B11D1A6DE00545996 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091A11D1A6DE00545996 /* Security.framework */; };
 		C460091F11D1A70400545996 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C460091E11D1A70400545996 /* libxml2.dylib */; };
@@ -110,7 +120,6 @@
 		C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE69510E08749005180AC /* HRCSearchResultsController.m */; };
 		C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */; };
 		C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */; };
-		C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EFE74610E09878005180AC /* NSObjectHelper.m */; };
 		C4EFE95810E135AC005180AC /* CompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */; };
 		C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */; };
 		C4F31C6D10C41703004DF94F /* CompanyScoreCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */; };
@@ -189,6 +198,20 @@
 		28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BuyingGuide-Info.plist"; path = "../BuyingGuide-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		91FD305D163026DE00909B2B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Third Party Source/Parse.framework"; sourceTree = "<group>"; };
+		91FD305F1630270A00909B2B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30611630271300909B2B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30631630271B00909B2B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30651630272000909B2B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30671630272900909B2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30691630272D00909B2B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		91FD306B1630275400909B2B /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.1.1.3.dylib; sourceTree = DEVELOPER_DIR; };
+		91FD306D1630276100909B2B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		91FD306F1630278300909B2B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		91FD30711630278B00909B2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		91FD3073163027B700909B2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		91FD3075163027C100909B2B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		91FDD221162E3D7300376856 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4103F4D10B6FAD8004CEC15 /* KeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyViewController.h; sourceTree = "<group>"; };
 		C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyViewController.m; sourceTree = "<group>"; };
 		C4103F5210B6FBBB004CEC15 /* KeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyView.xib; sourceTree = "<group>"; };
@@ -213,9 +236,7 @@
 		C460090C11D1A6B500545996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C460090E11D1A6B500545996 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C460091011D1A6B500545996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C460091211D1A6B500545996 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C460091411D1A6B500545996 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C460091611D1A6B500545996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C460091811D1A6D000545996 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C460091A11D1A6DE00545996 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C460091E11D1A70400545996 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -379,8 +400,6 @@
 		C4EFE6AA10E08BCC005180AC /* HRCCompaniesResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCCompaniesResultsController.m; sourceTree = "<group>"; };
 		C4EFE6AD10E08BDF005180AC /* HRCCategoriesResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCCategoriesResultsController.h; sourceTree = "<group>"; };
 		C4EFE6AE10E08BDF005180AC /* HRCCategoriesResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCCategoriesResultsController.m; sourceTree = "<group>"; };
-		C4EFE74510E09878005180AC /* NSObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectHelper.h; sourceTree = "<group>"; };
-		C4EFE74610E09878005180AC /* NSObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectHelper.m; sourceTree = "<group>"; };
 		C4EFE95710E135AC005180AC /* CompaniesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompaniesTableViewController.xib; sourceTree = "<group>"; };
 		C4EFEB7B10E190B5005180AC /* FilteredCompaniesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteredCompaniesTableViewController.xib; sourceTree = "<group>"; };
 		C4F31C6B10C41703004DF94F /* CompanyScoreCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyScoreCardView.xib; sourceTree = "<group>"; };
@@ -472,19 +491,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */,
+				91FD3074163027B700909B2B /* UIKit.framework in Frameworks */,
+				91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */,
+				91FD30701630278300909B2B /* Social.framework in Frameworks */,
+				91FD306E1630276100909B2B /* MobileCoreServices.framework in Frameworks */,
+				91FD306C1630275400909B2B /* libz.1.1.3.dylib in Frameworks */,
+				91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */,
+				91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */,
+				91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */,
+				91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */,
+				91FD30621630271300909B2B /* Accounts.framework in Frameworks */,
+				91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */,
 				C4A24605111B46F70015786E /* libOAuth.a in Frameworks */,
 				C460090B11D1A6B500545996 /* CoreData.framework in Frameworks */,
-				C460090D11D1A6B500545996 /* CoreGraphics.framework in Frameworks */,
-				C460090F11D1A6B500545996 /* CoreLocation.framework in Frameworks */,
 				C460091111D1A6B500545996 /* Foundation.framework in Frameworks */,
-				C460091311D1A6B500545996 /* MessageUI.framework in Frameworks */,
 				C460091511D1A6B500545996 /* QuartzCore.framework in Frameworks */,
-				C460091711D1A6B500545996 /* UIKit.framework in Frameworks */,
 				C460091911D1A6D000545996 /* libsqlite3.dylib in Frameworks */,
 				C460091B11D1A6DE00545996 /* Security.framework in Frameworks */,
 				C460091F11D1A70400545996 /* libxml2.dylib in Frameworks */,
 				C460098B11D1A8FD00545996 /* SystemConfiguration.framework in Frameworks */,
 				C4BC980611D82DA0001CCEF7 /* libFlurry.a in Frameworks */,
+				91FD305E163026DE00909B2B /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +530,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				91FD30591630269900909B2B /* Third Party Source */,
+				91FDD221162E3D7300376856 /* Default-568h@2x.png */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4EFE88010E0AA44005180AC /* Main View */,
 				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
@@ -542,12 +572,20 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91FD305D163026DE00909B2B /* Parse.framework */,
 				C4850F411491A60300CE8CB9 /* JSON */,
 				C4BC980111D82D9E001CCEF7 /* FlurryLib */,
 				C4F4121411D1C1F500FD3659 /* iPhone */,
 				C4F4122211D1C25700FD3659 /* Mac */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91FD30591630269900909B2B /* Third Party Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Third Party Source";
 			sourceTree = "<group>";
 		};
 		C4103F5110B6FADF004CEC15 /* Key */ = {
@@ -887,8 +925,6 @@
 				C4CDF894110907170036F44F /* NSError+Alertview.m */,
 				C41CCDEC10F1637800973374 /* NSObject+AssociatedObjects.h */,
 				C41CCDED10F1637800973374 /* NSObject+AssociatedObjects.m */,
-				C4EFE74510E09878005180AC /* NSObjectHelper.h */,
-				C4EFE74610E09878005180AC /* NSObjectHelper.m */,
 				C4FA200810B4BA570031303E /* UIColor+extensions.h */,
 				C4FA200910B4BA570031303E /* UIColor+extensions.m */,
 				C4FA200710B4BA570031303E /* UIView-Extensions.h */,
@@ -994,13 +1030,23 @@
 		C4F4121411D1C1F500FD3659 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				91FD3075163027C100909B2B /* MessageUI.framework */,
+				91FD3073163027B700909B2B /* UIKit.framework */,
+				91FD30711630278B00909B2B /* StoreKit.framework */,
+				91FD306F1630278300909B2B /* Social.framework */,
+				91FD306D1630276100909B2B /* MobileCoreServices.framework */,
+				91FD306B1630275400909B2B /* libz.1.1.3.dylib */,
+				91FD30691630272D00909B2B /* CoreLocation.framework */,
+				91FD30671630272900909B2B /* CoreGraphics.framework */,
+				91FD30651630272000909B2B /* CFNetwork.framework */,
+				91FD30631630271B00909B2B /* AdSupport.framework */,
+				91FD30611630271300909B2B /* Accounts.framework */,
+				91FD305F1630270A00909B2B /* AudioToolbox.framework */,
 				C460090A11D1A6B500545996 /* CoreData.framework */,
 				C460090C11D1A6B500545996 /* CoreGraphics.framework */,
 				C460090E11D1A6B500545996 /* CoreLocation.framework */,
 				C460091011D1A6B500545996 /* Foundation.framework */,
-				C460091211D1A6B500545996 /* MessageUI.framework */,
 				C460091411D1A6B500545996 /* QuartzCore.framework */,
-				C460091611D1A6B500545996 /* UIKit.framework */,
 				C460091A11D1A6DE00545996 /* Security.framework */,
 				C460091811D1A6D000545996 /* libsqlite3.dylib */,
 				C460091E11D1A70400545996 /* libxml2.dylib */,
@@ -1160,8 +1206,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BuyingGuide" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -1257,6 +1306,7 @@
 				FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */,
 				C4850F621491CF2C00CE8CB9 /* selectionButton@2x.png in Resources */,
 				C4850F631491CF2C00CE8CB9 /* selectionButton.png in Resources */,
+				91FDD222162E3D7300376856 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1297,7 +1347,6 @@
 				C4EFE69610E08749005180AC /* HRCSearchResultsController.m in Sources */,
 				C4EFE6AB10E08BCC005180AC /* HRCCompaniesResultsController.m in Sources */,
 				C4EFE6AF10E08BDF005180AC /* HRCCategoriesResultsController.m in Sources */,
-				C4EFE74710E09878005180AC /* NSObjectHelper.m in Sources */,
 				C41CCDEE10F1637800973374 /* NSObject+AssociatedObjects.m in Sources */,
 				C4CDF79F1108DD4D0036F44F /* FJSTweetViewController.m in Sources */,
 				C4CDF7A71108DD670036F44F /* FJSTwitterLoginController.m in Sources */,
@@ -1362,21 +1411,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Third Party Source\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1385,10 +1436,11 @@
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
 					"\"$(SRCROOT)/FlurryLib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 i386";
 			};
 			name = Debug;
 		};
@@ -1396,19 +1448,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Third Party Source\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1417,11 +1471,12 @@
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
 					"\"$(SRCROOT)/FlurryLib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3B1D95CF-0BC3-4EE1-A29A-FFAF0936FC0F";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 i386";
 			};
 			name = Release;
 		};
@@ -1434,9 +1489,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1449,9 +1503,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -1465,9 +1518,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
 			};
 			name = Beta;
 		};
@@ -1475,19 +1527,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Third Party Source\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BuyingGuide_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				INFOPLIST_FILE = "BuyingGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1496,11 +1550,12 @@
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
 					"\"$(SRCROOT)/FlurryLib\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13E832FA-63C4-42B6-82AA-E4BFAE57E8F7";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv6";
+				VALID_ARCHS = "armv7 i386";
 			};
 			name = Beta;
 		};
