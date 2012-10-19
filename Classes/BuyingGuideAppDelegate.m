@@ -26,6 +26,7 @@
 //#define FORCE_COPY_BUNDLE_LIBRARY
 //#define FORCE_FULL_DOWNLOAD
 #define DISABLE_UPDATE
+//#define DEV_MODE_APNS
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
@@ -53,9 +54,13 @@ static NSString* kAnimationID = @"SplashAnimation";
 	   
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     
-    // Linked to App in Alfie Hanssen's Parse.com account temporarily
-    [Parse setApplicationId:@"o72InGUfmTyAjoVZY3syfy7lgSfcyQwgLsBBbpcM"
-                  clientKey:@"WvHSLPC3FzRe5ApKrgnK8ritZOps8pCW4z7EtviX"];
+#ifdef DEV_MODE_APNS
+    [Parse setApplicationId:@"ic4i76xfP63YNoPiuKuyQ8Xn5d3vaSsuBGiJTcFD"
+                  clientKey:@"UYIawfHhlLdL19jVqgduhTtihblA34G1GJQaGTV9"];
+#else
+    [Parse setApplicationId:@"rlaChslPPFKJRneSpeeb8Ixbp49IknB6No9bJWAZ"
+                  clientKey:@"nmCd0eeTe9CybiY4029NQoRpttBoBARF3ktKijAt"];
+#endif
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
@@ -95,10 +100,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken
 {
-    UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:@"success" message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] autorelease];
-    [alert show];
-    
     [PFPush storeDeviceToken:newDeviceToken]; // Send parse the device token
+
     // Subscribe this user to the broadcast channel, ""
     [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -111,9 +114,6 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:@"fail" message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] autorelease];
-    [alert show];
-
     NSLog(@"Failed to register for APNS.");
 }
 

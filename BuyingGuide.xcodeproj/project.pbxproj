@@ -1555,7 +1555,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "49FFA2CD-F2F0-42B6-9D0C-56F1D58FE651";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0F60DEDF-BFA5-441A-80C7-A85FE9CD3877";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
