@@ -25,14 +25,13 @@
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
 //#define FORCE_FULL_DOWNLOAD
-
-
+#define DISABLE_UPDATE
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 @interface BuyingGuideAppDelegate ()
 
-- (void) dataUpdateDidFinish;
+- (void)dataUpdateDidFinish;
 - (void)updateDataWFromLocalJSON;
 
 @end
@@ -47,23 +46,21 @@ static NSString* kAnimationID = @"SplashAnimation";
 @synthesize hud;
 @synthesize start;
 
-
-
-#pragma mark -
-#pragma mark Application lifecycle
+#pragma mark - Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
-	
+	   
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     
     // Linked to App in Alfie Hanssen's Parse.com account temporarily
     [Parse setApplicationId:@"o72InGUfmTyAjoVZY3syfy7lgSfcyQwgLsBBbpcM"
                   clientKey:@"WvHSLPC3FzRe5ApKrgnK8ritZOps8pCW4z7EtviX"];
     
-    BOOL forceCopyBundleLibary;
+    // Register for push notifications
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     
-    forceCopyBundleLibary = NO;
+    BOOL forceCopyBundleLibary = NO;
     
 #ifdef FORCE_COPY_BUNDLE_LIBRARY
     
@@ -87,7 +84,6 @@ static NSString* kAnimationID = @"SplashAnimation";
     [[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-
     MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
 	rootViewController.managedObjectContext = self.managedObjectContext;
     [window addSubview:[navigationController view]];
@@ -95,41 +91,65 @@ static NSString* kAnimationID = @"SplashAnimation";
 	[window makeKeyAndVisible];    
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application{
-        
+#pragma mark - Push Notifications
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken
+{
+    UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:@"success" message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] autorelease];
+    [alert show];
     
+    [PFPush storeDeviceToken:newDeviceToken]; // Send parse the device token
+    // Subscribe this user to the broadcast channel, ""
+    [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Successfully subscribed to the broadcast channel.");
+        } else {
+            NSLog(@"Failed to subscribe to the broadcast channel.");
+        }
+    }];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    UIAlertView * alert = [[[UIAlertView alloc] initWithTitle:@"fail" message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] autorelease];
+    [alert show];
+
+    NSLog(@"Failed to register for APNS.");
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [PFPush handlePush:userInfo];
+}
+
+#pragma mark
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
 #ifdef LOAD_FROM_FILE
-    
     [self updateDataWFromLocalJSON];
-    
-    
 #endif
-    
 
     NSDate *lastUpdateDate = nil;
 
-    
 #ifdef FORCE_FULL_DOWNLOAD
-    
     lastUpdateDate = nil;
-
 #else
-    
-
     lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastUpdateDateKey];
-    
 #endif
     
     if(!lastUpdateDate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL){
         
-        [self updateDataWithLastUpdateDate:lastUpdateDate];
+#ifdef DISABLE_UPDATE
+        NSLog(@"Updates Disabled");
+        [self dataUpdateDidFinish];
+#else
+       [self updateDataWithLastUpdateDate:lastUpdateDate];
+#endif
 
-    }else{
-        
-        [self dataUpdateDidFinish];            
-
+    } else {
+        [self dataUpdateDidFinish];
     }
-    
 }
 
 -(void) removeSplashScreen{
@@ -534,13 +554,6 @@ bail:
         });
             
         });
-        
-        
-           
-   
-    
-    
-	    
 }
 
 

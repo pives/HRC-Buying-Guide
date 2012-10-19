@@ -530,8 +530,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				91FD30591630269900909B2B /* Third Party Source */,
 				91FDD221162E3D7300376856 /* Default-568h@2x.png */,
+				91FD30591630269900909B2B /* Third Party Source */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4EFE88010E0AA44005180AC /* Main View */,
 				C4EFE68D10DFF628005180AC /* Main View (Seperated) */,
@@ -1412,6 +1412,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alfred Hanssen (A9G378946L)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1439,6 +1440,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B5B0AE31-BD9E-496D-8313-683BA93CED9A";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
@@ -1529,7 +1531,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1553,7 +1555,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13E832FA-63C4-42B6-82AA-E4BFAE57E8F7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "49FFA2CD-F2F0-42B6-9D0C-56F1D58FE651";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
