@@ -14,17 +14,14 @@
 		91FD305E163026DE00909B2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305D163026DE00909B2B /* Parse.framework */; };
 		91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305F1630270A00909B2B /* AudioToolbox.framework */; };
 		91FD30621630271300909B2B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30611630271300909B2B /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30631630271B00909B2B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30651630272000909B2B /* CFNetwork.framework */; };
 		91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30671630272900909B2B /* CoreGraphics.framework */; };
 		91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30691630272D00909B2B /* CoreLocation.framework */; };
 		91FD306C1630275400909B2B /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306B1630275400909B2B /* libz.1.1.3.dylib */; };
 		91FD306E1630276100909B2B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306D1630276100909B2B /* MobileCoreServices.framework */; };
-		91FD30701630278300909B2B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD306F1630278300909B2B /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30711630278B00909B2B /* StoreKit.framework */; };
 		91FD3074163027B700909B2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3073163027B700909B2B /* UIKit.framework */; };
 		91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD3075163027C100909B2B /* MessageUI.framework */; };
-		91FDD222162E3D7300376856 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FDD221162E3D7300376856 /* Default-568h@2x.png */; };
 		C4103F4F10B6FAD8004CEC15 /* KeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */; };
 		C4103F5310B6FBBB004CEC15 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4103F5210B6FBBB004CEC15 /* KeyView.xib */; };
 		C412894A10C83102007BB9A8 /* FilteredCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C412894810C83102007BB9A8 /* FilteredCompaniesViewController.m */; };
@@ -207,11 +204,9 @@
 		91FD30691630272D00909B2B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		91FD306B1630275400909B2B /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.1.1.3.dylib; sourceTree = DEVELOPER_DIR; };
 		91FD306D1630276100909B2B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		91FD306F1630278300909B2B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
 		91FD30711630278B00909B2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		91FD3073163027B700909B2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		91FD3075163027C100909B2B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		91FDD221162E3D7300376856 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4103F4D10B6FAD8004CEC15 /* KeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyViewController.h; sourceTree = "<group>"; };
 		C4103F4E10B6FAD8004CEC15 /* KeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyViewController.m; sourceTree = "<group>"; };
 		C4103F5210B6FBBB004CEC15 /* KeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyView.xib; sourceTree = "<group>"; };
@@ -494,13 +489,11 @@
 				91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */,
 				91FD3074163027B700909B2B /* UIKit.framework in Frameworks */,
 				91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */,
-				91FD30701630278300909B2B /* Social.framework in Frameworks */,
 				91FD306E1630276100909B2B /* MobileCoreServices.framework in Frameworks */,
 				91FD306C1630275400909B2B /* libz.1.1.3.dylib in Frameworks */,
 				91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */,
 				91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */,
 				91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */,
-				91FD30641630271B00909B2B /* AdSupport.framework in Frameworks */,
 				91FD30621630271300909B2B /* Accounts.framework in Frameworks */,
 				91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */,
 				C4A24605111B46F70015786E /* libOAuth.a in Frameworks */,
@@ -530,7 +523,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				91FDD221162E3D7300376856 /* Default-568h@2x.png */,
 				91FD30591630269900909B2B /* Third Party Source */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4EFE88010E0AA44005180AC /* Main View */,
@@ -1033,7 +1025,6 @@
 				91FD3075163027C100909B2B /* MessageUI.framework */,
 				91FD3073163027B700909B2B /* UIKit.framework */,
 				91FD30711630278B00909B2B /* StoreKit.framework */,
-				91FD306F1630278300909B2B /* Social.framework */,
 				91FD306D1630276100909B2B /* MobileCoreServices.framework */,
 				91FD306B1630275400909B2B /* libz.1.1.3.dylib */,
 				91FD30691630272D00909B2B /* CoreLocation.framework */,
@@ -1306,7 +1297,6 @@
 				FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */,
 				C4850F621491CF2C00CE8CB9 /* selectionButton@2x.png in Resources */,
 				C4850F631491CF2C00CE8CB9 /* selectionButton.png in Resources */,
-				91FDD222162E3D7300376856 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1411,8 +1401,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alfred Hanssen (A9G378946L)";
+				ARCHS = armv7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Corey Floyd (GD6X73LUA4)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1440,7 +1430,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B5B0AE31-BD9E-496D-8313-683BA93CED9A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3C14F55-D813-4B48-AD2E-05AD37A6E060";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
@@ -1450,7 +1440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1529,7 +1519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
