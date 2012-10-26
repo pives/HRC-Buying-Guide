@@ -11,7 +11,10 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */; };
-		91FD305E163026DE00909B2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305D163026DE00909B2B /* Parse.framework */; };
+		91CA54A3163A0D30009F20FC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CA54A2163A0D30009F20FC /* Parse.framework */; };
+		91CA54A4163A0D6D009F20FC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30631630271B00909B2B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91CA54A6163A0D72009F20FC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CA54A5163A0D72009F20FC /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91CA54A8163A0E15009F20FC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CA54A7163A0E15009F20FC /* Default-568h@2x.png */; };
 		91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD305F1630270A00909B2B /* AudioToolbox.framework */; };
 		91FD30621630271300909B2B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30611630271300909B2B /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FD30651630272000909B2B /* CFNetwork.framework */; };
@@ -195,7 +198,9 @@
 		28C286E00D94DF7D0034E888 /* CategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BuyingGuide-Info.plist"; path = "../BuyingGuide-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		91FD305D163026DE00909B2B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Third Party Source/Parse.framework"; sourceTree = "<group>"; };
+		91CA54A2163A0D30009F20FC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		91CA54A5163A0D72009F20FC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		91CA54A7163A0E15009F20FC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		91FD305F1630270A00909B2B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		91FD30611630271300909B2B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
 		91FD30631630271B00909B2B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
@@ -486,6 +491,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CA54A6163A0D72009F20FC /* Social.framework in Frameworks */,
+				91CA54A4163A0D6D009F20FC /* AdSupport.framework in Frameworks */,
+				91FD30621630271300909B2B /* Accounts.framework in Frameworks */,
 				91FD3076163027C100909B2B /* MessageUI.framework in Frameworks */,
 				91FD3074163027B700909B2B /* UIKit.framework in Frameworks */,
 				91FD30721630278B00909B2B /* StoreKit.framework in Frameworks */,
@@ -494,7 +502,6 @@
 				91FD306A1630272E00909B2B /* CoreLocation.framework in Frameworks */,
 				91FD30681630272900909B2B /* CoreGraphics.framework in Frameworks */,
 				91FD30661630272000909B2B /* CFNetwork.framework in Frameworks */,
-				91FD30621630271300909B2B /* Accounts.framework in Frameworks */,
 				91FD30601630270A00909B2B /* AudioToolbox.framework in Frameworks */,
 				C4A24605111B46F70015786E /* libOAuth.a in Frameworks */,
 				C460090B11D1A6B500545996 /* CoreData.framework in Frameworks */,
@@ -505,7 +512,7 @@
 				C460091F11D1A70400545996 /* libxml2.dylib in Frameworks */,
 				C460098B11D1A8FD00545996 /* SystemConfiguration.framework in Frameworks */,
 				C4BC980611D82DA0001CCEF7 /* libFlurry.a in Frameworks */,
-				91FD305E163026DE00909B2B /* Parse.framework in Frameworks */,
+				91CA54A3163A0D30009F20FC /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +530,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				91CA54A7163A0E15009F20FC /* Default-568h@2x.png */,
 				91FD30591630269900909B2B /* Third Party Source */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4EFE88010E0AA44005180AC /* Main View */,
@@ -564,7 +572,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91FD305D163026DE00909B2B /* Parse.framework */,
+				91CA54A5163A0D72009F20FC /* Social.framework */,
+				91CA54A2163A0D30009F20FC /* Parse.framework */,
 				C4850F411491A60300CE8CB9 /* JSON */,
 				C4BC980111D82D9E001CCEF7 /* FlurryLib */,
 				C4F4121411D1C1F500FD3659 /* iPhone */,
@@ -1297,6 +1306,7 @@
 				FE071B7D14918D6700E87C7D /* Default-Cropped@2x.png in Resources */,
 				C4850F621491CF2C00CE8CB9 /* selectionButton@2x.png in Resources */,
 				C4850F631491CF2C00CE8CB9 /* selectionButton.png in Resources */,
+				91CA54A8163A0E15009F20FC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
