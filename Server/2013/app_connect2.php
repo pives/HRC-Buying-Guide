@@ -116,7 +116,10 @@ $removedResultSet=get_results_array($removedResult);
 
 
 //$results=array("categories"=>$catResultSet, 'organizations'=>$organizationResultSet, 'brands'=>$brandResultSet, 'removed'=>$removedResultSet);
-$results=array("categories"=>$catResultSet,  'organizations'=>$organizationResultSet, 'brands'=>$brandResultSet, "scorecards"=>$scoreCardResultSet ,'removed'=>$removedResultSet);
+
+//$results=array("categories"=>$catResultSet,  'organizations'=>$organizationResultSet, 'brands'=>$brandResultSet, "scorecards"=>$scoreCardResultSet ,'removed'=>$removedResultSet);
+
+$results=array("categories"=>array(),  'organizations'=>array(), 'brands'=>array(), "scorecards"=>array() ,'removed'=>array());
 
 //Output results
 output_results_as_json($results);

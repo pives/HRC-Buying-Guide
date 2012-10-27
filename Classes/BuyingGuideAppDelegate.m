@@ -25,7 +25,7 @@
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
 //#define FORCE_FULL_DOWNLOAD
-#define DISABLE_UPDATE
+//#define DISABLE_UPDATE
 //#define DEV_MODE_APNS
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
@@ -590,12 +590,12 @@ bail:
 
 }
 
-- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate; {
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate {
         
     self.start = [NSDate date]; 
     
     
-	NSString *URLString = @"http://fj.hrc.org/app_connect2.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
+	NSString *URLString = @"http://fj.hrc.org/2013/app_connect.php?content-type=json&key=41e97990456ae2eb1b5bacb69e86685c";
 	if ( lastUpdate ) {
 		NSDateFormatter *updateURLDateFormatter = [[NSDateFormatter alloc] init];
 		[updateURLDateFormatter setDateFormat:@"ddMMMYYYY"];
