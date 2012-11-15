@@ -24,7 +24,7 @@
 
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
-//#define FORCE_FULL_DOWNLOAD
+#define FORCE_FULL_DOWNLOAD
 //#define DISABLE_UPDATE
 //#define DEV_MODE_APNS
 
@@ -188,6 +188,8 @@ static NSString* kAnimationID = @"SplashAnimation";
     [self.hud removeFromSuperview];
     self.hud = nil;
     
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+
 	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
 }
 
@@ -210,275 +212,10 @@ static NSString* kAnimationID = @"SplashAnimation";
     }
 }
 
+#pragma mark - Update Database
 
-- (BOOL)syncEntity:(NSString *)entityName withJSONObjects:(NSArray *)JSONObjects syncDictionaries:(NSArray *)syncDictionaries {
-	if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects )
-		goto bail;
-	
-	NSDictionary *primaryKeyDict = [syncDictionaries objectAtIndex:0];
-	
-	NSString *coreDataKey = [primaryKeyDict valueForKey:@"CoreDataKey"];
-	NSString *JSONKey = [primaryKeyDict valueForKey:@"JSONKey"];
-		
-	NSManagedObjectContext *moc = [self managedObjectContext];
-    [moc setMergePolicy:NSOverwriteMergePolicy];
-    
-	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
-	[uniqueKeySet removeObject:[NSNull null]];
-	
-    NSFetchRequest* f = [[NSFetchRequest alloc] init];
-    [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
-    [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",coreDataKey , uniqueKeySet]];
-    if ([entityName isEqualToString:@"BGScorecard"])
-        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"displayOrder" ascending:YES]]];
-    else
-        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"remoteID" ascending:YES]]];
-    
-    NSError* error = nil;
-    NSMutableArray *entitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
-    
-    if(entitiesToUpdate == nil){
-        
-        NSLog(@"error: %@", [error description]);
-    }
-    
-    [f release];
-    
-	//NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
-	NSMutableArray *entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
-    
-    
-    if([entityName isEqualToString:@"BGCompany"]){
-        
-        //Delete all brands for any updated company
-        
-        for(BGCompany* each in entitiesToUpdate){
-            
-            for(BGBrand* eachBrand in each.brands){
-                
-                [moc deleteObject:eachBrand];
-                
-            }
-            
-            for(BGScorecard* eachScorecard in each.scorecards){
-                
-                [moc deleteObject:eachScorecard];
-                
-            }
-            
-        }
-        
-        [self saveData];
-
-    }
-    
-    
-    //use name just in case
-    NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
-    NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
-    NSString *secondaryJSONKey = [secondaryKeyDict valueForKey:@"JSONKey"];
-            
-    NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
-    [secondaryKeySet removeObject:[NSNull null]];
-    
-    /*
-    f = [[NSFetchRequest alloc] init];
-    [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
-    [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@",secondaryCoreDataKey , secondaryKeySet]];
-    [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"remoteID" ascending:YES]]];
-    
-    error = nil;
-    NSMutableArray *secondaryEntitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
-    
-    if(secondaryEntitiesToUpdate == nil){
-        
-        NSLog(@"error: %@", [error description]);
-    }
-    
-    [f release];
-    */
-    
-    NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
-    NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
-    
-	
-	for ( id JSONObject in JSONObjects ) {
-		NSString *IDString = [JSONObject valueForKey:JSONKey];
-        NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey];
-        
-		id ID = nil;        
-        if ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"]) {
-            ID = [NSNumber numberWithInt:[IDString intValue]];
-        } else {
-            ID = IDString;
-        }
-        
-		id entity = nil;
-		NSInteger index = [entityUniqueIDs indexOfObject:ID];
-		if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"])
-			entity = [entitiesToUpdate objectAtIndex:index];
-		else {
-            
-            id secondaryID = secondaryIDString;
-
-            index = [entitySecondaryIDs indexOfObject:secondaryID];
-            if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"]){
-                
-                entity = [secondaryEntitiesToUpdate objectAtIndex:index];
-                [entitiesToUpdate addObject:entity];
-                [entityUniqueIDs addObject:ID];
-                
-            }else{
-                
-                entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc];
-                if ( ID && entity ) {
-                    [entitiesToUpdate addObject:entity];
-                    [entityUniqueIDs addObject:ID];
-                    [secondaryEntitiesToUpdate addObject:entity];
-                    [entitySecondaryIDs addObject:secondaryID];
-                }
-            }
-                
-		}
-		
-        
-		for ( NSDictionary *keyDict in syncDictionaries ) {
-			NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
-			NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
-			
-			id value = nil;
-			id JSONValue = [JSONObject valueForKey:JSONKey];
-			
-            if ([[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"]) {
-                value = [NSNumber numberWithInt:[JSONValue intValue]];
-            } else {
-				value = JSONValue;
-            }
-            
-			
-			NSString *transformer = [keyDict objectForKey:@"transformer"];
-			if ( transformer ) {
-				SEL selector = NSSelectorFromString(transformer);
-				if ( [value respondsToSelector:selector] ) 
-					value = [value performSelector:selector];
-			}
-			
-			if ( !value )
-				continue;
-            
-                 
-			NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
-			if ( relationshipEntity ) {
-				NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
-				NSString *relationshipSelectorString = [keyDict objectForKey:@"CoreDataRelationshipMethod"];
-				SEL relationshipSelector = NSSelectorFromString(relationshipSelectorString);
-				if ( [entity respondsToSelector:relationshipSelector] ) {
-				
-					id relatedObject = [moc entityWithName:relationshipEntity whereKey:relationshipKey equalToObject:value];
-				
-					if (!relatedObject)
-						continue;
-					[entity performSelector:relationshipSelector withObject:relatedObject];
-				}
-			}
-			else {
-				[entity setValue:value forKey:coreDataKey];
-			}
-		}
-	}
-
-	[entitiesToUpdate release];
-	[entityUniqueIDs release];
-    [secondaryEntitiesToUpdate release];
-    [entitySecondaryIDs release];
-	
-	return YES;
-bail:
-	return NO;
-}
-
-- (void)saveData {
-	NSError *error = nil;
-	[[self managedObjectContext] save:&error];
-	if ( error ) {
-		FJSLog(@"%@", error);
-		error = nil;
-	}
-}
-
-- (void)markOrganizationsAsDeletedWithJSON:(NSArray*)JSONObjects{
-    
-    NSManagedObjectContext *moc = [self managedObjectContext];
-
-    NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:@"OrgID"]];
-	[uniqueKeySet removeObject:[NSNull null]];
-
-    NSFetchRequest* f = [[NSFetchRequest alloc] init];
-    [f setEntity:[NSEntityDescription entityForName:@"BGCompany" inManagedObjectContext:moc]];
-    [f setResultType:NSDictionaryResultType];
-    [f setPropertiesToFetch:[NSArray arrayWithObject:@"remoteID"]];
-    
-    NSError* error = nil;
-    NSArray *allEentities = [moc executeFetchRequest:f error:&error];
-    NSMutableArray* allIDs = [[allEentities valueForKey:@"allObjects"] mutableCopy];
-    [allIDs removeObject:[NSNull null]];
-
-    
-    /*
-    NSMutableArray* allKeysAsNumbers = [NSMutableArray arrayWithCapacity:[uniqueKeySet count]];
-    [uniqueKeySet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-    
-        NSString* key = obj;
-        int intVal = [key intValue];
-        NSNumber* num = [NSNumber numberWithInt:intVal];
-        [allKeysAsNumbers addObject:num];
-        
-    }];
-    
-    
-    [allKeysAsNumbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        [allIDs enumerateObjectsUsingBlock:^(id obj2, NSUInteger idx, BOOL *stop) {
-        
-            if([obj isEqualToNumber:obj2]){
-                
-                NSLog(@"found! %@ %@", [obj description], [obj2 description]);
-
-            }
-   
-        }];
-        
-        if([allIDs containsObject:obj]){
-            
-        }
-        
-    
-    }];
-    */
-    
-    
-	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:@"BGCompany" whereKey:@"remoteID" isIn:uniqueKeySet] mutableCopy];
-    
-    
-    [entitiesToUpdate enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    
-        BGCompany* c = obj;
-        c.includeInIndex = [NSNumber numberWithBool:NO];
-        
-        [c.brands enumerateObjectsUsingBlock:^(id bobj, BOOL *stop) {
-        
-            BGBrand* b = bobj;
-            b.includeInIndex = [NSNumber numberWithBool:NO];
-            
-        }];
-    
-    }];
-    
-}
-	
-- (void)updateLoadedData {
-    
-    
+- (void)updateLoadedData
+{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -488,22 +225,19 @@ bail:
         _updateData = nil;
         
         NSArray *brands = [[updateDict valueForKeyPath:@"brands"] valueForKey:@"row"];
+        NSLog(@"Brand example: %@", brands[0]);
         NSArray *categories = [[updateDict valueForKeyPath:@"categories"] valueForKey:@"row"];
         NSArray *organizations = [[updateDict valueForKeyPath:@"organizations"] valueForKey:@"row"];
         NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
-        
         NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
         
         NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
         NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
         
-
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if([organizations count] > 0 || [brands count] > 0){
-                
                 [self addSplashScreen];
-                
                 [self.hud hide:NO];
                 [self.hud removeFromSuperview];
                 self.hud = [[MBProgressHUD alloc] initWithWindow:self.window];
@@ -511,8 +245,6 @@ bail:
                 [self.window addSubview:self.hud];
                 [self.hud show:YES];
             }
-            
-            
             
             double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -529,14 +261,12 @@ bail:
                     [self saveData];
                 }
                 
-                [self markOrganizationsAsDeletedWithJSON:removed];
+                [self markOrganizationsAsDeletedWithJSON:removed]; // do we need this?
                 [self saveData];
-                
                 
                 NSDate *lastUpdateDate = [NSDate date];
                 [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                
                 
                 [self.navigationController popViewControllerAnimated:NO];
                 MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
@@ -546,16 +276,199 @@ bail:
                 [rootViewController.modeSwitch setSelectedSegmentIndex:0];
                 [rootViewController loadCategories];
                 
-                
                 [self dataUpdateDidFinish];
-                
             });
-            
         });
-            
-        });
+    });
 }
 
+- (BOOL)syncEntity:(NSString *)entityName
+   withJSONObjects:(NSArray *)JSONObjects
+  syncDictionaries:(NSArray *)syncDictionaries
+{	
+    if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects ) {
+		return NO;
+    }
+	
+	NSDictionary *primaryKeyDict = [syncDictionaries objectAtIndex:0];
+	NSString *coreDataKey = [primaryKeyDict valueForKey:@"CoreDataKey"];
+	NSString *JSONKey = [primaryKeyDict valueForKey:@"JSONKey"];
+		
+	NSManagedObjectContext *moc = [self managedObjectContext];
+    [moc setMergePolicy:NSOverwriteMergePolicy];
+    
+	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
+	[uniqueKeySet removeObject:[NSNull null]];
+	
+    NSFetchRequest* f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
+    [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@", coreDataKey , uniqueKeySet]];
+    if ([entityName isEqualToString:@"BGScorecard"])
+        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"displayOrder" ascending:YES]]];
+    else
+        [f setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"remoteID" ascending:YES]]];
+    
+    NSError* error = nil;
+    NSMutableArray *entitiesToUpdate = [[moc executeFetchRequest:f error:&error] mutableCopy];
+    if (entitiesToUpdate == nil){
+        NSLog(@"error: %@", [error description]);
+    }
+    [f release];
+    
+	//NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
+	NSMutableArray * entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
+    
+//    //Delete all brands for any updated company
+//    if([entityName isEqualToString:@"BGCompany"]){
+//        for (BGCompany * each in entitiesToUpdate) {
+//            
+//            for(BGBrand * eachBrand in each.brands) {
+//                [moc deleteObject:eachBrand];
+//            }
+//            
+//            for(BGScorecard * eachScorecard in each.scorecards) {
+//                [moc deleteObject:eachScorecard];
+//            }
+//        }
+//        
+//        [self saveData];
+//    }
+    
+    NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
+    NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
+    NSString *secondaryJSONKey = [secondaryKeyDict valueForKey:@"JSONKey"];
+            
+    NSMutableSet *secondaryKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:secondaryJSONKey]];
+    [secondaryKeySet removeObject:[NSNull null]];
+    
+    NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
+    NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
+    
+	for ( id JSONObject in JSONObjects ) { // For each object returned from the API...
+		NSString *IDString = [JSONObject valueForKey:JSONKey]; // uniqueId
+        NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey]; // brand name
+        
+		id ID = nil; // properly typed uniqueId
+        if ([[primaryKeyDict objectForKey:@"kind"] isEqualToString:@"Integer"]) {
+            ID = [NSNumber numberWithInt:[IDString intValue]];
+        } else {
+            ID = IDString;
+        }
+        
+		id entity = nil;
+		NSInteger index = [entityUniqueIDs indexOfObject:ID];
+		if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"]) { // GET EXG ENTITY BASED ON UNIQUEID
+			entity = [entitiesToUpdate objectAtIndex:index];
+
+		} else {
+            id secondaryID = secondaryIDString;
+            index = [entitySecondaryIDs indexOfObject:secondaryID];
+            if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"]){ // ELSE GET EXG ENTITY BASED ON BRAND NAME
+                entity = [secondaryEntitiesToUpdate objectAtIndex:index];
+                [entitiesToUpdate addObject:entity];
+                [entityUniqueIDs addObject:ID];
+                
+            } else {
+                entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc]; // ELSE CREATE NEW ENTITY
+                if ( ID && entity ) {
+                    [entitiesToUpdate addObject:entity];
+                    [entityUniqueIDs addObject:ID];
+                    [secondaryEntitiesToUpdate addObject:entity];
+                    [entitySecondaryIDs addObject:secondaryID];
+                }
+            }
+		}
+        
+		for ( NSDictionary *keyDict in syncDictionaries ) { // For each property on each object returned from the API...
+			NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
+			NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
+			
+			id value = nil;
+			id JSONValue = [JSONObject valueForKey:JSONKey];
+			
+            if ([[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"]) {
+                value = [NSNumber numberWithInt:[JSONValue intValue]];
+            } else {
+				value = JSONValue;
+            }
+			
+			NSString *transformer = [keyDict objectForKey:@"transformer"];
+			if ( transformer ) {
+				SEL selector = NSSelectorFromString(transformer);
+				if ( [value respondsToSelector:selector] ) // I suspect this is never hit
+					value = [value performSelector:selector];
+			}
+			
+			if ( !value ) {
+				continue;
+            }
+                 
+			NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
+			if ( relationshipEntity ) {
+				NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
+				NSString *relationshipSelectorString = [keyDict objectForKey:@"CoreDataRelationshipMethod"];
+				SEL relationshipSelector = NSSelectorFromString(relationshipSelectorString);
+				if ( [entity respondsToSelector:relationshipSelector] ) {
+					id relatedObject = [moc entityWithName:relationshipEntity whereKey:relationshipKey equalToObject:value];
+					if (relatedObject) {
+                        [entity performSelector:relationshipSelector withObject:relatedObject];
+                    }
+				}
+			} else {
+				[entity setValue:value forKey:coreDataKey];
+			}
+		}
+	}
+
+	[entitiesToUpdate release];
+	[entityUniqueIDs release];
+    [secondaryEntitiesToUpdate release];
+    [entitySecondaryIDs release];
+	
+	return YES;
+}
+
+// DO WE NEED THIS ANYMORE?
+- (void)markOrganizationsAsDeletedWithJSON:(NSArray*)JSONObjects{
+    
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    
+    NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:@"OrgID"]];
+	[uniqueKeySet removeObject:[NSNull null]];
+    
+    NSFetchRequest* f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:@"BGCompany" inManagedObjectContext:moc]];
+    [f setResultType:NSDictionaryResultType];
+    [f setPropertiesToFetch:[NSArray arrayWithObject:@"remoteID"]];
+    
+    NSError* error = nil;
+    NSArray *allEentities = [moc executeFetchRequest:f error:&error];
+    NSMutableArray* allIDs = [[allEentities valueForKey:@"allObjects"] mutableCopy];
+    [allIDs removeObject:[NSNull null]];
+    
+	NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:@"BGCompany" whereKey:@"remoteID" isIn:uniqueKeySet] mutableCopy];
+    
+    [entitiesToUpdate enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        BGCompany* c = obj;
+        c.includeInIndex = [NSNumber numberWithBool:NO];
+        
+        [c.brands enumerateObjectsUsingBlock:^(id bobj, BOOL *stop) {
+            BGBrand* b = bobj;
+            b.includeInIndex = [NSNumber numberWithBool:NO];
+        }];
+    }];
+}
+
+- (void)saveData
+{
+	NSError *error = nil;
+	[[self managedObjectContext] save:&error];
+	if ( error ) {
+		FJSLog(@"%@", error);
+		error = nil;
+	}
+}
 
 - (void)updateLoadedDataInBackground { 
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -565,33 +478,17 @@ bail:
 
 - (void)updateDataWFromLocalJSON {
     
-    /*
-    [managedObjectContext release];
-    managedObjectContext = nil;
-    [persistentStoreCoordinator release];
-    persistentStoreCoordinator = nil;
-    [managedObjectModel release];
-    managedObjectModel = nil;
-    
-    NSString* currentAppDB = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
-    [[NSFileManager defaultManager] removeItemAtPath:currentAppDB error:nil];
-    
-    RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
-	rootViewController.managedObjectContext = self.managedObjectContext;
-     
-     */
-    
-       
     NSString* path = [[NSBundle mainBundle] pathForResource:@"TestJSON" ofType:@"txt"];	
     NSMutableData* d = [[NSMutableData alloc] initWithContentsOfFile:path];
     _updateData = d;
     
     [self performSelectorOnMainThread:@selector(updateLoadedData) withObject:nil waitUntilDone:NO];
-
 }
 
-- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate {
-        
+- (void)updateDataWithLastUpdateDate:(NSDate *)lastUpdate
+{
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
     self.start = [NSDate date]; 
     
     
@@ -682,30 +579,6 @@ bail:
         
     }
 }
-
-/*
-- (void) deleteAllObjects: (NSString *) entityDescription  {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSError *error;
-    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-    
-    
-    for (NSManagedObject *managedObject in items) {
-        [_managedObjectContext deleteObject:managedObject];
-        DLog(@"%@ object deleted",entityDescription);
-    }
-    if (![_managedObjectContext save:&error]) {
-        DLog(@"Error deleting %@ - error:%@",entityDescription,error);
-    }
-    
-}
-*/
-
-
 
 #pragma mark -
 #pragma mark Core Data stack
