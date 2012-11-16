@@ -158,6 +158,14 @@
 			<key>kind</key>
 			<string>Integer</string>
 		</dict>
+		<dict>
+			<key>JSONKey</key>
+			<string>IsCurrentInd</string>
+			<key>CoreDataKey</key>
+			<string></string>
+			<key>kind</key>
+			<string>Integer</string>
+		</dict>
 	</array>
 	<key>BGScorecard</key>
 	<array>
