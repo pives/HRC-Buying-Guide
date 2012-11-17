@@ -384,6 +384,8 @@ static NSString* kAnimationID = @"SplashAnimation";
                 if (!isActive) {
                     if (entity) {
                         
+                        NSLog(@"Deleted: %@", ID);
+                        
                         [entitiesToUpdate removeObject:entity];
                         [entityUniqueIDs removeObject:ID];
                         [secondaryEntitiesToUpdate removeObject:entity];
@@ -397,6 +399,8 @@ static NSString* kAnimationID = @"SplashAnimation";
             }
         }
         
+        NSLog(@"Updated: %@", ID);
+
         // Otherwise create a new entity
         if (!entity && ![entityName isEqualToString:@"BGScorecard"]) {
             entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc]; // ELSE CREATE NEW ENTITY
