@@ -361,8 +361,7 @@ static NSString* kAnimationID = @"SplashAnimation";
             ID = IDString;
         }
         
-        // Get the entity itself (or create a new one if entity doesn't already exist)
-        BOOL isNewObject = NO;
+        // Attempt to get the existing entity
 		id entity = nil;
 		NSInteger index = [entityUniqueIDs indexOfObject:ID];
 		if ( index != NSNotFound && ![entityName isEqualToString:@"BGScorecard"]) { // GET EXG ENTITY BASED ON UNIQUEID
@@ -375,83 +374,82 @@ static NSString* kAnimationID = @"SplashAnimation";
                 [entitiesToUpdate addObject:entity];
                 [entityUniqueIDs addObject:ID];
                 
-            } else {
-                entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc]; // ELSE CREATE NEW ENTITY
-                if ( ID && entity ) {
-                    isNewObject = YES;
-                    [entitiesToUpdate addObject:entity];
-                    [entityUniqueIDs addObject:ID];
-                    [secondaryEntitiesToUpdate addObject:entity];
-                    [entitySecondaryIDs addObject:secondaryID];
-                }
             }
-		}
-        
-        // Delete all brands that contain IsCurrentInd == false
-        // AH added Nov 16, 2012
-        BOOL didDelete = NO;
+        }
+
+        // Delete existing object if necessary (IsCurrentInd == false), and continue to next json object
         if([entityName isEqualToString:@"BGBrand"]){
             if ([JSONObject valueForKey:@"IsCurrentInd"]) {
                 BOOL isActive = [[JSONObject valueForKey:@"IsCurrentInd"] boolValue];
                 if (!isActive) {
-                    if (!isNewObject) {
+                    if (entity) {
+                        
+                        [entitiesToUpdate removeObject:entity];
+                        [entityUniqueIDs removeObject:ID];
+                        [secondaryEntitiesToUpdate removeObject:entity];
+                        [entitySecondaryIDs removeObject:secondaryID];
+                        
                         [moc deleteObject:entity];
                         [self saveData];
                     }
-                    didDelete = YES;
-                    [entitiesToUpdate removeObject:entity];
-                    [entityUniqueIDs removeObject:ID];
-                    [secondaryEntitiesToUpdate removeObject:entity];
-                    [entitySecondaryIDs removeObject:secondaryID];
+                    continue;
                 }
             }
         }
-
-        if (!didDelete) {
+        
+        // Otherwise create a new entity
+        if (!entity && ![entityName isEqualToString:@"BGScorecard"]) {
+            entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc]; // ELSE CREATE NEW ENTITY
+            if ( ID && entity ) {
+                [entitiesToUpdate addObject:entity];
+                [entityUniqueIDs addObject:ID];
+                [secondaryEntitiesToUpdate addObject:entity];
+                [entitySecondaryIDs addObject:secondaryID];
+            }
+        }
+                    
+        // If not deleted, update entity with the new JSON values
+        for ( NSDictionary *keyDict in syncDictionaries ) { // For each property on each object returned from the API...
+            NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
+            NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
             
-            // If not deleted, update the existing entity with the new JSON values
-            for ( NSDictionary *keyDict in syncDictionaries ) { // For each property on each object returned from the API...
-                NSString *coreDataKey = [keyDict objectForKey:@"CoreDataKey"];
-                NSString *JSONKey = [keyDict objectForKey:@"JSONKey"];
-                
-                if ([JSONKey isEqualToString:@"IsCurrentInd"]) { // CoreData entity does not store this property (no need to)
-                    continue;
-                }
-                
-                id value = nil;
-                id JSONValue = [JSONObject valueForKey:JSONKey];
-                
-                if ([[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"]) {
-                    value = [NSNumber numberWithInt:[JSONValue intValue]];
-                } else {
-                    value = JSONValue;
-                }
-                
-                NSString *transformer = [keyDict objectForKey:@"transformer"];
-                if ( transformer ) {
-                    SEL selector = NSSelectorFromString(transformer);
-                    if ( [value respondsToSelector:selector] ) // I suspect this is never hit
-                        value = [value performSelector:selector];
-                }
-                
-                if ( !value ) {
-                    continue;
-                }
-                     
-                NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
-                if ( relationshipEntity ) {
-                    NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
-                    NSString *relationshipSelectorString = [keyDict objectForKey:@"CoreDataRelationshipMethod"];
-                    SEL relationshipSelector = NSSelectorFromString(relationshipSelectorString);
-                    if ( [entity respondsToSelector:relationshipSelector] ) {
-                        id relatedObject = [moc entityWithName:relationshipEntity whereKey:relationshipKey equalToObject:value];
-                        if (relatedObject) {
-                            [entity performSelector:relationshipSelector withObject:relatedObject];
-                        }
+            if ([JSONKey isEqualToString:@"IsCurrentInd"]) { // CoreData entity does not store this property (no need to)
+                continue;
+            }
+            
+            id value = nil;
+            id JSONValue = [JSONObject valueForKey:JSONKey];
+            
+            if ([[keyDict valueForKey:@"kind"] isEqualToString:@"Integer"]) {
+                value = [NSNumber numberWithInt:[JSONValue intValue]];
+            } else {
+                value = JSONValue;
+            }
+            
+            NSString *transformer = [keyDict objectForKey:@"transformer"];
+            if ( transformer ) {
+                SEL selector = NSSelectorFromString(transformer);
+                if ( [value respondsToSelector:selector] ) // I suspect this is never hit
+                    value = [value performSelector:selector];
+            }
+            
+            if ( !value ) {
+                continue;
+            }
+                 
+            NSString *relationshipEntity = [keyDict objectForKey:@"CoreDataRelationshipEntity"];
+            if ( relationshipEntity ) {
+                NSString *relationshipKey = [keyDict objectForKey:@"CoreDataRelationshipKey"];
+                NSString *relationshipSelectorString = [keyDict objectForKey:@"CoreDataRelationshipMethod"];
+                SEL relationshipSelector = NSSelectorFromString(relationshipSelectorString);
+                if ( [entity respondsToSelector:relationshipSelector] ) {
+                    id relatedObject = [moc entityWithName:relationshipEntity whereKey:relationshipKey equalToObject:value];
+                    if (relatedObject) {
+                        [entity performSelector:relationshipSelector withObject:relatedObject];
                     }
-                } else {
-                    [entity setValue:value forKey:coreDataKey];
                 }
+            } else {
+                [entity setValue:value forKey:coreDataKey];
             }
         }
     }
