@@ -7,9 +7,10 @@
 //
 
 #import "SharingManager.h"
-#import "FJSTweetViewController.h"
-#import "FJSTweetViewController+HRC.h"
+//#import "FJSTweetViewController.h"
+//#import "FJSTweetViewController+HRC.h"
 #import "BGCompany.h"
+#import <Twitter/Twitter.h>
 
 static SharingManager *sharedSharingManager = nil;
 
@@ -46,10 +47,10 @@ static SharingManager *sharedSharingManager = nil;
         NSString* fileExtension = @"txt";
         NSString* emailText;
         
-		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-		NSString* rawLink = [info objectForKey:@"AppStoreURL"];
+//		NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+//		NSString* rawLink = [info objectForKey:@"AppStoreURL"];
 		//NSString* appStoreID = [info objectForKey:@"AppStoreIDCompounds"];
-		NSString* appStoreID = [info objectForKey:@"AppStoreID"];
+//		NSString* appStoreID = [info objectForKey:@"AppStoreID"];
 		/*
          NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
          NSString* urlPrefix = [info objectForKey:@"ScoreCardURLPrefix"];
@@ -146,19 +147,59 @@ static SharingManager *sharedSharingManager = nil;
 #pragma mark -
 #pragma mark FJSTweetViewController
 
-- (void)postTweet{
-	
-	FJSTweetViewController* tvc = [[FJSTweetViewController alloc] initWithCompany:self.company];
-	
-	UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
-	nc.navigationBarHidden = YES;
-	
-	[self.viewController presentModalViewController:nc animated:YES];
-	
-	[tvc release];
-	[nc release];
+- (void)postTweet
+{
+    if ([TWTweetComposeViewController canSendTweet]) {
+        
+        TWTweetComposeViewController * tweetSheet = [[TWTweetComposeViewController alloc] init];
+        [tweetSheet setInitialText:[self tweetText]];
+        [self.viewController presentModalViewController:tweetSheet animated:YES];
+        [tweetSheet release];
+    }
+    
+//	FJSTweetViewController* tvc = [[FJSTweetViewController alloc] initWithCompany:self.company];
+//	
+//	UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
+//	nc.navigationBarHidden = YES;
+//	
+//	[self.viewController presentModalViewController:nc animated:YES];
+//	
+//	[tvc release];
+//	[nc release];
 }
 
+- (NSString *)tweetText
+{
+	NSString * someText = nil;
+	
+    if([self.company.nonResponder boolValue] == YES) {
+        
+        someText =
+        @"@HRC #LGBT Buyer's Guide gives @%@ an unofficial score of %i%% for not responding to our survey. More: http://bit.ly/buy4eq";
+        
+    } else {
+        
+        if([self.company.ratingLevel intValue] == 0) {
+            
+            someText =
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, one of the highest scores. More: http://bit.ly/buy4eq";            
+            
+        } else if ([self.company.ratingLevel intValue] == 1) {
+            
+            someText =
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, a moderate score. More: http://bit.ly/buy4eq";
+            
+        } else {
+            
+            someText =
+            @"@HRC #LGBT Buyer's Guide gives @%@ %i%%, one of the lowest scores. More: http://bit.ly/buy4eq";
+        }
+    }
+    
+	someText = [NSString stringWithFormat:someText, self.company.name, [self.company.rating intValue]];
+    
+    return someText;
+}
 
 #pragma mark -
 #pragma mark Facebook

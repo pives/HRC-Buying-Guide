@@ -24,9 +24,9 @@
 
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
-#define FORCE_FULL_DOWNLOAD
+//#define FORCE_FULL_DOWNLOAD
 //#define DISABLE_UPDATE
-//#define DEV_MODE_APNS
+#define DEV_MODE_APNS
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
@@ -114,7 +114,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    NSLog(@"Failed to register for APNS.");
+    NSLog(@"Failed to register for APNS: %@", [error localizedDescription]);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
