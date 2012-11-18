@@ -16,7 +16,7 @@
 
     UIWindow *window;
     UINavigationController *navigationController;
-    UIView* splashView;
+//    UIViewController* splashView;
     
     MBProgressHUD* hud;
 	
@@ -34,7 +34,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
-@property(nonatomic,retain)UIView *splashView;
+@property (nonatomic, retain) UIViewController * splashView;
 
 @property (nonatomic, copy) NSDate *start;
 

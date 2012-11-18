@@ -24,7 +24,7 @@
 
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
-//#define FORCE_FULL_DOWNLOAD
+#define FORCE_FULL_DOWNLOAD
 //#define DISABLE_UPDATE
 #define DEV_MODE_APNS
 
@@ -32,14 +32,15 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 @interface BuyingGuideAppDelegate ()
 
+@property (nonatomic, assign) BOOL isCancelled;
+//@property (nonatomic, retain) NSOperationQueue * updateQueue;
+
 - (void)dataUpdateDidFinish;
 - (void)updateDataWFromLocalJSON;
 
 @end
 
 @implementation BuyingGuideAppDelegate
-
-static NSString* kAnimationID = @"SplashAnimation";
 
 @synthesize window;
 @synthesize navigationController;
@@ -52,6 +53,8 @@ static NSString* kAnimationID = @"SplashAnimation";
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     // Override point for customization after app launch    
 	   
+    self.isCancelled = NO;
+    
     [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
     
 #ifdef DEV_MODE_APNS
@@ -152,31 +155,43 @@ static NSString* kAnimationID = @"SplashAnimation";
     }
 }
 
--(void) removeSplashScreen{
-	[UIView beginAnimations:kAnimationID context:nil];
-	[UIView setAnimationDuration:1.0];
-    splashView.alpha = 0;
-    [UIView setAnimationDelegate:self];
-	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
-    [UIView commitAnimations];	
+- (void)removeSplashScreen
+{
+    [self.splashView dismissModalViewControllerAnimated:YES];
+    self.splashView = nil;
 }
 
--(void) addSplashScreen{
-	UIImageView *localSplashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
-	localSplashView.frame = [[UIScreen mainScreen] applicationFrame];
+- (void)addSplashScreen
+{
+	UIViewController *localSplashView = [[UIViewController alloc] init];//  initWithImage:[UIImage imageNamed:@"Default"]];
+	localSplashView.view.frame = [[UIScreen mainScreen] applicationFrame];
 	self.splashView = localSplashView;
-	[window addSubview:splashView];
 	[localSplashView release];
+    
+    UIImageView * imageView  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
+    imageView.frame = [[UIScreen mainScreen] applicationFrame];
+    [self.splashView.view addSubview:imageView];
+    
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    UIToolbar * bar = [[UIToolbar alloc] initWithFrame:(CGRect){0, 0, self.splashView.view.frame.size.width, 44}];
+    [bar setItems:[NSArray arrayWithObject:item]];
+    [item release];
+    [self.splashView.view addSubview:bar];
+    [bar release];
+    
+//    [self.hud hide:NO];
+//    [self.hud removeFromSuperview];
+//    self.hud = [[MBProgressHUD alloc] initWithView:imageView];
+//    self.hud.labelText = @"Updating. Please wait…";
+//    [imageView addSubview:self.hud];
+//    [self.hud show:YES];
+
+    [self.navigationController presentModalViewController:self.splashView animated:YES];
 }
 
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
-    
-    if([animationID isEqualToString:kAnimationID]){
-        
-        [self.splashView removeFromSuperview];
-        self.splashView = nil;
-        
-    }
+- (void)cancel:(id)sender
+{
+    self.isCancelled = YES;
 }
 
 - (void) dataUpdateDidFinish {
@@ -242,35 +257,52 @@ static NSString* kAnimationID = @"SplashAnimation";
             
             if([organizations count] > 0 || [brands count] > 0){
                 [self addSplashScreen];
-                [self.hud hide:NO];
-                [self.hud removeFromSuperview];
-                self.hud = [[MBProgressHUD alloc] initWithWindow:self.window];
-                self.hud.labelText = @"Updating. Please wait…";
-                [self.window addSubview:self.hud];
-                [self.hud show:YES];
             }
             
             double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
-                [self saveData];
-                [self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
-                [self saveData];
-                [self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
-                [self saveData];
                 
-                if([organizations count] > 0 || [brands count] > 0){
-                    [self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
+                if (!self.isCancelled) {
+                    [self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
+                }
+                if (!self.isCancelled) {
                     [self saveData];
                 }
                 
-                [self markOrganizationsAsDeletedWithJSON:removed]; // do we need this?
-                [self saveData];
+                if (!self.isCancelled) {
+                    [self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
+                }
+                if (!self.isCancelled) {
+                    [self saveData];
+                }
                 
-                NSDate *lastUpdateDate = [NSDate date];
-                [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
-                [[NSUserDefaults standardUserDefaults] synchronize];
+                if (!self.isCancelled) {
+                    [self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
+                }
+                if (!self.isCancelled) {
+                    [self saveData];
+                }
+
+                if([organizations count] > 0 || [brands count] > 0){
+                    if (!self.isCancelled) {
+                        [self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
+                    }
+                    if (!self.isCancelled) {
+                        [self saveData];
+                    }
+                }
+                            
+                if (!self.isCancelled) {
+                    [self markOrganizationsAsDeletedWithJSON:removed]; // do we need this?
+                }
+                if (!self.isCancelled) {
+                    [self saveData];
+
+                    NSDate *lastUpdateDate = [NSDate date];
+                    [[NSUserDefaults standardUserDefaults] setObject:lastUpdateDate forKey:kLastUpdateDateKey];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                }
                 
                 [self.navigationController popViewControllerAnimated:NO];
                 MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
@@ -290,7 +322,7 @@ static NSString* kAnimationID = @"SplashAnimation";
    withJSONObjects:(NSArray *)JSONObjects
   syncDictionaries:(NSArray *)syncDictionaries
 {	
-    if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects ) {
+    if ( !syncDictionaries || ![syncDictionaries count] || !entityName || !JSONObjects || self.isCancelled) {
 		return NO;
     }
 	
@@ -350,7 +382,12 @@ static NSString* kAnimationID = @"SplashAnimation";
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
     
 	for ( id JSONObject in JSONObjects ) { // For each object returned from the API...
-		NSString *IDString = [JSONObject valueForKey:JSONKey]; // uniqueId
+	
+        if (self.isCancelled) {
+            return NO;
+        }
+        
+        NSString *IDString = [JSONObject valueForKey:JSONKey]; // uniqueId
         NSString* secondaryIDString = [JSONObject valueForKey:secondaryJSONKey]; // brand name
         id secondaryID = secondaryIDString;
 
@@ -717,7 +754,7 @@ static NSString* kAnimationID = @"SplashAnimation";
 	
     [hud release];
     hud = nil;
-    
+        
     [_updateData release];
 	[_updateConnection release];
 	
