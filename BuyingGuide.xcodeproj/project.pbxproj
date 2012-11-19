@@ -107,8 +107,6 @@
 		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
 		C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
 		C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
-		D837788412C0FF0A00998649 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D837788212C0FF0A00998649 /* SplashViewController.m */; };
-		D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D837788312C0FF0A00998649 /* SplashViewController.xib */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
 		FE071B7514917DD400E87C7D /* SharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE071B7414917DD400E87C7D /* SharingManager.m */; };
@@ -333,9 +331,6 @@
 		C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
 		C4FA200910B4BA570031303E /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
-		D837788112C0FF0A00998649 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
-		D837788212C0FF0A00998649 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
-		D837788312C0FF0A00998649 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JSONSync.plist; sourceTree = "<group>"; };
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
@@ -634,9 +629,6 @@
 				C492D5AD10BAF4490041400B /* DebugLog.h */,
 				C492D5AE10BAF4490041400B /* DebugLog.m */,
 				8D1107310486CEB800E47090 /* BuyingGuide-Info.plist */,
-				D837788112C0FF0A00998649 /* SplashViewController.h */,
-				D837788212C0FF0A00998649 /* SplashViewController.m */,
-				D837788312C0FF0A00998649 /* SplashViewController.xib */,
 			);
 			name = "Application Level";
 			path = Classes;
@@ -1054,7 +1046,6 @@
 				C4EFEB7C10E190B5005180AC /* FilteredCompaniesTableViewController.xib in Resources */,
 				C4B8FBF61188BE3600B59CD7 /* Connect_iphone.png in Resources */,
 				C4B8FBF81188BE3600B59CD7 /* Logout_iphone.png in Resources */,
-				D837788512C0FF0A00998649 /* SplashViewController.xib in Resources */,
 				D8377AA312C243C800998649 /* JSONSync.plist in Resources */,
 				C4244AEB12FA653000B466F5 /* TestJSON.txt in Resources */,
 				C4E9B15D1318430E007547DF /* storedata.sqlite in Resources */,
@@ -1163,7 +1154,6 @@
 				C4B8FC001188BE3600B59CD7 /* FBSession.m in Sources */,
 				C4B8FC011188BE3600B59CD7 /* FBStreamDialog.m in Sources */,
 				C4B8FC021188BE3600B59CD7 /* FBXMLHandler.m in Sources */,
-				D837788412C0FF0A00998649 /* SplashViewController.m in Sources */,
 				D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */,
 				C446CFAE12E4B9EB009D3A09 /* MBProgressHUD.m in Sources */,
 				FEC872AB148935A700B212AE /* BuyingGuide.xcdatamodeld in Sources */,

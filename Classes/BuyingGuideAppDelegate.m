@@ -19,6 +19,7 @@
 #import "BGScorecard.h"
 #import "MBProgressHUD.h"
 #import <Parse/Parse.h>
+#import "UIBarButtonItem+extensions.h"
 
 #define UPDATE_INTERVAL 86400 //seconds == 1 days
 
@@ -33,7 +34,6 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 @interface BuyingGuideAppDelegate ()
 
 @property (nonatomic, assign) BOOL isCancelled;
-//@property (nonatomic, retain) NSOperationQueue * updateQueue;
 
 - (void)dataUpdateDidFinish;
 - (void)updateDataWFromLocalJSON;
@@ -157,36 +157,35 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 - (void)removeSplashScreen
 {
-    [self.splashView dismissModalViewControllerAnimated:YES];
+    [self.splashView removeFromSuperview];
     self.splashView = nil;
 }
 
 - (void)addSplashScreen
 {
-	UIViewController *localSplashView = [[UIViewController alloc] init];//  initWithImage:[UIImage imageNamed:@"Default"]];
-	localSplashView.view.frame = [[UIScreen mainScreen] applicationFrame];
+	UIView *localSplashView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
 	self.splashView = localSplashView;
 	[localSplashView release];
     
     UIImageView * imageView  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
-    imageView.frame = [[UIScreen mainScreen] applicationFrame];
-    [self.splashView.view addSubview:imageView];
+    imageView.frame = self.splashView.frame;
+    [self.splashView addSubview:imageView];
     
-    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-    UIToolbar * bar = [[UIToolbar alloc] initWithFrame:(CGRect){0, 0, self.splashView.view.frame.size.width, 44}];
-    [bar setItems:[NSArray arrayWithObject:item]];
-    [item release];
-    [self.splashView.view addSubview:bar];
+    UIToolbar * bar = [[UIToolbar alloc] initWithFrame:(CGRect){0, 0, self.splashView.frame.size.width, 44}];
+    [bar setItems:[NSArray arrayWithObjects:
+                   [UIBarButtonItem flexibleSpaceItem],
+                   [UIBarButtonItem systemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)],
+                   nil]];
+    [self.splashView addSubview:bar];
     [bar release];
     
-//    [self.hud hide:NO];
-//    [self.hud removeFromSuperview];
-//    self.hud = [[MBProgressHUD alloc] initWithView:imageView];
-//    self.hud.labelText = @"Updating. Please wait…";
-//    [imageView addSubview:self.hud];
-//    [self.hud show:YES];
+    [self.hud hide:NO];
+    [self.hud removeFromSuperview];
+    self.hud = [[MBProgressHUD alloc] initWithView:imageView];
+    self.hud.labelText = @"Updating. Please wait…";
+    [self.hud show:YES];
 
-    [self.navigationController presentModalViewController:self.splashView animated:YES];
+    [window addSubview:self.splashView];
 }
 
 - (void)cancel:(id)sender
@@ -198,6 +197,21 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
         
     NSTimeInterval s = [[NSDate date] timeIntervalSinceDate:self.start];
     NSLog(@"Time to import: %f", s);
+    
+    // Upon finish, deal with cancellation
+    if (self.isCancelled) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[self pathForAppDBCopy]]) {
+            [[NSFileManager defaultManager] removeItemAtPath:[self pathForAppDB] error:nil];
+            NSError * copyError = nil;
+            [[NSFileManager defaultManager] copyItemAtPath:[self pathForAppDBCopy]
+                                                    toPath:[self pathForAppDB]
+                                                     error:&copyError];
+            if (copyError) {
+                NSLog(@"Error replacing cancelled DB with copy");
+            }
+        }
+        self.isCancelled = NO;
+    }
     
     [self.hud hide:NO];
     [self.hud removeFromSuperview];
@@ -233,6 +247,15 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
+        // Make a copy of the db in case update is cancelled midway
+        NSError * copyError = nil;
+        [[NSFileManager defaultManager] copyItemAtPath:[self pathForAppDB]
+                                                toPath:[self pathForAppDBCopy]
+                                                 error:&copyError];
+        if (copyError) {
+            NSLog(@"Error making copy of DB");
+        }
+        
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSDictionary *updateDict = [parser objectWithData:_updateData];
         [parser release];
@@ -263,36 +286,56 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 
+                NSLog(@"-----------------");
+                NSLog(@"Category json: %i", [categories count]);
+                NSLog(@"Category coredata before update: %i", [self countForEntityName:@"BGCategory"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
+                NSLog(@"Category coredata after update: %i", [self countForEntityName:@"BGCategory"]);
+                NSLog(@"-----------------");
                 
+                
+                NSLog(@"Organizations json: %i", [organizations count]);
+                NSLog(@"Organizations coredata before update: %i", [self countForEntityName:@"BGCompany"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
+                NSLog(@"Organizations coredata after update: %i", [self countForEntityName:@"BGCompany"]);
+                NSLog(@"-----------------");
+
                 
+                NSLog(@"Brand json: %i", [brands count]);
+                NSLog(@"Brand coredata before update: %i", [self countForEntityName:@"BGBrand"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
+                NSLog(@"Brand coredata after update: %i", [self countForEntityName:@"BGBrand"]);
+                NSLog(@"-----------------");
 
+                
                 if([organizations count] > 0 || [brands count] > 0){
+                    NSLog(@"Scorecard json: %i", [scorecards count]);
+                    NSLog(@"Scorecard coredata before update: %i", [self countForEntityName:@"BGScorecard"]);
                     if (!self.isCancelled) {
                         [self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
                     }
                     if (!self.isCancelled) {
                         [self saveData];
                     }
+                    NSLog(@"Scorecard coredata after update: %i", [self countForEntityName:@"BGScorecard"]);
+                    NSLog(@"-----------------");
                 }
-                            
+                
                 if (!self.isCancelled) {
                     [self markOrganizationsAsDeletedWithJSON:removed]; // do we need this?
                 }
@@ -318,6 +361,22 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     });
 }
 
+- (int)countForEntityName:(NSString *)name// coreDataKey:(NSString *)cdKey jsonKey:(NSString *)jsonKey
+{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    NSFetchRequest * f = [[NSFetchRequest alloc] init];
+    [f setEntity:[NSEntityDescription entityForName:name inManagedObjectContext:moc]];
+
+    NSError* error = nil;
+    NSMutableArray * entities = [[moc executeFetchRequest:f error:&error] mutableCopy];
+    if (entities == nil){
+        NSLog(@"Error: %@", [error description]);
+    }
+    [f release];
+    
+    return [entities count];
+}
+
 - (BOOL)syncEntity:(NSString *)entityName
    withJSONObjects:(NSArray *)JSONObjects
   syncDictionaries:(NSArray *)syncDictionaries
@@ -336,6 +395,8 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 	NSMutableSet *uniqueKeySet = [NSMutableSet setWithArray:[JSONObjects valueForKey:JSONKey]];
 	[uniqueKeySet removeObject:[NSNull null]];
 	
+//    NSLog(@"unique keys: %i", [uniqueKeySet count]);
+    
     NSFetchRequest* f = [[NSFetchRequest alloc] init];
     [f setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:moc]];
     [f setPredicate:[NSPredicate predicateWithFormat:@"%K IN %@", coreDataKey , uniqueKeySet]];
@@ -354,22 +415,22 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 	//NSMutableArray *entitiesToUpdate = [[moc entitiesWithName:entityName whereKey:coreDataKey isIn:uniqueKeySet] mutableCopy];
 	NSMutableArray * entityUniqueIDs = [[entitiesToUpdate valueForKey:coreDataKey] mutableCopy];
     
-//    // AH commented out Nov 14, 2012
-//    //Delete all brands for any updated company
-//    if([entityName isEqualToString:@"BGCompany"]){
-//        for (BGCompany * each in entitiesToUpdate) {
-//            
+//    NSLog(@"entityUniqueIDs: %i", [entityUniqueIDs count]);
+
+    if([entityName isEqualToString:@"BGCompany"]){
+        for (BGCompany * each in entitiesToUpdate) {
+            
 //            for(BGBrand * eachBrand in each.brands) {
 //                [moc deleteObject:eachBrand];
 //            }
-//            
-//            for(BGScorecard * eachScorecard in each.scorecards) {
-//                [moc deleteObject:eachScorecard];
-//            }
-//        }
-//        
-//        [self saveData];
-//    }
+            
+            for(BGScorecard * eachScorecard in each.scorecards) {
+                [moc deleteObject:eachScorecard];
+            }
+        }
+        
+        [self saveData];
+    }
     
     NSDictionary *secondaryKeyDict = [syncDictionaries objectAtIndex:1];
     NSString *secondaryCoreDataKey = [secondaryKeyDict valueForKey:@"CoreDataKey"];
@@ -381,6 +442,9 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     NSMutableArray *secondaryEntitiesToUpdate = [[moc entitiesWithName:entityName whereKey:secondaryCoreDataKey isIn:secondaryKeySet] mutableCopy];
     NSMutableArray *entitySecondaryIDs = [[secondaryEntitiesToUpdate valueForKey:secondaryCoreDataKey] mutableCopy];
     
+//    NSLog(@"entitySecondaryIDs: %i", [entitySecondaryIDs count]);
+
+    int totalDeletions = 0;
 	for ( id JSONObject in JSONObjects ) { // For each object returned from the API...
 	
         if (self.isCancelled) {
@@ -410,7 +474,6 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                 entity = [secondaryEntitiesToUpdate objectAtIndex:index];
                 [entitiesToUpdate addObject:entity];
                 [entityUniqueIDs addObject:ID];
-                
             }
         }
 
@@ -421,7 +484,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                 if (!isActive) {
                     if (entity) {
                         
-                        NSLog(@"Deleted: %@", ID);
+//                        NSLog(@"Deleted %@: %@", entityName, ID);
                         
                         [entitiesToUpdate removeObject:entity];
                         [entityUniqueIDs removeObject:ID];
@@ -431,12 +494,13 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                         [moc deleteObject:entity];
                         [self saveData];
                     }
+                    totalDeletions++;
                     continue;
                 }
             }
         }
         
-        NSLog(@"Updated: %@", ID);
+//        NSLog(@"Updated: %@", ID);
 
         // Otherwise create a new entity
         if (!entity && ![entityName isEqualToString:@"BGScorecard"]) {
@@ -447,6 +511,10 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                 [secondaryEntitiesToUpdate addObject:entity];
                 [entitySecondaryIDs addObject:secondaryID];
             }
+        }
+        
+        if (!entity) {
+//            NSLog(@"no entity!");
         }
                     
         // If not deleted, update entity with the new JSON values
@@ -470,7 +538,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
             NSString *transformer = [keyDict objectForKey:@"transformer"];
             if ( transformer ) {
                 SEL selector = NSSelectorFromString(transformer);
-                if ( [value respondsToSelector:selector] ) // I suspect this is never hit
+                if ( [value respondsToSelector:selector] )
                     value = [value performSelector:selector];
             }
             
@@ -494,7 +562,8 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
             }
         }
     }
-    
+    NSLog(@"Total deletions: %i", totalDeletions);
+
 	[entitiesToUpdate release];
 	[entityUniqueIDs release];
     [secondaryEntitiesToUpdate release];
@@ -740,8 +809,24 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 /**
  Returns the path to the application's Documents directory.
  */
-- (NSString *)applicationDocumentsDirectory {
+- (NSString *)applicationDocumentsDirectory
+{
 	return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+- (NSString *)pathForAppDBCopy
+{
+    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata_copy.sqlite"];
+}
+
+- (NSString *)pathForAppDB
+{
+    return [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"storedata.sqlite"];
+}
+
+- (NSString *)pathForBundleDB
+{
+    return [[NSBundle mainBundle] pathForResource:@"storedata" ofType:@"sqlite"];
 }
 
 
