@@ -25,9 +25,9 @@
 
 //#define LOAD_FROM_FILE
 //#define FORCE_COPY_BUNDLE_LIBRARY
-#define FORCE_FULL_DOWNLOAD
+//#define FORCE_FULL_DOWNLOAD
 //#define DISABLE_UPDATE
-#define DEV_MODE_APNS
+//#define DEV_MODE_APNS
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
@@ -711,9 +711,9 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setCalendar:[NSCalendar currentCalendar]];
         [components setYear:2012];
-        [components setMonth:03];
-        [components setDay:28];
-        [components setHour:12];
+        [components setMonth:11];
+        [components setDay:19];
+        [components setHour:21];
         [components setMinute:0];
         [components setSecond:0];
         NSDate *lastUpdateDate = [components date];
