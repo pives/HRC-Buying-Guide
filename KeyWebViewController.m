@@ -54,7 +54,7 @@
     self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
     NSMutableArray* items = [bar.items mutableCopy];
         
-    [items insertObject:[UIBarButtonItem fixedSpaceItemOfSize:12]  atIndex:0];
+    [items insertObject:[UIBarButtonItem fixedSpaceItemOfSize:12] atIndex:0];
     [items insertObject:[UIBarButtonItem itemWithView:self.spinner] atIndex:0];
     
     bar.items = items;
@@ -80,14 +80,19 @@
 	
 	[spinner stopAnimating];
 	
-	UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"No Internet Connection"
-													  message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again." 
-													 delegate:self 
-											cancelButtonTitle:@"OK" 
-											otherButtonTitles:nil] autorelease];
-	[message show];
-	
-	
+    
+    if(error.code != kCFURLErrorCancelled){
+        
+        UIAlertView* message = [[[UIAlertView alloc] initWithTitle:@"No Internet Connection"
+                                                           message:@"Could not connect to the internet. Please ensure your Wifi or 3G is turned on and try again."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil] autorelease];
+        [message show];
+        
+
+    }
+    
 }
                         
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
