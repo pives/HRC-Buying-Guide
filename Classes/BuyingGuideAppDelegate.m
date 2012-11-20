@@ -350,6 +350,8 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                 [self.navigationController popViewControllerAnimated:NO];
                 MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
                 rootViewController.managedObjectContext = self.managedObjectContext;
+                rootViewController.categoryView.managedObjectContext = self.managedObjectContext;
+                rootViewController.companyView.managedObjectContext = self.managedObjectContext;
                 [rootViewController.categoryView fetchAndReload];
                 [rootViewController.companyView fetchAndReload];
                 [rootViewController.modeSwitch setSelectedSegmentIndex:0];
