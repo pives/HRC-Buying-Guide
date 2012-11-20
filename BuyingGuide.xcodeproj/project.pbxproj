@@ -439,7 +439,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				91CA54A7163A0E15009F20FC /* Default-568h@2x.png */,
 				C4AFF95610B2342800801655 /* Application Level */,
 				C4C02C4B10B0F413000D46AA /* Core Data */,
 				FE071B7214917DAE00E87C7D /* Sharing */,
@@ -908,6 +907,7 @@
 				FE6AAD181491462B00FDDEED /* 2011-iphone_icon-57x57.png */,
 				FE6AAD191491462B00FDDEED /* Default.png */,
 				FE6AAD1A1491462B00FDDEED /* Default@2x.png */,
+				91CA54A7163A0E15009F20FC /* Default-568h@2x.png */,
 				FE6AAD1B1491462B00FDDEED /* HRC_Icon.png */,
 				FE6AAD1C1491462B00FDDEED /* HRC_Icon@2x.png */,
 				FE6AAD1D1491462B00FDDEED /* iPhone */,
