@@ -449,7 +449,8 @@ NSString *const DidSelectBrandNotification = @"DidSelectBrandNotification";
     [sortDescriptor2 release];
 	[sortDescriptors release];
 	
-	[self fetchAndReload];
+    [self.searchResultsController performFetch:nil];
+    
 	// Return YES to cause the search result table view to be reloaded.
     return YES;
 }
