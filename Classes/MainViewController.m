@@ -181,7 +181,6 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 		self.companyView = [[[CompaniesTableViewController alloc] init] autorelease];
 		companyView.managedObjectContext = self.managedObjectContext;
         CGRect f = self.view.bounds;
-        f.size.height = f.size.height-35;
         companyView.view.frame = f;
 	}
       
@@ -291,8 +290,10 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     
 	if(companyView==nil){
 	
-		self.companyView =[[[CompaniesTableViewController alloc] init] autorelease];
+		self.companyView = [[[CompaniesTableViewController alloc] init] autorelease];
 		companyView.managedObjectContext = self.managedObjectContext;
+        CGRect f = self.view.bounds;
+        companyView.view.frame = f;
 		[companyView fetchAndReload];
 	}
 } 
