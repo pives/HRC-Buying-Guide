@@ -505,7 +505,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 //        NSLog(@"Updated: %@", ID);
 
         // Otherwise create a new entity
-        if (!entity && ![entityName isEqualToString:@"BGScorecard"]) {
+        if (!entity) {
             entity = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:moc]; // ELSE CREATE NEW ENTITY
             if ( ID && entity ) {
                 [entitiesToUpdate addObject:entity];
