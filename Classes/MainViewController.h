@@ -28,7 +28,7 @@
 @property(nonatomic,retain)BrandViewController *brandController;
 
 
-- (void)toggleViews:(id)sender;
+- (IBAction)toggleViews:(id)sender;
 - (void)loadCategories;
 - (void)loadCompanies;
 - (void)preloadAllBrandsFetchedResultsController;

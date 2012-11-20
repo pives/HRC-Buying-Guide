@@ -92,11 +92,18 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     [[NSUserDefaults standardUserDefaults] setObject:newBundleID forKey:(NSString*)kCFBundleVersionKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    MainViewController *rootViewController = [[MainViewController alloc] init];
 	rootViewController.managedObjectContext = self.managedObjectContext;
-    [window addSubview:[navigationController view]];
+    
+    [window makeKeyAndVisible];
 
-	[window makeKeyAndVisible];    
+    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    self.window.rootViewController = nc;
+    self.navigationController = nc;
+    [nc release];
+    
 }
 
 #pragma mark - Push Notifications

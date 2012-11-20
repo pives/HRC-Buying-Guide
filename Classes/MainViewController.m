@@ -73,13 +73,6 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem], 
-                      [UIBarButtonItem itemWithView:modeSwitch], 
-                      [UIBarButtonItem flexibleSpaceItem],
-                      nil];
-    
-    self.navigationController.toolbarHidden = NO;
-    self.toolbarItems = items;
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"info2small.png"] 
                                                                       style:UIBarButtonItemStyleBordered
@@ -91,7 +84,16 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
                                                                       style:UIBarButtonItemStyleBordered 
                                                                      target:self 
                                                                      action:@selector(ShowDonationMessage)];
-    	
+
+    
+    NSArray* items = [NSArray arrayWithObjects:[UIBarButtonItem flexibleSpaceItem],
+                      [UIBarButtonItem itemWithView:modeSwitch],
+                      [UIBarButtonItem flexibleSpaceItem],
+                      nil];
+    
+    self.navigationController.toolbarHidden = NO;
+    self.toolbarItems = items;
+
 	UILabel* tv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
     tv.text = @"Buyer's Guide";
     tv.textAlignment = UITextAlignmentCenter;
@@ -154,20 +156,17 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 
 - (void)loadCategories{
     
-    
     [companyView viewWillDisappear:NO];
     [companyView.view removeFromSuperview];
     
-        
     if(categoryView==nil){
 		self.categoryView = [[[CategoriesTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
 		categoryView.managedObjectContext = self.managedObjectContext;
+        CGRect f = self.view.bounds;
+        f.size.height = f.size.height-35;
+        categoryView.view.frame = f;
 	}
-    
-	categoryView.view.frame = self.view.bounds;
-	//[categoryView.view setOriginY:44];
-	//[categoryView.view setSizeHeight:416-44-36-44];
-	[categoryView.view setSizeHeight:416-44-36];
+
     [self.view addSubview:categoryView.view];
     [categoryView viewWillAppear:NO];
     
@@ -175,19 +174,17 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 
 - (void)loadCompanies{
     
-        
     [categoryView viewWillDisappear:NO];
     [categoryView.view removeFromSuperview];
-        
-
+    
     if(companyView==nil){
 		self.companyView = [[[CompaniesTableViewController alloc] init] autorelease];
 		companyView.managedObjectContext = self.managedObjectContext;
+        CGRect f = self.view.bounds;
+        f.size.height = f.size.height-35;
+        companyView.view.frame = f;
 	}
       
-	companyView.view.frame = self.view.bounds;
-    //[companyView.view setOriginY:44];
-	//[companyView.view setSizeHeight:416-44-36-44];
 	[self.view addSubview:companyView.view];	
     [companyView viewWillAppear:NO];
     
@@ -195,10 +192,8 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 
 - (void)showKey{
     
-    KeyViewController *detailViewController = [[KeyViewController alloc] init];
-    
-    //[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil]];
-    [self.navigationController presentModalViewController:detailViewController animated:YES];
+    KeyViewController *detailViewController = [[KeyViewController alloc] initWithNibName:@"KeyView" bundle:nil];
+    [self presentModalViewController:detailViewController animated:YES];
     [detailViewController release];
     
 }

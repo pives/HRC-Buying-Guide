@@ -30,7 +30,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>212</string>
+	<string>219</string>
 	<key>CoreDataCrashMessage</key>
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 	<key>DonationURL</key>
@@ -39,11 +39,13 @@
 	<string>http://www.hrc.org/buyersguide2010/images/2011-iphone_icon-90x90.png</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
 	<key>ScoreCardURLPrefix</key>
 	<string>http://www.hrc.org/buyersguide2011/profile.html?orgid=</string>
 	<key>ScoreCardURLSuffix</key>
 	<string></string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>
