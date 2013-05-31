@@ -1182,7 +1182,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = armv7;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alfred Hanssen (A9G378946L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Corey Floyd (MBS6Q9S99T)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1210,7 +1210,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B5B0AE31-BD9E-496D-8313-683BA93CED9A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69EFF17-08FB-4C79-A0D9-1406948AA477";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
