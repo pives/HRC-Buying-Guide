@@ -30,6 +30,7 @@
 //#define DEV_MODE_APNS
 
 static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
+static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 
 @interface BuyingGuideAppDelegate ()
 
@@ -67,9 +68,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-    
-    BOOL forceCopyBundleLibary = NO;
-    
+        
 #ifdef FORCE_COPY_BUNDLE_LIBRARY
     
     forceCopyBundleLibary = YES;
@@ -115,16 +114,16 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     // Subscribe this user to the broadcast channel, ""
     [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Successfully subscribed to the broadcast channel.");
+            DebugLog(@"Successfully subscribed to the broadcast channel.");
         } else {
-            NSLog(@"Failed to subscribe to the broadcast channel.");
+            DebugLog(@"Failed to subscribe to the broadcast channel.");
         }
     }];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    NSLog(@"Failed to register for APNS: %@", [error localizedDescription]);
+    DebugLog(@"Failed to register for APNS: %@", [error localizedDescription]);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -151,7 +150,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
     if(!lastUpdateDate || [[NSDate date] timeIntervalSinceDate:lastUpdateDate] > UPDATE_INTERVAL){
         
 #ifdef DISABLE_UPDATE
-        NSLog(@"Updates Disabled");
+        DebugLog(@"Updates Disabled");
         [self dataUpdateDidFinish];
 #else
        [self updateDataWithLastUpdateDate:lastUpdateDate];
@@ -164,8 +163,22 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
 
 - (void)removeSplashScreen
 {
-    [self.splashView removeFromSuperview];
-    self.splashView = nil;
+
+    [self.hud hide:NO];
+    [self.hud removeFromSuperview];
+    self.hud = nil;
+
+    [UIView animateWithDuration:0.75 animations:^{
+        
+        self.splashView.alpha = 0.0;
+        
+    } completion:^(BOOL finished) {
+        
+        [self.splashView removeFromSuperview];
+        self.splashView = nil;
+        
+    }];
+    
 }
 
 - (void)addSplashScreen
@@ -185,14 +198,29 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                    nil]];
     [self.splashView addSubview:bar];
     [bar release];
-    
-    [self.hud hide:NO];
-    [self.hud removeFromSuperview];
-    self.hud = [[MBProgressHUD alloc] initWithView:imageView];
-    self.hud.labelText = @"Updating. Please wait…";
-    [self.hud show:YES];
 
+    self.splashView.alpha = 0.0;
     [window addSubview:self.splashView];
+    
+    [UIView animateWithDuration:0.75 animations:^{
+
+        self.splashView.alpha = 1.0;
+        
+    } completion:^(BOOL finished) {
+        
+        [self.hud hide:NO];
+        [self.hud removeFromSuperview];
+        self.hud = [[MBProgressHUD alloc] initWithView:imageView];
+        [self.splashView addSubview:self.hud];
+        
+        self.hud.labelText = @"Updating. Please wait…";
+        [self.hud show:YES];
+        
+    }];
+    
+    
+   
+    
 }
 
 - (void)cancel:(id)sender
@@ -220,13 +248,33 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
         self.isCancelled = NO;
     }
     
-    [self.hud hide:NO];
-    [self.hud removeFromSuperview];
-    self.hud = nil;
-    
     [UIApplication sharedApplication].idleTimerDisabled = NO;
+    
 
-	[self performSelector:@selector(removeSplashScreen) withObject:nil afterDelay:0.1];
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [self removeSplashScreen];
+        
+        BOOL previouslyLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:previouslyLaunchedKey];
+        
+        if(!previouslyLaunched){
+
+            double delayInSeconds = 2.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                
+                [(MainViewController*)[[(UINavigationController*)self.window.rootViewController viewControllers] objectAtIndex:0] showKey];
+                
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:previouslyLaunchedKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+
+            });
+        }
+    });
+    
+
 }
 
 /**
@@ -275,10 +323,10 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
         NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
         NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
 
-        NSLog(@"Brand example: %@", brands[0]);
-        NSLog(@"Categories example: %@", categories[0]);
-        NSLog(@"Orgs example: %@", organizations[0]);
-        NSLog(@"Scorecards example: %@", scorecards[0]);
+        DebugLog(@"Brand example: %@", brands[0]);
+        DebugLog(@"Categories example: %@", categories[0]);
+        DebugLog(@"Orgs example: %@", organizations[0]);
+        DebugLog(@"Scorecards example: %@", scorecards[0]);
 
         NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
         NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
@@ -293,54 +341,54 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 
-                NSLog(@"-----------------");
-                NSLog(@"Category json: %i", [categories count]);
-                NSLog(@"Category coredata before update: %i", [self countForEntityName:@"BGCategory"]);
+                DebugLog(@"-----------------");
+                DebugLog(@"Category json: %i", [categories count]);
+                DebugLog(@"Category coredata before update: %i", [self countForEntityName:@"BGCategory"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGCategory" withJSONObjects:categories syncDictionaries:[JSONSyncDict objectForKey:@"BGCategory"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
-                NSLog(@"Category coredata after update: %i", [self countForEntityName:@"BGCategory"]);
-                NSLog(@"-----------------");
+                DebugLog(@"Category coredata after update: %i", [self countForEntityName:@"BGCategory"]);
+                DebugLog(@"-----------------");
                 
                 
-                NSLog(@"Organizations json: %i", [organizations count]);
-                NSLog(@"Organizations coredata before update: %i", [self countForEntityName:@"BGCompany"]);
+                DebugLog(@"Organizations json: %i", [organizations count]);
+                DebugLog(@"Organizations coredata before update: %i", [self countForEntityName:@"BGCompany"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGCompany" withJSONObjects:organizations syncDictionaries:[JSONSyncDict objectForKey:@"BGCompany"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
-                NSLog(@"Organizations coredata after update: %i", [self countForEntityName:@"BGCompany"]);
-                NSLog(@"-----------------");
+                DebugLog(@"Organizations coredata after update: %i", [self countForEntityName:@"BGCompany"]);
+                DebugLog(@"-----------------");
 
                 
-                NSLog(@"Brand json: %i", [brands count]);
-                NSLog(@"Brand coredata before update: %i", [self countForEntityName:@"BGBrand"]);
+                DebugLog(@"Brand json: %i", [brands count]);
+                DebugLog(@"Brand coredata before update: %i", [self countForEntityName:@"BGBrand"]);
                 if (!self.isCancelled) {
                     [self syncEntity:@"BGBrand" withJSONObjects:brands syncDictionaries:[JSONSyncDict objectForKey:@"BGBrand"]];
                 }
                 if (!self.isCancelled) {
                     [self saveData];
                 }
-                NSLog(@"Brand coredata after update: %i", [self countForEntityName:@"BGBrand"]);
-                NSLog(@"-----------------");
+                DebugLog(@"Brand coredata after update: %i", [self countForEntityName:@"BGBrand"]);
+                DebugLog(@"-----------------");
 
                 
                 if([organizations count] > 0 || [brands count] > 0){
-                    NSLog(@"Scorecard json: %i", [scorecards count]);
-                    NSLog(@"Scorecard coredata before update: %i", [self countForEntityName:@"BGScorecard"]);
+                    DebugLog(@"Scorecard json: %i", [scorecards count]);
+                    DebugLog(@"Scorecard coredata before update: %i", [self countForEntityName:@"BGScorecard"]);
                     if (!self.isCancelled) {
                         [self syncEntity:@"BGScorecard" withJSONObjects:scorecards syncDictionaries:[JSONSyncDict objectForKey:@"BGScorecard"]];
                     }
                     if (!self.isCancelled) {
                         [self saveData];
                     }
-                    NSLog(@"Scorecard coredata after update: %i", [self countForEntityName:@"BGScorecard"]);
-                    NSLog(@"-----------------");
+                    DebugLog(@"Scorecard coredata after update: %i", [self countForEntityName:@"BGScorecard"]);
+                    DebugLog(@"-----------------");
                 }
                 
                 if (!self.isCancelled) {
@@ -355,7 +403,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
                 }
                 
                 [self.navigationController popViewControllerAnimated:NO];
-                MainViewController *rootViewController = (MainViewController *)[navigationController topViewController];
+                MainViewController *rootViewController = (MainViewController *)[[navigationController viewControllers] objectAtIndex:0];
                 rootViewController.managedObjectContext = self.managedObjectContext;
                 rootViewController.categoryView.managedObjectContext = self.managedObjectContext;
                 rootViewController.companyView.managedObjectContext = self.managedObjectContext;
@@ -571,7 +619,7 @@ static NSString * const kLastUpdateDateKey = @"LastUpdateDateKey";
             }
         }
     }
-    NSLog(@"Total deletions: %i", totalDeletions);
+    DebugLog(@"Total deletions: %i", totalDeletions);
 
 	[entitiesToUpdate release];
 	[entityUniqueIDs release];

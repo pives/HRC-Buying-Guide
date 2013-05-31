@@ -20,8 +20,6 @@
 
 @implementation MainViewController
 
-static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
-
 @synthesize categoryView;
 @synthesize modeSwitch;
 @synthesize managedObjectContext;
@@ -103,15 +101,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     tv.font = [UIFont boldSystemFontOfSize:19];
     tv.shadowColor = [UIColor darkGrayColor];
     self.navigationItem.titleView = tv;
-	
-	BOOL previouslyLaunched = [[NSUserDefaults standardUserDefaults] boolForKey:previouslyLaunchedKey];	
-	
-	if(!previouslyLaunched){
-		[self performSelector:@selector(showKey) withObject:nil afterDelay:0.2];
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:previouslyLaunchedKey];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	}
-	
+		
 }
 
 - (void)viewWillAppear:(BOOL)animated{
