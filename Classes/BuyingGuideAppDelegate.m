@@ -68,7 +68,9 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-        
+    
+    BOOL forceCopyBundleLibary = NO;
+
 #ifdef FORCE_COPY_BUNDLE_LIBRARY
     
     forceCopyBundleLibary = YES;
@@ -765,10 +767,11 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
         // set date that bundled db pulled data
         NSDateComponents *components = [[NSDateComponents alloc] init];
         [components setCalendar:[NSCalendar currentCalendar]];
-        [components setYear:2012];
-        [components setMonth:11];
-        [components setDay:19];
-        [components setHour:21];
+        [components setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+        [components setYear:2013];
+        [components setMonth:05];
+        [components setDay:31];
+        [components setHour:16];
         [components setMinute:0];
         [components setSecond:0];
         NSDate *lastUpdateDate = [components date];
