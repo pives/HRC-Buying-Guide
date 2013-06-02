@@ -328,10 +328,10 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
         NSArray *scorecards = [[updateDict valueForKeyPath:@"scorecards"] valueForKey:@"row"];
         NSArray *removed = [[updateDict valueForKeyPath:@"removed"] valueForKey:@"row"];
 
-        DebugLog(@"Brand example: %@", brands[0]);
-        DebugLog(@"Categories example: %@", categories[0]);
-        DebugLog(@"Orgs example: %@", organizations[0]);
-        DebugLog(@"Scorecards example: %@", scorecards[0]);
+//        DebugLog(@"Brand example: %@", brands[0]);
+//        DebugLog(@"Categories example: %@", categories[0]);
+//        DebugLog(@"Orgs example: %@", organizations[0]);
+//        DebugLog(@"Scorecards example: %@", scorecards[0]);
 
         NSString *JSONSyncPath = [[NSBundle mainBundle] pathForResource:@"JSONSync" ofType:@"plist"];
         NSDictionary *JSONSyncDict = [NSDictionary dictionaryWithContentsOfFile:JSONSyncPath];
