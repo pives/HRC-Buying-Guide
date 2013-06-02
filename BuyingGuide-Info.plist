@@ -26,11 +26,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0</string>
+	<string>4.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>226</string>
+	<string>2013060101</string>
 	<key>CoreDataCrashMessage</key>
 	<string>Something bad happened. Please press the home button and relaunch the Buying Guide</string>
 	<key>DonationURL</key>

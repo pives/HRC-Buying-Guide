@@ -10,7 +10,7 @@
 #import "MainViewController.h"
 #import "CompaniesTableViewController.h"
 #import "CategoriesTableViewController.h"
-#import "FlurryAPI.h"
+#import "Flurry.h"
 #import "RootViewController.h"
 #import "JSON.h"
 #import "NSManagedObjectContext+Extensions.h"
@@ -20,6 +20,7 @@
 #import "MBProgressHUD.h"
 #import <Parse/Parse.h>
 #import "UIBarButtonItem+extensions.h"
+#import <Crashlytics/Crashlytics.h>
 
 #define UPDATE_INTERVAL 86400 //seconds == 1 days
 
@@ -56,7 +57,7 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
 	   
     self.isCancelled = NO;
     
-    [FlurryAPI startSession:@"4bbfd488141c84699824c518b281b86e"];
+    [Flurry startSession:@"S7CW8QM9RR32D7Z4R9FP"];
     
 #ifdef DEV_MODE_APNS
     [Parse setApplicationId:@"ic4i76xfP63YNoPiuKuyQ8Xn5d3vaSsuBGiJTcFD"
@@ -66,6 +67,8 @@ static NSString* previouslyLaunchedKey = @"HRCFirstLaunch";
                   clientKey:@"nmCd0eeTe9CybiY4029NQoRpttBoBARF3ktKijAt"];
 #endif
     
+    [Crashlytics startWithAPIKey:@"354c5c1417dcc19fd4a99b58c69a0457e22475d1"];
+
     // Register for push notifications
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     

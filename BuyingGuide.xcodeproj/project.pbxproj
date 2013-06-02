@@ -82,7 +82,6 @@
 		C4B8FC001188BE3600B59CD7 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE51188BE3600B59CD7 /* FBSession.m */; };
 		C4B8FC011188BE3600B59CD7 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE61188BE3600B59CD7 /* FBStreamDialog.m */; };
 		C4B8FC021188BE3600B59CD7 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B8FBE81188BE3600B59CD7 /* FBXMLHandler.m */; };
-		C4BC980611D82DA0001CCEF7 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BC980411D82D9F001CCEF7 /* libFlurry.a */; };
 		C4C031DA10B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */; };
 		C4C031DC10B1EB9B000D46AA /* NSString+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031D710B1EB9B000D46AA /* NSString+extensions.m */; };
 		C4C031E110B1EBC1000D46AA /* CoreDataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C031E010B1EBC1000D46AA /* CoreDataFunctions.m */; };
@@ -107,6 +106,8 @@
 		C4FA1D8B10B45E770031303E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4FA1D8A10B45E770031303E /* Entitlements.plist */; };
 		C4FA200B10B4BA570031303E /* UIColor+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200910B4BA570031303E /* UIColor+extensions.m */; };
 		C4FA200C10B4BA570031303E /* UIView-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FA200A10B4BA570031303E /* UIView-Extensions.m */; };
+		C4FB5BAB175AE456007AE9CA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FB5BAA175AE456007AE9CA /* Crashlytics.framework */; };
+		C4FB5BAF175AE61A007AE9CA /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FB5BAE175AE61A007AE9CA /* libFlurry.a */; };
 		D8377AA312C243C800998649 /* JSONSync.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8377AA212C243C800998649 /* JSONSync.plist */; };
 		D8377C8212C27FC800998649 /* NSNumber+Transformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8377C8112C27FC800998649 /* NSNumber+Transformers.m */; };
 		FE071B7514917DD400E87C7D /* SharingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE071B7414917DD400E87C7D /* SharingManager.m */; };
@@ -286,9 +287,6 @@
 		C4B8FBE61188BE3600B59CD7 /* FBStreamDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBStreamDialog.m; sourceTree = "<group>"; };
 		C4B8FBE71188BE3600B59CD7 /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMLHandler.h; sourceTree = "<group>"; };
 		C4B8FBE81188BE3600B59CD7 /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBXMLHandler.m; sourceTree = "<group>"; };
-		C4BC980211D82D9F001CCEF7 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
-		C4BC980311D82D9F001CCEF7 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
-		C4BC980411D82D9F001CCEF7 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		C4C031D210B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FJSCoreDataExtensions.h"; sourceTree = "<group>"; };
 		C4C031D310B1EB9B000D46AA /* NSArray+FJSCoreDataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FJSCoreDataExtensions.m"; sourceTree = "<group>"; };
 		C4C031D610B1EB9B000D46AA /* NSString+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extensions.h"; sourceTree = "<group>"; };
@@ -331,6 +329,9 @@
 		C4FA200810B4BA570031303E /* UIColor+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extensions.h"; sourceTree = "<group>"; };
 		C4FA200910B4BA570031303E /* UIColor+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extensions.m"; sourceTree = "<group>"; };
 		C4FA200A10B4BA570031303E /* UIView-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Extensions.m"; sourceTree = "<group>"; };
+		C4FB5BAA175AE456007AE9CA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C4FB5BAD175AE61A007AE9CA /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		C4FB5BAE175AE61A007AE9CA /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		D8377AA212C243C800998649 /* JSONSync.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JSONSync.plist; sourceTree = "<group>"; };
 		D8377C8012C27FC800998649 /* NSNumber+Transformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Transformers.h"; sourceTree = "<group>"; };
 		D8377C8112C27FC800998649 /* NSNumber+Transformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Transformers.m"; sourceTree = "<group>"; };
@@ -420,8 +421,9 @@
 				C460091B11D1A6DE00545996 /* Security.framework in Frameworks */,
 				C460091F11D1A70400545996 /* libxml2.dylib in Frameworks */,
 				C460098B11D1A8FD00545996 /* SystemConfiguration.framework in Frameworks */,
-				C4BC980611D82DA0001CCEF7 /* libFlurry.a in Frameworks */,
 				91DBB4BA16565DCB00B3A27A /* Parse.framework in Frameworks */,
+				C4FB5BAB175AE456007AE9CA /* Crashlytics.framework in Frameworks */,
+				C4FB5BAF175AE61A007AE9CA /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,10 +480,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4FB5BAA175AE456007AE9CA /* Crashlytics.framework */,
 				91DBB4BB1658087600B3A27A /* Twitter.framework */,
 				91CA54A5163A0D72009F20FC /* Social.framework */,
+				C4FB5BAC175AE61A007AE9CA /* Flurry */,
 				C4850F411491A60300CE8CB9 /* JSON */,
-				C4BC980111D82D9E001CCEF7 /* FlurryLib */,
 				C4F4121411D1C1F500FD3659 /* iPhone */,
 				C4F4122211D1C25700FD3659 /* Mac */,
 			);
@@ -691,16 +694,6 @@
 			path = FBConnect;
 			sourceTree = "<group>";
 		};
-		C4BC980111D82D9E001CCEF7 /* FlurryLib */ = {
-			isa = PBXGroup;
-			children = (
-				C4BC980211D82D9F001CCEF7 /* FlurryAdDelegate.h */,
-				C4BC980311D82D9F001CCEF7 /* FlurryAPI.h */,
-				C4BC980411D82D9F001CCEF7 /* libFlurry.a */,
-			);
-			path = FlurryLib;
-			sourceTree = "<group>";
-		};
 		C4C02C4B10B0F413000D46AA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +882,15 @@
 			name = "Category Table";
 			sourceTree = "<group>";
 		};
+		C4FB5BAC175AE61A007AE9CA /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				C4FB5BAD175AE61A007AE9CA /* Flurry.h */,
+				C4FB5BAE175AE61A007AE9CA /* libFlurry.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
 		FE071B7214917DAE00E87C7D /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +989,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				C4FB5BA9175AE435007AE9CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1102,6 +1105,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C4FB5BA9175AE435007AE9CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 354c5c1417dcc19fd4a99b58c69a0457e22475d1";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1205,7 +1224,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/Flurry\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
@@ -1221,7 +1240,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = armv7;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Human Rights Campaign (T9R289C947)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1241,12 +1260,12 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/Flurry\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = BuyingGuide;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3B1D95CF-0BC3-4EE1-A29A-FFAF0936FC0F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "637911E7-1D11-40C6-B665-0486C963D274";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 i386";
 			};
@@ -1320,7 +1339,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 					"\"$(SRCROOT)/Twitter+OAuth/MGTwitterEngine\"",
 					"\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\"",
-					"\"$(SRCROOT)/FlurryLib\"",
+					"\"$(SRCROOT)/Flurry\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
